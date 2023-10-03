@@ -4,5 +4,5 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
 
-    
+    <h1 class=""> LALALALALAL</h1>
 </template>

@@ -1,15 +1,7 @@
 // Abstracts
 @use 'abstracts' as *;
-@use 'abstracts/global';
 @use 'abstracts/typo';
 @use 'abstracts/layout';
+@use 'abstracts/variables';
 
 // Components
-
-// Pages
-@use 'pages/homepage';
-@use 'pages/about';
-@use 'pages/contacts';
-@use 'pages/errors';
-@use 'pages/login';
-@use 'pages/dashboard';
