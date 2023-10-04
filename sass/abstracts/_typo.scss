@@ -1,0 +1,51 @@
+// Fonts
+@font-face {
+    font-family: 'Helvetica-BlackItalic';
+    src: url('~@/assets/fonts/Helvetica-BlackItalic-Regular.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Franklin Gothic Medium';
+    src: url('~@/assets/fonts/framd.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Tahoma';
+    src: url('~@/assets/fonts/tahoma.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'TahomaBd';
+    src: url('~@/assets/fonts/tahomabd.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Trebuchet Bold';
+    src: url('~@/assets/fonts/trebucbd.ttf') format('ttf');
+}
+@font-face {
+    font-family: 'Verdana';
+    src: url('~@/assets/fonts/verdana-bold.ttf') format('ttf');
+}
+
+
+.logo-font{
+    font-family: 'Helvetica-BlackItalic';
+    letter-spacing: -1.2px;
+}
+
+h1{
+    font-family: Tahoma;
+}
+
+h2{
+    font-family: Franklin Gothic Medium;
+}
+
+h3{
+    font-family: Verdana;
+}
+
+h4{
+    font-family: Tahoma;
+}
+
+p{
+    font-family: Tahoma;
+}

@@ -1,0 +1,21 @@
+
+.loading-bar{
+  border: 2px solid #b2b2b2;
+}
+
+
+.loading-box{
+    background: linear-gradient(to bottom, #2838c7 0%,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);
+    animation: loader 3.5s infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes loader{
+    0%{
+      transform: translate(-250px);
+    }
+    100%{
+      transform: translate(400px);
+    }
+  }
+

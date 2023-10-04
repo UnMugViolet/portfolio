@@ -1,1 +1,75 @@
-/*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: "Helvetica-BlackItalic";
+  src: url("~@/assets/fonts/Helvetica-BlackItalic-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Franklin Gothic Medium";
+  src: url("~@/assets/fonts/framd.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Tahoma";
+  src: url("~@/assets/fonts/tahoma.ttf") format("ttf");
+}
+@font-face {
+  font-family: "TahomaBd";
+  src: url("~@/assets/fonts/tahomabd.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Trebuchet Bold";
+  src: url("~@/assets/fonts/trebucbd.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Verdana";
+  src: url("~@/assets/fonts/verdana-bold.ttf") format("ttf");
+}
+.logo-font {
+  font-family: "Helvetica-BlackItalic";
+  letter-spacing: -1.2px;
+}
+
+h1 {
+  font-family: Tahoma;
+}
+
+h2 {
+  font-family: Franklin Gothic Medium;
+}
+
+h3 {
+  font-family: Verdana;
+}
+
+h4 {
+  font-family: Tahoma;
+}
+
+p {
+  font-family: Tahoma;
+}
+
+img {
+  width: 100%;
+}
+
+.app-container {
+  width: 90%;
+}
+
+.loading-bar {
+  border: 2px solid #b2b2b2;
+}
+
+.loading-box {
+  background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
+  animation: loader 3.5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-250px);
+  }
+  100% {
+    transform: translate(400px);
+  }
+}/*# sourceMappingURL=main.css.map */
