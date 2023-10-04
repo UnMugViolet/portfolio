@@ -1,9 +1,17 @@
+@use 'variables.scss' as *;
+
+// Global layout 
 img{
     width: 100%;
 }
-
 
 .app-container{
     width: 90%;
 }
 
+.down-stroke-white-2{
+    border-bottom: 2px solid $main-white;
+}
+.up-stroke-green-2{
+    border-top: 2px solid $main-green;
+}

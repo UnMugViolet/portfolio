@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LoadingPageBlack from '../views/LoadingPageBlack.vue'
+import Loader from '../views/Loader.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: LoadingPageBlack
+      component: Loader
     },
     {
       // path: '/about',

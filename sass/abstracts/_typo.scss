@@ -1,51 +1,32 @@
-// Fonts
-@font-face {
-    font-family: 'Helvetica-BlackItalic';
-    src: url('~@/assets/fonts/Helvetica-BlackItalic-Regular.ttf') format('ttf');
-}
-@font-face {
-    font-family: 'Franklin Gothic Medium';
-    src: url('~@/assets/fonts/framd.ttf') format('ttf');
-}
-@font-face {
-    font-family: 'Tahoma';
-    src: url('~@/assets/fonts/tahoma.ttf') format('ttf');
-}
-@font-face {
-    font-family: 'TahomaBd';
-    src: url('~@/assets/fonts/tahomabd.ttf') format('ttf');
-}
-@font-face {
-    font-family: 'Trebuchet Bold';
-    src: url('~@/assets/fonts/trebucbd.ttf') format('ttf');
-}
-@font-face {
-    font-family: 'Verdana';
-    src: url('~@/assets/fonts/verdana-bold.ttf') format('ttf');
-}
-
+@use 'variables.scss' as *;
 
 .logo-font{
-    font-family: 'Helvetica-BlackItalic';
+    font-family: 'Helvetica BlackItalic';
     letter-spacing: -1.2px;
+    font-weight: 400;
 }
 
 h1{
-    font-family: Tahoma;
+    font-family: 'Tahoma';
+    font-weight: 400;
 }
 
 h2{
-    font-family: Franklin Gothic Medium;
+    font-family: 'Franklin Gothic Medium';
+    font-weight: 400;
 }
 
 h3{
-    font-family: Verdana;
+    font-family: 'Verdana';
+    font-weight: 400;
 }
 
 h4{
-    font-family: Tahoma;
+    font-family: 'Trebuchet MS';
+    font-weight: 400;
 }
 
 p{
-    font-family: Tahoma;
+    font-family: 'Tahoma';
 }
+
