@@ -1,17 +1,56 @@
 @use 'variables.scss' as *;
 
 // Global layout 
-img{
+img {
     width: 100%;
 }
 
-.app-container{
+.app-container {
     width: 90%;
 }
 
-.down-stroke-white-2{
+// Strokes
+.stroke-white-1 {
+    border-bottom: 1px solid $main-white;
+}
+.down-stroke-white-2 {
     border-bottom: 2px solid $main-white;
 }
-.up-stroke-green-2{
+
+.up-stroke-green-2 {
     border-top: 2px solid $main-green;
+}
+
+.stroke-yellow-2 {
+    border: 2px solid var(--yellow, #FC0);
+}
+
+// Background colors
+.bg-color-load-header-blue {
+    background-color: $load-header-blue;
+}
+
+.bg-color-load-blue {
+    background-color: $bg-blue-loader;
+}
+
+.bg-color-login-blue {
+    background: linear-gradient(90deg, #1442A7 0%, rgba(20, 66, 167, 0.56) 78.12%, rgba(20, 66, 167, 0.00) 99.33%);
+}
+
+// Background images
+.bg-profile-pic{
+    background-image: url('/src/assets/img/profile-picture.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// Gradients
+.radial-gradient-loading {
+    background: radial-gradient(29.68% 27.76% at 5.94% 14.64%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.16) 59.9%, rgba(255, 255, 255, 0.00) 100%), #567DDA;
+}
+
+.line-loading-gradient{
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.48) 49.48%, rgba(255, 255, 255, 0.00) 100%);
 }
