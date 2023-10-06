@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <section class="h-screen w-screen">
+    <section class="h-screen w-screen overflow-hidden">
         <div class="flex items-center justify-center h-full w-full">
             <slot name="top"></slot> 
-            <div class="app-container">
+            <div class="app-container relative">
                     <div class="flex flex-col items-center justify-center w-full h-full">
                         
                         <slot name="center"></slot> 

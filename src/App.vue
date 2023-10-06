@@ -1,9 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Loader from './views/Loader.vue'
-
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-    <Loader/>
+    <router-view></router-view>
 </template>
+
+
+<script>
+export default {
+  name: 'App',
+}
+</script>

@@ -7,7 +7,7 @@ import { ref, onMounted  } from 'vue'
 import ContentCenter from '../layouts/ContentCenter.vue'
 import LoadingBar from '../components/LoadingBar.vue'
 import Transition  from '../components/Transition.vue'
-import ProfilePicture from '../components/ProfilePicture.vue'
+import LoginForm from '../components/LoginForm.vue'
 
 // Icons
 import ShutdownIcon from '../components/icons/ShutdownIcon.vue'
@@ -55,7 +55,7 @@ onMounted(() => {
             <ContentCenter class="bg-black">
                 <template #center>
                     <div class="md:w-4/12 w-64 ml-5">
-                        <img src="src/assets/img/logo-portfolio-white.svg" alt="logo démarrage">
+                        <img src="src/assets/img/logo-portfolio-white.webp" alt="logo démarrage">
                     </div>
                 </template>
     
@@ -96,7 +96,7 @@ onMounted(() => {
 
             <template #center>
                 <div class="md:w-4/12 w-64 ml-5 mb-10">
-                        <img src="src/assets/img/Logo-portfolio-black.svg" alt="logo démarrage">
+                        <img src="src/assets/img/Logo-portfolio-black.webp" alt="logo démarrage">
                     </div>
             </template>
 
@@ -118,11 +118,11 @@ onMounted(() => {
 
             <template #center>
                 <div class="flex w-full">
-                    <div class="flex justify-end w-1/2">
+                    <div class="flex justify-end items-center w-1/2">
                         <div>
                             <div class="flex justify-end w-full">
                                 <div class="w-2/3">
-                                    <img src="src/assets/img/logo-portfolio-white.svg" alt="logo portfolio paul jaguin" class="mb-3">
+                                    <img src="src/assets/img/logo-portfolio-white.webp" alt="logo portfolio paul jaguin" class="mb-3">
                                 </div>
                             </div>
                             <div class="w-full flex justify-end">
@@ -133,18 +133,8 @@ onMounted(() => {
                         </div>
                     </div>
 
-                    <div class="w-px h-full line-loading-gradient mx-3"></div>
-                    
-                    <div class="flex items-center w-1/2">
-                        <div class="h-28 w-80 ">
-                            <div class="h-full w-full rounded-xl bg-color-login-blue flex items-center py-2.5 px-6 stroke-white-1">
-                                <div class="w-full flex items-center">
-                                    <ProfilePicture class="w-16 h-16 stroke-yellow-2"/>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <div class="w-px h-96 line-loading-gradient mx-3"></div>
+                    <LoginForm />
                 </div>
             </template>
 
