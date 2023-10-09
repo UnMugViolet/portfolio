@@ -54,7 +54,7 @@ img {
     background-position: center;
 }
 
-// Gradients
+/* ---------Gradients---------*/ 
 .radial-gradient-loading {
     background: radial-gradient(29.68% 27.76% at 5.94% 14.64%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.16) 59.9%, rgba(255, 255, 255, 0.00) 100%), #567DDA;
 }
@@ -67,17 +67,9 @@ img {
     background: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
 }
 
-.start-button-gradient {
-    background: linear-gradient(180deg, #499947 0%, #499E47 24.4%, #48B347 100%);
-}
 
-
-// Box shadows 
+/* ---------Box Shadows---------*/ 
 
 .footer-shadow {
     box-shadow: 0px 6px 3px 0px #3897FF inset, 0px -12px 6px 0px #026AFE inset, 0px -2px 3px 0px #013EBF inset, 1px 0px 2px 0px #0028C4 inset, -2px 0px 3px 0px #001590 inset;
-}
-
-.start-button-shadow {
-    box-shadow: 1px 1px 1px 0px #196045 inset, 2px 0px 3px 0px rgba(0, 0, 0, 0.25) inset, 0px -2px 4px 0px rgba(0, 0, 0, 0.25) inset, -2px 0px 6px 0px rgba(0, 0, 0, 0.25) inset, 2px 4px 4px 0px rgba(255, 255, 255, 0.47) inset, 0px 0px 0px 0px rgba(255, 255, 255, 0.25) inset, 10px 12px 48px 0px rgba(0, 0, 0, 0.34) inset;
 }
