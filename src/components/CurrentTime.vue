@@ -26,10 +26,10 @@
     }
     },
     mounted() {
-      // Update the currentTime data property every minutes
+      // Update the currentTime data property every 2 seconds 
       this.interval = setInterval(() => {
         this.updateTime();
-      }, 60000);
+      }, 2000);
     },
     beforeDestroy() {
       // Clear the interval to stop updating when the component is destroyed
