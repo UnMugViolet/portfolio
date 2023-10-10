@@ -27,10 +27,10 @@
                                         <img src="src/assets/img/icons/email-icon.png" alt="A propos">
                                     </template>
                                     <template #title>
-                                        Mes projets
+                                        E-mail
                                     </template>
                                     <template #subtitle>
-                                        Voir tous mes projets
+                                        Me contacter
                                     </template>
                                 </RightFeatureLayout>
                                 <RightFeatureLayout>
@@ -38,10 +38,10 @@
                                         <img src="src/assets/img/icons/cv-icon.png" alt="A propos">
                                     </template>
                                     <template #title>
-                                        Mes projets
+                                        Mon CV
                                     </template>
                                     <template #subtitle>
-                                        Voir tous mes projets
+                                        Voir toutes mes expériences
                                     </template>
                                 </RightFeatureLayout>
                             </div>
