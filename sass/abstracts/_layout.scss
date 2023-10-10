@@ -1,9 +1,75 @@
-img{
+@use 'variables.scss' as *;
+
+// Global layout 
+img {
     width: 100%;
 }
 
-
-.app-container{
+.app-container {
     width: 90%;
 }
 
+// Strokes
+.stroke-white-1 {
+    border: 1px solid $main-white;
+}
+
+.down-stroke-white-2 {
+    border-bottom: 2px solid $main-white;
+}
+
+.up-stroke-green-2 {
+    border-top: 2px solid $main-green;
+}
+
+.stroke-yellow-2 {
+    border: 2px solid var(--yellow, #FC0);
+}
+
+// Background colors
+.bg-color-load-header-blue {
+    background-color: $load-header-blue;
+}
+
+.bg-color-load-blue {
+    background-color: $bg-blue-loader;
+}
+
+.bg-color-login-blue {
+    background: linear-gradient(90deg, #1442A7 0%, rgba(20, 66, 167, 0.56) 60.16%, rgba(20, 66, 167, 0.00) 99.33%);
+}
+
+// Background images
+.bg-profile-pic {
+    background-image: url('/src/assets/img/profile-picture.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-office-pic {
+    background-image: url('/src/assets/img/office-picture.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ---------Gradients---------*/ 
+.radial-gradient-loading {
+    background: radial-gradient(29.68% 27.76% at 5.94% 14.64%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.16) 59.9%, rgba(255, 255, 255, 0.00) 100%), #567DDA;
+}
+
+.line-loading-gradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.48) 49.48%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.footer-gradient {
+    background: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
+}
+
+
+/* ---------Box Shadows---------*/ 
+
+.footer-shadow {
+    box-shadow: 0px 6px 3px 0px #3897FF inset, 0px -12px 6px 0px #026AFE inset, 0px -2px 3px 0px #013EBF inset, 1px 0px 2px 0px #0028C4 inset, -2px 0px 3px 0px #001590 inset;
+}
