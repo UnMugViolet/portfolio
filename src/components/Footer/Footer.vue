@@ -1,8 +1,8 @@
 <script setup>    
     import StartButton from '../Buttons/StartButton.vue';
     import FooterRight from './FooterRight.vue';
-
 </script>
+
 
 <template>
     <footer>

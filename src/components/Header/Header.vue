@@ -1,3 +1,10 @@
+<script setup>
+    import ProfilePicture from '../ProfilePicture.vue';
+    import LeftFeatureLayout from './LeftFeatureLayout.vue';
+    import RightFeatureLayout from './RightFeatureLayout.vue';
+</script>
+
+
 <template>
     <header>
         <div class="absolute left-0 bg-color-blue-window-header header-radius overflow-hidden bottom-0 mb-8 modal-size z-10">
@@ -100,21 +107,6 @@
         </div>
     </header>
 </template>
-
-<script>
-import ProfilePicture from '../ProfilePicture.vue';
-import LeftFeatureLayout from './LeftFeatureLayout.vue';
-import RightFeatureLayout from './RightFeatureLayout.vue';
-
-    export default {
-        name: 'Header',
-        components: {
-            ProfilePicture,
-            LeftFeatureLayout,
-            RightFeatureLayout
-        }
-    };
-</script>
 
 <style scoped>
 .header-radius{
