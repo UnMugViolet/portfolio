@@ -49,17 +49,4 @@ onMounted(() => {
         <Step3Loading v-if="showStep3"/>
         <Login v-if="showStep4"/>
     </div>
-
-        
-
 </template>
-
-
-<style scoped>
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.5s;
-    }
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    }
-</style>
