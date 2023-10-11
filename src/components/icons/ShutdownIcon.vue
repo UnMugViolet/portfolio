@@ -11,9 +11,3 @@
         </defs>
     </svg>
 </template>
-
-<script>
-    export default {
-        name: 'shutdownIcon',
-    }
-</script>
