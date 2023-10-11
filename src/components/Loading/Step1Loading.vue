@@ -1,9 +1,8 @@
 <script setup>
-
+    import ContentCenter from '../../layouts/ContentCenter.vue'
 </script>
 
-<template lang="">
-    <div>
-        
-    </div>
+<template>
+    <!-- Step 1 -->
+    <ContentCenter class="bg-black"/>
 </template>
