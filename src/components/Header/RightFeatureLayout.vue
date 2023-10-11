@@ -14,12 +14,6 @@
     </button>
 </template>
 
-<script>
-    export default {
-        name: 'RightFeatureLayout'
-    };
-</script>
-
 <style scoped>
     .component-style:hover {
         background: #2F71CD;

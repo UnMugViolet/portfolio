@@ -10,11 +10,6 @@
     </button>
 </template>
 
-<script>
-    export default {
-        name: 'LeftFeatureLayout'
-    };
-</script>
 
 <style scoped>
     .component-style{
