@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import ProfilePicture from './ProfilePicture.vue';
+import ProfilePicture from '../ProfilePicture.vue';
 import { useRouter, useRoute } from 'vue-router';
 
   export default {
