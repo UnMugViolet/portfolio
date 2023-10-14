@@ -20,7 +20,7 @@
                             <div class="py-2 flex flex-col gap-3">
                                 <RightFeatureLayout>
                                     <template #img>
-                                        <img src="src/assets/img/icons/explorer-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/projects-icon.png" alt="A propos">
                                     </template>
                                     <template #title>
                                         Mes projets
