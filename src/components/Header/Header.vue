@@ -4,9 +4,8 @@
     import RightFeatureLayout from './RightFeatureLayout.vue';
 </script>
 
-
 <template>
-    <header>
+    <header class="header-component">
         <div class="absolute left-0 bg-color-blue-window-header header-radius overflow-hidden bottom-0 mb-8 modal-size z-10">
             <div class="w-full h-full relative overflow-hidden">
                 <div class="h-16 flex items-center px-2 header-top-component-shadow header-top-component">
