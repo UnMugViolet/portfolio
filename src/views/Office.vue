@@ -3,7 +3,7 @@
     class="h-screen w-screen overflow-hidden bg-office-pic relative"
     @click="handleOutsideClick"
   >
-    <Header v-if="showHeader" @click="toggleHeader" />
+    <Header v-if="showHeader" @toggle-header="toggleHeader"/>
     <div></div>
     <Footer @toggle-header="toggleHeader" />
   </section>
@@ -39,4 +39,5 @@
       }
     }
   };
+
 </script>
