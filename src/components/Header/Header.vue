@@ -2,7 +2,7 @@
     <header class="header-component">
         <div class="absolute left-0 bg-color-blue-window-header header-radius overflow-hidden bottom-0 mb-8 modal-size z-10">
             <div class="w-full h-full relative overflow-hidden">
-                <div class="h-16 flex items-center px-2 header-top-component-shadow header-top-component">
+                <div class="h-16 flex items-center px-2 header-top-bot-component">
                     <ProfilePicture class="w-11 h-11 stroke-white-1 header-profile-shadow"/>
                     <h2 class="text-lg ml-2 text-white text-shadow-header">Paul Jaguin</h2>
                 </div>
@@ -92,8 +92,8 @@
                         </div>
                     </div>
                 </section>
-                <div class="absolute bottom-0 h-12 w-full bg-color-blue-window-header header-bottom-gradient">
-    
+                <div class="header-top-bot-component absolute bottom-0 h-12 w-full ">
+
                 </div>
             </div>
 
