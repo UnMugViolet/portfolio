@@ -13,7 +13,7 @@
                             <div class="py-2 flex flex-col gap-3">
                                 <RightFeatureLayout @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/explorer-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/projects-icon.png" alt="A propos">
                                     </template>
                                     <template #title>
                                         Mes projets
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </section>
-                <div class="absolute bottom-0 h-12 w-full bg-color-blue-window-header">
+                <div class="absolute bottom-0 h-12 w-full bg-color-blue-window-header header-bottom-gradient">
     
                 </div>
             </div>
