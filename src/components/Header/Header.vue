@@ -1,9 +1,3 @@
-<script setup>
-    import ProfilePicture from '../ProfilePicture.vue';
-    import LeftFeatureLayout from './LeftFeatureLayout.vue';
-    import RightFeatureLayout from './RightFeatureLayout.vue';
-</script>
-
 <template>
     <header class="header-component">
         <div class="absolute left-0 bg-color-blue-window-header header-radius overflow-hidden bottom-0 mb-8 modal-size z-10">
@@ -17,7 +11,7 @@
                     <div class="w-full h-full flex">
                         <div class="w-7/12 h-full bg-white px-1 py-1"> 
                             <div class="py-2 flex flex-col gap-3">
-                                <RightFeatureLayout>
+                                <RightFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/explorer-icon.png" alt="A propos">
                                     </template>
@@ -28,7 +22,7 @@
                                         Voir tous mes projets
                                     </template>
                                 </RightFeatureLayout>
-                                <RightFeatureLayout>
+                                <RightFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/email-icon.png" alt="A propos">
                                     </template>
@@ -39,7 +33,7 @@
                                         Me contacter
                                     </template>
                                 </RightFeatureLayout>
-                                <RightFeatureLayout>
+                                <RightFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/cv-icon.png" alt="A propos">
                                     </template>
@@ -54,7 +48,7 @@
                         </div>
                         <div class="w-1/2 h-full bg-color-blue-header-left left-component px-1 py-1">
                             <div class="py-2">
-                                <LeftFeatureLayout>
+                                <LeftFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/docs-icon.png" alt="A propos">
                                     </template>
@@ -62,7 +56,7 @@
                                         A propos
                                     </template>
                                 </LeftFeatureLayout>
-                                <LeftFeatureLayout>
+                                <LeftFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/images-icon.png" alt="A propos">
                                     </template>
@@ -70,7 +64,7 @@
                                         Mes images
                                     </template>
                                 </LeftFeatureLayout>
-                                <LeftFeatureLayout>
+                                <LeftFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/musiques-icon.png" alt="A propos">
                                     </template>
@@ -78,7 +72,7 @@
                                         Mes musiques
                                     </template>
                                 </LeftFeatureLayout>
-                                <LeftFeatureLayout>
+                                <LeftFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/calendar-icon.png" alt="A propos">
                                     </template>
@@ -86,7 +80,7 @@
                                         Calendrier
                                     </template>
                                 </LeftFeatureLayout>
-                                <LeftFeatureLayout>
+                                <LeftFeatureLayout @click="turnOffHeader">
                                     <template #img>
                                         <img src="src/assets/img/icons/play-icon.png" alt="A propos">
                                     </template>
@@ -106,6 +100,20 @@
         </div>
     </header>
 </template>
+
+<script setup>
+    import ProfilePicture from '../ProfilePicture.vue';
+    import LeftFeatureLayout from './LeftFeatureLayout.vue';
+    import RightFeatureLayout from './RightFeatureLayout.vue';
+    import { defineEmits } from 'vue';
+
+    const emit = defineEmits();
+
+    const turnOffHeader = () => {
+        emit('toggle-header');
+    };
+</script>
+
 
 <style scoped>
 .header-radius{
