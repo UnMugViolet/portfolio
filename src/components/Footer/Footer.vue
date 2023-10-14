@@ -7,8 +7,8 @@
         </div>
       </div>
     </footer>
-  </template>
-  
+  </template>  
+
   <script setup>
   import StartButton from '../Buttons/StartButton.vue';
   import FooterRight from './FooterRight.vue';
@@ -21,3 +21,14 @@
   };
   </script>
   
+
+<script setup>    
+    import {ref} from 'vue';
+    import StartButton from '../Buttons/StartButton.vue';
+    import FooterRight from './FooterRight.vue';
+
+    const toggleHeader = () =>{
+        emit('toggle-header');
+    };
+
+</script>
