@@ -1,8 +1,8 @@
 <template>
     <header class="header-component">
-        <div class="absolute left-0 bg-color-blue-window-header header-radius overflow-hidden bottom-0 mb-8 modal-size z-10">
+        <div class="absolute left-0 header-radius overflow-hidden bottom-0 mb-8 modal-size z-10 bg-color-blue-window">
             <div class="w-full h-full relative overflow-hidden">
-                <div class="h-16 flex items-center px-2 header-top-bot-component">
+                <div class="h-16 flex items-center px-2 header-top-background">
                     <ProfilePicture class="w-11 h-11 stroke-white-1 header-profile-shadow"/>
                     <h2 class="text-lg ml-2 text-white text-shadow-header">Paul Jaguin</h2>
                 </div>
@@ -92,11 +92,8 @@
                         </div>
                     </div>
                 </section>
-                <div class="header-top-bot-component absolute bottom-0 h-12 w-full ">
-
-                </div>
+                <BottomHeader />
             </div>
-
         </div>
     </header>
 </template>
@@ -105,6 +102,7 @@
     import ProfilePicture from '../ProfilePicture.vue';
     import LeftFeatureLayout from './LeftFeatureLayout.vue';
     import RightFeatureLayout from './RightFeatureLayout.vue';
+    import BottomHeader from './BottomHeader.vue';
     import { defineEmits } from 'vue';
 
     const emit = defineEmits();
