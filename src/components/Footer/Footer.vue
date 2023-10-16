@@ -7,18 +7,16 @@
         </div>
       </div>
     </footer>
-  </template>  
-
-
-<script setup>    
-    import {ref} from 'vue';
-    import StartButton from '../Buttons/StartButton.vue';
-    import FooterRight from './FooterRight.vue';
-    
-    const emit = defineEmits(['toggle-header']);
-
-    const toggleHeader = () =>{
-        emit('toggle-header');
-    };
-
-</script>
+  </template>
+  
+  <script setup>
+  import StartButton from '../Buttons/StartButton.vue';
+  import FooterRight from './FooterRight.vue';
+  
+  const emit = defineEmits(['toggle-header']);
+  
+  const toggleHeader = () => {
+    emit('toggle-header');
+  };
+  </script>
+  
