@@ -24,14 +24,15 @@
     if (showHeader.value) {
       const headerElement = document.querySelector('.header-component');
       const startButtonElement = document.querySelector('.start-button');
+      const fullScreenElement = document.querySelector('.full-screen');
 
-      // Check if the clicked element is the StartButton
+      // Check if the clicked element is the StartButton or FullScreen
       if (
-        startButtonElement &&
-        startButtonElement.contains(event.target)
+        (startButtonElement && startButtonElement.contains(event.target)) ||
+        (fullScreenElement && fullScreenElement.contains(event.target))
       ) {
-        return; 
-      }
+      return;
+    }
 
       // Close the header if the clicked element is outside the header
       if (headerElement && !headerElement.contains(event.target)) {
