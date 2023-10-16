@@ -103,7 +103,6 @@
     import LeftFeatureLayout from './LeftFeatureLayout.vue';
     import RightFeatureLayout from './RightFeatureLayout.vue';
     import BottomHeader from './BottomHeader.vue';
-    import { defineEmits } from 'vue';
 
     const emit = defineEmits();
 

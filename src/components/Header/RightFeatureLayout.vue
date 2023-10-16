@@ -17,8 +17,9 @@
 <style scoped>
   .component-style:hover {
     background: #2F71CD;
-    .small-p{
-        color: white;
-    }
+  }
+
+  .component-style:hover .small-p {
+    color: white;
   }
 </style>

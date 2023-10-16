@@ -12,7 +12,6 @@
   <script setup>
   import StartButton from '../Buttons/StartButton.vue';
   import FooterRight from './FooterRight.vue';
-  import { defineEmits } from 'vue';
   
   const emit = defineEmits(['toggle-header']);
   
