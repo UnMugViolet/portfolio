@@ -14,7 +14,7 @@
     import Header from '../components/Header/Header.vue';
     import { ref } from 'vue';
   
-    const showHeader = ref(true);
+    const showHeader = ref(false);
   
     const toggleHeader = () => {
       showHeader.value = !showHeader.value;
