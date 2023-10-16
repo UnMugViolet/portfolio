@@ -3,7 +3,7 @@
     class="h-screen w-screen overflow-hidden bg-office-pic relative"
     @click="handleOutsideClick"
   >
-    <Header v-if="showHeader" @click="toggleHeader" />
+    <Header v-if="showHeader" @toggle-header="toggleHeader"/>
     <div></div>
     <Footer @toggle-header="toggleHeader" />
   </section>
@@ -14,7 +14,7 @@
   import Header from '../components/Header/Header.vue';
   import { ref } from 'vue';
 
-  const showHeader = ref(false);
+  const showHeader = ref(true);
 
   const toggleHeader = () => {
     showHeader.value = !showHeader.value;
@@ -24,14 +24,15 @@
     if (showHeader.value) {
       const headerElement = document.querySelector('.header-component');
       const startButtonElement = document.querySelector('.start-button');
+      const fullScreenElement = document.querySelector('.full-screen');
 
-      // Check if the clicked element is the StartButton
+      // Check if the clicked element is the StartButton or FullScreen
       if (
-        startButtonElement &&
-        startButtonElement.contains(event.target)
+        (startButtonElement && startButtonElement.contains(event.target)) ||
+        (fullScreenElement && fullScreenElement.contains(event.target))
       ) {
-        return; 
-      }
+      return;
+    }
 
       // Close the header if the clicked element is outside the header
       if (headerElement && !headerElement.contains(event.target)) {
@@ -39,4 +40,5 @@
       }
     }
   };
+
 </script>
