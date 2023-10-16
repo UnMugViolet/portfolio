@@ -9,23 +9,13 @@
     </footer>
   </template>  
 
-  <script setup>
-  import StartButton from '../Buttons/StartButton.vue';
-  import FooterRight from './FooterRight.vue';
-  import { defineEmits } from 'vue';
-  
-  const emit = defineEmits(['toggle-header']);
-  
-  const toggleHeader = () => {
-    emit('toggle-header');
-  };
-  </script>
-  
 
 <script setup>    
     import {ref} from 'vue';
     import StartButton from '../Buttons/StartButton.vue';
     import FooterRight from './FooterRight.vue';
+    
+    const emit = defineEmits(['toggle-header']);
 
     const toggleHeader = () =>{
         emit('toggle-header');
