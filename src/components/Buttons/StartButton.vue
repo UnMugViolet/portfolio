@@ -8,8 +8,15 @@
     </button>
 </template>
 
-<script setup>    
+<script>    
     import WindowsIcon from '@/components/icons/WindowsIcon.vue';
+
+    export default {
+        name: 'StartButton',
+        components: {
+            WindowsIcon,
+        }
+    };
 </script>
 
 
