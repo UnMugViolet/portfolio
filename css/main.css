@@ -207,6 +207,10 @@ img {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
 }
 
+.buttons-header-bottom:hover {
+  background-color: rgba(60, 80, 210, 0.5);
+}
+
 .loading-bar {
   border: 2px solid #b2b2b2;
 }
