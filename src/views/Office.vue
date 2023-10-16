@@ -1,44 +1,23 @@
 <template>
-  <section
-    class="h-screen w-screen overflow-hidden bg-office-pic relative"
-    @click="handleOutsideClick"
-  >
-    <Header v-if="showHeader" @toggle-header="toggleHeader"/>
-    <div></div>
-    <Footer @toggle-header="toggleHeader" />
-  </section>
+    <section class="h-screen w-screen overflow-hidden bg-office-pic relative">
+        <Header />
+        <div>
+
+        </div>
+        <Footer />
+    </section>
+
 </template>
 
-<script setup>
-  import Footer from '../components/Footer/Footer.vue';
-  import Header from '../components/Header/Header.vue';
-  import { ref } from 'vue';
+<script>
+import Footer from '../components/Footer/Footer.vue';
+import Header from '../components/Header/Header.vue';
 
-  const showHeader = ref(true);
-
-  const toggleHeader = () => {
-    showHeader.value = !showHeader.value;
-  };
-
-  const handleOutsideClick = (event) => {
-    if (showHeader.value) {
-      const headerElement = document.querySelector('.header-component');
-      const startButtonElement = document.querySelector('.start-button');
-      const fullScreenElement = document.querySelector('.full-screen');
-
-      // Check if the clicked element is the StartButton or FullScreen
-      if (
-        (startButtonElement && startButtonElement.contains(event.target)) ||
-        (fullScreenElement && fullScreenElement.contains(event.target))
-      ) {
-      return;
+export default {
+    name: 'Office',
+    components: {
+        Footer,
+        Header,
     }
-
-      // Close the header if the clicked element is outside the header
-      if (headerElement && !headerElement.contains(event.target)) {
-        toggleHeader();
-      }
-    }
-  };
-
+};
 </script>
