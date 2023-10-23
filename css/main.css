@@ -83,7 +83,7 @@ p {
 
 .small-p {
   font-family: "Tahoma";
-  font-size: 11px;
+  font-size: 0.65rem;
   font-weight: 400;
 }
 
@@ -114,6 +114,10 @@ img {
 
 .stroke-yellow-2 {
   border: 2px solid #FFCC00;
+}
+
+.left-blue-header-1 {
+  border-left: 1px solid rgba(58, 58, 255, 0.37);
 }
 
 .bg-color-load-header-blue {
