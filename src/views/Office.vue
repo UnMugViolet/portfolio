@@ -4,14 +4,15 @@
       @click="handleOutsideClick"
     >
       <Header v-if="showHeader" @toggle-header="toggleHeader"/>
-      <div></div>
+      <DesktopAppsLayout/>
       <Footer @toggle-header="toggleHeader" />
     </section>
   </template>
   
   <script setup>
-    import Footer from '../components/Footer/Footer.vue';
-    import Header from '../components/Header/Header.vue';
+    import Footer from '/src/components/Footer/Footer.vue';
+    import Header from '/src/components/Header.vue';
+    import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
     import { ref } from 'vue';
   
     const showHeader = ref(false);
