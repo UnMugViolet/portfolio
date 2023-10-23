@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center">
-        <div class="absolute h-28 w-7/12">
+        <div class="absolute h-28 md:w-7/12 w-screen">
 
             <button @click="navigateToOffice" class="h-full w-full rounded-xl bg-color-login-blue flex items-center py-2.5 px-6 stroke-white-1 cursor-pointer">
                 <div class="w-full flex items-center text-white gap-4 relative">
