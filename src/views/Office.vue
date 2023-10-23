@@ -10,8 +10,8 @@
   </template>
   
   <script setup>
-    import Footer from '../components/Footer/Footer.vue';
-    import Header from '../components/Header/Header.vue';
+    import Footer from '/src/components/Footer/Footer.vue';
+    import Header from '/src/components/Header.vue';
     import { ref } from 'vue';
   
     const showHeader = ref(false);
