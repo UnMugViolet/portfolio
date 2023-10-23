@@ -228,4 +228,7 @@ img {
   100% {
     transform: translate(400px);
   }
+}
+.text-office-shadow {
+  text-shadow: 0px 1px 1px #010101, 0px 0px 4px #000;
 }/*# sourceMappingURL=main.css.map */
