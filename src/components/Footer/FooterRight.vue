@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue';
-  import CurrentTime from '../CurrentTime.vue';
+  import CurrentTime from './CurrentTime.vue';
 
   // Initialize refs
   const isFullScreen = ref(false);
