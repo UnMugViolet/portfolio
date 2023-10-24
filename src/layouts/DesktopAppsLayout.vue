@@ -17,10 +17,11 @@
             :src="item.imageSrc"
             :alt="item.alt"
           />
-          <p class="text-white text-xs text-office-shadow font-normal py-px px-1"
+          <p class="text-white text-xs font-normal py-px px-1"
              :style="{
                ...item.textStyle,
-               backgroundColor: item.isActive ? 'rgb(11, 97, 255)' : 'transparent'
+               backgroundColor: item.isActive ? 'rgb(11, 97, 255)' : 'transparent',
+               textShadow: item.isActive ? 'none' : '0px 1px 1px rgba(1, 1, 1, 1), 0px 0px 4px #000'
              }"
           >
             {{ item.label }}
@@ -36,7 +37,7 @@
   const menuItems = ref([
     {
       label: 'Mes projets',
-      imageSrc: 'src/assets/img/icons/projects-icon.png',
+      imageSrc: 'src/assets/img/icons/projects-large-icon.png',
       alt: 'Mes projets',
       isActive: false,
     },
@@ -48,19 +49,19 @@
     },
     {
       label: 'Jouer',
-      imageSrc: 'src/assets/img/icons/play-icon.png',
+      imageSrc: 'src/assets/img/icons/play-large-icon.png',
       alt: 'Jouer',
       isActive: false,
     },
     {
       label: 'Mon CV',
-      imageSrc: 'src/assets/img/icons/cv-icon.png',
+      imageSrc: 'src/assets/img/icons/cv-large-icon.png',
       alt: 'Mon CV',
       isActive: false,
     },
     {
       label: 'Me contacter',
-      imageSrc: 'src/assets/img/icons/email-icon.png',
+      imageSrc: 'src/assets/img/icons/email-large-icon.png',
       alt: 'Me contacter',
       isActive: false,
     },
