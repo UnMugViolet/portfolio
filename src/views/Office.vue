@@ -5,6 +5,9 @@
     >
       <Header v-if="showHeader" @toggle-header="toggleHeader"/>
       <DesktopAppsLayout/>
+      <Window>
+        
+      </Window>
       <Footer @toggle-header="toggleHeader" />
     </section>
   </template>
@@ -13,6 +16,8 @@
     import Footer from '/src/components/Footer/Footer.vue';
     import Header from '/src/components/Header.vue';
     import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
+    import MyProjects from '../components/Office/MyProjects.vue';
+    import Window from '../layouts/Window.vue';
     import { ref } from 'vue';
   
     const showHeader = ref(false);
