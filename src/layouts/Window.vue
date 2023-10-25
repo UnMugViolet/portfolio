@@ -1,13 +1,32 @@
 <template>
     <section class="absolute radius-window overflow-hidden window-size inset-36 bg-window-blue z-30 ">
-        <div class="absolute top-0 left-0 linear-header-window h-8 w-full z-40"></div>
-        <div class="absolute w-full h-full flex overflow-hidden p-0.5">
-            <div class="relative top-0 w-full h-7 mt-6 linear-background-functions">
-    
+        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1">
+            <div class="h-5/6 text-white font-semibold flex items-center gap-1">
+                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
+                <h4 class="text-header">Mes projets</h4>
+            </div>
+            <div class="h-5/6 mt-px flex items-center gap-px">
+                <WindowMinimize/>
+                <WindowMaximize/>
             </div>
         </div>
+        <div class="absolute w-full h-full overflow-hidden p-0.5">
+            <div class="relative top-0 w-full h-6 mt-6 linear-background-functions">
+    
+            </div>
+            <div class="relative top-0 w-full h-9 linear-background-functions">
+    
+            </div>
+
+        </div>
+
     </section>
 </template>
+
+<script setup>
+import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
+import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
+</script>
 
 <style scoped>
     .radius-window{
@@ -34,5 +53,10 @@
 
     .linear-background-functions{
         background: linear-gradient(to right, rgb(237, 237, 229) 0%, rgb(237, 232, 205) 100%);
+    }
+
+    .text-header{
+        font-size: 0.85rem;
+        text-shadow: 1px 1px 0px #09177F;
     }
 </style>
