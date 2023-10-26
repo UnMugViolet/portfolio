@@ -1,8 +1,12 @@
 <template>
-    <button class="maximize-button relative button-window-global-layout border border-white h-full w-6 hover:brightness-125">
-
+    <button
+      class="maximize-button relative button-window-global-layout border border-white h-full hover:brightness-125 active:brightness-90 before:absolute before:block before:left-1 before:top-1"
+      @click="toggleButton"
+      :class="{ 'clicked': isClicked }"
+    >
     </button>
-</template>
+  </template>
+  
 
 <style scoped>
     .maximize-button{
@@ -12,13 +16,49 @@
 
     .maximize-button::before{
         content: "";
-        position: absolute;
-        display: block;
-        left: 4px;
-        top: 4px;
         box-shadow: white 0px 3px inset, white 0px 0px 0px 1px inset;
-        height: 12px;
-        width: 12px;
+        height: 13px;
+        width: 13px;
     }
 
+
+  .maximize-button.clicked::after{
+    content: "";
+    position: absolute;
+    display: block;
+    left: 4px;
+    top: 8px;
+    box-shadow: white 0px 2px inset, white 0px 0px 0px 1px inset, rgb(19, 109, 255) 1px -1px;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(19, 109, 255); 
+  }
+
+  .maximize-button.clicked::before{
+    content: "";
+    position: absolute;
+    display: block;
+    left: 8px;
+    top: 5px;
+    box-shadow: white 0px 2px inset, white 0px 0px 0px 1px inset;
+    height: 8px;
+    width: 8px;
+}
+
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      isClicked: false,
+    };
+  },
+  methods: {
+    toggleButton() {
+      this.isClicked = !this.isClicked;
+    },
+  },
+};
+</script>
+
