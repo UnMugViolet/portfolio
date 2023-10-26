@@ -8,6 +8,7 @@
             <div class="h-5/6 mt-px flex items-center gap-px">
                 <WindowMinimize/>
                 <WindowMaximize/>
+                <WindowClose/>
             </div>
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.5">
@@ -26,6 +27,7 @@
 <script setup>
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
+import WindowClose from '../components/Buttons/WindowClose.vue';
 </script>
 
 <style scoped>
