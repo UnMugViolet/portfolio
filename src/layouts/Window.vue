@@ -1,6 +1,16 @@
 <template>
-    <section class="absolute radius-window overflow-hidden window-size inset-36 bg-window-blue z-30 ">
-        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1">
+    <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-30"
+    :style="{
+      left: `${windowPosition.x}px`,
+      top: `${windowPosition.y}px`,
+    }"
+    >
+        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
+        @mousedown="startDrag"
+        @mouseup="stopDrag"
+        @mousemove="dragWindow"
+        >
+            
             <div class="h-5/6 text-white font-semibold flex items-center gap-1">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
                 <h4 class="text-header">Mes projets</h4>
@@ -25,9 +35,45 @@
 </template>
 
 <script setup>
-import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
-import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
-import WindowClose from '../components/Buttons/WindowClose.vue';
+  import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
+  import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
+  import WindowClose from '../components/Buttons/WindowClose.vue';
+  import { ref } from 'vue';
+
+  const windowPosition = ref({ x: 180, y: 100 });
+  let isDragging = ref(false);
+  let initialMouseX = ref(0);
+  let initialMouseY = ref(0);
+
+  const startDrag = (event) => {
+    isDragging.value = true;
+    initialMouseX.value = event.clientX;
+    initialMouseY.value = event.clientY;
+  };
+
+  const stopDrag = () => {
+    isDragging.value = false;
+  };
+
+  const throttleDelay = 80; // Adjust this value as needed
+  let lastUpdateTimestamp = 0;
+
+  const dragWindow = (event) => {
+    if (isDragging.value) {
+      const currentTime = performance.now();
+      if (currentTime - lastUpdateTimestamp > throttleDelay) {
+        const deltaX = event.clientX - initialMouseX.value;
+        const deltaY = event.clientY - initialMouseY.value;
+
+        windowPosition.value.x += deltaX;
+        windowPosition.value.y += deltaY;
+
+        initialMouseX.value = event.clientX;
+        initialMouseY.value = event.clientY;
+        lastUpdateTimestamp = currentTime;
+      }
+    }
+  };
 </script>
 
 <style scoped>
