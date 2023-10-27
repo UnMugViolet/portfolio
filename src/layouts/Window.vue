@@ -1,16 +1,6 @@
 <template>
-    <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-30"
-    :style="{
-      left: `${windowPosition.x}px`,
-      top: `${windowPosition.y}px`,
-    }"
-    >
-        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
-        @mousedown="startDrag"
-        @mouseup="stopDrag"
-        @mousemove="dragWindow"
-        >
-            
+  <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-30" :style="windowStyle">
+        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1" @mousedown="startDrag">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
                 <h4 class="text-header">Mes projets</h4>
@@ -38,25 +28,40 @@
   import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
   import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
   import WindowClose from '../components/Buttons/WindowClose.vue';
-  import { ref } from 'vue';
+  import { ref, computed} from 'vue';
 
   const windowPosition = ref({ x: 180, y: 100 });
-  let isDragging = ref(false);
-  let initialMouseX = ref(0);
-  let initialMouseY = ref(0);
+  const isDragging = ref(false);
+  const initialMouseX = ref(0);
+  const initialMouseY = ref(0);
+
+  const throttleDelay = 16; // Update roughly every 16ms (60 FPS)
+  let lastUpdateTimestamp = 0;
+
+  const windowStyle = computed(() => {
+    return {
+      transform: `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`,
+    };
+  });
 
   const startDrag = (event) => {
     isDragging.value = true;
     initialMouseX.value = event.clientX;
     initialMouseY.value = event.clientY;
+
+    // Add mouseup event listener to the whole document to stop dragging
+    document.addEventListener('mouseup', stopDrag);
+    // Add mousemove event listener to the whole document for smoother dragging
+    document.addEventListener('mousemove', dragWindow);
   };
 
   const stopDrag = () => {
     isDragging.value = false;
-  };
 
-  const throttleDelay = 80; // Adjust this value as needed
-  let lastUpdateTimestamp = 0;
+    // Remove mouseup and mousemove event listeners when dragging stops
+    document.removeEventListener('mouseup', stopDrag);
+    document.removeEventListener('mousemove', dragWindow);
+  };
 
   const dragWindow = (event) => {
     if (isDragging.value) {
