@@ -1,6 +1,6 @@
 <template>
     <footer>
-      <div class="absolute bottom-0 footer-gradient shadow-footer w-full z-20">
+      <div class="absolute bottom-0 footer-gradient shadow-footer w-full z-50">
         <div class="h-8 flex items-center justify-between">
           <StartButton @click="toggleHeader" />
           <FooterRight />

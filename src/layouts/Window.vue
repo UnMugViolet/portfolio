@@ -1,7 +1,7 @@
 <template>
-  <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-30" :style="windowStyle">
+  <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-10" :style="windowStyle">
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1" @mousedown="startDrag">
-            <div class="h-5/6 text-white font-semibold flex items-center gap-1">
+            <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
                 <h4 class="text-header">Mes projets</h4>
             </div>

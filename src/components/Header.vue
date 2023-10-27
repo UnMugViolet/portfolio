@@ -1,6 +1,6 @@
 <template>
     <header class="header-component">
-        <div class="absolute left-0 header-radius overflow-hidden bottom-0 mb-8 modal-size z-10 bg-color-blue-window">
+        <div class="absolute left-0 header-radius overflow-hidden bottom-0 mb-8 modal-size z-40 bg-color-blue-window">
             <div class="w-full h-full relative overflow-hidden">
                 <div class="h-16 flex items-center px-2 header-top-background">
                     <ProfilePicture class="w-11 h-11 stroke-white-1 header-profile-shadow"/>
