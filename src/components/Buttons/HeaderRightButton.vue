@@ -4,7 +4,7 @@
             <slot name="img" />
         </div>
 
-        <h3 class="header-font text-sm">
+        <h3 class="header-font text-xs">
             <slot name="text" />
         </h3>
     </button>
