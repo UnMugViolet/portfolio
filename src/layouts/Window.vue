@@ -63,6 +63,9 @@
     document.removeEventListener('mousemove', dragWindow);
   };
 
+  
+  const windowSize = { width: 660, height: 500 };
+
   const dragWindow = (event) => {
     if (isDragging.value) {
       const currentTime = performance.now();
@@ -70,8 +73,19 @@
         const deltaX = event.clientX - initialMouseX.value;
         const deltaY = event.clientY - initialMouseY.value;
 
-        windowPosition.value.x += deltaX;
-        windowPosition.value.y += deltaY;
+        // Calculate the new window position
+        const newX = windowPosition.value.x + deltaX;
+        const newY = windowPosition.value.y + deltaY;
+
+        // Define the boundaries
+        const minX = 0; // Minimum X position
+        const minY = 0; // Minimum Y position
+        const maxX = window.innerWidth - windowSize.width / 10; // Maximum X position
+        const maxY = window.innerHeight - windowSize.height / 10; // Maximum Y position
+
+        // Ensure the window stays within the boundaries
+        windowPosition.value.x = Math.min(Math.max(newX, minX), maxX);
+        windowPosition.value.y = Math.min(Math.max(newY, minY), maxY);
 
         initialMouseX.value = event.clientX;
         initialMouseY.value = event.clientY;
