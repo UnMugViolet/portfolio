@@ -1,12 +1,12 @@
 <template>
     <section
       class="h-screen w-screen overflow-hidden bg-office-pic relative"
-      @click="handleOutsideClick"
+      @mousedown="handleOutsideClick"
     >
       <Header v-if="showHeader" @toggle-header="toggleHeader"/>
-      <DesktopAppsLayout/>
-      <Window>
-        
+      <DesktopAppsLayout @toggle-MyProjects="toggleProjects"/>
+      <Window v-if="showProjects" >
+        <MyProjects/>
       </Window>
       <Footer @toggle-header="toggleHeader" />
     </section>
@@ -21,21 +21,24 @@
     import { ref } from 'vue';
   
     const showHeader = ref(false);
+    const showProjects = ref(false);
   
     const toggleHeader = () => {
       showHeader.value = !showHeader.value;
     };
+
+    const toggleProjects = () => {
+      showProjects.value = true;
+    }
   
     const handleOutsideClick = (event) => {
       if (showHeader.value) {
         const headerElement = document.querySelector('.header-component');
         const startButtonElement = document.querySelector('.start-button');
-        const fullScreenElement = document.querySelector('.full-screen');
   
-        // Check if the clicked element is the StartButton or FullScreen
+        // Cancel close if click occurs on start button
         if (
-          (startButtonElement && startButtonElement.contains(event.target)) ||
-          (fullScreenElement && fullScreenElement.contains(event.target))
+          (startButtonElement && startButtonElement.contains(event.target))
         ) {
         return;
       }
