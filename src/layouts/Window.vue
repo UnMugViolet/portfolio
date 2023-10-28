@@ -1,5 +1,5 @@
 <template>
-  <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-10" :style="windowStyle">
+  <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-10" :style="windowStyle" >
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1" @mousedown="startDrag">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
@@ -7,7 +7,7 @@
             </div>
             <div class="h-5/6 mt-px flex items-center gap-px">
                 <WindowMinimize/>
-                <WindowMaximize/>
+                <WindowMaximize @click="toggleMaximize"/>
                 <WindowClose/>
             </div>
         </div>
@@ -38,11 +38,29 @@
   const throttleDelay = 16; // Update roughly every 16ms (60 FPS)
   let lastUpdateTimestamp = 0;
 
+  const maximized = ref(false);
+
   const windowStyle = computed(() => {
-    return {
+    const sizeStyle = maximized.value
+    ? {
+      width: '100vw',
+      height: '100vh',
+      top: '0',
+      left: '0',
+    }
+    : {
+      width: `${windowSize.width}px`,
+      height: `${windowSize.height}px`,
       transform: `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`,
+    }
+    return {
+      ...sizeStyle,
     };
   });
+
+  const toggleMaximize = () => {
+    maximized.value = !maximized.value;
+  }
 
   const startDrag = (event) => {
     isDragging.value = true;
