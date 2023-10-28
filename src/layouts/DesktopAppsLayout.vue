@@ -6,7 +6,7 @@
         :key="index"
         class="flex flex-col gap-2 items-center w-full"
         @click="toggleEffect(index, item.label)"
-        @dblclick="emitDoubleClickEvent(item.toggleName)"
+        @dblclick="emitWindowToggle(item.toggleName)"
         :class="{ 'active': item.isActive }"
       >
         <img
@@ -82,10 +82,9 @@
     menuItems.value.forEach((item, i) => {
       item.isActive = i === index;
     });
-    // No emit on single click, as requested.
   };
 
-  const emitDoubleClickEvent = (toggleName) => {
+  const emitWindowToggle = (toggleName) => {
     emit('toggle-' + toggleName); // Emit on double click.
   };
 

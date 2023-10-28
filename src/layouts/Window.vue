@@ -1,6 +1,6 @@
 <template>
   <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-10" :style="windowStyle" >
-        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1" @mousedown="startDrag">
+        <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1" @mousedown="startDrag" @dblclick="toggleMaximize">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 "/>
                 <h4 class="text-header">Mes projets</h4>
@@ -8,12 +8,12 @@
             <div class="h-5/6 mt-px flex items-center gap-px">
                 <WindowMinimize/>
                 <WindowMaximize @click="toggleMaximize"/>
-                <WindowClose/>
+                <WindowClose @click="closeWindow"/>
             </div>
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.5">
             <div class="relative top-0 w-full h-6 mt-6 linear-background-functions">
-    
+              
             </div>
             <div class="relative top-0 w-full h-9 linear-background-functions">
     
@@ -28,8 +28,8 @@
   import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
   import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
   import WindowClose from '../components/Buttons/WindowClose.vue';
-  import { ref, computed} from 'vue';
-
+  import { ref, computed } from 'vue';
+  
   const windowPosition = ref({ x: 180, y: 100 });
   const isDragging = ref(false);
   const initialMouseX = ref(0);
@@ -39,6 +39,8 @@
   let lastUpdateTimestamp = 0;
 
   const maximized = ref(false);
+
+  const emit = defineEmits();
 
   const windowStyle = computed(() => {
     const sizeStyle = maximized.value
@@ -61,6 +63,12 @@
   const toggleMaximize = () => {
     maximized.value = !maximized.value;
   }
+
+  const closeWindow = () => {
+    // Emit the custom event to the parent component along with the identifier
+    emit('close-window');
+  };
+  
 
   const startDrag = (event) => {
     isDragging.value = true;
