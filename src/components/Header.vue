@@ -11,7 +11,7 @@
                     <div class="w-full h-full flex">
                         <div class="w-7/12 h-full bg-white px-1 py-1"> 
                             <div class="py-2 flex flex-col gap-3">
-                                <HeaderLeftButton @click="turnOffHeader">
+                                <HeaderLeftButton @click="turnOffHeader" @toggle-button="toggleWindow" :buttonName="myProjects">
                                     <template #img>
                                         <img src="src/assets/img/icons/projects-icon.png" alt="A propos">
                                     </template>
@@ -117,6 +117,12 @@
     const turnOffHeader = () => {
         emit('toggle-header');
     };
+
+    const myProjects = 'myProjects';
+
+    const toggleWindow = (buttonName) => {
+        emit('toggle-' + buttonName); 
+    }
 </script>
 
 

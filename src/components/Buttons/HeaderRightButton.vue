@@ -1,5 +1,5 @@
 <template>
-    <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style">
+    <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style" @click="toggleButton">
         <div class="w-7 h-7">
             <slot name="img" />
         </div>
@@ -10,6 +10,18 @@
     </button>
 </template>
 
+<script>
+    export default {
+    methods: {
+        toggleButton() {
+        this.$emit('toggle-button', this.buttonName); // Pass the buttonName to the parent component
+        }
+    },
+    props: {
+        buttonName: String // Add a prop to receive the button name
+    }
+    };
+</script>
 
 <style scoped>
     .component-style{

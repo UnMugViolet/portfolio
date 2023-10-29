@@ -1,6 +1,6 @@
 <template>
   <section class="h-screen w-screen overflow-hidden bg-office-pic relative" @mousedown="handleOutsideClick">
-    <Header v-if="showHeader" @toggle-header="toggleHeader" />
+    <Header v-if="showHeader" @toggle-header="toggleHeader" @toggle-myProjects="openWindow('myProjects')"/>
     <DesktopAppsLayout @toggle-MyProjects="openWindow('myProjects')" />
     <div v-for="window in windows" :key="window.id">
       <Window v-if="window.visible" @close-window="closeWindow(window.id)">
