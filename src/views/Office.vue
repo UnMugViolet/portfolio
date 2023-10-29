@@ -17,7 +17,7 @@ import Header from '/src/components/Header.vue';
 import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
 import MyProjects from '../components/Office/MyProjects.vue';
 import Window from '../layouts/Window.vue';
-import { ref, defineProps, defineEmits } from 'vue';
+import { ref } from 'vue';
 
 const showHeader = ref(false);
 const windows = ref([]);
