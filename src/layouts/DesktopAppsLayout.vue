@@ -5,7 +5,7 @@
         v-for="(item, index) in menuItems"
         :key="index"
         class="flex flex-col gap-2 items-center w-full"
-        @click="toggleEffect(index, item.label)"
+        @click="toggleEffect(index)"
         @dblclick="removeFilterAndToggle(item.toggleName)"
         :class="{ 'active': item.isActive }"
       >
@@ -77,8 +77,7 @@
     },
   ]);
 
-  const toggleEffect = (index, label) => {
-    const clickedItem = menuItems.value[index];
+  const toggleEffect = (index) => {
     menuItems.value.forEach((item, i) => {
       item.isActive = i === index;
     });
