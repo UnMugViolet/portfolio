@@ -6,7 +6,7 @@
         :key="index"
         class="flex flex-col gap-2 items-center w-full"
         @click="toggleEffect(index, item.label)"
-        @dblclick="emitWindowToggle(item.toggleName)"
+        @dblclick="removeFilterAndToggle(item.toggleName)"
         :class="{ 'active': item.isActive }"
       >
         <img
@@ -84,7 +84,10 @@
     });
   };
 
-  const emitWindowToggle = (toggleName) => {
+  const removeFilterAndToggle = (toggleName) => {
+    menuItems.value.forEach((item) => {
+      item.isActive = false;
+    });
     emit('toggle-' + toggleName); // Emit on double click.
   };
 
