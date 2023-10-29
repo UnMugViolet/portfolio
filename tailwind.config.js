@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dropdown: '#1660E8',
+      },
+    },
   },
   plugins: [],
 }
