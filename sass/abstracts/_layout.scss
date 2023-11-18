@@ -42,6 +42,9 @@ img {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.border-top-grey {
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+}
 
 // Background colors
 .bg-color-load-header-blue {
@@ -64,8 +67,6 @@ img {
     background-color: $container-blue;
 }
 
-
-
 .bg-color-container{
     background: linear-gradient(rgb(24, 104, 206) 0%, rgb(14, 96, 203) 12%, rgb(14, 96, 203) 20%, rgb(17, 100, 207) 32%, rgb(22, 103, 207) 33%, rgb(27, 108, 211) 47%, rgb(30, 112, 217) 54%, rgb(36, 118, 220) 60%, rgb(41, 122, 224) 65%, rgb(52, 130, 227) 77%, rgb(55, 134, 229) 79%, rgb(66, 142, 233) 90%, rgb(71, 145, 235) 100%);
 }
@@ -77,8 +78,6 @@ img {
 .bg-footer-right-component {
     background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%);
 }
-
-
 
 .bg-orange-hr{
     border: 0px;
@@ -134,9 +133,12 @@ img {
     box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
 }
 
-
 .header-profile-shadow{
     box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-header-window {
+    box-shadow: rgb(176, 176, 176) 0px -2px 3px -1px inset;
 }
 
 /* ---------Text Shadow---------*/

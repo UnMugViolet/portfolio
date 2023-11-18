@@ -3,7 +3,7 @@
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
             @mousedown="startDrag" @dblclick="toggleMaximize">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
-                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4 " />
+                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
                 <h4 class="text-header">Mes projets</h4>
             </div>
             <div class="h-5/6 mt-px flex items-center gap-px">
@@ -37,20 +37,36 @@
                     </WindowDropdown>
                 </div>
                 <div class="flex items-center h-6">
-                    <img src="src/assets/img/icons/windows-header-window-icon.png" alt="window icon"
+                    <img src="src/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets"
                         class="h-full pt-0.5" />
                 </div>
-
             </div>
             <div class="relative top-0 w-full h-9 linear-background-functions">
                 <div>
                     
                 </div>
             </div>
+            <div class="flex items-center top-0 w-full h-5 px-0.5 linear-background-functions border-top-grey shadow-header-window">
+                <div>
+                    <p class="small-p text-gray-500 px-1.5">
+                        Adresse
+                    </p>
+                </div>
+                <div class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-3.5 h-3.5"/>
+                        <p class="px-1 small-p">Mes projets</p>
+                    </div>
+                    <div class="m-px hover:brightness-105">
+                        <DropdownIcon />
+                    </div>
+                </div>
+                <div class="w-16">
 
+                </div>
+            </div>
         </div>
-
-    </section>
+      </section>
 </template>
 
 <script setup>
@@ -58,7 +74,9 @@ import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
 import WindowDropdown from '../components/Buttons/WindowDropdown.vue';
+import DropdownIcon from '/src/components/icons/DropdownIcon.vue';
 import { ref, computed } from 'vue';
+
 
 const windowPosition = ref({ x: 180, y: 100 });
 const isDragging = ref(false);
