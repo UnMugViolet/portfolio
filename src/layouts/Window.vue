@@ -43,7 +43,9 @@
             </div>
             <div class="relative top-0 w-full h-9 linear-background-functions">
                 <div>
-                    
+                    <div>
+                        
+                    </div>
                 </div>
             </div>
             <div class="flex items-center top-0 w-full h-5 px-0.5 linear-background-functions border-top-grey shadow-header-window">
@@ -57,12 +59,13 @@
                         <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-3.5 h-3.5"/>
                         <p class="px-1 small-p">Mes projets</p>
                     </div>
-                    <div class="m-px hover:brightness-105">
-                        <DropdownIcon />
+                    <div class="m-px hover:brightness-110">
+                        <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
                     </div>
                 </div>
-                <div class="w-16">
-
+                <div class="flex items-center px-2 gap-1 w-20">
+                    <img src="src/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
+                    <p class="small-p">Aller</p>
                 </div>
             </div>
         </div>
@@ -74,7 +77,6 @@ import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
 import WindowDropdown from '../components/Buttons/WindowDropdown.vue';
-import DropdownIcon from '/src/components/icons/DropdownIcon.vue';
 import { ref, computed } from 'vue';
 
 
