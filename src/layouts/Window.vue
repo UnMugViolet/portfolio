@@ -36,15 +36,14 @@
                         </template>
                     </WindowDropdown>
                 </div>
-                <div class="flex items-center h-6">
-                    <img src="src/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets"
-                        class="h-full pt-0.5" />
+                <div class="flex items-center h-6 w-10">
+                    <img src="src/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets" class="h-full pt-0.5 border-window-header-bot"/>
                 </div>
             </div>
             <div class="relative top-0 w-full h-9 linear-background-functions">
                 <div>
                     <div>
-                        
+
                     </div>
                 </div>
             </div>
