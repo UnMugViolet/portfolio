@@ -40,10 +40,19 @@
                     <img src="src/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets" class="h-full pt-0.5 border-window-header-bot"/>
                 </div>
             </div>
-            <div class="relative top-0 w-full h-9 linear-background-functions">
-                <div>
-                    <div>
-
+            <div class="relative top-0 w-full h-9 linear-background-functions border-top-grey">
+                <div class="flex items-center h-full gap-1">
+                    <div class="flex items-center px-1">
+                        <img src="/src/assets/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7"/>
+                        <p class="small-p mr-2">Retour</p>
+                        <div class="block border-solid down-arrow"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="/src/assets/img/icons/left-arrow-green-icon.png" alt="suivant" class="w-7 h-7"/>
+                        <div class="block border-solid down-arrow ml-px"></div>
+                    </div>
+                    <div class="">
+                        <img src="/src/assets/img/icons/document-error-icon.png" alt="projects-icon" class="w-7 h-7"/>
                     </div>
                 </div>
             </div>
@@ -185,10 +194,6 @@ const dragWindow = (event) => {
     height: 500px;
 }
 
-/* .bg-window-blue:hover{ */
-/* background-color: #6582F5; */
-/* } */
-
 .linear-header-window {
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
 }
@@ -200,4 +205,11 @@ const dragWindow = (event) => {
 .text-header {
     font-size: 0.85rem;
     text-shadow: 1px 1px 0px #09177F;
-}</style>
+}
+
+.down-arrow {
+    content: "";
+    border-width: 3px 3px 0px;
+    border-color: rgb(0, 0, 0) transparent;
+}
+</style>
