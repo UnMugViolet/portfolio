@@ -12,7 +12,7 @@
                 <WindowClose @click="closeWindow" />
             </div>
         </div>
-        <div class="absolute w-full h-full overflow-hidden p-0.5">
+        <div class="absolute w-full h-full overflow-hidden p-0.75">
             <div class="relative top-0 w-full h-6 mt-6 linear-background-functions flex justify-between">
                 <div class="w-full h-full px-0.5 pt-1 flex items-center border-window-header-right border-window-header-bot">
                     <WindowDropdown>
@@ -43,12 +43,12 @@
             <div class="relative top-0 w-full h-9 linear-background-functions border-top-grey">
                 <div class="flex items-center h-full">
                     <div class="flex items-center px-1">
-                        <div class="flex items-center">
+                        <div class="flex items-center mr-2">
                             <img src="/src/assets/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7"/>
                             <p class="small-p mr-2 cursor-default">Retour</p>
                             <div class="block border-solid down-arrow"></div>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center mr-1">
                             <img src="/src/assets/img/icons/left-arrow-green-icon.png" alt="suivant" class="w-7 h-7"/>
                             <div class="block border-solid down-arrow ml-px"></div>
                         </div>
@@ -71,9 +71,6 @@
                         <div class="block border-solid down-arrow ml-2"></div>
                     </div>
                 </div>
-                <div>
-                    
-                </div>
             </div>
             <div class="flex items-center top-0 w-full h-5 px-0.5 linear-background-functions border-top-grey shadow-header-window">
                 <div>
@@ -93,6 +90,16 @@
                 <div class="flex items-center px-2 gap-1 w-20">
                     <img src="src/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
                     <p class="small-p cursor-default">Aller</p>
+                </div>
+            </div>
+
+            <!-- Left section & Content-->
+            <div class="relative right-0 h-content-window flex">
+                <div class="bg-window-right-component w-4/12 max-w-220 h-full">
+
+                </div>
+                <div class="w-full h-full bg-white">
+
                 </div>
             </div>
         </div>
