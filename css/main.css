@@ -222,6 +222,10 @@ img {
   box-shadow: rgb(176, 176, 176) 0px -2px 3px -1px inset;
 }
 
+.box-shadow-header-window:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 1px inset;
+}
+
 /* ---------Text Shadow---------*/
 .text-shadow-header {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
