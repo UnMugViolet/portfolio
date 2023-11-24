@@ -41,31 +41,50 @@
                 </div>
             </div>
             <div class="relative top-0 w-full h-9 linear-background-functions border-top-grey">
-                <div class="flex items-center h-full gap-1">
+                <div class="flex items-center h-full">
                     <div class="flex items-center px-1">
-                        <img src="/src/assets/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7"/>
-                        <p class="small-p mr-2">Retour</p>
-                        <div class="block border-solid down-arrow"></div>
+                        <div class="flex items-center">
+                            <img src="/src/assets/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7"/>
+                            <p class="small-p mr-2 cursor-default">Retour</p>
+                            <div class="block border-solid down-arrow"></div>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="/src/assets/img/icons/left-arrow-green-icon.png" alt="suivant" class="w-7 h-7"/>
+                            <div class="block border-solid down-arrow ml-px"></div>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <img src="/src/assets/img/icons/left-arrow-green-icon.png" alt="suivant" class="w-7 h-7"/>
-                        <div class="block border-solid down-arrow ml-px"></div>
+                    <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-1">
+                        <img src="/src/assets/img/icons/folder-open-icon.png" alt="projects-icon" class="w-6 h-6"/>
                     </div>
-                    <div class="">
-                        <img src="/src/assets/img/icons/document-error-icon.png" alt="projects-icon" class="w-7 h-7"/>
+                    <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
+                    <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 ml-1 mr-1">
+                        <img src="/src/assets/img/icons/magnifier-icon.png" alt="projects-icon" class="w-auto h-5"/>
+                        <p class="small-p px-1 cursor-default">Rechercher</p>
                     </div>
+                    <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8">
+                        <img src="/src/assets/img/icons/folder-opening-icon.png" alt="projects-icon" class="w-auto h-6"/>
+                        <p class="small-p px-1 cursor-default">Fichiers</p>
+                    </div>
+                    <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
+                    <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-1">
+                        <img src="/src/assets/img/icons/project-folder-icon.png" alt="projects-icon" class="w-6 h-6"/>
+                        <div class="block border-solid down-arrow ml-2"></div>
+                    </div>
+                </div>
+                <div>
+                    
                 </div>
             </div>
             <div class="flex items-center top-0 w-full h-5 px-0.5 linear-background-functions border-top-grey shadow-header-window">
                 <div>
-                    <p class="small-p text-gray-500 px-1.5">
+                    <p class="small-p text-gray-500 px-1.5 cursor-default">
                         Adresse
                     </p>
                 </div>
                 <div class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between">
                     <div class="flex items-center">
                         <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-3.5 h-3.5"/>
-                        <p class="px-1 small-p">Mes projets</p>
+                        <p class="px-1 small-p cursor-default">Mes projets</p>
                     </div>
                     <div class="m-px hover:brightness-110">
                         <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
@@ -73,7 +92,7 @@
                 </div>
                 <div class="flex items-center px-2 gap-1 w-20">
                     <img src="src/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
-                    <p class="small-p">Aller</p>
+                    <p class="small-p cursor-default">Aller</p>
                 </div>
             </div>
         </div>
