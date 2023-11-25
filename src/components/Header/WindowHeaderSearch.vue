@@ -1,0 +1,22 @@
+<template>
+    <div class="flex items-center top-0 w-full h-5 px-0.5 bg-window-white border-top-grey shadow-header-window">
+        <div>
+            <p class="small-p text-gray-500 px-1.5 cursor-default">
+                Adresse
+            </p>
+        </div>
+        <div class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-3.5 h-3.5"/>
+                <p class="px-1 small-p cursor-default">Mes projets</p>
+            </div>
+            <div class="m-px hover:brightness-110">
+                <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
+            </div>
+        </div>
+        <div class="flex items-center px-2 gap-1 w-20">
+            <img src="src/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
+            <p class="small-p cursor-default">Aller</p>
+        </div>
+    </div>
+</template>

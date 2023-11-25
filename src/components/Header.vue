@@ -24,7 +24,7 @@
                                 </HeaderLeftButton>
                                 <HeaderLeftButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/email-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/email-large-icon.png" alt="A propos">
                                     </template>
                                     <template #title>
                                         E-mail
