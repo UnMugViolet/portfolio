@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 import WindowDropdown from '/src/components/Buttons/WindowDropdown.vue';
 
 const props = defineProps({

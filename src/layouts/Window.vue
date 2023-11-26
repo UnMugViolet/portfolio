@@ -1,7 +1,7 @@
 <template>
-    <section class="absolute radius-window overflow-hidden window-size bg-window-blue z-10" :style="windowStyle">
+    <section class="absolute radius-window overflow-hidden bg-window-blue z-10" :style="windowStyle">
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
-            @mousedown="startDrag" @dblclick="toggleMaximize">
+            @mousedown="startDrag">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
                 <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
                 <h4 class="text-header">Mes projets</h4>
@@ -27,6 +27,9 @@
                 </div>
             </div>
         </div>
+        <div class="resize-handle right" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
+        <div class="resize-handle bottom" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
+        <div class="resize-handle left" @mousedown="startResize" data-direction="left" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
       </section>
 </template>
 
@@ -40,6 +43,7 @@ import WindowHeaderSearch from '../components/Header/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Header/WindowHeaderDropdown.vue';
 
 
+const windowSize = { width: 660, height: 500 };
 const windowPosition = ref({ x: 180, y: 100 });
 const isDragging = ref(false);
 const initialMouseX = ref(0);
@@ -52,6 +56,11 @@ const maximized = ref(false);
 
 const emit = defineEmits();
 
+const windowWidth = ref(windowSize.width);
+const windowHeight = ref(windowSize.height);
+const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`);
+
+
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
         ? {
@@ -61,10 +70,10 @@ const windowStyle = computed(() => {
             left: '0',
         }
         : {
-            width: `${windowSize.width}px`,
-            height: `${windowSize.height}px`,
-            transform: `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`,
-        }
+            width: `${windowWidth.value}px`,
+            height: `${windowHeight.value}px`,
+            transform: windowTransform.value,
+        };
     return {
         ...sizeStyle,
     };
@@ -78,7 +87,6 @@ const closeWindow = () => {
     // Emit the custom event to the parent component along with the identifier
     emit('close-window');
 };
-
 
 const startDrag = (event) => {
     isDragging.value = true;
@@ -99,11 +107,8 @@ const stopDrag = () => {
     document.removeEventListener('mousemove', dragWindow);
 };
 
-
-const windowSize = { width: 660, height: 500 };
-
 const dragWindow = (event) => {
-    if (isDragging.value) {
+    if (isDragging.value && !resizing.value) {
         const currentTime = performance.now();
         if (currentTime - lastUpdateTimestamp > throttleDelay) {
             const deltaX = event.clientX - initialMouseX.value;
@@ -123,12 +128,66 @@ const dragWindow = (event) => {
             windowPosition.value.x = Math.min(Math.max(newX, minX), maxX);
             windowPosition.value.y = Math.min(Math.max(newY, minY), maxY);
 
+            // Update the transform property
+            windowTransform.value = `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`;
+
             initialMouseX.value = event.clientX;
             initialMouseY.value = event.clientY;
             lastUpdateTimestamp = currentTime;
         }
     }
 };
+
+
+const resizing = ref(false);
+const initialWindowSize = ref({ width: 0, height: 0 });
+const resizeDirection = ref('');
+
+const startResize = (event) => {
+    resizing.value = true;
+    initialMouseX.value = event.clientX;
+    initialMouseY.value = event.clientY;
+    resizeDirection.value = event.target.dataset.direction;
+
+    // Set the initial window size based on the current size
+    initialWindowSize.value = { width: windowWidth.value, height: windowHeight.value };
+
+    document.addEventListener('mouseup', stopResize);
+    document.addEventListener('mousemove', resizeWindow);
+
+    // Disable user selection
+    document.body.style.userSelect = 'none';
+};
+
+const stopResize = () => {
+    resizing.value = false;
+
+    document.removeEventListener('mouseup', stopResize);
+    document.removeEventListener('mousemove', resizeWindow);
+
+    // Enable user selection
+    document.body.style.userSelect = '';
+};
+
+const resizeWindow = (event) => {
+    if (resizing.value) {
+        const deltaX = event.clientX - initialMouseX.value;
+        const deltaY = event.clientY - initialMouseY.value;
+
+        if (resizeDirection.value.includes('right') || resizeDirection.value.includes('left')) {
+            const newWidth = initialWindowSize.value.width + deltaX;
+            windowWidth.value = newWidth < 200 ? 200 : newWidth;
+        }
+        if (resizeDirection.value.includes('bottom')) {
+            const newHeight = initialWindowSize.value.height + deltaY;
+            windowHeight.value = newHeight < 110 ? 110 : newHeight;
+        }
+
+        // Update the transform property
+        windowTransform.value = `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`;
+    }
+};
+
 </script>
 
 <style scoped>
@@ -141,10 +200,6 @@ const dragWindow = (event) => {
     background-color: #0831D9;
 }
 
-.window-size {
-    width: 660px;
-    height: 500px;
-}
 
 .linear-header-window {
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
@@ -153,5 +208,33 @@ const dragWindow = (event) => {
 .text-header {
     font-size: 0.85rem;
     text-shadow: 1px 1px 0px #09177F;
+}
+
+.resize-handle {
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+}
+
+.right {
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    cursor: ew-resize;
+}
+.bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    cursor: ns-resize;
+}
+.left {
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    cursor: ew-resize;
 }
 </style>
