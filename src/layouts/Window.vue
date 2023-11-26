@@ -2,15 +2,21 @@
     <section class="absolute radius-window overflow-hidden bg-window-blue z-10" :style="windowStyle">
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
             @mousedown="startDrag">
-            <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none">
-                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
-                <h4 class="text-header">Mes projets</h4>
+            <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
+                @mousedown="startDrag">
+                <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
+                    <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
+                    <div class="flex-shrink-0 overflow-hidden">
+                        <h4 class="text-header truncate">Mes projets de ouf ouah comment ils sont bieng</h4>
+                    </div>
+                </div>
+                <div class="h-5/6 mt-px flex items-center gap-px">
+                    <WindowMinimize />
+                    <WindowMaximize @click="toggleMaximize" />
+                    <WindowClose @click="closeWindow" />
+                </div>
             </div>
-            <div class="h-5/6 mt-px flex items-center gap-px">
-                <WindowMinimize />
-                <WindowMaximize @click="toggleMaximize" />
-                <WindowClose @click="closeWindow" />
-            </div>
+
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
@@ -19,11 +25,11 @@
 
             <!-- Left section & Content-->
             <div class="relative right-0 h-content-window flex">
-                <div class="bg-window-right-component w-4/12 max-w-220 h-full">
+                <div class="bg-window-right-component w-194px h-full flex-shrink-0">
 
                 </div>
-                <div class="w-full h-full bg-white">
-
+                <div class="w-full h-full bg-white overflow-auto">
+                    
                 </div>
             </div>
         </div>
@@ -200,7 +206,6 @@ const resizeWindow = (event) => {
     background-color: #0831D9;
 }
 
-
 .linear-header-window {
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
 }
@@ -237,4 +242,6 @@ const resizeWindow = (event) => {
     height: 100%;
     cursor: ew-resize;
 }
+
+
 </style>
