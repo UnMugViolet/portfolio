@@ -15,8 +15,8 @@ module.exports = {
       padding: {
         '0.75': '0.19rem',
       },
-      maxWidth: {
-        '220': '220px',
+      width: {
+        '194px': '194px',
       },
     },
   },
