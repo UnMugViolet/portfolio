@@ -31,11 +31,21 @@
                 <div class="w-full h-full bg-white overflow-auto">
                     
                 </div>
+
             </div>
+            <footer class="relative bottom-5 w-full h-5 ">
+                <div class="">
+
+                </div>
+            </footer>
+            
         </div>
         <div class="resize-handle right" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
         <div class="resize-handle bottom" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
         <div class="resize-handle left" @mousedown="startResize" data-direction="left" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
+
+
+
       </section>
 </template>
 
@@ -71,7 +81,7 @@ const windowStyle = computed(() => {
     const sizeStyle = maximized.value
         ? {
             width: '100vw',
-            height: '100vh',
+            height: 'calc(100vh - 26px)',
             top: '0',
             left: '0',
         }
