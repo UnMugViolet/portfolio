@@ -13,6 +13,9 @@ module.exports = {
         'dropdown': '#1660E8',
         'window-blue': '#0831D9'
       },
+      fontSize: {
+        'xs': '0.7rem',
+      },
       padding: {
         '0.75': '0.19rem',
       },

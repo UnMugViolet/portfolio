@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </section>
-                <div class="bg absolute bottom-0 h-12 w-full ">
+                <div class="absolute bottom-0 h-12 w-full ">
                     <div class="header-bot-background h-full flex justify-end items-center">
                         <div class="flex h-5/6 gap-3 mr-2">
                             <HeaderDisconnect @click="turnOffHeader"/>
