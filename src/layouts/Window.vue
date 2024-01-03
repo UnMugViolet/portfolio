@@ -26,19 +26,12 @@
             <!-- Left section & Content-->
             <div class="relative right-0 h-content-window flex">
                 <div class="bg-window-right-component w-194px h-full flex-shrink-0">
-
+                
                 </div>
                 <div class="w-full h-full bg-white overflow-auto">
                     
                 </div>
-
-            </div>
-            <footer class="relative bottom-5 w-full h-5 ">
-                <div class="">
-
-                </div>
-            </footer>
-            
+            </div>            
         </div>
         <div class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
         <div class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
@@ -79,21 +72,21 @@ const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosi
 
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
-        ? {
-            width: appWidth,
-            height: appHeight,
-            top: '0',
-            left: '0',
-        }
-        : {
-            width: `${windowWidth.value}px`,
-            height: `${windowHeight.value}px`,
-            transform: windowTransform.value,
-        };
+      ? {
+          width: `${window.innerWidth}px`,
+          height: `${window.innerHeight - 32}px`,
+          top: '0',
+          left: '0',
+      }
+      : {
+          width: `${windowWidth.value}px`,
+          height: `${windowHeight.value}px`,
+          transform: windowTransform.value,
+      };
     return {
-        ...sizeStyle,
+      ...sizeStyle,
     };
-});
+  });
 
 const toggleMaximize = () => {
     maximized.value = !maximized.value;
