@@ -1,6 +1,6 @@
 <template>
     <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style" @click="toggleButton">
-        <div class="w-7 h-7">
+        <div class="w-6 h-6 md:w-7 md:h-7">
             <slot name="img" />
         </div>
 
