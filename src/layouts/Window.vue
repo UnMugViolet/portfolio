@@ -6,8 +6,8 @@
                 @mousedown="startDrag">
                 <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
                     <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
-                    <div class="flex-shrink-0 overflow-hidden">
-                        <h4 class="text-header truncate">Mes projets de ouf ouah comment ils sont bieng</h4>
+                    <div class="flex items-center overflow-hidden">
+                        <h4 class="text-header truncate">Mes projets</h4>
                     </div>
                 </div>
                 <div class="h-5/6 mt-px flex items-center gap-px">
@@ -42,15 +42,11 @@
         </div>
         <div class="resize-handle right" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
         <div class="resize-handle bottom" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
-        <div class="resize-handle left" @mousedown="startResize" data-direction="left" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
-
-
-
       </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -58,6 +54,9 @@ import WindowHeaderTools from '../components/Header/WindowHeaderTools.vue';
 import WindowHeaderSearch from '../components/Header/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Header/WindowHeaderDropdown.vue';
 
+
+const appHeight = window.innerHeight - 32;
+const appWidth = window.innerWidth;
 
 const windowSize = { width: 660, height: 500 };
 const windowPosition = ref({ x: 180, y: 100 });
@@ -80,8 +79,8 @@ const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosi
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
         ? {
-            width: '100vw',
-            height: 'calc(100vh - 26px)',
+            width: appWidth,
+            height: appHeight,
             top: '0',
             left: '0',
         }
@@ -100,7 +99,6 @@ const toggleMaximize = () => {
 }
 
 const closeWindow = () => {
-    // Emit the custom event to the parent component along with the identifier
     emit('close-window');
 };
 
@@ -190,12 +188,14 @@ const resizeWindow = (event) => {
         const deltaX = event.clientX - initialMouseX.value;
         const deltaY = event.clientY - initialMouseY.value;
 
-        if (resizeDirection.value.includes('right') || resizeDirection.value.includes('left')) {
-            const newWidth = initialWindowSize.value.width + deltaX;
+        if (resizeDirection.value.includes('right')) {
+            let newWidth = initialWindowSize.value.width + deltaX;
+            newWidth = Math.min(newWidth, appWidth);
             windowWidth.value = newWidth < 200 ? 200 : newWidth;
         }
         if (resizeDirection.value.includes('bottom')) {
-            const newHeight = initialWindowSize.value.height + deltaY;
+            let newHeight = initialWindowSize.value.height + deltaY;
+            newHeight = Math.min(newHeight, appHeight);
             windowHeight.value = newHeight < 110 ? 110 : newHeight;
         }
 
