@@ -40,8 +40,9 @@
             </footer>
             
         </div>
-        <div class="resize-handle right" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
-        <div class="resize-handle bottom" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
+        <div class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
+        <div class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
+        <div class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize" @mousedown="startResize" data-direction="corner" :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"></div>
       </section>
 </template>
 
@@ -188,14 +189,20 @@ const resizeWindow = (event) => {
         const deltaX = event.clientX - initialMouseX.value;
         const deltaY = event.clientY - initialMouseY.value;
 
-        if (resizeDirection.value.includes('right')) {
+        if (resizeDirection.value === 'right') {
             let newWidth = initialWindowSize.value.width + deltaX;
             newWidth = Math.min(newWidth, appWidth);
             windowWidth.value = newWidth < 200 ? 200 : newWidth;
-        }
-        if (resizeDirection.value.includes('bottom')) {
+        } else if (resizeDirection.value === 'bottom') {
             let newHeight = initialWindowSize.value.height + deltaY;
             newHeight = Math.min(newHeight, appHeight);
+            windowHeight.value = newHeight < 110 ? 110 : newHeight;
+        } else if (resizeDirection.value === 'corner') {
+            let newWidth = initialWindowSize.value.width + deltaX;
+            let newHeight = initialWindowSize.value.height + deltaY;
+            newWidth = Math.min(newWidth, appWidth);
+            newHeight = Math.min(newHeight, appHeight);
+            windowWidth.value = newWidth < 200 ? 200 : newWidth;
             windowHeight.value = newHeight < 110 ? 110 : newHeight;
         }
 
@@ -212,10 +219,6 @@ const resizeWindow = (event) => {
     border-top-right-radius: 8px;
 }
 
-.bg-window-blue {
-    background-color: #0831D9;
-}
-
 .linear-header-window {
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
 }
@@ -224,34 +227,4 @@ const resizeWindow = (event) => {
     font-size: 0.85rem;
     text-shadow: 1px 1px 0px #09177F;
 }
-
-.resize-handle {
-    position: absolute;
-    background: transparent;
-    cursor: pointer;
-}
-
-.right {
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    cursor: ew-resize;
-}
-.bottom {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    cursor: ns-resize;
-}
-.left {
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 100%;
-    cursor: ew-resize;
-}
-
-
 </style>
