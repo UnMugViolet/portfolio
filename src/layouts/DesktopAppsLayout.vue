@@ -2,33 +2,33 @@
   <section class="absolute top-0 left-0">
     <div class="grid grid-cols-2 gap-5 pt-6 pl-6">
       <button
-        v-for="(item, index) in menuItems"
-        :key="index"
+        v-for="(entity) in localEntities"
+        :key="entity.id"
         class="flex flex-col gap-2 items-center w-full"
-        @click="toggleEffect(index)"
-        @dblclick="removeFilterAndToggle(item.toggleName)"
-        :class="{ 'active': item.isActive }"
+        @click="toggleEffect(entity)"
+        @dblclick="removeFilterAndToggle(entity)"
+        :class="{ 'active': entity.isActive }"
       >
         <img
           class="w-11 h-11"
           :style="{
-            ...item.imageStyle,
-            opacity: item.isActive ? 0.5 : 1
+            ...entity.imageStyle,
+            opacity: entity.isActive ? 0.5 : 1
           }"
-          :src="item.imageSrc"
-          :alt="item.alt"
+          :src="entity.imgSrc"
+          :alt="entity.title"
         />
         <p
           class="text-white text-xs font-normal py-px px-1"
           :style="{
-            ...item.textStyle,
-            backgroundColor: item.isActive ? 'rgb(11, 97, 255)' : 'transparent',
-            textShadow: item.isActive
+            ...entity.textStyle,
+            backgroundColor: entity.isActive ? 'rgb(11, 97, 255)' : 'transparent',
+            textShadow: entity.isActive
               ? 'none'
               : '0px 1px 1px rgba(1, 1, 1, 1), 0px 0px 4px #000'
           }"
         >
-          {{ item.label }}
+          {{ entity.title }}
         </p>
       </button>
     </div>
@@ -36,65 +36,40 @@
 </template>
 
 <script setup>
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue';
   const emit = defineEmits();
 
-  const menuItems = ref([
-    {
-      label: 'Mes projets',
-      imageSrc: 'src/assets/img/icons/projects-large-icon.png',
-      alt: 'Mes projets',
-      toggleName: 'myProjects',
-      isActive: false,
-    },
-    {
-      label: 'Musiques',
-      imageSrc: 'src/assets/img/icons/playmusic-icon.png',
-      alt: 'Musiques',
-      toggleName: 'myMusic',
-      isActive: false,
-    },
-    {
-      label: 'Jouer',
-      imageSrc: 'src/assets/img/icons/play-large-icon.png',
-      alt: 'Jouer',
-      toggleName: 'play',
-      isActive: false,
-    },
-    {
-      label: 'Mon CV',
-      imageSrc: 'src/assets/img/icons/cv-large-icon.png',
-      alt: 'Mon CV',
-      toggleName: 'myCv',
-      isActive: false,
-    },
-    {
-      label: 'Me contacter',
-      imageSrc: 'src/assets/img/icons/email-large-icon.png',
-      alt: 'Me contacter',
-      toggleName: 'contact',
-      isActive: false,
-    },
-  ]);
+  const props = defineProps({
+    entities: {
+      type: Array,
+      required: true
+    }
+  });
 
-  const toggleEffect = (index) => {
-    menuItems.value.forEach((item, i) => {
-      item.isActive = i === index;
+  const localEntities = ref([]);
+
+  watchEffect(() => {
+    localEntities.value = [...props.entities];
+  });
+
+  const toggleEffect = (selectedEntity) => {
+    localEntities.value.forEach((entity) => {
+      entity.isActive = entity.id === selectedEntity.id;
     });
   };
 
-  const removeFilterAndToggle = (toggleName) => {
-    menuItems.value.forEach((item) => {
-      item.isActive = false;
+  const removeFilterAndToggle = (entity) => {
+    localEntities.value.forEach((e) => {
+      e.isActive = false;
     });
-    emit('toggle-' + toggleName); // Emit on double click.
+    emit('toggle-' + entity.id); // Emit on double click.
   };
 
   onMounted(() => {
     const clickOutsideHandler = (event) => {
       if (!event.target.closest('.active')) {
-        menuItems.value.forEach((item) => {
-          item.isActive = false;
+        localEntities.value.forEach((entity) => {
+          entity.isActive = false;
         });
       }
     };

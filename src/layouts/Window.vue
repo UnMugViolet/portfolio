@@ -40,14 +40,13 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
-import WindowHeaderTools from '../components/Header/WindowHeaderTools.vue';
-import WindowHeaderSearch from '../components/Header/WindowHeaderSearch.vue';
-import WindowHeaderDropdown from '../components/Header/WindowHeaderDropdown.vue';
-
+import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
+import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
+import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
