@@ -7,8 +7,10 @@
         </div>
         <div class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between">
             <div class="flex items-center overflow-hidden">
-                <img src="src/assets/img/icons/projects-icon-sm.png" alt="projects-icon" class="w-3.5 h-3.5"/>
-                <p class="px-1 small-p cursor-default truncate">Mes projets</p>
+                <img :src="iconSrc" alt="projects-icon" class="w-3.5 h-3.5"/>
+                <p class="px-1 small-p cursor-default truncate mt-px">
+                    {{ title }}
+                </p>
             </div>
             <div class="m-px hover:brightness-110">
                 <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
@@ -20,3 +22,18 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  },
+  iconSrc: {
+    type: String,
+    required: true
+  }
+});
+</script>

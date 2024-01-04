@@ -4,15 +4,26 @@
       :entities="entities"
       @toggle-header="toggleHeader" 
       @toggle-myProjects="openWindow('myProjects')"
-      @toggle-music="openWindow('music')"
+      @toggle-contact="openWindow('contact')"
+      @toggle-myCV="openWindow('myCV')"
     />
     <DesktopAppsLayout 
       :entities="entities"
       @toggle-MyProjects="openWindow('myProjects')"
+      @toggle-contact="openWindow('contact')"
+      @toggle-myCV="openWindow('myCV')"
       @toggle-music="openWindow('music')"
+      @toggle-play="openWindow('play')"
     />
     <div v-for="window in entities" :key="window.id">
-      <Window v-if="isWindowVisible(window.id)" @close-window="closeWindow(window.id)">
+      <Window 
+        v-if="isWindowVisible(window.id)" 
+        @close-window="closeWindow(window.id)"
+        :title="window.title"
+        :iconSrc="window.iconSrc"
+        :initPositionX="window.initPositionX"
+        :initPositionY="window.initPositionY"
+        >
         <component :is="window.component" />
       </Window>
     </div>
@@ -43,6 +54,8 @@ const entities = ref([
     subtitle: 'Voir tous mes projets', 
     imgSrc:'/src/assets/img/icons/projects-icon-lg.png',
     iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
+    initPositionX: 180,
+    initPositionY: 100,
     component: MyProjects 
   },
   { 
@@ -51,22 +64,28 @@ const entities = ref([
     subtitle: 'Me contacter', 
     imgSrc: 'src/assets/img/icons/email-icon-lg.png',
     iconSrc: '/src/assets/img/icons/email-icon-sm.png',
+    initPositionX: 210,
+    initPositionY: 140,
     component: ContactMe 
   },
   { 
     id: 'myCV', 
     title: 'Mon CV', 
-    subtitle: 'Mon CV', 
+    subtitle: 'Voir le curriculum vitae', 
     imgSrc: 'src/assets/img/icons/cv-icon-lg.png',
     iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
+    initPositionX: 240,
+    initPositionY: 180,
     component: MyCV 
   },
   { 
     id: 'music', 
-    title: 'Musiques', 
+    title: 'Mes Musiques', 
     subtitle: '', 
     imgSrc: '/src/assets/img/icons/playmusic-icon-lg.png',
-    
+    iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
+    initPositionX: 130,
+    initPositionY: 230,
     component: Music 
   },
   { 
@@ -74,6 +93,9 @@ const entities = ref([
     title: 'Jouer', 
     subtitle: '', 
     imgSrc: 'src/assets/img/icons/play-icon-lg.png', 
+    iconSrc: '/src/assets/img/icons/play-icon-sm.png',
+    initPositionX: 160,
+    initPositionY: 270,
     component: Play 
   },
 ]);
