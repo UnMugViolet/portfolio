@@ -10,41 +10,21 @@
                     <hr class="absolute top-0 left-0 right-0 bg-orange-hr block"/>
                     <div class="w-full h-full flex">
                         <div class="w-7/12 h-full bg-white px-1 py-1"> 
-                            <div class="py-2 flex flex-col gap-3">
-                                <HeaderLeftButton @click="turnOffHeader" @toggle-button="toggleWindow" :buttonName="myProjects">
-                                    <template #img>
-                                        <img src="src/assets/img/icons/projects-icon.png" alt="A propos">
-                                    </template>
-                                    <template #title>
-                                        Mes projets
-                                    </template>
-                                    <template #subtitle>
-                                        Voir tous mes projets
-                                    </template>
-                                </HeaderLeftButton>
-                                <HeaderLeftButton @click="turnOffHeader">
-                                    <template #img>
-                                        <img src="src/assets/img/icons/email-large-icon.png" alt="A propos">
-                                    </template>
-                                    <template #title>
-                                        E-mail
-                                    </template>
-                                    <template #subtitle>
-                                        Me contacter
-                                    </template>
-                                </HeaderLeftButton>
-                                <HeaderLeftButton @click="turnOffHeader">
-                                    <template #img>
-                                        <img src="src/assets/img/icons/cv-icon.png" alt="A propos">
-                                    </template>
-                                    <template #title>
-                                        Mon CV
-                                    </template>
-                                    <template #subtitle>
-                                        Voir toutes mes expériences
-                                    </template>
-                                </HeaderLeftButton>
-                            </div>
+                            <div v-for="entity in localEntities" :key="entity.id">
+                                    <div v-if="entity.subtitle" class="flex flex-col gap-3 py-2">
+                                        <HeaderLeftButton @click="turnOffHeader" @toggle-button="toggleWindow" :buttonName="entity.id">
+                                            <template #img>
+                                                <img :src="entity.imgSrc" :alt="entity.title">
+                                            </template>
+                                            <template #title>
+                                                {{ entity.title }}
+                                            </template>
+                                            <template #subtitle>
+                                                {{ entity.subtitle }}
+                                            </template>
+                                        </HeaderLeftButton>
+                                    </div>
+                                </div>
                         </div>
                         <div class="w-1/2 h-full bg-color-blue-header-left left-blue-header-1 px-1 py-1">
                             <div class="py-2">
@@ -106,6 +86,7 @@
 </template>
 
 <script setup>
+    import { ref, watchEffect } from 'vue';
     import ProfilePicture from './ProfilePicture.vue';
     import HeaderLeftButton from './Buttons/HeaderLeftButton.vue';
     import HeaderRightButton from './Buttons/HeaderRightButton.vue';
@@ -114,14 +95,25 @@
 
     const emit = defineEmits();
 
+    const props = defineProps({
+        entities: {
+          type: Array,
+          required: true
+        }
+    });
+
+    const localEntities = ref([...props.entities]);
+
+    watchEffect(() => {
+        localEntities.value = [...props.entities];
+    });
+
     const turnOffHeader = () => {
         emit('toggle-header');
     };
 
-    const myProjects = 'myProjects';
-
     const toggleWindow = (buttonName) => {
-        emit('toggle-' + buttonName); 
+        emit('toggle-' + buttonName);
     }
 </script>
 
