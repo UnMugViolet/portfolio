@@ -30,7 +30,7 @@
                             <div class="py-2">
                                 <HeaderRightButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/docs-folder-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/folder-docs-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         A propos
@@ -38,7 +38,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/images-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/folder-images-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Mes images
@@ -46,7 +46,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/music-folder-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/folder-music-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Mes musiques
@@ -62,7 +62,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/play-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/play-icon-sm.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Jouer

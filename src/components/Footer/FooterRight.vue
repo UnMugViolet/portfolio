@@ -3,12 +3,12 @@
   <div class="text-white h-full flex items-center px-3 gap-1 bg-footer-right-component footer-left-shadow select-none">
     <img
       class="w-4 h-4 cursor-pointer"
-      src="src/assets/img/icons/full-screen-icon.png"
+      src="src/assets/img/icons/full-screen-icon-lg.png"
       alt="Mode plein écran"
       :title="originalTitle"
       @click="enterFullScreen"
       />
-      <img class="w-4 h-4 mt-px cursor-pointer" src="src/assets/img/icons/volume-icon.png" alt="Gestion du volume" title="Gestion du volume">
+      <img class="w-4 h-4 mt-px cursor-pointer" src="src/assets/img/icons/volume-icon-lg.png" alt="Gestion du volume" title="Gestion du volume">
     <CurrentTime />
   </div>
 </template>
