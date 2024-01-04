@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, computed, defineProps } from 'vue';
+import { ref, computed } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
