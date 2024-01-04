@@ -41,35 +41,39 @@ const entities = ref([
     id: 'myProjects', 
     title: 'Mes projets', 
     subtitle: 'Voir tous mes projets', 
-    imgSrc:'/src/assets/img/icons/projects-icon-lg.png', 
+    imgSrc:'/src/assets/img/icons/projects-icon-lg.png',
+    iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
     component: MyProjects 
   },
   { 
     id: 'contact', 
     title: 'Me contacter', 
     subtitle: 'Me contacter', 
-    imgSrc: 'src/assets/img/icons/email-icon-lg.png', 
+    imgSrc: 'src/assets/img/icons/email-icon-lg.png',
+    iconSrc: '/src/assets/img/icons/email-icon-sm.png',
     component: ContactMe 
   },
   { 
     id: 'myCV', 
     title: 'Mon CV', 
     subtitle: 'Mon CV', 
-    imgSrc: 'src/assets/img/icons/cv-icon.png', 
+    imgSrc: 'src/assets/img/icons/cv-icon-lg.png',
+    iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
     component: MyCV 
   },
   { 
     id: 'music', 
     title: 'Musiques', 
     subtitle: '', 
-    imgSrc: '/src/assets/img/icons/playmusic-icon.png', 
+    imgSrc: '/src/assets/img/icons/playmusic-icon-lg.png',
+    
     component: Music 
   },
   { 
     id: 'play', 
     title: 'Jouer', 
     subtitle: '', 
-    imgSrc: 'src/assets/img/icons/play-large-icon.png', 
+    imgSrc: 'src/assets/img/icons/play-icon-lg.png', 
     component: Play 
   },
 ]);
