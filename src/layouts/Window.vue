@@ -5,9 +5,9 @@
             <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
                 @mousedown="startDrag">
                 <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
-                    <img src="src/assets/img/icons/projects-icon-sm.png" alt="projects-icon" class="w-4 h-4"/>
+                    <img :src="iconSrc" alt="icon" class="w-4 h-4"/>
                     <div class="flex items-center overflow-hidden">
-                        <h4 class="text-header truncate">Mes projets</h4>
+                        <h4 class="text-header truncate">{{ title }}</h4>
                     </div>
                 </div>
                 <div class="h-5/6 mt-px flex items-center gap-px">
@@ -21,7 +21,7 @@
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools />
-            <WindowHeaderSearch />
+            <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
 
             <!-- Left section & Content-->
             <div class="relative right-0 h-content-window flex">
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, defineProps } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -48,11 +48,13 @@ import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
 import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
+const { title, iconSrc, initPositionX, initPositionY } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY']);
+
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
 
 const windowSize = { width: 660, height: 500 };
-const windowPosition = ref({ x: 180, y: 100 });
+const windowPosition = ref({ x: initPositionX, y: initPositionY });
 const isDragging = ref(false);
 const initialMouseX = ref(0);
 const initialMouseY = ref(0);
