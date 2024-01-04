@@ -7,7 +7,7 @@
         </div>
         <div class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between">
             <div class="flex items-center overflow-hidden">
-                <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-3.5 h-3.5"/>
+                <img src="src/assets/img/icons/projects-icon-sm.png" alt="projects-icon" class="w-3.5 h-3.5"/>
                 <p class="px-1 small-p cursor-default truncate">Mes projets</p>
             </div>
             <div class="m-px hover:brightness-110">
