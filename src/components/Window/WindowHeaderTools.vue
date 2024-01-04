@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-1">
-                <img src="/src/assets/img/icons/folder-open-icon.png" alt="projects-icon" class="w-6 h-6 flex-shrink-0"/>
+                <img src="/src/assets/img/icons/folder-opening-icon.png" alt="projects-icon" class="w-6 h-6 flex-shrink-0"/>
             </div>
             <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-0.5">
@@ -21,12 +21,12 @@
                 <p class="small-p px-1 cursor-default">Rechercher</p>
             </div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-0.5">
-                <img src="/src/assets/img/icons/folder-opening-icon.png" alt="projects-icon" class="w-auto h-6 flex-shrink-0"/>
+                <img src="/src/assets/img/icons/folder-open-icon.png" alt="projects-icon" class="w-auto h-6 flex-shrink-0"/>
                 <p class="small-p px-1 cursor-default">Fichiers</p>
             </div>
             <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-1">
-                <img src="/src/assets/img/icons/project-folder-icon.png" alt="projects-icon" class="w-6 h-6 flex-shrink-0"/>
+                <img src="/src/assets/img/icons/projects-icon-sm.png" alt="projects-icon" class="w-6 h-6 flex-shrink-0"/>
                 <div class="block border-solid down-arrow ml-2"></div>
             </div>
         </div>

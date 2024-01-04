@@ -41,21 +41,21 @@ const entities = ref([
     id: 'myProjects', 
     title: 'Mes projets', 
     subtitle: 'Voir tous mes projets', 
-    imgSrc:'/src/assets/img/icons/projects-large-icon.png', 
+    imgSrc:'/src/assets/img/icons/projects-icon-lg.png', 
     component: MyProjects 
   },
   { 
     id: 'contact', 
     title: 'Me contacter', 
     subtitle: 'Me contacter', 
-    imgSrc: 'src/assets/img/icons/email-large-icon.png', 
+    imgSrc: 'src/assets/img/icons/email-icon-lg.png', 
     component: ContactMe 
   },
   { 
     id: 'myCV', 
     title: 'Mon CV', 
     subtitle: 'Mon CV', 
-    imgSrc: 'src/assets/img/icons/cv-large-icon.png', 
+    imgSrc: 'src/assets/img/icons/cv-icon.png', 
     component: MyCV 
   },
   { 

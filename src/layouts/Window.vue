@@ -5,7 +5,7 @@
             <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
                 @mousedown="startDrag">
                 <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
-                    <img src="src/assets/img/icons/projects-icon.png" alt="projects-icon" class="w-4 h-4"/>
+                    <img src="src/assets/img/icons/projects-icon-sm.png" alt="projects-icon" class="w-4 h-4"/>
                     <div class="flex items-center overflow-hidden">
                         <h4 class="text-header truncate">Mes projets</h4>
                     </div>

@@ -46,7 +46,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader">
                                     <template #img>
-                                        <img src="src/assets/img/icons/musiques-icon.png" alt="A propos">
+                                        <img src="src/assets/img/icons/music-icon-folder.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Mes musiques
