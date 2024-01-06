@@ -11,7 +11,9 @@ module.exports = {
       }),
       colors: {
         'dropdown': '#1660E8',
-        'window-blue': '#0831D9'
+        'window-blue': '#0831D9',
+        'pellet-blue': '#3C81F3',
+        'pellet-blue-selected': '#1E52B7',
       },
       fontSize: {
         'xs': '0.7rem',
