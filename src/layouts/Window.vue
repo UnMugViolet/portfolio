@@ -23,16 +23,9 @@
             <WindowHeaderTools />
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
 
-            <!-- Left section & Content-->
-            <div class="relative right-0 h-content-window flex">
-                <div class="bg-window-right-component w-194px h-full flex-shrink-0">
-                
-                </div>
-                <div class="w-full h-full bg-white overflow-auto">
-                    
-                </div>
-            </div>            
+            <slot></slot>         
         </div>
+        <!-- Resize handlers -->
         <div class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize" @mousedown="startResize" data-direction="right" :style="{ cursor: maximized ? 'default' : 'ew-resize' }"></div>
         <div class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize" @mousedown="startResize" data-direction="bottom" :style="{ cursor: maximized ? 'default' : 'ns-resize' }"></div>
         <div class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize" @mousedown="startResize" data-direction="corner" :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"></div>
