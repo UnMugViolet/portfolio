@@ -5,7 +5,7 @@
         <div class="flex items-center h-full">
           <StartButton @click="toggleHeader" />
           <div class="flex w-full h-full ml-2 gap-0.5">
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44">
+            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
               <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
                 <div class="flex gap-1 mt-px">
                   <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
@@ -14,7 +14,7 @@
               </div>
             </div>
   
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44">
+            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
               <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
                 <div class="flex gap-1 mt-px">
                   <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
@@ -23,7 +23,7 @@
               </div>
             </div>
   
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44">
+            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
               <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
                 <div class="flex gap-1 mt-px">
                   <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
@@ -32,7 +32,7 @@
               </div>
             </div>
 
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44">
+            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
               <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
                 <div class="flex gap-1 mt-px">
                   <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
@@ -40,8 +40,8 @@
                 </div>
               </div>
             </div>
-            
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44">
+
+            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
               <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
                 <div class="flex gap-1 mt-px">
                   <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
