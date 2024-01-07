@@ -16,7 +16,7 @@
 
 
 <script setup>    
-  import { ref, defineProps, defineEmits } from 'vue';
+  import { ref } from 'vue';
   import StartButton from '../Buttons/StartButton.vue';
   import FooterRight from './FooterRight.vue';
   import PelletApp from './PelletApp.vue';
