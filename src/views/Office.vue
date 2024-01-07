@@ -28,13 +28,13 @@
       </Window>
     </div>
     <Footer @toggle-header="toggleHeader" 
-      :entities="entities"
+      :entities="windows"
     />
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, markRaw } from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -58,7 +58,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
     initPositionX: 180,
     initPositionY: 100,
-    component: MyProjects 
+    component: markRaw(MyProjects)
   },
   { 
     id: 'contact', 
@@ -68,7 +68,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/email-icon-sm.png',
     initPositionX: 210,
     initPositionY: 140,
-    component: ContactMe 
+    component: markRaw(ContactMe)
   },
   { 
     id: 'myCV', 
@@ -78,7 +78,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
     initPositionX: 240,
     initPositionY: 180,
-    component: MyCV 
+    component: markRaw(MyCV)
   },
   { 
     id: 'music', 
@@ -88,7 +88,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
     initPositionX: 130,
     initPositionY: 230,
-    component: Music 
+    component: markRaw(Music) 
   },
   { 
     id: 'play', 
@@ -98,7 +98,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/play-icon-sm.png',
     initPositionX: 160,
     initPositionY: 270,
-    component: Play 
+    component: markRaw(Play) 
   },
 ]);
 
@@ -109,7 +109,16 @@ const toggleHeader = () => {
 const openWindow = (windowId) => {
   const existingWindow = windows.value.find((window) => window.id === windowId);
   if (!existingWindow) {
-    windows.value.push({ id: windowId, visible: true, component: getComponent(windowId) });
+    const entity = entities.value.find((entity) => entity.id === windowId);
+    if (entity) {
+      windows.value.push({ 
+        id: windowId, 
+        visible: true, 
+        component: getComponent(windowId),
+        iconSrc: entity.iconSrc,
+        title: entity.title
+      });
+    }
   }
 };
 
