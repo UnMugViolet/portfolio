@@ -5,50 +5,7 @@
         <div class="flex items-center h-full">
           <StartButton @click="toggleHeader" />
           <div class="flex w-full h-full ml-2 gap-0.5">
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-              <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
-                <div class="flex gap-1 mt-px">
-                  <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
-                  <p class="small-p text-white">My Projects</p>
-                </div>
-              </div>
-            </div>
-  
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-              <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
-                <div class="flex gap-1 mt-px">
-                  <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
-                  <p class="small-p text-white">My Projects</p>
-                </div>
-              </div>
-            </div>
-  
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-              <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
-                <div class="flex gap-1 mt-px">
-                  <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
-                  <p class="small-p text-white">My Projects</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-              <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
-                <div class="flex gap-1 mt-px">
-                  <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
-                  <p class="small-p text-white">My Projects</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-              <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm">
-                <div class="flex gap-1 mt-px">
-                  <img src="/src/assets/img/icons/projects-icon-xs.png" alt="office-icon" class="w-4 h-4"/>
-                  <p class="small-p text-white">My Projects</p>
-                </div>
-              </div>
-            </div>
+            <PelletApp v-for="entity in localEntities" :key="entity.id" :entity="entity"/>
           </div>
         </div>
         <FooterRight />
@@ -59,12 +16,24 @@
 
 
 <script setup>    
+  import { ref, defineProps, defineEmits } from 'vue';
   import StartButton from '../Buttons/StartButton.vue';
   import FooterRight from './FooterRight.vue';
+  import PelletApp from './PelletApp.vue';
   
   const emit = defineEmits(['toggle-header']);
 
   const toggleHeader = () => {
     emit('toggle-header');
   };
+
+  const props = defineProps({
+        entities: {
+          type: Array,
+          required: true
+        }
+    });
+
+  const localEntities = ref([...props.entities]);
+
 </script>
