@@ -1,5 +1,5 @@
 <template>
-    <section class="absolute radius-window overflow-hidden bg-window-blue z-10" :style="windowStyle">
+    <section class="absolute radius-window overflow-hidden bg-window-blue" :style="windowStyle">
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
             @mousedown="startDrag">
             <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"

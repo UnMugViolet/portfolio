@@ -19,10 +19,12 @@
       <Window 
         v-if="isWindowVisible(window.id)" 
         @close-window="closeWindow(window.id)"
+        @click="handleWindowClick(window.id)"
         :title="window.title"
         :iconSrc="window.iconSrc"
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
+        :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component :is="window.component" />
       </Window>
@@ -48,6 +50,7 @@ import Window from '../layouts/Window.vue';
 
 const showHeader = ref(false);
 const windows = ref([]);
+const highestZIndex = ref(0);
 
 const entities = ref([
   { 
@@ -111,14 +114,29 @@ const openWindow = (windowId) => {
   if (!existingWindow) {
     const entity = entities.value.find((entity) => entity.id === windowId);
     if (entity) {
+      highestZIndex.value++; // Increase highestZIndex
       windows.value.push({ 
         id: windowId, 
         visible: true, 
         component: getComponent(windowId),
         iconSrc: entity.iconSrc,
-        title: entity.title
+        title: entity.title,
+        zIndex: highestZIndex.value, // Use highestZIndex
       });
     }
+  }
+};
+
+const findWindowZIndex = (windowId) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  return window ? window.zIndex : 0;
+};
+
+const handleWindowClick = (windowId) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  if (window && window.zIndex !== highestZIndex.value) {
+    highestZIndex.value++; // Increase highestZIndex
+    window.zIndex = highestZIndex.value; // Use highestZIndex
   }
 };
 
