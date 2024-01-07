@@ -27,7 +27,9 @@
         <component :is="window.component" />
       </Window>
     </div>
-    <Footer @toggle-header="toggleHeader" />
+    <Footer @toggle-header="toggleHeader" 
+      :entities="entities"
+    />
   </section>
 </template>
 
