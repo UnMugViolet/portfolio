@@ -5,7 +5,7 @@
         <div class="flex items-center h-full">
           <StartButton @click="toggleHeader" />
           <div class="flex w-full h-full ml-2 gap-0.5">
-            <PelletApp v-for="entity in localEntities" :key="entity.id" :entity="entity"/>
+            <PelletApp v-for="entity in entities" :key="entity.id" :entity="entity"/>
           </div>
         </div>
         <FooterRight />
@@ -16,7 +16,6 @@
 
 
 <script setup>    
-  import { ref } from 'vue';
   import StartButton from '../Buttons/StartButton.vue';
   import FooterRight from './FooterRight.vue';
   import PelletApp from './PelletApp.vue';
@@ -28,12 +27,10 @@
   };
 
   const props = defineProps({
-        entities: {
-          type: Array,
-          required: true
-        }
-    });
-
-  const localEntities = ref([...props.entities]);
+    entities: {
+      type: Array,
+      required: true
+    }
+  });
 
 </script>
