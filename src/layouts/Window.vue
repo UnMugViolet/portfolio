@@ -1,5 +1,8 @@
 <template>
-    <section class="absolute radius-window overflow-hidden bg-window-blue-active" :style="windowStyle">
+    <section class="absolute radius-window overflow-hidden" 
+        :class="active ? 'header-window' : 'header-window-disabled'"
+        :style="windowStyle"
+    >
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
             @mousedown="startDrag">
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
@@ -29,7 +32,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed  } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -37,7 +40,7 @@ import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
 import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
-const { title, iconSrc, initPositionX, initPositionY } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY']);
+const { title, iconSrc, initPositionX, initPositionY, active } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY', 'active']);
 
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
@@ -200,6 +203,14 @@ const resizeWindow = (event) => {
 .radius-window {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.header-window {
+  background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
+}
+
+.header-window-disabled {
+  background: linear-gradient(rgb(118, 151, 231) 0%, rgb(126, 158, 227) 3%, rgb(148, 175, 232) 6%, rgb(151, 180, 233) 8%, rgb(130, 165, 228) 14%, rgb(124, 159, 226) 17%, rgb(121, 150, 222) 25%, rgb(123, 153, 225) 56%, rgb(130, 169, 233) 81%, rgb(128, 165, 231) 89%, rgb(123, 150, 225) 94%, rgb(122, 147, 223) 97%, rgb(171, 186, 227) 100%);
 }
 
 .linear-header-window {
