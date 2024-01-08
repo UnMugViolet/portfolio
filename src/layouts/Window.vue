@@ -1,22 +1,18 @@
 <template>
-    <section class="absolute radius-window overflow-hidden bg-window-blue" :style="windowStyle">
+    <section class="absolute radius-window overflow-hidden bg-window-blue-active" :style="windowStyle">
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
             @mousedown="startDrag">
-            <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
-                @mousedown="startDrag">
-                <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
-                    <img :src="iconSrc" alt="icon" class="w-4 h-4"/>
-                    <div class="flex items-center overflow-hidden">
-                        <h4 class="text-header truncate">{{ title }}</h4>
-                    </div>
-                </div>
-                <div class="h-5/6 mt-px flex items-center gap-px">
-                    <WindowMinimize />
-                    <WindowMaximize @click="toggleMaximize" />
-                    <WindowClose @click="closeWindow" />
+            <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
+                <img :src="iconSrc" alt="icon" class="w-4 h-4"/>
+                <div class="flex items-center overflow-hidden">
+                    <h4 class="text-header truncate">{{ title }}</h4>
                 </div>
             </div>
-
+            <div class="h-5/6 mt-px flex items-center gap-px">
+                <WindowMinimize />
+                <WindowMaximize @click="toggleMaximize" />
+                <WindowClose @click="closeWindow" />
+            </div>
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
