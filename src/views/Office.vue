@@ -25,6 +25,7 @@
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
         :style="{zIndex: findWindowZIndex(window.id)}"
+        :active="window.active"
         >
         <component :is="window.component" />
       </Window>
@@ -36,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, markRaw } from 'vue';
+import { ref, markRaw, watch} from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -51,6 +52,18 @@ import Window from '../layouts/Window.vue';
 const showHeader = ref(false);
 const windows = ref([]);
 const highestZIndex = ref(0);
+
+watch(
+  () => windows.value.map(window => window.active),
+  (newValues, oldValues) => {
+    newValues.forEach((newValue, index) => {
+      if (newValue !== oldValues[index]) {
+        console.log(`Window ${windows.value[index].id} active status changed to ${newValue}`);
+      }
+    });
+  },
+  { deep: true }
+);
 
 const entities = ref([
   { 
@@ -115,6 +128,9 @@ const openWindow = (windowId) => {
     const entity = entities.value.find((entity) => entity.id === windowId);
     if (entity) {
       highestZIndex.value++; // Increase highestZIndex
+      windows.value.forEach((window) => {
+        window.active = false; // Deactivate all other windows
+      });
       windows.value.push({ 
         id: windowId, 
         visible: true, 
@@ -122,6 +138,7 @@ const openWindow = (windowId) => {
         iconSrc: entity.iconSrc,
         title: entity.title,
         zIndex: highestZIndex.value, // Use highestZIndex
+        active: true, // The new window is active
       });
     }
   }
@@ -138,6 +155,9 @@ const handleWindowClick = (windowId) => {
     highestZIndex.value++; // Increase highestZIndex
     window.zIndex = highestZIndex.value; // Use highestZIndex
   }
+  windows.value.forEach((window) => {
+    window.active = window.id === windowId;
+  });
 };
 
 const closeWindow = (windowId) => {
@@ -171,5 +191,10 @@ const handleOutsideClick = (event) => {
       toggleHeader();
     }
   }
+
+  // Deactivate all windows
+  windows.value.forEach((window) => {
+    window.active = false;
+  });
 };
 </script>
