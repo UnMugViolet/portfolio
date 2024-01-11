@@ -1,6 +1,6 @@
 <template>
-    <section class="absolute radius-window overflow-hidden bg-window-blue-active" 
-        :class="active ? 'window-blue-deactivated' : 'window-blue-active'"
+    <section class="absolute radius-window overflow-hidden" 
+        :class="active ? 'bg-window-blue-deactivated' : 'bg-window-blue-active'"
         :style="windowStyle"
     >
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { ref, computed, toRefs, watch } from 'vue';
+import { ref, computed } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -43,7 +43,7 @@ import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue'
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
 
-const { title, iconSrc, initPositionX, initPositionY } = toRefs(props);
+const { title, iconSrc, initPositionX, initPositionY } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY']);
 
 const windowSize = { width: 660, height: 500 };
 const windowPosition = ref({ x: initPositionX, y: initPositionY });
@@ -61,21 +61,6 @@ const emit = defineEmits();
 const windowWidth = ref(windowSize.width);
 const windowHeight = ref(windowSize.height);
 const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`);
-
-const props = defineProps({
-    title: String,
-    iconSrc: String,
-    initPositionX: Number,
-    initPositionY: Number,
-    active: {
-        type: Boolean,
-        default: false
-    }
-});
-
-watch(props, (newProps) => {
-  console.log('Active state changed:', newProps.active);
-}, { immediate: true });
 
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
