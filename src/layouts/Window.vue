@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -43,10 +43,8 @@ import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue'
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
 
-const { title, iconSrc, initPositionX, initPositionY } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY']);
+const { title, iconSrc, initPositionX, initPositionY, active } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY', 'active']);
 
-const windowSize = { width: 660, height: 500 };
-const windowPosition = ref({ x: initPositionX, y: initPositionY });
 const isDragging = ref(false);
 const initialMouseX = ref(0);
 const initialMouseY = ref(0);
@@ -58,9 +56,16 @@ const maximized = ref(false);
 
 const emit = defineEmits();
 
+// Window position and size
+const windowSize = { width: 660, height: 500 };
+const windowPosition = ref({ x: initPositionX, y: initPositionY });
 const windowWidth = ref(windowSize.width);
 const windowHeight = ref(windowSize.height);
 const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`);
+
+watchEffect(() => {
+  console.log(`Window is ${active.value ? 'active' : 'inactive'}`);
+});
 
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
@@ -87,6 +92,12 @@ const toggleMaximize = () => {
 const closeWindow = () => {
     emit('close-window');
 };
+
+const toggleActive = () => {
+    active.value = !active.value;
+
+    console.log(active.value);
+}
 
 const startDrag = (event) => {
     isDragging.value = true;

@@ -25,6 +25,7 @@
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
         :style="{zIndex: findWindowZIndex(window.id)}"
+        :active="window.id === activeWindowId" 
         >
         <component :is="window.component" />
       </Window>
@@ -51,6 +52,7 @@ import Window from '../layouts/Window.vue';
 const showHeader = ref(false);
 const windows = ref([]);
 const highestZIndex = ref(0);
+const activeWindowId = ref(null);
 
 const entities = ref([
   { 
@@ -137,6 +139,7 @@ const handleWindowClick = (windowId) => {
   if (window && window.zIndex !== highestZIndex.value) {
     highestZIndex.value++; // Increase highestZIndex
     window.zIndex = highestZIndex.value; // Use highestZIndex
+    activeWindowId.value = windowId;
   }
 };
 
@@ -170,6 +173,9 @@ const handleOutsideClick = (event) => {
     if (headerElement && !headerElement.contains(event.target)) {
       toggleHeader();
     }
+  }
+  if (!event.target.closest('.window')) {
+    activeWindowId.value = null;
   }
 };
 </script>
