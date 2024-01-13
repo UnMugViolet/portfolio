@@ -20,12 +20,12 @@
         v-if="isWindowVisible(window.id)" 
         @close-window="closeWindow(window.id)"
         @click="handleWindowClick(window.id)"
+        :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
         :style="{zIndex: findWindowZIndex(window.id)}"
-        :active="window.id === activeWindowId" 
         >
         <component :is="window.component" />
       </Window>
@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, markRaw } from 'vue';
+import { ref, shallowRef, provide } from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -52,7 +52,10 @@ import Window from '../layouts/Window.vue';
 const showHeader = ref(false);
 const windows = ref([]);
 const highestZIndex = ref(0);
-const activeWindowId = ref(null);
+
+// Set activeness of windows
+const activeWindow = ref(null);
+provide('activeWindow', activeWindow);
 
 const entities = ref([
   { 
@@ -63,7 +66,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
     initPositionX: 180,
     initPositionY: 100,
-    component: markRaw(MyProjects)
+    component: shallowRef(MyProjects)
   },
   { 
     id: 'contact', 
@@ -73,7 +76,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/email-icon-sm.png',
     initPositionX: 210,
     initPositionY: 140,
-    component: markRaw(ContactMe)
+    component: shallowRef(ContactMe)
   },
   { 
     id: 'myCV', 
@@ -83,7 +86,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
     initPositionX: 240,
     initPositionY: 180,
-    component: markRaw(MyCV)
+    component: shallowRef(MyCV)
   },
   { 
     id: 'music', 
@@ -93,7 +96,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
     initPositionX: 130,
     initPositionY: 230,
-    component: markRaw(Music) 
+    component: shallowRef(Music) 
   },
   { 
     id: 'play', 
@@ -103,12 +106,20 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/play-icon-sm.png',
     initPositionX: 160,
     initPositionY: 270,
-    component: markRaw(Play) 
+    component: shallowRef(Play) 
   },
 ]);
 
+
+console.log(entities);
+
+
 const toggleHeader = () => {
   showHeader.value = !showHeader.value;
+};
+
+const setActiveWindow = (windowId) => {
+  activeWindow.value = windowId;
 };
 
 const openWindow = (windowId) => {
@@ -125,6 +136,7 @@ const openWindow = (windowId) => {
         title: entity.title,
         zIndex: highestZIndex.value, // Use highestZIndex
       });
+      setActiveWindow(windowId); // Set the window clicked as active
     }
   }
 };
@@ -139,8 +151,8 @@ const handleWindowClick = (windowId) => {
   if (window && window.zIndex !== highestZIndex.value) {
     highestZIndex.value++; // Increase highestZIndex
     window.zIndex = highestZIndex.value; // Use highestZIndex
-    activeWindowId.value = windowId;
   }
+  setActiveWindow(windowId); // Set the window clicked as active
 };
 
 const closeWindow = (windowId) => {
@@ -173,9 +185,6 @@ const handleOutsideClick = (event) => {
     if (headerElement && !headerElement.contains(event.target)) {
       toggleHeader();
     }
-  }
-  if (!event.target.closest('.window')) {
-    activeWindowId.value = null;
   }
 };
 </script>
