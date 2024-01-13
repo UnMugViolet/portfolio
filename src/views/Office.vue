@@ -110,10 +110,6 @@ const entities = ref([
   },
 ]);
 
-
-console.log(entities);
-
-
 const toggleHeader = () => {
   showHeader.value = !showHeader.value;
 };
