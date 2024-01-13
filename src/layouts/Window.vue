@@ -1,6 +1,6 @@
 <template>
     <section class="absolute radius-window overflow-hidden" 
-        :class="active ? 'bg-window-blue-deactivated' : 'bg-window-blue-active'"
+        :class="isActive ? 'bg-window-blue-active' : 'bg-window-blue-deactivated'"
         :style="windowStyle"
     >
         <div class="absolute top-0 left-0 linear-header-window h-7 w-full z-40 flex justify-between items-center px-1"
@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watchEffect } from 'vue';
+import { ref, computed, inject } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
@@ -40,21 +40,29 @@ import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
 import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
+const emit = defineEmits();
+const { id, title, iconSrc, initPositionX, initPositionY } = defineProps({
+  id: String,
+  title: String,
+  iconSrc: String,
+  initPositionX: Number,
+  initPositionY: Number
+});
+
+
+// App size constants
 const appHeight = window.innerHeight - 32;
 const appWidth = window.innerWidth;
 
-const { title, iconSrc, initPositionX, initPositionY, active } = defineProps(['title', 'iconSrc', 'initPositionX', 'initPositionY', 'active']);
-
+// Dragging window constants
 const isDragging = ref(false);
 const initialMouseX = ref(0);
 const initialMouseY = ref(0);
-
 const throttleDelay = 16; // Update every 16ms (60 FPS)
 let lastUpdateTimestamp = 0;
 
+// Window resizing constants
 const maximized = ref(false);
-
-const emit = defineEmits();
 
 // Window position and size
 const windowSize = { width: 660, height: 500 };
@@ -63,8 +71,14 @@ const windowWidth = ref(windowSize.width);
 const windowHeight = ref(windowSize.height);
 const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`);
 
-watchEffect(() => {
-  console.log(`Window is ${active.value ? 'active' : 'inactive'}`);
+// Window activeness
+const activeWindow = inject('activeWindow');
+// const isActive = computed(() => id.value === activeWindow.value);
+
+const isActive = computed(() => {
+    const active = id === activeWindow.value;
+    console.log(`Window with id ${id} is ${active ? 'active' : 'inactive'}`);
+    return active;
 });
 
 const windowStyle = computed(() => {
@@ -92,12 +106,6 @@ const toggleMaximize = () => {
 const closeWindow = () => {
     emit('close-window');
 };
-
-const toggleActive = () => {
-    active.value = !active.value;
-
-    console.log(active.value);
-}
 
 const startDrag = (event) => {
     isDragging.value = true;
