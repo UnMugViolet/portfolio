@@ -12,13 +12,15 @@
                     <h4 class="text-header truncate">{{ title }}</h4>
                 </div>
             </div>
-            <div class="h-5/6 mt-px flex items-center gap-px">
+            <div class="h-5/6 mt-px flex items-center gap-px"
+            :class="isActive ? 'opacity-100' : 'opacity-60 '"
+            >
                 <WindowMinimize />
                 <WindowMaximize @click="toggleMaximize" />
                 <WindowClose @click="closeWindow" />
             </div>
         </div>
-        <div class="absolute w-full h-full overflow-hidden p-0.75">
+        <div class="absolute w-full h-full overflow-hidden p-1">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools />
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
@@ -73,13 +75,7 @@ const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosi
 
 // Window activeness
 const activeWindow = inject('activeWindow');
-// const isActive = computed(() => id.value === activeWindow.value);
-
-const isActive = computed(() => {
-    const active = id === activeWindow.value;
-    console.log(`Window with id ${id} is ${active ? 'active' : 'inactive'}`);
-    return active;
-});
+const isActive = computed(() => id === activeWindow.value);
 
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
@@ -111,6 +107,9 @@ const startDrag = (event) => {
     isDragging.value = true;
     initialMouseX.value = event.clientX;
     initialMouseY.value = event.clientY;
+
+    // Set the active window to the current window
+    activeWindow.value = id;
 
     // Add mouseup event listener to the whole document to stop dragging
     document.addEventListener('mouseup', stopDrag);

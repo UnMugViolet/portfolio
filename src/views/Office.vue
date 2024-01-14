@@ -28,7 +28,7 @@
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component :is="window.component" />
-      </Window>
+    </Window>
     </div>
     <Footer @toggle-header="toggleHeader" 
       :entities="windows"
@@ -182,5 +182,17 @@ const handleOutsideClick = (event) => {
       toggleHeader();
     }
   }
+
+  // Deactivate the active window if the click occurred outside of any window
+  const clickedOutsideAnyWindow = windows.value.every((window) => {
+    const windowElement = document.getElementById(window.id);
+    return windowElement && !windowElement.contains(event.target);
+  });
+  
+  if (clickedOutsideAnyWindow) {
+    setActiveWindow(null);
+  }
+  
+  console.log('clickedOutsideAnyWindow', window.id , clickedOutsideAnyWindow);
 };
 </script>
