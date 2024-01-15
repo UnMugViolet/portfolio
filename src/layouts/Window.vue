@@ -14,14 +14,14 @@
                 </div>
             </div>
             <div class="h-5/6 mt-px flex items-center gap-px"
-            :class="isActive ? 'opacity-100' : 'opacity-60 '"
+                :class="isActive ? 'opacity-100' : 'opacity-60 '"
             >
                 <WindowMinimize />
                 <WindowMaximize @click="toggleMaximize" />
                 <WindowClose @click="closeWindow" />
             </div>
         </div>
-        <div class="absolute w-full h-full overflow-hidden p-1">
+        <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools />
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
