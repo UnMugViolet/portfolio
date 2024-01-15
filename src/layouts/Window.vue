@@ -1,5 +1,5 @@
 <template>
-    <section class="absolute radius-window overflow-hidden" 
+    <section class="absolute radius-window overflow-hidden select-none" 
         :class="isActive ? 'bg-window-blue-active' : 'bg-window-blue-deactivated'"
         :style="windowStyle"
         :id="id"
@@ -78,6 +78,9 @@ const windowTransform = ref(`translate(${windowPosition.value.x}px, ${windowPosi
 const activeWindow = inject('activeWindow');
 const isActive = computed(() => id === activeWindow.value);
 
+// Window Z-index
+const highestZIndex = inject('highestZIndex');
+
 const windowStyle = computed(() => {
     const sizeStyle = maximized.value
       ? {
@@ -111,6 +114,10 @@ const startDrag = (event) => {
 
     // Set the active window to the current window
     activeWindow.value = id;
+
+    // Increment the highestZIndex and set the zIndex of the current window to it
+    highestZIndex.value++;
+    windowStyle.value.zIndex = highestZIndex.value;
 
     // Add mouseup event listener to the whole document to stop dragging
     document.addEventListener('mouseup', stopDrag);
@@ -173,9 +180,6 @@ const startResize = (event) => {
 
     document.addEventListener('mouseup', stopResize);
     document.addEventListener('mousemove', resizeWindow);
-
-    // Disable user selection
-    document.body.style.userSelect = 'none';
 };
 
 const stopResize = () => {
