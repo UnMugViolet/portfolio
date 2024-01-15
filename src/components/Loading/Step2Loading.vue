@@ -21,7 +21,7 @@
                         <div class="flex justify-between items-center gap-8 text-white ">
                             <div>
                                 <h1 class="md:text-xl text-sm">
-                                    Bienvenu sur mon ordinateur.
+                                    Bienvenue sur mon ordinateur.
                                 </h1>
                             </div>
                             <div>

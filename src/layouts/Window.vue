@@ -2,6 +2,7 @@
     <section class="absolute radius-window overflow-hidden" 
         :class="isActive ? 'bg-window-blue-active' : 'bg-window-blue-deactivated'"
         :style="windowStyle"
+        :id="id"
     >
         <div class="absolute top-0 left-0 h-7 w-full z-40 flex justify-between items-center px-1"
             :class="isActive ? 'bg-header-window-active' : 'bg-header-window-deactivated'"
