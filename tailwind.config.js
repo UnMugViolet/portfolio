@@ -18,17 +18,22 @@ module.exports = {
         'pellet-blue': '#3C81F3',
         'pellet-blue-selected': '#1E52B7',
       },
+      boxShadow: {
+        'pellet-shadow' : 'box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset'
+      },
       fontSize: {
         'xs': '0.7rem',
       },
       padding: {
-        '0.75': '0.19rem',
+        '0.75': '0.20rem',
       },
       width: {
         '194px': '194px',
       },
+      zIndex: {
+        'max': '999999',
+      }
     },
   },
   plugins: [],
 }
-
