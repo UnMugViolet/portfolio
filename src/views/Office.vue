@@ -19,7 +19,7 @@
       <Window 
         v-if="isWindowVisible(window.id)" 
         @close-window="closeWindow(window.id)"
-        @click="handleWindowClick(window.id)"
+        @mousedown="handleWindowClick(window.id)"
         :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
@@ -51,7 +51,10 @@ import Window from '../layouts/Window.vue';
 
 const showHeader = ref(false);
 const windows = ref([]);
+
+// Keep track of the highest z-index
 const highestZIndex = ref(0);
+provide('highestZIndex', highestZIndex);
 
 // Set activeness of windows
 const activeWindow = ref(null);
