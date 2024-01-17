@@ -32,6 +32,7 @@
     </div>
     <Footer @toggle-header="toggleHeader" 
       :entities="windows"
+      @toggle-window="handleWindowClick"
     />
   </section>
 </template>
@@ -130,13 +131,16 @@ const openWindow = (windowId) => {
       windows.value.push({ 
         id: windowId, 
         visible: true, 
-        component: getComponent(windowId),
+        component: entity.component,
         iconSrc: entity.iconSrc,
         title: entity.title,
         zIndex: highestZIndex.value, // Use highestZIndex
       });
       setActiveWindow(windowId); // Set the window clicked as active
     }
+  } else {
+    // If window already exists, just bring it to the front
+    handleWindowClick(windowId);
   }
 };
 
