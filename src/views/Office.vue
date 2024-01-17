@@ -15,9 +15,11 @@
       @toggle-music="openWindow('music')"
       @toggle-play="openWindow('play')"
     />
-    <div v-for="window in entities" :key="window.id">
+    <div v-for="window in windows" :key="window.id">
       <Window 
         v-if="isWindowVisible(window.id)" 
+        v-show="window.visible"
+        @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
         @mousedown="handleWindowClick(window.id)"
         :id="window.id"
@@ -38,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, provide } from 'vue';
+import { ref, markRaw, provide } from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -70,7 +72,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
     initPositionX: 180,
     initPositionY: 100,
-    component: shallowRef(MyProjects)
+    component: MyProjects
   },
   { 
     id: 'contact', 
@@ -80,7 +82,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/email-icon-sm.png',
     initPositionX: 210,
     initPositionY: 140,
-    component: shallowRef(ContactMe)
+    component: ContactMe
   },
   { 
     id: 'myCV', 
@@ -90,7 +92,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
     initPositionX: 240,
     initPositionY: 180,
-    component: shallowRef(MyCV)
+    component: MyCV
   },
   { 
     id: 'music', 
@@ -100,7 +102,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
     initPositionX: 130,
     initPositionY: 230,
-    component: shallowRef(Music) 
+    component: Music
   },
   { 
     id: 'play', 
@@ -110,7 +112,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/play-icon-sm.png',
     initPositionX: 160,
     initPositionY: 270,
-    component: shallowRef(Play) 
+    component: Play
   },
 ]);
 
@@ -131,10 +133,12 @@ const openWindow = (windowId) => {
       windows.value.push({ 
         id: windowId, 
         visible: true, 
-        component: entity.component,
+        component: markRaw(entity.component), // Use shallowRef here
         iconSrc: entity.iconSrc,
         title: entity.title,
         zIndex: highestZIndex.value, // Use highestZIndex
+        initPositionX: entity.initPositionX,
+        initPositionY: entity.initPositionY,
       });
       setActiveWindow(windowId); // Set the window clicked as active
     }
@@ -165,12 +169,14 @@ const closeWindow = (windowId) => {
   }
 };
 
-const isWindowVisible = (windowId) => windows.value.some((window) => window.id === windowId);
-
-const getComponent = (windowId) => {
-  const window = entities.value.find((w) => w.id === windowId);
-  return window ? window.component : null;
+const minimizeWindow = (windowId) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  if (window) {
+    window.visible = false;
+  }
 };
+
+const isWindowVisible = (windowId) => windows.value.some((window) => window.id === windowId);
 
 const handleOutsideClick = (event) => {
   if (showHeader.value) {

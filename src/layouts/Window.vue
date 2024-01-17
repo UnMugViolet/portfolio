@@ -16,7 +16,7 @@
             <div class="h-5/6 mt-px flex items-center gap-px"
                 :class="isActive ? 'opacity-100' : 'opacity-60 '"
             >
-                <WindowMinimize />
+                <WindowMinimize @click="toggleMinimize" />
                 <WindowMaximize @click="toggleMaximize" />
                 <WindowClose @click="closeWindow" />
             </div>
@@ -105,6 +105,10 @@ const toggleMaximize = () => {
 
 const closeWindow = () => {
     emit('close-window');
+};
+
+const toggleMinimize = () => {
+    emit('toggle-minimize');
 };
 
 const startDrag = (event) => {
