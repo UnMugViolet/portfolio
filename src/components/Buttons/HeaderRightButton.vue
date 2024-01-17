@@ -1,15 +1,27 @@
 <template>
-    <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style">
-        <div class="w-7 h-7">
+    <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style" @click="toggleButton">
+        <div class="w-6 h-6 md:w-7 md:h-7">
             <slot name="img" />
         </div>
 
-        <h3 class="header-font text-sm">
+        <h3 class="header-font text-xs">
             <slot name="text" />
         </h3>
     </button>
 </template>
 
+<script>
+    export default {
+    methods: {
+        toggleButton() {
+        this.$emit('toggle-button', this.buttonName); // Pass the buttonName to the parent component
+        }
+    },
+    props: {
+        buttonName: String // Add a prop to receive the button name
+    }
+    };
+</script>
 
 <style scoped>
     .component-style{
