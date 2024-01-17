@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none"
+    <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none cursor-pointer"
       @click="toggleWindow"
     >
         <div class="flex items-center px-2 w-full h-full bg-pellet-blue hover:brightness-110 rounded-sm"

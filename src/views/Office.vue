@@ -32,8 +32,9 @@
         <component :is="window.component" />
       </Window>
     </div>
-    <Footer @toggle-header="toggleHeader" 
-      :entities="windows"
+    <Footer 
+    :entities="windows"
+      @toggle-header="toggleHeader" 
       @toggle-window="handleWindowClick"
     />
   </section>
@@ -155,11 +156,17 @@ const findWindowZIndex = (windowId) => {
 
 const handleWindowClick = (windowId) => {
   const window = windows.value.find((window) => window.id === windowId);
-  if (window && window.zIndex !== highestZIndex.value) {
-    highestZIndex.value++; // Increase highestZIndex
-    window.zIndex = highestZIndex.value; // Use highestZIndex
+  if (window) {
+    if (!window.visible) {
+      // If window is not visible, make it visible
+      window.visible = true;
+    }
+    if (window.zIndex !== highestZIndex.value) {
+      highestZIndex.value++; // Increase highestZIndex
+      window.zIndex = highestZIndex.value; // Use highestZIndex
+    }
+    setActiveWindow(windowId); // Set the window clicked as active
   }
-  setActiveWindow(windowId); // Set the window clicked as active
 };
 
 const closeWindow = (windowId) => {
@@ -173,6 +180,9 @@ const minimizeWindow = (windowId) => {
   const window = windows.value.find((window) => window.id === windowId);
   if (window) {
     window.visible = false;
+    if (activeWindow.value === windowId) {
+      activeWindow.value = null; // Set activeWindow to null if the minimized window was active
+    }
   }
 };
 
