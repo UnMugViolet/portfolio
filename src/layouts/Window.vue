@@ -21,7 +21,7 @@
                 <WindowClose @click="closeWindow" />
             </div>
         </div>
-        <div class="absolute w-full h-full overflow-hidden p-1">
+        <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools />
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
