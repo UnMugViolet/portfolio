@@ -19,7 +19,8 @@ module.exports = {
         'pellet-blue-deactivated': '#3C81F3',
       },
       boxShadow: {
-        'pellet-shadow' : 'box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset'
+        'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
+        'pellet-footer-deactivated': 'rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset',
       },
       fontSize: {
         'xs': '0.7rem',

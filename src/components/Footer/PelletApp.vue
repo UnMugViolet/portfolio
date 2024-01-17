@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center h-full gap-1 py-1 mt-px w-44 select-none">
-        <div class="flex items-center px-2 w-full h-full bg-pellet-blue box-shadow-pellet-footer hover:brightness-110 rounded-sm"
-          :class="activeWindow === entity.id ? 'bg-pellet-blue-active' : 'bg-pellet-blue-deactivated'"
+        <div class="flex items-center px-2 w-full h-full bg-pellet-blue hover:brightness-110 rounded-sm"
+          :class="activeWindow === entity.id ? 'bg-pellet-blue-active shadow-pellet-footer-active' : 'bg-pellet-blue-deactivated shadow-pellet-footer-deactivated'"
         >
         <div class="flex gap-1 mt-px">
             <img :src="entity.iconSrc" :alt="'icon ' + entity.title" class="w-4 h-4"/>
