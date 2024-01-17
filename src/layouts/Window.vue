@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="h-5/6 mt-px flex items-center gap-px"
-            :class="isActive ? 'opacity-100' : 'opacity-60 '"
+                :class="isActive ? 'opacity-100' : 'opacity-60 '"
             >
                 <WindowMinimize />
                 <WindowMaximize @click="toggleMaximize" />
