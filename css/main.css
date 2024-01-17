@@ -26,7 +26,7 @@
 @font-face {
   font-family: "Verdana";
   font-weight: 400;
-  src: local("Verdana"), url("src/assets/fonts/verdana-bold.ttf") format("truetype");
+  src: local("Verdana"), url("src/assets/fonts/verdanabd.ttf") format("truetype");
 }
 @font-face {
   font-family: "Trebuchet MS";
@@ -83,7 +83,7 @@ p {
 
 .small-p {
   font-family: "Tahoma";
-  font-size: 0.65rem;
+  font-size: 11px;
   font-weight: 400;
 }
 
@@ -93,6 +93,10 @@ img {
 
 .app-container {
   width: 90%;
+}
+
+.h-content-window {
+  height: calc(100% - 6.55rem);
 }
 
 /* ---------Strokes---------*/
@@ -118,6 +122,18 @@ img {
 
 .left-blue-header-1 {
   border-left: 1px solid rgba(58, 58, 255, 0.37);
+}
+
+.border-window-header-bot {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.border-window-header-right {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.border-top-grey {
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .bg-color-load-header-blue {
@@ -156,6 +172,10 @@ img {
   border: 0px;
   height: 2px;
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.bg-window-right-component {
+  background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
 }
 
 .bg-profile-pic {
@@ -206,6 +226,14 @@ img {
   box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
+.shadow-header-window {
+  box-shadow: rgb(176, 176, 176) 0px -2px 3px -1px inset;
+}
+
+.box-shadow-header-window:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 1px inset;
+}
+
 /* ---------Text Shadow---------*/
 .text-shadow-header {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
@@ -213,6 +241,11 @@ img {
 
 .buttons-header-bottom:hover {
   background-color: rgba(60, 80, 210, 0.5);
+}
+
+.button-window-global-layout {
+  border-radius: 3px;
+  width: 23px;
 }
 
 .loading-bar {
