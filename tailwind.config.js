@@ -15,8 +15,8 @@ module.exports = {
         'dropdown': '#1660E8',
         'window-blue-active': '#0831D9',
         'window-blue-deactivated': '#6582F5',
-        'pellet-blue': '#3C81F3',
-        'pellet-blue-selected': '#1E52B7',
+        'pellet-blue-active': '#1E52B7',
+        'pellet-blue-deactivated': '#3C81F3',
       },
       fontSize: {
         'xs': '0.7rem',

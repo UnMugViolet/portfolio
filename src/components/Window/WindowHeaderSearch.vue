@@ -12,7 +12,7 @@
                     {{ title }}
                 </p>
             </div>
-            <div class="m-px hover:brightness-110">
+            <div class="mr-0.5 hover:brightness-110">
                 <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
             </div>
         </div>
