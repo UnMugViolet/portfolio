@@ -33,7 +33,7 @@
       </Window>
     </div>
     <Footer 
-    :entities="windows"
+      :entities="windows"
       @toggle-header="toggleHeader" 
       @toggle-window="handleWindowClick"
     />
@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { ref, markRaw, provide } from 'vue';
+import { ref, shallowRef, provide } from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -64,6 +64,13 @@ provide('highestZIndex', highestZIndex);
 const activeWindow = ref(null);
 provide('activeWindow', activeWindow);
 
+
+/* Entities array
+  * This array is just hhere to provide basic data for the windows
+  * It is not used to render the windows
+  * The windows are rendered using the windows array and the openWindow function
+*/
+
 const entities = ref([
   { 
     id: 'myProjects', 
@@ -73,7 +80,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
     initPositionX: 180,
     initPositionY: 100,
-    component: MyProjects
+    component: shallowRef(MyProjects)
   },
   { 
     id: 'contact', 
@@ -83,7 +90,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/email-icon-sm.png',
     initPositionX: 210,
     initPositionY: 140,
-    component: ContactMe
+    component: shallowRef(ContactMe)
   },
   { 
     id: 'myCV', 
@@ -93,7 +100,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
     initPositionX: 240,
     initPositionY: 180,
-    component: MyCV
+    component: shallowRef(MyCV)
   },
   { 
     id: 'music', 
@@ -103,7 +110,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
     initPositionX: 130,
     initPositionY: 230,
-    component: Music
+    component: shallowRef(Music)
   },
   { 
     id: 'play', 
@@ -113,7 +120,7 @@ const entities = ref([
     iconSrc: '/src/assets/img/icons/play-icon-sm.png',
     initPositionX: 160,
     initPositionY: 270,
-    component: Play
+    component: shallowRef(Play)
   },
 ]);
 
@@ -134,7 +141,7 @@ const openWindow = (windowId) => {
       windows.value.push({ 
         id: windowId, 
         visible: true, 
-        component: markRaw(entity.component), // Use shallowRef here
+        component: shallowRef(entity.component),
         iconSrc: entity.iconSrc,
         title: entity.title,
         zIndex: highestZIndex.value, // Use highestZIndex
