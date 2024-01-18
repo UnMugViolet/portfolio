@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, provide } from 'vue';
+import { ref, shallowRef, provide, onMounted} from 'vue';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer/Footer.vue';
 
@@ -63,7 +63,6 @@ provide('highestZIndex', highestZIndex);
 // Set activeness of windows
 const activeWindow = ref(null);
 provide('activeWindow', activeWindow);
-
 
 /* Entities array
   * This array is just hhere to provide basic data for the windows
@@ -149,6 +148,7 @@ const openWindow = (windowId) => {
         initPositionY: entity.initPositionY,
       });
       setActiveWindow(windowId); // Set the window clicked as active
+      saveState(); // Save state to localStorage
     }
   } else {
     // If window already exists, just bring it to the front
@@ -180,6 +180,7 @@ const closeWindow = (windowId) => {
   const windowIndex = windows.value.findIndex((window) => window.id === windowId);
   if (windowIndex !== -1) {
     windows.value.splice(windowIndex, 1);
+    saveState(); // Save state to localStorage
   }
 };
 
@@ -189,6 +190,7 @@ const minimizeWindow = (windowId) => {
     window.visible = false;
     if (activeWindow.value === windowId) {
       activeWindow.value = null; // Set activeWindow to null if the minimized window was active
+      saveState(); // Save state after minimizing a window
     }
   }
 };
@@ -223,4 +225,24 @@ const handleOutsideClick = (event) => {
     setActiveWindow(null);
   }
 };
+
+// Save state to localStorage
+const saveState = () => {
+  const openWindowIds = Array.from(windows.value.values(), window => window.id);
+  localStorage.setItem('windows', JSON.stringify(openWindowIds));
+};
+
+// Load state from localStorage on page load
+const loadState = () => {
+  const savedWindowIds = JSON.parse(localStorage.getItem('windows'));
+
+  if (savedWindowIds) {
+    savedWindowIds.forEach(windowId => {
+      openWindow(windowId);
+    });
+  }
+};
+
+onMounted(loadState);
+
 </script>
