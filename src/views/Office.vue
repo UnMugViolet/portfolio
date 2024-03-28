@@ -42,14 +42,14 @@
 
 <script setup>
 import { ref, shallowRef, provide, onMounted} from 'vue';
-import Header from '/src/components/Header.vue';
-import Footer from '/src/components/Footer/Footer.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer/Footer.vue';
 
-import Play from '/src/components/Window/Play.vue';
-import MyCV from '/src/components/Window/MyCV.vue';
-import Music from '/src/components/Window/Music.vue';
-import ContactMe from '/src/components/Window/ContactMe.vue';
-import MyProjects from '/src/components/Window/MyProjects.vue';
+import Play from '@/components/Window/Play.vue';
+import MyCV from '@/components/Window/MyCV.vue';
+import Music from '@/components/Window/Music.vue';
+import ContactMe from '@/components/Window/ContactMe.vue';
+import MyProjects from '@/components/Window/MyProjects.vue';
 import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
 import Window from '../layouts/Window.vue';
 
@@ -75,8 +75,8 @@ const entities = ref([
     id: 'myProjects', 
     title: 'Mes projets', 
     subtitle: 'Voir tous mes projets', 
-    imgSrc:'/src/assets/img/icons/projects-icon-lg.png',
-    iconSrc: '/src/assets/img/icons/projects-icon-sm.png',
+    imgSrc:'src/assets/img/icons/projects-icon-lg.png',
+    iconSrc: 'src/assets/img/icons/projects-icon-sm.png',
     initPositionX: 180,
     initPositionY: 100,
     component: shallowRef(MyProjects)
@@ -86,7 +86,7 @@ const entities = ref([
     title: 'Me contacter', 
     subtitle: 'Me contacter', 
     imgSrc: 'src/assets/img/icons/email-icon-lg.png',
-    iconSrc: '/src/assets/img/icons/email-icon-sm.png',
+    iconSrc: 'src/assets/img/icons/email-icon-sm.png',
     initPositionX: 210,
     initPositionY: 140,
     component: shallowRef(ContactMe)
@@ -96,7 +96,7 @@ const entities = ref([
     title: 'Mon CV', 
     subtitle: 'Voir le curriculum vitae', 
     imgSrc: 'src/assets/img/icons/cv-icon-lg.png',
-    iconSrc: '/src/assets/img/icons/cv-icon-sm.png',
+    iconSrc: 'src/assets/img/icons/cv-icon-sm.png',
     initPositionX: 240,
     initPositionY: 180,
     component: shallowRef(MyCV)
@@ -105,8 +105,8 @@ const entities = ref([
     id: 'music', 
     title: 'Mes Musiques', 
     subtitle: '', 
-    imgSrc: '/src/assets/img/icons/playmusic-icon-lg.png',
-    iconSrc: '/src/assets/img/icons/playmusic-icon-sm.png',
+    imgSrc: 'src/assets/img/icons/playmusic-icon-lg.png',
+    iconSrc: 'src/assets/img/icons/playmusic-icon-sm.png',
     initPositionX: 130,
     initPositionY: 230,
     component: shallowRef(Music)
@@ -116,7 +116,7 @@ const entities = ref([
     title: 'Jouer', 
     subtitle: '', 
     imgSrc: 'src/assets/img/icons/play-icon-lg.png', 
-    iconSrc: '/src/assets/img/icons/play-icon-sm.png',
+    iconSrc: 'src/assets/img/icons/play-icon-sm.png',
     initPositionX: 160,
     initPositionY: 270,
     component: shallowRef(Play)

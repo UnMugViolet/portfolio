@@ -95,14 +95,14 @@ img {
 
 // Background images
 .bg-profile-pic {
-    background-image: url('/src/assets/img/profile-picture.webp');
+    background-image: url('@/assets/img/profile-picture.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .bg-office-pic {
-    background-image: url('/src/assets/img/office-picture.webp');
+    background-image: url('@/assets/img/office-picture.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
