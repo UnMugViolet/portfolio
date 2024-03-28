@@ -8,13 +8,13 @@
             </WindowDropdown>
         </div>
         <div class="flex items-center h-6 w-10">
-            <img src="src/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets" class="h-full pt-0.5 border-window-header-bot"/>
+            <img src="@/assets/img/icons/windows-header-window-icon.png" alt="icone mes projets" class="h-full pt-0.5 border-window-header-bot"/>
         </div>
     </div>
 </template>
 
 <script setup>
-import WindowDropdown from '/src/components/Buttons/WindowDropdown.vue';
+import WindowDropdown from '@/components/Buttons/WindowDropdown.vue';
 
 const props = defineProps({
     dropdownItems: {

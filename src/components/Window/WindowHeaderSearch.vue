@@ -13,11 +13,11 @@
                 </p>
             </div>
             <div class="mr-0.5 hover:brightness-110">
-                <img src="src/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
+                <img src="@/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
             </div>
         </div>
         <div class="flex items-center px-2 gap-1 w-20">
-            <img src="src/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
+            <img src="@/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
             <p class="small-p cursor-default">Aller</p>
         </div>
     </div>
