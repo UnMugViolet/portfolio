@@ -33,6 +33,7 @@
     "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",
     "vite": "^4.5.1",
+    "vite-plugin-vue-devtools": "^7.0.25",
     "wait-on": "^7.0.1"
   }
 }
