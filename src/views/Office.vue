@@ -52,6 +52,7 @@ import ContactMe from '@/components/Window/ContactMe.vue';
 import MyProjects from '@/components/Window/MyProjects.vue';
 import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
 import Window from '../layouts/Window.vue';
+import windowsData from '@/data/windows-data.json';
 
 const showHeader = ref(false);
 const windows = ref([]);
@@ -64,64 +65,20 @@ provide('highestZIndex', highestZIndex);
 const activeWindow = ref(null);
 provide('activeWindow', activeWindow);
 
-/* Entities array
-  * This array is just here to provide basic data for the windows
-  * It is not used to render the windows
-  * The windows are rendered using the windows array and the openWindow function
-*/
+// Create components from data json
+const components = {
+  MyProjects: shallowRef(MyProjects),
+  ContactMe: shallowRef(ContactMe),
+  MyCV: shallowRef(MyCV),
+  Music: shallowRef(Music),
+  Play: shallowRef(Play)
+};
 
-const entities = ref([
-  { 
-    id: 'myProjects', 
-    title: 'Mes projets', 
-    subtitle: 'Voir tous mes projets', 
-    imgSrc:'src/assets/img/icons/projects-icon-lg.png',
-    iconSrc: 'src/assets/img/icons/projects-icon-sm.png',
-    initPositionX: 180,
-    initPositionY: 100,
-    component: shallowRef(MyProjects)
-  },
-  { 
-    id: 'contact', 
-    title: 'Me contacter', 
-    subtitle: 'Me contacter', 
-    imgSrc: 'src/assets/img/icons/email-icon-lg.png',
-    iconSrc: 'src/assets/img/icons/email-icon-sm.png',
-    initPositionX: 210,
-    initPositionY: 140,
-    component: shallowRef(ContactMe)
-  },
-  { 
-    id: 'myCV', 
-    title: 'Mon CV', 
-    subtitle: 'Voir le curriculum vitae', 
-    imgSrc: 'src/assets/img/icons/cv-icon-lg.png',
-    iconSrc: 'src/assets/img/icons/cv-icon-sm.png',
-    initPositionX: 240,
-    initPositionY: 180,
-    component: shallowRef(MyCV)
-  },
-  { 
-    id: 'music', 
-    title: 'Mes Musiques', 
-    subtitle: '', 
-    imgSrc: 'src/assets/img/icons/playmusic-icon-lg.png',
-    iconSrc: 'src/assets/img/icons/playmusic-icon-sm.png',
-    initPositionX: 130,
-    initPositionY: 230,
-    component: shallowRef(Music)
-  },
-  { 
-    id: 'play', 
-    title: 'Jouer', 
-    subtitle: '', 
-    imgSrc: 'src/assets/img/icons/play-icon-lg.png', 
-    iconSrc: 'src/assets/img/icons/play-icon-sm.png',
-    initPositionX: 160,
-    initPositionY: 270,
-    component: shallowRef(Play)
-  },
-]);
+// Create entities with components
+const entities = ref(windowsData.map(item => ({
+  ...item,
+  component: components[item.component]
+})));
 
 const toggleHeader = () => {
   showHeader.value = !showHeader.value;
