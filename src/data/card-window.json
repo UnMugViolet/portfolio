@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Tâches système",
+    "subtasks": [
+      {
+        "id": 1,
+        "subtitle": "Informations système",
+        "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+      },
+      {
+        "id": 2,
+        "subtitle": "Gestion des programmes",
+        "iconUrl": "src/assets/img/icons/programs-icon.png"
+      },
+      {
+        "id": 3,
+        "subtitle": "Changer les paramètres",
+        "iconUrl": "src/assets/img/icons/settings-icon.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Autres",
+    "subtasks": [
+      {
+        "id": 1,
+        "subtitle": "Mes emplacements réseau",
+        "iconUrl": "src/assets/img/icons/networking-icon.png"
+      },
+      {
+        "id": 2,
+        "subtitle": "Mes documents",
+        "iconUrl": "src/assets/img/icons/documents-icon.png"
+      },
+      {
+        "id": 3,
+        "subtitle": "Documents partagés",
+        "iconUrl": "src/assets/img/icons/shared-documents-icon.png"
+      },
+      {
+        "id": 4,
+        "subtitle": "Panneau de configuration",
+        "iconUrl": "src/assets/img/icons/settings-icon.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Détails",
+    "subtasks": [
+      {
+        "id": 1,
+        "subtitle": "github",
+        "iconUrl": "src/assets/img/icons/github-icon.png"
+      }
+    ]
+  }
+]
