@@ -1,44 +1,44 @@
 @font-face {
   font-family: "Helvetica BlackItalic";
   font-weight: 400;
-  src: local("Helvetica BlackItalic"), url("@/assets/fonts/Helvetica-BlackItalic-Regular.ttf") format("truetype");
+  src: local("Helvetica BlackItalic"), url("src/assets/fonts/Helvetica-BlackItalic-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Franklin Gothic Medium";
   font-weight: 400;
-  src: local("Franklin Gothic Medium"), url("@/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
+  src: local("Franklin Gothic Medium"), url("src/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Franklin Gothic Medium";
   font-weight: 400;
-  src: local("Franklin Gothic Medium"), url("@/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
+  src: local("Franklin Gothic Medium"), url("src/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tahoma";
   font-weight: 400;
-  src: local("Tahoma"), url("@/assets/fonts/tahoma.ttf") format("truetype");
+  src: local("Tahoma"), url("src/assets/fonts/tahoma.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tahoma";
   font-weight: 600;
-  src: local("Tahoma Bold"), url("@/assets/fonts/tahomabd.ttf") format("truetype");
+  src: local("Tahoma Bold"), url("src/assets/fonts/tahomabd.ttf") format("truetype");
 }
 @font-face {
   font-family: "Verdana";
   font-weight: 400;
-  src: local("Verdana"), url("@/assets/fonts/verdanabd.ttf") format("truetype");
+  src: local("Verdana"), url("src/assets/fonts/verdanabd.ttf") format("truetype");
 }
 @font-face {
   font-family: "Trebuchet MS";
   font-style: normal;
   font-weight: 400;
-  src: local("Trebuchet MS"), url("@/assets/fonts/trebuc.ttf") format("truetype");
+  src: local("Trebuchet MS"), url("src/assets/fonts/trebuc.ttf") format("truetype");
 }
 @font-face {
   font-family: "Trebuchet MS";
   font-style: normal;
   font-weight: 600;
-  src: local("Trebuchet MS"), url("@/assets/fonts/trebucbd.ttf") format("truetype");
+  src: local("Trebuchet MS"), url("src/assets/fonts/trebucbd.ttf") format("truetype");
 }
 .logo-font {
   font-family: "Helvetica BlackItalic";
@@ -174,24 +174,6 @@ img {
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
-.bg-window-right-component {
-  background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
-}
-
-.bg-profile-pic {
-  background-image: url("@/assets/img/profile-picture.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-office-pic {
-  background-image: url("@/assets/img/office-picture.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 /* ---------Gradients---------*/
 .radial-gradient-loading {
   background: radial-gradient(29.68% 27.76% at 5.94% 14.64%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.16) 59.9%, rgba(255, 255, 255, 0) 100%), #567DDA;
@@ -234,6 +216,10 @@ img {
   box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 1px inset;
 }
 
+.box-shadow-pellet-footer {
+  box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
+}
+
 /* ---------Text Shadow---------*/
 .text-shadow-header {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
@@ -265,4 +251,6 @@ img {
   100% {
     transform: translate(400px);
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

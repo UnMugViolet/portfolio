@@ -89,24 +89,6 @@ img {
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
-.bg-window-right-component {
-    background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
-}
-
-// Background images
-.bg-profile-pic {
-    background-image: url('@/assets/img/profile-picture.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.bg-office-pic {
-    background-image: url('@/assets/img/office-picture.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
 /* ---------Gradients---------*/
 
