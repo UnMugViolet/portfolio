@@ -1,5 +1,5 @@
 <template>
-    <section class="absolute radius-window overflow-hidden select-none" 
+    <section class="absolute rounded-t-lg overflow-hidden select-none" 
         :class="isActive ? 'bg-window-blue-active' : 'bg-window-blue-deactivated'"
         :style="windowStyle"
         :id="id"
@@ -10,7 +10,7 @@
             <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
                 <img :src="iconSrc" alt="icon" class="w-4 h-4"/>
                 <div class="flex items-center overflow-hidden">
-                    <h4 class="text-header truncate">{{ title }}</h4>
+                    <h4 class="text-header-window text-header-shadow truncate">{{ title }}</h4>
                 </div>
             </div>
             <div class="h-5/6 mt-px flex items-center gap-px"
@@ -226,17 +226,8 @@ const resizeWindow = (event) => {
 </script>
 
 <style scoped>
-.radius-window {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
 
-.header-window {
-  background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
-}
-
-.text-header {
-    font-size: 0.85rem;
+.text-header-shadow {
     text-shadow: 1px 1px 0px #09177F;
 }
 </style>

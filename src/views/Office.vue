@@ -1,5 +1,5 @@
 <template>
-  <section class="h-screen w-screen overflow-hidden bg-office-pic relative" @mousedown="handleOutsideClick">
+  <section class="h-screen w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
     <Header v-if="showHeader" 
       :entities="entities"
       @toggle-header="toggleHeader" 
