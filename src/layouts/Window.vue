@@ -45,12 +45,13 @@ import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
 const emit = defineEmits();
-const { id, title, iconSrc, initPositionX, initPositionY } = defineProps({
+const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems } = defineProps({
   id: String,
   title: String,
   iconSrc: String,
   initPositionX: Number,
-  initPositionY: Number
+  initPositionY: Number,
+  subMenuItems: Array,
 });
 
 // App size constants

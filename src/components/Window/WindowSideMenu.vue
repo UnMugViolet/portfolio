@@ -1,5 +1,5 @@
 <script setup>
-  import menuData from '@/data/card-window.json'
+  import menuData from '@/data/windows-data.json'
     
 </script>
 
@@ -11,12 +11,12 @@
         <h3>{{ item.title }}</h3>
         <img src="@/assets/img/icons/top-icon-card-window.png" alt="plus" class="w-4 h-4 drop-shadow-lg">
       </div>
-      <div class="p-1 bg-window-menu-card px-2">
-        <div class="flex flex-row gap-2 cursor-pointer hover:underline hover:text-heroic-blue"
-          v-for="subtask in item.subtasks" :key="subtask.id">
-          <img :src="subtask.iconUrl" :alt="subtask.subtitle" class="w-3 h-3">
+      <div class="py-0.75 bg-window-menu-card px-2"
+      v-for="subtask in item.subtasks" :key="subtask.id">
+        <a :href="subtask.url" target="_blank" class="flex flex-row items-center gap-1.5 cursor-pointer hover:underline hover:text-heroic-blue">
+          <img :src="subtask.iconUrl" :alt="subtask.subtitle" class="w-3.5 h-3.5">
           <p class="font-light text-xxs">{{ subtask.subtitle }}</p>
-        </div>
+        </a>
       </div>
     </div>
   </div>
