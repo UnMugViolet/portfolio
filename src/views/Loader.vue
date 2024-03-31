@@ -1,6 +1,5 @@
 
 <script setup>
-// Vue
 import { ref, onMounted  } from 'vue'
 
 // Components
@@ -38,8 +37,6 @@ onMounted(() => {
   // Start the loading process
   startLoading();
 });
-
-
 </script>
 
 <template>

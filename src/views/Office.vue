@@ -65,7 +65,7 @@ const activeWindow = ref(null);
 provide('activeWindow', activeWindow);
 
 /* Entities array
-  * This array is just hhere to provide basic data for the windows
+  * This array is just here to provide basic data for the windows
   * It is not used to render the windows
   * The windows are rendered using the windows array and the openWindow function
 */
