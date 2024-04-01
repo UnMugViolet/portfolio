@@ -25,7 +25,7 @@
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools />
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
-
+            <!-- Component containing content for the window goes here -->
             <slot></slot>         
         </div>
         <!-- Resize handlers -->
@@ -45,6 +45,7 @@ import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
 import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
 
 const emit = defineEmits();
+
 const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems } = defineProps({
   id: String,
   title: String,

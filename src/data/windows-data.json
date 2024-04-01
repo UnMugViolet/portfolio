@@ -11,7 +11,7 @@
     "subMenuItems": [
       {
         "id": 1,
-        "title": "Mes projets",
+        "title": "Tâches système",
         "subtasks": [
           {
             "id": 1,
@@ -38,25 +38,25 @@
             "id": 1,
             "subtitle": "Mes emplacements réseau",
             "iconUrl": "src/assets/img/icons/networking-icon.png",
-            "url": "#"
+            "url": ""
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
             "iconUrl": "src/assets/img/icons/documents-icon.png",
-            "url": "#"
+            "url": ""
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
             "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
-            "url": "#"
+            "url": ""
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
             "iconUrl": "src/assets/img/icons/settings-icon.png",
-            "url": "#"
+            "url": ""
           }
         ]
       },
@@ -86,7 +86,7 @@
     "subMenuItems": [
       {
         "id": 1,
-        "title": "Mes projets",
+        "title": "Tâches système",
         "subtasks": [
           {
             "id": 1,
@@ -161,7 +161,7 @@
     "subMenuItems": [
       {
         "id": 1,
-        "title": "Mes projets",
+        "title": "Tâches système",
         "subtasks": [
           {
             "id": 1,
@@ -236,7 +236,7 @@
     "subMenuItems": [
       {
         "id": 1,
-        "title": "Mes projets",
+        "title": "Tâches système",
         "subtasks": [
           {
             "id": 1,
@@ -311,7 +311,7 @@
     "subMenuItems": [
       {
         "id": 1,
-        "title": "Mes projets",
+        "title": "Tâches système",
         "subtasks": [
           {
             "id": 1,
