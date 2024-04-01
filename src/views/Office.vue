@@ -29,7 +29,10 @@
         :initPositionY="window.initPositionY"
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
-        <component :is="window.component" />
+        <component 
+          :is="window.component"
+          :subMenuItems="window.subMenuItems" 
+        />
       </Window>
     </div>
     <Footer 
@@ -74,7 +77,7 @@ const components = {
   Play: shallowRef(Play)
 };
 
-// Create entities with components
+// Create the entities array from the data.json
 const entities = ref(windowsData.map(item => ({
   ...item,
   component: components[item.component]
@@ -103,6 +106,7 @@ const openWindow = (windowId) => {
         zIndex: highestZIndex.value, // Use highestZIndex
         initPositionX: entity.initPositionX,
         initPositionY: entity.initPositionY,
+        subMenuItems: entity.subMenuItems,
       });
       setActiveWindow(windowId); // Set the window clicked as active
       saveState(); // Save state to localStorage
