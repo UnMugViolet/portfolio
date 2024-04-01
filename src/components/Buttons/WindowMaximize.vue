@@ -1,6 +1,6 @@
 <template>
     <button
-      class="maximize-button relative button-window-global-layout border border-white h-full hover:brightness-125 active:brightness-90 before:absolute before:block before:left-1 before:top-1"
+      class="maximize-button relative w-[23px] rounded-[3px] border border-white h-full hover:brightness-125 active:brightness-90 before:absolute before:block before:left-1 before:top-1"
       @click="toggleButton"
       :class="{ 'clicked': isClicked }"
     >

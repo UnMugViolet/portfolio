@@ -24,6 +24,7 @@ module.exports = {
         'pellet-blue-deactivated': '#3C81F3',
         'twilight-blue': '#0C327D',
         'heroic-blue': '#1C68FF',
+        'button-session': '#3c50d280',
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',

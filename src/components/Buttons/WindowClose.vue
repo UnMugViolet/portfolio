@@ -1,5 +1,5 @@
 <template>
-    <button class="close-button relative button-window-global-layout border border-white h-full active:brightness-90 hover:brightness-125 
+    <button class="close-button relative w-[23px] rounded-[3px] border border-white h-full active:brightness-90 hover:brightness-125 
     after:h-4 after:top-0.5 after:mt-px after:absolute after:bg-white after:rotate-45 after:w-0.5 after:left-2 after:ml-px
     before:h-4 before:top-0.5 before:mt-px before:absolute before:bg-white before:rotate-45	before:w-0.5 before:left-2 before:ml-px">
 

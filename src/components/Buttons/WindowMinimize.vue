@@ -1,5 +1,5 @@
 <template>
-    <button class="minimize-button relative button-window-global-layout border border-white h-full w-6 before:bottom-1 before:left-1 before:absolute active:brightness-90 before:bg-white before:w-2 hover:brightness-125">
+    <button class="minimize-button relative w-[23px] rounded-[3px] border border-white h-full before:bottom-1 before:left-1 before:absolute active:brightness-90 before:bg-white before:w-2 hover:brightness-125">
 
     </button>
 </template>
