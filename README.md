@@ -1,14 +1,7 @@
-# portfolio
+# <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px"> PorfolioXp
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[![Quality Gate Status](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=alert_status&token=sqb_e2290f203df6729369c20c617a6533c7b3be7820)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
+[![Lines of Code](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=ncloc&token=sqb_e2290f203df6729369c20c617a6533c7b3be7820)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
 
 ## Project Setup
 
