@@ -42,6 +42,11 @@
     src: local("Trebuchet MS"), url('@/assets/fonts/trebucbd.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Trebuchet MS pixelated';
+    src: local("Trebuchet MS pixelated"), url('@/assets/fonts/ms-sans-serif/MS Sans Serif.ttf') format('truetype');
+}
+
 
 // Global variables
 
