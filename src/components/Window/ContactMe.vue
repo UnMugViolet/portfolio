@@ -16,6 +16,8 @@ const isLoading = ref(false);
 
 
 // Get variables from .env
+const adminName = import.meta.env.VITE_APP_ADMIN_NAME;
+const adminEmailAddress = import.meta.env.VITE_APP_ADMIN_EMAIL_ADDRESS;
 const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
 const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
@@ -37,7 +39,7 @@ const sendEmail = async () => {
 
     try {
         const result = await emailjs.send(serviceId, templateId, {
-            to_name: 'Paul Jaguin',
+            to_name: adminName,
             from_name: userName.value,
             message: userMessage.value,
             reply_to: userEmail.value,
@@ -53,7 +55,7 @@ const sendEmail = async () => {
         isLoading.value = false;
     } catch (error) {
         console.log(error.text);
-        errorMessage.value = "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: jaguinpaul@gmail.com";
+        errorMessage.value = "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: " + adminEmailAddress;
     }
 }
 
