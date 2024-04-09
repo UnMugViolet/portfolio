@@ -24,6 +24,7 @@ const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
 
 const sendEmail = async () => {
     if (!userName.value || !userEmail.value || !userMessage.value) {
+        emailSent.value = false;
         errorMessage.value = 'Veuillez remplir tous les champs avant d\'envoyer votre message'; 
         return;
     }
@@ -31,6 +32,7 @@ const sendEmail = async () => {
     // Check if the email is in a valid format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(userEmail.value)) {
+        emailSent.value = false;
         errorMessage.value = userEmail.value + " n'est pas une adresse e-mail valide";
         return;
     }
@@ -55,6 +57,7 @@ const sendEmail = async () => {
         isLoading.value = false;
     } catch (error) {
         console.log(error.text);
+        emailSent.value = false;
         errorMessage.value = "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: " + adminEmailAddress;
     }
 }
@@ -102,6 +105,7 @@ watch(isLoading, (newValue) => {
             <div class="flex gap-2 items-center">
                 <button 
                     @click.prevent="sendEmail"
+                    :class="{ 'cursor-wait': isLoading }"
                     class="w-20 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm  leading-loose px-3 hover:shadow-button-submit-hover">
                     Envoyer
                 </button>
