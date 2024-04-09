@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 import WindowSideMenu from '@/components/Window/WindowSideMenu.vue'
 
 const props = defineProps({
