@@ -40,6 +40,10 @@
   font-weight: 600;
   src: local("Trebuchet MS"), url("@/assets/fonts/trebucbd.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Trebuchet MS pixelated";
+  src: local("Trebuchet MS pixelated"), url("@/assets/fonts/ms-sans-serif/MS Sans Serif.ttf") format("truetype");
+}
 .logo-font {
   font-family: "Helvetica BlackItalic";
   letter-spacing: -1.2px;
