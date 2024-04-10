@@ -20,7 +20,7 @@
 }
 @font-face {
   font-family: "Tahoma";
-  font-weight: 600;
+  font-weight: 700;
   src: local("Tahoma Bold"), url("@/assets/fonts/tahomabd.ttf") format("truetype");
 }
 @font-face {
