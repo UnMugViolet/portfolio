@@ -9,14 +9,14 @@
 <template>
     <ContentCenter class="bg-color-load-blue radial-gradient-loading">
         <template #top>
-            <div class="absolute bg-color-load-header-blue w-full md:h-32 h-1/6 top-0 down-stroke-white-2 ">
+            <div class="absolute bg-color-load-header-blue w-full md:h-32 h-1/6 top-0 down-stroke-white-2">
 
             </div>
         </template>
 
         <template #center>
             <div class="flex w-full">
-                <div class="flex justify-end items-center w-1/2">
+                <div class="md:flex hidden justify-end items-center w-1/2 ">
                     <div>
                         <div class="flex justify-end w-full">
                             <div class="w-2/3">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="w-px h-96 line-loading-gradient mx-3"></div>
+                <div class="w-px h-96 line-loading-gradient mx-3 md:flex hidden"></div>
                 <LoginForm />
             </div>
         </template>
