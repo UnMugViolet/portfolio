@@ -52,6 +52,9 @@ module.exports = {
       width: {
         '12.125': '12.125rem',
       },
+      height: {
+        'px': '1px',
+      },
       zIndex: {
         'max': '999999',
       }
