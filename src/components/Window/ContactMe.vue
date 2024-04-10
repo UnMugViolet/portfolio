@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue';
 import emailjs from 'emailjs-com';
 import WindowSideMenu from '@/components/Window/WindowSideMenu.vue'
+import SubmitButton from '../Buttons/SubmitButton.vue';
 
 const props = defineProps({
     subMenuItems: Array,
@@ -103,12 +104,11 @@ watch(isLoading, (newValue) => {
                 <textarea v-model="userMessage" class="w-full h-28 border border-input-blue p-2 text-xs outline-none" placeholder="Message"></textarea>
             </div>
             <div class="flex gap-2 items-center">
-                <button 
-                    @click.prevent="sendEmail"
-                    :class="{ 'cursor-wait': isLoading }"
-                    class="w-20 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm  leading-loose px-3 hover:shadow-button-submit-hover">
-                    Envoyer
-                </button>
+                <SubmitButton 
+                    @submit="sendEmail"
+                    :isLoading="isLoading"
+                    :message="'Envoyer'">
+                </SubmitButton>
                 <p class="text-xs text-green-500 font-medium" v-show="emailSent">Votre message a été envoyé avec succès</p>
                 <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }} </p>
             </div>
