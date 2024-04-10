@@ -4,7 +4,7 @@
       <div class="h-8 flex items-center justify-between">
         <div class="flex items-center h-full">
           <StartButton @click="toggleHeader" />
-          <div class="flex w-full h-full ml-2 gap-0.5">
+          <div class="flex w-full h-full ml-2 gap-0.5 overflow-hidden">
             <PelletApp
                 v-for="entity in entities"
                 :key="entity.id"
