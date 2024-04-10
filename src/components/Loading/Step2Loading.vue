@@ -1,5 +1,5 @@
 <script setup>
-    import ContentCenter from '../../layouts/ContentCenter.vue'
+    import ContentCenter from '@/layouts/ContentCenter.vue'
     import LoadingBar from './LoadingBar.vue'
 </script>
 
