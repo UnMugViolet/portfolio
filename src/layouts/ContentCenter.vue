@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="h-screen w-screen overflow-hidden">
+    <section class="h-svh w-screen overflow-hidden">
         <div class="flex items-center justify-center h-full w-full">
             <slot name="top"></slot> 
             <div class="app-container relative">
