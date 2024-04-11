@@ -30,7 +30,7 @@
 </script>
 
 <template>
-  <div class="text-white h-full flex items-center px-2 sm:px-3 gap-1 bg-footer-right-component footer-left-shadow select-none">
+  <div class="absolute right-0 text-white h-full flex items-center px-1.5 sm:px-3 sm:gap-1 bg-footer-right-component footer-left-shadow select-none">
     <img
       class="w-4 h-4 cursor-pointer"
       src="@/assets/img/icons/full-screen-icon-lg.png"
