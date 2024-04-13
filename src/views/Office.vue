@@ -45,7 +45,7 @@
 
 <script setup>
 import { ref, shallowRef, provide, onMounted} from 'vue';
-import Header from '@/components/Header.vue';
+import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
 import Play from '@/components/Window/Play.vue';

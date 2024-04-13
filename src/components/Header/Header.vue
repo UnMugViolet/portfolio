@@ -87,11 +87,11 @@
 
 <script setup>
     import { ref, watchEffect } from 'vue';
-    import ProfilePicture from './ProfilePicture.vue';
-    import HeaderLeftButton from './Buttons/HeaderLeftButton.vue';
-    import HeaderRightButton from './Buttons/HeaderRightButton.vue';
-    import HeaderShutdown from './Buttons/HeaderShutdown.vue';
-    import HeaderDisconnect from './Buttons/HeaderDisconnect.vue';
+    import ProfilePicture from '@/components/ProfilePicture.vue';
+    import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue';
+    import HeaderRightButton from '@/components/Buttons/HeaderRightButton.vue';
+    import HeaderShutdown from '@/components/Buttons/HeaderShutdown.vue';
+    import HeaderDisconnect from '@/components/Buttons/HeaderDisconnect.vue';
 
     const emit = defineEmits();
 
