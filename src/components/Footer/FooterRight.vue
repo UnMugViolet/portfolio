@@ -38,7 +38,7 @@
       :title="originalTitle"
       @click="enterFullScreen"
       />
-      <img class="w-4 h-4 mt-px cursor-pointer" src="@/assets/img/icons/volume-icon-sm.png" alt="Gestion du volume" title="Gestion du volume">
+      <img class="w-4 h-4 mt-px cursor-pointet" src="@/assets/img/icons/volume-icon-sm.png" alt="Gestion du volume" title="Gestion du volume">
     <CurrentTime />
   </div>
 </template>

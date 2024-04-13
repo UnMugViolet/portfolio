@@ -1,5 +1,5 @@
 <template>
-  <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style hover:text-white"
+  <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style hover:text-white cursor-pointer"
   @click="toggleButton"
   >
     <div class="w-7 h-7 md:w-9 md:h-9">

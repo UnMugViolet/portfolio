@@ -4,7 +4,7 @@
       <button
         v-for="(entity) in localEntities"
         :key="entity.id"
-        class="flex flex-col gap-2 items-center w-full"
+        class="flex flex-col gap-2 items-center w-full cursor-pointer"
         @click="toggleEffect(entity)"
         @dblclick="removeFilterAndToggle(entity)"
         :class="{ 'active': entity.isActive }"
