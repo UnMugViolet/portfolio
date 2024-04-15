@@ -30,7 +30,7 @@
 
 
 <template>
-  <div>
-    <h4 class="mx-px text-xs cursor-default">{{ formattedTime }}</h4>
+  <div class="flex flex-row">
+    <h4 class="mx-px text-xxs md:text-xs cursor-default ">{{ formattedTime }}</h4>
   </div>
 </template>
