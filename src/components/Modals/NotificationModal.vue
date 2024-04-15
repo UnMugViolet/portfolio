@@ -1,10 +1,17 @@
 <script setup>
 import { ref } from 'vue';
 
-const showNotificationModal = ref(true);
+const showNotificationModal = ref(false);
+
+setTimeout(() => {
+  showNotificationModal.value = true;
+  setTimeout(() => {
+    showNotificationModal.value = false;
+  }, 6000);
+}, 3000);
 
 const closeNotificationModal = () => {
-  console.log('closeNotificationModal');
+  showNotificationModal.value = false;
 };
 
 </script>
@@ -33,7 +40,7 @@ const closeNotificationModal = () => {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .v-enter-from,
@@ -97,7 +104,6 @@ const closeNotificationModal = () => {
   border-style: solid;
   border-width: 0px 18px 18px 0px;
   border-color: transparent rgb(255, 255, 225) transparent transparent;
-  z-index: 999999;
 }
 
 .bubble::before {
@@ -111,7 +117,6 @@ const closeNotificationModal = () => {
   border-style: solid;
   border-width: 0px 19px 19px 0px;
   border-color: transparent black transparent transparent;
-  z-index: 999999;
 }
 
 </style>
