@@ -1,7 +1,117 @@
+<script setup>
+import { ref } from 'vue';
+
+const showNotificationModal = ref(true);
+
+const closeNotificationModal = () => {
+  console.log('closeNotificationModal');
+};
+
+</script>
+
 <template>
-  <Transition>
-    <div class="absolute right-20 bottom-11 border border-black bg-[#FFFFE1] rounded-lg p-2 text-xs whitespace-nowrap">
-      <p>Test test</p>
+  <Transition>  
+    <div 
+      v-if="showNotificationModal"
+      class="bubble absolute right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-7 pb-2.5 pl-2.5">
+      <button 
+        @click="closeNotificationModal" 
+        class="modal-close cursor-pointer">
+        
+      </button>
+      <div class="flex items-center">
+        <img class="w-3.5 h-3.5" src="@/assets/img/icons/info-icon.png" alt="risk">
+        <span class="ml-2">Le mode plein écran est disponible !</span>
+      </div>
+      <p>Pour une expérience plus immersive,</p>
+      <p>Clickez sur l'icone d'écran ci-dessous</p>
     </div>
   </Transition>
 </template>
+
+<style scoped>
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.modal-close {
+  outline: none;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.modal-close::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  transform: rotate(45deg);
+  height: 8px;
+  width: 2px;
+  background-color: rgba(170, 170, 170);
+}
+
+.modal-close:hover {
+  background-color: #ffa90c;
+  border-color: white;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close:hover::before,
+.modal-close:hover::after {
+  background-color: white;
+}
+
+.modal-close::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  transform: rotate(-45deg);
+  height: 8px;
+  width: 2px;
+  background-color: rgba(170, 170, 170);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -17px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 18px 18px 0px;
+  border-color: transparent rgb(255, 255, 225) transparent transparent;
+  z-index: 999999;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -19px;
+  right: 14px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 19px 19px 0px;
+  border-color: transparent black transparent transparent;
+  z-index: 999999;
+}
+
+</style>
