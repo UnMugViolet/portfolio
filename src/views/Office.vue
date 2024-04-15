@@ -55,8 +55,8 @@ import MyCV from '@/components/Window/MyCV.vue';
 import Music from '@/components/Window/Music.vue';
 import ContactMe from '@/components/Window/ContactMe.vue';
 import MyProjects from '@/components/Window/MyProjects.vue';
-import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
-import Window from '../layouts/Window.vue';
+import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';
+import Window from '@/layouts/Window.vue';
 import windowsData from '@/data/windows-data.json';
 import NotificationModal from '@/components/Modals/NotificationModal.vue';
 
