@@ -41,7 +41,7 @@
       @toggle-window="handleWindowClick"
     />
 
-    <NotificationModal />
+    <NotificationModal class="hidden md:block z-fmax"/>
   </section>
 </template>
 

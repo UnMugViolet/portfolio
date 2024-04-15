@@ -58,6 +58,7 @@ module.exports = {
       },
       zIndex: {
         'max': '999999',
+        'fmax': '99999999',
       },
       cursor: {
         'default': 'url(http://www.rw-designer.com/cursor-extern.php?id=111527), auto',
