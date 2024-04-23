@@ -17,12 +17,12 @@
             </div>
             <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-0.5">
-                <img src="@/assets/img/icons/magnifier-icon.png" alt="projects-icon" class="w-auto h-5 flex-shrink-0"/>
-                <p class="small-p px-1 cursor-default">Rechercher</p>
+                <img src="@/assets/img/icons/magnifier-icon.png" alt="projects-icon" class="w-auto h-5 flex-shrink-0" title="Rechercher"/>
+                <p class="small-p px-1 cursor-default hidden sm:block">Rechercher</p>
             </div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-0.5">
                 <img src="@/assets/img/icons/folder-open-icon.png" alt="projects-icon" class="w-auto h-6 flex-shrink-0"/>
-                <p class="small-p px-1 cursor-default">Fichiers</p>
+                <p class="small-p px-1 cursor-default hidden sm:block">Fichiers</p>
             </div>
             <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
             <div class="rounded-sm border hover:border-gray-300 box-shadow-header-window flex items-center h-8 px-1">
