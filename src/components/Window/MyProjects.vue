@@ -17,7 +17,7 @@ const props = defineProps({
                 <div class="absolute left-[-12px] top-5 w-80 h-px bg-gradient-to-r from-blue-300 to-white"></div>
             </div>
             <!-- Content for the websites projects -->
-            <div class="flex flex-wrap gap-2 py-5 w-full ">
+            <div class="flex flex-wrap gap-2 md:pt-2 pb-5 w-full ">
                 <div class="flex items-center px-4 gap-2.5">
                     <img src="@/assets/img/icons/folder-open-icon.png" alt="website" class="w-10 h-10"/>
                     <p class="text-xs font-tahoma font-medium">
