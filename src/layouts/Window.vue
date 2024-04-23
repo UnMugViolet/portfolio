@@ -83,8 +83,12 @@ const isActive = computed(() => id === activeWindow.value);
 // Window Z-index
 const highestZIndex = inject('highestZIndex');
 
+/**
+ * Window style added to window component.
+ * If maximized or mobile, window will take up the whole screen else it will take the size of the window json 
+ */
 const windowStyle = computed(() => {
-  const isMobile = window.innerWidth <= 768; // Adjust this value as needed
+  const isMobile = window.innerWidth <= 768; // Mobile breakpoint pixel value
   const sizeStyle = maximized.value || isMobile
     ? {
         width: '100vw',
