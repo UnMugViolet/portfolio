@@ -1,0 +1,34 @@
+{
+  "categories": [
+      {
+          "name": "Sites web",
+          "projects": [
+              {
+                  "name": "Logma Production",
+                  "icon": "folder-open-icon.png",
+                  "isActive": false
+              },
+              {
+                  "name": "Pangaia",
+                  "icon": "folder-open-icon.png",
+                  "isActive": false
+              },
+              {
+                  "name": "Clench",
+                  "icon": "folder-open-icon.png",
+                  "isActive": false
+              }
+          ]
+      },
+      {
+          "name": "Serveurs",
+          "projects": [
+              {
+                  "name": "Homeserver",
+                  "icon": "homeserver-icon.png",
+                  "isActive": false
+              }
+          ]
+      }
+  ]
+}
