@@ -6,6 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'helvetica': ['Helvetica BlackItalic', 'sans-serif'],
+        'franklin': ['Franklin Gothic Medium', 'sans-serif'],
+        'tahoma': ['Tahoma', 'sans-serif'],
+        'verdana': ['Verdana', 'sans-serif'],
+        'trebuchet': ['Trebuchet MS', 'sans-serif'],
+        'trebuchet-pixel': ['Trebuchet MS pixelated', 'sans-serif'],
+      },
       backgroundImage: theme => ({
         'profile-pic': "url('@/assets/img/profile-picture.webp')",
         'office-pic': "url('@/assets/img/office-picture.webp')",
@@ -15,6 +23,7 @@ module.exports = {
         'window-menu-card': 'linear-gradient(to right, rgba(180, 200, 251, 0.87) 0%, rgba(164, 185, 251, 0.87) 50%, rgba(180, 200, 251, 0.87) 100%)',
         'window-menu-card-header': 'linear-gradient(to right, rgb(240, 240, 255) 0px, rgb(240, 240, 255) 30%, rgb(168, 188, 255) 100%)',
         'window-side-menu': 'linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);',
+        'button-submit': 'linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4)',
       }),
       colors: {
         'dropdown': '#1660E8',
@@ -24,10 +33,14 @@ module.exports = {
         'pellet-blue-deactivated': '#3C81F3',
         'twilight-blue': '#0C327D',
         'heroic-blue': '#1C68FF',
+        'input-blue': '#7f9db9',
+        'light-yellow': '#ffffe1',
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
         'pellet-footer-deactivated': 'rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset',
+        'button-submit-hover': 'inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;',
+
       },
       fontSize: {
         'xs': '0.7rem',
@@ -40,8 +53,17 @@ module.exports = {
       width: {
         '12.125': '12.125rem',
       },
+      height: {
+        'px': '1px',
+      },
       zIndex: {
         'max': '999999',
+        'fmax': '99999999',
+      },
+      cursor: {
+        'default': 'url(http://www.rw-designer.com/cursor-extern.php?id=111527), auto',
+        'pointer': 'url(http://www.rw-designer.com/cursor-extern.php?id=111512), auto',
+        'wait': 'url(http://www.rw-designer.com/cursor-extern.php?id=111499), auto',
       }
     },
   },

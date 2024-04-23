@@ -1,5 +1,5 @@
 <script setup>
-    import ContentCenter from '../../layouts/ContentCenter.vue'
+    import ContentCenter from '@/layouts/ContentCenter.vue'
     import LoadingBar from './LoadingBar.vue'
 </script>
 
@@ -16,7 +16,7 @@
         </template>
 
         <template #bottom>
-            <div class="app-container absolute bottom-0 my-16">
+            <div class="app-container absolute bottom-0 md:my-16 my-8">
                     <div>
                         <div class="flex justify-between items-center gap-8 text-white ">
                             <div>

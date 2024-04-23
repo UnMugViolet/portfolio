@@ -7,7 +7,7 @@
         >
         <div class="flex gap-1 mt-px">
             <img :src="entity.iconSrc" :alt="'icon ' + entity.title" class="w-4 h-4"/>
-            <p class="small-p text-white"> {{ entity.title }}</p>
+            <p class="small-p text-white truncate"> {{ entity.title }}</p>
         </div>
         </div>
     </div>

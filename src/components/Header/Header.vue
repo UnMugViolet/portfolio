@@ -28,7 +28,7 @@
                         </div>
                         <div class="w-1/2 h-full bg-color-blue-header-left left-blue-header-1 px-1 py-1">
                             <div class="py-2">
-                                <HeaderRightButton @click="turnOffHeader">
+                                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
                                         <img src="@/assets/img/icons/folder-docs-icon.png" alt="A propos">
                                     </template>
@@ -36,7 +36,7 @@
                                         A propos
                                     </template>
                                 </HeaderRightButton>
-                                <HeaderRightButton @click="turnOffHeader">
+                                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
                                         <img src="@/assets/img/icons/folder-images-icon.png" alt="A propos">
                                     </template>
@@ -44,7 +44,7 @@
                                         Mes images
                                     </template>
                                 </HeaderRightButton>
-                                <HeaderRightButton @click="turnOffHeader">
+                                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
                                         <img src="@/assets/img/icons/folder-music-icon.png" alt="A propos">
                                     </template>
@@ -52,7 +52,7 @@
                                         Mes musiques
                                     </template>
                                 </HeaderRightButton>
-                                <HeaderRightButton @click="turnOffHeader">
+                                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
                                         <img src="@/assets/img/icons/calendar-icon.png" alt="A propos">
                                     </template>
@@ -60,7 +60,7 @@
                                         Calendrier
                                     </template>
                                 </HeaderRightButton>
-                                <HeaderRightButton @click="turnOffHeader">
+                                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
                                         <img src="@/assets/img/icons/play-icon-sm.png" alt="A propos">
                                     </template>
@@ -75,8 +75,8 @@
                 <div class="absolute bottom-0 h-12 w-full ">
                     <div class="header-bot-background h-full flex justify-end items-center">
                         <div class="flex h-5/6 gap-3 mr-2">
-                            <HeaderDisconnect @click="turnOffHeader"/>
-                            <HeaderShutdown @click="turnOffHeader"/>
+                            <HeaderDisconnect @click="turnOffHeader" class="cursor-pointer"/>
+                            <HeaderShutdown @click="turnOffHeader" class="cursor-pointer"/>
                         </div>
                     </div>
                 </div>
@@ -87,11 +87,11 @@
 
 <script setup>
     import { ref, watchEffect } from 'vue';
-    import ProfilePicture from './ProfilePicture.vue';
-    import HeaderLeftButton from './Buttons/HeaderLeftButton.vue';
-    import HeaderRightButton from './Buttons/HeaderRightButton.vue';
-    import HeaderShutdown from './Buttons/HeaderShutdown.vue';
-    import HeaderDisconnect from './Buttons/HeaderDisconnect.vue';
+    import ProfilePicture from '@/components/ProfilePicture.vue';
+    import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue';
+    import HeaderRightButton from '@/components/Buttons/HeaderRightButton.vue';
+    import HeaderShutdown from '@/components/Buttons/HeaderShutdown.vue';
+    import HeaderDisconnect from '@/components/Buttons/HeaderDisconnect.vue';
 
     const emit = defineEmits();
 

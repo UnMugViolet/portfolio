@@ -1,44 +1,48 @@
 @font-face {
   font-family: "Helvetica BlackItalic";
   font-weight: 400;
-  src: local("Helvetica BlackItalic"), url("src/assets/fonts/Helvetica-BlackItalic-Regular.ttf") format("truetype");
+  src: local("Helvetica BlackItalic"), url("@/assets/fonts/Helvetica-BlackItalic-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Franklin Gothic Medium";
   font-weight: 400;
-  src: local("Franklin Gothic Medium"), url("src/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
+  src: local("Franklin Gothic Medium"), url("@/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Franklin Gothic Medium";
   font-weight: 400;
-  src: local("Franklin Gothic Medium"), url("src/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
+  src: local("Franklin Gothic Medium"), url("@/assets/fonts/Franklin Gothic Medium Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tahoma";
   font-weight: 400;
-  src: local("Tahoma"), url("src/assets/fonts/tahoma.ttf") format("truetype");
+  src: local("Tahoma"), url("@/assets/fonts/tahoma.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tahoma";
-  font-weight: 600;
-  src: local("Tahoma Bold"), url("src/assets/fonts/tahomabd.ttf") format("truetype");
+  font-weight: 700;
+  src: local("Tahoma Bold"), url("@/assets/fonts/tahomabd.ttf") format("truetype");
 }
 @font-face {
   font-family: "Verdana";
   font-weight: 400;
-  src: local("Verdana"), url("src/assets/fonts/verdanabd.ttf") format("truetype");
+  src: local("Verdana"), url("@/assets/fonts/verdanabd.ttf") format("truetype");
 }
 @font-face {
   font-family: "Trebuchet MS";
   font-style: normal;
   font-weight: 400;
-  src: local("Trebuchet MS"), url("src/assets/fonts/trebuc.ttf") format("truetype");
+  src: local("Trebuchet MS"), url("@/assets/fonts/trebuc.ttf") format("truetype");
 }
 @font-face {
   font-family: "Trebuchet MS";
   font-style: normal;
   font-weight: 600;
-  src: local("Trebuchet MS"), url("src/assets/fonts/trebucbd.ttf") format("truetype");
+  src: local("Trebuchet MS"), url("@/assets/fonts/trebucbd.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Trebuchet MS pixelated";
+  src: local("Trebuchet MS pixelated"), url("@/assets/fonts/ms-sans-serif/MS Sans Serif.ttf") format("truetype");
 }
 .logo-font {
   font-family: "Helvetica BlackItalic";
@@ -223,6 +227,11 @@ img {
 /* ---------Text Shadow---------*/
 .text-shadow-header {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
+}
+
+/* ---------Cursor---------*/
+body {
+  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=111497"), auto;
 }
 
 .buttons-header-bottom:hover {
