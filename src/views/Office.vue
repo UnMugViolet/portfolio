@@ -1,5 +1,5 @@
 <template>
-  <section class="h-screen w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
+  <section class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
     <Header v-if="showHeader" 
       :entities="entities"
       @toggle-header="toggleHeader" 
@@ -40,12 +40,14 @@
       @toggle-header="toggleHeader" 
       @toggle-window="handleWindowClick"
     />
+
+    <NotificationModal class="hidden md:block z-fmax"/>
   </section>
 </template>
 
 <script setup>
 import { ref, shallowRef, provide, onMounted} from 'vue';
-import Header from '@/components/Header.vue';
+import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
 import Play from '@/components/Window/Play.vue';
@@ -53,9 +55,10 @@ import MyCV from '@/components/Window/MyCV.vue';
 import Music from '@/components/Window/Music.vue';
 import ContactMe from '@/components/Window/ContactMe.vue';
 import MyProjects from '@/components/Window/MyProjects.vue';
-import DesktopAppsLayout from '../layouts/DesktopAppsLayout.vue';
-import Window from '../layouts/Window.vue';
+import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';
+import Window from '@/layouts/Window.vue';
 import windowsData from '@/data/windows-data.json';
+import NotificationModal from '@/components/Modals/NotificationModal.vue';
 
 const showHeader = ref(false);
 const windows = ref([]);

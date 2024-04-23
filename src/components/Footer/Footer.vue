@@ -2,18 +2,19 @@
   <footer>
     <div class="absolute bottom-0 footer-gradient shadow-footer w-full z-max">
       <div class="h-8 flex items-center justify-between">
-        <div class="flex items-center h-full">
+        <div class="flex items-center h-full overflow-hidden">
           <StartButton @click="toggleHeader" />
-          <div class="flex w-full h-full ml-2 gap-0.5">
+          <div class="flex w-10/12 h-full ml-2 gap-0.5">
             <PelletApp
                 v-for="entity in entities"
                 :key="entity.id"
                 :entity="entity"
                 @toggle-window="toggleWindow"
+                class="flex-shrink"
             />
           </div>
         </div>
-        <FooterRight />
+        <FooterRight/>
       </div>
     </div>
   </footer>
