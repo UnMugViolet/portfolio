@@ -46,6 +46,8 @@ module.exports = {
         'xs': '0.7rem',
         'xxs': '0.65rem',
         'header-window': '0.85rem',
+        'xs-mobile': '0.5rem',
+        'xxs-mobile': '0.45rem',
       },
       padding: {
         '0.75': '0.20rem',
