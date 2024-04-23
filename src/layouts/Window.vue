@@ -84,22 +84,23 @@ const isActive = computed(() => id === activeWindow.value);
 const highestZIndex = inject('highestZIndex');
 
 const windowStyle = computed(() => {
-    const sizeStyle = maximized.value
-      ? {
-          width: `${window.innerWidth}px`,
-          height: `${window.innerHeight - 32}px`,
-          top: '0',
-          left: '0',
-      }
-      : {
-          width: `${windowWidth.value}px`,
-          height: `${windowHeight.value}px`,
-          transform: windowTransform.value,
-      };
-    return {
-      ...sizeStyle,
+  const isMobile = window.innerWidth <= 768; // Adjust this value as needed
+  const sizeStyle = maximized.value || isMobile
+    ? {
+        width: '100vw',
+        height: '100vh',
+        top: '0',
+        left: '0',
+    }
+    : {
+        width: `${windowWidth.value}px`,
+        height: `${windowHeight.value}px`,
+        transform: windowTransform.value,
     };
-  });
+  return {
+    ...sizeStyle,
+  };
+});
 
 const toggleMaximize = () => {
     maximized.value = !maximized.value;
