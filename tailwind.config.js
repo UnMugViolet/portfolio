@@ -63,9 +63,9 @@ module.exports = {
         'fmax': '99999999',
       },
       cursor: {
-        'default': 'url(http://www.rw-designer.com/cursor-extern.php?id=111527), auto',
-        'pointer': 'url(http://www.rw-designer.com/cursor-extern.php?id=111512), auto',
-        'wait': 'url(http://www.rw-designer.com/cursor-extern.php?id=111499), auto',
+        'default': 'url(/src/assets/img/cursors/default-cursor.cur), auto',
+        'pointer': 'url(/src/assets/img/cursors/pointer-cursor.cur), auto',
+        'wait': 'url(/src/assets/img/cursors/wait-cursor.cur), auto',
       }
     },
   },
