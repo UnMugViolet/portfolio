@@ -8,34 +8,31 @@ const props = defineProps({
 });
 
 const categories = reactive(projectData.categories.map(category => ({
-  // Copy the category object
   ...category,
-  // Add a new property to each project
-  projects: category.projects.map(project => ({ ...project, isActive: false }))
+  projects: category.projects.map(project => ({ ...project, isFocus: false, isActive: false }))
 })));
 
-const activateProject = (project) => {
+let selectedProject = null;
 
-  if(project.isActive) {
+const focusProject = (project) => {
+  if(project.isFocus) {
     return;
   }
 
-  project.isActive = !project.isActive;
+  project.isFocus = !project.isFocus;
 
-  // Set all other projects to false
   categories.forEach((category) => {
     category.projects.forEach((p) => {
       if (p.name !== project.name) {
-        p.isActive = false;
+        p.isFocus = false;
       }
     });
   });
   selectedProject = project;
 };
 
-let selectedProject = null;
-
 const toggleProject = (project) => {
+  project.isActive = !project.isActive;
   selectedProject = project;
 };
 
@@ -45,7 +42,7 @@ const toggleProject = (project) => {
   <div class="relative right-0 h-content-window flex">
     <WindowSideMenu :subMenuItems="props.subMenuItems" />
     <!-- Content of project -->
-    <div v-if="selectedProject" class="w-full h-full bg-white">
+    <div v-if="selectedProject && selectedProject.isActive" class="w-full h-full bg-white p-2">
       <h2>{{ selectedProject.title }}</h2>
       {{ selectedProject.description }}
     </div>
@@ -60,16 +57,16 @@ const toggleProject = (project) => {
           <div 
             v-for="project in category.projects" 
             :key="project.name" 
-            @click.stop="activateProject(project)"
+            @click="focusProject(project)"
             @dblclick="toggleProject(project)"
             class="flex items-center px-4 gap-2.5" 
-            :class="{ active: project.isActive }">
+            :class="{ active: project.isFocus }">
 
             <img :src="'src/assets/img/icons/' + project.icon" alt="project" class="w-10 h-10"
-              :style="{ opacity: project.isActive ? 0.5 : 1 }" />
+              :style="{ opacity: project.isFocus ? 0.5 : 1 }" />
             <p class="text-xs font-tahoma font-medium" :style="{
-              backgroundColor: project.isActive ? 'rgb(11, 97, 255)' : 'transparent',              
-              color: project.isActive ? 'white' : 'black',
+              backgroundColor: project.isFocus ? 'rgb(11, 97, 255)' : 'transparent',              
+              color: project.isFocus ? 'white' : 'black',
 
             }">
               {{ project.name }}

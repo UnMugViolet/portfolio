@@ -8,6 +8,7 @@
                   "icon": "folder-open-icon.png",
                   "title": "test test",
                   "description": "",
+                  "isFocus": false,
                   "isActive": false
               },
               {
@@ -15,6 +16,7 @@
                   "icon": "folder-open-icon.png",
                   "title": "",
                   "description": "",
+                  "isFocus": false,
                   "isActive": false
               },
               {
@@ -22,6 +24,7 @@
                   "icon": "folder-open-icon.png",
                   "title": "",
                   "description": "",
+                  "isFocus": false,
                   "isActive": false
               }
           ]
@@ -33,7 +36,8 @@
                   "name": "Homeserver",
                   "icon": "homeserver-icon.png",
                   "title": "",
-                  "description": "",    
+                  "description": "",
+                  "isFocus": false,
                   "isActive": false
               }
           ]
