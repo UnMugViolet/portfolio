@@ -6,16 +6,22 @@
               {
                   "name": "Logma Production",
                   "icon": "folder-open-icon.png",
+                  "title": "test test",
+                  "description": "",
                   "isActive": false
               },
               {
                   "name": "Pangaia",
                   "icon": "folder-open-icon.png",
+                  "title": "",
+                  "description": "",
                   "isActive": false
               },
               {
                   "name": "Clench",
                   "icon": "folder-open-icon.png",
+                  "title": "",
+                  "description": "",
                   "isActive": false
               }
           ]
@@ -26,6 +32,8 @@
               {
                   "name": "Homeserver",
                   "icon": "homeserver-icon.png",
+                  "title": "",
+                  "description": "",    
                   "isActive": false
               }
           ]
