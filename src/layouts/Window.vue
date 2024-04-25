@@ -23,7 +23,7 @@
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
-            <WindowHeaderTools />
+            <WindowHeaderTools @goback-toggled="goBack"/>
             <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
             <!-- Component containing content for the window goes here -->
             <slot></slot>         
@@ -229,6 +229,10 @@ const resizeWindow = (event) => {
         windowTransform.value = `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`;
     }
 };
+
+const goBack = () => {
+    emit('goback-toggled');
+}
 
 </script>
 

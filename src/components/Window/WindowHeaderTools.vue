@@ -1,10 +1,17 @@
 <script setup>
 import { ref } from 'vue';
 
-const isGoBack = ref(true);
+const emit = defineEmits();
+
+const isGoBack = ref(false);
+
+const props = defineProps({
+  isGoBack: Boolean,
+});
 
 const goBack = () => {
   isGoBack.value = false;
+  emit('goback-toggled');
 }
 </script>
 
