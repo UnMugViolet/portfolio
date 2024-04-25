@@ -1,11 +1,14 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive, watchEffect } from 'vue';
 import projectData from '@/data/projects-data.json';
 import WindowSideMenu from '@/components/Window/WindowSideMenu.vue'
 
 const props = defineProps({
   subMenuItems: Array,
+  isGoBackActive: Boolean,
 });
+
+const emit = defineEmits();
 
 const categories = reactive(projectData.categories.map(category => ({
   ...category,
@@ -34,6 +37,21 @@ const focusProject = (project) => {
 const toggleProject = (project) => {
   project.isActive = !project.isActive;
   selectedProject = project;
+};
+
+watchEffect(() => {
+  if (props.isGoBackActive) {
+    closeAllProjects();
+    console.log('close all projects');
+  }
+});
+
+const closeAllProjects = () => {
+  categories.forEach((category) => {
+    category.projects.forEach((project) => {
+      project.isActive = false;
+    });
+  });
 };
 
 </script>

@@ -22,6 +22,7 @@
         @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
         @mousedown="handleWindowClick(window.id)"
+        @goback-toggled="handleGoBack"
         :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
@@ -31,7 +32,8 @@
         >
         <component 
           :is="window.component"
-          :subMenuItems="window.subMenuItems" 
+          :isGoBackActive="isGoBackActive"
+          :subMenuItems="window.subMenuItems"
         />
       </Window>
     </div>
@@ -208,5 +210,11 @@ const loadState = () => {
 };
 
 onMounted(loadState);
+
+let isGoBackActive = ref(false);
+
+const handleGoBack = () => {
+  isGoBackActive.value = true;
+};
 
 </script>
