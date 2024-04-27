@@ -35,16 +35,16 @@ const focusProject = (project) => {
 };
 
 const toggleProject = (project) => {
-  project.isActive = !project.isActive;
+  // Before opening a project, close all others
+  closeAllProjects();
+
+  // Then open the selected project
+  project.isActive = true;
   selectedProject = project;
+
+  emit('goback-is-available');
 };
 
-watchEffect(() => {
-  if (props.isGoBackActive) {
-    closeAllProjects();
-    console.log('close all projects');
-  }
-});
 
 const closeAllProjects = () => {
   categories.forEach((category) => {
@@ -53,6 +53,14 @@ const closeAllProjects = () => {
     });
   });
 };
+
+// Go back to the previous window state (close all projects in fact) if project has been toggled
+watchEffect(() => {
+  if (props.isGoBackActive) {
+    closeAllProjects();
+    console.log('close all projects');
+  }
+});
 
 </script>
 

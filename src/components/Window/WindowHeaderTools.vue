@@ -3,16 +3,15 @@ import { ref } from 'vue';
 
 const emit = defineEmits();
 
-const isGoBack = ref(false);
-
 const props = defineProps({
-  isGoBack: Boolean,
+  isGoBackAvailable: Boolean,
+  default: false,
 });
 
 const goBack = () => {
-  isGoBack.value = false;
   emit('goback-toggled');
 }
+
 </script>
 
 <template>
@@ -24,14 +23,13 @@ const goBack = () => {
         <div 
           @click="goBack" 
           class="flex items-center mr-2"
-          :class="{ 'bg-transparent cursor-pointer': isGoBack, 'filter grayscale': !isGoBack }">
+          :class="{ 'bg-transparent cursor-pointer': isGoBackAvailable, 'filter grayscale': !isGoBackAvailable }">
 
           <img src="@/assets/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7 flex-shrink-0" />
           <p class="small-p mr-2 cursor-default">Retour</p>
           <div class="block border-solid down-arrow"></div>
         </div>
         <div 
-          @click="goForward"
           class="flex items-center mr-1 filter grayscale">
           <img src="@/assets/img/icons/left-arrow-green-icon.png" alt="suivant" class="w-7 h-7 flex-shrink-0" />
           <div class="block border-solid down-arrow ml-px"></div>
