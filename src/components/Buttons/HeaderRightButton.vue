@@ -10,17 +10,18 @@
     </button>
 </template>
 
-<script>
-    export default {
-    methods: {
-        toggleButton() {
-        this.$emit('toggle-button', this.buttonName); // Pass the buttonName to the parent component
-        }
-    },
-    props: {
-        buttonName: String // Add a prop to receive the button name
-    }
-    };
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+    buttonName: String
+})
+
+const emit = defineEmits(['toggle-button'])
+
+const toggleButton = () => {
+    emit('toggle-button', props.buttonName)
+}
 </script>
 
 <style scoped>
@@ -30,7 +31,5 @@
     .component-style:hover{
         background: #2F71CD;
         color: white;
-
     }
-
 </style>
