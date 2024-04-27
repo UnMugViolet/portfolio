@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   import CurrentTime from './CurrentTime.vue';
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
   import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
@@ -7,6 +7,8 @@
   // Initialize refs
   const isFullScreen = ref(false);
   const originalTitle = ref('Mode plein écran');
+  const isVolumeSettingsDisplayed = ref(false);
+  const musicModalRef = ref(null);
 
   const enterFullScreen = () => {
     if (isFullScreen.value) {
@@ -30,11 +32,24 @@
     }
   };
 
-  let isVolumeSettingsDisplayed = ref(false);
-
   const toggleMusicModal = () => {
     isVolumeSettingsDisplayed.value = !isVolumeSettingsDisplayed.value;
   };
+
+  const handleClickOutside = (event) => {
+    const { target } = event;
+    if (musicModalRef.value && !musicModalRef.value.$el.contains(target)) {
+      isVolumeSettingsDisplayed.value = false;
+    }
+  };
+
+  onMounted(() => {
+    document.body.addEventListener('click', handleClickOutside);
+  });
+
+  onUnmounted(() => {
+    document.body.removeEventListener('click', handleClickOutside);
+  });
 
 </script>
 
@@ -52,8 +67,8 @@
       src="@/assets/img/icons/volume-icon-sm.png" 
       alt="Gestion du volume" 
       title="Gestion du volume"
-      @click="toggleMusicModal">
-    <MusicVolumeModal v-if="isVolumeSettingsDisplayed"/>
+      @click.stop="toggleMusicModal">
+    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef"/>
     <NotificationModal class="md:block z-fmax"/>
 
     <CurrentTime />
