@@ -2,14 +2,19 @@ pipeline {
     agent any
     tools {
         nodejs 'Main NodeJS'
-        sonarQubeScanner 'SonarScanner 5.0.1.3006'
+        sonarQubeScanner 'SonarScanner'
     }
     stages {
+        stage('SCM') {
+            steps {
+                checkout scm
+            }
+        }
         stage('SonarQube analysis') {
             steps {
+                def scannerHome = tool 'SonarScanner'
                 withSonarQubeEnv('Sonar-Server') {
-                    // Path to the sonar-project.properties file in your source code
-                    sh 'sonar-scanner -Dsonar.projectBaseDir=./'
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
