@@ -22,16 +22,22 @@
         @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
         @mousedown="handleWindowClick(window.id)"
+        @goback-toggled="handleGoBack"
         :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
+        :isGoBackAvailable="isGoBackAvailable"
+        :activeProjectName="activeProjectName"
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component 
           :is="window.component"
-          :subMenuItems="window.subMenuItems" 
+          :isGoBackActive="isGoBackActive"
+          :subMenuItems="window.subMenuItems"
+          @goback-is-available="handleGoBackIsAvailable"
+          @project-active-name="handleProjectActiveName"
         />
       </Window>
     </div>
@@ -208,5 +214,27 @@ const loadState = () => {
 };
 
 onMounted(loadState);
+
+let isGoBackActive = ref(false);
+
+const handleGoBack = () => {
+  isGoBackActive.value = true;
+  isGoBackAvailable.value = false;
+  activeProjectName.value = '';
+};
+
+let isGoBackAvailable = ref(false);
+
+const handleGoBackIsAvailable = () => {
+  isGoBackActive.value = false;
+  isGoBackAvailable.value = true;
+};
+
+let activeProjectName = ref('');
+
+const handleProjectActiveName = (projectName) => {
+  activeProjectName.value = projectName;
+};
+
 
 </script>

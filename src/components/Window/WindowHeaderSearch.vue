@@ -9,7 +9,7 @@
             <div class="flex items-center overflow-hidden">
                 <img :src="iconSrc" alt="projects-icon" class="w-3.5 h-3.5"/>
                 <p class="px-1 small-p cursor-default truncate mt-px">
-                    {{ title }}
+                    {{ formattedTitle }}
                 </p>
             </div>
             <div class="mr-0.5 hover:brightness-110">
@@ -24,15 +24,19 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 
 const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  iconSrc: {
-    type: String,
-    required: true
-  }
+    title: String,
+    iconSrc: String,
+    activeProjectName: String,
+});
+
+const formattedTitle = computed(() => {
+    let formattedProjectName = props.activeProjectName 
+        ? props.activeProjectName.toLowerCase().replace(/ /g, '-')
+        : '';
+
+    return formattedProjectName ? `${props.title}/${formattedProjectName}` : props.title;
 });
 </script>
