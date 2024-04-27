@@ -18,7 +18,7 @@ const handleClick = () => {
   <button 
       @click.prevent="handleClick"
       :class="{ 'cursor-wait': isLoading }"
-      class="w-20 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm  leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer">
+      class="w-20 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm  leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">
       {{ message }}
   </button>
 </template>
