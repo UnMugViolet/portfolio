@@ -28,12 +28,14 @@
         :iconSrc="window.iconSrc"
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
+        :isGoBackAvailable="isGoBackAvailable"
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component 
           :is="window.component"
           :isGoBackActive="isGoBackActive"
           :subMenuItems="window.subMenuItems"
+          @goback-is-available="handleGoBackIsAvailable"
         />
       </Window>
     </div>
@@ -215,6 +217,14 @@ let isGoBackActive = ref(false);
 
 const handleGoBack = () => {
   isGoBackActive.value = true;
+  isGoBackAvailable.value = false;
+};
+
+let isGoBackAvailable = ref(false);
+
+const handleGoBackIsAvailable = () => {
+  isGoBackActive.value = false;
+  isGoBackAvailable.value = true;
 };
 
 </script>
