@@ -2,8 +2,24 @@ pipeline {
     agent any
     tools {
         nodejs 'Main NodeJS'
+        sonarQubeScanner 'SonarQube Scanner 3.x'
     }
     stages {
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('Sonar-Server') {
+                    // Path to the sonar-project.properties file in your source code
+                    sh 'sonar-scanner -Dsonar.projectBaseDir=./'
+                }
+            }
+        }
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') { // Specify timeout
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         stage('Build') { 
             steps {
                 echo 'JenkinsFile is running on Jenkins Server'
@@ -31,7 +47,7 @@ pipeline {
                                      remoteDirectory: '/', 
                                      remoteDirectorySDF: false, 
                                      removePrefix: 'dist', 
-                                     sourceFiles: 'dist/**'
+                                     sourceFiles: 'dist/**,src/assets/img/**'
                                  ]], 
                                  usePromotionTimestamp: false, 
                                  useWorkspaceInPromotion: false, 
