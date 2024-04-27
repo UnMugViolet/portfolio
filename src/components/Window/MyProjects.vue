@@ -43,6 +43,7 @@ const toggleProject = (project) => {
   selectedProject = project;
 
   emit('goback-is-available');
+  emit('project-active-name', project.name);
 };
 
 
@@ -58,7 +59,6 @@ const closeAllProjects = () => {
 watchEffect(() => {
   if (props.isGoBackActive) {
     closeAllProjects();
-    console.log('close all projects');
   }
 });
 

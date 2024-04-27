@@ -29,6 +29,7 @@
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
         :isGoBackAvailable="isGoBackAvailable"
+        :activeProjectName="activeProjectName"
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component 
@@ -36,6 +37,7 @@
           :isGoBackActive="isGoBackActive"
           :subMenuItems="window.subMenuItems"
           @goback-is-available="handleGoBackIsAvailable"
+          @project-active-name="handleProjectActiveName"
         />
       </Window>
     </div>
@@ -218,6 +220,7 @@ let isGoBackActive = ref(false);
 const handleGoBack = () => {
   isGoBackActive.value = true;
   isGoBackAvailable.value = false;
+  activeProjectName.value = '';
 };
 
 let isGoBackAvailable = ref(false);
@@ -226,5 +229,12 @@ const handleGoBackIsAvailable = () => {
   isGoBackActive.value = false;
   isGoBackAvailable.value = true;
 };
+
+let activeProjectName = ref('');
+
+const handleProjectActiveName = (projectName) => {
+  activeProjectName.value = projectName;
+};
+
 
 </script>
