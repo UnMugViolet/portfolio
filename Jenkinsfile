@@ -1,15 +1,27 @@
 pipeline {
     agent {
-        docker {
-            image 'node:20-alpine'
+        kubernetes {
+            yaml """
+            apiVersion: v1
+            kind: Pod
+            spec:
+            containers:
+            - name: node
+                image: node:20-alpine
+                command:
+                - cat
+                tty: true
+            """
         }
     }
     stages {
         stage('Build') { 
             steps {
-                echo 'JenkinsFile is running on Jenkins Server'
-                sh 'npm install' 
-                sh 'npm run build'
+                container('node') {
+                    echo 'JenkinsFile is running on Jenkins Server'
+                    sh 'npm install' 
+                    sh 'npm run build'
+                }
             }
         }
     }
