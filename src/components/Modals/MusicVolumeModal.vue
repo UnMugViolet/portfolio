@@ -28,8 +28,8 @@
 .slider {
   position: absolute;
   bottom: 0;
-  writing-mode: bt-lr; /* IE/Edge */
-  -webkit-appearance: slider-vertical; /* WebKit */
+  writing-mode: vertical-lr; /* Standard */
+  direction: rtl; /* Standard */
   width: 8px;
   height: 100%;
   padding: 0;
