@@ -24,7 +24,7 @@
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable"/>
-            <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
+            <WindowHeaderSearch :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
             <!-- Component containing content for the window goes here it is done in Office.vue component -->
             <slot></slot>         
         </div>
@@ -46,7 +46,7 @@ import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue'
 
 const emit = defineEmits();
 
-const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBackAvailable } = defineProps({
+const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
   id: String,
   title: String,
   iconSrc: String,
@@ -54,6 +54,7 @@ const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBack
   initPositionY: Number,
   subMenuItems: Array,
   isGoBackAvailable: Boolean,
+  activeProjectName: String,
 });
 
 // App size constants
