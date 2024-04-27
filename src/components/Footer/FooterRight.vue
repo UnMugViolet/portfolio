@@ -2,6 +2,7 @@
   import { ref } from 'vue';
   import CurrentTime from './CurrentTime.vue';
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
+  import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
 
   // Initialize refs
   const isFullScreen = ref(false);
@@ -52,11 +53,7 @@
       alt="Gestion du volume" 
       title="Gestion du volume"
       @click="toggleMusicModal">
-    <div 
-      v-if="isVolumeSettingsDisplayed"
-      class="absolute bottom-10 ">
-      <p>Test test test</p>
-    </div>
+    <MusicVolumeModal v-if="isVolumeSettingsDisplayed"/>
     <NotificationModal class="md:block z-fmax"/>
 
     <CurrentTime />
