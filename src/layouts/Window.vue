@@ -23,9 +23,9 @@
         </div>
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
-            <WindowHeaderTools />
-            <WindowHeaderSearch :title="title" :iconSrc="iconSrc"/>
-            <!-- Component containing content for the window goes here -->
+            <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable"/>
+            <WindowHeaderSearch :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
+            <!-- Component containing content for the window goes here it is done in Office.vue component -->
             <slot></slot>         
         </div>
         <!-- Resize handlers -->
@@ -46,13 +46,15 @@ import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue'
 
 const emit = defineEmits();
 
-const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems } = defineProps({
+const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
   id: String,
   title: String,
   iconSrc: String,
   initPositionX: Number,
   initPositionY: Number,
   subMenuItems: Array,
+  isGoBackAvailable: Boolean,
+  activeProjectName: String,
 });
 
 // App size constants
@@ -230,6 +232,9 @@ const resizeWindow = (event) => {
     }
 };
 
+const goBack = () => {
+    emit('goback-toggled');
+}
 </script>
 
 <style scoped>

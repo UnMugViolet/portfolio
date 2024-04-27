@@ -6,16 +6,25 @@
               {
                   "name": "Logma Production",
                   "icon": "folder-open-icon.png",
+                  "title": "Logma Production",
+                  "description": "",
+                  "isFocus": false,
                   "isActive": false
               },
               {
                   "name": "Pangaia",
                   "icon": "folder-open-icon.png",
+                  "title": "Pangaia",
+                  "description": "",
+                  "isFocus": false,
                   "isActive": false
               },
               {
                   "name": "Clench",
                   "icon": "folder-open-icon.png",
+                  "title": "Clench speedrun website",
+                  "description": "",
+                  "isFocus": false,
                   "isActive": false
               }
           ]
@@ -26,6 +35,9 @@
               {
                   "name": "Homeserver",
                   "icon": "homeserver-icon.png",
+                  "title": "Mon serveur maison",
+                  "description": "",
+                  "isFocus": false,
                   "isActive": false
               }
           ]
