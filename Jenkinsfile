@@ -11,32 +11,33 @@ pipeline {
                 sh 'npm run build'
             }
         }
-    }
-    post {
-        success {
-            step([$class: 'FtpPublisherPlugin', 
-                  alwaysPublishFromMaster: false, 
-                  continueOnError: false, 
-                  failOnError: false, 
-                  publishers: [[
-                      configName: 'MDS Paul', 
-                      transfers: [[
-                          asciiMode: false, 
-                          cleanRemote: false, 
-                          excludes: '', 
-                          flatten: false, 
-                          makeEmptyDirs: false, 
-                          noDefaultExcludes: false, 
-                          patternSeparator: '[, ]+', 
-                          remoteDirectory: '/public_html/', 
-                          removePrefix: 'dist', 
-                          sourceFiles: 'dist/**'
-                      ]], 
-                      usePromotionTimestamp: false, 
-                      useWorkspaceInPromotion: false, 
-                      verbose: false
-                  ]]
-            ])
+        stage('Publish') {
+            steps {
+                ftpPublisher alwaysPublishFromMaster: false, 
+                             continueOnError: false, 
+                             failOnError: false, 
+                             paramPublish: [parameterName:""], 
+                             masterNodeName: '', 
+                             publishers: [[
+                                 configName: 'mds-server-paul', 
+                                 transfers: [[
+                                     asciiMode: false, 
+                                     cleanRemote: false, 
+                                     excludes: 'dist/node_modules/**', 
+                                     flatten: false, 
+                                     makeEmptyDirs: true, 
+                                     noDefaultExcludes: false, 
+                                     patternSeparator: '[, ]+', 
+                                     remoteDirectory: '/', 
+                                     remoteDirectorySDF: false, 
+                                     removePrefix: 'dist', 
+                                     sourceFiles: 'dist/**'
+                                 ]], 
+                                 usePromotionTimestamp: false, 
+                                 useWorkspaceInPromotion: false, 
+                                 verbose: false
+                             ]]
+            }
         }
     }
 }
