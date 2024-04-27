@@ -1,6 +1,7 @@
 <script setup>
   import { ref } from 'vue';
   import CurrentTime from './CurrentTime.vue';
+  import NotificationModal from '@/components/Modals/NotificationModal.vue';
 
   // Initialize refs
   const isFullScreen = ref(false);
@@ -27,6 +28,13 @@
       isFullScreen.value = true;
     }
   };
+
+  let isVolumeSettingsDisplayed = ref(false);
+
+  const toggleMusicModal = () => {
+    isVolumeSettingsDisplayed.value = !isVolumeSettingsDisplayed.value;
+  };
+
 </script>
 
 <template>
@@ -38,7 +46,19 @@
       :title="originalTitle"
       @click="enterFullScreen"
       />
-      <img class="w-4 h-4 mt-px cursor-pointet" src="@/assets/img/icons/volume-icon-sm.png" alt="Gestion du volume" title="Gestion du volume">
+    <img 
+      class="w-4 h-4 mt-px cursor-pointer" 
+      src="@/assets/img/icons/volume-icon-sm.png" 
+      alt="Gestion du volume" 
+      title="Gestion du volume"
+      @click="toggleMusicModal">
+    <div 
+      v-if="isVolumeSettingsDisplayed"
+      class="absolute bottom-10 ">
+      <p>Test test test</p>
+    </div>
+    <NotificationModal class="md:block z-fmax"/>
+
     <CurrentTime />
   </div>
 </template>
