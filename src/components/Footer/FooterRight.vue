@@ -53,7 +53,7 @@
   });
 
   // Initialize volume as a ref
-  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 0);
+  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 1);
 
   const volumeIconSrc = computed(() => {
     return volume.value === 0 ? 'src/assets/img/icons/mute-icon-sm.png' : 'src/assets/img/icons/volume-icon-sm.png';
