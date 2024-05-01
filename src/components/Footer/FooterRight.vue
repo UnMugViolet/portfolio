@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, onMounted, onUnmounted } from 'vue';
+  import { ref, onMounted, onUnmounted, computed } from 'vue';
   import CurrentTime from './CurrentTime.vue';
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
   import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
@@ -9,6 +9,7 @@
   const originalTitle = ref('Mode plein écran');
   const isVolumeSettingsDisplayed = ref(false);
   const musicModalRef = ref(null);
+  const isMuted = ref(false);
 
   const enterFullScreen = () => {
     if (isFullScreen.value) {
@@ -51,6 +52,17 @@
     document.body.removeEventListener('click', handleClickOutside);
   });
 
+  // Initialize volume as a ref
+  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 0);
+
+  const volumeIconSrc = computed(() => {
+    return volume.value === 0 ? 'src/assets/img/icons/mute-icon-sm.png' : 'src/assets/img/icons/volume-icon-sm.png';
+  });
+
+  const handleUpdateVolume = (newVolume) => {
+    localStorage.setItem('volume', newVolume);
+    volume.value = newVolume; // Update the volume ref
+  };
 </script>
 
 <template>
@@ -64,11 +76,11 @@
       />
     <img 
       class="w-4 h-4 mt-px cursor-pointer" 
-      src="@/assets/img/icons/volume-icon-sm.png" 
+      :src="volumeIconSrc" 
       alt="Gestion du volume" 
       title="Gestion du volume"
       @click.stop="toggleMusicModal">
-    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef"/>
+    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef" @update-volume="handleUpdateVolume"/>
     <NotificationModal class="md:block z-fmax"/>
 
     <CurrentTime />
