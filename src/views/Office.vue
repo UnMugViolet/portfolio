@@ -46,8 +46,6 @@
       @toggle-header="toggleHeader" 
       @toggle-window="handleWindowClick"
     />
-
-    <NotificationModal class="hidden md:block z-fmax"/>
   </section>
 </template>
 
@@ -64,7 +62,7 @@ import MyProjects from '@/components/Window/MyProjects.vue';
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';
 import Window from '@/layouts/Window.vue';
 import windowsData from '@/data/windows-data.json';
-import NotificationModal from '@/components/Modals/NotificationModal.vue';
+
 
 const showHeader = ref(false);
 const windows = ref([]);

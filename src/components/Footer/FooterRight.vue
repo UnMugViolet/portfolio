@@ -1,10 +1,15 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted, onUnmounted, computed } from 'vue';
   import CurrentTime from './CurrentTime.vue';
+  import NotificationModal from '@/components/Modals/NotificationModal.vue';
+  import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
 
   // Initialize refs
   const isFullScreen = ref(false);
   const originalTitle = ref('Mode plein écran');
+  const isVolumeSettingsDisplayed = ref(false);
+  const musicModalRef = ref(null);
+  const isMuted = ref(false);
 
   const enterFullScreen = () => {
     if (isFullScreen.value) {
@@ -27,6 +32,37 @@
       isFullScreen.value = true;
     }
   };
+
+  const toggleMusicModal = () => {
+    isVolumeSettingsDisplayed.value = !isVolumeSettingsDisplayed.value;
+  };
+
+  const handleClickOutside = (event) => {
+    const { target } = event;
+    if (musicModalRef.value && !musicModalRef.value.$el.contains(target)) {
+      isVolumeSettingsDisplayed.value = false;
+    }
+  };
+
+  onMounted(() => {
+    document.body.addEventListener('click', handleClickOutside);
+  });
+
+  onUnmounted(() => {
+    document.body.removeEventListener('click', handleClickOutside);
+  });
+
+  // Initialize volume as a ref
+  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 1);
+
+  const volumeIconSrc = computed(() => {
+    return volume.value === 0 ? 'src/assets/img/icons/mute-icon-sm.png' : 'src/assets/img/icons/volume-icon-sm.png';
+  });
+
+  const handleUpdateVolume = (newVolume) => {
+    localStorage.setItem('volume', newVolume);
+    volume.value = newVolume; // Update the volume ref
+  };
 </script>
 
 <template>
@@ -38,7 +74,15 @@
       :title="originalTitle"
       @click="enterFullScreen"
       />
-      <img class="w-4 h-4 mt-px cursor-pointet" src="@/assets/img/icons/volume-icon-sm.png" alt="Gestion du volume" title="Gestion du volume">
+    <img 
+      class="w-4 h-4 mt-px cursor-pointer" 
+      :src="volumeIconSrc" 
+      alt="Gestion du volume" 
+      title="Gestion du volume"
+      @click.stop="toggleMusicModal">
+    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef" @update-volume="handleUpdateVolume"/>
+    <NotificationModal class="md:block z-fmax"/>
+
     <CurrentTime />
   </div>
 </template>
