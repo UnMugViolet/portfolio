@@ -24,6 +24,7 @@ module.exports = {
         'window-menu-card-header': 'linear-gradient(to right, rgb(240, 240, 255) 0px, rgb(240, 240, 255) 30%, rgb(168, 188, 255) 100%)',
         'window-side-menu': 'linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);',
         'button-submit': 'linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4)',
+        'button-clicked': 'linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1)'
       }),
       colors: {
         'dropdown': '#1660E8',
