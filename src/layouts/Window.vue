@@ -46,12 +46,14 @@ import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue'
 
 const emit = defineEmits();
 
-const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
+const { id, title, iconSrc, initPositionX, initPositionY, initWidth, initHeight, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
   id: String,
   title: String,
   iconSrc: String,
   initPositionX: Number,
   initPositionY: Number,
+  initWidth: Number,
+  initHeight: Number,
   subMenuItems: Array,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
@@ -72,7 +74,7 @@ let lastUpdateTimestamp = 0;
 const maximized = ref(false);
 
 // Window position and size
-const windowSize = { width: 660, height: 500 };
+const windowSize = { width: initWidth, height: initHeight };
 const windowPosition = ref({ x: initPositionX, y: initPositionY });
 const windowWidth = ref(windowSize.width);
 const windowHeight = ref(windowSize.height);

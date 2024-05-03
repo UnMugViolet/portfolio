@@ -7,6 +7,8 @@
     "iconSrc": "src/assets/img/icons/projects-icon-sm.png",
     "initPositionX": 180,
     "initPositionY": 100,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "MyProjects",
     "subMenuItems": [
       {
@@ -82,6 +84,8 @@
     "iconSrc": "src/assets/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "ContactMe",
     "subMenuItems": [
       {
@@ -157,6 +161,8 @@
     "iconSrc": "src/assets/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,
+    "initWidth": 385,
+    "initHeight": 500,
     "component": "MyCV",
     "subMenuItems": [
       {
@@ -232,6 +238,8 @@
     "iconSrc": "src/assets/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "Music",
     "subMenuItems": [
       {
@@ -307,6 +315,8 @@
     "iconSrc": "src/assets/img/icons/play-icon-sm.png",
     "initPositionX": 160,
     "initPositionY": 270,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "Play",
     "subMenuItems": [
       {

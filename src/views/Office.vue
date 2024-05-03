@@ -28,6 +28,8 @@
         :iconSrc="window.iconSrc"
         :initPositionX="window.initPositionX"
         :initPositionY="window.initPositionY"
+        :initWidth="window.initWidth"
+        :initHeight="window.initHeight"
         :isGoBackAvailable="isGoBackAvailable"
         :activeProjectName="activeProjectName"
         :style="{zIndex: findWindowZIndex(window.id)}"
@@ -113,6 +115,8 @@ const openWindow = (windowId) => {
         zIndex: highestZIndex.value, // Use highestZIndex
         initPositionX: entity.initPositionX,
         initPositionY: entity.initPositionY,
+        initWidth: entity.initWidth,
+        initHeight: entity.initHeight,
         subMenuItems: entity.subMenuItems,
       });
       setActiveWindow(windowId); // Set the window clicked as active
