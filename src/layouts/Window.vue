@@ -24,7 +24,7 @@
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable"/>
-            <WindowHeaderSearch :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
+            <WindowHeaderSearch :id="id" :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
             <!-- Component containing content for the window goes here it is done in Office.vue component -->
             <slot></slot>         
         </div>
