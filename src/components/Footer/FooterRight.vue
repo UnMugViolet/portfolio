@@ -1,5 +1,6 @@
 <script setup>
   import { ref, onMounted, onUnmounted, computed } from 'vue';
+  import { useVolumeStore } from '@/stores/volume';
   import CurrentTime from './CurrentTime.vue';
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
   import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
@@ -52,16 +53,17 @@
     document.body.removeEventListener('click', handleClickOutside);
   });
 
-  // Initialize volume as a ref
-  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 1);
+  const volumeStore = useVolumeStore();
+
+  // Get volume from the Pinia store
+  const volume = computed(() => volumeStore.volume);
 
   const volumeIconSrc = computed(() => {
     return volume.value === 0 ? 'src/assets/img/icons/mute-icon-sm.png' : 'src/assets/img/icons/volume-icon-sm.png';
   });
 
   const handleUpdateVolume = (newVolume) => {
-    localStorage.setItem('volume', newVolume);
-    volume.value = newVolume; // Update the volume ref
+    volumeStore.setVolume(newVolume); // Update the volume in the Pinia store
   };
 </script>
 
