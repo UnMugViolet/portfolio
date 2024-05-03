@@ -1,20 +1,31 @@
 <script setup>
   import { ref, onUnmounted } from 'vue'
+  import { useVolumeStore } from '@/stores/volume'
 
   const emit = defineEmits(['update-volume'])
 
-  // Retrieve volume level from localStorage if it exists, otherwise set to 1
-  const volume = ref(localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 1)
+  const volumeStore = useVolumeStore();
+  
+  // Make volume a ref so it's reactive
+  const volume = ref(volumeStore.volume);
+
+  // Define the adjustVolume method
+  const adjustVolume = () => {
+    volumeStore.setVolume(volume.value);
+    emit('update-volume', volume.value);
+  }
 
   onUnmounted(() => {
-    localStorage.setItem('volume', volume.value) // Store volume level in localStorage when the component is unmounted
+    volumeStore.setVolume(volume.value); // Store volume level in localStorage when the component is unmounted
     emit('update-volume', volume.value) // Emit the 'update-volume' event with the volume value
   })
 </script>
 
+
 <template>
-  <section class="absolute bottom-10 right-9 w-20 rounded-t-md overflow-hidden bg-window-blue-deactivated p-0.5">
-    <div class="absolute top-0 left-0 h-7 w-full z-10 flex justify-between items-center px-1.5 bg-header-window-active">
+  <section class="absolute bottom-10 right-9 w-24 rounded-t-md overflow-hidden bg-window-blue-deactivated p-0.5">
+    <div class="absolute top-0 left-0 h-7 w-full z-10 flex items-center px-1.5 bg-header-window-active">
+      <img src="@/assets/img/icons/volume-icon-sm.png" alt="icon" class="w-4 h-4 mr-1"/>
       <h4 class="text-header-window text-header-shadow truncate">Contrôle</h4>
     </div>
     <div class="bg-light-yellow h-52 mt-3 pr-1">
