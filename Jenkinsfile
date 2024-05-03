@@ -43,7 +43,7 @@ pipeline {
                                 configName: 'mds-server-paul', 
                                 transfers: [[
                                     asciiMode: false, 
-                                    cleanRemote: false, 
+                                    cleanRemote: true, 
                                     excludes: 'dist/node_modules/**', 
                                     flatten: false, 
                                     makeEmptyDirs: true, 
@@ -68,7 +68,7 @@ pipeline {
                                 configName: 'mds-server-paul', 
                                 transfers: [[
                                     asciiMode: false, 
-                                    cleanRemote: false, 
+                                    cleanRemote: true, 
                                     excludes: '', 
                                     flatten: false, 
                                     makeEmptyDirs: true, 
