@@ -1,7 +1,7 @@
 <template>
     <div class="relative right-0 h-content-window overflow-hidden">
         <div class="w-full h-full bg-white overflow-auto p-2 ">
-            <div class="w-[284px] mb-14 sm:mb-0">
+            <div class="w-[350px] mb-14 sm:mb-0">
                 <div class="grid grid-flow-col auto-cols-max gap-2">
                     <img src="@/assets/img/paul-jaguin-photo-cv.webp" alt="Photo de mon cv" class="w-20 h-20">
                     <div class="flex justify-center flex-col">
