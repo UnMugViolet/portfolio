@@ -40,9 +40,9 @@ import { ref, computed, inject } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
-import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
-import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
-import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
+import WindowHeaderTools from '../components/Windows/WindowHeaderTools.vue';
+import WindowHeaderSearch from '../components/Windows/WindowHeaderSearch.vue';
+import WindowHeaderDropdown from '../components/Windows/WindowHeaderDropdown.vue';
 
 const emit = defineEmits();
 
