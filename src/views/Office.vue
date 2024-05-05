@@ -56,11 +56,11 @@ import { ref, shallowRef, provide, onMounted} from 'vue';
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
-import Play from '@/components/Window/Play.vue';
-import MyCV from '@/components/Window/MyCV.vue';
-import Music from '@/components/Window/Music.vue';
-import ContactMe from '@/components/Window/ContactMe.vue';
-import MyProjects from '@/components/Window/MyProjects.vue';
+import Play from '@/components/Windows/Play.vue';
+import MyCV from '@/components/Windows/MyCV/MyCV.vue';
+import Music from '@/components/Windows/Music.vue';
+import ContactMe from '@/components/Windows/ContactMe.vue';
+import MyProjects from '@/components/Windows/MyProjects.vue';
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';
 import Window from '@/layouts/Window.vue';
 import windowsData from '@/data/windows-data.json';

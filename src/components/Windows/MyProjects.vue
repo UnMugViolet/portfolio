@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, watchEffect } from 'vue';
 import projectData from '@/data/projects-data.json';
-import WindowSideMenu from '@/components/Window/WindowSideMenu.vue'
+import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 
 const props = defineProps({
   subMenuItems: Array,
