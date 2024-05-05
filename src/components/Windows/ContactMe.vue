@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import emailjs from 'emailjs-com';
-import WindowSideMenu from '@/components/Window/WindowSideMenu.vue'
+import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 import SubmitButton from '../Buttons/SubmitButton.vue';
 
 const props = defineProps({
