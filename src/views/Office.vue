@@ -52,8 +52,9 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, provide, onMounted} from 'vue';
+import { ref, computed, shallowRef, provide, onMounted, watch} from 'vue';
 import { useWindowsStore } from '@/stores/windowsStore.js';
+import { useVolumeStore } from '@/stores/volumeStore.js';
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
@@ -70,6 +71,21 @@ import windowsData from '@/data/windows-data.json';
 const showHeader = ref(false);
 const windows = ref([]);
 const windowsStore = useWindowsStore()
+const volumeStore = useVolumeStore();
+
+const volume = computed(() => volumeStore.volume);
+let audio = new Audio('/sounds/start-windows.mp3');
+
+watch(volume, (newVolume) => {
+  audio.volume = newVolume;
+});
+
+onMounted(() => {
+  // Save the state of the windows to localStorage
+  windowsStore.loadState();
+  
+  audio.play();
+});
 
 // Keep track of the highest z-index
 const highestZIndex = ref(0);
@@ -199,17 +215,6 @@ const handleOutsideClick = (event) => {
   }
 };
 
-// Save the state of the windows to localStorage
-onMounted(() => {
-  windowsStore.loadState();
-});
-
-// Open each window
-windowsStore.openWindowIds.forEach(windowId => {
-  openWindow(windowId)
-})
-
-
 let isGoBackActive = ref(false);
 
 const handleGoBack = () => {
@@ -232,4 +237,8 @@ const handleProjectActiveName = (projectName) => {
 };
 
 
+// Open each window that was open before the page was reloaded
+windowsStore.openWindowIds.forEach(windowId => {
+  openWindow(windowId)
+})
 </script>

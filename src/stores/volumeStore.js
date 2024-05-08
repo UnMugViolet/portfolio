@@ -5,7 +5,7 @@ export const useVolumeStore = defineStore({
   state: () => {
     // If volume is not in localStorage, set it to 1
     if (!localStorage.getItem('volume')) {
-      localStorage.setItem('volume', '1');
+      localStorage.setItem('volume', '0.9');
     }
 
     // Retrieve volume level from localStorage
