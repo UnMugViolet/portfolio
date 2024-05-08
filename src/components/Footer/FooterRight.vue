@@ -1,6 +1,6 @@
 <script setup>
   import { ref, onMounted, onUnmounted, computed } from 'vue';
-  import { useVolumeStore } from '@/stores/volume';
+  import { useVolumeStore } from '@/stores/volumeStore';
   import CurrentTime from './CurrentTime.vue';
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
   import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
