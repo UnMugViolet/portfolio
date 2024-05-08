@@ -12,13 +12,7 @@
   // Define the adjustVolume method
   const adjustVolume = () => {
     volumeStore.setVolume(volume.value);
-    emit('update-volume', volume.value);
   }
-
-  onUnmounted(() => {
-    volumeStore.setVolume(volume.value); // Store volume level in localStorage when the component is unmounted
-    emit('update-volume', volume.value) // Emit the 'update-volume' event with the volume value
-  })
 </script>
 
 

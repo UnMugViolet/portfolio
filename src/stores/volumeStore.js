@@ -3,20 +3,26 @@ import { defineStore } from 'pinia';
 export const useVolumeStore = defineStore({
   id: 'volume',
   state: () => {
-    // If volume is not in localStorage, set it to 1
-    if (!localStorage.getItem('volume')) {
-      localStorage.setItem('volume', '0.9');
+    let volume = parseFloat(localStorage.getItem('volume'));
+    if (isNaN(volume)) {
+      volume = 0.2;
+      localStorage.setItem('volume', volume.toString());
     }
-
-    // Retrieve volume level from localStorage
     return {
-      volume: parseFloat(localStorage.getItem('volume')),
+      volume: volume,
     };
   },
   actions: {
     setVolume(newVolume) {
       this.volume = newVolume;
       localStorage.setItem('volume', newVolume);
+    },
+    playAudio(audioFiles) {
+      audioFiles.forEach((file) => {
+        let audio = new Audio(file);
+        audio.volume = this.volume;
+        audio.play();
+      });
     },
   },
 });
