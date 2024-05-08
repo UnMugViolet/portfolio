@@ -216,10 +216,6 @@ img {
   box-shadow: rgb(176, 176, 176) 0px -2px 3px -1px inset;
 }
 
-.box-shadow-header-window:hover {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 1px inset;
-}
-
 .box-shadow-pellet-footer {
   box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
 }
@@ -227,11 +223,6 @@ img {
 /* ---------Text Shadow---------*/
 .text-shadow-header {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
-}
-
-/* ---------Cursor---------*/
-body {
-  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=111497"), auto;
 }
 
 .buttons-header-bottom:hover {

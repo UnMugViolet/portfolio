@@ -52,7 +52,9 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, provide, onMounted} from 'vue';
+import { ref, computed, shallowRef, provide, onMounted, watch} from 'vue';
+import { useWindowsStore } from '@/stores/windowsStore.js';
+import { useVolumeStore } from '@/stores/volumeStore.js';
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
@@ -68,6 +70,15 @@ import windowsData from '@/data/windows-data.json';
 
 const showHeader = ref(false);
 const windows = ref([]);
+const windowsStore = useWindowsStore()
+const volumeStore = useVolumeStore();
+
+onMounted(() => {
+  // Save the state of the windows to localStorage
+  windowsStore.loadState();
+  
+  volumeStore.playAudio(['/sounds/start-windows.mp3']);
+});
 
 // Keep track of the highest z-index
 const highestZIndex = ref(0);
@@ -120,7 +131,7 @@ const openWindow = (windowId) => {
         subMenuItems: entity.subMenuItems,
       });
       setActiveWindow(windowId); // Set the window clicked as active
-      saveState(); // Save state to localStorage
+      windowsStore.addWindowStore(windowId); // Save state to localStorage
     }
   } else {
     // If window already exists, just bring it to the front
@@ -152,7 +163,7 @@ const closeWindow = (windowId) => {
   const windowIndex = windows.value.findIndex((window) => window.id === windowId);
   if (windowIndex !== -1) {
     windows.value.splice(windowIndex, 1);
-    saveState(); // Save state to localStorage
+    windowsStore.removeWindowId(windowId); // Save state to localStorage
   }
 };
 
@@ -162,7 +173,6 @@ const minimizeWindow = (windowId) => {
     window.visible = false;
     if (activeWindow.value === windowId) {
       activeWindow.value = null; // Set activeWindow to null if the minimized window was active
-      saveState(); // Save state after minimizing a window
     }
   }
 };
@@ -198,25 +208,6 @@ const handleOutsideClick = (event) => {
   }
 };
 
-// Save state to localStorage
-const saveState = () => {
-  const openWindowIds = Array.from(windows.value.values(), window => window.id);
-  localStorage.setItem('windows', JSON.stringify(openWindowIds));
-};
-
-// Load state from localStorage on page load
-const loadState = () => {
-  const savedWindowIds = JSON.parse(localStorage.getItem('windows'));
-
-  if (savedWindowIds) {
-    savedWindowIds.forEach(windowId => {
-      openWindow(windowId);
-    });
-  }
-};
-
-onMounted(loadState);
-
 let isGoBackActive = ref(false);
 
 const handleGoBack = () => {
@@ -239,4 +230,8 @@ const handleProjectActiveName = (projectName) => {
 };
 
 
+// Open each window that was open before the page was reloaded
+windowsStore.openWindowIds.forEach(windowId => {
+  openWindow(windowId)
+})
 </script>

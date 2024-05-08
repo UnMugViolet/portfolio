@@ -76,7 +76,7 @@
                     <div class="header-bot-background h-full flex justify-end items-center">
                         <div class="flex h-5/6 gap-3 mr-2">
                             <HeaderDisconnect @click="turnOffHeader" class="cursor-pointer"/>
-                            <HeaderShutdown @click="turnOffHeader" class="cursor-pointer"/>
+                            <HeaderShutdown @click="shutdown" class="cursor-pointer"/>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,8 @@
 </template>
 
 <script setup>
-    import { ref, watchEffect } from 'vue';
+    import { ref, watchEffect, computed, watch } from 'vue';
+    import { useVolumeStore } from '@/stores/volumeStore.js';
     import ProfilePicture from '@/components/ProfilePicture.vue';
     import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue';
     import HeaderRightButton from '@/components/Buttons/HeaderRightButton.vue';
@@ -94,6 +95,7 @@
     import HeaderDisconnect from '@/components/Buttons/HeaderDisconnect.vue';
 
     const emit = defineEmits();
+    const volumeStore = useVolumeStore();
 
     const props = defineProps({
         entities: {
@@ -114,6 +116,10 @@
 
     const toggleWindow = (buttonName) => {
         emit('toggle-' + buttonName);
+    }
+
+    const shutdown = () => {
+        volumeStore.playAudio(['/sounds/shutdown-windows.mp3']);
     }
 </script>
 
