@@ -1,6 +1,6 @@
 <script setup>
   import { ref, onUnmounted } from 'vue'
-  import { useVolumeStore } from '@/stores/volume'
+  import { useVolumeStore } from '@/stores/volumeStore'
 
   const emit = defineEmits(['update-volume'])
 
@@ -12,13 +12,7 @@
   // Define the adjustVolume method
   const adjustVolume = () => {
     volumeStore.setVolume(volume.value);
-    emit('update-volume', volume.value);
   }
-
-  onUnmounted(() => {
-    volumeStore.setVolume(volume.value); // Store volume level in localStorage when the component is unmounted
-    emit('update-volume', volume.value) // Emit the 'update-volume' event with the volume value
-  })
 </script>
 
 
@@ -31,7 +25,7 @@
     <div class="bg-light-yellow h-52 mt-3 pr-1">
         <div class="h-full w-full flex items-center px-2">
           <label class="text-black text-xs font-trebuchet-pixel pr-4" for="volume">Volume</label>
-          <input class="slider" type="range" min="0" max="2" v-model.number="volume" @input="adjustVolume">
+          <input class="slider" type="range" min="0" max="1" step="0.2" v-model.number="volume" @input="adjustVolume">
         </div>
     </div>
   </section>
