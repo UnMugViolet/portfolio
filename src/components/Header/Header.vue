@@ -86,7 +86,7 @@
 </template>
 
 <script setup>
-    import { ref, watchEffect, computed, watch } from 'vue';
+    import { ref, watchEffect } from 'vue';
     import { useVolumeStore } from '@/stores/volumeStore.js';
     import ProfilePicture from '@/components/ProfilePicture.vue';
     import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue';

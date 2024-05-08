@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, onUnmounted } from 'vue'
+  import { ref } from 'vue'
   import { useVolumeStore } from '@/stores/volumeStore'
 
   const emit = defineEmits(['update-volume'])
