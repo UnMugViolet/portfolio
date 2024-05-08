@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref, computed, shallowRef, provide, onMounted, watch} from 'vue';
+import { ref, shallowRef, provide, onMounted } from 'vue';
 import { useWindowsStore } from '@/stores/windowsStore.js';
 import { useVolumeStore } from '@/stores/volumeStore.js';
 import Header from '@/components/Header/Header.vue';
