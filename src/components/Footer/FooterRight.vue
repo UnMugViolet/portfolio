@@ -62,9 +62,6 @@
     return volume.value === 0 ? 'src/assets/img/icons/mute-icon-sm.png' : 'src/assets/img/icons/volume-icon-sm.png';
   });
 
-  const handleUpdateVolume = (newVolume) => {
-    volumeStore.setVolume(newVolume); // Update the volume in the Pinia store
-  };
 </script>
 
 <template>
@@ -82,7 +79,7 @@
       alt="Gestion du volume" 
       title="Gestion du volume"
       @click.stop="toggleMusicModal">
-    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef" @update-volume="handleUpdateVolume"/>
+    <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef"/>
     <NotificationModal class="md:block z-fmax"/>
 
     <CurrentTime />

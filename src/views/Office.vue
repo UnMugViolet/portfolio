@@ -73,18 +73,11 @@ const windows = ref([]);
 const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore();
 
-const volume = computed(() => volumeStore.volume);
-let audio = new Audio('/sounds/start-windows.mp3');
-
-watch(volume, (newVolume) => {
-  audio.volume = newVolume;
-});
-
 onMounted(() => {
   // Save the state of the windows to localStorage
   windowsStore.loadState();
   
-  audio.play();
+  volumeStore.playAudio(['/sounds/start-windows.mp3']);
 });
 
 // Keep track of the highest z-index
