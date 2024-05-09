@@ -64,9 +64,9 @@ module.exports = {
         'fmax': '99999999',
       },
       cursor: {
-        'default': 'url(//img/cursors/default-cursor.cur), auto',
-        'pointer': 'url(//img/cursors/pointer-cursor.cur), auto',
-        'wait': 'url(//img/cursors/wait-cursor.cur), auto',
+        'default': 'url(/img/cursors/default-cursor.cur), auto',
+        'pointer': 'url(/img/cursors/pointer-cursor.cur), auto',
+        'wait': 'url(/img/cursors/wait-cursor.cur), auto',
       }
     },
   },
