@@ -163,7 +163,7 @@ const closeWindow = (windowId) => {
   const windowIndex = windows.value.findIndex((window) => window.id === windowId);
   if (windowIndex !== -1) {
     windows.value.splice(windowIndex, 1);
-    windowsStore.removeWindowId(windowId); // Save state to localStorage
+    windowsStore.removeWindowStore(windowId); // Remove the window from localstorage
   }
 };
 
