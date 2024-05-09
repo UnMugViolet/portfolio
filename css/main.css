@@ -225,56 +225,6 @@ img {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
 }
 
-/* ---------Scollbar---------*/
-::-webkit-scrollbar {
-  width: 17px;
-}
-
-::-webkit-scrollbar-corner {
-  background: #dfdfdf;
-}
-
-::-webkit-scrollbar-thumb {
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-color: #c8d6fb;
-  background-size: 7px;
-  border: 1px solid #fff;
-  border-radius: 2px;
-  box-shadow: inset -3px 0 #bad1fc, inset 1px 1px #b7caf5;
-}
-::-webkit-scrollbar-thumb:vertical {
-  background-image: url("/img/icons/scroll-thumb.svg");
-}
-::-webkit-scrollbar-thumb:horizontal {
-  background-size: 8px;
-  background-image: url("/img/icons/scroll-thumb-horizontal.svg");
-}
-
-::-webkit-scrollbar-track:vertical {
-  background-image: url("/img/icons/scroll-background.svg");
-}
-::-webkit-scrollbar-track:horizontal {
-  background-image: url("/img/icons/scroll-background-horizontal.svg");
-}
-
-::-webkit-scrollbar-button:vertical:start {
-  height: 17px;
-  background-image: url("/img/icons/scroll-arrow-up.svg");
-}
-::-webkit-scrollbar-button:vertical:end {
-  height: 17px;
-  background-image: url("/img/icons/scroll-arrow-down.svg");
-}
-::-webkit-scrollbar-button:horizontal:start {
-  width: 17px;
-  background-image: url("/img/icons/scroll-arrow-left.svg");
-}
-::-webkit-scrollbar-button:horizontal:end {
-  width: 17px;
-  background-image: url("/img/icons/scroll-arrow-right.svg");
-}
-
 .buttons-header-bottom:hover {
   background-color: rgba(60, 80, 210, 0.5);
 }
