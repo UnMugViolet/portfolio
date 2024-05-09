@@ -10,16 +10,19 @@
   const originalTitle = ref('Mode plein écran');
   const isVolumeSettingsDisplayed = ref(false);
   const musicModalRef = ref(null);
-  const isMuted = ref(false);
 
-  const enterFullScreen = () => {
+  const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+  const enterFullScreen = (isMobile) => {
+    // Check if the device is a mobile device
+
     if (isFullScreen.value) {
       // Exit full-screen mode
       document.exitFullscreen();
       originalTitle.value = 'Mode plein écran';
       isFullScreen.value = false;
-    } else {
-      // Enter full-screen mode
+    } else if (!isMobile) {
+      // Enter full-screen mode only if the device is not a mobile device
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       } else if (document.documentElement.mozRequestFullScreen) {
@@ -61,7 +64,7 @@
   const volumeIconSrc = computed(() => {
     return volume.value === 0 ? '/img/icons/mute-icon-sm.png' : '/img/icons/volume-icon-sm.png';
   });
-
+  
 </script>
 
 <template>
@@ -80,7 +83,7 @@
       title="Gestion du volume"
       @click.stop="toggleMusicModal">
     <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef"/>
-    <NotificationModal class="md:block z-fmax"/>
+    <NotificationModal v-if="!isMobile" class="md:block z-fmax"/>
 
     <CurrentTime />
   </div>
