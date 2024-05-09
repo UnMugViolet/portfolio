@@ -22,11 +22,5 @@ export const useWindowsStore = defineStore({
       this.openWindowIds = this.openWindowIds.filter(id => id !== windowId)
       this.saveState()
     },
-    minimizeWindowId(windowId) {
-      if (!this.minimizedWindowIds.includes(windowId)) {
-        this.minimizedWindowIds.push(windowId)
-        this.saveState()
-      }
-    },
   },
 })
