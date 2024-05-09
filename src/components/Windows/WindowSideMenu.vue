@@ -12,7 +12,7 @@ const props = defineProps({
       <div
         class="flex flew-row justify-between items-center bg-window-menu-card-header rounded-t-sm px-1 py-px sm:px-2 sm:py-0.5 text-xs-mobile md:text-xs font-bold cursor-pointer hover:text-heroic-blue">
         <h3>{{ item.title }}</h3>
-        <img src="@/assets/img/icons/top-icon-card-window.png" alt="plus" class="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-lg">
+        <img src="/img/icons/top-icon-card-window.png" alt="plus" class="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-lg">
       </div>
       <div class="bg-window-menu-card px-1 py-0.75 md:px-2" v-for="subtask in item.subtasks" :key="subtask.id">
         <a v-if="subtask.url" :href="subtask.url" target="_blank"

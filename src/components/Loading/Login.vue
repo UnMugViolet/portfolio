@@ -20,7 +20,7 @@
                     <div>
                         <div class="flex justify-end w-full">
                             <div class="w-2/3">
-                                <img src="@/assets/img/logo-portfolio-white.webp" alt="logo portfolio paul jaguin" class="mb-3">
+                                <img src="/img/logo-portfolio-white.webp" alt="logo portfolio paul jaguin" class="mb-3">
                             </div>
                         </div>
                         <div class="w-full flex justify-end">
