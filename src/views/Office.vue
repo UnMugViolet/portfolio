@@ -77,7 +77,7 @@ onMounted(() => {
   // Save the state of the windows to localStorage
   windowsStore.loadState();
   
-  volumeStore.playAudio(['/sounds/start-windows.mp3']);
+  // volumeStore.playAudio(['/sounds/start-windows.mp3']);
 });
 
 // Keep track of the highest z-index
