@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
     <div class="grid grid-flow-col auto-cols-max gap-2">
-        <img src="@/assets/img/paul-jaguin-photo-cv.webp" alt="Photo de mon cv" class="w-20 h-20">
+        <img src="/img/paul-jaguin-photo-cv.webp" alt="Photo de mon cv" class="w-20 h-20">
         <div class="flex justify-center flex-col">
             <h1 class="font-trebuchet-pixel">Paul Jaguin</h1>
             <h2 class="font-trebuchet-pixel">{{ props.age }} ans</h2>
