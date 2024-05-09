@@ -11,7 +11,7 @@
 
         <template #center>
             <div class="md:w-4/12 w-64 ml-5 mb-10">
-                    <img src="@/assets/img/logo-portfolio-black.webp" alt="logo démarrage">
+                    <img src="/img/logo-portfolio-black.webp" alt="logo démarrage">
                 </div>
         </template>
 

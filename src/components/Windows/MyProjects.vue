@@ -88,7 +88,7 @@ watchEffect(() => {
             class="flex items-center px-4 gap-2.5" 
             :class="{ active: project.isFocus }">
 
-            <img :src="'src/assets/img/icons/' + project.icon" alt="project" class="w-10 h-10"
+            <img :src="'/img/icons/' + project.icon" alt="project" class="w-10 h-10"
               :style="{ opacity: project.isFocus ? 0.5 : 1 }" />
             <p class="text-xs font-tahoma font-medium" :style="{
               backgroundColor: project.isFocus ? 'rgb(11, 97, 255)' : 'transparent',              
