@@ -47,13 +47,13 @@
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: url('//img/cursors/volume-icon.png') center/contain no-repeat;
+  background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
   height: 9px; /* Height of the slider thumb */
   width: 20px; /* Width of the slider thumb */
 }
 
 .slider::-moz-range-thumb {
-  background: url('//img/cursors/volume-icon.png') center/contain no-repeat;
+  background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
   height: 9px; /* Height of the slider thumb */
   width: 20px; /* Width of the slider thumb */
 }
