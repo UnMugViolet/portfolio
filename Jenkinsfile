@@ -58,31 +58,6 @@ pipeline {
                                 useWorkspaceInPromotion: false, 
                                 verbose: false
                             ]]
-                // Second step: publish 'src/assets/img/**' files
-                ftpPublisher alwaysPublishFromMaster: false, 
-                            continueOnError: false, 
-                            failOnError: false, 
-                            paramPublish: [parameterName:""], 
-                            masterNodeName: '', 
-                            publishers: [[
-                                configName: 'mds-server-paul', 
-                                transfers: [[
-                                    asciiMode: false, 
-                                    cleanRemote: true, 
-                                    excludes: '', 
-                                    flatten: false, 
-                                    makeEmptyDirs: true, 
-                                    noDefaultExcludes: false, 
-                                    patternSeparator: '[, ]+', 
-                                    remoteDirectory: 'src/assets/img', 
-                                    remoteDirectorySDF: false, 
-                                    removePrefix: 'src/assets/img', 
-                                    sourceFiles: 'src/assets/img/**'
-                                ]], 
-                                usePromotionTimestamp: false, 
-                                useWorkspaceInPromotion: false, 
-                                verbose: false
-                            ]]
             }
         }
     }

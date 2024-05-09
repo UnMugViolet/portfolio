@@ -7,7 +7,7 @@
     <ContentCenter class="bg-black">
         <template #center>
             <div class="md:w-4/12 w-64 ml-5">
-                <img src="@/assets/img/logo-portfolio-white.webp" alt="logo démarrage">
+                <img src="/img/logo-portfolio-white.webp" alt="logo démarrage">
             </div>
         </template>
 
