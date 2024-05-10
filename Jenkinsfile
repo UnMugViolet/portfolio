@@ -63,12 +63,15 @@ pipeline {
     }
     post {
         success {
+            script {
+                print "Email: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}"
+            }
             emailext mimeType: 'text/html',
                     body: """<p>The build was successful. Check the Jenkins logs for details.</p>
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: "[${env.JOB_NAME}] Build successful 🙌",
-                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
+                    to: env.VITE_APP_ADMIN_EMAIL_ADDRESS
         }
         failure {
             emailext mimeType: 'text/html',
@@ -76,7 +79,7 @@ pipeline {
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: "[${env.JOB_NAME}] Build failed 💥",
-                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
+                    to: env.VITE_APP_ADMIN_EMAIL_ADDRESS
         }
         changed {
             emailext mimeType: 'text/html',
@@ -84,7 +87,7 @@ pipeline {
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: 'Build status is now passing 🌞',
-                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
+                    to: env.VITE_APP_ADMIN_EMAIL_ADDRESS
         }
     }
 }
