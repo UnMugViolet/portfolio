@@ -61,4 +61,30 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            emailext mimeType: 'text/html',
+                    body: """<p>The build was successful. Check the Jenkins logs for details.</p>
+                            <p>Build URL: ${env.BUILD_URL}</p>
+                            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
+                    subject: "[${env.JOB_NAME}] Build successful 🙌",
+                    to: env.BUILD_USER_EMAIL
+        }
+        failure {
+            emailext mimeType: 'text/html',
+                    body: """<p>The build failed. Check the Jenkins logs for details.</p>
+                            <p>Build URL: ${env.BUILD_URL}</p>
+                            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
+                    subject: "[${env.JOB_NAME}] Build failed 💥",
+                    to: env.BUILD_USER_EMAIL
+        }
+        changed {
+            emailext mimeType: 'text/html',
+                    body: """<p>The build status changed. Check the Jenkins logs for details.</p>
+                            <p>Build URL: ${env.BUILD_URL}</p>
+                            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
+                    subject: 'Build status is now passing 🌞',
+                    to: env.BUILD_USER_EMAIL
+        }
+    }
 }
