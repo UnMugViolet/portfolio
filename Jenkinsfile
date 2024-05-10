@@ -68,7 +68,7 @@ pipeline {
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: "[${env.JOB_NAME}] Build successful 🙌",
-                    to: env.BUILD_USER_EMAIL
+                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
         }
         failure {
             emailext mimeType: 'text/html',
@@ -76,7 +76,7 @@ pipeline {
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: "[${env.JOB_NAME}] Build failed 💥",
-                    to: env.BUILD_USER_EMAIL
+                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
         }
         changed {
             emailext mimeType: 'text/html',
@@ -84,7 +84,7 @@ pipeline {
                             <p>Build URL: ${env.BUILD_URL}</p>
                             <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" />""",
                     subject: 'Build status is now passing 🌞',
-                    to: env.BUILD_USER_EMAIL
+                    to: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}
         }
     }
 }
