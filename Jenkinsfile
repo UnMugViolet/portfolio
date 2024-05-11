@@ -74,9 +74,11 @@ pipeline {
                 echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
-                                <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
-                                <h2 style="display: inline-block; ">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
+                    body: """<div style="background-color: black; padding: 0px 45px; display: inline-block;">
+                                <div style="display: flex; gap: 0.5rem; color: white; align-items:center;">                                
+                                    <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
+                                    <h2 style="display: inline-block; ">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
+                                </div>
                             </div>
                             <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
                             <p>Check <a href="${env.BUILD_URL}">console output</a> to view the results.</p>
