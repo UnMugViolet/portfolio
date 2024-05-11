@@ -27,6 +27,10 @@ pipeline {
         }
         stage('Build') { 
             steps {
+                script {
+                    env.GIT_USER_EMAIL = sh(script: 'git config user.email', returnStdout: true).trim()
+                }
+                echo "Git user email: ${env.GIT_USER_EMAIL}"
                 sh 'npm install' 
                 sh 'npm run build'
             }
@@ -72,39 +76,39 @@ pipeline {
                 print "Email: ${env.VITE_APP_ADMIN_EMAIL_ADDRESS}, ${env.SYS_ADMIN_EMAIL}, ${env.CHANGE_AUTHOR_EMAIL}"
             }
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block;>
-                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" style="display: inline-block; vertical-align: middle; width: 29px; height: 40px;" />
-                                <h2 style="display: inline-block; vertical-align: middle;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:</h2>
+                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
+                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" width: 29px; height: 40px;"/>
+                                <h2 style="display: inline-block; ">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:</h2>
                             </div>
                             <p>The build was successful. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
                             <p>Check <a href="${env.BUILD_URL}">console output</a> to view the results.</p>
                             """,
                     subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} successful",
-                    to: "${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
+                    to: "${env.VITE_APP_ADMIN_EMAIL_ADDRESS},${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
         }
         failure {
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block;>
-                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" style="display: inline-block; vertical-align: middle; width: 29px; height: 40px;" />
+                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
+                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" width: 29px; height: 40px;" />
                                 <h2 style="display: inline-block; vertical-align: middle;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:</h2>
                             </div>
                             <p>The build failed. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
                             <p>Check <a href="${env.BUILD_URL}">console output</a> to view the results.</p>
                             """,
                     subject: "[${env.JOB_NAME}] Build failed # ${env.BUILD_NUMBER} ",
-                    to: "${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
+                    to: "${env.VITE_APP_ADMIN_EMAIL_ADDRESS},${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
         }
         changed {
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block;>
-                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" style="display: inline-block; vertical-align: middle; width: 29px; height: 40px;" />
+                    body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
+                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" width: 29px; height: 40px;" />
                                 <h2 style="display: inline-block; vertical-align: middle;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:</h2>
                             </div>
                             <p>The build status changed. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
                             <p>Check <a href="${env.BUILD_URL}">console output</a> to view the results.</p>
                             """,
                     subject: """Build # ${env.BUILD_NUMBER}  status is now passing""",
-                    to: "${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
+                    to: "${env.VITE_APP_ADMIN_EMAIL_ADDRESS},${env.CHANGE_AUTHOR_EMAIL},${env.SYS_ADMIN_EMAIL}"
         }
     }
 }
