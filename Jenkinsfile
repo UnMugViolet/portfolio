@@ -65,13 +65,16 @@ pipeline {
         always {
             script {
                 env.BUILD_STATUS = currentBuild.currentResult
-                def commitHash = env.GIT_COMMIT
-                env.AUTHOR_EMAIL = sh(script: "git show -s --format='%ae' ${commitHash}", returnStdout: true).trim()
-                echo "Author Email: ${env.AUTHOR_EMAIL}"
+                def commitHashes = sh(script: "git log --pretty=format:'%H' ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}..${env.GIT_COMMIT}", returnStdout: true).trim().split("\n")
+                def authorEmails = commitHashes.collect { hash ->
+                    return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
+                }.unique().join(",")
+                env.AUTHOR_EMAILS = authorEmails
+                echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
             emailext mimeType: 'text/html',
                     body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
-                                <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" width: 29px; height: 40px;"/>
+                                <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
                                 <h2 style="display: inline-block; ">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
                             </div>
                             <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
@@ -79,7 +82,7 @@ pipeline {
                             """,
                     subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
-                    to: "${env.AUTHOR_EMAIL}, ${env.SYS_ADMIN_EMAIL}"
+                    to: "${env.AUTHOR_EMAILS}, ${env.SYS_ADMIN_EMAIL}"
         }
     }
 }
