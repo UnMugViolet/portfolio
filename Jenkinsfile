@@ -71,7 +71,7 @@ pipeline {
             }
             emailext mimeType: 'text/html',
                     body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
-                                <img src="https://jenkins.rocketegg.systems/static/66ba1066/images/svgs/logo.svg" alt="Jenkins logo" width: 29px; height: 40px;"/>
+                                <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" width: 29px; height: 40px;"/>
                                 <h2 style="display: inline-block; ">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
                             </div>
                             <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
@@ -79,7 +79,7 @@ pipeline {
                             """,
                     subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
-                    to: "${env.SYS_ADMIN_EMAIL}"
+                    to: "${authorEmail}, ${env.SYS_ADMIN_EMAIL}"
         }
     }
 }
