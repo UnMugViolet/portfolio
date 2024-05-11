@@ -74,7 +74,7 @@ pipeline {
                 echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; padding: 0px 20px; display: inline-block;">
+                    body: """<div style="background-color: black; padding: 5px 20px; display: inline-block;">
                                 <table style="color: white; border-collapse: collapse;">
                                     <tr>
                                         <td style="padding: 0;">
@@ -86,8 +86,8 @@ pipeline {
                                     </tr>
                                 </table>
                             </div>
-                            <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Jenkins logs</a> for details.</p>
-                            <p>Check <a href="${env.BUILD_URL}">console output</a> to view the results.</p>
+                            <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
+                            <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>
                             """,
                     subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
