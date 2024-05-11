@@ -68,8 +68,9 @@ pipeline {
                 def commitHashes = sh(script: "git log --pretty=format:'%H' ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}..${env.GIT_COMMIT}", returnStdout: true).trim().split("\n")
                 def authorEmails = commitHashes.collect { hash ->
                     return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
-                }.unique().join(",")
-                env.AUTHOR_EMAILS = authorEmails
+                }.unique()
+                authorEmails.remove(env.SYS_ADMIN_EMAIL)
+                env.AUTHOR_EMAILS = authorEmails.join(",")
                 echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
             emailext mimeType: 'text/html',
