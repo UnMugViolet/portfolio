@@ -66,8 +66,8 @@ pipeline {
             script {
                 env.BUILD_STATUS = currentBuild.currentResult
                 def commitHash = env.GIT_COMMIT
-                def authorEmail = sh(script: "git show -s --format='%ae' ${commitHash}", returnStdout: true).trim()
-                echo "Author Email: ${authorEmail}"
+                env.AUTHOR_EMAIL = sh(script: "git show -s --format='%ae' ${commitHash}", returnStdout: true).trim()
+                echo "Author Email: ${env.AUTHOR_EMAIL}"
             }
             emailext mimeType: 'text/html',
                     body: """<div style="background-color: black; color: white; padding: 10px; display: inline-block; vertical-align: middle;">
@@ -79,7 +79,7 @@ pipeline {
                             """,
                     subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
-                    to: "${authorEmail}, ${env.SYS_ADMIN_EMAIL}"
+                    to: "${env.AUTHOR_EMAIL}, ${env.SYS_ADMIN_EMAIL}"
         }
     }
 }
