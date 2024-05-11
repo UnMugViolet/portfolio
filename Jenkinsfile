@@ -81,4 +81,5 @@ pipeline {
                     recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
                     to: "${env.SYS_ADMIN_EMAIL}"
         }
+    }
 }
