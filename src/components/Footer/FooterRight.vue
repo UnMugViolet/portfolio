@@ -11,7 +11,7 @@
   const isVolumeSettingsDisplayed = ref(false);
   const musicModalRef = ref(null);
 
-  // #FIXME - wtf could not be passed to enterFullScreen and needs to be declared again
+  //  wtf could not be passed to enterFullScreen and needs to be declared again
   const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
   const enterFullScreen = () => {
