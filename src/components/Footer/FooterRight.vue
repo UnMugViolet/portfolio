@@ -5,26 +5,23 @@
   import NotificationModal from '@/components/Modals/NotificationModal.vue';
   import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue';
 
+
+  const volumeStore = useVolumeStore();
+  const volume = computed(() => volumeStore.volume);
+
   // Initialize refs
   const isFullScreen = ref(false);
   const originalTitle = ref('Mode plein écran');
   const isVolumeSettingsDisplayed = ref(false);
   const musicModalRef = ref(null);
 
-  //  wtf could not be passed to enterFullScreen and needs to be declared again
-  const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
   const enterFullScreen = () => {
-    // Check if the device is a mobile device
-
-    const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
     if (isFullScreen.value) {
       // Exit full-screen mode
       document.exitFullscreen();
       originalTitle.value = 'Mode plein écran';
       isFullScreen.value = false;
-    } else if (!isMobile) {
+    } else {
       // Enter full-screen mode only if the device is not a mobile device
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
@@ -58,11 +55,6 @@
   onUnmounted(() => {
     document.body.removeEventListener('click', handleClickOutside);
   });
-
-  const volumeStore = useVolumeStore();
-
-  // Get volume from the Pinia store
-  const volume = computed(() => volumeStore.volume);
 
   const volumeIconSrc = computed(() => {
     return volume.value === 0 ? '/img/icons/mute-icon-sm.png' : '/img/icons/volume-icon-sm.png';
