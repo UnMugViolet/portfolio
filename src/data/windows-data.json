@@ -3,10 +3,12 @@
     "id": "myProjects",
     "title": "Mes projets",
     "subtitle": "Voir tous mes projets",
-    "imgSrc": "src/assets/img/icons/projects-icon-lg.png",
-    "iconSrc": "src/assets/img/icons/projects-icon-sm.png",
+    "imgSrc": "/img/icons/projects-icon-lg.png",
+    "iconSrc": "/img/icons/projects-icon-sm.png",
     "initPositionX": 180,
     "initPositionY": 100,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "MyProjects",
     "subMenuItems": [
       {
@@ -16,17 +18,17 @@
           {
             "id": 1,
             "subtitle": "Informations système",
-            "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+            "iconUrl": "/img/icons/info-system-icon.ico"
           },
           {
             "id": 2,
             "subtitle": "Gestion des programmes",
-            "iconUrl": "src/assets/img/icons/programs-icon.png"
+            "iconUrl": "/img/icons/programs-icon.png"
           },
           {
             "id": 3,
             "subtitle": "Changer les paramètres",
-            "iconUrl": "src/assets/img/icons/settings-icon.png"
+            "iconUrl": "/img/icons/settings-icon.png"
           }
         ]
       },
@@ -37,25 +39,25 @@
           {
             "id": 1,
             "subtitle": "Mes emplacements réseau",
-            "iconUrl": "src/assets/img/icons/networking-icon.png",
+            "iconUrl": "/img/icons/networking-icon.png",
             "url": ""
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
-            "iconUrl": "src/assets/img/icons/documents-icon.png",
+            "iconUrl": "/img/icons/documents-icon.png",
             "url": ""
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
-            "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
             "url": ""
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
-            "iconUrl": "src/assets/img/icons/settings-icon.png",
+            "iconUrl": "/img/icons/settings-icon.png",
             "url": ""
           }
         ]
@@ -67,7 +69,7 @@
           {
             "id": 1,
             "subtitle": "github",
-            "iconUrl": "src/assets/img/icons/github-icon.png",
+            "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
         ]
@@ -78,10 +80,12 @@
     "id": "contact",
     "title": "Me contacter",
     "subtitle": "Me contacter",
-    "imgSrc": "src/assets/img/icons/email-icon-lg.png",
-    "iconSrc": "src/assets/img/icons/email-icon-sm.png",
+    "imgSrc": "/img/icons/email-icon-lg.png",
+    "iconSrc": "/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "ContactMe",
     "subMenuItems": [
       {
@@ -91,17 +95,17 @@
           {
             "id": 1,
             "subtitle": "Informations système",
-            "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+            "iconUrl": "/img/icons/info-system-icon.ico"
           },
           {
             "id": 2,
             "subtitle": "Gestion des programmes",
-            "iconUrl": "src/assets/img/icons/programs-icon.png"
+            "iconUrl": "/img/icons/programs-icon.png"
           },
           {
             "id": 3,
             "subtitle": "Changer les paramètres",
-            "iconUrl": "src/assets/img/icons/settings-icon.png"
+            "iconUrl": "/img/icons/settings-icon.png"
           }
         ]
       },
@@ -112,25 +116,25 @@
           {
             "id": 1,
             "subtitle": "Mes emplacements réseau",
-            "iconUrl": "src/assets/img/icons/networking-icon.png",
+            "iconUrl": "/img/icons/networking-icon.png",
             "url": "#"
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
-            "iconUrl": "src/assets/img/icons/documents-icon.png",
+            "iconUrl": "/img/icons/documents-icon.png",
             "url": "#"
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
-            "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
             "url": "#"
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
-            "iconUrl": "src/assets/img/icons/settings-icon.png",
+            "iconUrl": "/img/icons/settings-icon.png",
             "url": "#"
           }
         ]
@@ -142,7 +146,7 @@
           {
             "id": 1,
             "subtitle": "github",
-            "iconUrl": "src/assets/img/icons/github-icon.png",
+            "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
         ]
@@ -153,10 +157,12 @@
     "id": "myCV",
     "title": "Mon CV",
     "subtitle": "Voir le curriculum vitae",
-    "imgSrc": "src/assets/img/icons/cv-icon-lg.png",
-    "iconSrc": "src/assets/img/icons/cv-icon-sm.png",
+    "imgSrc": "/img/icons/cv-icon-lg.png",
+    "iconSrc": "/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,
+    "initWidth": 385,
+    "initHeight": 500,
     "component": "MyCV",
     "subMenuItems": [
       {
@@ -166,17 +172,17 @@
           {
             "id": 1,
             "subtitle": "Informations système",
-            "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+            "iconUrl": "/img/icons/info-system-icon.ico"
           },
           {
             "id": 2,
             "subtitle": "Gestion des programmes",
-            "iconUrl": "src/assets/img/icons/programs-icon.png"
+            "iconUrl": "/img/icons/programs-icon.png"
           },
           {
             "id": 3,
             "subtitle": "Changer les paramètres",
-            "iconUrl": "src/assets/img/icons/settings-icon.png"
+            "iconUrl": "/img/icons/settings-icon.png"
           }
         ]
       },
@@ -187,25 +193,25 @@
           {
             "id": 1,
             "subtitle": "Mes emplacements réseau",
-            "iconUrl": "src/assets/img/icons/networking-icon.png",
+            "iconUrl": "/img/icons/networking-icon.png",
             "url": "#"
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
-            "iconUrl": "src/assets/img/icons/documents-icon.png",
+            "iconUrl": "/img/icons/documents-icon.png",
             "url": "#"
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
-            "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
             "url": "#"
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
-            "iconUrl": "src/assets/img/icons/settings-icon.png",
+            "iconUrl": "/img/icons/settings-icon.png",
             "url": "#"
           }
         ]
@@ -217,7 +223,7 @@
           {
             "id": 1,
             "subtitle": "github",
-            "iconUrl": "src/assets/img/icons/github-icon.png",
+            "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
         ]
@@ -228,10 +234,12 @@
     "id": "music",
     "title": "Mes Musiques",
     "subtitle": "",
-    "imgSrc": "src/assets/img/icons/playmusic-icon-lg.png",
-    "iconSrc": "src/assets/img/icons/playmusic-icon-sm.png",
+    "imgSrc": "/img/icons/playmusic-icon-lg.png",
+    "iconSrc": "/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "Music",
     "subMenuItems": [
       {
@@ -241,17 +249,17 @@
           {
             "id": 1,
             "subtitle": "Informations système",
-            "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+            "iconUrl": "/img/icons/info-system-icon.ico"
           },
           {
             "id": 2,
             "subtitle": "Gestion des programmes",
-            "iconUrl": "src/assets/img/icons/programs-icon.png"
+            "iconUrl": "/img/icons/programs-icon.png"
           },
           {
             "id": 3,
             "subtitle": "Changer les paramètres",
-            "iconUrl": "src/assets/img/icons/settings-icon.png"
+            "iconUrl": "/img/icons/settings-icon.png"
           }
         ]
       },
@@ -262,25 +270,25 @@
           {
             "id": 1,
             "subtitle": "Mes emplacements réseau",
-            "iconUrl": "src/assets/img/icons/networking-icon.png",
+            "iconUrl": "/img/icons/networking-icon.png",
             "url": "#"
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
-            "iconUrl": "src/assets/img/icons/documents-icon.png",
+            "iconUrl": "/img/icons/documents-icon.png",
             "url": "#"
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
-            "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
             "url": "#"
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
-            "iconUrl": "src/assets/img/icons/settings-icon.png",
+            "iconUrl": "/img/icons/settings-icon.png",
             "url": "#"
           }
         ]
@@ -292,7 +300,7 @@
           {
             "id": 1,
             "subtitle": "github",
-            "iconUrl": "src/assets/img/icons/github-icon.png",
+            "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
         ]
@@ -303,10 +311,12 @@
     "id": "play",
     "title": "Jouer",
     "subtitle": "",
-    "imgSrc": "src/assets/img/icons/play-icon-lg.png",
-    "iconSrc": "src/assets/img/icons/play-icon-sm.png",
+    "imgSrc": "/img/icons/play-icon-lg.png",
+    "iconSrc": "/img/icons/play-icon-sm.png",
     "initPositionX": 160,
     "initPositionY": 270,
+    "initWidth": 660,
+    "initHeight": 500,
     "component": "Play",
     "subMenuItems": [
       {
@@ -316,17 +326,17 @@
           {
             "id": 1,
             "subtitle": "Informations système",
-            "iconUrl": "src/assets/img/icons/info-system-icon.ico"
+            "iconUrl": "/img/icons/info-system-icon.ico"
           },
           {
             "id": 2,
             "subtitle": "Gestion des programmes",
-            "iconUrl": "src/assets/img/icons/programs-icon.png"
+            "iconUrl": "/img/icons/programs-icon.png"
           },
           {
             "id": 3,
             "subtitle": "Changer les paramètres",
-            "iconUrl": "src/assets/img/icons/settings-icon.png"
+            "iconUrl": "/img/icons/settings-icon.png"
           }
         ]
       },
@@ -337,25 +347,25 @@
           {
             "id": 1,
             "subtitle": "Mes emplacements réseau",
-            "iconUrl": "src/assets/img/icons/networking-icon.png",
+            "iconUrl": "/img/icons/networking-icon.png",
             "url": "#"
           },
           {
             "id": 2,
             "subtitle": "Mes documents",
-            "iconUrl": "src/assets/img/icons/documents-icon.png",
+            "iconUrl": "/img/icons/documents-icon.png",
             "url": "#"
           },
           {
             "id": 3,
             "subtitle": "Documents partagés",
-            "iconUrl": "src/assets/img/icons/shared-documents-icon.png",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
             "url": "#"
           },
           {
             "id": 4,
             "subtitle": "Panneau de configuration",
-            "iconUrl": "src/assets/img/icons/settings-icon.png",
+            "iconUrl": "/img/icons/settings-icon.png",
             "url": "#"
           }
         ]
@@ -367,7 +377,7 @@
           {
             "id": 1,
             "subtitle": "github",
-            "iconUrl": "src/assets/img/icons/github-icon.png",
+            "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
         ]

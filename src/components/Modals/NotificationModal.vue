@@ -20,14 +20,14 @@ const closeNotificationModal = () => {
   <Transition>  
     <div 
       v-if="showNotificationModal"
-      class="bubble absolute right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-7 pb-2.5 pl-2.5">
+      class="bubble absolute right-16 md:right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-7 pb-2.5 pl-2.5 text-black">
       <button 
         @click="closeNotificationModal" 
         class="modal-close cursor-pointer">
         
       </button>
       <div class="flex items-center">
-        <img class="w-3.5 h-3.5" src="@/assets/img/icons/info-icon.png" alt="risk">
+        <img class="w-3.5 h-3.5" src="/img/icons/info-icon.png" alt="risk">
         <span class="ml-2">Le mode plein écran est disponible !</span>
       </div>
       <p>Pour une expérience plus immersive,</p>

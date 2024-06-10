@@ -30,7 +30,7 @@
                             <div class="py-2">
                                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
-                                        <img src="@/assets/img/icons/folder-docs-icon.png" alt="A propos">
+                                        <img src="/img/icons/folder-docs-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         A propos
@@ -38,7 +38,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
-                                        <img src="@/assets/img/icons/folder-images-icon.png" alt="A propos">
+                                        <img src="/img/icons/folder-images-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Mes images
@@ -46,7 +46,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
-                                        <img src="@/assets/img/icons/folder-music-icon.png" alt="A propos">
+                                        <img src="/img/icons/folder-music-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Mes musiques
@@ -54,7 +54,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
-                                        <img src="@/assets/img/icons/calendar-icon.png" alt="A propos">
+                                        <img src="/img/icons/calendar-icon.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Calendrier
@@ -62,7 +62,7 @@
                                 </HeaderRightButton>
                                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                                     <template #img>
-                                        <img src="@/assets/img/icons/play-icon-sm.png" alt="A propos">
+                                        <img src="/img/icons/play-icon-sm.png" alt="A propos">
                                     </template>
                                     <template #text>
                                         Jouer
@@ -76,7 +76,7 @@
                     <div class="header-bot-background h-full flex justify-end items-center">
                         <div class="flex h-5/6 gap-3 mr-2">
                             <HeaderDisconnect @click="turnOffHeader" class="cursor-pointer"/>
-                            <HeaderShutdown @click="turnOffHeader" class="cursor-pointer"/>
+                            <HeaderShutdown @click="shutdown" class="cursor-pointer"/>
                         </div>
                     </div>
                 </div>
@@ -87,6 +87,7 @@
 
 <script setup>
     import { ref, watchEffect } from 'vue';
+    import { useVolumeStore } from '@/stores/volumeStore.js';
     import ProfilePicture from '@/components/ProfilePicture.vue';
     import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue';
     import HeaderRightButton from '@/components/Buttons/HeaderRightButton.vue';
@@ -94,6 +95,7 @@
     import HeaderDisconnect from '@/components/Buttons/HeaderDisconnect.vue';
 
     const emit = defineEmits();
+    const volumeStore = useVolumeStore();
 
     const props = defineProps({
         entities: {
@@ -114,6 +116,10 @@
 
     const toggleWindow = (buttonName) => {
         emit('toggle-' + buttonName);
+    }
+
+    const shutdown = () => {
+        volumeStore.playAudio(['/sounds/shutdown-windows.mp3']);
     }
 </script>
 
