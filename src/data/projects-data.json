@@ -1,46 +1,49 @@
 {
   "categories": [
-      {
-          "name": "Sites web",
-          "projects": [
-              {
-                  "name": "Logma Production",
-                  "icon": "folder-open-icon.png",
-                  "title": "Logma Production",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              },
-              {
-                  "name": "Pangaia",
-                  "icon": "folder-open-icon.png",
-                  "title": "Pangaia",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              },
-              {
-                  "name": "Clench",
-                  "icon": "folder-open-icon.png",
-                  "title": "Clench speedrun website",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              }
-          ]
-      },
-      {
-          "name": "Serveurs",
-          "projects": [
-              {
-                "name": "Homeserver",
-                "icon": "homeserver-icon.png",
-                "title": "Serveur d'application & stockage NAS",
-                "description": "<div class=\"text-xs\">\n    <h3 class=\"mt-5 mb-2\">Historique</h3>\n    <p>Ce projet a \u00e9t\u00e9 r\u00e9alis\u00e9 en bin\u00f4me, Pierre qui a une soci\u00e9t\u00e9 de production vid\u00e9o, et moi d\u00e9veloppeur web.</p>\n    <p>Une \u00e9quipe sur laquelle on ne miserait pas forc\u00e9ment pour monter une infrastructure r\u00e9seau, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne conna\u00eet pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;</p>\n    <h3 class=\"mt-5 mb-1\">Objectifs</h3>\n    <div>\n      <li>Faire un serveur de stockage qui permette \u00e9galement de d\u00e9ployer des applications</li>\n      <li>Pouvoir y acc\u00e9der \u00e0 distance</li>\n      <li>Permettre de monter une vid\u00e9o sur des fichiers distants</li>\n      <li>Pouvoir installer des services comme Jenkins, Sonarqube</li>\n      <li>Avoir un monitoring des sites web en ligne, et des alertes en cas de perte de services</li>\n      <li>Hebreg\u00e9 des sites de pr\u00e9production avant de les mettre en ligne</li>\n      <li>De la redondance dans les donn\u00e9es et dans la mani\u00e8re d'y acc\u00e9der \u00e0 distance</li>\n      <li>Pouvoir maintenir ce syst\u00e8me facilement</li>\n      <li>\u00catre moins cher qu'un \u00e9quivalent pr\u00e9mont\u00e9 avec les m\u00eames performances</li>\n    </div>\n    <h3 class=\"mt-5 mb-1\">Informations techniques</h3>\n    <p class=\"mb-5 text-xs underline\">Composants : </p>\n    <div class=\"grid grid-cols-3 border border-black\">\n      <div class=\"bg-gray-200 border border-black p-2\">Composant</div>\n      <div class=\"bg-gray-200 border border-black p-2\">Mod\u00e8le</div>\n      <div class=\"bg-gray-200 border border-black p-2\">Lien</div>\n\n      <div class=\"border border-black p-2\">\ud83e\udde0 Carte m\u00e8re + processeur</div>\n      <div class=\"border border-black p-2\">N5105 NAS motherboard</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://a.aliexpress.com/_m0yUkVg\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\u26a1 RAM</div>\n      <div class=\"border border-black p-2\">Crucial 2x16GO 3200</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.crucial.fr/memory/ddr4/ct2k8g4sfra32a?gclid=Cj0KCQjwrMKmBhCJARIsAHuEAPQP187xpSTlz_M-v5aYKLolkmkNTscRdHhrceKPLJMdY2Wvd2xeHVYaAsAvEALw_wcB&amp;ef_id=Cj0KCQjwrMKmBhCJARIsAHuEAPQP187xpSTlz_M-v5aYKLolkmkNTscRdHhrceKPLJMdY2Wvd2xeHVYaAsAvEALw_wcB:G:s&amp;gclsrc=aw.ds\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\ud83d\uddc4\ufe0f Boitier</div>\n      <div class=\"border border-black p-2\">Node 804 fractal</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.amazon.fr/Fractal-Design-Node-804-Black/dp/B00JBBH93K/ref=asc_df_B00JBBH93K/?tag=googshopfr-21&amp;linkCode=df0&amp;hvadid=194891673251&amp;hvpos=&amp;hvnetw=g&amp;hvrand=12214467104878387699&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=m&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9055664&amp;hvtargid=pla-81991589846&amp;psc=1\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\ud83d\udd0c Alimentation</div>\n      <div class=\"border border-black p-2\">Be quiet 12 M 550w 80+ gold</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.ldlc.com/fiche/PB00540382.html\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\ud83d\udcbe SSD boot</div>\n      <div class=\"border border-black p-2\">Silicon Power PCIe M.2</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.amazon.fr/Silicon-Power-256GB-Gen3x4-Internal/dp/B07ZH6QR8Q/ref=mp_s_a_1_3?adgrpid=69841264517&amp;hvadid=602376801544&amp;hvdev=m&amp;hvlocphy=9055664&amp;hvnetw=g&amp;hvqmt=b&amp;hvrand=11304459242616836538&amp;hvtargid=kwd-393755839186&amp;hydadcr=4014_2189719&amp;keywords=ssd+256+go+nvme&amp;qid=1691417251&amp;sr=8-3\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\ud83d\udcbd SSD Nas</div>\n      <div class=\"border border-black p-2\">Nvme Red - 2to</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.westerndigital.com/fr-fr/products/internal-drives/wd-red-sn700-nvme-ssd#WDS200T1R0C\">Voir le mod\u00e8le</a></div>\n\n      <div class=\"border border-black p-2\">\u27bf R\u00e9partiteur SATA</div>\n      <div class=\"border border-black p-2\">Cable SATA r\u00e9partiteur x6</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://a.aliexpress.com/_mr1DWz0\">Voir le mod\u00e8le</a></div>\n    </div>\n  </div>\n  <p class=\"mb-2 mt-5 text-xs underline\">HDD : </p>\n  <div class=\"grid grid-cols-4 border border-black mt-5 text-xs\">\n      <div class=\"bg-gray-200 border border-black p-2\">Disques</div>\n      <div class=\"bg-gray-200 border border-black p-2\">Mod\u00e8le</div>\n      <div class=\"bg-gray-200 border border-black p-2\">Quantit\u00e9</div>\n      <div class=\"bg-gray-200 border border-black p-2\">Lien</div>\n\n      <div class=\"border border-black p-2\">\ud83d\uddc3\ufe0f HDD Western Digital</div>\n      <div class=\"border border-black p-2\">WD Red Plus - 6 To</div>\n      <div class=\"border border-black p-2\">4</div>\n      <div class=\"border border-black p-2\"><a target=\"_blank\" class=\"text-purple-600\" href=\"https://www.westerndigital.com/fr-fr/products/internal-drives/wd-red-plus-sata-3-5-hdd#WD60EFPX\">Voir le mod\u00e8le</a></div>\n  </div>",
-                "isFocus": false,
-                "isActive": false
-              }
-          ]
-      }
+    {
+      "name": "Sites web",
+      "projects": [
+        {
+          "name": "Logma Production",
+          "icon": "folder-open-icon.png",
+          "title": "Logma Production",
+          "description": "",
+          "componentName": "LogmaContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "Pangaia",
+          "icon": "folder-open-icon.png",
+          "title": "Pangaia",
+          "description": "",
+          "componentName": "PangaiaContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "Clench",
+          "icon": "folder-open-icon.png",
+          "title": "Clench speedrun website",
+          "description": "",
+          "componentName": "ClenchContent",
+          "isFocus": false,
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "name": "Serveurs",
+      "projects": [
+        {
+          "name": "Homeserver",
+          "icon": "homeserver-icon.png",
+          "title": "Serveur d'application & stockage NAS",
+          "componentName": "HomeserverContent",
+          "isFocus": false,
+          "isActive": false
+        }
+      ]
+    }
   ]
 }
