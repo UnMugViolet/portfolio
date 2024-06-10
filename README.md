@@ -5,8 +5,6 @@
 
 ## Project Setup
 
-test
-
 ```sh
 npm install
 ```
