@@ -24,7 +24,7 @@
         <div class="absolute w-full h-full overflow-hidden p-0.75">
             <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']"/>
             <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable"/>
-            <WindowHeaderSearch :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
+            <WindowHeaderSearch :id="id" :title="title" :iconSrc="iconSrc" :activeProjectName="activeProjectName"/>
             <!-- Component containing content for the window goes here it is done in Office.vue component -->
             <slot></slot>         
         </div>
@@ -40,18 +40,20 @@ import { ref, computed, inject } from 'vue';
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue';
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue';
 import WindowClose from '../components/Buttons/WindowClose.vue';
-import WindowHeaderTools from '../components/Window/WindowHeaderTools.vue';
-import WindowHeaderSearch from '../components/Window/WindowHeaderSearch.vue';
-import WindowHeaderDropdown from '../components/Window/WindowHeaderDropdown.vue';
+import WindowHeaderTools from '../components/Windows/WindowHeaderTools.vue';
+import WindowHeaderSearch from '../components/Windows/WindowHeaderSearch.vue';
+import WindowHeaderDropdown from '../components/Windows/WindowHeaderDropdown.vue';
 
 const emit = defineEmits();
 
-const { id, title, iconSrc, initPositionX, initPositionY, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
+const { id, title, iconSrc, initPositionX, initPositionY, initWidth, initHeight, subMenuItems, isGoBackAvailable, activeProjectName } = defineProps({
   id: String,
   title: String,
   iconSrc: String,
   initPositionX: Number,
   initPositionY: Number,
+  initWidth: Number,
+  initHeight: Number,
   subMenuItems: Array,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
@@ -72,7 +74,7 @@ let lastUpdateTimestamp = 0;
 const maximized = ref(false);
 
 // Window position and size
-const windowSize = { width: 660, height: 500 };
+const windowSize = { width: initWidth, height: initHeight };
 const windowPosition = ref({ x: initPositionX, y: initPositionY });
 const windowWidth = ref(windowSize.width);
 const windowHeight = ref(windowSize.height);
@@ -94,7 +96,7 @@ const windowStyle = computed(() => {
   const sizeStyle = maximized.value || isMobile
     ? {
         width: '100vw',
-        height: '96vh',
+        height: '99vh',
         top: '0',
         left: '0',
     }

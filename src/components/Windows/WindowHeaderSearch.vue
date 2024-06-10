@@ -9,15 +9,15 @@
             <div class="flex items-center overflow-hidden">
                 <img :src="iconSrc" alt="projects-icon" class="w-3.5 h-3.5"/>
                 <p class="px-1 small-p cursor-default truncate mt-px">
-                    {{ formattedTitle }}
+                    {{ title }}
                 </p>
             </div>
             <div class="mr-0.5 hover:brightness-110">
-                <img src="@/assets/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
+                <img src="/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5"/>
             </div>
         </div>
         <div class="flex items-center px-2 gap-1 w-20">
-            <img src="@/assets/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
+            <img src="/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5"/>
             <p class="small-p cursor-default">Aller</p>
         </div>
     </div>
@@ -27,16 +27,20 @@
 import { computed } from 'vue';
 
 const props = defineProps({
+    id: String,
     title: String,
     iconSrc: String,
     activeProjectName: String,
 });
 
-const formattedTitle = computed(() => {
-    let formattedProjectName = props.activeProjectName 
-        ? props.activeProjectName.toLowerCase().replace(/ /g, '-')
-        : '';
+const title = computed(() => {
+    if(props.id === 'myProjects') {        
+        let formattedProjectName = props.activeProjectName 
+            ? props.activeProjectName.toLowerCase().replace(/ /g, '-')
+            : '';
+        return formattedProjectName ? `${props.title}/${formattedProjectName}` : props.title;
+    }
+    return props.title;
 
-    return formattedProjectName ? `${props.title}/${formattedProjectName}` : props.title;
 });
 </script>
