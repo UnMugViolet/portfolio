@@ -68,9 +68,10 @@ watchEffect(() => {
   <div class="relative right-0 h-content-window flex">
     <WindowSideMenu :subMenuItems="props.subMenuItems" />
     <!-- Content of project -->
-    <div v-if="selectedProject && selectedProject.isActive" class="w-full h-full bg-white p-2">
-      <h2>{{ selectedProject.title }}</h2>
-      {{ selectedProject.description }}
+    <div v-if="selectedProject && selectedProject.isActive" class="w-full h-full bg-white p-2 overflow-auto">
+      <h2 class="mb-5">{{ selectedProject.title }}</h2>
+      <div class="text-sm" v-html="selectedProject.description"/>
+
     </div>
     <!-- Content window Foreach categories and projects -->
     <div v-else class="flex flex-col w-full h-full bg-white overflow-auto pt-0.5">
@@ -108,4 +109,5 @@ watchEffect(() => {
 .active {
   filter: drop-shadow(blue 0px 0px);
 }
+
 </style>
