@@ -1,20 +1,3 @@
-<template>
-    <div class="relative right-0 h-content-window overflow-hidden">
-        <div class="w-full h-full bg-white overflow-auto p-2">
-            <div class="w-[350px]">
-                <ProfileHeader :age="age"/>
-                <section class="mt-5">
-                    <h2 class="font-trebuchet-pixel underline">Formations</h2>
-                    <EducationItem v-for="education in educationData" :key="education.id" :education="education" />
-                </section>
-                <div class="mt-3">
-                    <h2 class="font-trebuchet-pixel mt-5 underline">Expériences Professionnelles</h2>
-                    <WorkExperienceItem v-for="(workExperience, index) in experienceData" :key="index" :workExperience="workExperience"/>                </div>
-            </div>
-        </div>
-    </div>  
-</template>
-
 <script setup>
 import { ref } from 'vue';
 import ProfileHeader from './ProfileHeader.vue';
@@ -28,3 +11,22 @@ const age = ref(Math.floor((new Date() - birthdate) / 31536000000));
 let educationData = ref(cvData.education);
 let experienceData = ref(cvData.workExperience);
 </script>
+
+
+<template>
+    <div class="relative right-0 h-content-window overflow-hidden">
+        <div class="w-full h-full bg-white overflow-auto p-2">
+            <div>
+                <ProfileHeader :age="age"/>
+                <section class="mt-5">
+                    <h2 class="font-trebuchet-pixel underline">Formations</h2>
+                    <EducationItem v-for="education in educationData" :key="education.id" :education="education" />
+                </section>
+                <div class="mt-3">
+                    <h2 class="font-trebuchet-pixel mt-5 underline">Expériences Professionnelles</h2>
+                    <WorkExperienceItem v-for="(workExperience, index) in experienceData" :key="index" :workExperience="workExperience"/>                
+                </div>
+            </div>
+        </div>
+    </div>  
+</template>

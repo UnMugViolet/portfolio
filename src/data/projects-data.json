@@ -1,46 +1,50 @@
 {
   "categories": [
-      {
-          "name": "Sites web",
-          "projects": [
-              {
-                  "name": "Logma Production",
-                  "icon": "folder-open-icon.png",
-                  "title": "Logma Production",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              },
-              {
-                  "name": "Pangaia",
-                  "icon": "folder-open-icon.png",
-                  "title": "Pangaia",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              },
-              {
-                  "name": "Clench",
-                  "icon": "folder-open-icon.png",
-                  "title": "Clench speedrun website",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              }
-          ]
-      },
-      {
-          "name": "Serveurs",
-          "projects": [
-              {
-                  "name": "Homeserver",
-                  "icon": "homeserver-icon.png",
-                  "title": "Mon serveur maison",
-                  "description": "",
-                  "isFocus": false,
-                  "isActive": false
-              }
-          ]
-      }
+    {
+      "name": "Sites web",
+      "projects": [
+        {
+          "name": "Logma Production",
+          "icon": "folder-open-icon.png",
+          "title": "Logma Production",
+          "date":"2023 - 2 mois",
+          "componentName": "LogmaContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "Pangaia",
+          "icon": "folder-open-icon.png",
+          "title": "Pangaia",
+          "date":"2023 - Actuel",
+          "componentName": "PangaiaContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "Clench",
+          "icon": "folder-open-icon.png",
+          "title": "Clench speedrun website",
+          "date":"2024",
+          "componentName": "ClenchContent",
+          "isFocus": false,
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "name": "Serveurs",
+      "projects": [
+        {
+          "name": "Homeserver",
+          "icon": "homeserver-icon.png",
+          "title": "Serveur d'application & stockage NAS",
+          "date": "2023 - Actuel",
+          "componentName": "HomeserverContent",
+          "isFocus": false,
+          "isActive": false
+        }
+      ]
+    }
   ]
 }
