@@ -24,9 +24,9 @@
         </div>
       </div>
     </div>
-    <h3 class="mt-5 mb-2">Historique</h3>
+    <h3 class="mt-5 mb-2">Contexte</h3>
     <p>Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.</p>
-    <p>Une équipe sur laquelle on ne miserait pas forcément pour monter une infrastructure réseau, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;</p>
+    <p>Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;</p>
     <h3 class="mt-5 mb-1">Objectifs</h3>
     <div>
       <li>Faire un serveur de stockage qui permette également de déployer des applications</li>
