@@ -2,8 +2,6 @@
   import { ref } from 'vue'
   import { useVolumeStore } from '@/stores/volumeStore'
 
-  const emit = defineEmits(['update-volume'])
-
   const volumeStore = useVolumeStore();
   
   // Make volume a ref so it's reactive
@@ -36,7 +34,7 @@
 .slider {
   writing-mode: vertical-lr;
   direction: rtl;
-  width: 4px; /* Width of the slider thumb */
+  width: 4px; 
   height: 150px;
   padding: 0;
   margin: 0;
@@ -48,14 +46,14 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
-  height: 9px; /* Height of the slider thumb */
-  width: 20px; /* Width of the slider thumb */
+  height: 9px;
+  width: 20px; 
 }
 
 .slider::-moz-range-thumb {
   background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
-  height: 9px; /* Height of the slider thumb */
-  width: 20px; /* Width of the slider thumb */
+  height: 9px;
+  width: 20px; 
 }
 
 .text-header-shadow {

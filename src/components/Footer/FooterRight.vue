@@ -78,7 +78,7 @@
       title="Gestion du volume"
       @click.stop="toggleMusicModal">
     <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef"/>
-    <NotificationModal v-if="!isMobile" class="md:block z-fmax"/>
+    <NotificationModal class="md:block z-fmax"/>
 
     <CurrentTime />
   </div>
