@@ -30,14 +30,14 @@
     <p>Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos</p> <br>
     <a href="https://logma-production.com" target="_blank" rel="noopener" class="absolute bottom-2 right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
     <h3 class="mt-5 mb-2">Objectifs</h3>
-    <div>
+    <ul class="list-disc ml-3">
       <li>Refonte du site web avec l'identité graphique déjà en place</li>
       <li>Créer un site web responsive</li>
       <li>Création d'un backoffice pour la gestion des projets</li>
       <li>Optimiser le SEO</li>
       <li>Améliorer la vitesse de chargement et les performances au global</li>
       <li>Le mettre en production</li>
-    </div>
+    </ul>
 
   </div>
 </template>
