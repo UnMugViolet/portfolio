@@ -24,6 +24,10 @@
         </div>
       </div>
     </div>
+    <video controls autoplay muted loop width="400" class="mt-5">
+      <source src="/videos/montage-serveur.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
     <h3 class="mt-5 mb-2">Contexte</h3>
     <p>Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.</p>
     <p>Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;</p>
