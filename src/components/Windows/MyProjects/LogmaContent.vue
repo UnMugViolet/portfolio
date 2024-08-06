@@ -28,7 +28,7 @@
     <p>Logma production est une société de production audiovisuelle basée à Rennes. Fondée par Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le gérant avec un site sous Wordpress.</p> <br>
     <p>La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée, tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre rapide et efficace.</p> <br>
     <p>Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos</p> <br>
-    <a href="https://logma-production.com" target="_blank" class="absolute bottom-2 right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
+    <a href="https://logma-production.com" target="_blank" class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
     <h3 class="mt-5 mb-2">Objectifs</h3>
     <div>
       <li>Refonte du site web avec l'identité graphique déjà en place</li>
@@ -38,6 +38,5 @@
       <li>Améliorer la vitesse de chargement et les performances au global</li>
       <li>Le mettre en production</li>
     </div>
-
   </div>
 </template>
