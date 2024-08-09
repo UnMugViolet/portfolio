@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs">
     <div class="w-full">
-      <div class="flex w-96 items-center justify-between">
+      <div class="flex w-42 md:w-96 md:gap-0 gap-3 items-center md:justify-between justify-center flex-wrap">
         <div class="flex flex-col items-center flex-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000000" d="M24 10.049v5.114l-10.949 6.324v-5.114zm-24 0v5.114l10.956 6.324v-5.114zm12.004-.605l-4.433 2.559l4.433 2.559l4.429-2.559zm10.952-1.207l-9.905-5.723v5.118l5.473 3.164zm-12-.605V2.513L1.044 8.236l4.432 2.555z"/></svg>
           <p class="font-bold">TrueNas Scale</p>
