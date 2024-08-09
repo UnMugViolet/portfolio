@@ -1,15 +1,14 @@
 {
   "education" : [
     {
-      "degree": "BACCALAURÉAT ÉCONOMIQUE ET SOCIAL",
-      "institution": "Lycée Raymond Queneau",
-      "year": "2015 - 2018",
-      "description": "Section Économique et Social, spécialisation Économie Approfondie"
+      "degree": "TRONC COMMUN",
+      "institution": "42 Paris",
+      "year": "2024 - 2025"
     },
     {
-      "degree": "DUT TECHNIQUES DE COMMERCIALISATION",
-      "institution": "IUT du Havre, site caucriauville",
-      "year": "2018 - 2020"
+      "degree": "BACHELOR DÉVELOPPEMENT WEB",
+      "institution": "MyDigitalSchool Rennes",
+      "year": "2022 - 2024"
     },
     {
       "degree": "LICENCE ÉCONOMIE-GESTION PARCOURS MARKETING",
@@ -17,62 +16,18 @@
       "year": "2020 - 2021"
     },
     {
-      "degree": "BACHELOR DÉVELOPPEMENT WEB",
-      "institution": "MyDigitalSchool Rennes",
-      "year": "2022 - 2024"
+      "degree": "DUT TECHNIQUES DE COMMERCIALISATION",
+      "institution": "IUT du Havre, site caucriauville",
+      "year": "2018 - 2020"
+    },
+    {
+      "degree": "BACCALAURÉAT ÉCONOMIQUE ET SOCIAL",
+      "institution": "Lycée Raymond Queneau",
+      "year": "2015 - 2018",
+      "description": "Section Économique et Social, spécialisation Économie Approfondie"
     }
   ],
   "workExperience": [
-    {
-        "jobTitle": "VENDEUR",
-        "company": "La Mie Câline, Elbeuf (76)",
-        "year": "Juin - Août 2017",
-        "responsibilities": [
-            "Encaissement",
-            "Cuisson et préparation des commandes",
-            "Gestion des stocks et contrôle des livraisons"
-        ]
-    },
-    {
-        "jobTitle": "STAGIAIRE EVENEMENTIEL",
-        "company": "Iut site Caucriauville, Le Havre (76)",
-        "year": "Avril 2019",
-        "responsibilities": [
-            "Création d'une plaquette",
-            "Prospection de restaurants partenaires",
-            "Accueil et accompagnement des participants"
-        ]
-    },
-    {
-      "jobTitle": "PROJET TUTEURÉ - SKI",
-      "company": "Iut site Caucriauville, Le Havre (76)",
-      "year": "2019 - 2020",
-      "responsibilities": [
-          "Actions commerciales pour financer le projet",
-          "Organisation d'un séjour au ski pour 130 participants",
-          "Négociation du contrat pour l'année suivante"
-      ]
-    },
-    {
-      "jobTitle": "STAGIAIRE COMMERCIAL",
-      "company": "ACLP, Le Havre (76)",
-      "year": "Avril - Juin 2020",
-      "responsibilities": [
-          "Développement commercial",
-          "Campagne de mailing",
-          "Création d'un site web"
-      ]
-    },
-    {
-      "jobTitle": "OPÉRATEUR DE SAISIE",
-      "company": "Tessi, Rennes (35)",
-      "year": "Décembre - Juin 2021 - 2022",
-      "responsibilities": [
-          "Saisies bancaires pour le compte des finances publiques",
-          "Ouverture de compte bancaire",
-          "Participation à la démarche qualité"
-      ]
-    },
     {
       "jobTitle": "ALTERNANT DÉVELOPPEUR WEB",
       "company": "SCREENUP, Rennes (35)",
@@ -82,6 +37,56 @@
           "Mise en Production",
           "Développement opérationnel sur serveur"
       ]
+    },
+    {
+      "jobTitle": "OPÉRATEUR DE SAISIE",
+      "company": "Tessi, Rennes (35)",
+      "year": "Décembre - Juin 2021 - 2022",
+      "responsibilities": [
+        "Saisies bancaires pour le compte des finances publiques",
+        "Ouverture de compte bancaire",
+        "Participation à la démarche qualité"
+      ]
+    },
+    {
+      "jobTitle": "STAGIAIRE COMMERCIAL",
+      "company": "ACLP, Le Havre (76)",
+      "year": "Avril - Juin 2020",
+      "responsibilities": [
+        "Développement commercial",
+        "Campagne de mailing",
+        "Création d'un site web"
+      ]
+    },
+    {
+      "jobTitle": "PROJET TUTEURÉ - SKI",
+      "company": "Iut site Caucriauville, Le Havre (76)",
+      "year": "2019 - 2020",
+      "responsibilities": [
+        "Actions commerciales pour financer le projet",
+        "Organisation d'un séjour au ski pour 130 participants",
+        "Négociation du contrat pour l'année suivante"
+      ]
+    },
+    {
+      "jobTitle": "STAGIAIRE EVENEMENTIEL",
+      "company": "Iut site Caucriauville, Le Havre (76)",
+      "year": "Avril 2019",
+      "responsibilities": [
+        "Création d'une plaquette",
+        "Prospection de restaurants partenaires",
+        "Accueil et accompagnement des participants"
+      ]
+    },
+    {
+        "jobTitle": "VENDEUR",
+        "company": "La Mie Câline, Elbeuf (76)",
+        "year": "Juin - Août 2017",
+        "responsibilities": [
+            "Encaissement",
+            "Cuisson et préparation des commandes",
+            "Gestion des stocks et contrôle des livraisons"
+        ]
     }
   ]
 }
