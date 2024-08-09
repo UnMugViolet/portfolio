@@ -92,7 +92,7 @@ const selectedComponent = computed(() => {
   <div class="relative right-0 h-content-window flex">
     <WindowSideMenu :subMenuItems="props.subMenuItems" />
     <!-- Content of project -->
-    <div v-if="state.selectedProject && state.selectedProject.isActive" class="w-full h-full bg-white p-2 overflow-auto pb-8 md:pb-5">
+    <div v-if="state.selectedProject && state.selectedProject.isActive" class="w-full h-full bg-white p-2 overflow-auto overflow-x-hidden pb-8 md:pb-5">
       <div class="w-full gap-4 mb-3">
         <h2>{{ state.selectedProject.title }}</h2>
         <div class="flex items-center text-sm gap-0.5 mt-1" v-if="state.selectedProject.date">
