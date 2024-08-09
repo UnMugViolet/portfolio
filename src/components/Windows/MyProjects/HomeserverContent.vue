@@ -32,7 +32,7 @@
     <p>Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.</p>
     <p>Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;</p>
     <h3 class="mt-5 mb-1">Objectifs</h3>
-    <div>
+    <ul class="list-disc ml-3">
       <li>Faire un serveur de stockage qui permette également de déployer des applications</li>
       <li>Pouvoir y accéder à distance</li>
       <li>Permettre de monter une vidéo sur des fichiers distants</li>
@@ -42,7 +42,7 @@
       <li>De la redondance dans les données et dans la manière d'y accéder à distance</li>
       <li>Pouvoir maintenir ce système facilement</li>
       <li>Être moins cher qu'un équivalent prémonté avec les mêmes performances</li>
-    </div>
+    </ul>
     <h3 class="mt-5 mb-1">Informations techniques</h3>
     <p class="mb-5 text-xs underline">Composants : </p>
     <div class="grid grid-cols-3 border border-black">
