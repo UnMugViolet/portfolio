@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs">
     <div class="w-full">
-      <div class="flex w-full items-center justify-start ml-px flex-wrap gap-4">
+      <div class="flex w-full items-center justify-start ml-px flex-wrap gap-4 min-w-80">
         <div class="flex flex-col items-center flex-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#000000" d="M2 3h3.5L12 15l6.5-12H22L12 21zm4.5 0h3L12 7.58L14.5 3h3L12 13.08z"/></svg>
           <p class="font-bold mt-px">Vue.js</p>
