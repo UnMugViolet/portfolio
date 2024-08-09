@@ -68,7 +68,7 @@
         "subtasks": [
           {
             "id": 1,
-            "subtitle": "github",
+            "subtitle": "Profile Github",
             "iconUrl": "/img/icons/github-icon.png",
             "url": "https://github.com/UnMugViolet"
           }
