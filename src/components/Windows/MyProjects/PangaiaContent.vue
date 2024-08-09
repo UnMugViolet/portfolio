@@ -65,8 +65,8 @@
           <path d="M3163 579 c-94 -60 -76 -203 31 -244 119 -46 230 81 171 196 -35 66 -136 90 -202 48z"/>
         </g>
       </svg>
-      <a href="https://framagit.org/gardeners/pangaia-server" target="_blank" class="cursor-pointer">Voir le projet</a>
+      <a rel="noopener" href="https://framagit.org/gardeners/pangaia-server" target="_blank" class="cursor-pointer">Voir le projet</a>
     </div>
   </div>
-  <a href="https://logma-production.com/" target="_blank" class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
+  <a rel="noopener" href="https://pangaia.app/" target="_blank" class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
 </template>
