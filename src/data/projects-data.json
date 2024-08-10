@@ -5,7 +5,7 @@
       "projects": [
         {
           "name": "Logma Production",
-          "icon": "folder-open-icon.png",
+          "icon": "folder-logma-icon.png",
           "title": "Logma Production",
           "date":"2023 - 2 mois",
           "componentName": "LogmaContent",
@@ -14,7 +14,7 @@
         },
         {
           "name": "Pangaia",
-          "icon": "folder-open-icon.png",
+          "icon": "folder-pangaia-icon.png",
           "title": "Pangaia",
           "date":"2023 - Actuel",
           "componentName": "PangaiaContent",
