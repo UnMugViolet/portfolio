@@ -56,8 +56,8 @@ onMounted(() => {
     </div>
     <h3 class="mt-5 mb-2">Contexte</h3>
     <p>Pangaia est une application open source, qui cherche à sensibilser autour des plantes.</p>
-    <p>Le but étant de créer une interface ludique et pratique pour avoir une gestion de son jardin, mais également pouvoir découvrir de nouvelles plantes avec des jeux</p>
-    <p>Donner des inforaire découvrir la flore qui nous entoure en fonction de la localication de la personne</p>
+    <p>Le but étant de créer une interface ludique et pratique pour avoir une gestion de son jardin. <br> Mais également pouvoir découvrir de nouvelles plantes en utilisant la gamification.</p>
+    <p>Donner des inforaire découvrir la flore qui nous entoure en fonction de la localication de l'utilisateur.</p>
     <h3 class="mt-5 mb-2">Objectifs</h3>
     <ul class="list-disc ml-3">
       <li>Pouvoir essayer l'application en mode démo</li>
