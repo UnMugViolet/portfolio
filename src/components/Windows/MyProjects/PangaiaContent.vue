@@ -1,6 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const iframeSrc = ref('');
 
