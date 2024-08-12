@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "sass": "sass --watch sass/main.scss:css/main.css",
     "dev:all": "npm-run-all --parallel dev sass",
     "build": "vite build",
