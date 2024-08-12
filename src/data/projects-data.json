@@ -23,7 +23,7 @@
         },
         {
           "name": "Clench",
-          "icon": "folder-open-icon.png",
+          "icon": "folder-clench-icon.png",
           "title": "Clench speedrun website",
           "date":"2024",
           "componentName": "ClenchContent",
