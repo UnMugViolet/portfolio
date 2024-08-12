@@ -54,6 +54,7 @@ onMounted(() => {
         height="450"
         width="100%"
         class="p-2"
+        title="Clench maquette"
         :src="iframeSrc"
         allowfullscreen
       />
