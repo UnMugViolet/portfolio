@@ -6,7 +6,7 @@
         {
           "name": "Logma Production",
           "icon": "folder-logma-icon.png",
-          "title": "Logma Production",
+          "title": "Logma Production - Site vitrine",
           "date":"2023 - 2 mois",
           "componentName": "LogmaContent",
           "isFocus": false,
@@ -15,7 +15,7 @@
         {
           "name": "Pangaia",
           "icon": "folder-pangaia-icon.png",
-          "title": "Pangaia",
+          "title": "Pangaia - Application web",
           "date":"2023 - Actuel",
           "componentName": "PangaiaContent",
           "isFocus": false,
@@ -24,7 +24,7 @@
         {
           "name": "Clench",
           "icon": "folder-clench-icon.png",
-          "title": "Clench speedrun website",
+          "title": "Clench - Site vitrine",
           "date":"2024",
           "componentName": "ClenchContent",
           "isFocus": false,
