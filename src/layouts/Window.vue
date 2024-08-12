@@ -96,7 +96,7 @@ const windowStyle = computed(() => {
   const sizeStyle = maximized.value || isMobile
     ? {
         width: '100vw',
-        height: 'calc(100vh - 2rem)',
+        height: 'calc(100dvh - 2rem)',
         top: '0',
         left: '0',
     }
