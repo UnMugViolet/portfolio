@@ -106,8 +106,8 @@ watch(isLoading, (newValue) => {
             <div class="flex gap-2 items-center">
                 <SubmitButton 
                     @submit="sendEmail"
-                    :isLoading="isLoading"
-                    :message="'Envoyer'">
+                    :isLoading="isLoading">
+                    Envoyer
                 </SubmitButton>
                 <p class="text-xs text-green-500 font-medium" v-show="emailSent">Votre message a été envoyé avec succès</p>
                 <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }} </p>
