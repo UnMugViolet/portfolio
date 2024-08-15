@@ -1,19 +1,38 @@
 <template>
-  <div class="relative right-0 h-content-window flex">
-    <div class="w-full bg-white p-1.5 font-trebuchet-pixel">
-      <div class="w-full h-full ">
-        <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url" alt="Playlist Image" class="w-24">
+  <div class="relative right-0 h-content-window flex overflow-auto bg-white">
+    <div class="w-full font-trebuchet-pixel">
+      <div class="w-full h-full">
         <div v-if="Object.keys(playlist).length">
-          <h2>Playlist Details</h2>
-          <p><strong>Name:</strong> {{ playlist.name }}</p>
-          <p><strong>Description:</strong> {{ playlist.description }}</p>
-          <p><strong>Owner:</strong> {{ playlist.owner.display_name }}</p>
-          <p><strong>Tracks:</strong> {{ playlist.tracks.total }}</p>
-          <ul>
-            <li v-for="track in playlist.tracks.items" :key="track.track.id">
-              {{ track.track.name }} by {{ track.track.artists[0].name }}
-            </li>
-          </ul>
+          <div class="flex items-center gap-5 p-1.5">
+            <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url" alt="Playlist Image" class="w-24">
+            <div>
+              <h2 class="text-xl font-bold"> {{ playlist.name }}</h2>
+              <p class="text-xs">{{ playlist.description }}</p>
+            </div>
+          </div>
+          <div class="py-5">
+            <div v-for="track in playlist.tracks.items" :key="track.track.id" class="flex flex-col">
+              <div class="flex items-center pl-1.5">
+                <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Track Image" class="w-12" >
+                <div class="ml-1 w-full flex items-center">
+                  <div class="w-1/3">
+                    <p class="text-sm font-trebuchet-pixel">{{ track.track.name }}</p>
+                    <p class="text-xs font-trebuchet-pixel">{{ track.track.artists[0].name }}</p>
+                  </div>
+                  <div class="w-1/3">
+                    <p class="text-xs text-left font-trebuchet-pixel truncate"> {{ track.track.album.name }}</p>
+                  </div>
+                  <div class="w-1/3">
+                    <p class="text-xs font-trebuchet-pixel truncate"> {{ track.added_at }}</p>
+                  </div>
+                  <div class="w-2/12">
+                    <p class="text-xs font-trebuchet-pixel"> {{ track.track.duration_ms }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"/>
+            </div>
+          </div>
         </div>
         <div class="w-full h-full font-trebuchet-pixel" v-else>
           <div class="w-full h-full flex items-center justify-center flex-col">
@@ -131,13 +150,8 @@ async function fetchPlaylist() {
   }
 
   try {
-    const response = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-      headers: {
-        Authorization: `Bearer ${token.value}`,
-      },
-    });
-
-    playlist.value = response.data;
+    const response = await fetchWebApi(`v1/playlists/${playlistId}`, 'GET');
+    playlist.value = response;
   } catch (error) {
     console.error('Error fetching playlist:', error);
   }
@@ -151,6 +165,7 @@ onMounted(() => {
     fetchInitialToken(authorizationCode);
   } else if (token.value) {
     fetchPlaylist();
+    console.log('Playlist:', playlist); 
   } else {
     return;
   }
