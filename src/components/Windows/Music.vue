@@ -10,27 +10,52 @@
               <p class="text-xs">{{ playlist.description }}</p>
             </div>
           </div>
-          <div class="py-5">
-            <div v-for="track in playlist.tracks.items" :key="track.track.id" class="flex flex-col">
+          <div>
+            <div class="flex items-center pl-1.5">
+              <div class="pr-5 pl-2">
+                <p class="text-xs">#</p>
+              </div>
+              <div class="w-full flex items-center">
+                <div class="w-1/3 flex flex-col max-w-48">
+                  <p class="text-xs font-trebuchet-pixel">Titre</p>
+                </div>
+                <div class="w-1/3 overflow-hidden px-1">
+                  <p class="text-xs font-trebuchet-pixel pl-10">Album</p>
+                </div>
+                <div class="w-2/12 px-1">
+                  <p class="text-xs font-trebuchet-pixel text-center">Ajouté le</p>
+                </div>
+                <div class="w-2/12 px-1">
+                  <p class="text-xs font-trebuchet-pixel">Durée</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-px bg-gray-300 mb-2 mt-1"/>
+          </div>
+          <div class="pb-16">
+            <div v-for="(track, index) in playlist.tracks.items" :key="track.track.id" class="flex flex-col">
               <div class="flex items-center pl-1.5">
-                <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Track Image" class="w-12" >
-                <div class="ml-1 w-full flex items-center">
-                  <div class="w-1/3">
+                <div class="pr-5 pl-2">
+                  <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
+                </div>
+                <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Track Image" class="w-12">
+                <div class="pl-1.5 w-full flex items-center">
+                  <div class="w-1/3 flex flex-col max-w-48">
                     <p class="text-sm font-trebuchet-pixel">{{ track.track.name }}</p>
                     <p class="text-xs font-trebuchet-pixel">{{ track.track.artists[0].name }}</p>
                   </div>
-                  <div class="w-1/3">
-                    <p class="text-xs text-left font-trebuchet-pixel truncate"> {{ track.track.album.name }}</p>
+                  <div class="w-1/3 overflow-hidden px-1">
+                    <p class="text-xs text-left font-trebuchet-pixel truncate">{{ track.track.album.name }}</p>
                   </div>
-                  <div class="w-1/3">
-                    <p class="text-xs font-trebuchet-pixel truncate"> {{ track.added_at }}</p>
+                  <div class="w-2/12 px-1">
+                    <p class="text-xs font-trebuchet-pixel truncate">{{ formatDistanceToNow(new Date(track.added_at), { locale: fr }) }}</p>
                   </div>
-                  <div class="w-2/12">
-                    <p class="text-xs font-trebuchet-pixel"> {{ track.track.duration_ms }}</p>
+                  <div class="w-2/12 px-1">
+                    <p class="text-xs font-trebuchet-pixel">{{ (track.track.duration_ms / 60000).toFixed(2) }} min</p>
                   </div>
                 </div>
               </div>
-              <div class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"/>
+              <div v-if="index < playlist.tracks.items.length - 1" class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"/>
             </div>
           </div>
         </div>
@@ -52,6 +77,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
+import { formatDistanceToNow } from 'date-fns';
+import { fr } from 'date-fns/locale';
 import SubmitButton from '../Buttons/SubmitButton.vue';
 
 const playlist = ref({});
