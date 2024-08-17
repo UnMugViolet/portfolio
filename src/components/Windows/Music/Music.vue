@@ -1,7 +1,7 @@
 <template>
-  <div class="relative right-0 h-content-window flex overflow-auto bg-white">
+  <div class="relative right-0 h-content-window flex overflow-y-auto bg-white pb-14">
     <div class="w-full font-trebuchet-pixel">
-      <div class="w-full h-full">
+      <div class="w-full h-full overflow-x-hidden">
         <div v-if="Object.keys(playlist).length">
           <div class="flex items-center gap-5 p-1.5">
             <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url" alt="Playlist Image" class="w-24">
@@ -12,7 +12,7 @@
           </div>
           <div>
             <div class="grid grid-cols-12 items-center pl-1.5">
-              <div class="col-span-5 flex items-center gap-1">
+              <div class="col-span-7 sm:col-span-5 flex items-center gap-1">
                 <div class="pl-2 w-8">
                   <p class="text-xs">#</p>
                 </div>
@@ -20,7 +20,7 @@
                   <p class="text-xs font-trebuchet-pixel">Titre</p>
                 </div>
               </div>
-              <div class="col-span-4 overflow-hidden px-1">
+              <div class="col-span-4 overflow-hidden px-1 hidden md:block">
                 <p class="text-xs font-trebuchet-pixel">Album</p>
               </div>
               <div class="col-span-2 px-1">
@@ -32,10 +32,10 @@
             </div>
             <div class="w-full h-px bg-gray-300 mb-2 mt-1"></div>
           </div>
-          <div class="pb-16">
+          <div class="pb-3">
             <div v-for="(track, index) in playlist.tracks.items" :key="track.track.id">
               <div class="grid grid-cols-12 items-center pl-1.5">
-                <div class="col-span-5 flex items-center gap-1">
+                <div class="col-span-7 sm:col-span-5 flex items-center gap-1">
                   <div class="pl-2 w-8">
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
@@ -47,7 +47,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-span-4 overflow-hidden px-1">
+                <div class="col-span-4 overflow-hidden px-1 hidden sm:block">
                   <p class="text-xs text-left font-trebuchet-pixel truncate">{{ track.track.album.name }}</p>
                 </div>
                 <div class="col-span-2 px-1">
@@ -75,6 +75,7 @@
             <p class="text-red-500">{{ errorMessage }}</p>
           </div>
         </div>
+        <Player />
       </div>
     </div>
   </div>
@@ -85,7 +86,8 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import SubmitButton from '../Buttons/SubmitButton.vue';
+import SubmitButton from '@/components/Buttons/SubmitButton.vue';
+import Player from '@/components/Windows/Music/Player.vue';
 
 const playlist = ref({});
 const errorMessage = ref('');
@@ -96,7 +98,7 @@ const refreshToken = localStorage.getItem('refresh_token') || '';
 function redirectToSpotify() {
   const clientId = import.meta.env.VITE_APP_SPOTIFY_CLIENT_ID;
   const redirectUri = `${import.meta.env.VITE_APP_DOMAIN_NAME}/office`;
-  const scopes = 'user-read-private user-read-email';
+  const scopes = 'user-read-private user-read-email user-modify-playback-state streaming';
   const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
 
   window.location.href = authUrl;
@@ -151,7 +153,7 @@ async function renewAccessToken() {
     }
   } catch (error) {
     console.error('Error renewing access token:', error);
-    redirectToSpotify(); // Redirect to Spotify login if token renewal fails
+    return;
   }
 }
 

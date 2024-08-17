@@ -36,12 +36,14 @@ module.exports = {
         'heroic-blue': '#1C68FF',
         'input-blue': '#7f9db9',
         'light-yellow': '#ffffe1',
+        'old-gray': '#C0C0C0'
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
         'pellet-footer-deactivated': 'rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset',
         'button-submit-hover': 'inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;',
-        'header-tools': 'rgba(0, 0, 0, 0.1) 0px -1px 1px inset;'
+        'header-tools': 'rgba(0, 0, 0, 0.1) 0px -1px 1px inset;',
+        'player': 'inset 1px 1px #dfdfdf,inset 2px 2px #dfdfdf,inset -1px -1px #0a0a0a,inset -2px -2px grey;'
       },
       fontSize: {
         'xs': '0.7rem',
