@@ -60,6 +60,7 @@
               <div v-if="index < playlist.tracks.items.length - 1" class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"></div>
             </div>
           </div>
+          <Player v-if="playlist.tracks.items.length > 0" :playlist="playlist.tracks.items" />
         </div>
         <div v-else class="w-full h-full font-trebuchet-pixel">
           <div class="w-full h-full flex items-center justify-center flex-col">
@@ -75,7 +76,6 @@
             <p class="text-red-500">{{ errorMessage }}</p>
           </div>
         </div>
-        <Player />
       </div>
     </div>
   </div>
@@ -83,6 +83,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useVolumeStore } from '@/stores/volumeStore';
 import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
@@ -94,6 +95,7 @@ const errorMessage = ref('');
 const playlistId = '1hMzZICeyywzM40RKVahoU';
 const token = ref(localStorage.getItem('access_token') || '');
 const refreshToken = localStorage.getItem('refresh_token') || '';
+const volumeStore = useVolumeStore();
 
 function redirectToSpotify() {
   const clientId = import.meta.env.VITE_APP_SPOTIFY_CLIENT_ID;
@@ -200,7 +202,7 @@ onMounted(() => {
     fetchInitialToken(authorizationCode);
   } else if (token.value) {
     fetchPlaylist();
-    console.log('Playlist:', playlist);
+    console.log('Playlist:', playlist); 
   } else {
     return;
   }
