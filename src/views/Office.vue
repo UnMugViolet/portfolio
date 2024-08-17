@@ -60,7 +60,7 @@ import Footer from '@/components/Footer/Footer.vue';
 
 import Play from '@/components/Windows/Play.vue';
 import MyCV from '@/components/Windows/MyCV/MyCV.vue';
-import Music from '@/components/Windows/Music.vue';
+import Music from '@/components/Windows/Music/Music.vue';
 import ContactMe from '@/components/Windows/ContactMe.vue';
 import MyProjects from '@/components/Windows/MyProjects.vue';
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';

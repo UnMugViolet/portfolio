@@ -22,7 +22,7 @@ const goBack = () => {
         <div 
           @click="goBack" 
           class="flex items-center border rounded-sm pr-1.5 h-8"
-          :class="{ 'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools ': isGoBackAvailable, 'filter grayscale': !isGoBackAvailable }">
+          :class="{ 'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': isGoBackAvailable, 'filter grayscale': !isGoBackAvailable }">
 
           <img src="/img/icons/right-arrow-green-icon.png" alt="précédent" class="w-7 h-7 flex-shrink-0" />
           <p class="small-p mr-2">Retour</p>
