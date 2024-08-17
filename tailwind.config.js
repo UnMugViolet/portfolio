@@ -24,8 +24,8 @@ module.exports = {
         'window-menu-card-header': 'linear-gradient(to right, rgb(240, 240, 255) 0px, rgb(240, 240, 255) 30%, rgb(168, 188, 255) 100%)',
         'window-side-menu': 'linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);',
         'button-submit': 'linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4)',
-        'button-clicked': 'linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1)'
-      }),
+        'button-clicked': 'linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1)',
+'player': 'linear-gradient(180deg, rgba(253,253,253,1) 0%, rgba(152,175,214,0.75) 45%, rgba(152,175,214,0.75) 55%, rgba(209,231,255,1) 100%)',      }),
       colors: {
         'dropdown': '#1660E8',
         'window-blue-active': '#0831D9',
@@ -36,14 +36,13 @@ module.exports = {
         'heroic-blue': '#1C68FF',
         'input-blue': '#7f9db9',
         'light-yellow': '#ffffe1',
-        'old-gray': '#C0C0C0'
+        'light-blue': '#ced8ef',
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
         'pellet-footer-deactivated': 'rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset',
         'button-submit-hover': 'inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;',
         'header-tools': 'rgba(0, 0, 0, 0.1) 0px -1px 1px inset;',
-        'player': 'inset 1px 1px #dfdfdf,inset 2px 2px #dfdfdf,inset -1px -1px #0a0a0a,inset -2px -2px grey;'
       },
       fontSize: {
         'xs': '0.7rem',
