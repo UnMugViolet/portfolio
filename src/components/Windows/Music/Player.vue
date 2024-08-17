@@ -128,6 +128,7 @@ onUnmounted(() => {
     clearInterval(intervalId);
   }
   if (player.value) {
+    player.value.pause();
     player.value.disconnect();
     player.value = null;
   }
