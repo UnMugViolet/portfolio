@@ -26,7 +26,7 @@
         </button>
       </div>
       <div class="w-1/3">
-        <p class="text-xs font-trebuchet-pixel text-center">{{ formatTime(currentTime) }}</p>
+        <p class="text-xs font-trebuchet-pixel text-center">{{ formatTime(currentTime) }} / {{ formatTime(currentTrack.duration_ms) }}</p>
       </div>
     </div>
   </div>
@@ -178,6 +178,9 @@ async function loadTrack(device_id, trackUri) {
 }
 
 function formatTime(ms) {
+  if (ms == null || isNaN(ms) || ms == undefined) {
+    return '0:00';
+  }
   const minutes = Math.floor(ms / 60000);
   const seconds = ((ms % 60000) / 1000).toFixed(0);
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
