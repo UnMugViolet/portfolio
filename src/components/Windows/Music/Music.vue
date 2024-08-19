@@ -202,7 +202,6 @@ onMounted(() => {
     fetchInitialToken(authorizationCode);
   } else if (token.value) {
     fetchPlaylist();
-    console.log('Playlist:', playlist); 
   } else {
     return;
   }
