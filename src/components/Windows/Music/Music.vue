@@ -40,7 +40,7 @@
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
                   <div class="flex items-center gap-2">
-                    <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Track Image" class="w-12">
+                    <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Cover de l'album" class="w-12">
                     <div class="flex flex-col max-w-48">
                       <p class="text-sm font-trebuchet-pixel">{{ track.track.name }}</p>
                       <p class="text-xs font-trebuchet-pixel">{{ track.track.artists[0].name }}</p>
