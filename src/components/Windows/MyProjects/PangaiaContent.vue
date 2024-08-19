@@ -4,8 +4,8 @@ import { ref, onMounted } from 'vue'
 const iframeSrc = ref('');
 
 onMounted(() => {
-  iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_DOMAIN_NAME}
-    &embed_origin=${import.meta.env.VITE_APP_DOMAIN_NAME}
+  iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
+    &embed_origin=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
     &url=https://www.figma.com/file/9Na2cHrsPHJPVsoyxexsfw/Pangaia-Maquette-Edit`
 })
 </script>
