@@ -99,7 +99,7 @@ const volumeStore = useVolumeStore();
 
 function redirectToSpotify() {
   const clientId = import.meta.env.VITE_APP_SPOTIFY_CLIENT_ID;
-  const redirectUri = `${import.meta.env.VITE_APP_DOMAIN_NAME}/office`;
+  const redirectUri = `${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}/office`;
   const scopes = 'user-read-private user-read-email user-modify-playback-state streaming';
   const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
 
@@ -112,7 +112,7 @@ async function fetchInitialToken(authorizationCode) {
       params: {
         grant_type: 'authorization_code',
         code: authorizationCode,
-        redirect_uri: `${import.meta.env.VITE_APP_DOMAIN_NAME}/office`,
+        redirect_uri: `${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}/office`,
         client_id: import.meta.env.VITE_APP_SPOTIFY_CLIENT_ID,
         client_secret: import.meta.env.VITE_APP_SPOTIFY_CLIENT_SECRET,
       },
