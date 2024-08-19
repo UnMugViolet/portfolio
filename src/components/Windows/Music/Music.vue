@@ -4,7 +4,7 @@
       <div class="w-full h-full overflow-x-hidden">
         <div v-if="Object.keys(playlist).length">
           <div class="flex items-center gap-5 p-1.5">
-            <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url" alt="Playlist Image" class="w-24">
+            <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url" alt="cover album musique" class="w-24">
             <div>
               <h2 class="text-xl font-bold">{{ playlist.name }}</h2>
               <p class="text-xs">{{ playlist.description }}</p>
