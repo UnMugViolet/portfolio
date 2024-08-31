@@ -86,6 +86,11 @@ onMounted(() => {
       currentTrack.value = state.track_window.current_track;
       isPlaying.value = !state.paused;
       currentTime.value = state.position;
+
+      // Check if the track has ended
+      if (state.position === 0 && !state.paused && state.track_window.previous_tracks.length > 0) {
+        nextTrack();
+      }
     });
 
     // Ready
@@ -120,7 +125,6 @@ onMounted(() => {
       });
     }
   }, 1000);
-
 });
 
 onUnmounted(() => {
@@ -151,6 +155,8 @@ function previousTrack() {
 function nextTrack() {
   if (currentTrackIndex.value < props.playlist.length - 1) {
     currentTrackIndex.value++;
+  } else {
+    currentTrackIndex.value = 0; // Loop back to the first track if at the end of the playlist
   }
 }
 
