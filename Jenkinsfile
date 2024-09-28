@@ -13,7 +13,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('Sonar-Server') {
                     // Specify full path of 'sonar-scanner' executable
-                    sh 'sonar-scanner'
+                    sh '/bitnami/jenkins/home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/bin/sonnar-scanner'
                 }
             }
         }
