@@ -64,15 +64,23 @@ pipeline {
         always {
             script {
                 env.BUILD_STATUS = currentBuild.currentResult
-                def commitHashes = sh(script: "git log --pretty=format:'%H' ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}..${env.GIT_COMMIT}", returnStdout: true).trim().split("\n")
+                
+                def previousCommit = env.GIT_PREVIOUS_SUCCESSFUL_COMMIT ?: 'HEAD^' // If null, use HEAD^ for the previous commit
+                def currentCommit = env.GIT_COMMIT ?: 'HEAD'
+
+                def commitHashes = sh(script: "git log --pretty=format:'%H' ${previousCommit}..${currentCommit}", returnStdout: true).trim().split("\n")
                 def authorEmails = commitHashes.collect { hash ->
                     return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
                 }.unique()
+
+                // Remove the sysadmin email if present
                 authorEmails.remove(env.SYS_ADMIN_EMAIL)
                 env.AUTHOR_EMAILS = authorEmails.join(",")
                 echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
-            emailext mimeType: 'text/html',
+            emailext (
+                mimeType: 'text/html',
+                subject: "[${env.JOB_NAME}] Build #${env.BUILD_NUMBER} - ${env.BUILD_STATUS}",
                 body: """<div style="background-color: black; padding: 5px 20px; display: inline-block;">
                             <table style="color: white; border-collapse: collapse;">
                                 <tr>
@@ -86,11 +94,10 @@ pipeline {
                             </table>
                         </div>
                         <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
-                        <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>
-                        """,
-                subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
+                        <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>""",
                 recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
                 to: "${env.AUTHOR_EMAILS}, ${env.SYS_ADMIN_EMAIL}"
+            )
         }
     }
 }
