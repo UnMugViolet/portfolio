@@ -11,10 +11,9 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-                    def scannerHome = tool 'SonarScanner';
-                    withSonarQubeEnv('Sonar-Server') {
-                      sh "${scannerHome}/bin/sonar-scanner"
-                    }
+                withSonarQubeEnv('Sonar-Server') {
+                    sh "${tool 'SonarScanner'}/bin/sonar-scanner"
+                }
             }
         }
         // Wait for the SonarQube analysis to be completed by getting the webhook response
