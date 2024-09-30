@@ -59,6 +59,7 @@ pipeline {
                 )
             }
         }
+    }
     post {
         always {
             script {
@@ -72,24 +73,24 @@ pipeline {
                 echo "Author Emails: ${env.AUTHOR_EMAILS}"
             }
             emailext mimeType: 'text/html',
-                    body: """<div style="background-color: black; padding: 5px 20px; display: inline-block;">
-                                <table style="color: white; border-collapse: collapse;">
-                                    <tr>
-                                        <td style="padding: 0;">
-                                            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
-                                        </td>
-                                        <td style="padding-left: 0.5rem;">
-                                            <h2 style="margin: 0;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
-                            <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>
-                            """,
-                    subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
-                    recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
-                    to: "${env.AUTHOR_EMAILS}, ${env.SYS_ADMIN_EMAIL}"
+                body: """<div style="background-color: black; padding: 5px 20px; display: inline-block;">
+                            <table style="color: white; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
+                                    </td>
+                                    <td style="padding-left: 0.5rem;">
+                                        <h2 style="margin: 0;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
+                        <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>
+                        """,
+                subject: "[${env.JOB_NAME}] Build # ${env.BUILD_NUMBER} ${env.BUILD_STATUS}",
+                recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
+                to: "${env.AUTHOR_EMAILS}, ${env.SYS_ADMIN_EMAIL}"
         }
     }
 }
