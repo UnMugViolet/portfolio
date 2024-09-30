@@ -32,34 +32,33 @@ pipeline {
         }
         stage('Publish') {
             steps {
-                // Publish the build artifacts to the server
-                ftpPublisher alwaysPublishFromMaster: false, 
-                            continueOnError: false, 
-                            failOnError: false, 
-                            paramPublish: [parameterName:""], 
-                            masterNodeName: '', 
-                            publishers: [[
-                                configName: 'mds-server-paul', 
-                                transfers: [[
-                                    asciiMode: false, 
-                                    cleanRemote: true, 
-                                    excludes: 'dist/node_modules/**', 
-                                    flatten: false, 
-                                    makeEmptyDirs: true, 
-                                    noDefaultExcludes: false, 
-                                    patternSeparator: '[, ]+', 
-                                    remoteDirectory: '/', 
-                                    remoteDirectorySDF: false, 
+                // Publish the build artifacts to the server using SSH
+                sshPublisher(
+                    continueOnError: false, 
+                    failOnError: true, 
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'mds-server-paul',
+                            transfers: [
+                                sshTransfer(
+                                    sourceFiles: 'dist/**', 
+                                    remoteDirectory: '/public_html',
                                     removePrefix: 'dist', 
-                                    sourceFiles: 'dist/**'
-                                ]], 
-                                usePromotionTimestamp: false, 
-                                useWorkspaceInPromotion: false, 
-                                verbose: false
-                            ]]
+                                    excludeFiles: 'dist/node_modules/**',
+                                    cleanRemote: true, 
+                                    makeEmptyDirs: true, 
+                                    flatten: false, 
+                                    noDefaultExcludes: false, 
+                                    patternSeparator: '[, ]+' 
+                                )
+                            ],
+                            usePromotionTimestamp: false,
+                            verbose: true 
+                        )
+                    ]
+                )
             }
         }
-    }
     post {
         always {
             script {
