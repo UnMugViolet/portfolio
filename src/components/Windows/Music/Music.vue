@@ -91,7 +91,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useVolumeStore } from '@/stores/volumeStore';
 import axios from 'axios';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
