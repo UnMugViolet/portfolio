@@ -92,5 +92,4 @@
       <div class="border border-black p-2"><a rel="noopener" target="_blank" class="text-purple-600" href="https://www.westerndigital.com/fr-fr/products/internal-drives/wd-red-plus-sata-3-5-hdd#WD60EFPX">Voir le modèle</a></div>
   </div>
   <a rel="noopener" href="https://homepage.rocketegg.systems" target="_blank" class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked">Lien vers le site </a>
-
 </template>
