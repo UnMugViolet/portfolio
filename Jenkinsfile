@@ -38,11 +38,11 @@ pipeline {
                     failOnError: true, 
                     publishers: [
                         sshPublisherDesc(
-                            configName: 'mds-server-paul',
+                            configName: 'Hostinger',
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: 'dist/**', 
-                                    remoteDirectory: '/public_html',
+                                    remoteDirectory: '/domains/pauljaguin.com/public_html',
                                     removePrefix: 'dist', 
                                     excludeFiles: 'dist/node_modules/**',
                                     cleanRemote: true, 
