@@ -47,7 +47,7 @@
                   <div class="pl-2 w-8">
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
-                  <a class="flex items-center gap-2 cursor-pointer" :href="`https://open.spotify.com/track/${track.track.id}`" target="_blank">
+                  <a class="flex items-center gap-2 cursor-pointer" :href="`https://open.spotify.com/track/${track.track.id}`" target="_blank" rel="noopener">
                     <img v-if="track.track.album.images && track.track.album.images.length > 0" :src="track.track.album.images[2].url" alt="Picture of the track" class="w-12">
                     <div class="flex flex-col max-w-48">
                       <p class="text-sm font-trebuchet-pixel">{{ track.track.name }}</p>
