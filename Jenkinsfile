@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'npm install --include=dev'
                 sh 'npm run build'
             }
         }
