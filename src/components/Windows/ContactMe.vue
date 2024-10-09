@@ -5,7 +5,11 @@ import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 import Button from '../Buttons/Button.vue';
 
 const props = defineProps({
-    subMenuItems: Array,
+  subMenuItems: {
+    type: Array,
+    required: false,
+    default: () => []
+  }
 });
 
 const userName = ref('');
