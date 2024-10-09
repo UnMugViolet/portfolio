@@ -5,6 +5,14 @@ import EducationItem from './EducationItem.vue';
 import cvData from '@/data/cv-data.json';
 import WorkExperienceItem from './WorkExperienceItem.vue';
 
+const props = defineProps({
+  subMenuItems: {
+    type: Array,
+    required: false,
+    default: () => []
+  }
+});
+
 const birthdate = new Date(1999, 8, 23);
 const today = new Date();
 let age = ref(today.getFullYear() - birthdate.getFullYear());

@@ -35,11 +35,17 @@
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component 
+          v-if="window.id === 'myProjects'"
           :is="window.component"
           :isGoBackActive="window.isGoBackActive"
           :subMenuItems="window.subMenuItems"
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id)"
+        />
+        <component 
+          v-else
+          :is="window.component"
+          :subMenuItems="window.subMenuItems"
         />
       </Window>
     </div>
