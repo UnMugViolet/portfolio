@@ -35,7 +35,6 @@ const startLoading = () => {
 };
 
 onMounted(() => {
-  console.log(connectionStore.status)
   if (connectionStore.status === 'restart') {
     startLoading();
   } else {
