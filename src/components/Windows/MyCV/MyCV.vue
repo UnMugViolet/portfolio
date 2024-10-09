@@ -18,7 +18,6 @@ if (today.getMonth() < birthdate.getMonth() ||
 let educationData = ref(cvData.education);
 let experienceData = ref(cvData.workExperience);
 
-console.log(age.value);
 </script>
 
 <template>
