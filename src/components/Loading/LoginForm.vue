@@ -1,5 +1,4 @@
 <script setup>
-import { onUnmounted } from 'vue';
 import { useConnectionStore } from '@/stores/connectionStore';
 import ProfilePicture from '@/components/ProfilePicture.vue';
 
@@ -7,7 +6,6 @@ const connectionStore = useConnectionStore();
 
 const handleLogin = () => {
   connectionStore.login();
-  // console.log(connectionStore.status); 
 };
 </script>
 
