@@ -12,7 +12,7 @@ const props = defineProps({
   isGoBackActive: Boolean,
 });
 
-const emit = defineEmits();
+const emit = defineEmits(['goback-is-available', 'project-active-name']);
 
 const categories = reactive(projectData.categories.map(category => ({
   ...category,

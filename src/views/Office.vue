@@ -22,7 +22,7 @@
         @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
         @mousedown="handleWindowClick(window.id)"
-        @goback-toggled="handleGoBack"
+        @goback-toggled="handleGoBack(window.id)"
         :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
@@ -30,16 +30,16 @@
         :initPositionY="window.initPositionY"
         :initWidth="window.initWidth"
         :initHeight="window.initHeight"
-        :isGoBackAvailable="isGoBackAvailable"
-        :activeProjectName="activeProjectName"
+        :isGoBackAvailable="window.isGoBackAvailable"
+        :activeProjectName="window.activeProjectName"
         :style="{zIndex: findWindowZIndex(window.id)}"
         >
         <component 
           :is="window.component"
-          :isGoBackActive="isGoBackActive"
+          :isGoBackActive="window.isGoBackActive"
           :subMenuItems="window.subMenuItems"
-          @goback-is-available="handleGoBackIsAvailable"
-          @project-active-name="handleProjectActiveName"
+          @goback-is-available="handleGoBackIsAvailable(window.id)"
+          @project-active-name="handleProjectActiveName(window.id)"
         />
       </Window>
     </div>
@@ -129,6 +129,9 @@ const openWindow = (windowId) => {
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
         subMenuItems: entity.subMenuItems,
+        isGoBackActive: false,
+        isGoBackAvailable: false,
+        activeProjectName: ''
       });
       setActiveWindow(windowId); // Set the window clicked as active
       windowsStore.addWindowStore(windowId); // Save state to localStorage
@@ -208,27 +211,29 @@ const handleOutsideClick = (event) => {
   }
 };
 
-let isGoBackActive = ref(false);
-
-const handleGoBack = () => {
-  isGoBackActive.value = true;
-  isGoBackAvailable.value = false;
-  activeProjectName.value = '';
+const handleGoBack = (windowId) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  if (window) {
+    window.isGoBackActive = true;
+    window.isGoBackAvailable = false;
+    window.activeProjectName = '';
+  }
 };
 
-let isGoBackAvailable = ref(false);
-
-const handleGoBackIsAvailable = () => {
-  isGoBackActive.value = false;
-  isGoBackAvailable.value = true;
+const handleGoBackIsAvailable = (windowId) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  if (window) {
+    window.isGoBackActive = false;
+    window.isGoBackAvailable = true;
+  }
 };
 
-let activeProjectName = ref('');
-
-const handleProjectActiveName = (projectName) => {
-  activeProjectName.value = projectName;
+const handleProjectActiveName = (windowId, projectName) => {
+  const window = windows.value.find((window) => window.id === windowId);
+  if (window) {
+    window.activeProjectName = projectName;
+  }
 };
-
 
 // Open each window that was open before the page was reloaded
 windowsStore.openWindowIds.forEach(windowId => {
