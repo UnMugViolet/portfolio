@@ -19,8 +19,7 @@ if (import.meta.env.MODE === 'production') {
     host: 'https://matomo.rocketegg.systems',
     siteId: 1,
   });
+  window._paq.push(['trackPageView'])
 }
 
 app.mount('#app');
-
-window._paq.push(['trackPageView'])
