@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment {
+        NODE_ENV = 'production'
+    }
     tools {
         nodejs 'Main NodeJS'
     }
