@@ -1,17 +1,18 @@
-
 <script setup>
-import { ref, onMounted  } from 'vue'
+import { ref, onMounted } from 'vue';
+import { useConnectionStore } from '@/stores/connectionStore';
 
 // Components
-import Step1Loading from '../components/Loading/Step1Loading.vue'
-import Step2Loading from '../components/Loading/Step2Loading.vue'
-import Step3Loading from '../components/Loading/Step3Loading.vue'
-import Login from '../components/Loading/Login.vue'
+import Step1Loading from '../components/Loading/Step1Loading.vue';
+import Step2Loading from '../components/Loading/Step2Loading.vue';
+import Step3Loading from '../components/Loading/Step3Loading.vue';
+import Login from '../components/Loading/Login.vue';
 
-const showStep1 = ref(true);
+const showStep1 = ref(false);
 const showStep2 = ref(false);
 const showStep3 = ref(false);
 const showStep4 = ref(false);
+const connectionStore = useConnectionStore();
 
 const startLoading = () => {
   // Step 1: Show bg black
@@ -34,16 +35,20 @@ const startLoading = () => {
 };
 
 onMounted(() => {
-  // Start the loading process
-  startLoading();
+  console.log(connectionStore.status)
+  if (connectionStore.status === 'restart') {
+    startLoading();
+  } else {
+    showStep4.value = true;
+  }
 });
 </script>
 
 <template>
-    <div>
-        <Step1Loading v-if="showStep1"/>
-        <Step2Loading v-if="showStep2"/>
-        <Step3Loading v-if="showStep3"/>
-        <Login v-if="showStep4"/>
-    </div>
+  <div>
+    <Step1Loading v-if="showStep1" />
+    <Step2Loading v-if="showStep2" />
+    <Step3Loading v-if="showStep3" />
+    <Login v-if="showStep4" />
+  </div>
 </template>
