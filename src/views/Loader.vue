@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import { useConnectionStore } from '@/stores/connectionStore';
 
 // Components
+import MetaUpdater from '../MetaUpdater.vue';
 import Step1Loading from '../components/Loading/Step1Loading.vue';
 import Step2Loading from '../components/Loading/Step2Loading.vue';
 import Step3Loading from '../components/Loading/Step3Loading.vue';
@@ -44,6 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <MetaUpdater />
   <div>
     <Step1Loading v-if="showStep1" />
     <Step2Loading v-if="showStep2" />

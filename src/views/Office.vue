@@ -1,4 +1,5 @@
 <template>
+  <MetaUpdater />
   <section class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
     <Header v-if="showHeader" 
       :entities="entities"
@@ -61,6 +62,7 @@
 import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue';
 import { useWindowsStore } from '@/stores/windowsStore.js';
 import { useVolumeStore } from '@/stores/volumeStore.js';
+import MetaUpdater from '../MetaUpdater.vue';
 import Header from '@/components/Header/Header.vue';
 import Footer from '@/components/Footer/Footer.vue';
 
@@ -89,6 +91,7 @@ onMounted(() => {
     // Code to execute after the script has loaded
     windowsStore.loadState();
     volumeStore.playAudio(['/sounds/start-windows.mp3']);
+    volumeStore.unmuteAudio();
   };
 
   document.head.appendChild(script);
