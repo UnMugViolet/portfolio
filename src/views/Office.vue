@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, provide, onMounted } from 'vue';
+import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue';
 import { useWindowsStore } from '@/stores/windowsStore.js';
 import { useVolumeStore } from '@/stores/volumeStore.js';
 import Header from '@/components/Header/Header.vue';
@@ -80,10 +80,25 @@ const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore();
 
 onMounted(() => {
-  // Save the state of the windows to localStorage
-  windowsStore.loadState();
-  
-  volumeStore.playAudio(['/sounds/start-windows.mp3']);
+  const script = document.createElement('script');
+  script.src = 'https://sdk.scdn.co/spotify-player.js';
+  script.async = true;
+  script.id = 'spotify-player-script';
+
+  script.onload = () => {
+    // Code to execute after the script has loaded
+    windowsStore.loadState();
+    volumeStore.playAudio(['/sounds/start-windows.mp3']);
+  };
+
+  document.head.appendChild(script);
+});
+
+onUnmounted(() => {
+  const script = document.getElementById('spotify-player-script');
+  if (script) {
+    document.head.removeChild(script);
+  }
 });
 
 // Keep track of the highest z-index
