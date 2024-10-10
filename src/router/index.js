@@ -8,7 +8,116 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Loader
+      component: Loader,
+      meta: {
+        title: 'Portfolio | Paul Jaguin - Développeur Web',
+        metaTags: [
+          {
+            rel: 'canonical',
+            href: 'https://pauljaguin.com'
+          },
+          {
+            name: 'title',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'description',
+            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            name: 'keywords',
+            content: "portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps"
+          },
+          {
+            name: 'author',
+            content: 'Paul Jaguin'
+          },
+          {
+            name: 'robots',
+            content: 'index, follow'
+          },
+          {
+            name: 'theme-color',
+            content: '#000000'
+          },
+          {
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+          },
+          {
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'black'
+          },
+          {
+            name: 'apple-mobile-web-app-title',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'application-name',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'twitter:card',
+            content: 'summary'
+          },
+          {
+            name: 'twitter:title',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'twitter:description',
+            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            name: 'twitter:image',
+            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+          },
+          {
+            name: 'twitter:site',
+            content: '@PaulJaguin'
+          },
+          {
+            name: 'twitter:creator',
+            content: '@PaulJaguin'
+          },
+          {
+            property: 'og:type',
+            content: 'website'
+          },
+          {
+            property: 'og:title',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            property: 'og:description',
+            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            property: 'og:site_name',
+            content: 'Portfolio | Paul Jaguin - Développeur Web'
+          },
+          {
+            property: 'og:url',
+            content: 'https://pauljaguin.com'
+          },
+          {
+            property: 'og:image',
+            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+          },
+          {
+            property: 'og:image:alt',
+            content: 'Logo Portfolio Paul Jaguin'
+          },
+          {
+            property: 'og:locale',
+            content: 'fr_FR'
+          },
+          {
+            property: 'og:locale:alternate',
+            content: 'en_US'
+          }
+        ]
+      }
     },
     {
       path: '/office',
