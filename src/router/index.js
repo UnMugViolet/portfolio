@@ -73,12 +73,8 @@ const router = createRouter({
             content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
           },
           {
-            name: 'twitter:site',
-            content: '@PaulJaguin'
-          },
-          {
-            name: 'twitter:creator',
-            content: '@PaulJaguin'
+            name: 'twitter:image:alt',
+            content: 'Logo Portfolio Paul Jaguin' 
           },
           {
             property: 'og:type',
@@ -123,6 +119,111 @@ const router = createRouter({
       path: '/office',
       name: 'Office',
       component: Office,
+      meta: {
+        title: 'Bureau | Paul Jaguin - Développeur Web',
+        metaTags: [
+          {
+            rel: 'canonical',
+            href: 'https://pauljaguin.com/office'
+          },
+          {
+            name: 'title',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'description',
+            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            name: 'keywords',
+            content: "bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps"
+          },
+          {
+            name: 'author',
+            content: 'Paul Jaguin'
+          },
+          {
+            name: 'robots',
+            content: 'index, follow'
+          },
+          {
+            name: 'theme-color',
+            content: '#000000'
+          },
+          {
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+          },
+          {
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'black'
+          },
+          {
+            name: 'apple-mobile-web-app-title',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'application-name',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'twitter:card',
+            content: 'summary'
+          },
+          {
+            name: 'twitter:title',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'twitter:description',
+            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            name: 'twitter:image',
+            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+          },
+          {
+            name: 'twitter:image:alt',
+            content: 'Logo Portfolio Paul Jaguin'
+          },
+          {
+            name: 'og:type',
+            content: 'website'
+          },
+          {
+            name: 'og:title',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'og:description',
+            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+          },
+          {
+            name: 'og:site_name',
+            content: 'Bureau | Paul Jaguin - Développeur Web'
+          },
+          {
+            name: 'og:url',
+            content: 'https://pauljaguin.com/office'
+          },
+          {
+            name: 'og:image',
+            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+          },
+          {
+            name: 'og:image:alt',
+            content: 'Logo Portfolio Paul Jaguin'
+          },
+          {
+            name: 'og:locale',
+            content: 'fr_FR'
+          },
+          {
+            name: 'og:locale:alternate',
+            content: 'en_US'
+          }
+        ]
+      }
     }
   ]
 })
