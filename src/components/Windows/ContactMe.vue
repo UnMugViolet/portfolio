@@ -44,7 +44,7 @@ const sendEmail = async () => {
   isLoading.value = true
 
   try {
-    const result = await emailjs.send(
+    await emailjs.send(
       serviceId,
       templateId,
       {
