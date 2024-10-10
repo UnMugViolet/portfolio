@@ -82,19 +82,9 @@ const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore();
 
 onMounted(() => {
-  const script = document.createElement('script');
-  script.src = 'https://sdk.scdn.co/spotify-player.js';
-  script.async = true;
-  script.id = 'spotify-player-script';
-
-  script.onload = () => {
-    // Code to execute after the script has loaded
     windowsStore.loadState();
     volumeStore.playAudio(['/sounds/start-windows.mp3']);
     volumeStore.unmuteAudio();
-  };
-
-  document.head.appendChild(script);
 });
 
 onUnmounted(() => {
