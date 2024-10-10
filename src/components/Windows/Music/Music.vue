@@ -7,7 +7,7 @@
             <img
               v-if="playlist.images && playlist.images.length > 0"
               :src="playlist.images[0].url"
-              alt="cover album musique"
+              alt="Couverture de la playlist"
               class="w-24"
             />
             <div>
@@ -65,7 +65,7 @@
                     <img
                       v-if="track.track.album.images && track.track.album.images.length > 0"
                       :src="track.track.album.images[2].url"
-                      alt="Picture of the track"
+                      alt="Couverture de l'album"
                       class="w-12"
                     />
                     <div class="flex flex-col max-w-48">
