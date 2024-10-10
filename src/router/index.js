@@ -22,11 +22,13 @@ const router = createRouter({
           },
           {
             name: 'description',
-            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'keywords',
-            content: "portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps"
+            content:
+              'portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',
@@ -66,7 +68,8 @@ const router = createRouter({
           },
           {
             name: 'twitter:description',
-            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'twitter:image',
@@ -74,7 +77,7 @@ const router = createRouter({
           },
           {
             name: 'twitter:image:alt',
-            content: 'Logo Portfolio Paul Jaguin' 
+            content: 'Logo Portfolio Paul Jaguin'
           },
           {
             property: 'og:type',
@@ -86,7 +89,8 @@ const router = createRouter({
           },
           {
             property: 'og:description',
-            content: 'Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             property: 'og:site_name',
@@ -132,11 +136,13 @@ const router = createRouter({
           },
           {
             name: 'description',
-            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'keywords',
-            content: "bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps"
+            content:
+              'bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',
@@ -176,7 +182,8 @@ const router = createRouter({
           },
           {
             name: 'twitter:description',
-            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'twitter:image',
@@ -196,7 +203,8 @@ const router = createRouter({
           },
           {
             name: 'og:description',
-            content: 'Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu\'en DevOps.'
+            content:
+              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, expert en création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'og:site_name',

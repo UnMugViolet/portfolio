@@ -7,7 +7,7 @@
           "name": "Logma Production",
           "icon": "folder-logma-icon.png",
           "title": "Logma Production - Site vitrine",
-          "date":"2023 - 2 mois",
+          "date": "2023 - 2 mois",
           "componentName": "LogmaContent",
           "isFocus": false,
           "isActive": false
@@ -16,7 +16,7 @@
           "name": "Pangaia",
           "icon": "folder-pangaia-icon.png",
           "title": "Pangaia - Application web",
-          "date":"2023 - Actuel",
+          "date": "2023 - Actuel",
           "componentName": "PangaiaContent",
           "isFocus": false,
           "isActive": false
@@ -25,7 +25,7 @@
           "name": "Clench",
           "icon": "folder-clench-icon.png",
           "title": "Clench - Site vitrine",
-          "date":"2024",
+          "date": "2024",
           "componentName": "ClenchContent",
           "isFocus": false,
           "isActive": false

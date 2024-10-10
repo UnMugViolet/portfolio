@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useWindowsStore = defineStore({
   id: 'windows',
   state: () => ({
-    openWindowIds: JSON.parse(localStorage.getItem('windows')) || [],
+    openWindowIds: JSON.parse(localStorage.getItem('windows')) || []
   }),
   actions: {
     saveState() {
@@ -19,8 +19,8 @@ export const useWindowsStore = defineStore({
       }
     },
     removeWindowStore(windowId) {
-      this.openWindowIds = this.openWindowIds.filter(id => id !== windowId)
+      this.openWindowIds = this.openWindowIds.filter((id) => id !== windowId)
       this.saveState()
-    },
-  },
+    }
+  }
 })
