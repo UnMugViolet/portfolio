@@ -1,5 +1,5 @@
 {
-  "education" : [
+  "education": [
     {
       "degree": "TRONC COMMUN",
       "institution": "42 Paris",
@@ -33,9 +33,9 @@
       "company": "SCREENUP, Rennes (35)",
       "year": "Octobre - Juin 2024",
       "responsibilities": [
-          "Conception et création de site",
-          "Mise en Production",
-          "Développement opérationnel sur serveur"
+        "Conception et création de site",
+        "Mise en Production",
+        "Développement opérationnel sur serveur"
       ]
     },
     {
@@ -79,14 +79,14 @@
       ]
     },
     {
-        "jobTitle": "VENDEUR",
-        "company": "La Mie Câline, Elbeuf (76)",
-        "year": "Juin - Août 2017",
-        "responsibilities": [
-            "Encaissement",
-            "Cuisson et préparation des commandes",
-            "Gestion des stocks et contrôle des livraisons"
-        ]
+      "jobTitle": "VENDEUR",
+      "company": "La Mie Câline, Elbeuf (76)",
+      "year": "Juin - Août 2017",
+      "responsibilities": [
+        "Encaissement",
+        "Cuisson et préparation des commandes",
+        "Gestion des stocks et contrôle des livraisons"
+      ]
     }
   ]
 }

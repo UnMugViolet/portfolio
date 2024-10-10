@@ -1,14 +1,18 @@
 <template>
   <MetaUpdater />
-  <section class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
-    <Header v-if="showHeader" 
+  <section
+    class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative"
+    @mousedown="handleOutsideClick"
+  >
+    <Header
+      v-if="showHeader"
       :entities="entities"
-      @toggle-header="toggleHeader" 
+      @toggle-header="toggleHeader"
       @toggle-myProjects="openWindow('myProjects')"
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
     />
-    <DesktopAppsLayout 
+    <DesktopAppsLayout
       :entities="entities"
       @toggle-MyProjects="openWindow('myProjects')"
       @toggle-contact="openWindow('contact')"
@@ -17,8 +21,8 @@
       @toggle-play="openWindow('play')"
     />
     <div v-for="window in windows" :key="window.id">
-      <Window 
-        v-if="isWindowVisible(window.id)" 
+      <Window
+        v-if="isWindowVisible(window.id)"
         v-show="window.visible"
         @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
@@ -33,9 +37,9 @@
         :initHeight="window.initHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
-        :style="{zIndex: findWindowZIndex(window.id)}"
-        >
-        <component 
+        :style="{ zIndex: findWindowZIndex(window.id) }"
+      >
+        <component
           v-if="window.id === 'myProjects'"
           :is="window.component"
           :isGoBackActive="window.isGoBackActive"
@@ -43,64 +47,55 @@
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id)"
         />
-        <component 
-          v-else
-          :is="window.component"
-          :subMenuItems="window.subMenuItems"
-        />
+        <component v-else :is="window.component" :subMenuItems="window.subMenuItems" />
       </Window>
     </div>
-    <Footer 
-      :entities="windows"
-      @toggle-header="toggleHeader" 
-      @toggle-window="handleWindowClick"
-    />
+    <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
   </section>
 </template>
 
 <script setup>
-import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue';
-import { useWindowsStore } from '@/stores/windowsStore.js';
-import { useVolumeStore } from '@/stores/volumeStore.js';
-import MetaUpdater from '../MetaUpdater.vue';
-import Header from '@/components/Header/Header.vue';
-import Footer from '@/components/Footer/Footer.vue';
+import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue'
+import { useWindowsStore } from '@/stores/windowsStore.js'
+import { useVolumeStore } from '@/stores/volumeStore.js'
+import MetaUpdater from '../MetaUpdater.vue'
+import Header from '@/components/Header/Header.vue'
+import Footer from '@/components/Footer/Footer.vue'
 
-import Play from '@/components/Windows/Play.vue';
-import MyCV from '@/components/Windows/MyCV/MyCV.vue';
-import Music from '@/components/Windows/Music/Music.vue';
-import ContactMe from '@/components/Windows/ContactMe.vue';
-import MyProjects from '@/components/Windows/MyProjects.vue';
-import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue';
-import Window from '@/layouts/Window.vue';
-import windowsData from '@/data/windows-data.json';
+import Play from '@/components/Windows/Play.vue'
+import MyCV from '@/components/Windows/MyCV/MyCV.vue'
+import Music from '@/components/Windows/Music/Music.vue'
+import ContactMe from '@/components/Windows/ContactMe.vue'
+import MyProjects from '@/components/Windows/MyProjects.vue'
+import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
+import Window from '@/layouts/Window.vue'
+import windowsData from '@/data/windows-data.json'
 
-
-const showHeader = ref(false);
-const windows = ref([]);
+const showHeader = ref(false)
+const windows = ref([])
 const windowsStore = useWindowsStore()
-const volumeStore = useVolumeStore();
+const volumeStore = useVolumeStore()
 
 onMounted(() => {
-    windowsStore.loadState();
-    volumeStore.playAudio(['/sounds/start-windows.mp3']);
-    volumeStore.unmuteAudio();
-});
+  windowsStore.loadState()
+  volumeStore.playAudio(['/sounds/start-windows.mp3'])
+  volumeStore.unmuteAudio()
+})
 
 onUnmounted(() => {
-  const script = document.getElementById('spotify-player-script');
+  const script = document.getElementById('spotify-player-script')
   if (script) {
-    document.head.removeChild(script);
+    document.head.removeChild(script)
   }
-});
+})
 
 // Keep track of the highest z-index
-const highestZIndex = ref(0);
-provide('highestZIndex', highestZIndex);
+const highestZIndex = ref(0)
+provide('highestZIndex', highestZIndex)
 
 // Set activeness of windows
-const activeWindow = ref(null);
-provide('activeWindow', activeWindow);
+const activeWindow = ref(null)
+provide('activeWindow', activeWindow)
 
 // Create components from data json
 const components = {
@@ -109,31 +104,33 @@ const components = {
   MyCV: shallowRef(MyCV),
   Music: shallowRef(Music),
   Play: shallowRef(Play)
-};
+}
 
 // Create the entities array from the data.json
-const entities = ref(windowsData.map(item => ({
-  ...item,
-  component: components[item.component]
-})));
+const entities = ref(
+  windowsData.map((item) => ({
+    ...item,
+    component: components[item.component]
+  }))
+)
 
 const toggleHeader = () => {
-  showHeader.value = !showHeader.value;
-};
+  showHeader.value = !showHeader.value
+}
 
 const setActiveWindow = (windowId) => {
-  activeWindow.value = windowId;
-};
+  activeWindow.value = windowId
+}
 
 const openWindow = (windowId) => {
-  const existingWindow = windows.value.find((window) => window.id === windowId);
+  const existingWindow = windows.value.find((window) => window.id === windowId)
   if (!existingWindow) {
-    const entity = entities.value.find((entity) => entity.id === windowId);
+    const entity = entities.value.find((entity) => entity.id === windowId)
     if (entity) {
-      highestZIndex.value++; // Increase highestZIndex
-      windows.value.push({ 
-        id: windowId, 
-        visible: true, 
+      highestZIndex.value++ // Increase highestZIndex
+      windows.value.push({
+        id: windowId,
+        visible: true,
         component: shallowRef(entity.component),
         iconSrc: entity.iconSrc,
         title: entity.title,
@@ -146,111 +143,109 @@ const openWindow = (windowId) => {
         isGoBackActive: false,
         isGoBackAvailable: false,
         activeProjectName: ''
-      });
-      setActiveWindow(windowId); // Set the window clicked as active
-      windowsStore.addWindowStore(windowId); // Save state to localStorage
+      })
+      setActiveWindow(windowId) // Set the window clicked as active
+      windowsStore.addWindowStore(windowId) // Save state to localStorage
     }
   } else {
     // If window already exists, just bring it to the front
-    handleWindowClick(windowId);
+    handleWindowClick(windowId)
   }
-};
+}
 
 const findWindowZIndex = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId);
-  return window ? window.zIndex : 0;
-};
+  const window = windows.value.find((window) => window.id === windowId)
+  return window ? window.zIndex : 0
+}
 
 const handleWindowClick = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId);
+  const window = windows.value.find((window) => window.id === windowId)
   if (window) {
     if (!window.visible) {
       // If window is not visible, make it visible
-      window.visible = true;
+      window.visible = true
     }
     if (window.zIndex !== highestZIndex.value) {
-      highestZIndex.value++; // Increase highestZIndex
-      window.zIndex = highestZIndex.value; // Use highestZIndex
+      highestZIndex.value++ // Increase highestZIndex
+      window.zIndex = highestZIndex.value // Use highestZIndex
     }
-    setActiveWindow(windowId); // Set the window clicked as active
+    setActiveWindow(windowId) // Set the window clicked as active
   }
-};
+}
 
 const closeWindow = (windowId) => {
-  const windowIndex = windows.value.findIndex((window) => window.id === windowId);
+  const windowIndex = windows.value.findIndex((window) => window.id === windowId)
   if (windowIndex !== -1) {
-    windows.value.splice(windowIndex, 1);
-    windowsStore.removeWindowStore(windowId); // Remove the window from localstorage
+    windows.value.splice(windowIndex, 1)
+    windowsStore.removeWindowStore(windowId) // Remove the window from localstorage
   }
-};
+}
 
 const minimizeWindow = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId);
+  const window = windows.value.find((window) => window.id === windowId)
   if (window) {
-    window.visible = false;
+    window.visible = false
     if (activeWindow.value === windowId) {
-      activeWindow.value = null; // Set activeWindow to null if the minimized window was active
+      activeWindow.value = null // Set activeWindow to null if the minimized window was active
     }
   }
-};
+}
 
-const isWindowVisible = (windowId) => windows.value.some((window) => window.id === windowId);
+const isWindowVisible = (windowId) => windows.value.some((window) => window.id === windowId)
 
 const handleOutsideClick = (event) => {
   if (showHeader.value) {
-    const headerElement = document.querySelector('.header-component');
-    const startButtonElement = document.querySelector('.start-button');
+    const headerElement = document.querySelector('.header-component')
+    const startButtonElement = document.querySelector('.start-button')
 
     // Cancel close if click occurs on start button
-    if (
-      (startButtonElement && startButtonElement.contains(event.target))
-    ) {
-      return;
+    if (startButtonElement && startButtonElement.contains(event.target)) {
+      return
     }
 
     // Close the header if the clicked element is outside the header
     if (headerElement && !headerElement.contains(event.target)) {
-      toggleHeader();
+      toggleHeader()
     }
   }
 
   // Deactivate the active window if the click occurred outside of any window
   const clickedOutsideAnyWindow = windows.value.every((window) => {
-    const windowElement = document.getElementById(window.id);
-    return windowElement && !windowElement.contains(event.target);
-  });
-  
+    const windowElement = document.getElementById(window.id)
+    return windowElement && !windowElement.contains(event.target)
+  })
+
   if (clickedOutsideAnyWindow) {
-    setActiveWindow(null);
+    setActiveWindow(null)
   }
-};
+}
 
 const handleGoBack = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId);
+  const window = windows.value.find((window) => window.id === windowId)
   if (window) {
-    window.isGoBackActive = true;
-    window.isGoBackAvailable = false;
-    window.activeProjectName = '';
+    window.isGoBackActive = true
+    window.isGoBackAvailable = false
+    window.activeProjectName = ''
   }
-};
+}
 
 const handleGoBackIsAvailable = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId);
+  const window = windows.value.find((window) => window.id === windowId)
   if (window) {
-    window.isGoBackActive = false;
-    window.isGoBackAvailable = true;
+    window.isGoBackActive = false
+    window.isGoBackAvailable = true
   }
-};
+}
 
 const handleProjectActiveName = (windowId, projectName) => {
-  const window = windows.value.find((window) => window.id === windowId);
+  const window = windows.value.find((window) => window.id === windowId)
   if (window) {
-    window.activeProjectName = projectName;
+    window.activeProjectName = projectName
   }
-};
+}
 
 // Open each window that was open before the page was reloaded
-windowsStore.openWindowIds.forEach(windowId => {
+windowsStore.openWindowIds.forEach((windowId) => {
   openWindow(windowId)
 })
 </script>

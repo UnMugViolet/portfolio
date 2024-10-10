@@ -1,33 +1,29 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const showNotificationModal = ref(false);
+const showNotificationModal = ref(false)
 
 setTimeout(() => {
-  showNotificationModal.value = true;
+  showNotificationModal.value = true
   setTimeout(() => {
-    showNotificationModal.value = false;
-  }, 6000);
-}, 3000);
+    showNotificationModal.value = false
+  }, 6000)
+}, 3000)
 
 const closeNotificationModal = () => {
-  showNotificationModal.value = false;
-};
-
+  showNotificationModal.value = false
+}
 </script>
 
 <template>
-  <Transition>  
-    <div 
+  <Transition>
+    <div
       v-if="showNotificationModal"
-      class="bubble absolute right-16 md:right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-9 pb-2.5 pl-2.5 text-black">
-      <button 
-        @click="closeNotificationModal" 
-        class="modal-close cursor-pointer">
-        
-      </button>
+      class="bubble absolute right-16 md:right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-9 pb-2.5 pl-2.5 text-black"
+    >
+      <button @click="closeNotificationModal" class="modal-close cursor-pointer"></button>
       <div class="flex items-center">
-        <img class="w-3.5 h-3.5" src="/img/icons/info-icon.png" alt="risk">
+        <img class="w-3.5 h-3.5" src="/img/icons/info-icon.png" alt="risk" />
         <span class="ml-2">Le mode plein écran est disponible !</span>
       </div>
       <p>Pour une expérience plus immersive,</p>
@@ -37,7 +33,6 @@ const closeNotificationModal = () => {
 </template>
 
 <style scoped>
-
 .v-enter-active,
 .v-leave-active {
   transition: opacity 1s ease;
@@ -94,7 +89,7 @@ const closeNotificationModal = () => {
 }
 
 .bubble::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   bottom: -17px;
@@ -107,7 +102,7 @@ const closeNotificationModal = () => {
 }
 
 .bubble::before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   bottom: -19px;
@@ -118,5 +113,4 @@ const closeNotificationModal = () => {
   border-width: 0px 19px 19px 0px;
   border-color: transparent black transparent transparent;
 }
-
 </style>

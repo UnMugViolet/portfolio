@@ -1,6 +1,7 @@
 <template>
-  <button class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style hover:text-white cursor-pointer"
-  @click="toggleButton"
+  <button
+    class="flex w-full h-10 items-center gap-1.5 px-0.5 component-style hover:text-white cursor-pointer"
+    @click="toggleButton"
   >
     <div class="w-7 h-7 md:w-9 md:h-9">
       <slot name="img" />
@@ -17,25 +18,24 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      toggleButton() {
-        this.$emit('toggle-button', this.buttonName); // Use 'toggle-button' event
-      }
-    },
-    props: {
-      buttonName: String
+export default {
+  methods: {
+    toggleButton() {
+      this.$emit('toggle-button', this.buttonName) // Use 'toggle-button' event
     }
-  };
+  },
+  props: {
+    buttonName: String
+  }
+}
 </script>
-  
-  <style scoped>
-    .component-style:hover {
-      background: #2F71CD;
-    }
-  
-    .component-style:hover .small-p {
-      color: white;
-    }
-  </style>
-  
+
+<style scoped>
+.component-style:hover {
+  background: #2f71cd;
+}
+
+.component-style:hover .small-p {
+  color: white;
+}
+</style>
