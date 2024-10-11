@@ -44,6 +44,7 @@
         :activeProjectName="window.activeProjectName"
         :displayMenuHeader="window.displayMenuHeader"
         :menuHeaderItems="window.menuHeaderItems"
+        :resizable="window.resizable"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
         <component
@@ -156,6 +157,7 @@ const openWindow = (windowId) => {
         subMenuItems: entity.subMenuItems,
         displayMenuHeader: entity.displayMenuHeader,
         menuHeaderItems: entity.menuHeaderItems,
+        resizable: entity.resizable,
         isGoBackActive: false,
         isGoBackAvailable: false,
         activeProjectName: ''
