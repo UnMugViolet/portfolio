@@ -15,7 +15,7 @@
       @toggle-pictures="openWindow('pictures')"
       @toggle-music="openWindow('music')"
       @toggle-calendar="openWindow('calendar')"
-      @toggle-play="openWindow('play')"
+      @toggle-minesweeper="openWindow('minesweeper')"
     />
     <DesktopAppsLayout
       :entities="entities"
@@ -23,7 +23,7 @@
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
       @toggle-music="openWindow('music')"
-      @toggle-play="openWindow('play')"
+      @toggle-minesweeper="openWindow('minesweeper')"
     />
     <div v-for="window in windows" :key="window.id">
       <Window
@@ -42,6 +42,8 @@
         :initHeight="window.initHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
+        :displayMenuHeader="window.displayMenuHeader"
+        :menuHeaderItems="window.menuHeaderItems"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
         <component
@@ -67,7 +69,7 @@ import MetaUpdater from '../MetaUpdater.vue'
 import Header from '@/components/Header/Header.vue'
 import Footer from '@/components/Footer/Footer.vue'
 
-import Play from '@/components/Windows/Play.vue'
+import Minesweeper from '@/components/Windows/Minesweeper.vue'
 import MyCV from '@/components/Windows/MyCV/MyCV.vue'
 import Music from '@/components/Windows/Music/Music.vue'
 import ContactMe from '@/components/Windows/ContactMe.vue'
@@ -112,7 +114,7 @@ const components = {
   ContactMe: shallowRef(ContactMe),
   MyCV: shallowRef(MyCV),
   Music: shallowRef(Music),
-  Play: shallowRef(Play),
+  Minesweeper: shallowRef(Minesweeper),
   About: shallowRef(About),
   Pictures: shallowRef(Pictures),
   Calendar: shallowRef(Calendar)
@@ -152,10 +154,13 @@ const openWindow = (windowId) => {
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
         subMenuItems: entity.subMenuItems,
+        displayMenuHeader: entity.displayMenuHeader,
+        menuHeaderItems: entity.menuHeaderItems,
         isGoBackActive: false,
         isGoBackAvailable: false,
         activeProjectName: ''
       })
+      console.log("entity:", entity.id, "menuHeaderItems", entity.menuHeaderItems)
       setActiveWindow(windowId) // Set the window clicked as active
       windowsStore.addWindowStore(windowId) // Save state to localStorage
     }

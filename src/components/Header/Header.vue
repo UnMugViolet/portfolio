@@ -57,11 +57,11 @@
                   </template>
                   <template #text> Calendrier </template>
                 </HeaderRightButton>
-                <HeaderRightButton @click="toggleWindow('play')" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('minesweeper')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/play-icon-sm.png" alt="A propos" />
+                    <img src="/img/icons/minesweeper-icon-sm.png" alt="A propos" />
                   </template>
-                  <template #text> Jouer </template>
+                  <template #text>Démineur</template>
                 </HeaderRightButton>
               </div>
             </div>
