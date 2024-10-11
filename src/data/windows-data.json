@@ -169,7 +169,7 @@
     "onDesktop": true,
     "resizable": true,
     "displayMenuHeader": true, 
-    "headerItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,

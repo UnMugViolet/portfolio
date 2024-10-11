@@ -108,8 +108,6 @@ const {
   resizable: Boolean
 })
 
-console.log('window id:', id, "resizable:", resizable)
-
 // App size constants
 const appHeight = window.innerHeight - 32
 const appWidth = window.innerWidth
