@@ -396,8 +396,8 @@
     "imgSrc": "/img/icons/folder-docs-icon-sm.png",
     "onDesktop": false,
     "iconSrc": "/img/icons/folder-docs-icon-xs.png",
-    "initPositionX": 160,
-    "initPositionY": 270,
+    "initPositionX": 190,
+    "initPositionY": 310,
     "initWidth": 660,
     "initHeight": 500,
     "component": "About",
@@ -468,17 +468,95 @@
     ]
   },
   {
-    "id": "images",
+    "id": "pictures",
     "title": "Mes Images",
     "subtitle": "",
     "imgSrc": "/img/icons/folder-images-icon-sm.png",
     "onDesktop": false,
     "iconSrc": "/img/icons/folder-images-icon-xs.png",
-    "initPositionX": 160,
-    "initPositionY": 270,
+    "initPositionX": 50,
+    "initPositionY": 400,
     "initWidth": 660,
     "initHeight": 500,
-    "component": "MyImages",
+    "component": "Pictures",
+    "subMenuItems": [
+      {
+        "id": 1,
+        "title": "Tâches système",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "Informations système",
+            "iconUrl": "/img/icons/info-system-icon.ico"
+          },
+          {
+            "id": 2,
+            "subtitle": "Gestion des programmes",
+            "iconUrl": "/img/icons/programs-icon.png"
+          },
+          {
+            "id": 3,
+            "subtitle": "Changer les paramètres",
+            "iconUrl": "/img/icons/settings-icon.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Autres",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "Mes emplacements réseau",
+            "iconUrl": "/img/icons/networking-icon.png",
+            "url": ""
+          },
+          {
+            "id": 2,
+            "subtitle": "Mes documents",
+            "iconUrl": "/img/icons/documents-icon.png",
+            "url": ""
+          },
+          {
+            "id": 3,
+            "subtitle": "Documents partagés",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
+            "url": ""
+          },
+          {
+            "id": 4,
+            "subtitle": "Panneau de configuration",
+            "iconUrl": "/img/icons/settings-icon.png",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Détails",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "github",
+            "iconUrl": "/img/icons/github-icon.png",
+            "url": "https://github.com/UnMugViolet"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "calendar",
+    "title": "Calendrier",
+    "subtitle": "",
+    "imgSrc": "/img/icons/calendar-icon-sm.png",
+    "onDesktop": false,
+    "iconSrc": "/img/icons/calendar-icon-xs.png",
+    "initPositionX": 80,
+    "initPositionY": 440,
+    "initWidth": 660,
+    "initHeight": 500,
+    "component": "Calendar  ",
     "subMenuItems": [
       {
         "id": 1,

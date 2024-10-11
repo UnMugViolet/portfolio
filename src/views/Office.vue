@@ -12,7 +12,9 @@
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
       @toggle-about="openWindow('about')"
+      @toggle-pictures="openWindow('pictures')"
       @toggle-music="openWindow('music')"
+      @toggle-calendar="openWindow('calendar')"
       @toggle-play="openWindow('play')"
     />
     <DesktopAppsLayout
@@ -71,6 +73,8 @@ import Music from '@/components/Windows/Music/Music.vue'
 import ContactMe from '@/components/Windows/ContactMe.vue'
 import MyProjects from '@/components/Windows/MyProjects.vue'
 import About from '@/components/Windows/About.vue'
+import Pictures from '@/components/Windows/Pictures.vue'
+import Calendar from '@/components/Windows/Calendar.vue'
 
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
@@ -110,6 +114,8 @@ const components = {
   Music: shallowRef(Music),
   Play: shallowRef(Play),
   About: shallowRef(About),
+  Pictures: shallowRef(Pictures),
+  Calendar: shallowRef(Calendar)
 }
 
 // Create the entities array from the data.json
