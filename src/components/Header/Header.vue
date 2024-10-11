@@ -51,13 +51,13 @@
                   </template>
                   <template #text> Mes musiques </template>
                 </HeaderRightButton>
-                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('calendar')" class="cursor-pointer">
                   <template #img>
                     <img src="/img/icons/calendar-icon-sm.png" alt="A propos" />
                   </template>
                   <template #text> Calendrier </template>
                 </HeaderRightButton>
-                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('play')" class="cursor-pointer">
                   <template #img>
                     <img src="/img/icons/play-icon-sm.png" alt="A propos" />
                   </template>
