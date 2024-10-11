@@ -23,7 +23,10 @@
         :class="isActive ? 'opacity-100' : 'opacity-60 '"
       >
         <WindowMinimize @click="toggleMinimize" />
-        <WindowMaximize @click="toggleMaximize" />
+        <WindowMaximize 
+          @click="toggleMaximize" 
+          :disabled="!resizable"
+          :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }" />
         <WindowClose @click="closeWindow" />
       </div>
     </div>
@@ -41,25 +44,27 @@
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
     </div>
-    <!-- Resize handlers -->
-    <div
-      class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize"
-      @mousedown="startResize"
-      data-direction="right"
-      :style="{ cursor: maximized ? 'default' : 'ew-resize' }"
-    ></div>
-    <div
-      class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize"
-      @mousedown="startResize"
-      data-direction="bottom"
-      :style="{ cursor: maximized ? 'default' : 'ns-resize' }"
-    ></div>
-    <div
-      class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize"
-      @mousedown="startResize"
-      data-direction="corner"
-      :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"
-    ></div>
+    <div v-if="resizable">
+      <!-- Resize handlers -->
+      <div
+        class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize"
+        @mousedown="startResize"
+        data-direction="right"
+        :style="{ cursor: maximized ? 'default' : 'ew-resize' }"
+      ></div>
+      <div
+        class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize"
+        @mousedown="startResize"
+        data-direction="bottom"
+        :style="{ cursor: maximized ? 'default' : 'ns-resize' }"
+      ></div>
+      <div
+        class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize"
+        @mousedown="startResize"
+        data-direction="corner"
+        :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"
+      ></div>
+    </div>
   </section>
 </template>
 
@@ -85,7 +90,8 @@ const {
   isGoBackAvailable,
   activeProjectName,
   displayMenuHeader,
-  menuHeaderItems
+  menuHeaderItems,
+  resizable
 } = defineProps({
   id: String,
   title: String,
@@ -98,8 +104,11 @@ const {
   isGoBackAvailable: Boolean,
   activeProjectName: String,
   displayMenuHeader: Boolean,
-  menuHeaderItems: Array
+  menuHeaderItems: Array,
+  resizable: Boolean
 })
+
+console.log('window id:', id, "resizable:", resizable)
 
 // App size constants
 const appHeight = window.innerHeight - 32
