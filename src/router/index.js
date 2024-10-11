@@ -73,7 +73,7 @@ const router = createRouter({
           },
           {
             name: 'twitter:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
           },
           {
             name: 'twitter:image:alt',
@@ -102,7 +102,7 @@ const router = createRouter({
           },
           {
             property: 'og:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
           },
           {
             property: 'og:image:alt',
@@ -187,7 +187,7 @@ const router = createRouter({
           },
           {
             name: 'twitter:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
           },
           {
             name: 'twitter:image:alt',
@@ -216,7 +216,7 @@ const router = createRouter({
           },
           {
             name: 'og:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-white.webp'
+            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
           },
           {
             name: 'og:image:alt',
