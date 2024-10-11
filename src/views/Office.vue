@@ -11,6 +11,9 @@
       @toggle-myProjects="openWindow('myProjects')"
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
+      @toggle-about="openWindow('about')"
+      @toggle-music="openWindow('music')"
+      @toggle-play="openWindow('play')"
     />
     <DesktopAppsLayout
       :entities="entities"
@@ -67,6 +70,8 @@ import MyCV from '@/components/Windows/MyCV/MyCV.vue'
 import Music from '@/components/Windows/Music/Music.vue'
 import ContactMe from '@/components/Windows/ContactMe.vue'
 import MyProjects from '@/components/Windows/MyProjects.vue'
+import About from '@/components/Windows/About.vue'
+
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
 import windowsData from '@/data/windows-data.json'
@@ -78,7 +83,7 @@ const volumeStore = useVolumeStore()
 
 onMounted(() => {
   windowsStore.loadState()
-  volumeStore.playAudio(['/sounds/start-windows.mp3'])
+  // volumeStore.playAudio(['/sounds/start-windows.mp3'])
   volumeStore.unmuteAudio()
 })
 
@@ -103,7 +108,8 @@ const components = {
   ContactMe: shallowRef(ContactMe),
   MyCV: shallowRef(MyCV),
   Music: shallowRef(Music),
-  Play: shallowRef(Play)
+  Play: shallowRef(Play),
+  About: shallowRef(About),
 }
 
 // Create the entities array from the data.json
