@@ -160,7 +160,6 @@ const openWindow = (windowId) => {
         isGoBackAvailable: false,
         activeProjectName: ''
       })
-      console.log("entity:", entity.id, "menuHeaderItems", entity.menuHeaderItems)
       setActiveWindow(windowId) // Set the window clicked as active
       windowsStore.addWindowStore(windowId) // Save state to localStorage
     }

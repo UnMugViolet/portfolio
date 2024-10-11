@@ -101,9 +101,6 @@ const {
   menuHeaderItems: Array
 })
 
-console.log("menuHeaderItems", menuHeaderItems)
-
-
 // App size constants
 const appHeight = window.innerHeight - 32
 const appWidth = window.innerWidth

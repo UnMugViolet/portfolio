@@ -86,7 +86,7 @@
     "imgSrc": "/img/icons/email-icon-lg.png",
     "onDesktop": true,
     "displayMenuHeader": true,
-    "headerItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
