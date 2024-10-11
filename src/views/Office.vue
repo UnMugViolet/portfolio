@@ -53,7 +53,7 @@
           :isGoBackActive="window.isGoBackActive"
           :subMenuItems="window.subMenuItems"
           @goback-is-available="handleGoBackIsAvailable(window.id)"
-          @project-active-name="handleProjectActiveName(window.id)"
+          @project-active-name="handleProjectActiveName(window.id, $event)"
         />
         <component v-else :is="window.component" :subMenuItems="window.subMenuItems" />
       </Window>
@@ -259,6 +259,7 @@ const handleProjectActiveName = (windowId, projectName) => {
   const window = windows.value.find((window) => window.id === windowId)
   if (window) {
     window.activeProjectName = projectName
+    console.log('projectName', projectName)
   }
 }
 
