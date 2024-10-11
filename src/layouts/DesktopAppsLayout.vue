@@ -17,7 +17,7 @@ watchEffect(() => {
 })
 
 const desktopEntities = computed(() => {
-  return localEntities.value.filter(entity => entity.onDesktop)
+  return localEntities.value.filter((entity) => entity.onDesktop)
 })
 
 const toggleEffect = (selectedEntity) => {

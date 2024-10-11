@@ -14,10 +14,7 @@
             <div class="w-7/12 h-full bg-white px-1 py-1">
               <div v-for="entity in localEntities" :key="entity.id">
                 <div v-if="entity.subtitle" class="flex flex-col gap-3 py-2">
-                  <HeaderLeftButton
-                    @toggle-button="toggleWindow"
-                    :buttonName="entity.id"
-                  >
+                  <HeaderLeftButton @toggle-button="toggleWindow" :buttonName="entity.id">
                     <template #img>
                       <img :src="entity.imgSrc" :alt="entity.title" />
                     </template>
@@ -105,14 +102,13 @@ watchEffect(() => {
   localEntities.value = [...props.entities]
 })
 
-
 const turnOffHeader = () => {
   emit('toggle-header')
 }
 
 const toggleWindow = (buttonName) => {
   // Close the header and open the window
-  turnOffHeader();
+  turnOffHeader()
   emit('toggle-' + buttonName)
 }
 

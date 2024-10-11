@@ -23,10 +23,11 @@
         :class="isActive ? 'opacity-100' : 'opacity-60 '"
       >
         <WindowMinimize @click="toggleMinimize" />
-        <WindowMaximize 
-          @click="toggleMaximize" 
+        <WindowMaximize
+          @click="toggleMaximize"
           :disabled="!resizable"
-          :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }" />
+          :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }"
+        />
         <WindowClose @click="closeWindow" />
       </div>
     </div>
