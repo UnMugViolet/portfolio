@@ -15,7 +15,6 @@
               <div v-for="entity in localEntities" :key="entity.id">
                 <div v-if="entity.subtitle" class="flex flex-col gap-3 py-2">
                   <HeaderLeftButton
-                    @click="turnOffHeader"
                     @toggle-button="toggleWindow"
                     :buttonName="entity.id"
                   >
@@ -34,27 +33,27 @@
             </div>
             <div class="w-1/2 h-full bg-color-blue-header-left left-blue-header-1 px-1 py-1">
               <div class="py-2">
-                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('about')" class="cursor-pointer">
                   <template #img>
                     <img src="/img/icons/folder-docs-icon.png" alt="A propos" />
                   </template>
                   <template #text> A propos </template>
                 </HeaderRightButton>
-                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('pictures')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/folder-images-icon.png" alt="A propos" />
+                    <img src="/img/icons/folder-images-icon-sm.png" alt="Mes photos" />
                   </template>
                   <template #text> Mes images </template>
                 </HeaderRightButton>
-                <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
+                <HeaderRightButton @click="toggleWindow('music')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/folder-music-icon.png" alt="A propos" />
+                    <img src="/img/icons/folder-music-icon.png" alt="Mes musiques" />
                   </template>
                   <template #text> Mes musiques </template>
                 </HeaderRightButton>
                 <HeaderRightButton @click="turnOffHeader" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/calendar-icon.png" alt="A propos" />
+                    <img src="/img/icons/calendar-icon-sm.png" alt="A propos" />
                   </template>
                   <template #text> Calendrier </template>
                 </HeaderRightButton>
@@ -106,11 +105,14 @@ watchEffect(() => {
   localEntities.value = [...props.entities]
 })
 
+
 const turnOffHeader = () => {
   emit('toggle-header')
 }
 
 const toggleWindow = (buttonName) => {
+  // Close the header and open the window
+  turnOffHeader();
   emit('toggle-' + buttonName)
 }
 
