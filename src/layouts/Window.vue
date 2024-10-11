@@ -28,14 +28,16 @@
       </div>
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
-      <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']" />
-      <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
-      <WindowHeaderSearch
-        :id="id"
-        :title="title"
-        :iconSrc="iconSrc"
-        :activeProjectName="activeProjectName"
-      />
+      <WindowHeaderDropdown :dropdownItems="menuHeaderItems" />
+      <div v-if="displayMenuHeader">
+        <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
+        <WindowHeaderSearch
+          :id="id"
+          :title="title"
+          :iconSrc="iconSrc"
+          :activeProjectName="activeProjectName"
+        />
+      </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
     </div>
@@ -80,9 +82,10 @@ const {
   initPositionY,
   initWidth,
   initHeight,
-  subMenuItems,
   isGoBackAvailable,
-  activeProjectName
+  activeProjectName,
+  displayMenuHeader,
+  menuHeaderItems
 } = defineProps({
   id: String,
   title: String,
@@ -93,8 +96,13 @@ const {
   initHeight: Number,
   subMenuItems: Array,
   isGoBackAvailable: Boolean,
-  activeProjectName: String
+  activeProjectName: String,
+  displayMenuHeader: Boolean,
+  menuHeaderItems: Array
 })
+
+console.log("menuHeaderItems", menuHeaderItems)
+
 
 // App size constants
 const appHeight = window.innerHeight - 32
