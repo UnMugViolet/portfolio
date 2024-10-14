@@ -9,7 +9,7 @@
         </template>
       </WindowDropdown>
     </div>
-    <div v-if="windowsHeaderLogo" class="flex items-center h-6 w-10" >
+    <div v-if="windowsHeaderLogo" class="flex items-center h-6 w-10">
       <img
         src="/img/icons/windows-header-window-icon.png"
         alt="icone mes projets"

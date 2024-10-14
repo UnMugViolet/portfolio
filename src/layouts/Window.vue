@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
-      <WindowHeaderDropdown 
+      <WindowHeaderDropdown
         :dropdownItems="menuHeaderItems"
         :windowsHeaderLogo="windowsHeaderLogo"
       />

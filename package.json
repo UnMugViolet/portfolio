@@ -1,7 +1,10 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "author": "Paul Jaguin <paul@rocketegg.systems>",
+  "license": "MIT",
+  "homepage": "https://pauljaguin.com",
   "scripts": {
     "dev": "vite --host",
     "sass": "sass --watch sass/main.scss:css/main.css",
