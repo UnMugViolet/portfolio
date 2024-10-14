@@ -9,7 +9,7 @@
         </template>
       </WindowDropdown>
     </div>
-    <div class="flex items-center h-6 w-10">
+    <div v-if="windowsHeaderLogo" class="flex items-center h-6 w-10" >
       <img
         src="/img/icons/windows-header-window-icon.png"
         alt="icone mes projets"
@@ -26,6 +26,10 @@ const props = defineProps({
   dropdownItems: {
     type: Array,
     default: () => []
+  },
+  windowsHeaderLogo: {
+    type: Boolean,
+    default: true
   }
 })
 </script>

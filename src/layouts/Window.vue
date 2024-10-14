@@ -32,7 +32,10 @@
       </div>
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
-      <WindowHeaderDropdown :dropdownItems="menuHeaderItems" />
+      <WindowHeaderDropdown 
+        :dropdownItems="menuHeaderItems"
+        :windowsHeaderLogo="windowsHeaderLogo"
+      />
       <div v-if="displayMenuHeader">
         <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
         <WindowHeaderSearch
@@ -92,7 +95,8 @@ const {
   activeProjectName,
   displayMenuHeader,
   menuHeaderItems,
-  resizable
+  resizable,
+  windowsHeaderLogo
 } = defineProps({
   id: String,
   title: String,
@@ -106,7 +110,8 @@ const {
   activeProjectName: String,
   displayMenuHeader: Boolean,
   menuHeaderItems: Array,
-  resizable: Boolean
+  resizable: Boolean,
+  windowsHeaderLogo: Boolean
 })
 
 // App size constants
