@@ -46,6 +46,7 @@
         :displayMenuHeader="window.displayMenuHeader"
         :menuHeaderItems="window.menuHeaderItems"
         :resizable="window.resizable"
+        :windowsHeaderLogo="window.windowsHeaderLogo"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
         <component
@@ -161,6 +162,7 @@ const openWindow = (windowId) => {
         displayMenuHeader: entity.displayMenuHeader,
         menuHeaderItems: entity.menuHeaderItems,
         resizable: entity.resizable,
+        windowsHeaderLogo: entity.windowsHeaderLogo,
         isGoBackActive: false,
         isGoBackAvailable: false,
         activeProjectName: ''
