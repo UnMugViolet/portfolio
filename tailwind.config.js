@@ -38,6 +38,13 @@ module.exports = {
         'input-blue': '#7f9db9',
         'light-yellow': '#ffffe1',
         'light-blue': '#ced8ef',
+        'silver': '#c0c0c0',
+        'gray': '#808080',
+        gray: {
+          128: '#808080',
+          192: '#C0C0C0',
+          245: '#F5F5F5',
+        },
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
@@ -69,7 +76,10 @@ module.exports = {
         'default': 'url(/img/cursors/default-cursor.cur), auto',
         'pointer': 'url(/img/cursors/pointer-cursor.cur), auto',
         'wait': 'url(/img/cursors/wait-cursor.cur), auto',
-      }
+      },
+      borderWidth: {
+        '3': '3px',
+      },
     },
   },
   plugins: [],
