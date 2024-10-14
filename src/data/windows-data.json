@@ -506,6 +506,7 @@
     "imgSrc": "/img/icons/calendar-icon-lg.png",
     "onDesktop": false,
     "displayMenuHeader": true,
+    "resizable": true,
     "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/calendar-icon-sm.png",
     "initPositionX": 80,
@@ -513,5 +514,21 @@
     "initWidth": 660,
     "initHeight": 500,
     "component": "Calendar"
+  },
+  {
+    "id": "notepad",
+    "title": "Notepad",
+    "subtitle": "",
+    "imgSrc": "/img/icons/notepad-icon-lg.png",
+    "onDesktop": true,
+    "displayMenuHeader": false,
+    "resizable": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Aide"],
+    "iconSrc": "/img/icons/notepad-icon-sm.png",
+    "initPositionX": 110,
+    "initPositionY": 480,
+    "initWidth": 400,
+    "initHeight": 500,
+    "component": "Notepad"
   }
 ]
