@@ -39,7 +39,6 @@ module.exports = {
         'light-yellow': '#ffffe1',
         'light-blue': '#ced8ef',
         'silver': '#c0c0c0',
-        'gray': '#808080',
         gray: {
           128: '#808080',
           192: '#C0C0C0',

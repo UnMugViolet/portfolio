@@ -32,13 +32,13 @@
               <div class="py-2">
                 <HeaderRightButton @click="toggleWindow('about')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/folder-docs-icon.png" alt="A propos" />
+                    <img src="/img/icons/folder-docs-icon.png" alt="A propos de ce site" />
                   </template>
                   <template #text> A propos </template>
                 </HeaderRightButton>
                 <HeaderRightButton @click="toggleWindow('pictures')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/folder-images-icon-sm.png" alt="Mes photos" />
+                    <img src="/img/icons/folder-images-icon-sm.png" alt="Dossier contenant mes photos" />
                   </template>
                   <template #text> Mes images </template>
                 </HeaderRightButton>
