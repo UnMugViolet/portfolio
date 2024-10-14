@@ -4,6 +4,11 @@
     "title": "Mes projets",
     "subtitle": "Voir tous mes projets",
     "imgSrc": "/img/icons/projects-icon-lg.png",
+    "onDesktop": true,
+    "resizable": true,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/projects-icon-sm.png",
     "initPositionX": 180,
     "initPositionY": 100,
@@ -81,6 +86,11 @@
     "title": "Me contacter",
     "subtitle": "Me contacter",
     "imgSrc": "/img/icons/email-icon-lg.png",
+    "onDesktop": true,
+    "resizable": true,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
@@ -158,6 +168,11 @@
     "title": "Mon CV",
     "subtitle": "Voir le curriculum vitae",
     "imgSrc": "/img/icons/cv-icon-lg.png",
+    "onDesktop": true,
+    "resizable": true,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,
@@ -235,6 +250,11 @@
     "title": "Mes Musiques",
     "subtitle": "",
     "imgSrc": "/img/icons/playmusic-icon-lg.png",
+    "onDesktop": true,
+    "resizable": true,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
     "iconSrc": "/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
@@ -308,16 +328,20 @@
     ]
   },
   {
-    "id": "play",
-    "title": "Jouer",
+    "id": "about",
+    "title": "A propos",
     "subtitle": "",
-    "imgSrc": "/img/icons/play-icon-lg.png",
-    "iconSrc": "/img/icons/play-icon-sm.png",
-    "initPositionX": 160,
-    "initPositionY": 270,
+    "imgSrc": "/img/icons/folder-docs-icon-sm.png",
+    "onDesktop": false,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "iconSrc": "/img/icons/folder-docs-icon-xs.png",
+    "initPositionX": 190,
+    "initPositionY": 310,
     "initWidth": 660,
     "initHeight": 500,
-    "component": "Play",
+    "component": "About",
     "subMenuItems": [
       {
         "id": 1,
@@ -383,5 +407,137 @@
         ]
       }
     ]
+  },
+  {
+    "id": "pictures",
+    "title": "Mes Images",
+    "subtitle": "",
+    "imgSrc": "/img/icons/folder-images-icon-sm.png",
+    "onDesktop": false,
+    "displayMenuHeader": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "iconSrc": "/img/icons/folder-images-icon-sm.png",
+    "initPositionX": 50,
+    "initPositionY": 400,
+    "initWidth": 660,
+    "initHeight": 500,
+    "component": "Pictures",
+    "subMenuItems": [
+      {
+        "id": 1,
+        "title": "Tâches système",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "Informations système",
+            "iconUrl": "/img/icons/info-system-icon.ico"
+          },
+          {
+            "id": 2,
+            "subtitle": "Gestion des programmes",
+            "iconUrl": "/img/icons/programs-icon.png"
+          },
+          {
+            "id": 3,
+            "subtitle": "Changer les paramètres",
+            "iconUrl": "/img/icons/settings-icon.png"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Autres",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "Mes emplacements réseau",
+            "iconUrl": "/img/icons/networking-icon.png",
+            "url": ""
+          },
+          {
+            "id": 2,
+            "subtitle": "Mes documents",
+            "iconUrl": "/img/icons/documents-icon.png",
+            "url": ""
+          },
+          {
+            "id": 3,
+            "subtitle": "Documents partagés",
+            "iconUrl": "/img/icons/shared-documents-icon.png",
+            "url": ""
+          },
+          {
+            "id": 4,
+            "subtitle": "Panneau de configuration",
+            "iconUrl": "/img/icons/settings-icon.png",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Détails",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": "github",
+            "iconUrl": "/img/icons/github-icon.png",
+            "url": "https://github.com/UnMugViolet"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "calendar",
+    "title": "Calendrier",
+    "subtitle": "",
+    "imgSrc": "/img/icons/calendar-icon-lg.png",
+    "onDesktop": false,
+    "displayMenuHeader": true,
+    "resizable": true,
+    "windowsHeaderLogo": true,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "iconSrc": "/img/icons/calendar-icon-sm.png",
+    "initPositionX": 80,
+    "initPositionY": 440,
+    "initWidth": 660,
+    "initHeight": 500,
+    "component": "Calendar"
+  },
+  {
+    "id": "minesweeper",
+    "title": "Démineur",
+    "subtitle": "",
+    "imgSrc": "/img/icons/minesweeper-icon-lg.png",
+    "onDesktop": true,
+    "resizable": false,
+    "displayMenuHeader": false,
+    "windowsHeaderLogo": false,
+    "menuHeaderItems": ["Jeu", "Options", "Aide"],
+    "iconSrc": "/img/icons/minesweeper-icon-sm.png",
+    "initPositionX": 160,
+    "initPositionY": 270,
+    "initWidth": 200,
+    "initHeight": 330,
+    "component": "Minesweeper"
+  },
+  {
+    "id": "notepad",
+    "title": "Notepad",
+    "subtitle": "",
+    "imgSrc": "/img/icons/notepad-icon-lg.png",
+    "onDesktop": true,
+    "displayMenuHeader": false,
+    "resizable": true,
+    "windowsHeaderLogo": false,
+    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Aide"],
+    "iconSrc": "/img/icons/notepad-icon-sm.png",
+    "initPositionX": 110,
+    "initPositionY": 480,
+    "initWidth": 400,
+    "initHeight": 500,
+    "component": "Notepad"
   }
 ]

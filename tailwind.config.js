@@ -25,7 +25,8 @@ module.exports = {
         'window-side-menu': 'linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);',
         'button-submit': 'linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4)',
         'button-clicked': 'linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1)',
-'player': 'linear-gradient(180deg, rgba(253,253,253,1) 0%, rgba(152,175,214,0.75) 45%, rgba(152,175,214,0.75) 55%, rgba(209,231,255,1) 100%)',      }),
+        'player': 'linear-gradient(180deg, rgba(253,253,253,1) 0%, rgba(152,175,214,0.75) 45%, rgba(152,175,214,0.75) 55%, rgba(209,231,255,1) 100%)',
+      }),
       colors: {
         'dropdown': '#1660E8',
         'window-blue-active': '#0831D9',
@@ -37,6 +38,13 @@ module.exports = {
         'input-blue': '#7f9db9',
         'light-yellow': '#ffffe1',
         'light-blue': '#ced8ef',
+        'silver': '#c0c0c0',
+        'gray': '#808080',
+        gray: {
+          128: '#808080',
+          192: '#C0C0C0',
+          245: '#F5F5F5',
+        },
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
@@ -68,7 +76,10 @@ module.exports = {
         'default': 'url(/img/cursors/default-cursor.cur), auto',
         'pointer': 'url(/img/cursors/pointer-cursor.cur), auto',
         'wait': 'url(/img/cursors/wait-cursor.cur), auto',
-      }
+      },
+      borderWidth: {
+        '3': '3px',
+      },
     },
   },
   plugins: [],
