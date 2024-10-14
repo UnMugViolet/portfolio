@@ -23,41 +23,52 @@
         :class="isActive ? 'opacity-100' : 'opacity-60 '"
       >
         <WindowMinimize @click="toggleMinimize" />
-        <WindowMaximize @click="toggleMaximize" />
+        <WindowMaximize
+          @click="toggleMaximize"
+          :disabled="!resizable"
+          :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }"
+        />
         <WindowClose @click="closeWindow" />
       </div>
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
-      <WindowHeaderDropdown :dropdownItems="['Fichier', 'Édition', 'Affichage', 'Outils']" />
-      <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
-      <WindowHeaderSearch
-        :id="id"
-        :title="title"
-        :iconSrc="iconSrc"
-        :activeProjectName="activeProjectName"
+      <WindowHeaderDropdown 
+        :dropdownItems="menuHeaderItems"
+        :windowsHeaderLogo="windowsHeaderLogo"
       />
+      <div v-if="displayMenuHeader">
+        <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
+        <WindowHeaderSearch
+          :id="id"
+          :title="title"
+          :iconSrc="iconSrc"
+          :activeProjectName="activeProjectName"
+        />
+      </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
     </div>
-    <!-- Resize handlers -->
-    <div
-      class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize"
-      @mousedown="startResize"
-      data-direction="right"
-      :style="{ cursor: maximized ? 'default' : 'ew-resize' }"
-    ></div>
-    <div
-      class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize"
-      @mousedown="startResize"
-      data-direction="bottom"
-      :style="{ cursor: maximized ? 'default' : 'ns-resize' }"
-    ></div>
-    <div
-      class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize"
-      @mousedown="startResize"
-      data-direction="corner"
-      :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"
-    ></div>
+    <div v-if="resizable">
+      <!-- Resize handlers -->
+      <div
+        class="absolute bg-transparent top-0 right-0 w-2 h-full cursor-ew-resize"
+        @mousedown="startResize"
+        data-direction="right"
+        :style="{ cursor: maximized ? 'default' : 'ew-resize' }"
+      ></div>
+      <div
+        class="absolute bg-transparent bottom-0 left-0 h-2 w-full cursor-ns-resize"
+        @mousedown="startResize"
+        data-direction="bottom"
+        :style="{ cursor: maximized ? 'default' : 'ns-resize' }"
+      ></div>
+      <div
+        class="absolute bg-transparent bottom-0 right-0 w-2.5 h-2.5 cursor-nwse-resize"
+        @mousedown="startResize"
+        data-direction="corner"
+        :style="{ cursor: maximized ? 'default' : 'nwse-resize' }"
+      ></div>
+    </div>
   </section>
 </template>
 
@@ -80,9 +91,12 @@ const {
   initPositionY,
   initWidth,
   initHeight,
-  subMenuItems,
   isGoBackAvailable,
-  activeProjectName
+  activeProjectName,
+  displayMenuHeader,
+  menuHeaderItems,
+  resizable,
+  windowsHeaderLogo
 } = defineProps({
   id: String,
   title: String,
@@ -93,7 +107,11 @@ const {
   initHeight: Number,
   subMenuItems: Array,
   isGoBackAvailable: Boolean,
-  activeProjectName: String
+  activeProjectName: String,
+  displayMenuHeader: Boolean,
+  menuHeaderItems: Array,
+  resizable: Boolean,
+  windowsHeaderLogo: Boolean
 })
 
 // App size constants

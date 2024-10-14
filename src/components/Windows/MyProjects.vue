@@ -52,7 +52,6 @@ const toggleProject = (project) => {
 
   emit('goback-is-available')
   emit('project-active-name', project.name)
-  console.log(state.selectedProject)
 }
 
 const closeAllProjects = () => {
