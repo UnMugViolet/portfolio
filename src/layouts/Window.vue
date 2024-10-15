@@ -36,7 +36,7 @@
         :dropdownItems="translatedMenuHeaderItems"
         :windowsHeaderLogo="windowsHeaderLogo"
       />
-      <div v-if="displayMenuHeader">
+      <div v-if="displayHeaderTools">
         <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
         <WindowHeaderSearch
           :id="id"
@@ -81,7 +81,7 @@ import WindowClose from '../components/Buttons/WindowClose.vue'
 import WindowHeaderTools from '../components/Windows/WindowHeaderTools.vue'
 import WindowHeaderSearch from '../components/Windows/WindowHeaderSearch.vue'
 import WindowHeaderDropdown from '../components/Windows/WindowHeaderDropdown.vue'
-import menuHeaderData from '@/data/menuHeaderItems.json'
+import menuHeaderData from '@/data/header-menu-data.json'
 
 const emit = defineEmits()
 
@@ -95,7 +95,7 @@ const {
   initHeight,
   isGoBackAvailable,
   activeProjectName,
-  displayMenuHeader,
+  displayHeaderTools,
   menuHeaderItemsId,
   resizable,
   windowsHeaderLogo
@@ -109,7 +109,7 @@ const {
   initHeight: Number,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
-  displayMenuHeader: Boolean,
+  displayHeaderTools: Boolean,
   menuHeaderItemsId: String,
   resizable: Boolean,
   windowsHeaderLogo: Boolean

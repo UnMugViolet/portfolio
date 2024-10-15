@@ -16,6 +16,7 @@
       @toggle-music="openWindow('music')"
       @toggle-calendar="openWindow('calendar')"
       @toggle-minesweeper="openWindow('minesweeper')"
+      @toggle-notepad="openWindow('notepad')"
     />
     <DesktopAppsLayout
       :entities="entities"
@@ -43,7 +44,7 @@
         :initHeight="window.initHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
-        :displayMenuHeader="window.displayMenuHeader"
+        :displayHeaderTools="window.displayHeaderTools"
         :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
@@ -94,13 +95,10 @@ const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore()
 const localeStore = useLocaleStore()
 
-
 onMounted(() => {
-  
   // Ensure the localeStore is updated with the correct locale from localStorage
   const storedLocale = localStorage.getItem('currentLocale') || 'fr'
   localeStore.setLocale(storedLocale)
-
 
   windowsStore.loadState()
   // volumeStore.playAudio(['/sounds/start-windows.mp3'])
@@ -169,7 +167,7 @@ const openWindow = (windowId) => {
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
         subMenuItems: entity.subMenuItems,
-        displayMenuHeader: entity.displayMenuHeader,
+        displayHeaderTools: entity.displayHeaderTools,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
         windowsHeaderLogo: entity.windowsHeaderLogo,

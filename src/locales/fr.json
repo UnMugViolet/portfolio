@@ -28,7 +28,7 @@
     "linkRepository": "Voir le dépôt"
   },
   "windows": {
-    "contact" : {
+    "contact": {
       "title": "Me contacter",
       "name": "@:common.name",
       "description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",

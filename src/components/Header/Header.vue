@@ -13,56 +13,40 @@
           <div class="w-full h-full flex">
             <div class="w-7/12 h-full bg-white px-1 py-1">
               <div v-for="entity in localEntities" :key="entity.id">
-                <div v-if="entity.subtitle" class="flex flex-col gap-3 py-2">
+                <div v-if="entity.headerPosition === 'left'" class="flex flex-col gap-3 py-2">
                   <HeaderLeftButton @toggle-button="toggleWindow" :buttonName="entity.id">
                     <template #img>
-                      <img :src="entity.imgSrc" :alt="entity.title" />
+                      <img
+                        :src="entity.imgSrc"
+                        :alt="$t('common.icon') + ' ' + getLocalizedTitle(entity)"
+                      />
                     </template>
                     <template #title>
-                      {{ entity.title }}
+                      {{ getLocalizedTitle(entity) }}
                     </template>
                     <template #subtitle>
-                      {{ entity.subtitle }}
+                      {{ getLocalizedSubtitle(entity) }}
                     </template>
                   </HeaderLeftButton>
                 </div>
               </div>
             </div>
-            <div class="w-1/2 h-full bg-color-blue-header-left left-blue-header-1 px-1 py-1">
+            <div class="w-1/2 h-full bg-color-blue-header-left left-blue-header-1 px-1">
               <div class="py-2">
-                <HeaderRightButton @click="toggleWindow('about')" class="cursor-pointer">
-                  <template #img>
-                    <img src="/img/icons/folder-docs-icon.png" alt="A propos de ce site" />
-                  </template>
-                  <template #text> A propos </template>
-                </HeaderRightButton>
-                <HeaderRightButton @click="toggleWindow('pictures')" class="cursor-pointer">
-                  <template #img>
-                    <img
-                      src="/img/icons/folder-images-icon-sm.png"
-                      alt="Dossier contenant mes photos"
-                    />
-                  </template>
-                  <template #text> Mes images </template>
-                </HeaderRightButton>
-                <HeaderRightButton @click="toggleWindow('music')" class="cursor-pointer">
-                  <template #img>
-                    <img src="/img/icons/folder-music-icon.png" alt="Mes musiques" />
-                  </template>
-                  <template #text> Mes musiques </template>
-                </HeaderRightButton>
-                <HeaderRightButton @click="toggleWindow('calendar')" class="cursor-pointer">
-                  <template #img>
-                    <img src="/img/icons/calendar-icon-sm.png" alt="A propos" />
-                  </template>
-                  <template #text> Calendrier </template>
-                </HeaderRightButton>
-                <HeaderRightButton @click="toggleWindow('minesweeper')" class="cursor-pointer">
-                  <template #img>
-                    <img src="/img/icons/minesweeper-icon-sm.png" alt="A propos" />
-                  </template>
-                  <template #text>Démineur</template>
-                </HeaderRightButton>
+                <div v-for="entity in localEntities" :key="entity.id">
+                  <div v-if="entity.headerPosition === 'right'">
+                    <HeaderRightButton
+                      @toggle-button="toggleWindow"
+                      :buttonName="entity.id"
+                      class="cursor-pointer"
+                    >
+                      <template #img>
+                        <img :src="entity.iconSrc" :alt="getLocalizedTitle(entity)" />
+                      </template>
+                      <template #text> {{ getLocalizedTitle(entity) }}</template>
+                    </HeaderRightButton>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -83,6 +67,8 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import { useVolumeStore } from '@/stores/volumeStore.js'
+import { useLocaleStore } from '@/stores/localeStore'
+
 import ProfilePicture from '@/components/ProfilePicture.vue'
 import HeaderLeftButton from '@/components/Buttons/HeaderLeftButton.vue'
 import HeaderRightButton from '@/components/Buttons/HeaderRightButton.vue'
@@ -91,6 +77,7 @@ import HeaderDisconnect from '@/components/Buttons/HeaderDisconnect.vue'
 
 const emit = defineEmits()
 const volumeStore = useVolumeStore()
+const localeStore = useLocaleStore()
 
 const props = defineProps({
   entities: {
@@ -118,6 +105,14 @@ const toggleWindow = (buttonName) => {
 const shutdown = () => {
   volumeStore.playAudio(['/sounds/shutdown-windows.mp3'])
   volumeStore.unmuteAudio()
+}
+
+const getLocalizedTitle = (entity) => {
+  return entity.title[localeStore.currentLocale] || entity.title['fr']
+}
+
+const getLocalizedSubtitle = (entity) => {
+  return entity.subtitle[localeStore.currentLocale] || entity.subtitle['fr']
 }
 </script>
 
