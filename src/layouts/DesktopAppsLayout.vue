@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watchEffect } from 'vue'
+import { useLocaleStore } from '@/stores/localeStore'
 
 const emit = defineEmits()
 
@@ -30,7 +31,22 @@ const removeFilterAndToggle = (entity) => {
   localEntities.value.forEach((e) => {
     e.isActive = false
   })
-  emit('toggle-' + entity.id) // Emit on double click.
+  emit('toggle-' + entity.id) // Emit on double click or single tap.
+}
+
+// Detect if the user is on a mobile device
+const isMobile = ref(false)
+
+if (typeof window !== 'undefined') {
+  isMobile.value = /Mobi|Android/i.test(navigator.userAgent)
+}
+
+// Locale management
+const localeStore = useLocaleStore()
+
+// Computed property to get the localized title
+const getLocalizedTitle = (entity) => {
+  return entity.title[localeStore.currentLocale] || entity.title['fr']
 }
 </script>
 
@@ -41,18 +57,18 @@ const removeFilterAndToggle = (entity) => {
         v-for="entity in desktopEntities"
         :key="entity.id"
         class="flex flex-col gap-2 items-center w-full cursor-pointer"
-        @click="toggleEffect(entity)"
-        @dblclick="removeFilterAndToggle(entity)"
+        @click="isMobile ? removeFilterAndToggle(entity) : toggleEffect(entity)"
+        @dblclick="!isMobile && removeFilterAndToggle(entity)"
         :class="{ active: entity.isActive }"
       >
         <img
           class="w-11 h-11"
           :style="{
             ...entity.imageStyle,
-            opacity: entity.isActive ? 0.5 : 1
+            filter: entity.isActive ? 'opacity(0.5)' : 'opacity(1)'
           }"
           :src="entity.imgSrc"
-          :alt="entity.title"
+          :alt="getLocalizedTitle(entity)"
         />
         <p
           class="text-white text-xs font-normal py-px px-1"
@@ -62,7 +78,7 @@ const removeFilterAndToggle = (entity) => {
             textShadow: entity.isActive ? 'none' : '0px 1px 1px rgba(1, 1, 1, 1), 0px 0px 4px #000'
           }"
         >
-          {{ entity.title }}
+          {{ getLocalizedTitle(entity) }}
         </p>
       </button>
     </div>

@@ -40,7 +40,7 @@
         <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
         <WindowHeaderSearch
           :id="id"
-          :title="title"
+          :title="translatedTitle"
           :iconSrc="iconSrc"
           :activeProjectName="activeProjectName"
         />
