@@ -8,7 +8,7 @@ import LogmaContent from '@/components/Windows/MyProjects/LogmaContent.vue'
 import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 
 const props = defineProps({
-  subMenuItems: Array,
+  subMenuType: String,
   isGoBackActive: Boolean
 })
 
@@ -88,7 +88,7 @@ const selectedComponent = computed(() => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowSideMenu :subMenuItems="props.subMenuItems" />
+    <WindowSideMenu :subMenuType="props.subMenuType" />
     <!-- Content of project -->
     <div
       v-if="state.selectedProject && state.selectedProject.isActive"

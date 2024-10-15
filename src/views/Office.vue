@@ -54,11 +54,11 @@
           v-if="window.id === 'myProjects'"
           :is="window.component"
           :isGoBackActive="window.isGoBackActive"
-          :subMenuItems="window.subMenuItems"
+          :subMenuType="window.subMenuType"
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id, $event)"
         />
-        <component v-else :is="window.component" :subMenuItems="window.subMenuItems" />
+        <component v-else :is="window.component" :subMenuType="window.subMenuType" />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
@@ -88,6 +88,7 @@ import Notepad from '@/components/Windows/Notepad.vue'
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
 import windowsData from '@/data/windows-data.json'
+import leftMenuData from '@/data/left-menu-data.json'
 
 const showHeader = ref(false)
 const windows = ref([])
@@ -111,6 +112,7 @@ onUnmounted(() => {
     document.head.removeChild(script)
   }
 })
+
 
 // Keep track of the highest z-index
 const highestZIndex = ref(0)
@@ -166,7 +168,7 @@ const openWindow = (windowId) => {
         initPositionY: entity.initPositionY,
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
-        subMenuItems: entity.subMenuItems,
+        subMenuType: entity.subMenuType,
         displayHeaderTools: entity.displayHeaderTools,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,

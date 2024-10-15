@@ -1,0 +1,136 @@
+{
+  "leftMenuItems": {
+    "default": {
+      "en": [
+        {
+          "id": 1,
+          "title": "System Tasks",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "System Information",
+              "iconUrl": "/img/icons/info-system-icon.ico"
+            },
+            {
+              "id": 2,
+              "subtitle": "Programs",
+              "iconUrl": "/img/icons/programs-icon.png"
+            },
+            {
+              "id": 3,
+              "subtitle": "Change Settings",
+              "iconUrl": "/img/icons/settings-icon.png"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Other",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "My Network Places",
+              "iconUrl": "/img/icons/networking-icon.png",
+              "url": ""
+            },
+            {
+              "id": 2,
+              "subtitle": "My Documents",
+              "iconUrl": "/img/icons/documents-icon.png",
+              "url": ""
+            },
+            {
+              "id": 3,
+              "subtitle": "Shared Documents",
+              "iconUrl": "/img/icons/shared-documents-icon.png",
+              "url": ""
+            },
+            {
+              "id": 4,
+              "subtitle": "Control Panel",
+              "iconUrl": "/img/icons/settings-icon.png",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Details",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "My Github",
+              "iconUrl": "/img/icons/github-icon.png",
+              "url": "https://github.com/UnMugViolet"
+            }
+          ]
+        }
+      ],
+      "fr": [
+        {
+          "id": 1,
+          "title": "Tâches système",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "Informations système",
+              "iconUrl": "/img/icons/info-system-icon.ico"
+            },
+            {
+              "id": 2,
+              "subtitle": "Gestion des programmes",
+              "iconUrl": "/img/icons/programs-icon.png"
+            },
+            {
+              "id": 3,
+              "subtitle": "Changer les paramètres",
+              "iconUrl": "/img/icons/settings-icon.png"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Autres",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "Mes emplacements réseau",
+              "iconUrl": "/img/icons/networking-icon.png",
+              "url": ""
+            },
+            {
+              "id": 2,
+              "subtitle": "Mes documents",
+              "iconUrl": "/img/icons/documents-icon.png",
+              "url": ""
+            },
+            {
+              "id": 3,
+              "subtitle": "Documents partagés",
+              "iconUrl": "/img/icons/shared-documents-icon.png",
+              "url": ""
+            },
+            {
+              "id": 4,
+              "subtitle": "Panneau de configuration",
+              "iconUrl": "/img/icons/settings-icon.png",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Détails",
+          "subtasks": [
+            {
+              "id": 1,
+              "subtitle": "Mon Github",
+              "iconUrl": "/img/icons/github-icon.png",
+              "url": "https://github.com/UnMugViolet"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
