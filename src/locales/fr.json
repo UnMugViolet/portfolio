@@ -3,7 +3,15 @@
     "name": "Nom",
     "errorVideo": "Votre navigateur ne supporte pas la vidéo.",
     "context": "Contexte",
-    "icon": "Icône"
+    "icon": "Icône",
+    "back": "Retour",
+    "search": "Rechercher",
+    "files": "Fichiers",
+    "folder": "Dossier",
+    "next": "Suivant",
+    "projects": "Projets",
+    "go": "Aller",
+    "address": "Adresse"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
