@@ -15,10 +15,10 @@ const handleDisconnect = () => {
     >
       <img
         src="/img/icons/key-log-icon.png"
-        alt="Se déconnecter"
+        :alt="$t('header.disconnect')"
         class="w-fit h-6 sm:h-4/6 mr-0.5 sm:mr-1"
       />
-      <p class="small-p">Se Déconnecter</p>
+      <p class="small-p">{{ $t('header.disconnect') }}</p>
     </button>
   </router-link>
 </template>

@@ -3,5 +3,22 @@
     "welcome": "Welcome to my computer.",
     "toBegin": "To begin the journey, click on my username.",
     "explainer": "After logging in, you can browse through the folders on my computer. Go to the desktop and click on the projects folder to see all my projects."
+  },
+  "header": {
+    "disconnect": "Log Off",
+    "shutdown": "Turn Off Computer"
+  },
+  "modale": {
+    "fullscreenTitle": "Fullscreen mode is now available!",
+    "fullscreenFirstText": "For a more immersive experience,",
+    "fullscreenSecondText": "Click on the screen icon below",
+    "control": "Control"
+  },
+  "buttons": {
+    "start": "Start",
+    "send": "Send",
+    "downloadCV": "Download the CV",
+    "linkWebSite": "Visit the website",
+    "linkRepository": "Visit the repository"
   }
 }

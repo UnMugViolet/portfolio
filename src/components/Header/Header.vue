@@ -38,7 +38,10 @@
                 </HeaderRightButton>
                 <HeaderRightButton @click="toggleWindow('pictures')" class="cursor-pointer">
                   <template #img>
-                    <img src="/img/icons/folder-images-icon-sm.png" alt="Dossier contenant mes photos" />
+                    <img
+                      src="/img/icons/folder-images-icon-sm.png"
+                      alt="Dossier contenant mes photos"
+                    />
                   </template>
                   <template #text> Mes images </template>
                 </HeaderRightButton>
