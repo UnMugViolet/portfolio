@@ -2,7 +2,8 @@
   "common": {
     "name": "Nom",
     "errorVideo": "Votre navigateur ne supporte pas la vidéo.",
-    "context": "Contexte"
+    "context": "Contexte",
+    "icon": "Icône"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",

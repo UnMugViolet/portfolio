@@ -2,7 +2,8 @@
   "common": {
     "name": "Name",
     "errorVideo": "Your browser does not support videos.",
-    "context": "Context"
+    "context": "Context",
+    "icon": "Icon"
   },
   "message": {
     "welcome": "Welcome to my computer.",
