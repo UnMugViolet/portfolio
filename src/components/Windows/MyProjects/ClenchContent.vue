@@ -43,7 +43,7 @@ onMounted(() => {
         <p class="font-bold mt-px">shadcn/ui</p>
       </div>
     </div>
-    <h3 class="mt-5 mb-2">Contexte</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>
       Un exercice dans le cadre d'un cours de Framework CSS & Maquettage à MyDigitalSchool Rennes.
     </p>
@@ -59,7 +59,7 @@ onMounted(() => {
       Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique
       et développer ce site web.
     </p>
-    <h3 class="mt-5 mb-2">Objectifs</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>Maquetter un site web et un wireframe en se basant sur un cahier des charges</li>
       <li>Développer une identité graphique simple</li>
@@ -92,13 +92,13 @@ onMounted(() => {
     </div>
     <div class="w-full flex items-center flex-col">
       <div class="w-full">
-        <h3 class="mt-5 mb-2">Maquette</h3>
+        <h3 class="mt-5 mb-2">{{ $t('common.design') }}</h3>
       </div>
       <iframe
         height="450"
         width="100%"
         class="p-2"
-        title="Clench maquette"
+        :title="$t('common.design') + ' ' + maquette"
         :src="iframeSrc"
         allowfullscreen
       />

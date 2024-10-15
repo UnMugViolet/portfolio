@@ -96,12 +96,12 @@ const getLocalizedCategoryName = (category) => {
 
 // Computed property to get the localized title
 const localizedTitle = computed(() => {
-  return state.selectedProject.title[localeStore.currentLocale] || props.state.selectedProject.title['fr']
+  return state.selectedProject.title[localeStore.currentLocale] || state.selectedProject.title['fr']
 })
 
 // Computed property to get the localized date
 const localizedDate = computed(() => {
-  return state.selectedProject.date[localeStore.currentLocale] || props.state.selectedProject.date['fr']
+  return state.selectedProject.date[localeStore.currentLocale] || state.selectedProject.date['fr']
 })
 </script>
 

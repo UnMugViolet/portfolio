@@ -17,8 +17,6 @@ const filteredMenuItems = computed(() => {
   return localeData
 })
 
-console.log('subMenuType', props.subMenuType)
-console.log('filteredMenuItems', filteredMenuItems.value)
 </script>
 
 <template>
