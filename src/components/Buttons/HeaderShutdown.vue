@@ -15,10 +15,10 @@ const handleRestart = () => {
     >
       <img
         src="/img/icons/shutdown-icon.png"
-        alt="Éteindre l'ordinateur"
+        :alt="$t('header.shutdown')"
         class="w-fit h-6 sm:h-4/6 mr-0.5 sm:mr-1"
       />
-      <p class="small-p">Éteindre L'ordinateur</p>
+      <p class="small-p">{{ $t('header.shutdown') }}</p>
     </button>
   </router-link>
 </template>

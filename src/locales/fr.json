@@ -3,5 +3,22 @@
     "welcome": "Bienvenue sur mon ordinateur.",
     "toBegin": "Pour commencer, cliquez sur mon nom d’utilisateur",
     "explainer": "Après avoir ouvert ma session, vous pourrez vous balader dans les dossiers de mon ordinateur. Depuis le bureau vous pourrez vois mes projets"
+  },
+  "header": {
+    "disconnect": "Se Déconnecter",
+    "shutdown": "Éteindre L'ordinateur"
+  },
+  "modale": {
+    "fullscreenTitle": "Le mode plein écran est disponible !",
+    "fullscreenFirstText": "Pour une expérience plus immersive,",
+    "fullscreenSecondText": "Clickez sur l'icone d'écran ci-dessous",
+    "control": "Contrôle"
+  },
+  "buttons": {
+    "start": "Démarrer",
+    "send": "Envoyer",
+    "downloadCV": "Télécharger le CV",
+    "linkWebSite": "Voir le site",
+    "linkRepository": "Voir le dépôt"
   }
 }

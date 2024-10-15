@@ -59,6 +59,6 @@ let experienceData = ref(cvData.workExperience)
     download="Cv Paul Jaguin.pdf"
     class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
   >
-    Télécharger le CV
+    {{ $t('buttons.downloadCV') }}
   </a>
 </template>

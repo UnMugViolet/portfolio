@@ -42,19 +42,42 @@
           <div class="app-container">
             <div class="flex justify-between items-center md:gap-8 gap-8">
               <div class="relative inline-block text-left text-white md:text-xl text-sm">
-                <div @click="toggleDropdown" class="flex items-center md:gap-3 gap-2 cursor-pointer">
+                <div
+                  @click="toggleDropdown"
+                  class="flex items-center md:gap-3 gap-2 cursor-pointer"
+                >
                   <img :src="flagSrc" alt="langue" class="md:w-12 w-9" />
-                  <button class="inline-flex justify-center items-center w-full focus:outline-none font-franklin">
+                  <button
+                    class="inline-flex justify-center items-center w-full focus:outline-none font-franklin"
+                  >
                     {{ localeNames[currentLocale] }}
-                    <svg class="mr-1 md:ml-2 md:h-5 md:w-5 h-3 w-3 ml-px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    <svg
+                      class="mr-1 md:ml-2 md:h-5 md:w-5 h-3 w-3 ml-px"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
                   </button>
                 </div>
 
-                <div v-if="dropdownOpen" class="origin-top-right absolute md:-right-14 -right-9 w-full">
+                <div
+                  v-if="dropdownOpen"
+                  class="origin-top-right absolute md:-right-14 -right-9 w-full"
+                >
                   <div role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    <a v-for="locale in filteredLocales" :key="locale" @click="changeLocale(locale)" class="block md:py-2 py-1.5 md:text-base md:ml-0 ml-0.5 text-xs cursor-pointer">
+                    <a
+                      v-for="locale in filteredLocales"
+                      :key="locale"
+                      @click="changeLocale(locale)"
+                      class="block md:py-2 py-1.5 md:text-base md:ml-0 ml-0.5 text-xs cursor-pointer"
+                    >
                       {{ localeNames[locale] }}
                     </a>
                   </div>
@@ -103,7 +126,6 @@ const changeLocale = (newLocale) => {
 }
 
 const filteredLocales = computed(() => {
-  return locales.filter(l => l !== currentLocale.value)
+  return locales.filter((l) => l !== currentLocale.value)
 })
 </script>
-
