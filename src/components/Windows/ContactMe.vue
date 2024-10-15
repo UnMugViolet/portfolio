@@ -133,7 +133,7 @@ watch(isLoading, (newValue) => {
         ></textarea>
       </div>
       <div class="flex gap-2 items-center">
-        <Button @submit="sendEmail" :isLoading="isLoading"> {{ $t('buttons.send') }} </Button>
+        <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading"> {{ $t('buttons.send') }} </Button>
         <p class="text-xs text-green-500 font-medium" v-show="emailSent">
           {{ $t('windows.contact.success') }}
         </p>
