@@ -70,9 +70,7 @@ const sendEmail = async () => {
     console.log(error.text)
     emailSent.value = false
     isLoading.value = false
-    errorMessage.value =
-      t('windows.contact.error.unknown') +
-      adminEmailAddress
+    errorMessage.value = t('windows.contact.error.unknown') + adminEmailAddress
   }
 }
 
@@ -133,7 +131,9 @@ watch(isLoading, (newValue) => {
         ></textarea>
       </div>
       <div class="flex gap-2 items-center">
-        <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading"> {{ $t('buttons.send') }} </Button>
+        <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
+          {{ $t('buttons.send') }}
+        </Button>
         <p class="text-xs text-green-500 font-medium" v-show="emailSent">
           {{ $t('windows.contact.success') }}
         </p>

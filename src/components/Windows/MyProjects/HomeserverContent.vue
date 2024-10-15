@@ -84,7 +84,7 @@
       <source src="/videos/montage-serveur.mp4" type="video/mp4" />
       {{ $t('common.errorVideo') }}
     </video>
-    <h3 class="mt-5 mb-2">{{ $t('common.context')}}</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>
       Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi
       développeur web.

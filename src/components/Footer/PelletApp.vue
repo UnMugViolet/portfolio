@@ -12,7 +12,11 @@
       "
     >
       <div class="flex gap-1 mt-px">
-        <img :src="entity.iconSrc" :alt="$t('common.icon') + ' ' + getLocalizedTitle(entity)" class="w-4 h-4" />
+        <img
+          :src="entity.iconSrc"
+          :alt="$t('common.icon') + ' ' + getLocalizedTitle(entity)"
+          class="w-4 h-4"
+        />
         <p class="small-p text-white truncate hidden sm:block">{{ getLocalizedTitle(entity) }}</p>
       </div>
     </div>
@@ -36,7 +40,6 @@ const emit = defineEmits(['toggle-window'])
 const { entity } = props
 const localeStore = useLocaleStore()
 const activeWindow = inject('activeWindow')
-
 
 const toggleWindow = () => {
   emit('toggle-window', entity.id)
