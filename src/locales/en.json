@@ -1,6 +1,8 @@
 {
   "common": {
-    "name": "Name"
+    "name": "Name",
+    "errorVideo": "Your browser does not support videos.",
+    "context": "Context"
   },
   "message": {
     "welcome": "Welcome to my computer.",
@@ -25,7 +27,7 @@
     "linkRepository": "Visit the repository"
   },
   "windows": {
-    "contact" : {
+    "contact": {
       "title": "Contact me",
       "name": "@:common.name",
       "description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
@@ -36,7 +38,18 @@
         "email": " is not a valid e-mail address",
         "empty": "Please fill in all fields before sending your message",
         "unknown": "The message could not be sent. You can contact me directly at the following email address: "
+      },
+      "project": {
+        "homeserver": {
+          "title": "Application server & NAS storage"
+        }
       }
     }
+  },
+  "alt": {
+    "logoStart": "Logo portfolio XP black start",
+    "logoLoading": "Logo portfolio XP black loading",
+    "logoLogin": "Logo portfolio XP white login",
+    "currLang": "Current language"
   }
 }
