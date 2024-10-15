@@ -31,7 +31,12 @@
       "description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",
       "email": "Email",
       "message": "Message",
-      "success": "Votre message a été envoyé avec succès"
+      "success": "Votre message a été envoyé avec succès",
+      "error": {
+        "email": " n'est pas une adresse e-mail valide",
+        "empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
+        "unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
+      }
     }
   }
 }
