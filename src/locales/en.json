@@ -3,7 +3,15 @@
     "name": "Name",
     "errorVideo": "Your browser does not support videos.",
     "context": "Context",
-    "icon": "Icon"
+    "icon": "Icon",
+    "back": "Back",
+    "search": "Search",
+    "files": "Files",
+    "folder": "Folder",
+    "next": "Next",
+    "projects": "Projects",
+    "go": "Go",
+    "address": "Address"
   },
   "message": {
     "welcome": "Welcome to my computer.",
