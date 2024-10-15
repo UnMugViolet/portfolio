@@ -1,4 +1,7 @@
 {
+  "common": {
+    "name": "Name"
+  },
   "message": {
     "welcome": "Welcome to my computer.",
     "toBegin": "To begin the journey, click on my username.",
@@ -15,10 +18,20 @@
     "control": "Control"
   },
   "buttons": {
-    "start": "Start",
+    "start": "start",
     "send": "Send",
     "downloadCV": "Download the CV",
     "linkWebSite": "Visit the website",
     "linkRepository": "Visit the repository"
+  },
+  "windows": {
+    "contact" : {
+      "title": "Contact me",
+      "name": "@:common.name",
+      "description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
+      "email": "Email",
+      "message": "Message",
+      "success": "Message sent successfully"
+    }
   }
 }

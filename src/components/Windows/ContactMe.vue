@@ -98,13 +98,12 @@ watch(isLoading, (newValue) => {
 
     <!-- Main content -->
     <form class="flex flex-col w-full h-full bg-white overflow-auto p-2 gap-2 font-trebuchet-pixel">
-      <h1 class="font-semibold">Me contacter</h1>
+      <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
       <p class="text-xs font-medium">
-        Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai
-        vers vous dans les plus brefs délais !
+        {{ $t('windows.contact.description') }}
       </p>
       <div class="max-w-prose">
-        <label class="text-xs">Nom</label>
+        <label class="text-xs">{{ $t('windows.contact.name') }}</label>
         <input
           v-model="userName"
           type="text"
@@ -113,7 +112,7 @@ watch(isLoading, (newValue) => {
         />
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">Email</label>
+        <label class="text-xs">{{ $t('windows.contact.email') }}</label>
         <input
           v-model="userEmail"
           type="email"
@@ -122,17 +121,17 @@ watch(isLoading, (newValue) => {
         />
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">Message</label>
+        <label class="text-xs">{{ $t('windows.contact.message') }}</label>
         <textarea
           v-model="userMessage"
           class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
-          placeholder="Message"
+          :placeholder="$t('windows.contact.message')"
         ></textarea>
       </div>
       <div class="flex gap-2 items-center">
-        <Button @submit="sendEmail" :isLoading="isLoading"> Envoyer </Button>
+        <Button @submit="sendEmail" :isLoading="isLoading"> {{ $t('buttons.send') }} </Button>
         <p class="text-xs text-green-500 font-medium" v-show="emailSent">
-          Votre message a été envoyé avec succès
+          {{ $t('windows.contact.success') }}
         </p>
         <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
       </div>

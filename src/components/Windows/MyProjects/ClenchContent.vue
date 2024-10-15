@@ -87,7 +87,7 @@ onMounted(() => {
         href="https://github.com/UnMugViolet/clench-fakeapp"
         target="_blank"
         class="cursor-pointer"
-        >Voir le projet</a
+        >{{ $t('buttons.linkRepository') }}</a
       >
     </div>
     <div class="w-full flex items-center flex-col">

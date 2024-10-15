@@ -105,7 +105,7 @@
         href="https://github.com/UnMugViolet/Logma"
         target="_blank"
         class="cursor-pointer"
-        >Voir le projet</a
+        >{{ $t('buttons.linkRepository') }}</a
       >
     </div>
   </div>
