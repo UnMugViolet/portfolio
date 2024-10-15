@@ -209,7 +209,7 @@ onMounted(() => {
         href="https://framagit.org/gardeners/pangaia-server"
         target="_blank"
         class="cursor-pointer"
-        >Voir le projet</a
+        >{{ $t('buttons.linkRepository') }}</a
       >
     </div>
     <div class="w-full flex items-center flex-col">

@@ -109,10 +109,19 @@ const localeNames = {
   en: 'English',
   fr: 'Français'
 }
-const currentLocale = ref(locale.value)
+
+// Initialize currentLocale from localStorage if it exists, otherwise use the default locale
+const storedLocale = localStorage.getItem('currentLocale')
+const currentLocale = ref(storedLocale || locale.value)
+
+// Watch for changes in currentLocale and update localStorage
+watch(currentLocale, (newLocale) => {
+  localStorage.setItem('currentLocale', newLocale)
+  locale.value = newLocale
+})
 
 const flagSrc = computed(() => {
-  return `/img/icons/langs/flag-${locale.value}.png`
+  return `/img/icons/langs/flag-${currentLocale.value}.png`
 })
 
 const toggleDropdown = () => {
@@ -120,7 +129,6 @@ const toggleDropdown = () => {
 }
 
 const changeLocale = (newLocale) => {
-  locale.value = newLocale
   currentLocale.value = newLocale
   dropdownOpen.value = false
 }

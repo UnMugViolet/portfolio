@@ -1,4 +1,7 @@
 {
+  "common": {
+    "name": "Nom"
+  },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
     "toBegin": "Pour commencer, cliquez sur mon nom d’utilisateur",
@@ -15,10 +18,20 @@
     "control": "Contrôle"
   },
   "buttons": {
-    "start": "Démarrer",
+    "start": "démarrer",
     "send": "Envoyer",
     "downloadCV": "Télécharger le CV",
     "linkWebSite": "Voir le site",
     "linkRepository": "Voir le dépôt"
+  },
+  "windows": {
+    "contact" : {
+      "title": "Me contacter",
+      "name": "@:common.name",
+      "description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",
+      "email": "Email",
+      "message": "Message",
+      "success": "Votre message a été envoyé avec succès"
+    }
   }
 }
