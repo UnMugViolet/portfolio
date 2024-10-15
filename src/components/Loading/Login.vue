@@ -14,7 +14,7 @@
               <div class="w-2/3">
                 <img
                   src="/img/logo-portfolio-white.webp"
-                  alt="logo portfolio paul jaguin"
+                  :alt="$t('alt.logoLogin')"
                   class="mb-3"
                 />
               </div>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="w-px h-96 line-loading-gradient mx-3 md:flex hidden"></div>
-        <LoginForm />
+        <LoginForm/>
       </div>
     </template>
 
@@ -46,7 +46,7 @@
                   @click="toggleDropdown"
                   class="flex items-center md:gap-3 gap-2 cursor-pointer"
                 >
-                  <img :src="flagSrc" alt="langue" class="md:w-12 w-9" />
+                  <img :src="flagSrc" :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]" class="md:w-12 w-9" />
                   <button
                     class="inline-flex justify-center items-center w-full focus:outline-none font-franklin"
                   >
@@ -97,43 +97,46 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
-import LoginForm from '@/components/Loading/LoginForm.vue'
-import ContentCenter from '@/layouts/ContentCenter.vue'
+  import { ref, computed, watch } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import LoginForm from '@/components/Loading/LoginForm.vue'
+  import ContentCenter from '@/layouts/ContentCenter.vue'
 
-const { locale } = useI18n()
-const dropdownOpen = ref(false)
-const locales = ['en', 'fr']
-const localeNames = {
-  en: 'English',
-  fr: 'Français'
-}
+  const { locale } = useI18n()
+  const dropdownOpen = ref(false)
+  const locales = ['en', 'fr']
+  const localeNames = {
+    en: 'English',
+    fr: 'Français'
+  }
 
-// Initialize currentLocale from localStorage if it exists, otherwise use the default locale
-const storedLocale = localStorage.getItem('currentLocale')
-const currentLocale = ref(storedLocale || locale.value)
+  // Initialize currentLocale from localStorage if it exists, otherwise use the default locale
+  const storedLocale = localStorage.getItem('currentLocale')
+  const currentLocale = ref(storedLocale || locale.value)
 
-// Watch for changes in currentLocale and update localStorage
-watch(currentLocale, (newLocale) => {
-  localStorage.setItem('currentLocale', newLocale)
-  locale.value = newLocale
-})
+  // Set the initial locale value
+  locale.value = currentLocale.value
 
-const flagSrc = computed(() => {
-  return `/img/icons/langs/flag-${currentLocale.value}.png`
-})
+  // Watch for changes in currentLocale and update localStorage and locale.value
+  watch(currentLocale, (newLocale) => {
+    localStorage.setItem('currentLocale', newLocale)
+    locale.value = newLocale
+  })
 
-const toggleDropdown = () => {
-  dropdownOpen.value = !dropdownOpen.value
-}
+  const flagSrc = computed(() => {
+    return `/img/icons/langs/flag-${currentLocale.value}.png`
+  })
 
-const changeLocale = (newLocale) => {
-  currentLocale.value = newLocale
-  dropdownOpen.value = false
-}
+  const toggleDropdown = () => {
+    dropdownOpen.value = !dropdownOpen.value
+  }
 
-const filteredLocales = computed(() => {
-  return locales.filter((l) => l !== currentLocale.value)
-})
+  const changeLocale = (newLocale) => {
+    currentLocale.value = newLocale
+    dropdownOpen.value = false
+  }
+
+  const filteredLocales = computed(() => {
+    return locales.filter((l) => l !== currentLocale.value)
+  })
 </script>

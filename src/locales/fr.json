@@ -1,6 +1,8 @@
 {
   "common": {
-    "name": "Nom"
+    "name": "Nom",
+    "errorVideo": "Votre navigateur ne supporte pas la vidéo.",
+    "context": "Contexte"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
@@ -37,6 +39,17 @@
         "empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
         "unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
       }
+    },
+    "project": {
+      "homeserver": {
+        "title": "Serveur d'application & stockage NAS"
+      }
     }
+  },
+  "alt": {
+    "logoStart": "Logo portfolio XP noir démarrage",
+    "logoLoading": "Logo portfolio XP noir chargement",
+    "logoLogin": "Logo portfolio XP blanc connexion",
+    "currLang": "Langue actuelle"
   }
 }
