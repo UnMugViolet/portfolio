@@ -44,7 +44,7 @@
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
         :displayMenuHeader="window.displayMenuHeader"
-        :menuHeaderItems="window.menuHeaderItems"
+        :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
         :style="{ zIndex: findWindowZIndex(window.id) }"
@@ -68,6 +68,8 @@
 import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue'
 import { useWindowsStore } from '@/stores/windowsStore.js'
 import { useVolumeStore } from '@/stores/volumeStore.js'
+import { useLocaleStore } from '@/stores/localeStore'
+
 import MetaUpdater from '../MetaUpdater.vue'
 import Header from '@/components/Header/Header.vue'
 import Footer from '@/components/Footer/Footer.vue'
@@ -90,8 +92,16 @@ const showHeader = ref(false)
 const windows = ref([])
 const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore()
+const localeStore = useLocaleStore()
+
 
 onMounted(() => {
+  
+  // Ensure the localeStore is updated with the correct locale from localStorage
+  const storedLocale = localStorage.getItem('currentLocale') || 'fr'
+  localeStore.setLocale(storedLocale)
+
+
   windowsStore.loadState()
   // volumeStore.playAudio(['/sounds/start-windows.mp3'])
   volumeStore.unmuteAudio()
@@ -160,7 +170,7 @@ const openWindow = (windowId) => {
         initHeight: entity.initHeight,
         subMenuItems: entity.subMenuItems,
         displayMenuHeader: entity.displayMenuHeader,
-        menuHeaderItems: entity.menuHeaderItems,
+        menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
         windowsHeaderLogo: entity.windowsHeaderLogo,
         isGoBackActive: false,

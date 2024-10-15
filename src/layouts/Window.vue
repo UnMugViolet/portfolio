@@ -15,7 +15,7 @@
       >
         <img :src="iconSrc" alt="icon" class="w-4 h-4" />
         <div class="flex items-center overflow-hidden">
-          <h4 class="text-header-window text-header-shadow truncate">{{ title }}</h4>
+          <h4 class="text-header-window text-header-shadow truncate">{{ translatedTitle }}</h4>
         </div>
       </div>
       <div
@@ -33,7 +33,7 @@
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
       <WindowHeaderDropdown
-        :dropdownItems="menuHeaderItems"
+        :dropdownItems="translatedMenuHeaderItems"
         :windowsHeaderLogo="windowsHeaderLogo"
       />
       <div v-if="displayMenuHeader">
@@ -73,13 +73,15 @@
 </template>
 
 <script setup>
-import { ref, computed, inject } from 'vue'
+import { ref, computed, inject, watch } from 'vue'
+import { useLocaleStore } from '@/stores/localeStore'
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue'
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue'
 import WindowClose from '../components/Buttons/WindowClose.vue'
 import WindowHeaderTools from '../components/Windows/WindowHeaderTools.vue'
 import WindowHeaderSearch from '../components/Windows/WindowHeaderSearch.vue'
 import WindowHeaderDropdown from '../components/Windows/WindowHeaderDropdown.vue'
+import menuHeaderData from '@/data/menuHeaderItems.json'
 
 const emit = defineEmits()
 
@@ -94,25 +96,42 @@ const {
   isGoBackAvailable,
   activeProjectName,
   displayMenuHeader,
-  menuHeaderItems,
+  menuHeaderItemsId,
   resizable,
   windowsHeaderLogo
 } = defineProps({
   id: String,
-  title: String,
+  title: Object,
   iconSrc: String,
   initPositionX: Number,
   initPositionY: Number,
   initWidth: Number,
   initHeight: Number,
-  subMenuItems: Array,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
   displayMenuHeader: Boolean,
-  menuHeaderItems: Array,
+  menuHeaderItemsId: String,
   resizable: Boolean,
   windowsHeaderLogo: Boolean
 })
+
+// Locale management
+const localeStore = useLocaleStore()
+
+const translatedTitle = ref(title[localeStore.currentLocale] || title['fr'])
+const translatedMenuHeaderItems = ref(
+  menuHeaderData.menuHeaderItems[menuHeaderItemsId][localeStore.currentLocale] ||
+    menuHeaderData.menuHeaderItems[menuHeaderItemsId]['fr']
+)
+
+watch(
+  () => localeStore.currentLocale,
+  (newLocale) => {
+    translatedTitle.value = title[newLocale] || title['fr']
+    const items = menuHeaderData.menuHeaderItems[menuHeaderItemsId]
+    translatedMenuHeaderItems.value = items ? items[newLocale] || items['fr'] : []
+  }
+)
 
 // App size constants
 const appHeight = window.innerHeight - 32
