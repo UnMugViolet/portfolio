@@ -1,14 +1,21 @@
 [
   {
     "id": "myProjects",
-    "title": "Mes projets",
-    "subtitle": "Voir tous mes projets",
+    "title": {
+      "en": "My Projects",
+      "fr": "Mes projets"
+    },
+    "subtitle": {
+      "en": "See all my projects",
+      "fr": "Voir tous mes projets"
+    },
     "imgSrc": "/img/icons/projects-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/projects-icon-sm.png",
     "initPositionX": 180,
     "initPositionY": 100,
@@ -83,14 +90,21 @@
   },
   {
     "id": "contact",
-    "title": "Me contacter",
-    "subtitle": "Me contacter",
+    "title": {
+      "en": "Contact me",
+      "fr": "Me contacter"
+    },
+    "subtitle": {
+      "en": "Leave me a message",
+      "fr": "Laissez moi un message"
+    },
     "imgSrc": "/img/icons/email-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
@@ -165,14 +179,21 @@
   },
   {
     "id": "myCV",
-    "title": "Mon CV",
-    "subtitle": "Voir le curriculum vitae",
+    "title": {
+      "en": "My CV",
+      "fr": "Mon CV"
+    },
+    "subtitle": {
+      "en": "See the curriculum vitae",
+      "fr": "Voir le curriculum vitae"
+    },
     "imgSrc": "/img/icons/cv-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,
@@ -247,14 +268,21 @@
   },
   {
     "id": "music",
-    "title": "Mes Musiques",
-    "subtitle": "",
+    "title": {
+      "en": "Music",
+      "fr": "Musique"
+    },
+    "subtitle": {
+      "en": "Listen to music",
+      "fr": "Écouter de la musique"
+    },
     "imgSrc": "/img/icons/playmusic-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
@@ -329,13 +357,20 @@
   },
   {
     "id": "about",
-    "title": "A propos",
-    "subtitle": "",
+    "title": {
+      "en": "About",
+      "fr": "À propos"
+    },
+    "subtitle": {
+      "en": "Learn about me",
+      "fr": "En savoir plus sur moi"
+    },
     "imgSrc": "/img/icons/folder-docs-icon-sm.png",
     "onDesktop": false,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/folder-docs-icon-xs.png",
     "initPositionX": 190,
     "initPositionY": 310,
@@ -410,13 +445,20 @@
   },
   {
     "id": "pictures",
-    "title": "Mes Images",
-    "subtitle": "",
+    "title": {
+      "en": "Pictures",
+      "fr": "Images"
+    },
+    "subtitle": {
+      "en": "View my pictures",
+      "fr": "Voir mes images"
+    },
     "imgSrc": "/img/icons/folder-images-icon-sm.png",
     "onDesktop": false,
     "displayMenuHeader": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/folder-images-icon-sm.png",
     "initPositionX": 50,
     "initPositionY": 400,
@@ -491,14 +533,21 @@
   },
   {
     "id": "calendar",
-    "title": "Calendrier",
-    "subtitle": "",
+    "title": {
+      "en": "Calendar",
+      "fr": "Calendrier"
+    },
+    "subtitle": {
+      "en": "View my calendar",
+      "fr": "Voir mon calendrier"
+    },
     "imgSrc": "/img/icons/calendar-icon-lg.png",
     "onDesktop": false,
     "displayMenuHeader": true,
     "resizable": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/calendar-icon-sm.png",
     "initPositionX": 80,
     "initPositionY": 440,
@@ -508,14 +557,21 @@
   },
   {
     "id": "minesweeper",
-    "title": "Démineur",
-    "subtitle": "",
+    "title": {
+      "en": "Minesweeper",
+      "fr": "Démineur"
+    },
+    "subtitle": {
+      "en": "Play Minesweeper",
+      "fr": "Jouer au démineur"
+    },
     "imgSrc": "/img/icons/minesweeper-icon-lg.png",
     "onDesktop": true,
     "resizable": false,
     "displayMenuHeader": false,
     "windowsHeaderLogo": false,
-    "menuHeaderItems": ["Jeu", "Options", "Aide"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "minesweeper",
     "iconSrc": "/img/icons/minesweeper-icon-sm.png",
     "initPositionX": 160,
     "initPositionY": 270,
@@ -525,14 +581,21 @@
   },
   {
     "id": "notepad",
-    "title": "Notepad",
-    "subtitle": "",
+    "title": {
+      "en": "Notepad",
+      "fr": "Bloc-notes"
+    },
+    "subtitle": {
+      "en": "Write a note",
+      "fr": "Écrire une note"
+    },
     "imgSrc": "/img/icons/notepad-icon-lg.png",
     "onDesktop": true,
     "displayMenuHeader": false,
     "resizable": true,
     "windowsHeaderLogo": false,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Aide"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "notepad",
     "iconSrc": "/img/icons/notepad-icon-sm.png",
     "initPositionX": 110,
     "initPositionY": 480,

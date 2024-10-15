@@ -14,7 +14,7 @@
               <div class="w-2/3">
                 <img
                   src="/img/logo-portfolio-white.webp"
-                  alt="logo portfolio paul jaguin"
+                  :alt="$t('alt.logoLogin')"
                   class="mb-3"
                 />
               </div>
@@ -46,7 +46,7 @@
                   @click="toggleDropdown"
                   class="flex items-center md:gap-3 gap-2 cursor-pointer"
                 >
-                  <img :src="flagSrc" alt="langue" class="md:w-12 w-9" />
+                  <img :src="flagSrc" :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]" class="md:w-12 w-9" />
                   <button
                     class="inline-flex justify-center items-center w-full focus:outline-none font-franklin"
                   >
@@ -114,7 +114,10 @@ const localeNames = {
 const storedLocale = localStorage.getItem('currentLocale')
 const currentLocale = ref(storedLocale || locale.value)
 
-// Watch for changes in currentLocale and update localStorage
+// Set the initial locale value
+locale.value = currentLocale.value
+
+// Watch for changes in currentLocale and update localStorage and locale.value
 watch(currentLocale, (newLocale) => {
   localStorage.setItem('currentLocale', newLocale)
   locale.value = newLocale
