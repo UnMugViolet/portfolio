@@ -1,5 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import emailjs from 'emailjs-com'
 import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 import Button from '../Buttons/Button.vue'
@@ -12,6 +14,7 @@ const props = defineProps({
   }
 })
 
+const { t } = useI18n()
 const userName = ref('')
 const userEmail = ref('')
 const userMessage = ref('')
@@ -29,7 +32,7 @@ const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID
 const sendEmail = async () => {
   if (!userName.value || !userEmail.value || !userMessage.value) {
     emailSent.value = false
-    errorMessage.value = "Veuillez remplir tous les champs avant d'envoyer votre message"
+    errorMessage.value = t('windows.contact.error.empty')
     return
   }
 
@@ -37,7 +40,7 @@ const sendEmail = async () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(userEmail.value)) {
     emailSent.value = false
-    errorMessage.value = userEmail.value + " n'est pas une adresse e-mail valide"
+    errorMessage.value = userEmail.value + t('windows.contact.error.email')
     return
   }
 
@@ -66,8 +69,9 @@ const sendEmail = async () => {
   } catch (error) {
     console.log(error.text)
     emailSent.value = false
+    isLoading.value = false
     errorMessage.value =
-      "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: " +
+      t('windows.contact.error.unknown') +
       adminEmailAddress
   }
 }
