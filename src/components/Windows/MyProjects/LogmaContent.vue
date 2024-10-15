@@ -58,33 +58,27 @@
         <p class="font-bold mt-px">Figma</p>
       </div>
     </div>
-    <h3 class="mt-5 mb-2">Contexte</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>
-      Logma production est une société de production audiovisuelle basée à Rennes. Fondée par
-      Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le
-      gérant avec un site sous Wordpress.
+      {{$t('project.logma.contextFirstPrapgrah')}}
     </p>
     <br />
     <p>
-      La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée,
-      tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre
-      rapide et efficace.
+      {{$t('project.logma.contextSecondPrapgrah')}}
     </p>
     <br />
     <p>
-      Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un
-      backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les
-      liens vers ses vidéos
+      {{$t('project.logma.contextThirdPrapgrah')}}
     </p>
     <br />
-    <h3 class="mt-5 mb-2">Objectifs</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
-      <li>Refonte du site web avec l'identité graphique déjà en place</li>
-      <li>Créer un site web responsive</li>
-      <li>Création d'un backoffice pour la gestion des projets</li>
-      <li>Optimiser le SEO</li>
-      <li>Améliorer la vitesse de chargement et les performances au global</li>
-      <li>Le mettre en production</li>
+      <li>{{ $t('project.logma.goalFirst') }}</li>
+      <li>{{ $t('project.logma.goalSecond') }}</li>
+      <li>{{ $t('project.logma.goalThird') }}</li>
+      <li>{{ $t('project.logma.goalFourth') }}</li>
+      <li>{{ $t('project.logma.goalFifth') }}</li>
+      <li>{{ $t('project.logma.goalSixth') }}</li>
     </ul>
     <div
       class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue hover:fill-heroic-blue"

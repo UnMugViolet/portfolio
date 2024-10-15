@@ -142,7 +142,7 @@ onMounted(() => {
         <p class="font-bold">Docker</p>
       </div>
     </div>
-    <h3 class="mt-5 mb-2">Contexte</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>Pangaia est une application open source, qui cherche à sensibilser autour des plantes.</p>
     <p>
       Le but étant de créer une interface ludique et pratique pour avoir une gestion de son jardin.
@@ -153,7 +153,7 @@ onMounted(() => {
       Donner des inforaire découvrir la flore qui nous entoure en fonction de la localication de
       l'utilisateur.
     </p>
-    <h3 class="mt-5 mb-2">Objectifs</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>Pouvoir essayer l'application en mode démo</li>
       <li>Accéder à la fiche d'une plante</li>
@@ -162,7 +162,7 @@ onMounted(() => {
       <li>Avoir une connexion à la météo en temps réel</li>
       <li>Avoir des rappels de tâches à réaliser sur sa plante ou dans son jardin</li>
     </ul>
-    <h3 class="mt-5 mb-2">Tâches réalisées sur le projet</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.tasksDone') }}</h3>
     <ul class="list-disc ml-3">
       <li>Aide à la conception et à la modélisation de la base de données</li>
       <li>Maquettage de l'application</li>
@@ -214,13 +214,13 @@ onMounted(() => {
     </div>
     <div class="w-full flex items-center flex-col">
       <div class="w-full">
-        <h3 class="mt-5 mb-2">Maquette</h3>
+        <h3 class="mt-5 mb-2">{{ $t('common.design') }}</h3>
       </div>
       <iframe
         height="450"
         width="100%"
         class="p-2"
-        title="Maquette Pangaia"
+        :title="$t('common.design') + ' ' + Pangaia"
         :src="iframeSrc"
         allowfullscreen
       />

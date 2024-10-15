@@ -39,7 +39,10 @@
         {
           "name": "Clench",
           "icon": "folder-clench-icon.png",
-          "title": "Clench - Site vitrine",
+          "title": {
+            "fr": "Clench - Application web",
+            "en": "Clench - Web Application"
+          },
           "date": {
             "en": "2024",
             "fr": "2024"
@@ -59,7 +62,10 @@
         {
           "name": "Homeserver",
           "icon": "homeserver-icon.png",
-          "title": "Serveur d'application & stockage NAS",
+          "title": {
+            "fr": "Serveur d'application & stockage NAS",
+            "en": "Application server & NAS"
+          },
           "date": {
             "en": "2023 - Current",
             "fr": "2023 - Actuel"

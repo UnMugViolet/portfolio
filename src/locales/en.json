@@ -3,6 +3,7 @@
     "name": "Name",
     "errorVideo": "Your browser does not support videos.",
     "context": "Context",
+    "objectives": "Objectives",
     "icon": "Icon",
     "back": "Back",
     "search": "Search",
@@ -11,7 +12,9 @@
     "next": "Next",
     "projects": "Projects",
     "go": "Go",
-    "address": "Address"
+    "address": "Address",
+    "design": "Design",
+    "tasksDone": "Tasks done on the project"
   },
   "message": {
     "welcome": "Welcome to my computer.",
@@ -47,12 +50,20 @@
         "email": " is not a valid e-mail address",
         "empty": "Please fill in all fields before sending your message",
         "unknown": "The message could not be sent. You can contact me directly at the following email address: "
-      },
-      "project": {
-        "homeserver": {
-          "title": "Application server & NAS storage"
-        }
       }
+    }
+  },
+  "project": {
+    "logma": {
+      "contextFirstPrapgrah": "Logma production is a movie production company based in Rennes. Founded by Baptiste Fablet. At the start of this project, there was already a logma production site created by the company director with Wordpress.",
+      "contextSecondPrapgrah": "The decision was made to rebuild this site from scratch, with a simple, tried-and-tested technical stack, to try and make a website without a Framework and without someoneonce helping to make it fast and efficient.",
+      "contextThirdPrapgrah": "In order to make the entrepreneur autonomous in the management of this site, it was necessary to develop a backoffice from which he could publish new photos, add projects and links to his videos.",
+      "goalFirst": "Redesign of website with existing graphic identity",
+      "goalSecond": "Creating a responsive website",
+      "goalThird": "Develop a backoffice to manage the site",
+      "goalFourth": "Optimize SEO",
+      "goalFifth": "Improve loading speed and overall performance",
+      "goalSixth": "Put the website into production"
     }
   },
   "alt": {

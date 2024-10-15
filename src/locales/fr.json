@@ -3,6 +3,7 @@
     "name": "Nom",
     "errorVideo": "Votre navigateur ne supporte pas la vidéo.",
     "context": "Contexte",
+    "objectives": "Objectifs",
     "icon": "Icône",
     "back": "Retour",
     "search": "Rechercher",
@@ -11,7 +12,9 @@
     "next": "Suivant",
     "projects": "Projets",
     "go": "Aller",
-    "address": "Adresse"
+    "address": "Adresse",
+    "design": "Maquette",
+    "tasksDone": "Tâches réalisées sur le projet"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
@@ -48,11 +51,19 @@
         "empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
         "unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
       }
-    },
-    "project": {
-      "homeserver": {
-        "title": "Serveur d'application & stockage NAS"
-      }
+    }
+  },
+  "project": {
+    "logma": {
+      "contextFirstPrapgrah": "Logma production est une société de production audiovisuelle basée à Rennes. Fondée par Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le gérant avec un site sous Wordpress.",
+      "contextSecondPrapgrah": "La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée, tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre rapide et efficace.",
+      "contextThirdPrapgrah": "Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos",
+      "goalFirst": "Refonte du site web avec l'identité graphique déjà en place",
+      "goalSecond": "Créer un site web responsive",
+      "goalThird": "Développer un backoffice pour la gestion du site",
+      "goalFourth": "Optimiser le SEO",
+      "goalFifth": "Améliorer la vitesse de chargement et les performances au global",
+      "goalSixth": "Le mettre en production"
     }
   },
   "alt": {
