@@ -135,14 +135,6 @@ import { fr } from 'date-fns/locale'
 import Button from '@/components/Buttons/Button.vue'
 import Player from '@/components/Windows/Music/Player.vue'
 
-const props = defineProps({
-  subMenuItems: {
-    type: Array,
-    required: false,
-    default: () => []
-  }
-})
-
 const playlist = ref({})
 const errorMessage = ref('')
 const playlistId = '1hMzZICeyywzM40RKVahoU'

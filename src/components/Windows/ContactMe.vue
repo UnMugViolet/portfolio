@@ -7,10 +7,8 @@ import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 import Button from '../Buttons/Button.vue'
 
 const props = defineProps({
-  subMenuItems: {
-    type: Array,
-    required: false,
-    default: () => []
+  subMenuType: {
+    type: String,
   }
 })
 
@@ -96,7 +94,7 @@ watch(isLoading, (newValue) => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowSideMenu :subMenuItems="props.subMenuItems" />
+    <WindowSideMenu :subMenuType="props.subMenuType" />
 
     <!-- Main content -->
     <form class="flex flex-col w-full h-full bg-white overflow-auto p-2 gap-2 font-trebuchet-pixel">
