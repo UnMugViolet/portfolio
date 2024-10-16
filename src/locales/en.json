@@ -98,13 +98,13 @@
     "clench": {
       "contextFirstParagraph": "An exercise as part of a CSS Framework & Layout course at MyDigitalSchool Rennes.",
       "contextSecondParagraph": "The aim was to create the graphic interface of a web application in a week. No backend, but all graphic design.",
-      "contextThirdParagraph": "A campus-themed website, to create a fictitious medium on which the Student Union can communicate.",
-      "contextFourthParagraph": "With the help of Baptiste Marie, also a student, we created the graphic identity and developed the website.",
-      "goalFirst": "Design a website and a wireframe based on specifications",
+      "contextThirdParagraph": "A campus-themed website, to create a fictitious medium on which the student union could communicate.",
+      "contextFourthParagraph": "With the help of Baptiste Marie, also a student, we created the graphic identity and build the website.",
+      "goalFirst": "Design a website and a wireframe based on customer's specifications",
       "goalSecond": "Developing a simple graphic identity",
       "goalThird": "Develop the front end of the application using a CSS Framework",
-      "goalFourth": "Put into production",
-      "goalFifth": "Working in a team",
+      "goalFourth": "Put the website into production",
+      "goalFifth": "Working as a team",
       "goalSixth": "Meet the one-week deadline"
     },
     "homeserver": {

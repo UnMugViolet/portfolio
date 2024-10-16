@@ -100,10 +100,10 @@
       "contextSecondParagraph": "Le but, faire l'interface graphique d'une application web en une semaine. Pas de backend donc, mais toute la conception graphique.",
       "contextThirdParagraph": "Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse communiquer.",
       "contextFourthParagraph": "Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique et développer ce site web.",
-      "goalFirst": "Maquetter un site web et un wireframe en se basant sur un cahier des charges",
+      "goalFirst": "Maquetter un site web et un wireframe en se basant sur un cahier des charges client",
       "goalSecond": "Développer une identité graphique simple",
       "goalThird": "Développer le front de l'application en utilisant un Framework CSS",
-      "goalFourth": "Mettre en production",
+      "goalFourth": "Mettre le site en production",
       "goalFifth": "Travailler en équipe",
       "goalSixth": "Tenir le délai d'une semaine"
     },
