@@ -217,8 +217,8 @@
     "iconSrc": "/img/icons/notepad-icon-sm.png",
     "initPositionX": 110,
     "initPositionY": 480,
-    "initWidth": 250,
-    "initHeight": 300,
+    "initWidth": 301,
+    "initHeight": 185,
     "component": "Notepad",
     "subMenuType": ""
   }

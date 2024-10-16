@@ -293,18 +293,18 @@ const resizeWindow = (event) => {
     if (resizeDirection.value === 'right') {
       let newWidth = initialWindowSize.value.width + deltaX
       newWidth = Math.min(newWidth, appWidth)
-      windowWidth.value = newWidth < 200 ? 200 : newWidth
+      windowWidth.value = newWidth < 301 ? 301 : newWidth
     } else if (resizeDirection.value === 'bottom') {
       let newHeight = initialWindowSize.value.height + deltaY
       newHeight = Math.min(newHeight, appHeight)
-      windowHeight.value = newHeight < 110 ? 110 : newHeight
+      windowHeight.value = newHeight < 166 ? 166 : newHeight
     } else if (resizeDirection.value === 'corner') {
       let newWidth = initialWindowSize.value.width + deltaX
       let newHeight = initialWindowSize.value.height + deltaY
       newWidth = Math.min(newWidth, appWidth)
       newHeight = Math.min(newHeight, appHeight)
-      windowWidth.value = newWidth < 200 ? 200 : newWidth
-      windowHeight.value = newHeight < 110 ? 110 : newHeight
+      windowWidth.value = newWidth < 301 ? 301 : newWidth
+      windowHeight.value = newHeight < 166 ? 166 : newHeight
     }
 
     // Update the transform property
