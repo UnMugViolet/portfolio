@@ -14,7 +14,17 @@
     "go": "Go",
     "address": "Address",
     "design": "Design",
-    "tasksDone": "Tasks done on the project"
+    "tasksDone": "Tasks done on the project",
+    "techInfo": "Technical informations",
+    "componentsDot": "Components :",
+    "component": "Component",
+    "model": "Model",
+    "link": "Link",
+    "hddDots": "HDD :",
+    "disks": "Disks",
+    "viewModel": "Go to model",
+    "CDM": "CDM",
+    "PDM": "PDM"
   },
   "message": {
     "welcome": "Welcome to my computer.",
@@ -55,15 +65,70 @@
   },
   "project": {
     "logma": {
-      "contextFirstPrapgrah": "Logma production is a movie production company based in Rennes. Founded by Baptiste Fablet. At the start of this project, there was already a logma production site created by the company director with Wordpress.",
-      "contextSecondPrapgrah": "The decision was made to rebuild this site from scratch, with a simple, tried-and-tested technical stack, to try and make a website without a Framework and without someoneonce helping to make it fast and efficient.",
-      "contextThirdPrapgrah": "In order to make the entrepreneur autonomous in the management of this site, it was necessary to develop a backoffice from which he could publish new photos, add projects and links to his videos.",
+      "contextFirstParagraph": "Logma production is a movie production company based in Rennes. Founded by Baptiste Fablet. At the start of this project, there was already a logma production site created by the company director with Wordpress.",
+      "contextSecondParagraph": "The decision was made to rebuild this site from scratch, with a simple, tried-and-tested technical stack, to try and make a website without a Framework and without someoneonce helping to make it fast and efficient.",
+      "contextThirdParagraph": "In order to make the entrepreneur autonomous in the management of this site, it was necessary to develop a backoffice from which he could publish new photos, add projects and links to his videos.",
       "goalFirst": "Redesign of website with existing graphic identity",
       "goalSecond": "Creating a responsive website",
       "goalThird": "Develop a backoffice to manage the site",
       "goalFourth": "Optimize SEO",
       "goalFifth": "Improve loading speed and overall performance",
       "goalSixth": "Put the website into production"
+    },
+    "pangaia": {
+      "contextFirstParagraph": "Pangaia is an open-source application designed to raise awareness of plants.",
+      "contextSecondParagraph": "The aim was to create a fun and practical interface for managing your garden.",
+      "contextThirdParagraph": "But also to discover new plants using gamification.",
+      "contextFourthParagraph": "Provide information on the flora around us, depending on the user's location.",
+      "goalFirst": "Try out the application in demo mode",
+      "goalSecond": "Go to plant data sheet",
+      "goalThird": "Model your garden",
+      "goalFourth": "Add a plant to your garden",
+      "goalFifth": "Connect to the weather in real time",
+      "goalSixth": "Reminders for tasks to be carried out on your plant or in your garden",
+      "tasksDoneFirst": "Help with database design and modeling",
+      "tasksDoneSecond": "Application design",
+      "tasksDoneThird": "Work on UX with usability tests",
+      "tasksDoneFourth": "Creating a dashboard",
+      "tasksDoneFifth": "Creation of a page listing plants and categories",
+      "tasksDoneSixth": "Setting up an API and documentation with Swagger",
+      "CDMText": "Partial conceptual modeling of the database, concerning changes to be made to the project.",
+      "PDMText": "Complete relational database modeling."
+    },
+    "clench": {
+      "contextFirstParagraph": "An exercise as part of a CSS Framework & Layout course at MyDigitalSchool Rennes.",
+      "contextSecondParagraph": "The aim was to create the graphic interface of a web application in a week. No backend, but all graphic design.",
+      "contextThirdParagraph": "A campus-themed website, to create a fictitious medium on which the Student Union can communicate.",
+      "contextFourthParagraph": "With the help of Baptiste Marie, also a student, we created the graphic identity and developed the website.",
+      "goalFirst": "Design a website and a wireframe based on specifications",
+      "goalSecond": "Developing a simple graphic identity",
+      "goalThird": "Develop the front end of the application using a CSS Framework",
+      "goalFourth": "Put into production",
+      "goalFifth": "Working in a team",
+      "goalSixth": "Meet the one-week deadline"
+    },
+    "homeserver": {
+      "contextFirstParagraph": "This project was carried out by Pierre, who owns a video production company, and me, a web developer.",
+      "contextSecondParagraph": "A team you wouldn't necessarily count on to set up a server, I agree. But we share a common passion. Digging into subjects we know nothing about and trying to understand how a server works and how to set it up.",
+      "goalFirst": "Make a storage server that can also deploy applications",
+      "goalSecond": "Being able to access the server from anywhere",
+      "goalThird": "It is possible to edit a video project on remote",
+      "goalFourth": "Install automation services such as Jenkins, Sonarqube, etc.",
+      "goalFifth": "Have online website monitoring and alerts in case of loss of services",
+      "goalSixth": "Host pre-production sites before putting them online",
+      "goalSeventh": "Redundancy in data and remote access to it",
+      "goalEighth": "Maintain this system easily",
+      "goalNinth": "Be less expensive than a pre-assembled equivalent with the same performance",
+      "specs" : {
+        "motherboard": "🧠 Motherboard + processor",
+        "case": "🗄️ Case",
+        "powerSupply": "🔌 Power supply",
+        "ssd": "💾 SSD boot",
+        "ssdNas": "💽 SSD Nas",
+        "splitter": "➿ Répartiteur SATA",
+        "hddSpecs": "🗃️ HDD Western Digital"
+
+      }
     }
   },
   "alt": {

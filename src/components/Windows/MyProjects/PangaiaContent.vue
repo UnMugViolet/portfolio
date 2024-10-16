@@ -143,33 +143,27 @@ onMounted(() => {
       </div>
     </div>
     <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
-    <p>Pangaia est une application open source, qui cherche à sensibilser autour des plantes.</p>
-    <p>
-      Le but étant de créer une interface ludique et pratique pour avoir une gestion de son jardin.
-      <br />
-      Mais également pouvoir découvrir de nouvelles plantes en utilisant la gamification.
-    </p>
-    <p>
-      Donner des inforaire découvrir la flore qui nous entoure en fonction de la localication de
-      l'utilisateur.
-    </p>
+      <p>{{ $t('project.pangaia.contextFirstParagraph') }}</p>
+      <p>{{ $t('project.pangaia.contextSecondParagraph') }}</p>
+      <p>{{ $t('project.pangaia.contextThirdParagraph') }}</p>
+      <p>{{ $t('project.pangaia.contextFourthParagraph') }}</p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
-      <li>Pouvoir essayer l'application en mode démo</li>
-      <li>Accéder à la fiche d'une plante</li>
-      <li>Pouvoir modéliser son jardin</li>
-      <li>Pouvoir ajouter une plante à son jardin</li>
-      <li>Avoir une connexion à la météo en temps réel</li>
-      <li>Avoir des rappels de tâches à réaliser sur sa plante ou dans son jardin</li>
+      <li>{{ $t('project.pangaia.goalFirst') }}</li>
+      <li>{{ $t('project.pangaia.goalSecond') }}</li>
+      <li>{{ $t('project.pangaia.goalThird') }}</li>
+      <li>{{ $t('project.pangaia.goalFourth') }}</li>
+      <li>{{ $t('project.pangaia.goalFifth') }}</li>
+      <li>{{ $t('project.pangaia.goalSixth') }}</li>
     </ul>
     <h3 class="mt-5 mb-2">{{ $t('common.tasksDone') }}</h3>
     <ul class="list-disc ml-3">
-      <li>Aide à la conception et à la modélisation de la base de données</li>
-      <li>Maquettage de l'application</li>
-      <li>Travail sur l'UX avec des tests d'ergonomie</li>
-      <li>Création d'un dashboard</li>
-      <li>Réalisation de la page listant les plantes et les catégories</li>
-      <li>Mise en place d'une API et de la documentation avec Swagger</li>
+      <li>{{ $t('project.pangaia.tasksDoneFirst') }}</li>
+      <li>{{ $t('project.pangaia.tasksDoneSecond') }}</li>
+      <li>{{ $t('project.pangaia.tasksDoneThird') }}</li>
+      <li>{{ $t('project.pangaia.tasksDoneFourth') }}</li>
+      <li>{{ $t('project.pangaia.tasksDoneFifth') }}</li>
+      <li>{{ $t('project.pangaia.tasksDoneSixth') }}</li>
     </ul>
     <div
       class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue"
@@ -226,10 +220,9 @@ onMounted(() => {
       />
     </div>
     <div class="mb-2">
-      <h3 class="mt-5">MCD</h3>
+      <h3 class="mt-5">{{ $t('common.CDM') }}</h3>
       <p class="italic text-gray-500 text-xxs mb-px">
-        Modélisation conceptuelle partielle de la base de donnée, concernant les modifications à
-        apporter au projet.
+        {{ $t('project.pangaia.CDMText') }}
       </p>
       <img
         src="/img/projects/pangaia/pangaia-database-MCD.jpg"
@@ -238,9 +231,9 @@ onMounted(() => {
       />
     </div>
     <div>
-      <h3 class="mt-5">MPD</h3>
+      <h3 class="mt-5">{{ $t('common.PDM') }}</h3>
       <p class="italic text-gray-500 text-xxs">
-        Modélisation de la base de donnée relationnelle complète.
+        {{ $t('project.pangaia.PDMText') }}
       </p>
       <img
         src="/img/projects/pangaia/MPD-Pangaia.svg"

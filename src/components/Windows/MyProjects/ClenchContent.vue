@@ -49,15 +49,13 @@ onMounted(() => {
     </p>
     <p>
       Le but, faire l'interface graphique d'une application web en une semaine. Pas de backend donc,
-      mais toute la conception graphique
+      mais toute la conception graphique.
     </p>
     <p>
-      Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse
-      communiquer.
+      Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse communiquer.
     </p>
     <p>
-      Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique
-      et développer ce site web.
+      Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique et développer ce site web.
     </p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">

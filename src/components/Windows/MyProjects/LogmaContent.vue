@@ -60,15 +60,15 @@
     </div>
     <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>
-      {{$t('project.logma.contextFirstPrapgrah')}}
+      {{$t('project.logma.contextFirstParagraph')}}
     </p>
     <br />
     <p>
-      {{$t('project.logma.contextSecondPrapgrah')}}
+      {{$t('project.logma.contextSecondParagraph')}}
     </p>
     <br />
     <p>
-      {{$t('project.logma.contextThirdPrapgrah')}}
+      {{$t('project.logma.contextThirdParagraph')}}
     </p>
     <br />
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
