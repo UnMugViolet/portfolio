@@ -71,6 +71,18 @@
     "cv": {
       "education": "Formation",
       "proExperience": "Expérience professionnelle"
+    },
+    "music":{
+      "title": "Titre",
+      "album": "Album",
+      "addedThe": "Ajouté le",
+      "duration": "Durée",
+      "artist": "Artiste",
+      "visitOnSpotify": "Voir sur Spotify",
+      "accessFirstSentence": "Pour accéder à cette fonctionnalité,",
+      "accessSecondSentence": "il est nécessaire de se connecter à Spotify..",
+      "connectToSpotify": "Se connecter à Spotify",
+      "spotifyDisclaimer": "Cette playlist et sa lecture est réalisée en utilisant l'API de spotify"
     }
   },
   "project": {
