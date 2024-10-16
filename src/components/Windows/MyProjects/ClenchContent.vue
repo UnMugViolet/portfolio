@@ -44,10 +44,10 @@ onMounted(() => {
       </div>
     </div>
     <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
-      <p>{{ $t('project.clench.contextFirstParagraph') }}</p>
-      <p>{{ $t('project.clench.contextSecondParagraph') }}</p>
-      <p>{{ $t('project.clench.contextThirdParagraph') }}</p>
-      <p>{{ $t('project.clench.contextFourthParagraph') }}</p>
+    <p>{{ $t('project.clench.contextFirstParagraph') }}</p>
+    <p>{{ $t('project.clench.contextSecondParagraph') }}</p>
+    <p>{{ $t('project.clench.contextThirdParagraph') }}</p>
+    <p>{{ $t('project.clench.contextFourthParagraph') }}</p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>{{ $t('project.clench.goalFirst') }}</li>
@@ -87,7 +87,7 @@ onMounted(() => {
         height="450"
         width="100%"
         class="p-2"
-        :title="$t('common.design') + ' clench' "
+        :title="$t('common.design') + ' clench'"
         :src="iframeSrc"
         allowfullscreen
       />

@@ -143,10 +143,10 @@ onMounted(() => {
       </div>
     </div>
     <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
-      <p>{{ $t('project.pangaia.contextFirstParagraph') }}</p>
-      <p>{{ $t('project.pangaia.contextSecondParagraph') }}</p>
-      <p>{{ $t('project.pangaia.contextThirdParagraph') }}</p>
-      <p>{{ $t('project.pangaia.contextFourthParagraph') }}</p>
+    <p>{{ $t('project.pangaia.contextFirstParagraph') }}</p>
+    <p>{{ $t('project.pangaia.contextSecondParagraph') }}</p>
+    <p>{{ $t('project.pangaia.contextThirdParagraph') }}</p>
+    <p>{{ $t('project.pangaia.contextFourthParagraph') }}</p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>{{ $t('project.pangaia.goalFirst') }}</li>

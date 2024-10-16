@@ -47,9 +47,12 @@ onBeforeUnmount(() => {
 })
 
 // Watch for changes in the locale and update the time immediately
-watch(() => localeStore.currentLocale, () => {
-  updateTime()
-})
+watch(
+  () => localeStore.currentLocale,
+  () => {
+    updateTime()
+  }
+)
 </script>
 
 <template>

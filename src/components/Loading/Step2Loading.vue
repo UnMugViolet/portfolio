@@ -23,7 +23,9 @@ import LoadingBar from './LoadingBar.vue'
               <h1 class="md:text-xl text-sm">{{ $t('message.welcome') }}</h1>
             </div>
             <div>
-              <h2 class="md:text-2xl text-md logo-font">UnMugViolet</h2>
+              <h2 class="md:text-2xl text-md tracking-tighter font-helvetica font-semibold">
+                UnMugViolet
+              </h2>
             </div>
           </div>
         </div>

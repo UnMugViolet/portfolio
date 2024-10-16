@@ -4,8 +4,12 @@
       <div class="w-full h-full overflow-x-hidden">
         <div v-if="Object.keys(playlist).length">
           <div class="flex items-center gap-5 p-1.5">
-            <img v-if="playlist.images && playlist.images.length > 0" :src="playlist.images[0].url"
-              alt="Couverture de la playlist" class="w-24" />
+            <img
+              v-if="playlist.images && playlist.images.length > 0"
+              :src="playlist.images[0].url"
+              alt="Couverture de la playlist"
+              class="w-24"
+            />
             <div>
               <h2 class="text-xl font-bold">{{ playlist.name }}</h2>
               <p class="text-xs">{{ $t('windows.music.description') }}</p>
@@ -14,8 +18,10 @@
               </p>
               <Button :href="playlist.external_urls.spotify" :blank="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 24 24">
-                  <path fill="#000000"
-                    d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2" />
+                  <path
+                    fill="#000000"
+                    d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"
+                  />
                 </svg>
                 <span class="ml-1.5">{{ $t('windows.music.visitOnSpotify') }}</span>
               </Button>
@@ -50,10 +56,18 @@
                   <div class="pl-2 w-8">
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
-                  <a class="flex items-center gap-2 cursor-pointer"
-                    :href="`https://open.spotify.com/track/${track.track.id}`" target="_blank" rel="noopener">
-                    <img v-if="track.track.album.images && track.track.album.images.length > 0"
-                      :src="track.track.album.images[2].url" :alt="$t('windows.music.albumCover') + ' ' + track.track.name" class="w-12" />
+                  <a
+                    class="flex items-center gap-2 cursor-pointer"
+                    :href="`https://open.spotify.com/track/${track.track.id}`"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      v-if="track.track.album.images && track.track.album.images.length > 0"
+                      :src="track.track.album.images[2].url"
+                      :alt="$t('windows.music.albumCover') + ' ' + track.track.name"
+                      class="w-12"
+                    />
                     <div class="flex flex-col max-w-48">
                       <p class="text-sm font-trebuchet-pixel">{{ track.track.name }}</p>
                       <p class="text-xs font-trebuchet-pixel">{{ track.track.artists[0].name }}</p>
@@ -67,7 +81,10 @@
                 </div>
                 <div class="col-span-2 px-1">
                   <p class="text-xs font-trebuchet-pixel truncate">
-                    {{ formatDistanceToNow(new Date(track.added_at), { locale: localeMap[localeStore.currentLocale] })
+                    {{
+                      formatDistanceToNow(new Date(track.added_at), {
+                        locale: localeMap[localeStore.currentLocale]
+                      })
                     }}
                   </p>
                 </div>
@@ -77,8 +94,10 @@
                   </p>
                 </div>
               </div>
-              <div v-if="index < playlist.tracks.items.length - 1"
-                class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"></div>
+              <div
+                v-if="index < playlist.tracks.items.length - 1"
+                class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"
+              ></div>
             </div>
           </div>
           <Player v-if="playlist.tracks.items.length > 0" :playlist="playlist.tracks.items" />
@@ -86,12 +105,21 @@
         <div v-else class="w-full h-full font-trebuchet-pixel">
           <div class="w-full h-full flex items-center justify-center flex-col">
             <p class="text-xs text-center">
-              {{ $t('windows.music.accessFirstSentence') }} </p>
-            <p class="text-xs text-center mb-2">{{ $t('windows.music.accessSecondSentence') }} </p>
+              {{ $t('windows.music.accessFirstSentence') }}
+            </p>
+            <p class="text-xs text-center mb-2">{{ $t('windows.music.accessSecondSentence') }}</p>
             <Button @click="redirectToSpotify" class="flex items-center gap-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" class="mb-px" viewBox="0 0 24 24">
-                <path fill="#000000"
-                  d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="18"
+                class="mb-px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#000000"
+                  d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"
+                />
               </svg>
               {{ $t('windows.music.connectToSpotify') }}
             </Button>
@@ -122,7 +150,7 @@ const localeStore = useLocaleStore()
 // Map the localeStore.currentLocale to the correct locale object
 const localeMap = {
   en: enUS,
-  fr: fr,
+  fr: fr
 }
 
 function redirectToSpotify() {

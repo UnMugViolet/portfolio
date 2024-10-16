@@ -44,22 +44,6 @@
   font-family: "Trebuchet MS pixelated";
   src: local("Trebuchet MS pixelated"), url("/fonts/ms-sans-serif/MS Sans Serif.ttf") format("truetype");
 }
-.logo-font {
-  font-family: "Helvetica BlackItalic";
-  letter-spacing: -1.2px;
-  font-weight: 400;
-}
-
-.start-button-font {
-  font-family: Franklin Gothic Medium;
-  font-style: italic;
-}
-
-.header-font {
-  font-family: "Verdana";
-  font-weight: 600;
-}
-
 h1 {
   font-family: "Tahoma";
   font-weight: 400;

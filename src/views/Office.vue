@@ -58,10 +58,11 @@
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id, $event)"
         />
-        <component 
-          v-else 
-          :is="window.component" 
-          v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}" />
+        <component
+          v-else
+          :is="window.component"
+          v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}"
+        />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
@@ -115,7 +116,6 @@ onUnmounted(() => {
     document.head.removeChild(script)
   }
 })
-
 
 // Keep track of the highest z-index
 const highestZIndex = ref(0)
