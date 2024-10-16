@@ -84,10 +84,10 @@
       <source src="/videos/montage-serveur.mp4" type="video/mp4" />
       {{ $t('common.errorVideo') }}
     </video>
-    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
     <p>{{ $t('project.homeserver.contextFirstParagraph') }}</p>
     <p>{{ $t('project.homeserver.contextSecondParagraph') }}</p>
-    <h3 class="mt-5 mb-1">{{ $t('common.context') }}</h3>
+    <h3 class="mt-5 mb-1">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>{{ $t('project.homeserver.goalFirst') }}</li>
       <li>{{ $t('project.homeserver.goalSecond') }}</li>
