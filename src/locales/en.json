@@ -78,11 +78,13 @@
       "addedThe": "Added the",
       "duration": "Duration",
       "artist": "Artist",
+      "description": "A playlist created especially for my portfolio, it contains my favorite tracks.",
       "visitOnSpotify": "View on Spotify",
       "accessFirstSentence": "To access this feature,",
       "accessSecondSentence": "it is mandatory to connect to Spotify",
       "connectToSpotify": "Connect to Spotify",
-      "spotifyDisclaimer": "This playlist and its use has been made using the Spotify API"
+      "spotifyDisclaimer": "This playlist and its use has been made using the Spotify API",
+      "albumCover": "Album cover"
     }
   },
   "project": {
