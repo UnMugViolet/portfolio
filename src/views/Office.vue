@@ -92,7 +92,6 @@ import Notepad from '@/components/Windows/Notepad.vue'
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
 import windowsData from '@/data/windows-data.json'
-import leftMenuData from '@/data/left-menu-data.json'
 
 const showHeader = ref(false)
 const windows = ref([])
