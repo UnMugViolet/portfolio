@@ -1,0 +1,16 @@
+{
+  "menuHeaderItems": {
+    "default": {
+      "en": ["File", "Edit", "View", "Tools"],
+      "fr": ["Fichier", "Édition", "Affichage", "Outils"]
+    },
+    "minesweeper": {
+      "en": ["Game", "Options", "Help"],
+      "fr": ["Jeu", "Options", "Aide"]
+    },
+    "notepad": {
+      "en": ["File", "Edit", "View", "Help"],
+      "fr": ["Fichier", "Édition", "Affichage", "Aide"]
+    }
+  }
+}

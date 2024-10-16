@@ -12,7 +12,7 @@
     <div v-if="windowsHeaderLogo" class="flex items-center h-6 w-10">
       <img
         src="/img/icons/windows-header-window-icon.png"
-        alt="icone mes projets"
+        :alt="$t('common.icon') + ' windows' "
         class="h-full pt-0.5 border-window-header-bot"
       />
     </div>

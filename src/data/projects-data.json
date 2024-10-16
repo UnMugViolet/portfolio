@@ -1,13 +1,22 @@
 {
   "categories": [
     {
-      "name": "Sites web",
+      "name": {
+        "en": "Websites",
+        "fr": "Sites web"
+      },
       "projects": [
         {
           "name": "Logma Production",
           "icon": "folder-logma-icon.png",
-          "title": "Logma Production - Site vitrine",
-          "date": "2023 - 2 mois",
+          "title": {
+            "en": "Logma Production - Showcase website",
+            "fr": "Logma Production - Site vitrine"
+          },
+          "date": {
+            "en": "2023 - 2 months",
+            "fr": "2023 - 2 mois"
+          },
           "componentName": "LogmaContent",
           "isFocus": false,
           "isActive": false
@@ -15,8 +24,14 @@
         {
           "name": "Pangaia",
           "icon": "folder-pangaia-icon.png",
-          "title": "Pangaia - Application web",
-          "date": "2023 - Actuel",
+          "title": {
+            "fr": "Pangaia - Application web",
+            "en": "Pangaia - Web Application"
+          },
+          "date": {
+            "en": "2023 - Current",
+            "fr": "2023 - Actuel"
+          },
           "componentName": "PangaiaContent",
           "isFocus": false,
           "isActive": false
@@ -24,8 +39,14 @@
         {
           "name": "Clench",
           "icon": "folder-clench-icon.png",
-          "title": "Clench - Site vitrine",
-          "date": "2024",
+          "title": {
+            "fr": "Clench - Application web",
+            "en": "Clench - Web Application"
+          },
+          "date": {
+            "en": "2024",
+            "fr": "2024"
+          },
           "componentName": "ClenchContent",
           "isFocus": false,
           "isActive": false
@@ -33,13 +54,22 @@
       ]
     },
     {
-      "name": "Serveurs",
+      "name": {
+        "en": "Servers",
+        "fr": "Serveurs"
+      },
       "projects": [
         {
           "name": "Homeserver",
           "icon": "homeserver-icon.png",
-          "title": "Serveur d'application & stockage NAS",
-          "date": "2023 - Actuel",
+          "title": {
+            "fr": "Serveur d'application & stockage NAS",
+            "en": "Application server & NAS"
+          },
+          "date": {
+            "en": "2023 - Current",
+            "fr": "2023 - Actuel"
+          },
           "componentName": "HomeserverContent",
           "isFocus": false,
           "isActive": false

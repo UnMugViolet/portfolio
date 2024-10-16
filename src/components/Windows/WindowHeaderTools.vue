@@ -27,16 +27,16 @@ const goBack = () => {
         >
           <img
             src="/img/icons/right-arrow-green-icon.png"
-            alt="précédent"
+            :alt="$t('common.icon') + ' ' + $t('common.back')"
             class="w-7 h-7 flex-shrink-0"
           />
-          <p class="small-p mr-2">Retour</p>
+          <p class="small-p mr-2">{{ $t('common.back') }}</p>
           <div class="block border-solid down-arrow"></div>
         </div>
         <div class="flex items-center mr-1 filter grayscale">
           <img
             src="/img/icons/left-arrow-green-icon.png"
-            alt="suivant"
+            :alt="$t('common.icon') + ' ' + $t('common.next')"
             class="w-7 h-7 flex-shrink-0"
           />
           <div class="block border-solid down-arrow ml-px"></div>
@@ -48,7 +48,7 @@ const goBack = () => {
       >
         <img
           src="/img/icons/folder-opening-icon.png"
-          alt="projects-icon"
+          :alt="$t('common.icon') + ' ' + $t('common.folder')"
           class="w-6 h-6 flex-shrink-0"
         />
       </div>
@@ -58,21 +58,21 @@ const goBack = () => {
       >
         <img
           src="/img/icons/magnifier-icon.png"
-          alt="projects-icon"
+          :alt="$t('common.icon') + ' ' + $t('common.search')"
           class="w-auto h-5 flex-shrink-0"
-          title="Rechercher"
+          :title="$t('common.search') + ' ' + $t('common.icon')"
         />
-        <p class="small-p px-1 cursor-default hidden sm:block">Rechercher</p>
+        <p class="small-p px-1 cursor-default hidden sm:block">{{ $t('common.search') }}</p>
       </div>
       <div
         class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5"
       >
         <img
           src="/img/icons/folder-open-icon.png"
-          alt="projects-icon"
+          :alt="$t('common.icon') + ' ' + $t('common.files')"
           class="w-auto h-6 flex-shrink-0"
         />
-        <p class="small-p px-1 cursor-default hidden sm:block">Fichiers</p>
+        <p class="small-p px-1 cursor-default hidden sm:block">{{ $t('common.files') }}</p>
       </div>
       <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
       <div
@@ -80,7 +80,7 @@ const goBack = () => {
       >
         <img
           src="/img/icons/projects-icon-sm.png"
-          alt="projects-icon"
+          :alt="$t('common.icon') + ' ' + $t('common.projects')"
           class="w-6 h-6 flex-shrink-0"
         />
         <div class="block border-solid down-arrow ml-2"></div>

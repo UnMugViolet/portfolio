@@ -13,9 +13,9 @@
       <div
         class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1"
       >
-        <img :src="iconSrc" alt="icon" class="w-4 h-4" />
+        <img :src="iconSrc" :alt="$t('common.tiny') + ' ' + $t('common.icon')+ ' ' + translatedTitle" class="w-4 h-4" />
         <div class="flex items-center overflow-hidden">
-          <h4 class="text-header-window text-header-shadow truncate">{{ title }}</h4>
+          <h4 class="text-header-window text-header-shadow truncate">{{ translatedTitle }}</h4>
         </div>
       </div>
       <div
@@ -33,14 +33,14 @@
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
       <WindowHeaderDropdown
-        :dropdownItems="menuHeaderItems"
+        :dropdownItems="translatedMenuHeaderItems"
         :windowsHeaderLogo="windowsHeaderLogo"
       />
-      <div v-if="displayMenuHeader">
+      <div v-if="displayHeaderTools">
         <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
         <WindowHeaderSearch
           :id="id"
-          :title="title"
+          :title="translatedTitle"
           :iconSrc="iconSrc"
           :activeProjectName="activeProjectName"
         />
@@ -73,13 +73,15 @@
 </template>
 
 <script setup>
-import { ref, computed, inject } from 'vue'
+import { ref, computed, inject, watch } from 'vue'
+import { useLocaleStore } from '@/stores/localeStore'
 import WindowMinimize from '../components/Buttons/WindowMinimize.vue'
 import WindowMaximize from '../components/Buttons/WindowMaximize.vue'
 import WindowClose from '../components/Buttons/WindowClose.vue'
 import WindowHeaderTools from '../components/Windows/WindowHeaderTools.vue'
 import WindowHeaderSearch from '../components/Windows/WindowHeaderSearch.vue'
 import WindowHeaderDropdown from '../components/Windows/WindowHeaderDropdown.vue'
+import menuHeaderData from '@/data/header-menu-data.json'
 
 const emit = defineEmits()
 
@@ -93,26 +95,43 @@ const {
   initHeight,
   isGoBackAvailable,
   activeProjectName,
-  displayMenuHeader,
-  menuHeaderItems,
+  displayHeaderTools,
+  menuHeaderItemsId,
   resizable,
   windowsHeaderLogo
 } = defineProps({
   id: String,
-  title: String,
+  title: Object,
   iconSrc: String,
   initPositionX: Number,
   initPositionY: Number,
   initWidth: Number,
   initHeight: Number,
-  subMenuItems: Array,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
-  displayMenuHeader: Boolean,
-  menuHeaderItems: Array,
+  displayHeaderTools: Boolean,
+  menuHeaderItemsId: String,
   resizable: Boolean,
   windowsHeaderLogo: Boolean
 })
+
+// Locale management
+const localeStore = useLocaleStore()
+
+const translatedTitle = ref(title[localeStore.currentLocale] || title['fr'])
+const translatedMenuHeaderItems = ref(
+  menuHeaderData.menuHeaderItems[menuHeaderItemsId][localeStore.currentLocale] ||
+    menuHeaderData.menuHeaderItems[menuHeaderItemsId]['fr']
+)
+
+watch(
+  () => localeStore.currentLocale,
+  (newLocale) => {
+    translatedTitle.value = title[newLocale] || title['fr']
+    const items = menuHeaderData.menuHeaderItems[menuHeaderItemsId]
+    translatedMenuHeaderItems.value = items ? items[newLocale] || items['fr'] : []
+  }
+)
 
 // App size constants
 const appHeight = window.innerHeight - 32

@@ -1,0 +1,164 @@
+{
+  "common": {
+    "name": "Name",
+    "tiny": "Tiny",
+    "errorVideo": "Your browser does not support videos.",
+    "context": "Context",
+    "objectives": "Objectives",
+    "icon": "Icon",
+    "back": "Back",
+    "search": "Search",
+    "files": "Files",
+    "folder": "Folder",
+    "next": "Next",
+    "projects": "Projects",
+    "go": "Go",
+    "address": "Address",
+    "design": "Design",
+    "tasksDone": "Tasks done on the project",
+    "techInfo": "Technical informations",
+    "componentsDot": "Components :",
+    "components": "Components",
+    "models": "Models",
+    "model": "Model",
+    "links": "Links",
+    "link": "Link",
+    "hddDots": "HDD :",
+    "disks": "Disks",
+    "quantity": "Quantity",
+    "viewModel": "Go to model",
+    "CDM": "CDM",
+    "PDM": "PDM",
+    "years": "years old",
+    "webdev": "Web developper"
+  },
+  "message": {
+    "welcome": "Welcome to my computer.",
+    "toBegin": "To begin the journey, click on my username.",
+    "explainer": "After logging in, you can browse through the folders on my computer. Go to the desktop and click on the projects folder to see all my projects."
+  },
+  "header": {
+    "disconnect": "Log Off",
+    "shutdown": "Turn Off Computer"
+  },
+  "modale": {
+    "fullscreenTitle": "Fullscreen mode is now available!",
+    "fullscreenFirstText": "For a more immersive experience,",
+    "fullscreenSecondText": "Click on the screen icon below",
+    "control": "Control"
+  },
+  "buttons": {
+    "start": "start",
+    "send": "Send",
+    "downloadCV": "Download the CV",
+    "linkWebSite": "Visit the website",
+    "linkRepository": "Visit the repository"
+  },
+  "windows": {
+    "contact": {
+      "title": "Contact me",
+      "name": "@:common.name",
+      "description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
+      "email": "Email",
+      "message": "Message",
+      "success": "Message sent successfully",
+      "error": {
+        "email": " is not a valid e-mail address",
+        "empty": "Please fill in all fields before sending your message",
+        "unknown": "The message could not be sent. You can contact me directly at the following email address: "
+      }
+    },
+    "cv": {
+      "education": "Education",
+      "proExperience": "Professional experiences"
+    },
+    "music": {
+      "title": "Title",
+      "album": "Album",
+      "addedThe": "Added the",
+      "duration": "Duration",
+      "artist": "Artist",
+      "description": "A playlist created especially for my portfolio, it contains my favorite tracks.",
+      "visitOnSpotify": "View on Spotify",
+      "accessFirstSentence": "To access this feature,",
+      "accessSecondSentence": "it is mandatory to connect to Spotify",
+      "connectToSpotify": "Connect to Spotify",
+      "spotifyDisclaimer": "This playlist and its use has been made using the Spotify API",
+      "albumCover": "Album cover"
+    }
+  },
+  "project": {
+    "logma": {
+      "contextFirstParagraph": "Logma production is a movie production company based in Rennes. Founded by Baptiste Fablet. At the start of this project, there was already a logma production site created by the company director with Wordpress.",
+      "contextSecondParagraph": "The decision was made to rebuild this site from scratch, with a simple, tried-and-tested technical stack, to try and make a website without a Framework and without someoneonce helping to make it fast and efficient.",
+      "contextThirdParagraph": "In order to make the entrepreneur autonomous in the management of this site, it was necessary to develop a backoffice from which he could publish new photos, add projects and links to his videos.",
+      "goalFirst": "Redesign of website with existing graphic identity",
+      "goalSecond": "Creating a responsive website",
+      "goalThird": "Develop a backoffice to manage the site",
+      "goalFourth": "Optimize SEO",
+      "goalFifth": "Improve loading speed and overall performance",
+      "goalSixth": "Put the website into production"
+    },
+    "pangaia": {
+      "contextFirstParagraph": "Pangaia is an open-source application designed to raise awareness of plants.",
+      "contextSecondParagraph": "The aim was to create a fun and practical interface for managing your garden.",
+      "contextThirdParagraph": "But also to discover new plants using gamification.",
+      "contextFourthParagraph": "Provide information on the flora around us, depending on the user's location.",
+      "goalFirst": "Try out the application in demo mode",
+      "goalSecond": "Go to plant data sheet",
+      "goalThird": "Model your garden",
+      "goalFourth": "Add a plant to your garden",
+      "goalFifth": "Connect to the weather in real time",
+      "goalSixth": "Reminders for tasks to be carried out on your plant or in your garden",
+      "tasksDoneFirst": "Help with database design and modeling",
+      "tasksDoneSecond": "Application design",
+      "tasksDoneThird": "Work on UX with usability tests",
+      "tasksDoneFourth": "Creating a dashboard",
+      "tasksDoneFifth": "Creation of a page listing plants and categories",
+      "tasksDoneSixth": "Setting up an API and documentation with Swagger",
+      "CDMText": "Partial conceptual modeling of the database, concerning changes to be made to the project.",
+      "PDMText": "Complete relational database modeling."
+    },
+    "clench": {
+      "contextFirstParagraph": "An exercise as part of a CSS Framework & Layout course at MyDigitalSchool Rennes.",
+      "contextSecondParagraph": "The aim was to create the graphic interface of a web application in a week. No backend, but all graphic design.",
+      "contextThirdParagraph": "A campus-themed website, to create a fictitious medium on which the student union could communicate.",
+      "contextFourthParagraph": "With the help of Baptiste Marie, also a student, we created the graphic identity and build the website.",
+      "goalFirst": "Design a website and a wireframe based on customer's specifications",
+      "goalSecond": "Developing a simple graphic identity",
+      "goalThird": "Develop the front end of the application using a CSS Framework",
+      "goalFourth": "Put the website into production",
+      "goalFifth": "Working as a team",
+      "goalSixth": "Meet the one-week deadline"
+    },
+    "homeserver": {
+      "contextFirstParagraph": "This project was carried out by Pierre, who owns a video production company, and me, a web developer.",
+      "contextSecondParagraph": "A team you wouldn't necessarily count on to set up a server, I agree. But we share a common passion. Digging into subjects we know nothing about and trying to understand how a server works and how to set it up.",
+      "goalFirst": "Make a storage server that can also deploy applications",
+      "goalSecond": "Being able to access the server from anywhere",
+      "goalThird": "It is possible to edit a video project on remote",
+      "goalFourth": "Install automation services such as Jenkins, Sonarqube, etc.",
+      "goalFifth": "Have online website monitoring and alerts in case of loss of services",
+      "goalSixth": "Host pre-production sites before putting them online",
+      "goalSeventh": "Redundancy in data and remote access to it",
+      "goalEighth": "Maintain this system easily",
+      "goalNinth": "Be less expensive than a pre-assembled equivalent with the same performance",
+      "specs" : {
+        "motherboard": "🧠 Motherboard + processor",
+        "ram": "⚡ RAM",
+        "case": "🗄️ Case",
+        "powerSupply": "🔌 Power supply",
+        "ssdBoot": "💾 SSD boot",
+        "ssdNas": "💽 SSD Nas",
+        "splitter": "➿ Répartiteur SATA",
+        "hddSpecs": "🗃️ HDD Western Digital"
+      }
+    }
+  },
+  "alt": {
+    "logoStart": "Logo portfolio XP black start",
+    "logoLoading": "Logo portfolio XP black loading",
+    "logoLogin": "Logo portfolio XP white login",
+    "currLang": "Current language"
+  }
+}

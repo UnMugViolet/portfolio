@@ -1,17 +1,18 @@
 <script setup>
 import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import emailjs from 'emailjs-com'
 import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
 import Button from '../Buttons/Button.vue'
 
 const props = defineProps({
-  subMenuItems: {
-    type: Array,
-    required: false,
-    default: () => []
+  subMenuType: {
+    type: String,
   }
 })
 
+const { t } = useI18n()
 const userName = ref('')
 const userEmail = ref('')
 const userMessage = ref('')
@@ -29,7 +30,7 @@ const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID
 const sendEmail = async () => {
   if (!userName.value || !userEmail.value || !userMessage.value) {
     emailSent.value = false
-    errorMessage.value = "Veuillez remplir tous les champs avant d'envoyer votre message"
+    errorMessage.value = t('windows.contact.error.empty')
     return
   }
 
@@ -37,7 +38,7 @@ const sendEmail = async () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(userEmail.value)) {
     emailSent.value = false
-    errorMessage.value = userEmail.value + " n'est pas une adresse e-mail valide"
+    errorMessage.value = userEmail.value + t('windows.contact.error.email')
     return
   }
 
@@ -66,9 +67,8 @@ const sendEmail = async () => {
   } catch (error) {
     console.log(error.text)
     emailSent.value = false
-    errorMessage.value =
-      "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: " +
-      adminEmailAddress
+    isLoading.value = false
+    errorMessage.value = t('windows.contact.error.unknown') + adminEmailAddress
   }
 }
 
@@ -94,17 +94,16 @@ watch(isLoading, (newValue) => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowSideMenu :subMenuItems="props.subMenuItems" />
+    <WindowSideMenu :subMenuType="props.subMenuType" />
 
     <!-- Main content -->
     <form class="flex flex-col w-full h-full bg-white overflow-auto p-2 gap-2 font-trebuchet-pixel">
-      <h1 class="font-semibold">Me contacter</h1>
+      <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
       <p class="text-xs font-medium">
-        Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai
-        vers vous dans les plus brefs délais !
+        {{ $t('windows.contact.description') }}
       </p>
       <div class="max-w-prose">
-        <label class="text-xs">Nom</label>
+        <label class="text-xs">{{ $t('windows.contact.name') }}</label>
         <input
           v-model="userName"
           type="text"
@@ -113,7 +112,7 @@ watch(isLoading, (newValue) => {
         />
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">Email</label>
+        <label class="text-xs">{{ $t('windows.contact.email') }}</label>
         <input
           v-model="userEmail"
           type="email"
@@ -122,17 +121,19 @@ watch(isLoading, (newValue) => {
         />
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">Message</label>
+        <label class="text-xs">{{ $t('windows.contact.message') }}</label>
         <textarea
           v-model="userMessage"
           class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
-          placeholder="Message"
+          :placeholder="$t('windows.contact.message')"
         ></textarea>
       </div>
       <div class="flex gap-2 items-center">
-        <Button @submit="sendEmail" :isLoading="isLoading"> Envoyer </Button>
+        <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
+          {{ $t('buttons.send') }}
+        </Button>
         <p class="text-xs text-green-500 font-medium" v-show="emailSent">
-          Votre message a été envoyé avec succès
+          {{ $t('windows.contact.success') }}
         </p>
         <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
       </div>

@@ -16,6 +16,7 @@
       @toggle-music="openWindow('music')"
       @toggle-calendar="openWindow('calendar')"
       @toggle-minesweeper="openWindow('minesweeper')"
+      @toggle-notepad="openWindow('notepad')"
     />
     <DesktopAppsLayout
       :entities="entities"
@@ -43,8 +44,8 @@
         :initHeight="window.initHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
-        :displayMenuHeader="window.displayMenuHeader"
-        :menuHeaderItems="window.menuHeaderItems"
+        :displayHeaderTools="window.displayHeaderTools"
+        :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
         :style="{ zIndex: findWindowZIndex(window.id) }"
@@ -53,11 +54,14 @@
           v-if="window.id === 'myProjects'"
           :is="window.component"
           :isGoBackActive="window.isGoBackActive"
-          :subMenuItems="window.subMenuItems"
+          :subMenuType="window.subMenuType"
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id, $event)"
         />
-        <component v-else :is="window.component" :subMenuItems="window.subMenuItems" />
+        <component 
+          v-else 
+          :is="window.component" 
+          v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}" />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
@@ -68,6 +72,8 @@
 import { ref, shallowRef, provide, onMounted, onUnmounted } from 'vue'
 import { useWindowsStore } from '@/stores/windowsStore.js'
 import { useVolumeStore } from '@/stores/volumeStore.js'
+import { useLocaleStore } from '@/stores/localeStore'
+
 import MetaUpdater from '../MetaUpdater.vue'
 import Header from '@/components/Header/Header.vue'
 import Footer from '@/components/Footer/Footer.vue'
@@ -85,15 +91,21 @@ import Notepad from '@/components/Windows/Notepad.vue'
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
 import windowsData from '@/data/windows-data.json'
+import leftMenuData from '@/data/left-menu-data.json'
 
 const showHeader = ref(false)
 const windows = ref([])
 const windowsStore = useWindowsStore()
 const volumeStore = useVolumeStore()
+const localeStore = useLocaleStore()
 
 onMounted(() => {
+  // Ensure the localeStore is updated with the correct locale from localStorage
+  const storedLocale = localStorage.getItem('currentLocale') || 'fr'
+  localeStore.setLocale(storedLocale)
+
   windowsStore.loadState()
-  // volumeStore.playAudio(['/sounds/start-windows.mp3'])
+  volumeStore.playAudio(['/sounds/start-windows.mp3'])
   volumeStore.unmuteAudio()
 })
 
@@ -103,6 +115,7 @@ onUnmounted(() => {
     document.head.removeChild(script)
   }
 })
+
 
 // Keep track of the highest z-index
 const highestZIndex = ref(0)
@@ -158,9 +171,9 @@ const openWindow = (windowId) => {
         initPositionY: entity.initPositionY,
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
-        subMenuItems: entity.subMenuItems,
-        displayMenuHeader: entity.displayMenuHeader,
-        menuHeaderItems: entity.menuHeaderItems,
+        subMenuType: entity.subMenuType,
+        displayHeaderTools: entity.displayHeaderTools,
+        menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
         windowsHeaderLogo: entity.windowsHeaderLogo,
         isGoBackActive: false,
@@ -264,7 +277,6 @@ const handleProjectActiveName = (windowId, projectName) => {
   const window = windows.value.find((window) => window.id === windowId)
   if (window) {
     window.activeProjectName = projectName
-    console.log('projectName', projectName)
   }
 }
 
