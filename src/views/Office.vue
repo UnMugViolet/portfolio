@@ -105,7 +105,7 @@ onMounted(() => {
   localeStore.setLocale(storedLocale)
 
   windowsStore.loadState()
-  // volumeStore.playAudio(['/sounds/start-windows.mp3'])
+  volumeStore.playAudio(['/sounds/start-windows.mp3'])
   volumeStore.unmuteAudio()
 })
 
