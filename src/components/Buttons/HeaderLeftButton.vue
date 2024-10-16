@@ -7,7 +7,7 @@
       <slot name="img" />
     </div>
     <div class="text-left">
-      <h3 class="header-font text-xs">
+      <h3 class="font-verdana font-semibold text-xs">
         <slot name="title" />
       </h3>
       <p class="small-p text-gray-400">

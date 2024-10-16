@@ -72,7 +72,7 @@
       "education": "Formation",
       "proExperience": "Expérience professionnelle"
     },
-    "music":{
+    "music": {
       "title": "Titre",
       "album": "Album",
       "addedThe": "Ajouté le",
@@ -143,7 +143,7 @@
       "goalSeventh": "De la redondance dans les données et dans la manière d'y accéder à distance",
       "goalEighth": "Pouvoir maintenir ce système facilement",
       "goalNinth": "Être moins cher qu'un équivalent prémonté avec les mêmes performances",
-      "specs" : {
+      "specs": {
         "motherboard": "🧠 Motherboard + processor",
         "ram": "⚡ RAM",
         "case": "🗄️ Boitier",

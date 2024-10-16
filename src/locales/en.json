@@ -143,7 +143,7 @@
       "goalSeventh": "Redundancy in data and remote access to it",
       "goalEighth": "Maintain this system easily",
       "goalNinth": "Be less expensive than a pre-assembled equivalent with the same performance",
-      "specs" : {
+      "specs": {
         "motherboard": "🧠 Motherboard + processor",
         "ram": "⚡ RAM",
         "case": "🗄️ Case",

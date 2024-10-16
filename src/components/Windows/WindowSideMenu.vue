@@ -4,7 +4,7 @@ import { useLocaleStore } from '@/stores/localeStore'
 import leftMenuData from '@/data/left-menu-data.json'
 
 const props = defineProps({
-  subMenuType: String,
+  subMenuType: String
 })
 
 // Get the current locale from the locale store
@@ -16,7 +16,6 @@ const filteredMenuItems = computed(() => {
   const localeData = leftMenuData.leftMenuItems[props.subMenuType]?.[currentLocale.value] || []
   return localeData
 })
-
 </script>
 
 <template>

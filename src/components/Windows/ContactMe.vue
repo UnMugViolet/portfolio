@@ -8,7 +8,7 @@ import Button from '../Buttons/Button.vue'
 
 const props = defineProps({
   subMenuType: {
-    type: String,
+    type: String
   }
 })
 

@@ -1,5 +1,7 @@
 <template>
-  <button class="text-white start-button start-button-font text-lg h-8 select-none cursor-pointer">
+  <button
+    class="text-white start-button font-franklin italic text-lg h-8 select-none cursor-pointer"
+  >
     <div class="flex items-center gap-px pr-5 pl-2 h-8">
       <WindowsIcon />
       {{ $t('buttons.start') }}
