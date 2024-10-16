@@ -8,17 +8,17 @@
           "subtasks": [
             {
               "id": 1,
-              "subtitle": "System Information",
+              "subtitle": "View System Information",
               "iconUrl": "/img/icons/info-system-icon.ico"
             },
             {
               "id": 2,
-              "subtitle": "Programs",
+              "subtitle": "Add or Remove Programs",
               "iconUrl": "/img/icons/programs-icon.png"
             },
             {
               "id": 3,
-              "subtitle": "Change Settings",
+              "subtitle": "Change a Settings",
               "iconUrl": "/img/icons/settings-icon.png"
             }
           ]
