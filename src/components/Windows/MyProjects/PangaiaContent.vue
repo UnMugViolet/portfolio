@@ -6,7 +6,7 @@ const iframeSrc = ref('')
 onMounted(() => {
   iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
     &embed_origin=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
-    &url=https://www.figma.com/file/9Na2cHrsPHJPVsoyxexsfw/Pangaia-Maquette-Edit`
+    &url=https://www.figma.com/design/33VqWpR9IdeCFCb0WRM7XM/Pangaia-V2?node-id=0-1&t=hOyOj8Jinrqt1ZkM-1`
 })
 </script>
 
@@ -214,7 +214,7 @@ onMounted(() => {
         height="450"
         width="100%"
         class="p-2"
-        :title="$t('common.design') + ' ' + Pangaia"
+        :title="$t('common.design') + ' Pangaia'"
         :src="iframeSrc"
         allowfullscreen
       />

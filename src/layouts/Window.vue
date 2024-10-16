@@ -13,7 +13,7 @@
       <div
         class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1"
       >
-        <img :src="iconSrc" alt="icon" class="w-4 h-4" />
+        <img :src="iconSrc" :alt="$t('common.tiny') + ' ' + $t('common.icon')+ ' ' + translatedTitle" class="w-4 h-4" />
         <div class="flex items-center overflow-hidden">
           <h4 class="text-header-window text-header-shadow truncate">{{ translatedTitle }}</h4>
         </div>

@@ -87,7 +87,7 @@ onMounted(() => {
         height="450"
         width="100%"
         class="p-2"
-        :title="$t('common.design') + ' ' + maquette"
+        :title="$t('common.design') + ' clench' "
         :src="iframeSrc"
         allowfullscreen
       />

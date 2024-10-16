@@ -1,6 +1,7 @@
 {
   "common": {
     "name": "Name",
+    "tiny": "Tiny",
     "errorVideo": "Your browser does not support videos.",
     "context": "Context",
     "objectives": "Objectives",
@@ -27,7 +28,9 @@
     "quantity": "Quantity",
     "viewModel": "Go to model",
     "CDM": "CDM",
-    "PDM": "PDM"
+    "PDM": "PDM",
+    "years": "years old",
+    "webdev": "Web developper"
   },
   "message": {
     "welcome": "Welcome to my computer.",
@@ -64,6 +67,10 @@
         "empty": "Please fill in all fields before sending your message",
         "unknown": "The message could not be sent. You can contact me directly at the following email address: "
       }
+    },
+    "cv": {
+      "education": "Education",
+      "proExperience": "Professional experiences"
     }
   },
   "project": {
