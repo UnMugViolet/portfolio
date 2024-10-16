@@ -44,27 +44,18 @@ onMounted(() => {
       </div>
     </div>
     <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
-    <p>
-      Un exercice dans le cadre d'un cours de Framework CSS & Maquettage à MyDigitalSchool Rennes.
-    </p>
-    <p>
-      Le but, faire l'interface graphique d'une application web en une semaine. Pas de backend donc,
-      mais toute la conception graphique.
-    </p>
-    <p>
-      Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse communiquer.
-    </p>
-    <p>
-      Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique et développer ce site web.
-    </p>
+      <p>{{ $t('project.clench.contextFirstParagraph') }}</p>
+      <p>{{ $t('project.clench.contextSecondParagraph') }}</p>
+      <p>{{ $t('project.clench.contextThirdParagraph') }}</p>
+      <p>{{ $t('project.clench.contextFourthParagraph') }}</p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
-      <li>Maquetter un site web et un wireframe en se basant sur un cahier des charges</li>
-      <li>Développer une identité graphique simple</li>
-      <li>Développer le front de l'application en utilisant un Framework CSS</li>
-      <li>Mettre en production</li>
-      <li>Travailler en équipe</li>
-      <li>Tenir le délai d'une semaine</li>
+      <li>{{ $t('project.clench.goalFirst') }}</li>
+      <li>{{ $t('project.clench.goalSecond') }}</li>
+      <li>{{ $t('project.clench.goalThird') }}</li>
+      <li>{{ $t('project.clench.goalFourth') }}</li>
+      <li>{{ $t('project.clench.goalFifth') }}</li>
+      <li>{{ $t('project.clench.goalSixth') }}</li>
     </ul>
     <div
       class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue hover:fill-heroic-blue"
