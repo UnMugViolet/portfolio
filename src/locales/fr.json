@@ -1,6 +1,7 @@
 {
   "common": {
     "name": "Nom",
+    "tiny": "Petite",
     "errorVideo": "Votre navigateur ne supporte pas la vidéo.",
     "context": "Contexte",
     "objectives": "Objectifs",
@@ -27,7 +28,9 @@
     "quantity": "Quantité",
     "viewModel": "Voir le modèle",
     "CDM": "MCD",
-    "PDM": "MPD"
+    "PDM": "MPD",
+    "years": "ans",
+    "webdev": "Développeur web"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
@@ -64,6 +67,10 @@
         "empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
         "unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
       }
+    },
+    "cv": {
+      "education": "Formation",
+      "proExperience": "Expérience professionnelle"
     }
   },
   "project": {

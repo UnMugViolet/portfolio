@@ -91,7 +91,7 @@
     "windowsHeaderLogo": true,
     "headerPosition": "right",
     "menuHeaderItemsId": "default",
-    "iconSrc": "/img/icons/folder-music-icon.png",
+    "iconSrc": "/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
     "initWidth": 660,
@@ -217,8 +217,8 @@
     "iconSrc": "/img/icons/notepad-icon-sm.png",
     "initPositionX": 110,
     "initPositionY": 480,
-    "initWidth": 400,
-    "initHeight": 500,
+    "initWidth": 250,
+    "initHeight": 300,
     "component": "Notepad",
     "subMenuType": ""
   }
