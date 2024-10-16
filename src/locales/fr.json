@@ -17,11 +17,14 @@
     "tasksDone": "Tâches réalisées sur le projet",
     "techInfo": "Informations techniques",
     "componentsDot": "Composants :",
-    "component": "Composant",
+    "components": "Composants",
+    "models": "Modèles",
     "model": "Modèle",
+    "links": "Liens",
     "link": "Lien",
     "hddDots": "HDD :",
     "disks": "Disques",
+    "quantity": "Quantité",
     "viewModel": "Voir le modèle",
     "CDM": "MCD",
     "PDM": "MPD"
@@ -121,9 +124,10 @@
       "goalNinth": "Être moins cher qu'un équivalent prémonté avec les mêmes performances",
       "specs" : {
         "motherboard": "🧠 Motherboard + processor",
+        "ram": "⚡ RAM",
         "case": "🗄️ Boitier",
         "powerSupply": "🔌 Alimentation",
-        "ssd": "💾 SSD boot",
+        "ssdBoot": "💾 SSD boot",
         "ssdNas": "💽 SSD Nas",
         "splitter": "➿ Répartiteur SATA",
         "hddSpecs": "🗃️ HDD Western Digital"

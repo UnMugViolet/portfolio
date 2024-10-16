@@ -17,11 +17,14 @@
     "tasksDone": "Tasks done on the project",
     "techInfo": "Technical informations",
     "componentsDot": "Components :",
-    "component": "Component",
+    "components": "Components",
+    "models": "Models",
     "model": "Model",
+    "links": "Links",
     "link": "Link",
     "hddDots": "HDD :",
     "disks": "Disks",
+    "quantity": "Quantity",
     "viewModel": "Go to model",
     "CDM": "CDM",
     "PDM": "PDM"
@@ -121,13 +124,13 @@
       "goalNinth": "Be less expensive than a pre-assembled equivalent with the same performance",
       "specs" : {
         "motherboard": "🧠 Motherboard + processor",
+        "ram": "⚡ RAM",
         "case": "🗄️ Case",
         "powerSupply": "🔌 Power supply",
-        "ssd": "💾 SSD boot",
+        "ssdBoot": "💾 SSD boot",
         "ssdNas": "💽 SSD Nas",
         "splitter": "➿ Répartiteur SATA",
         "hddSpecs": "🗃️ HDD Western Digital"
-
       }
     }
   },
