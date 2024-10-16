@@ -103,30 +103,36 @@ watch(isLoading, (newValue) => {
         {{ $t('windows.contact.description') }}
       </p>
       <div class="max-w-prose">
-        <label class="text-xs">{{ $t('windows.contact.name') }}</label>
-        <input
-          v-model="userName"
-          type="text"
-          class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
-          placeholder="Jean Doe"
-        />
+        <label class="text-xs"
+          >{{ $t('windows.contact.name') }}
+          <input
+            v-model="userName"
+            type="text"
+            class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
+            placeholder="Jean Doe"
+          />
+        </label>
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">{{ $t('windows.contact.email') }}</label>
-        <input
-          v-model="userEmail"
-          type="email"
-          class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
-          placeholder="jean_doe@wanadoo.com"
-        />
+        <label class="text-xs"
+          >{{ $t('windows.contact.email') }}
+          <input
+            v-model="userEmail"
+            type="email"
+            class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
+            placeholder="jean_doe@wanadoo.com"
+          />
+        </label>
       </div>
       <div class="max-w-prose">
-        <label class="text-xs">{{ $t('windows.contact.message') }}</label>
-        <textarea
-          v-model="userMessage"
-          class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
-          :placeholder="$t('windows.contact.message')"
-        ></textarea>
+        <label class="text-xs"
+          >{{ $t('windows.contact.message') }}
+          <textarea
+            v-model="userMessage"
+            class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
+            :placeholder="$t('windows.contact.message')"
+          ></textarea>
+        </label>
       </div>
       <div class="flex gap-2 items-center">
         <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
