@@ -84,22 +84,19 @@
       <source src="/videos/montage-serveur.mp4" type="video/mp4" />
       {{ $t('common.errorVideo') }}
     </video>
-    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <p>
-      Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi
-      développeur web.
+      Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.
     </p>
     <p>
-      Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens.
-      Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de
-      comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;
+      Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.&nbsp;
     </p>
-    <h3 class="mt-5 mb-1">Objectifs</h3>
+    <h3 class="mt-5 mb-1">{{ $t('common.context') }}</h3>
     <ul class="list-disc ml-3">
       <li>Faire un serveur de stockage qui permette également de déployer des applications</li>
       <li>Pouvoir y accéder à distance</li>
       <li>Permettre de monter une vidéo sur des fichiers distants</li>
-      <li>Pouvoir installer des services comme Jenkins, Sonarqube, etc...</li>
+      <li>Pouvoir installer des services d'automatisation comme Jenkins, Sonarqube, etc...</li>
       <li>
         Avoir un monitoring des sites web en ligne, et des alertes en cas de perte de services
       </li>
@@ -108,12 +105,12 @@
       <li>Pouvoir maintenir ce système facilement</li>
       <li>Être moins cher qu'un équivalent prémonté avec les mêmes performances</li>
     </ul>
-    <h3 class="mt-5 mb-1">Informations techniques</h3>
-    <p class="mb-5 text-xs underline">Composants :</p>
+    <h3 class="mt-5 mb-1">{{ $t('common.techInfo') }}</h3>
+    <p class="mb-5 text-xs underline">{{ $t('common.componentsDot') }}</p>
     <div class="grid grid-cols-3 border border-black">
-      <div class="bg-gray-200 border border-black p-2">Composant</div>
-      <div class="bg-gray-200 border border-black p-2">Modèle</div>
-      <div class="bg-gray-200 border border-black p-2">Lien</div>
+      <div class="bg-gray-200 border border-black p-2">{{ $t('common.component') }}</div>
+      <div class="bg-gray-200 border border-black p-2">{{ $t('common.model') }}</div>
+      <div class="bg-gray-200 border border-black p-2">{{ $t('common.link') }}</div>
 
       <div class="border border-black p-2">🧠 Carte mère + processeur</div>
       <div class="border border-black p-2">N5105 NAS motherboard</div>

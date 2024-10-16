@@ -14,7 +14,17 @@
     "go": "Aller",
     "address": "Adresse",
     "design": "Maquette",
-    "tasksDone": "Tâches réalisées sur le projet"
+    "tasksDone": "Tâches réalisées sur le projet",
+    "techInfo": "Informations techniques",
+    "componentsDot": "Composants :",
+    "component": "Composant",
+    "model": "Modèle",
+    "link": "Lien",
+    "hddDots": "HDD :",
+    "disks": "Disques",
+    "viewModel": "Voir le modèle",
+    "CDM": "MCD",
+    "PDM": "MPD"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
@@ -55,15 +65,69 @@
   },
   "project": {
     "logma": {
-      "contextFirstPrapgrah": "Logma production est une société de production audiovisuelle basée à Rennes. Fondée par Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le gérant avec un site sous Wordpress.",
-      "contextSecondPrapgrah": "La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée, tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre rapide et efficace.",
-      "contextThirdPrapgrah": "Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos",
+      "contextFirstParagraph": "Logma production est une société de production audiovisuelle basée à Rennes. Fondée par Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le gérant avec un site sous Wordpress.",
+      "contextSecondParagraph": "La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée, tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre rapide et efficace.",
+      "contextThirdParagraph": "Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos",
       "goalFirst": "Refonte du site web avec l'identité graphique déjà en place",
       "goalSecond": "Créer un site web responsive",
       "goalThird": "Développer un backoffice pour la gestion du site",
       "goalFourth": "Optimiser le SEO",
       "goalFifth": "Améliorer la vitesse de chargement et les performances au global",
       "goalSixth": "Le mettre en production"
+    },
+    "pangaia": {
+      "contextFirstParagraph": "Pangaia est une application open source, qui cherche à sensibilser autour des plantes.",
+      "contextSecondParagraph": "Le but étant de créer une interface ludique et pratique pour avoir une gestion de son jardin.",
+      "contextThirdParagraph": "Mais également pouvoir découvrir de nouvelles plantes en utilisant la gamification.",
+      "contextFourthParagraph": "Donner des informations sur la flore qui nous entoure en fonction de la localication de l'utilisateur.",
+      "goalFirst": "Pouvoir essayer l'application en mode démo",
+      "goalSecond": "Accéder à la fiche d'une plante",
+      "goalThird": "Pouvoir modéliser son jardin",
+      "goalFourth": "Pouvoir ajouter une plante à son jardin",
+      "goalFifth": "Avoir une connexion à la météo en temps réel",
+      "goalSixth": "Avoir des rappels de tâches à réaliser sur sa plante ou dans son jardin",
+      "tasksDoneFirst": "Aide à la conception et à la modélisation de la base de données",
+      "tasksDoneSecond": "Maquettage de l'application",
+      "tasksDoneThird": "Travail sur l'UX avec des tests d'ergonomie",
+      "tasksDoneFourth": "Création d'un dashboard",
+      "tasksDoneFifth": "Réalisation de la page listant les plantes et les catégories",
+      "tasksDoneSixth": "Mise en place d'une API et de la documentation avec Swagger",
+      "CDMText": "Modélisation conceptuelle partielle de la base de donnée, concernant les modifications à apporter au projet.",
+      "PDMText": "Modélisation de la base de donnée relationnelle complète."
+    },
+    "clench": {
+      "contextFirstParagraph": "Un exercice dans le cadre d'un cours de Framework CSS & Maquettage à MyDigitalSchool Rennes.",
+      "contextSecondParagraph": "Le but, faire l'interface graphique d'une application web en une semaine. Pas de backend donc, mais toute la conception graphique.",
+      "contextThirdParagraph": "Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse communiquer.",
+      "contextFourthParagraph": "Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique et développer ce site web.",
+      "goalFirst": "Maquetter un site web et un wireframe en se basant sur un cahier des charges",
+      "goalSecond": "Développer une identité graphique simple",
+      "goalThird": "Développer le front de l'application en utilisant un Framework CSS",
+      "goalFourth": "Mettre en production",
+      "goalFifth": "Travailler en équipe",
+      "goalSixth": "Tenir le délai d'une semaine"
+    },
+    "homeserver": {
+      "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",
+      "contextSecondParagraph": "Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.",
+      "goalFirst": "Faire un serveur de stockage qui permette également de déployer des applications",
+      "goalSecond": "Pouvoir y accéder à distance",
+      "goalThird": "Permettre de monter une vidéo sur des fichiers distants",
+      "goalFourth": "Pouvoir installer des services d'automatisation comme Jenkins, Sonarqube, etc...",
+      "goalFifth": "Avoir un monitoring des sites web en ligne, et des alertes en cas de perte de services",
+      "goalSixth": "Hebérger des sites de préproduction avant de les mettre en ligne",
+      "goalSeventh": "De la redondance dans les données et dans la manière d'y accéder à distance",
+      "goalEighth": "Pouvoir maintenir ce système facilement",
+      "goalNinth": "Être moins cher qu'un équivalent prémonté avec les mêmes performances",
+      "specs" : {
+        "motherboard": "🧠 Motherboard + processor",
+        "case": "🗄️ Boitier",
+        "powerSupply": "🔌 Alimentation",
+        "ssd": "💾 SSD boot",
+        "ssdNas": "💽 SSD Nas",
+        "splitter": "➿ Répartiteur SATA",
+        "hddSpecs": "🗃️ HDD Western Digital"
+      }
     }
   },
   "alt": {
