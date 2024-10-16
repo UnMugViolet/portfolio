@@ -3,7 +3,7 @@
     class="flex items-center top-0 w-full h-5 px-0.5 bg-window-white border-top-grey shadow-header-window"
   >
     <div>
-      <p class="small-p text-gray-500 px-1.5 cursor-default">Adresse</p>
+      <p class="small-p text-gray-500 px-1.5 cursor-default">{{  $t('common.address') }}</p>
     </div>
     <div
       class="w-full h-full bg-white border border-blue-400 pl-1 flex items-center justify-between"
@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="flex items-center px-2 gap-1 w-20">
-      <img src="/img/icons/right-green-arrow-icon.png" alt="Aller" class="w-3.5 h-3.5" />
-      <p class="small-p cursor-default">Aller</p>
+      <img src="/img/icons/right-green-arrow-icon.png" :alt="$t('common.icon') + ' ' + $t('common.go')" class="w-3.5 h-3.5" />
+      <p class="small-p cursor-default">{{ $t('common.go') }}</p>
     </div>
   </div>
 </template>

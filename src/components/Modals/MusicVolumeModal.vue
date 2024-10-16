@@ -20,8 +20,8 @@ const adjustVolume = () => {
     <div
       class="absolute top-0 left-0 h-7 w-full z-10 flex items-center px-1.5 bg-header-window-active"
     >
-      <img src="/img/icons/volume-icon-sm.png" alt="icon" class="w-4 h-4 mr-1" />
-      <h4 class="text-header-window text-header-shadow truncate">Contrôle</h4>
+      <img src="/img/icons/volume-icon-sm.png" :alt="$t('common.icon') + ' volume'" class="w-4 h-4 mr-1" />
+      <h4 class="text-header-window text-header-shadow truncate">{{ $t('modale.control') }}</h4>
     </div>
     <div class="bg-light-yellow h-52 mt-3 pr-1">
       <div class="h-full w-full flex items-center px-2">

@@ -1,543 +1,225 @@
 [
   {
     "id": "myProjects",
-    "title": "Mes projets",
-    "subtitle": "Voir tous mes projets",
+    "title": {
+      "en": "My Projects",
+      "fr": "Mes projets"
+    },
+    "subtitle": {
+      "en": "See all my projects",
+      "fr": "Voir tous mes projets"
+    },
     "imgSrc": "/img/icons/projects-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/projects-icon-sm.png",
     "initPositionX": 180,
     "initPositionY": 100,
     "initWidth": 660,
     "initHeight": 500,
     "component": "MyProjects",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Profile Github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": "default"
   },
   {
     "id": "contact",
-    "title": "Me contacter",
-    "subtitle": "Me contacter",
+    "title": {
+      "en": "Contact me",
+      "fr": "Me contacter"
+    },
+    "subtitle": {
+      "en": "Leave me a message",
+      "fr": "Laissez moi un message"
+    },
     "imgSrc": "/img/icons/email-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/email-icon-sm.png",
     "initPositionX": 210,
     "initPositionY": 140,
     "initWidth": 660,
     "initHeight": 500,
     "component": "ContactMe",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Profile Github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": "default"
   },
   {
     "id": "myCV",
-    "title": "Mon CV",
-    "subtitle": "Voir le curriculum vitae",
+    "title": {
+      "en": "My CV",
+      "fr": "Mon CV"
+    },
+    "subtitle": {
+      "en": "See the curriculum vitae",
+      "fr": "Voir le curriculum vitae"
+    },
     "imgSrc": "/img/icons/cv-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "left",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/cv-icon-sm.png",
     "initPositionX": 240,
     "initPositionY": 180,
     "initWidth": 385,
     "initHeight": 500,
     "component": "MyCV",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": ""
   },
   {
     "id": "music",
-    "title": "Mes Musiques",
-    "subtitle": "",
+    "title": {
+      "en": "My Musics",
+      "fr": "Mes Musiques"
+    },
+    "subtitle": {
+      "en": "Listen to music",
+      "fr": "Écouter de la musique"
+    },
     "imgSrc": "/img/icons/playmusic-icon-lg.png",
     "onDesktop": true,
     "resizable": true,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/playmusic-icon-sm.png",
     "initPositionX": 130,
     "initPositionY": 230,
     "initWidth": 660,
     "initHeight": 500,
     "component": "Music",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": ""
   },
   {
     "id": "about",
-    "title": "A propos",
-    "subtitle": "",
+    "title": {
+      "en": "About",
+      "fr": "À propos"
+    },
+    "subtitle": {
+      "en": "Learn about me",
+      "fr": "En savoir plus sur moi"
+    },
     "imgSrc": "/img/icons/folder-docs-icon-sm.png",
     "onDesktop": false,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/folder-docs-icon-xs.png",
     "initPositionX": 190,
     "initPositionY": 310,
     "initWidth": 660,
     "initHeight": 500,
     "component": "About",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": ""
   },
   {
     "id": "pictures",
-    "title": "Mes Images",
-    "subtitle": "",
+    "title": {
+      "en": "My Pictures",
+      "fr": "Mes Images"
+    },
+    "subtitle": {
+      "en": "View my pictures",
+      "fr": "Voir mes images"
+    },
     "imgSrc": "/img/icons/folder-images-icon-sm.png",
     "onDesktop": false,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/folder-images-icon-sm.png",
     "initPositionX": 50,
     "initPositionY": 400,
     "initWidth": 660,
     "initHeight": 500,
     "component": "Pictures",
-    "subMenuItems": [
-      {
-        "id": 1,
-        "title": "Tâches système",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Informations système",
-            "iconUrl": "/img/icons/info-system-icon.ico"
-          },
-          {
-            "id": 2,
-            "subtitle": "Gestion des programmes",
-            "iconUrl": "/img/icons/programs-icon.png"
-          },
-          {
-            "id": 3,
-            "subtitle": "Changer les paramètres",
-            "iconUrl": "/img/icons/settings-icon.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Autres",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "Mes emplacements réseau",
-            "iconUrl": "/img/icons/networking-icon.png",
-            "url": ""
-          },
-          {
-            "id": 2,
-            "subtitle": "Mes documents",
-            "iconUrl": "/img/icons/documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 3,
-            "subtitle": "Documents partagés",
-            "iconUrl": "/img/icons/shared-documents-icon.png",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": "Panneau de configuration",
-            "iconUrl": "/img/icons/settings-icon.png",
-            "url": ""
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Détails",
-        "subtasks": [
-          {
-            "id": 1,
-            "subtitle": "github",
-            "iconUrl": "/img/icons/github-icon.png",
-            "url": "https://github.com/UnMugViolet"
-          }
-        ]
-      }
-    ]
+    "subMenuType": ""
   },
   {
     "id": "calendar",
-    "title": "Calendrier",
-    "subtitle": "",
+    "title": {
+      "en": "Calendar",
+      "fr": "Calendrier"
+    },
+    "subtitle": {
+      "en": "View my calendar",
+      "fr": "Voir mon calendrier"
+    },
     "imgSrc": "/img/icons/calendar-icon-lg.png",
     "onDesktop": false,
-    "displayMenuHeader": true,
+    "displayHeaderTools": true,
     "resizable": true,
     "windowsHeaderLogo": true,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Outils"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "default",
     "iconSrc": "/img/icons/calendar-icon-sm.png",
     "initPositionX": 80,
     "initPositionY": 440,
     "initWidth": 660,
     "initHeight": 500,
-    "component": "Calendar"
+    "component": "Calendar",
+    "subMenuType": ""
   },
   {
     "id": "minesweeper",
-    "title": "Démineur",
-    "subtitle": "",
+    "title": {
+      "en": "Minesweeper",
+      "fr": "Démineur"
+    },
+    "subtitle": {
+      "en": "Play Minesweeper",
+      "fr": "Jouer au démineur"
+    },
     "imgSrc": "/img/icons/minesweeper-icon-lg.png",
     "onDesktop": true,
     "resizable": false,
-    "displayMenuHeader": false,
+    "displayHeaderTools": false,
     "windowsHeaderLogo": false,
-    "menuHeaderItems": ["Jeu", "Options", "Aide"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "minesweeper",
     "iconSrc": "/img/icons/minesweeper-icon-sm.png",
     "initPositionX": 160,
     "initPositionY": 270,
     "initWidth": 200,
     "initHeight": 330,
-    "component": "Minesweeper"
+    "component": "Minesweeper",
+    "subMenuType": ""
   },
   {
     "id": "notepad",
-    "title": "Notepad",
-    "subtitle": "",
+    "title": {
+      "en": "Notepad",
+      "fr": "Bloc-notes"
+    },
+    "subtitle": {
+      "en": "Write a note",
+      "fr": "Écrire une note"
+    },
     "imgSrc": "/img/icons/notepad-icon-lg.png",
     "onDesktop": true,
-    "displayMenuHeader": false,
+    "displayHeaderTools": false,
     "resizable": true,
     "windowsHeaderLogo": false,
-    "menuHeaderItems": ["Fichier", "Édition", "Affichage", "Aide"],
+    "headerPosition": "right",
+    "menuHeaderItemsId": "notepad",
     "iconSrc": "/img/icons/notepad-icon-sm.png",
     "initPositionX": 110,
     "initPositionY": 480,
-    "initWidth": 400,
-    "initHeight": 500,
-    "component": "Notepad"
+    "initWidth": 250,
+    "initHeight": 300,
+    "component": "Notepad",
+    "subMenuType": ""
   }
 ]

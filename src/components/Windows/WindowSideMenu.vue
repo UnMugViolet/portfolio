@@ -1,14 +1,29 @@
 <script setup>
+import { computed } from 'vue'
+import { useLocaleStore } from '@/stores/localeStore'
+import leftMenuData from '@/data/left-menu-data.json'
+
 const props = defineProps({
-  subMenuItems: Array
+  subMenuType: String,
 })
+
+// Get the current locale from the locale store
+const localeStore = useLocaleStore()
+const currentLocale = computed(() => localeStore.currentLocale)
+
+// Filter the data based on the subMenuType and the current locale
+const filteredMenuItems = computed(() => {
+  const localeData = leftMenuData.leftMenuItems[props.subMenuType]?.[currentLocale.value] || []
+  return localeData
+})
+
 </script>
 
 <template>
   <div
     class="flex flex-col flex-shrink-0 gap-3 bg-window-side-menu w-32 md:w-12.125 h-full p-2.5 overflow-auto"
   >
-    <div class="text-twilight-blue" v-for="item in props.subMenuItems" :key="item.id">
+    <div class="text-twilight-blue" v-for="item in filteredMenuItems" :key="item.id">
       <div
         class="flex flew-row justify-between items-center bg-window-menu-card-header rounded-t-sm px-1 py-px sm:px-2 sm:py-0.5 text-xs-mobile md:text-xs font-bold cursor-pointer hover:text-heroic-blue"
       >

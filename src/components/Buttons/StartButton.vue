@@ -2,7 +2,7 @@
   <button class="text-white start-button start-button-font text-lg h-8 select-none cursor-pointer">
     <div class="flex items-center gap-px pr-5 pl-2 h-8">
       <WindowsIcon />
-      démarrer
+      {{ $t('buttons.start') }}
     </div>
   </button>
 </template>

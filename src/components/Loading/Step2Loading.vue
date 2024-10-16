@@ -7,7 +7,7 @@ import LoadingBar from './LoadingBar.vue'
   <ContentCenter class="bg-black">
     <template #center>
       <div class="md:w-4/12 w-64 ml-5">
-        <img src="/img/logo-portfolio-white.webp" alt="logo démarrage" />
+        <img src="/img/logo-portfolio-white.webp" :alt="$t('alt.logoStart')" />
       </div>
     </template>
 
@@ -20,7 +20,7 @@ import LoadingBar from './LoadingBar.vue'
         <div>
           <div class="flex justify-between items-center gap-8 text-white">
             <div>
-              <h1 class="md:text-xl text-sm">Bienvenue sur mon ordinateur.</h1>
+              <h1 class="md:text-xl text-sm">{{ $t('message.welcome') }}</h1>
             </div>
             <div>
               <h2 class="md:text-2xl text-md logo-font">UnMugViolet</h2>

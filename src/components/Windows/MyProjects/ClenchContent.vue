@@ -43,30 +43,19 @@ onMounted(() => {
         <p class="font-bold mt-px">shadcn/ui</p>
       </div>
     </div>
-    <h3 class="mt-5 mb-2">Contexte</h3>
-    <p>
-      Un exercice dans le cadre d'un cours de Framework CSS & Maquettage à MyDigitalSchool Rennes.
-    </p>
-    <p>
-      Le but, faire l'interface graphique d'une application web en une semaine. Pas de backend donc,
-      mais toute la conception graphique
-    </p>
-    <p>
-      Un site web sur le thème du campus, faire un support fictif sur lequel le BDE puisse
-      communiquer.
-    </p>
-    <p>
-      Avec l'aide de Baptiste Marie, étudiant également, nous avons donc créée l'identité graphique
-      et développer ce site web.
-    </p>
-    <h3 class="mt-5 mb-2">Objectifs</h3>
+    <h3 class="mt-5 mb-2">{{ $t('common.context') }}</h3>
+      <p>{{ $t('project.clench.contextFirstParagraph') }}</p>
+      <p>{{ $t('project.clench.contextSecondParagraph') }}</p>
+      <p>{{ $t('project.clench.contextThirdParagraph') }}</p>
+      <p>{{ $t('project.clench.contextFourthParagraph') }}</p>
+    <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
-      <li>Maquetter un site web et un wireframe en se basant sur un cahier des charges</li>
-      <li>Développer une identité graphique simple</li>
-      <li>Développer le front de l'application en utilisant un Framework CSS</li>
-      <li>Mettre en production</li>
-      <li>Travailler en équipe</li>
-      <li>Tenir le délai d'une semaine</li>
+      <li>{{ $t('project.clench.goalFirst') }}</li>
+      <li>{{ $t('project.clench.goalSecond') }}</li>
+      <li>{{ $t('project.clench.goalThird') }}</li>
+      <li>{{ $t('project.clench.goalFourth') }}</li>
+      <li>{{ $t('project.clench.goalFifth') }}</li>
+      <li>{{ $t('project.clench.goalSixth') }}</li>
     </ul>
     <div
       class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue hover:fill-heroic-blue"
@@ -87,18 +76,18 @@ onMounted(() => {
         href="https://github.com/UnMugViolet/clench-fakeapp"
         target="_blank"
         class="cursor-pointer"
-        >Voir le projet</a
+        >{{ $t('buttons.linkRepository') }}</a
       >
     </div>
     <div class="w-full flex items-center flex-col">
       <div class="w-full">
-        <h3 class="mt-5 mb-2">Maquette</h3>
+        <h3 class="mt-5 mb-2">{{ $t('common.design') }}</h3>
       </div>
       <iframe
         height="450"
         width="100%"
         class="p-2"
-        title="Clench maquette"
+        :title="$t('common.design') + ' clench' "
         :src="iframeSrc"
         allowfullscreen
       />
@@ -108,7 +97,14 @@ onMounted(() => {
     rel="noopener"
     href="https://clench-fakeapp.vercel.app/"
     target="_blank"
-    class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
-    >Lien vers le site
+    class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked flex items-center justify-center"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-0.5" viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"
+      />
+    </svg>
+    {{ $t('buttons.linkWebSite') }}
   </a>
 </template>
