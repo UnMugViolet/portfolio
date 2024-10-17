@@ -168,13 +168,15 @@ const getNeighbors = (index) => {
 const emojiSrc = (emoji) => `/img/icons/minesweeper/${emoji}.png`
 
 const switchEmoji = (e) => {
-  if (e.button === 0 && gameRunning.value) {
+  if (e.button === 0 && emoji.value !== 'dead' && emoji.value !== 'win') {
     emoji.value = emoji.value === 'smile' ? 'surprise' : 'smile'
   }
 }
 
 const resetEmoji = () => {
-  emoji.value = 'smile'
+  if (gameRunning.value) {
+    emoji.value = 'smile'
+  }
 }
 
 const clearBoard = () => {
