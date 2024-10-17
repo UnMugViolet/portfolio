@@ -97,51 +97,53 @@ watch(isLoading, (newValue) => {
     <WindowSideMenu :subMenuType="props.subMenuType" />
 
     <!-- Main content -->
-    <form class="flex flex-col w-full h-full bg-white overflow-auto p-2 gap-2 font-trebuchet-pixel">
-      <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
-      <p class="text-xs font-medium">
-        {{ $t('windows.contact.description') }}
-      </p>
-      <div class="max-w-prose">
-        <label class="text-xs"
-          >{{ $t('windows.contact.name') }}
-          <input
-            v-model="userName"
-            type="text"
-            class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
-            placeholder="Jean Doe"
-          />
-        </label>
-      </div>
-      <div class="max-w-prose">
-        <label class="text-xs"
-          >{{ $t('windows.contact.email') }}
-          <input
-            v-model="userEmail"
-            type="email"
-            class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
-            placeholder="jean_doe@wanadoo.com"
-          />
-        </label>
-      </div>
-      <div class="max-w-prose">
-        <label class="text-xs"
-          >{{ $t('windows.contact.message') }}
-          <textarea
-            v-model="userMessage"
-            class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
-            :placeholder="$t('windows.contact.message')"
-          ></textarea>
-        </label>
-      </div>
-      <div class="flex gap-2 items-center">
-        <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
-          {{ $t('buttons.send') }}
-        </Button>
-        <p class="text-xs text-green-500 font-medium" v-show="emailSent">
-          {{ $t('windows.contact.success') }}
+    <form class="flex flex-col w-full h-full bg-white overflow-auto gap-2 font-trebuchet-pixel">
+      <div class="m-2">
+        <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
+        <p class="text-xs font-medium">
+          {{ $t('windows.contact.description') }}
         </p>
-        <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
+        <div class="max-w-prose">
+          <label class="text-xs"
+            >{{ $t('windows.contact.name') }}
+            <input
+              v-model="userName"
+              type="text"
+              class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
+              placeholder="Jean Doe"
+            />
+          </label>
+        </div>
+        <div class="max-w-prose">
+          <label class="text-xs"
+            >{{ $t('windows.contact.email') }}
+            <input
+              v-model="userEmail"
+              type="email"
+              class="w-full h-6 border border-input-blue p-2 text-xs outline-none"
+              placeholder="jean_doe@wanadoo.com"
+            />
+          </label>
+        </div>
+        <div class="max-w-prose">
+          <label class="text-xs"
+            >{{ $t('windows.contact.message') }}
+            <textarea
+              v-model="userMessage"
+              class="w-full h-28 border border-input-blue p-2 text-xs outline-none"
+              :placeholder="$t('windows.contact.message')"
+            ></textarea>
+          </label>
+        </div>
+        <div class="flex gap-2 items-center">
+          <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
+            {{ $t('buttons.send') }}
+          </Button>
+          <p class="text-xs text-green-500 font-medium" v-show="emailSent">
+            {{ $t('windows.contact.success') }}
+          </p>
+          <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
+        </div>
       </div>
     </form>
   </div>
