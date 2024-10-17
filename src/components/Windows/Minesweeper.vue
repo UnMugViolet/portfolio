@@ -24,7 +24,7 @@
         </div>
       </div>
       <!-- Minesweeper content -->
-      <div @click="startGame" class="w-[188px] h-[188px] grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245" 
+      <div class="grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245" 
         :style="{ gridTemplateColumns: `repeat(${cols}, 20px)`, gridTemplateRows: `repeat(${rows}, 20px)` }">
         <div @mousedown="switchEmoji" @mouseup="uncoverCell(index)" v-for="(cell, index) in cells" :key="index"
           class="relative w-full h-full">
@@ -33,7 +33,8 @@
           </div>
           <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
           </div>
-          <img :src="'/img/icons/minesweeper/open' + 1 + '.png'" alt="empty" class="w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && cell.mine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
         </div>
       </div>
     </div>
@@ -50,14 +51,56 @@ const amountMines = ref(10)
 const gameRunning = ref(false)
 let timerInterval = null
 let emoji = ref('smile')
-const cells = ref(Array.from({ length: rows * cols }, () => ({ uncovered: false })));
+const cells = ref([])
 
 const uncoverCell = (index) => {
-  cells.value[index].uncovered = true;
+  const cell = cells.value[index];
+
+  // If the game is not running and no cell is uncovered, start the game
+  if (!gameRunning.value && !cell.uncovered) {
+    startGame()
+  }
+  
+  // Prevent uncovering cells if the game is not running
+  if (!gameRunning.value || cell.uncovered) return;
+  
+  if (cell.mine) {
+    // Game over - clicked on a mine
+    cell.uncovered = true;
+    emoji.value = 'dead';
+    revealMines();  
+    clearInterval(timerInterval);
+    gameRunning.value = false;
+  } else {
+    cell.uncovered = true;
+    if (cell.neighborMines === 0) {
+      const neighbors = getNeighbors(index);
+      neighbors.forEach(uncoverCell);
+    }
+    
+    if (checkWin()) {
+      emoji.value = 'win';  // Change emoji to victory face
+      clearInterval(timerInterval);
+      gameRunning.value = false;
+    }
+  }
+};
+
+const checkWin = () => {
+  return cells.value.every(cell => cell.mine || cell.uncovered);
+};
+
+const revealMines = () => {
+  cells.value.forEach(cell => {
+    if (cell.mine) {
+      cell.uncovered = true;
+    }
+  });
 };
 
 onMounted(() => {
   document.addEventListener('mouseup', resetEmoji)
+  resetGame()
 })
 
 onBeforeUnmount(() => {
@@ -76,20 +119,64 @@ const resetGame = () => {
   gameRunning.value = false
   resetTimer()
   emoji.value = 'smile'
-  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false }));
+  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false, mine: false, neighborMines: 0 }));
+  placeMines()
+  calculateNeighbors()
 }
+
+const placeMines = () => {
+  const mineIndices = new Set();
+  while (mineIndices.size < amountMines.value) {
+    mineIndices.add(Math.floor(Math.random() * rows * cols));
+  }
+  mineIndices.forEach(index => {
+    cells.value[index].mine = true;
+  });
+};
+
+const calculateNeighbors = () => {
+  cells.value.forEach((cell, index) => {
+    if (cell.mine) return;
+    const neighbors = getNeighbors(index);
+    let mineCount = 0;
+    neighbors.forEach(i => {
+      if (cells.value[i].mine) mineCount++;
+    });
+    cell.neighborMines = mineCount;
+  });
+};
+
+const getNeighbors = (index) => {
+  const neighbors = [];
+  const row = Math.floor(index / cols);
+  const col = index % cols;
+  
+  for (let r = row - 1; r <= row + 1; r++) {
+    for (let c = col - 1; c <= col + 1; c++) {
+      if (r >= 0 && r < rows && c >= 0 && c < cols && (r !== row || c !== col)) {
+        neighbors.push(r * cols + c);
+      }
+    }
+  }
+  
+  return neighbors;
+};
 
 // Function to get the image source for a digit
 const emojiSrc = (emoji) => `/img/icons/minesweeper/${emoji}.png`
 
 const switchEmoji = (e) => {
-  if (e.button === 0) {
+  if (e.button === 0 && gameRunning.value) {
     emoji.value = emoji.value === 'smile' ? 'surprise' : 'smile'
   }
 }
 
 const resetEmoji = () => {
   emoji.value = 'smile'
+}
+
+const clearBoard = () => {
+  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false }));
 }
 
 // Function to get the image source for a digit
