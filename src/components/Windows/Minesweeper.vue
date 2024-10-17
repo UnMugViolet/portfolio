@@ -11,8 +11,7 @@
         </div>
         <div
           class="border-l border-t border-gray-128 active:rounded-sm active:border-l-2 active:border-t-2 active:border-b active:border-r">
-          <button
-            @click="resetGame"
+          <button @click="resetGame"
             class="w-7 h-7 flex items-center justify-center rounded-sm bg-gray-192 border-2 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 outline-none active:border-transparent">
             <img :src="emojiSrc(emoji)" :alt="emoji + ' emoji'"
               class="w-5 h-5 active:translate-x-px active:translate-y-px" />
@@ -25,14 +24,17 @@
         </div>
       </div>
       <!-- Minesweeper content -->
-      <div
-        @click="startGame"
-        class="grid border-4 border-solid border-t-gray-128 border-l-gray-128 border-r-gray-245 border-b-gray-245"
+      <div @click="startGame" class="w-[188px] h-[188px] grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245" 
         :style="{ gridTemplateColumns: `repeat(${cols}, 20px)`, gridTemplateRows: `repeat(${rows}, 20px)` }">
-        <div
-          @mousedown="switchEmoji"
-          @mouseup="switchEmoji"
-          v-for="(cell, index) in rows * cols" :key="index" class="w-4.25 h-4.25 border-3 border-t-gray-245 border-l-gray-245 border-r-gray-128 border-b-gray-128"></div>
+        <div @mousedown="switchEmoji" @mouseup="uncoverCell(index)" v-for="(cell, index) in cells" :key="index"
+          class="relative w-full h-full">
+          <div v-if="!cell.uncovered"
+            class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
+          </div>
+          <div v-else class="absolute w-full h-full border-t border-l border-gray-128">
+          </div>
+          <img :src="'/img/icons/minesweeper/open' + 1 + '.png'" alt="empty" class="w-full h-full p-0.5" />
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +50,11 @@ const amountMines = ref(10)
 const gameRunning = ref(false)
 let timerInterval = null
 let emoji = ref('smile')
+const cells = ref(Array.from({ length: rows * cols }, () => ({ uncovered: false })));
 
+const uncoverCell = (index) => {
+  cells.value[index].uncovered = true;
+};
 onMounted(() => {
   document.addEventListener('mouseup', resetEmoji)
 })
