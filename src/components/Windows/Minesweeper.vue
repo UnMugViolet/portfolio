@@ -31,7 +31,7 @@
           <div v-if="!cell.uncovered"
             class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
           </div>
-          <div v-else class="absolute w-full h-full border-t border-l border-gray-128">
+          <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
           </div>
           <img :src="'/img/icons/minesweeper/open' + 1 + '.png'" alt="empty" class="w-full h-full p-0.5" />
         </div>
