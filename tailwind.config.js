@@ -14,7 +14,7 @@ module.exports = {
         'trebuchet': ['Trebuchet MS', 'sans-serif'],
         'trebuchet-pixel': ['Trebuchet MS pixelated', 'sans-serif'],
       },
-      backgroundImage: theme => ({
+      backgroundImage: ({
         'profile-pic': "url('/img/profile-picture.webp')",
         'office-pic': "url('/img/office-picture.webp')",
         'window-white': 'linear-gradient(to right, rgb(237, 237, 229) 0%, rgb(237, 232, 205) 100%)',
