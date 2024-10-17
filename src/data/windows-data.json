@@ -22,7 +22,7 @@
     "initWidth": 660,
     "initHeight": 500,
     "minWidth": 200,
-    "minHeight": 150,
+    "minHeight": 160,
     "component": "MyProjects",
     "subMenuType": "default"
   },
@@ -48,8 +48,8 @@
     "initPositionY": 140,
     "initWidth": 660,
     "initHeight": 500,
-    "minWidth": 500,
-    "minHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "ContactMe",
     "subMenuType": "default"
   },
@@ -75,8 +75,8 @@
     "initPositionY": 180,
     "initWidth": 385,
     "initHeight": 500,
-    "minWidth": 265,
-    "minHeight": 150,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "MyCV",
     "subMenuType": ""
   },
@@ -102,6 +102,8 @@
     "initPositionY": 230,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 290,
+    "minHeight": 166,
     "component": "Music",
     "subMenuType": ""
   },
@@ -126,8 +128,8 @@
     "initPositionY": 310,
     "initWidth": 660,
     "initHeight": 500,
-    "minWidth": 500,
-    "minHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "About",
     "subMenuType": ""
   },
@@ -152,8 +154,8 @@
     "initPositionY": 400,
     "initWidth": 660,
     "initHeight": 500,
-    "minWidth": 500,
-    "minHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "Pictures",
     "subMenuType": ""
   },
@@ -179,8 +181,8 @@
     "initPositionY": 440,
     "initWidth": 660,
     "initHeight": 500,
-    "minWidth": 500,
-    "minHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "Calendar",
     "subMenuType": ""
   },
@@ -206,8 +208,8 @@
     "initPositionY": 270,
     "initWidth": 200,
     "initHeight": 330,
-    "minWidth": 500,
-    "minHeight": 500,
+    "minWidth": 200,
+    "minHeight": 330,
     "component": "Minesweeper",
     "subMenuType": ""
   },
@@ -231,10 +233,10 @@
     "iconSrc": "/img/icons/notepad-icon-sm.png",
     "initPositionX": 110,
     "initPositionY": 480,
-    "initWidth": 301,
-    "initHeight": 385,
-    "minWidth": 301,
-    "minHeight": 500,
+    "initWidth": 230,
+    "initHeight": 270,
+    "minWidth": 200,
+    "minHeight": 160,
     "component": "Notepad",
     "subMenuType": ""
   }
