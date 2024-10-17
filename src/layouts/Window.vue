@@ -293,7 +293,7 @@ const resizeWindow = (event) => {
     if (resizeDirection.value === 'right') {
       let newWidth = initialWindowSize.value.width + deltaX
       newWidth = Math.min(newWidth, appWidth)
-      windowWidth.value = newWidth < 301 ? 301 : newWidth
+      windowWidth.value = newWidth < 200 ? 200 : newWidth
     } else if (resizeDirection.value === 'bottom') {
       let newHeight = initialWindowSize.value.height + deltaY
       newHeight = Math.min(newHeight, appHeight)
@@ -303,7 +303,7 @@ const resizeWindow = (event) => {
       let newHeight = initialWindowSize.value.height + deltaY
       newWidth = Math.min(newWidth, appWidth)
       newHeight = Math.min(newHeight, appHeight)
-      windowWidth.value = newWidth < 301 ? 301 : newWidth
+      windowWidth.value = newWidth < 200 ? 200 : newWidth
       windowHeight.value = newHeight < 166 ? 166 : newHeight
     }
 

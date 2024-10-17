@@ -111,8 +111,9 @@ const localizedDate = computed(() => {
     <!-- Content of project -->
     <div
       v-if="state.selectedProject && state.selectedProject.isActive"
-      class="w-full h-full bg-white p-2 overflow-auto overflow-x-hidden pb-8 md:pb-5"
+      class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5"
     >
+    <div class="m-2">
       <div class="w-full gap-4 mb-3">
         <h2>{{ localizedTitle }}</h2>
         <div class="flex items-center text-sm gap-0.5 mt-1" v-if="state.selectedProject.date">
@@ -125,8 +126,10 @@ const localizedDate = computed(() => {
           <h2>{{ localizedDate }}</h2>
         </div>
       </div>
+      <!-- Component for the content is loaded there -->
+      <component :is="selectedComponent"/>
+    </div>
 
-      <component :is="selectedComponent"></component>
     </div>
     <!-- Content window Foreach categories and projects -->
     <div v-else class="flex flex-col w-full h-full bg-white overflow-auto pt-0.5">

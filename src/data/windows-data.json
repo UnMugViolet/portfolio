@@ -21,6 +21,8 @@
     "initPositionY": 100,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 200,
+    "minHeight": 150,
     "component": "MyProjects",
     "subMenuType": "default"
   },
@@ -46,6 +48,8 @@
     "initPositionY": 140,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 500,
+    "minHeight": 500,
     "component": "ContactMe",
     "subMenuType": "default"
   },
@@ -71,6 +75,8 @@
     "initPositionY": 180,
     "initWidth": 385,
     "initHeight": 500,
+    "minWidth": 265,
+    "minHeight": 150,
     "component": "MyCV",
     "subMenuType": ""
   },
@@ -120,6 +126,8 @@
     "initPositionY": 310,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 500,
+    "minHeight": 500,
     "component": "About",
     "subMenuType": ""
   },
@@ -144,6 +152,8 @@
     "initPositionY": 400,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 500,
+    "minHeight": 500,
     "component": "Pictures",
     "subMenuType": ""
   },
@@ -169,6 +179,8 @@
     "initPositionY": 440,
     "initWidth": 660,
     "initHeight": 500,
+    "minWidth": 500,
+    "minHeight": 500,
     "component": "Calendar",
     "subMenuType": ""
   },
@@ -194,6 +206,8 @@
     "initPositionY": 270,
     "initWidth": 200,
     "initHeight": 330,
+    "minWidth": 500,
+    "minHeight": 500,
     "component": "Minesweeper",
     "subMenuType": ""
   },
@@ -219,6 +233,8 @@
     "initPositionY": 480,
     "initWidth": 301,
     "initHeight": 385,
+    "minWidth": 301,
+    "minHeight": 500,
     "component": "Notepad",
     "subMenuType": ""
   }
