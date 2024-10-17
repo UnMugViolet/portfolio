@@ -52,13 +52,14 @@ const gameRunning = ref(false)
 let timerInterval = null
 let emoji = ref('smile')
 const cells = ref([])
+const firstClick = ref(true)
 
 const uncoverCell = (index) => {
   const cell = cells.value[index];
 
-  // If the game is not running and no cell is uncovered, start the game
-  if (!gameRunning.value && !cell.uncovered) {
-    startGame()
+  if (firstClick.value) {
+    firstClick.value = false;
+    startGame();
   }
   
   // Prevent uncovering cells if the game is not running
@@ -119,7 +120,8 @@ const resetGame = () => {
   gameRunning.value = false
   resetTimer()
   emoji.value = 'smile'
-  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false, mine: false, neighborMines: 0 }));
+  firstClick.value = true
+  clearBoard()
   placeMines()
   calculateNeighbors()
 }
