@@ -42,6 +42,8 @@
         :initPositionY="window.initPositionY"
         :initWidth="window.initWidth"
         :initHeight="window.initHeight"
+        :minWidth="window.minWidth"
+        :minHeight="window.minHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
         :displayHeaderTools="window.displayHeaderTools"
@@ -170,6 +172,8 @@ const openWindow = (windowId) => {
         initPositionY: entity.initPositionY,
         initWidth: entity.initWidth,
         initHeight: entity.initHeight,
+        minWidth: entity.minWidth,
+        minHeight: entity.minHeight,
         subMenuType: entity.subMenuType,
         displayHeaderTools: entity.displayHeaderTools,
         menuHeaderItemsId: entity.menuHeaderItemsId,
