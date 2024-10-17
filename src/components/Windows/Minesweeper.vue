@@ -55,6 +55,7 @@ const cells = ref(Array.from({ length: rows * cols }, () => ({ uncovered: false 
 const uncoverCell = (index) => {
   cells.value[index].uncovered = true;
 };
+
 onMounted(() => {
   document.addEventListener('mouseup', resetEmoji)
 })
@@ -75,6 +76,7 @@ const resetGame = () => {
   gameRunning.value = false
   resetTimer()
   emoji.value = 'smile'
+  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false }));
 }
 
 // Function to get the image source for a digit
