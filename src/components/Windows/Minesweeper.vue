@@ -14,7 +14,7 @@
           <button
             @click="resetGame"
             class="w-7 h-7 flex items-center justify-center rounded-sm bg-gray-192 border-2 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 outline-none active:border-transparent">
-            <img src="/img/icons/minesweeper/smile.png" alt="face"
+            <img :src="emojiSrc(emoji)" :alt="emoji + ' emoji'"
               class="w-5 h-5 active:translate-x-px active:translate-y-px" />
           </button>
         </div>
@@ -29,14 +29,17 @@
         @click="startGame"
         class="grid border-4 border-solid border-t-gray-128 border-l-gray-128 border-r-gray-245 border-b-gray-245"
         :style="{ gridTemplateColumns: `repeat(${cols}, 20px)`, gridTemplateRows: `repeat(${rows}, 20px)` }">
-        <div v-for="(cell, index) in rows * cols" :key="index" class="w-4.25 h-4.25 border-3 border-t-gray-245 border-l-gray-245 border-r-gray-128 border-b-gray-128"></div>
+        <div
+          @mousedown="switchEmoji"
+          @mouseup="switchEmoji"
+          v-for="(cell, index) in rows * cols" :key="index" class="w-4.25 h-4.25 border-3 border-t-gray-245 border-l-gray-245 border-r-gray-128 border-b-gray-128"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 let timer = ref(0)
 const rows = 9
@@ -44,20 +47,15 @@ const cols = 9
 const amountMines = ref(10)
 const gameRunning = ref(false)
 let timerInterval = null
+let emoji = ref('smile')
 
-// Function to get the image source for a digit
-const digitSrc = (digit) => `/img/icons/minesweeper/digit${digit}.png`
+onMounted(() => {
+  document.addEventListener('mouseup', resetEmoji)
+})
 
-const numberConverter = (num) => {
-  return {
-    hundreds: Math.floor(num / 100),
-    tens: Math.floor((num % 100) / 10),
-    units: num % 10
-  }
-}
-
-const timerDigits = computed(() => numberConverter(timer.value))
-const minesDigits = computed(() => numberConverter(amountMines.value))
+onBeforeUnmount(() => {
+  document.removeEventListener('mouseup', resetEmoji)
+})
 
 const startGame = () => {
   if (!gameRunning.value) {
@@ -70,6 +68,35 @@ const startGame = () => {
 const resetGame = () => {
   gameRunning.value = false
   resetTimer()
+  emoji.value = 'smile'
+}
+
+// Function to get the image source for a digit
+const emojiSrc = (emoji) => `/img/icons/minesweeper/${emoji}.png`
+
+const switchEmoji = (e) => {
+  if (e.button === 0) {
+    emoji.value = emoji.value === 'smile' ? 'surprise' : 'smile'
+  }
+}
+
+const resetEmoji = () => {
+  emoji.value = 'smile'
+}
+
+// Function to get the image source for a digit
+const digitSrc = (digit) => `/img/icons/minesweeper/digit${digit}.png`
+
+const timerDigits = computed(() => numberConverter(timer.value))
+const minesDigits = computed(() => numberConverter(amountMines.value))
+
+const numberConverter = (num) => {
+  const clampedNum = Math.max(0, Math.min(num, 999))
+  return {
+    hundreds: Math.floor(clampedNum / 100),
+    tens: Math.floor((clampedNum % 100) / 10),
+    units: clampedNum % 10
+  }
 }
 
 const startTimer = () => {
@@ -86,7 +113,4 @@ const resetTimer = () => {
   clearInterval(timerInterval)
   timer.value = 0
 }
-
-
-
 </script>
