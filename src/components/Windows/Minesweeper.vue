@@ -123,7 +123,7 @@ const resetGame = () => {
   emoji.value = 'smile'
   firstClick.value = true
   clearBoard()
-  placeMines()
+  // placeMines()
   calculateNeighbors()
 }
 
@@ -179,7 +179,8 @@ const switchEmoji = (e) => {
 }
 
 const resetEmoji = () => {
-  if (gameRunning.value) {
+  if (firstClick.value || gameRunning.value)
+  {
     emoji.value = 'smile'
   }
 }
