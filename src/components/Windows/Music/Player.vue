@@ -4,11 +4,7 @@
       <div class="w-1/3">
         <div class="flex items-center gap-2">
           <img
-            v-if="
-              currentTrack.album &&
-              currentTrack.album.images &&
-              currentTrack.album.images.length > 0
-            "
+            v-if="currentTrack.album && currentTrack.album.images && currentTrack.album.images.length > 0"
             :src="currentTrack.album.images[2].url"
             alt="cover album musique"
             class="w-10 h-10"
@@ -16,20 +12,13 @@
           <div>
             <p class="text-xs font-trebuchet-pixel">{{ currentTrack.name }}</p>
             <p class="text-xs font-trebuchet-pixel">
-              {{
-                currentTrack.artists && currentTrack.artists.length > 0
-                  ? currentTrack.artists[0].name
-                  : ''
-              }}
+              {{ currentTrack.artists && currentTrack.artists.length > 0 ? currentTrack.artists[0].name : '' }}
             </p>
           </div>
         </div>
       </div>
       <div class="w-1/3 flex items-center justify-center">
-        <button
-          @click="previousTrack"
-          class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200"
-        >
+        <button @click="previousTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200">
           <img src="/img/icons/music/previous-icon.webp" alt="Musique précédente" class="w-full h-full" />
         </button>
         <button
@@ -37,17 +26,12 @@
           class="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:bg-gray-200 relative overflow-hidden play-button"
           :class="{ 'is-playing': isPlaying }"
         ></button>
-        <button
-          @click="nextTrack"
-          class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200"
-        >
+        <button @click="nextTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200">
           <img src="/img/icons/music/next-icon.webp" alt="Musique suivante" class="w-full h-full" />
         </button>
       </div>
       <div class="w-1/3">
-        <p class="text-xs font-trebuchet-pixel text-center">
-          {{ formatTime(currentTime) }} / {{ formatTime(currentTrack.duration_ms) }}
-        </p>
+        <p class="text-xs font-trebuchet-pixel text-center">{{ formatTime(currentTime) }} / {{ formatTime(currentTrack.duration_ms) }}</p>
       </div>
     </div>
   </div>
@@ -198,17 +182,14 @@ async function loadTrack(device_id, trackUri) {
   const accessToken = localStorage.getItem('access_token')
 
   try {
-    const response = await fetch(
-      `https://api.spotify.com/v1/me/player/play?device_id=${device_id}`,
-      {
-        method: 'PUT',
-        body: JSON.stringify({ uris: [trackUri], play: false }),
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`
-        }
+    const response = await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ uris: [trackUri], play: false }),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`
       }
-    )
+    })
 
     if (!response.ok) {
       const errorData = await response.json()

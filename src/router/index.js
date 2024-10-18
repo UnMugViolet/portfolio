@@ -27,8 +27,7 @@ const router = createRouter({
           },
           {
             name: 'keywords',
-            content:
-              'portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',
@@ -141,8 +140,7 @@ const router = createRouter({
           },
           {
             name: 'keywords',
-            content:
-              'bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',

@@ -1,9 +1,7 @@
 <template>
   <div class="text-xs">
     <div class="w-full">
-      <div
-        class="flex w-42 md:w-96 md:gap-0 gap-3 items-center md:justify-between justify-center flex-wrap"
-      >
+      <div class="flex w-42 md:w-96 md:gap-0 gap-3 items-center md:justify-between justify-center flex-wrap">
         <div class="flex flex-col items-center flex-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
             <path
@@ -34,30 +32,8 @@
         </div>
         <div class="flex flex-col items-center flex-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 512 512">
-            <rect
-              width="352"
-              height="352"
-              x="80"
-              y="80"
-              fill="none"
-              stroke="#000000"
-              stroke-linejoin="round"
-              stroke-width="32"
-              rx="48"
-              ry="48"
-            />
-            <rect
-              width="224"
-              height="224"
-              x="144"
-              y="144"
-              fill="none"
-              stroke="#000000"
-              stroke-linejoin="round"
-              stroke-width="32"
-              rx="16"
-              ry="16"
-            />
+            <rect width="352" height="352" x="80" y="80" fill="none" stroke="#000000" stroke-linejoin="round" stroke-width="32" rx="48" ry="48" />
+            <rect width="224" height="224" x="144" y="144" fill="none" stroke="#000000" stroke-linejoin="round" stroke-width="32" rx="16" ry="16" />
             <path
               fill="none"
               stroke="#000000"
@@ -109,13 +85,7 @@
       <div class="border border-black p-2">{{ $t('project.homeserver.specs.motherboard') }}</div>
       <div class="border border-black p-2">N5105 NAS motherboard</div>
       <div class="border border-black p-2">
-        <a
-          target="_blank"
-          rel="noopener"
-          class="text-purple-600"
-          href="https://a.aliexpress.com/_m0yUkVg"
-          >{{ $t('common.viewModel') }}</a
-        >
+        <a target="_blank" rel="noopener" class="text-purple-600" href="https://a.aliexpress.com/_m0yUkVg">{{ $t('common.viewModel') }}</a>
       </div>
 
       <div class="border border-black p-2">{{ $t('project.homeserver.specs.ram') }}</div>
@@ -145,13 +115,7 @@
       <div class="border border-black p-2">{{ $t('project.homeserver.specs.powerSupply') }}</div>
       <div class="border border-black p-2">Be quiet 12 M 550w 80+ gold</div>
       <div class="border border-black p-2">
-        <a
-          target="_blank"
-          rel="noopener"
-          class="text-purple-600"
-          href="https://www.ldlc.com/fiche/PB00540382.html"
-          >{{ $t('common.viewModel') }}</a
-        >
+        <a target="_blank" rel="noopener" class="text-purple-600" href="https://www.ldlc.com/fiche/PB00540382.html">{{ $t('common.viewModel') }}</a>
       </div>
 
       <div class="border border-black p-2">{{ $t('project.homeserver.specs.ssdBoot') }}</div>
@@ -181,13 +145,7 @@
       <div class="border border-black p-2">{{ $t('project.homeserver.specs.splitter') }}</div>
       <div class="border border-black p-2">Cable SATA répartiteur x6</div>
       <div class="border border-black p-2">
-        <a
-          target="_blank"
-          rel="noopener"
-          class="text-purple-600"
-          href="https://a.aliexpress.com/_mr1DWz0"
-          >{{ $t('common.viewModel') }}</a
-        >
+        <a target="_blank" rel="noopener" class="text-purple-600" href="https://a.aliexpress.com/_mr1DWz0">{{ $t('common.viewModel') }}</a>
       </div>
     </div>
   </div>

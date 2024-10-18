@@ -12,15 +12,10 @@ onMounted(() => {
 
 <template>
   <div class="text-xs">
-    <div
-      class="flex w-full items-center justify-center md:justify-start flex-wrap gap-4 md:min-w-80 md:ml-1"
-    >
+    <div class="flex w-full items-center justify-center md:justify-start flex-wrap gap-4 md:min-w-80 md:ml-1">
       <div class="flex flex-col items-center flex-wrap">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-          <path
-            fill="#000000"
-            d="M2 3h3.5L12 15l6.5-12H22L12 21zm4.5 0h3L12 7.58L14.5 3h3L12 13.08z"
-          />
+          <path fill="#000000" d="M2 3h3.5L12 15l6.5-12H22L12 21zm4.5 0h3L12 7.58L14.5 3h3L12 13.08z" />
         </svg>
         <p class="font-bold mt-px">Vue.js</p>
       </div>
@@ -88,25 +83,12 @@ onMounted(() => {
         <p class="font-bold">Workbench</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <svg
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="46"
-          height="30"
-          viewBox="0 0 318.000000 159.000000"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <g
-            transform="translate(0.000000,159.000000) scale(0.100000,-0.100000)"
-            fill="#000000"
-            stroke="none"
-          >
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="46" height="30" viewBox="0 0 318.000000 159.000000" preserveAspectRatio="xMidYMid meet">
+          <g transform="translate(0.000000,159.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
             <path
               d="M712 1520 c-45 -28 -86 -96 -122 -205 l-31 -93 -125 -3 c-142 -4 -154 -11 -154 -80 0 -57 17 -64 137 -62 56 2 103 1 103 -2 0 -5 -115 -421 -141 -507 l-20 -68 -59 0 c-93 0 -153 -17 -190 -53 -109 -106 -100 -322 17 -398 30 -20 96 -25 135 -10 57 22 112 107 154 236 l22 70 427 5 427 5 19 24 c14 17 19 36 17 65 -3 40 -4 41 -48 48 -25 3 -213 7 -417 7 -275 1 -373 4 -373 13 0 15 138 517 150 546 9 20 16 22 90 22 96 0 136 14 177 65 86 104 74 297 -22 371 -42 31 -124 34 -173 4z m130 -154 c4 -6 8 -29 8 -52 0 -57 -30 -83 -104 -91 -49 -5 -56 -4 -56 12 0 32 59 141 82 152 24 11 55 1 70 -21z m-532 -1028 c0 -19 -49 -120 -67 -140 -39 -43 -93 -8 -93 59 0 65 31 93 105 93 37 0 55 -4 55 -12z"
             />
-            <path
-              d="M2069 1265 c-27 -14 -34 -26 -49 -78 -10 -32 4 -83 26 -91 46 -18 97 46 92 116 -4 53 -31 73 -69 53z"
-            />
+            <path d="M2069 1265 c-27 -14 -34 -26 -49 -78 -10 -32 4 -83 26 -91 46 -18 97 46 92 116 -4 53 -31 73 -69 53z" />
             <path
               d="M775 1036 c-147 -66 -209 -383 -95 -480 34 -28 101 -42 155 -32 99 19 175 171 162 328 -13 150 -112 233 -222 184z m87 -153 c23 -27 28 -62 17 -114 -18 -85 -87 -128 -123 -77 -41 58 9 208 69 208 12 0 29 -8 37 -17z"
             />
@@ -125,9 +107,7 @@ onMounted(() => {
             <path
               d="M2780 1032 c-44 -22 -92 -85 -121 -159 -30 -76 -34 -230 -6 -280 22 -41 70 -67 108 -59 24 4 29 2 29 -13 0 -16 -12 -19 -97 -24 -85 -5 -101 -9 -137 -34 -23 -16 -51 -49 -65 -78 -22 -42 -26 -63 -26 -135 0 -75 3 -90 28 -133 36 -60 78 -87 138 -87 89 0 155 73 205 228 l29 90 123 3 c116 4 125 6 143 28 10 13 19 38 19 57 0 52 -26 64 -143 64 -90 0 -99 2 -94 18 2 9 32 116 66 236 33 120 61 226 61 235 0 26 -29 61 -51 61 -11 0 -31 -12 -44 -26 -14 -15 -25 -22 -25 -16 0 15 -53 42 -82 42 -13 0 -39 -8 -58 -18z m100 -141 c13 -24 -33 -190 -57 -208 -83 -63 -101 118 -21 204 26 28 64 30 78 4z m-146 -563 c-16 -54 -57 -129 -76 -139 -49 -26 -91 19 -80 89 7 48 43 72 109 72 52 0 54 -1 47 -22z"
             />
-            <path
-              d="M1607 493 c-32 -4 -41 -10 -54 -39 -25 -51 -10 -87 42 -95 54 -9 730 -12 783 -3 46 7 72 39 72 87 0 51 -4 52 -419 53 -212 1 -403 -1 -424 -3z"
-            />
+            <path d="M1607 493 c-32 -4 -41 -10 -54 -39 -25 -51 -10 -87 42 -95 54 -9 730 -12 783 -3 46 7 72 39 72 87 0 51 -4 52 -419 53 -212 1 -403 -1 -424 -3z" />
           </g>
         </svg>
         <p class="font-bold">Looping</p>
@@ -165,9 +145,7 @@ onMounted(() => {
       <li>{{ $t('project.pangaia.tasksDoneFifth') }}</li>
       <li>{{ $t('project.pangaia.tasksDoneSixth') }}</li>
     </ul>
-    <div
-      class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue"
-    >
+    <div class="w-full justify-center mt-5 mb-2 flex flex-row items-center gap-0.5 cursor-pointer transition-all hover:underline hover:text-heroic-blue">
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -184,62 +162,35 @@ onMounted(() => {
           <path
             d="M256 2846 c-76 -32 -122 -69 -168 -137 -118 -171 -69 -404 109 -517 139 -88 319 -70 442 44 85 78 116 151 116 269 0 82 -3 97 -32 156 -39 79 -102 140 -181 177 -83 39 -204 42 -286 8z"
           />
-          <path
-            d="M743 1860 c-87 -20 -171 -98 -199 -184 -21 -63 -15 -166 14 -222 86 -168 321 -204 455 -70 84 84 107 220 54 322 -63 122 -195 185 -324 154z"
-          />
+          <path d="M743 1860 c-87 -20 -171 -98 -199 -184 -21 -63 -15 -166 14 -222 86 -168 321 -204 455 -70 84 84 107 220 54 322 -63 122 -195 185 -324 154z" />
           <path
             d="M3294 1110 c-37 -12 -101 -78 -110 -115 -11 -45 2 -121 26 -155 46 -64 146 -88 220 -50 56 28 83 72 88 141 5 68 -19 121 -72 157 -37 25 -107 35 -152 22z"
           />
-          <path
-            d="M1108 1000 c-132 -40 -192 -188 -124 -304 46 -79 145 -120 230 -96 91 25 156 109 156 200 0 134 -136 238 -262 200z"
-          />
-          <path
-            d="M3163 579 c-94 -60 -76 -203 31 -244 119 -46 230 81 171 196 -35 66 -136 90 -202 48z"
-          />
+          <path d="M1108 1000 c-132 -40 -192 -188 -124 -304 46 -79 145 -120 230 -96 91 25 156 109 156 200 0 134 -136 238 -262 200z" />
+          <path d="M3163 579 c-94 -60 -76 -203 31 -244 119 -46 230 81 171 196 -35 66 -136 90 -202 48z" />
         </g>
       </svg>
-      <a
-        rel="noopener"
-        href="https://framagit.org/gardeners/pangaia-server"
-        target="_blank"
-        class="cursor-pointer"
-        >{{ $t('buttons.linkRepository') }}</a
-      >
+      <a rel="noopener" href="https://framagit.org/gardeners/pangaia-server" target="_blank" class="cursor-pointer">{{ $t('buttons.linkRepository') }}</a>
     </div>
     <div class="w-full flex items-center flex-col">
       <div class="w-full">
         <h3 class="mt-5 mb-2">{{ $t('common.design') }}</h3>
       </div>
-      <iframe
-        height="450"
-        width="100%"
-        class="p-2"
-        :title="$t('common.design') + ' Pangaia'"
-        :src="iframeSrc"
-        allowfullscreen
-      />
+      <iframe height="450" width="100%" class="p-2" :title="$t('common.design') + ' Pangaia'" :src="iframeSrc" allowfullscreen />
     </div>
     <div class="mb-2">
       <h3 class="mt-5">{{ $t('common.CDM') }}</h3>
       <p class="italic text-gray-500 text-xxs mb-px">
         {{ $t('project.pangaia.CDMText') }}
       </p>
-      <img
-        src="/img/projects/pangaia/pangaia-database-MCD.jpg"
-        alt="Modèle conceptuel de données - Pangaia"
-        class="w-full max-w-[750px]"
-      />
+      <img src="/img/projects/pangaia/pangaia-database-MCD.jpg" alt="Modèle conceptuel de données - Pangaia" class="w-full max-w-[750px]" />
     </div>
     <div>
       <h3 class="mt-5">{{ $t('common.PDM') }}</h3>
       <p class="italic text-gray-500 text-xxs">
         {{ $t('project.pangaia.PDMText') }}
       </p>
-      <img
-        src="/img/projects/pangaia/MPD-Pangaia.svg"
-        alt="Modèle conceptuel de données - Pangaia"
-        class="w-full"
-      />
+      <img src="/img/projects/pangaia/MPD-Pangaia.svg" alt="Modèle conceptuel de données - Pangaia" class="w-full" />
     </div>
   </div>
   <a

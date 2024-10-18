@@ -33,41 +33,25 @@
         "jobTitle": "ALTERNANT DÉVELOPPEUR WEB",
         "company": "Screenup, Rennes (35)",
         "year": "Octobre - Juin 2024",
-        "responsibilities": [
-          "Conception et création de sites web",
-          "Mise en Production",
-          "Développement opérationnel sur serveur"
-        ]
+        "responsibilities": ["Conception et création de sites web", "Mise en Production", "Développement opérationnel sur serveur"]
       },
       {
         "jobTitle": "STAGIAIRE DÉVELOPPEUR WEB",
         "company": "Pangaia, Rennes (35)",
         "year": "Avril - Juin 2023",
-        "responsibilities": [
-          "Création d'une application avec Vue.js / Docker / Laravel",
-          "Conception de la maquette ",
-          "Travail d'équipe utilisant Git"
-        ]
+        "responsibilities": ["Création d'une application avec Vue.js / Docker / Laravel", "Conception de la maquette ", "Travail d'équipe utilisant Git"]
       },
       {
         "jobTitle": "OPÉRATEUR DE SAISIE",
         "company": "Tessi, Rennes (35)",
         "year": "Décembre - Juin 2021 - 2022",
-        "responsibilities": [
-          "Saisies bancaires pour le compte des finances publiques",
-          "Ouverture de compte bancaire",
-          "Participation à la démarche qualité"
-        ]
+        "responsibilities": ["Saisies bancaires pour le compte des finances publiques", "Ouverture de compte bancaire", "Participation à la démarche qualité"]
       },
       {
         "jobTitle": "STAGIAIRE COMMERCIAL",
         "company": "ACLP, Le Havre (76)",
         "year": "Avril - Juin 2020",
-        "responsibilities": [
-          "Développement commercial",
-          "Campagne de mailing",
-          "Création d'un site web sur Prestashop"
-        ]
+        "responsibilities": ["Développement commercial", "Campagne de mailing", "Création d'un site web sur Prestashop"]
       },
       {
         "jobTitle": "PROJET TUTEURÉ - SKI",
@@ -83,11 +67,7 @@
         "jobTitle": "STAGIAIRE EVENEMENTIEL",
         "company": "Iut site Caucriauville, Le Havre (76)",
         "year": "Avril 2019",
-        "responsibilities": [
-          "Création d'une plaquette",
-          "Prospection de restaurants partenaires",
-          "Accueil et accompagnement des participants"
-        ]
+        "responsibilities": ["Création d'une plaquette", "Prospection de restaurants partenaires", "Accueil et accompagnement des participants"]
       }
     ]
   },
@@ -125,61 +105,37 @@
         "jobTitle": "WEB DEVELOPER WORK-STUDY",
         "company": "Screenup, Rennes (35)",
         "year": "October - June 2024",
-        "responsibilities": [
-          "Website design and creation",
-          "Production deployment",
-          "Operational server development"
-        ]
+        "responsibilities": ["Website design and creation", "Production deployment", "Operational server development"]
       },
       {
         "jobTitle": "WEB DEVELOPER INTERN",
         "company": "Pangaia, Rennes (35)",
         "year": "April - June 2023",
-        "responsibilities": [
-          "Created an application using Vue.js / Docker / Laravel",
-          "Designed the mockup",
-          "Teamwork using Git"
-        ]
+        "responsibilities": ["Created an application using Vue.js / Docker / Laravel", "Designed the mockup", "Teamwork using Git"]
       },
       {
         "jobTitle": "DATA ENTRY OPERATOR",
         "company": "Tessi, Rennes (35)",
         "year": "December - June 2021 - 2022",
-        "responsibilities": [
-          "Bank data entry for public finance purposes",
-          "Bank account opening",
-          "Participation in the quality process"
-        ]
+        "responsibilities": ["Bank data entry for public finance purposes", "Bank account opening", "Participation in the quality process"]
       },
       {
         "jobTitle": "SALES INTERN",
         "company": "ACLP, Le Havre (76)",
         "year": "April - June 2020",
-        "responsibilities": [
-          "Business development",
-          "Email campaign",
-          "Website creation on Prestashop"
-        ]
+        "responsibilities": ["Business development", "Email campaign", "Website creation on Prestashop"]
       },
       {
         "jobTitle": "TUTORED PROJECT - SKI",
         "company": "IUT Caucriauville campus, Le Havre (76)",
         "year": "2019 - 2020",
-        "responsibilities": [
-          "Sales actions to fund the project",
-          "Organization of a ski trip for 130 participants",
-          "Negotiation of the contract for the following year"
-        ]
+        "responsibilities": ["Sales actions to fund the project", "Organization of a ski trip for 130 participants", "Negotiation of the contract for the following year"]
       },
       {
         "jobTitle": "EVENTS INTERN",
         "company": "IUT Caucriauville campus, Le Havre (76)",
         "year": "April 2019",
-        "responsibilities": [
-          "Creation of a brochure",
-          "Prospecting for partner restaurants",
-          "Welcoming and assisting participants"
-        ]
+        "responsibilities": ["Creation of a brochure", "Prospecting for partner restaurants", "Welcoming and assisting participants"]
       }
     ]
   }

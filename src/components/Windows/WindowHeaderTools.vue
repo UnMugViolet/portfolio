@@ -20,42 +20,25 @@ const goBack = () => {
           @click="goBack"
           class="flex items-center border rounded-sm pr-1.5 h-8"
           :class="{
-            'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools':
-              isGoBackAvailable,
+            'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': isGoBackAvailable,
             'filter grayscale': !isGoBackAvailable
           }"
         >
-          <img
-            src="/img/icons/windows-header-tools/right-arrow-green-icon.png"
-            :alt="$t('common.icon') + ' ' + $t('common.back')"
-            class="w-7 h-7 flex-shrink-0"
-          />
+          <img src="/img/icons/windows-header-tools/right-arrow-green-icon.png" :alt="$t('common.icon') + ' ' + $t('common.back')" class="w-7 h-7 flex-shrink-0" />
           <p class="small-p mr-2">{{ $t('common.back') }}</p>
           <div class="block border-solid down-arrow"></div>
         </div>
         <div class="flex items-center mr-1 filter grayscale">
-          <img
-            src="/img/icons/windows-header-tools/left-arrow-green-icon.png"
-            :alt="$t('common.icon') + ' ' + $t('common.next')"
-            class="w-7 h-7 flex-shrink-0"
-          />
+          <img src="/img/icons/windows-header-tools/left-arrow-green-icon.png" :alt="$t('common.icon') + ' ' + $t('common.next')" class="w-7 h-7 flex-shrink-0" />
           <div class="block border-solid down-arrow ml-px"></div>
         </div>
       </div>
 
-      <div
-        class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1"
-      >
-        <img
-          src="/img/icons/windows-header-tools/folder-opening-icon.png"
-          :alt="$t('common.icon') + ' ' + $t('common.folder')"
-          class="w-6 h-6 flex-shrink-0"
-        />
+      <div class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1">
+        <img src="/img/icons/windows-header-tools/folder-opening-icon.png" :alt="$t('common.icon') + ' ' + $t('common.folder')" class="w-6 h-6 flex-shrink-0" />
       </div>
       <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
-      <div
-        class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5"
-      >
+      <div class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5">
         <img
           src="/img/icons/windows-header-tools/magnifier-icon.png"
           :alt="$t('common.icon') + ' ' + $t('common.search')"
@@ -64,25 +47,13 @@ const goBack = () => {
         />
         <p class="small-p px-1 cursor-default hidden sm:block">{{ $t('common.search') }}</p>
       </div>
-      <div
-        class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5"
-      >
-        <img
-          src="/img/icons/windows-header-tools/folder-open-icon.png"
-          :alt="$t('common.icon') + ' ' + $t('common.files')"
-          class="w-auto h-6 flex-shrink-0"
-        />
+      <div class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5">
+        <img src="/img/icons/windows-header-tools/folder-open-icon.png" :alt="$t('common.icon') + ' ' + $t('common.files')" class="w-auto h-6 flex-shrink-0" />
         <p class="small-p px-1 cursor-default hidden sm:block">{{ $t('common.files') }}</p>
       </div>
       <div class="h-5/6 w-px bg-black bg-opacity-20 mx-0.5"></div>
-      <div
-        class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1"
-      >
-        <img
-          src="/img/icons/projects/projects-icon-sm.png"
-          :alt="$t('common.icon') + ' ' + $t('common.projects')"
-          class="w-6 h-6 flex-shrink-0"
-        />
+      <div class="rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1">
+        <img src="/img/icons/projects/projects-icon-sm.png" :alt="$t('common.icon') + ' ' + $t('common.projects')" class="w-6 h-6 flex-shrink-0" />
         <div class="block border-solid down-arrow ml-2"></div>
       </div>
     </div>

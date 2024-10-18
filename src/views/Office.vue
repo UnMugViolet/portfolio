@@ -1,9 +1,6 @@
 <template>
   <MetaUpdater />
-  <section
-    class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative"
-    @mousedown="handleOutsideClick"
-  >
+  <section class="h-svh w-screen overflow-hidden bg-office-pic bg-no-repeat bg-cover bg-center relative" @mousedown="handleOutsideClick">
     <Header
       v-if="showHeader"
       :entities="entities"
@@ -60,11 +57,7 @@
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id, $event)"
         />
-        <component
-          v-else
-          :is="window.component"
-          v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}"
-        />
+        <component v-else :is="window.component" v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}" />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
