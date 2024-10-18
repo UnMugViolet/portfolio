@@ -1,9 +1,7 @@
 <template>
   <ContentCenter class="bg-color-load-blue radial-gradient-loading">
     <template #top>
-      <div
-        class="absolute bg-color-load-header-blue w-full md:h-32 h-1/6 top-0 down-stroke-white-2"
-      />
+      <div class="absolute bg-color-load-header-blue w-full md:h-32 h-1/6 top-0 down-stroke-white-2" />
     </template>
 
     <template #center>
@@ -31,33 +29,16 @@
     </template>
 
     <template #bottom>
-      <div
-        class="absolute bg-color-load-header-blue w-full md:h-48 h-1/5 bottom-0 up-stroke-green-2"
-      >
+      <div class="absolute bg-color-load-header-blue w-full md:h-48 h-1/5 bottom-0 up-stroke-green-2">
         <div class="flex justify-center items-center h-full">
           <div class="app-container">
             <div class="flex justify-between items-center md:gap-8 gap-8">
               <div class="relative inline-block text-left text-white md:text-xl text-sm">
-                <div
-                  @click="toggleDropdown"
-                  class="flex items-center md:gap-3 gap-2 cursor-pointer"
-                >
-                  <img
-                    :src="flagSrc"
-                    :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]"
-                    class="md:w-12 w-9"
-                  />
-                  <button
-                    class="inline-flex justify-center items-center w-full focus:outline-none font-franklin"
-                  >
+                <div @click="toggleDropdown" class="flex items-center md:gap-3 gap-2 cursor-pointer">
+                  <img :src="flagSrc" :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]" class="md:w-12 w-9" />
+                  <button class="inline-flex justify-center items-center w-full focus:outline-none font-franklin">
                     {{ localeNames[currentLocale] }}
-                    <svg
-                      class="mr-1 md:ml-2 md:h-5 md:w-5 h-3 w-3 ml-px"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
+                    <svg class="mr-1 md:ml-2 md:h-5 md:w-5 h-3 w-3 ml-px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path
                         fill-rule="evenodd"
                         d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -67,10 +48,7 @@
                   </button>
                 </div>
 
-                <div
-                  v-if="dropdownOpen"
-                  class="origin-top-right absolute md:-right-14 -right-9 w-full"
-                >
+                <div v-if="dropdownOpen" class="origin-top-right absolute md:-right-14 -right-9 w-full">
                   <div role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                     <a
                       v-for="locale in filteredLocales"

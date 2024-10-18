@@ -7,14 +7,7 @@
 <style scoped>
 .close-button {
   box-shadow: rgb(218, 70, 0) 0px -1px 2px 1px inset;
-  background-image: radial-gradient(
-    circle at 90% 90%,
-    rgb(204, 70, 0) 0%,
-    rgb(220, 101, 39) 55%,
-    rgb(205, 117, 70) 70%,
-    rgb(255, 204, 178) 90%,
-    white 100%
-  );
+  background-image: radial-gradient(circle at 90% 90%, rgb(204, 70, 0) 0%, rgb(220, 101, 39) 55%, rgb(205, 117, 70) 70%, rgb(255, 204, 178) 90%, white 100%);
 }
 
 .close-button::before {

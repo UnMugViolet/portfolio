@@ -10,44 +10,23 @@
       :class="isActive ? 'bg-header-window-active' : 'bg-header-window-deactivated'"
       @mousedown="startDrag"
     >
-      <div
-        class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1"
-      >
-        <img
-          :src="iconSrc"
-          :alt="$t('common.tiny') + ' ' + $t('common.icon') + ' ' + translatedTitle"
-          class="w-4 h-4"
-        />
+      <div class="h-5/6 text-white font-semibold flex items-center gap-1 select-none flex-1 overflow-hidden pr-1">
+        <img :src="iconSrc" :alt="$t('common.tiny') + ' ' + $t('common.icon') + ' ' + translatedTitle" class="w-4 h-4" />
         <div class="flex items-center overflow-hidden">
           <h4 class="text-header-window text-header-shadow truncate">{{ translatedTitle }}</h4>
         </div>
       </div>
-      <div
-        class="h-5/6 mt-px flex items-center gap-px"
-        :class="isActive ? 'opacity-100' : 'opacity-60 '"
-      >
+      <div class="h-5/6 mt-px flex items-center gap-px" :class="isActive ? 'opacity-100' : 'opacity-60 '">
         <WindowMinimize @click="toggleMinimize" />
-        <WindowMaximize
-          @click="toggleMaximize"
-          :disabled="!resizable"
-          :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }"
-        />
+        <WindowMaximize @click="toggleMaximize" :disabled="!resizable" :class="{ 'opacity-60 cursor-default': !resizable, 'cursor-pointer': resizable }" />
         <WindowClose @click="closeWindow" />
       </div>
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
-      <WindowHeaderDropdown
-        :dropdownItems="translatedMenuHeaderItems"
-        :windowsHeaderLogo="windowsHeaderLogo"
-      />
+      <WindowHeaderDropdown :dropdownItems="translatedMenuHeaderItems" :windowsHeaderLogo="windowsHeaderLogo" />
       <div v-if="displayHeaderTools">
         <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
-        <WindowHeaderSearch
-          :id="id"
-          :title="translatedTitle"
-          :iconSrc="iconSrc"
-          :activeProjectName="activeProjectName"
-        />
+        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" :activeProjectName="activeProjectName" />
       </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
@@ -128,8 +107,7 @@ const localeStore = useLocaleStore()
 
 const translatedTitle = ref(title[localeStore.currentLocale] || title['fr'])
 const translatedMenuHeaderItems = ref(
-  menuHeaderData.menuHeaderItems[menuHeaderItemsId][localeStore.currentLocale] ||
-    menuHeaderData.menuHeaderItems[menuHeaderItemsId]['fr']
+  menuHeaderData.menuHeaderItems[menuHeaderItemsId][localeStore.currentLocale] || menuHeaderData.menuHeaderItems[menuHeaderItemsId]['fr']
 )
 
 watch(

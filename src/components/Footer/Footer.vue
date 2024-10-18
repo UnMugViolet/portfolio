@@ -5,13 +5,7 @@
         <div class="flex items-center h-full overflow-hidden">
           <StartButton @click="toggleHeader" />
           <div class="flex w-10/12 h-full ml-px sm:ml-2 sm:gap-0.5">
-            <PelletApp
-              v-for="entity in entities"
-              :key="entity.id"
-              :entity="entity"
-              @toggle-window="toggleWindow"
-              class="flex-shrink"
-            />
+            <PelletApp v-for="entity in entities" :key="entity.id" :entity="entity" @toggle-window="toggleWindow" class="flex-shrink" />
           </div>
         </div>
         <FooterRight />

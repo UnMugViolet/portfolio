@@ -1,7 +1,5 @@
 <template>
-  <button
-    class="text-white start-button font-franklin italic text-lg h-8 select-none cursor-pointer"
-  >
+  <button class="text-white start-button font-franklin italic text-lg h-8 select-none cursor-pointer">
     <div class="flex items-center gap-px pr-5 pl-2 h-8">
       <WindowsIcon />
       {{ $t('buttons.start') }}
@@ -16,8 +14,7 @@ import WindowsIcon from '@/components/icons/WindowsIcon.vue'
 <style scoped>
 .start-button {
   border-radius: 0% 10px 10px 0% / 0% 25px 25px 0%;
-  background: linear-gradient(180deg, #509d4f 0%, #499e47 69.2%, #48b347 100%),
-    linear-gradient(180deg, #509d4f 0%, #499e47 69.2%, #48b347 100%);
+  background: linear-gradient(180deg, #509d4f 0%, #499e47 69.2%, #48b347 100%), linear-gradient(180deg, #509d4f 0%, #499e47 69.2%, #48b347 100%);
   box-shadow:
     1px 1px 1px 0px #196045 inset,
     2px 0px 3px 0px rgba(0, 0, 0, 0.25) inset,

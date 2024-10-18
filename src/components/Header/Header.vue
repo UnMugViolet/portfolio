@@ -1,8 +1,6 @@
 <template>
   <header class="header-component select-none">
-    <div
-      class="absolute left-0 header-radius overflow-hidden bottom-0 mb-8 modal-size z-max bg-color-blue-window"
-    >
+    <div class="absolute left-0 header-radius overflow-hidden bottom-0 mb-8 modal-size z-max bg-color-blue-window">
       <div class="w-full h-full relative overflow-hidden">
         <div class="h-16 flex items-center px-2 header-top-background">
           <ProfilePicture class="w-11 h-11 stroke-white-1 header-profile-shadow" />
@@ -16,10 +14,7 @@
                 <div v-if="entity.headerPosition === 'left'" class="flex flex-col gap-3 py-2">
                   <HeaderLeftButton @toggle-button="toggleWindow" :buttonName="entity.id">
                     <template #img>
-                      <img
-                        :src="entity.imgSrc"
-                        :alt="$t('common.icon') + ' ' + getLocalizedTitle(entity)"
-                      />
+                      <img :src="entity.imgSrc" :alt="$t('common.icon') + ' ' + getLocalizedTitle(entity)" />
                     </template>
                     <template #title>
                       {{ getLocalizedTitle(entity) }}
@@ -35,11 +30,7 @@
               <div class="py-2">
                 <div v-for="entity in localEntities" :key="entity.id">
                   <div v-if="entity.headerPosition === 'right'">
-                    <HeaderRightButton
-                      @toggle-button="toggleWindow"
-                      :buttonName="entity.id"
-                      class="cursor-pointer"
-                    >
+                    <HeaderRightButton @toggle-button="toggleWindow" :buttonName="entity.id" class="cursor-pointer">
                       <template #img>
                         <img :src="entity.iconSrc" :alt="getLocalizedTitle(entity)" />
                       </template>

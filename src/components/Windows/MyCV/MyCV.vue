@@ -12,10 +12,7 @@ const today = new Date()
 let age = ref(today.getFullYear() - birthdate.getFullYear())
 
 // Adjust age if the current date has not passed the birthdate in the current year
-if (
-  today.getMonth() < birthdate.getMonth() ||
-  (today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())
-) {
+if (today.getMonth() < birthdate.getMonth() || (today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())) {
   age.value--
 }
 
@@ -39,19 +36,11 @@ const experienceData = computed(() => {
         <ProfileHeader :age="age" />
         <section class="mt-5">
           <h2 class="font-trebuchet-pixel underline">{{ $t('windows.cv.education') }}</h2>
-          <EducationItem
-            v-for="education in educationData"
-            :key="education.id"
-            :education="education"
-          />
+          <EducationItem v-for="education in educationData" :key="education.id" :education="education" />
         </section>
         <div class="mt-3">
           <h2 class="font-trebuchet-pixel mt-5 underline">{{ $t('windows.cv.proExperience') }}</h2>
-          <WorkExperienceItem
-            v-for="(workExperience, index) in experienceData"
-            :key="index"
-            :workExperience="workExperience"
-          />
+          <WorkExperienceItem v-for="(workExperience, index) in experienceData" :key="index" :workExperience="workExperience" />
         </div>
       </div>
     </div>
