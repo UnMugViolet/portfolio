@@ -50,6 +50,7 @@ let timer = ref(0)
 const rows = 9
 const cols = 9
 const amountMines = ref(10)
+const minesLeft = ref(amountMines.value)
 const gameRunning = ref(false)
 let timerInterval = null
 let emoji = ref('smile')
@@ -90,13 +91,16 @@ const uncoverCell = (index) => {
 
 const handleMouseDown = (event, index) => {
   if (event.button === 0) { // Left mouse button
-    switchEmoji(event)
-    if (firstClick.value) {
-      firstClick.value = false;
-      startGame();
+    const cell = cells.value[index];
+    if (!cell.flagged && !cell.questioned && emoji.value !== 'dead') {
+      switchEmoji(event)
+      if (firstClick.value) {
+        firstClick.value = false;
+        startGame();
+      }
+      isMouseDown.value = true;
+      pressedCellIndex.value = index;
     }
-    isMouseDown.value = true;
-    pressedCellIndex.value = index;
   }
 };
 
@@ -127,11 +131,15 @@ const handleGlobalMouseUp = () => {
 const handleRightClick = (event, index) => {
   event.preventDefault();
   const cell = cells.value[index];
+  if (emoji.value === 'dead' || emoji.value === 'win') return;
+
   if (!cell.uncovered) {
     if (!cell.flagged && !cell.questioned) {
       cell.flagged = true;
+      minesLeft.value--;
     } else if (cell.flagged) {
       cell.flagged = false;
+      minesLeft.value++;
       cell.questioned = true;
     } else if (cell.questioned) {
       cell.questioned = false;
@@ -172,6 +180,7 @@ const startGame = () => {
 
 const resetGame = () => {
   gameRunning.value = false
+  minesLeft.value = amountMines.value
   resetTimer()
   emoji.value = 'smile'
   firstClick.value = true
@@ -245,17 +254,24 @@ const clearBoard = () => {
 const digitSrc = (digit) => `/img/icons/minesweeper/digit${digit}.png`
 
 const timerDigits = computed(() => numberConverter(timer.value))
-const minesDigits = computed(() => numberConverter(amountMines.value))
+const minesDigits = computed(() => numberConverter(minesLeft.value))
 
 const numberConverter = (num) => {
-  const clampedNum = Math.max(0, Math.min(num, 999))
-  return {
-    hundreds: Math.floor(clampedNum / 100),
-    tens: Math.floor((clampedNum % 100) / 10),
-    units: clampedNum % 10
+  const clampedNum = Math.max(-99, Math.min(num, 999));
+  if (clampedNum < 0) {
+    return {
+      hundreds: '-',
+      tens: Math.floor(Math.abs(clampedNum) / 10),
+      units: Math.abs(clampedNum) % 10
+    };
+  } else {
+    return {
+      hundreds: Math.floor(clampedNum / 100),
+      tens: Math.floor((clampedNum % 100) / 10),
+      units: clampedNum % 10
+    };
   }
-}
-
+};
 const startTimer = () => {
   timerInterval = setInterval(() => {
     if (timer.value < 999) {
