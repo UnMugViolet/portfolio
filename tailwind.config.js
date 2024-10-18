@@ -44,6 +44,7 @@ module.exports = {
           192: '#C0C0C0',
           245: '#F5F5F5',
         },
+        'red': '#FF0000',
       },
       boxShadow: {
         'pellet-footer-active': 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset',
