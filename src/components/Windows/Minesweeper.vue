@@ -26,21 +26,23 @@
       <!-- Minesweeper content -->
       <div class="grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245" 
         :style="{ gridTemplateColumns: `repeat(${cols}, 20px)`, gridTemplateRows: `repeat(${rows}, 20px)` }">
-        <div @mousedown="switchEmoji" @mouseup="uncoverCell(index)" v-for="(cell, index) in cells" :key="index"
-          class="relative w-full h-full">
-          <div v-if="!cell.uncovered"
-          class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
-        </div>
-        <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
-        </div>
+        <div @mousedown="handleMouseDown(index)" @mouseup="handleMouseUp(index)" @contextmenu="handleRightClick($event, index)" v-for="(cell, index) in cells" :key="index" :data-index="index" class="relative w-full h-full cell">
+          <div v-if="!cell.uncovered && pressedCellIndex !== index"
+            class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
+          </div>
+          <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
+          </div>
           <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-5 h-5 p-0.5" />
           <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-5 h-5 p-0.5 bg-red" />
           <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
+          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="w-5 h-5 p-0.5" />
+          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="w-5 h-5 p-0.5" />
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
@@ -54,6 +56,8 @@ let timerInterval = null
 let emoji = ref('smile')
 const cells = ref([])
 const firstClick = ref(true)
+const pressedCellIndex = ref(null) // Track the index of the pressed cell
+const isMouseDown = ref(false) // Track if the mouse button is pressed
 
 const uncoverCell = (index) => {
   const cell = cells.value[index];
@@ -63,8 +67,8 @@ const uncoverCell = (index) => {
     startGame();
   }
   
-  // Prevent uncovering cells if the game is not running
-  if (!gameRunning.value || cell.uncovered) return;
+  // Prevent uncovering cells if the game is not running or if the cell is flagged or questioned
+  if (!gameRunning.value || cell.uncovered || cell.flagged || cell.questioned) return;
   
   if (cell.mine) {
     // Game over - clicked on a mine
@@ -90,6 +94,49 @@ const uncoverCell = (index) => {
   }
 };
 
+const handleMouseDown = (index) => {
+  isMouseDown.value = true;
+  pressedCellIndex.value = index;
+};
+
+const handleMouseUp = (index) => {
+  if (isMouseDown.value) {
+    uncoverCell(index);
+    isMouseDown.value = false;
+    pressedCellIndex.value = null;
+  }
+};
+
+const handleMouseMove = (event) => {
+  if (isMouseDown.value) {
+    const cellElement = event.target.closest('.cell');
+    if (cellElement) {
+      const index = parseInt(cellElement.dataset.index, 10);
+      pressedCellIndex.value = index;
+    }
+  }
+};
+
+const handleGlobalMouseUp = () => {
+  isMouseDown.value = false;
+  pressedCellIndex.value = null;
+};
+
+const handleRightClick = (event, index) => {
+  event.preventDefault();
+  const cell = cells.value[index];
+  if (!cell.uncovered) {
+    if (!cell.flagged && !cell.questioned) {
+      cell.flagged = true;
+    } else if (cell.flagged) {
+      cell.flagged = false;
+      cell.questioned = true;
+    } else if (cell.questioned) {
+      cell.questioned = false;
+    }
+  }
+};
+
 const checkWin = () => {
   return cells.value.every(cell => cell.mine || cell.uncovered);
 };
@@ -103,13 +150,15 @@ const revealMines = () => {
 };
 
 onMounted(() => {
-  document.addEventListener('mouseup', resetEmoji)
-  resetGame()
-})
+  document.addEventListener('mouseup', handleGlobalMouseUp);
+  document.addEventListener('mousemove', handleMouseMove);
+  resetGame();
+});
 
 onBeforeUnmount(() => {
-  document.removeEventListener('mouseup', resetEmoji)
-})
+  document.removeEventListener('mouseup', handleGlobalMouseUp);
+  document.removeEventListener('mousemove', handleMouseMove);
+});
 
 const startGame = () => {
   if (!gameRunning.value) {
@@ -188,7 +237,7 @@ const resetEmoji = () => {
 }
 
 const clearBoard = () => {
-  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false }));
+  cells.value = Array.from({ length: rows * cols }, () => ({ uncovered: false, flagged: false, questioned: false }));
 }
 
 // Function to get the image source for a digit
