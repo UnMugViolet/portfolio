@@ -33,8 +33,9 @@
         </div>
         <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
         </div>
-          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-full h-full p-0.5" />
-          <img v-if="cell.uncovered && cell.mine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-5 h-5 p-0.5" />
+          <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-5 h-5 p-0.5 bg-red" />
+          <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
         </div>
       </div>
     </div>
@@ -69,6 +70,7 @@ const uncoverCell = (index) => {
     // Game over - clicked on a mine
     cell.uncovered = true;
     emoji.value = 'dead';
+    cell.isClickedMine = true;
     revealMines();  
     clearInterval(timerInterval);
     gameRunning.value = false;
@@ -123,7 +125,7 @@ const resetGame = () => {
   emoji.value = 'smile'
   firstClick.value = true
   clearBoard()
-  // placeMines()
+  placeMines()
   calculateNeighbors()
 }
 
