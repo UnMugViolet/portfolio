@@ -29,10 +29,10 @@
         <div @mousedown="switchEmoji" @mouseup="uncoverCell(index)" v-for="(cell, index) in cells" :key="index"
           class="relative w-full h-full">
           <div v-if="!cell.uncovered"
-            class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
-          </div>
-          <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
-          </div>
+          class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
+        </div>
+        <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128">
+        </div>
           <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-full h-full p-0.5" />
           <img v-if="cell.uncovered && cell.mine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
         </div>
@@ -75,12 +75,13 @@ const uncoverCell = (index) => {
   } else {
     cell.uncovered = true;
     if (cell.neighborMines === 0) {
+      // Uncover all neighboring cells if the cell has no mines around it
       const neighbors = getNeighbors(index);
       neighbors.forEach(uncoverCell);
     }
     
     if (checkWin()) {
-      emoji.value = 'win';  // Change emoji to victory face
+      emoji.value = 'win';  
       clearInterval(timerInterval);
       gameRunning.value = false;
     }
@@ -126,6 +127,7 @@ const resetGame = () => {
   calculateNeighbors()
 }
 
+// Set object is as a batch of unique values so we can add mines until we reach the desired amount
 const placeMines = () => {
   const mineIndices = new Set();
   while (mineIndices.size < amountMines.value) {
@@ -136,6 +138,7 @@ const placeMines = () => {
   });
 };
 
+// Calculate the number of mines in the neighboring cells
 const calculateNeighbors = () => {
   cells.value.forEach((cell, index) => {
     if (cell.mine) return;
@@ -148,6 +151,7 @@ const calculateNeighbors = () => {
   });
 };
 
+// Look at surrounding cells and return the indices of the neighbors
 const getNeighbors = (index) => {
   const neighbors = [];
   const row = Math.floor(index / cols);
@@ -155,6 +159,7 @@ const getNeighbors = (index) => {
   
   for (let r = row - 1; r <= row + 1; r++) {
     for (let c = col - 1; c <= col + 1; c++) {
+      // Check if the cell is within the bounds of the board and not the current cell
       if (r >= 0 && r < rows && c >= 0 && c < cols && (r !== row || c !== col)) {
         neighbors.push(r * cols + c);
       }
