@@ -2,7 +2,7 @@
   <div class="relative right-0 h-full flex">
     <div class="w-full h-content-head-cut bg-silver border-l-3 border-t-3 border-white py-1.5 px-1">
       <!-- Score and time -->
-      <div class="flex items-center border-2 border-b-white border-r-white border-l-gray-128 border-t-gray-128 mb-2 justify-between h-10 px-1 p-1">
+      <div class="flex items-center border-2 border-b-white border-r-white border-l-gray-128 border-t-gray-128 mb-2 justify-between h-16 md:h-10 px-1 p-1">
         <div class="flex h-full border-b border-r border-white">
           <img :src="digitSrc(minesDigits.hundreds)" alt="0" class="h-full" />
           <img :src="digitSrc(minesDigits.tens)" alt="1" class="h-full" />
@@ -11,9 +11,9 @@
         <div class="border-l border-t border-gray-128 active:rounded-sm active:border-l-2 active:border-t-2 active:border-b active:border-r">
           <button
             @click="resetGame"
-            class="w-7 h-7 flex items-center justify-center rounded-sm bg-gray-192 border-2 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 outline-none active:border-transparent"
+            class="w-10 h-10 md:w-7 md:h-7 flex items-center justify-center rounded-sm bg-gray-192 border-2 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 outline-none active:border-transparent"
           >
-            <img :src="emojiSrc(emoji)" :alt="emoji + ' emoji'" class="w-5 h-5 active:translate-x-px active:translate-y-px" />
+            <img :src="emojiSrc(emoji)" :alt="emoji + ' emoji'" class="w-8 h-8 md:w-5 md:h-5 active:translate-x-px active:translate-y-px" />
           </button>
         </div>
         <div class="flex h-full">
@@ -26,8 +26,8 @@
       <div
         class="grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245"
         :style="{
-          gridTemplateColumns: `repeat(${cols}, 20px)`,
-          gridTemplateRows: `repeat(${rows}, 20px)`
+          gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`
         }"
       >
         <div
@@ -37,18 +37,18 @@
           v-for="(cell, index) in cells"
           :key="index"
           :data-index="index"
-          class="relative w-full h-full cell"
+          class="relative w-full aspect-square"
         >
           <div
             v-if="!cell.uncovered && pressedCellIndex !== index"
             class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver"
           ></div>
           <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128"></div>
-          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-5 h-5 p-0.5" />
-          <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-5 h-5 p-0.5 bg-red" />
+          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-full h-full p-0.5 bg-red" />
           <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
-          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="relative z-10 w-5 h-5 p-0.5" />
-          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="relative z-10 w-5 h-5 p-0.5" />
+          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="relative z-10 w-full h-full p-0.5" />
+          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="relative z-10 w-full h-full p-0.5" />
         </div>
       </div>
     </div>
