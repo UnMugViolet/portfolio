@@ -15,12 +15,12 @@
         </p>
       </div>
       <div class="mr-0.5 hover:brightness-110">
-        <img src="/img/icons/down-icon.png" alt="voir" class="w-3.5 h-3.5" />
+        <img src="/img/icons/windows-header-tools/down-icon.png" alt="voir" class="w-3.5 h-3.5" />
       </div>
     </div>
     <div class="flex items-center px-2 gap-1 w-20">
       <img
-        src="/img/icons/right-green-arrow-icon.png"
+        src="/img/icons/windows-header-tools/right-green-arrow-icon.png"
         :alt="$t('common.icon') + ' ' + $t('common.go')"
         class="w-3.5 h-3.5"
       />

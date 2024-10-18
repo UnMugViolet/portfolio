@@ -30,7 +30,7 @@
           @click="previousTrack"
           class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200"
         >
-          <img src="/img/icons/previous-icon.webp" alt="Musique précédente" class="w-full h-full" />
+          <img src="/img/icons/music/previous-icon.webp" alt="Musique précédente" class="w-full h-full" />
         </button>
         <button
           @click="togglePlay"
@@ -41,7 +41,7 @@
           @click="nextTrack"
           class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200"
         >
-          <img src="/img/icons/next-icon.webp" alt="Musique suivante" class="w-full h-full" />
+          <img src="/img/icons/music/next-icon.webp" alt="Musique suivante" class="w-full h-full" />
         </button>
       </div>
       <div class="w-1/3">
@@ -232,17 +232,17 @@ function formatTime(ms) {
 
 <style scoped>
 .play-button {
-  background-image: url('/img/icons/play-icon.webp');
+  background-image: url('/img/icons/music/play-icon.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .play-button:hover {
-  background-image: url('/img/icons/play-icon-hover.webp');
+  background-image: url('/img/icons/music/play-icon-hover.webp');
 }
 
 .play-button.is-playing {
-  background-image: url('/img/icons/pause-icon.webp');
+  background-image: url('/img/icons/music/pause-icon.webp');
 }
 </style>
