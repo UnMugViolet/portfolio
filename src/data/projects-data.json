@@ -8,7 +8,7 @@
       "projects": [
         {
           "name": "Logma Production",
-          "icon": "folder-logma-icon.png",
+          "icon": "projects/folder-logma-icon.png",
           "title": {
             "en": "Logma Production - Showcase website",
             "fr": "Logma Production - Site vitrine"
@@ -23,7 +23,7 @@
         },
         {
           "name": "Pangaia",
-          "icon": "folder-pangaia-icon.png",
+          "icon": "projects/folder-pangaia-icon.png",
           "title": {
             "fr": "Pangaia - Application web",
             "en": "Pangaia - Web Application"
@@ -38,7 +38,7 @@
         },
         {
           "name": "Clench",
-          "icon": "folder-clench-icon.png",
+          "icon": "projects/folder-clench-icon.png",
           "title": {
             "fr": "Clench - Application web",
             "en": "Clench - Web Application"
@@ -61,7 +61,7 @@
       "projects": [
         {
           "name": "Homeserver",
-          "icon": "homeserver-icon.png",
+          "icon": "projects/homeserver-icon.png",
           "title": {
             "fr": "Serveur d'application & stockage NAS",
             "en": "Application server & NAS"

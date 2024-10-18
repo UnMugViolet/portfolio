@@ -28,7 +28,7 @@ const filteredMenuItems = computed(() => {
       >
         <h3>{{ item.title }}</h3>
         <img
-          src="/img/icons/top-icon-card-window.png"
+          src="/img/icons/side-menu/top-icon-card-window.png"
           alt="plus"
           class="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-lg"
         />
