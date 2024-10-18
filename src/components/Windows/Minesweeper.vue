@@ -26,7 +26,7 @@
       <!-- Minesweeper content -->
       <div class="grid border-4 border-solid border-l-gray-128 border-t-gray-128 border-b-gray-245 border-r-gray-245" 
         :style="{ gridTemplateColumns: `repeat(${cols}, 20px)`, gridTemplateRows: `repeat(${rows}, 20px)` }">
-        <div @mousedown="handleMouseDown(index)" @mouseup="handleMouseUp(index)" @contextmenu="handleRightClick($event, index)" v-for="(cell, index) in cells" :key="index" :data-index="index" class="relative w-full h-full cell">
+        <div @mousedown="handleMouseDown($event, index)" @mouseup="handleMouseUp($event, index)" @contextmenu="handleRightClick($event, index)" v-for="(cell, index) in cells" :key="index" :data-index="index" class="relative w-full h-full cell">
           <div v-if="!cell.uncovered && pressedCellIndex !== index"
             class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver">
           </div>
@@ -35,14 +35,13 @@
           <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-5 h-5 p-0.5" />
           <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-5 h-5 p-0.5 bg-red" />
           <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
-          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="w-5 h-5 p-0.5" />
-          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="w-5 h-5 p-0.5" />
+          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="relative z-10 w-5 h-5 p-0.5" />
+          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="relative z-10 w-5 h-5 p-0.5" />
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
@@ -56,26 +55,21 @@ let timerInterval = null
 let emoji = ref('smile')
 const cells = ref([])
 const firstClick = ref(true)
-const pressedCellIndex = ref(null) // Track the index of the pressed cell
-const isMouseDown = ref(false) // Track if the mouse button is pressed
+const pressedCellIndex = ref(null)
+const isMouseDown = ref(false)
 
 const uncoverCell = (index) => {
   const cell = cells.value[index];
 
-  if (firstClick.value) {
-    firstClick.value = false;
-    startGame();
-  }
-  
   // Prevent uncovering cells if the game is not running or if the cell is flagged or questioned
   if (!gameRunning.value || cell.uncovered || cell.flagged || cell.questioned) return;
-  
+
   if (cell.mine) {
     // Game over - clicked on a mine
     cell.uncovered = true;
     emoji.value = 'dead';
     cell.isClickedMine = true;
-    revealMines();  
+    revealMines();
     clearInterval(timerInterval);
     gameRunning.value = false;
   } else {
@@ -85,22 +79,30 @@ const uncoverCell = (index) => {
       const neighbors = getNeighbors(index);
       neighbors.forEach(uncoverCell);
     }
-    
+
     if (checkWin()) {
-      emoji.value = 'win';  
+      emoji.value = 'win';
       clearInterval(timerInterval);
       gameRunning.value = false;
     }
   }
 };
 
-const handleMouseDown = (index) => {
-  isMouseDown.value = true;
-  pressedCellIndex.value = index;
+const handleMouseDown = (event, index) => {
+  if (event.button === 0) { // Left mouse button
+    switchEmoji(event)
+    if (firstClick.value) {
+      firstClick.value = false;
+      startGame();
+    }
+    isMouseDown.value = true;
+    pressedCellIndex.value = index;
+  }
 };
 
-const handleMouseUp = (index) => {
-  if (isMouseDown.value) {
+const handleMouseUp = (event, index) => {
+  if (event.button === 0 && isMouseDown.value) { // Left mouse button
+    resetEmoji()
     uncoverCell(index);
     isMouseDown.value = false;
     pressedCellIndex.value = null;
@@ -230,8 +232,7 @@ const switchEmoji = (e) => {
 }
 
 const resetEmoji = () => {
-  if (firstClick.value || gameRunning.value)
-  {
+  if (firstClick.value || gameRunning.value) {
     emoji.value = 'smile'
   }
 }
