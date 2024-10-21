@@ -44,11 +44,11 @@
             class="absolute w-full h-full border-3 border-t-gray-245 border-l-gray-245 border-b-gray-128 border-r-gray-128 bg-silver"
           ></div>
           <div v-else class="absolute w-full h-full border-t-2 border-l-2 border-gray-128"></div>
-          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.png'" alt="empty" class="w-full h-full p-0.5" />
-          <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.png" alt="mine" class="w-full h-full p-0.5 bg-red" />
-          <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.png" alt="mine" class="w-full h-full p-0.5" />
-          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.png" alt="flag" class="relative z-10 w-full h-full p-0.5" />
-          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.png" alt="question" class="relative z-10 w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && !cell.mine" :src="'/img/icons/minesweeper/open' + cell.neighborMines + '.webp'" alt="empty" class="w-full h-full p-0.5" />
+          <img v-if="cell.uncovered && cell.mine && cell.isClickedMine" src="/img/icons/minesweeper/mine-death.webp" alt="mine" class="w-full h-full p-0.5 bg-red" />
+          <img v-if="cell.uncovered && cell.mine && !cell.isClickedMine" src="/img/icons/minesweeper/mine-ceil.webp" alt="mine" class="w-full h-full p-0.5" />
+          <img v-if="!cell.uncovered && cell.flagged" src="/img/icons/minesweeper/flag.webp" alt="flag" class="relative z-10 w-full h-full p-0.5" />
+          <img v-if="!cell.uncovered && cell.questioned" src="/img/icons/minesweeper/question.webp" alt="question" class="relative z-10 w-full h-full p-0.5" />
         </div>
       </div>
     </div>
@@ -247,7 +247,7 @@ const getNeighbors = (index) => {
 }
 
 // Function to get the image source for a digit
-const emojiSrc = (emoji) => `/img/icons/minesweeper/${emoji}.png`
+const emojiSrc = (emoji) => `/img/icons/minesweeper/${emoji}.webp`
 
 const switchEmoji = (e) => {
   if (e.button === 0 && emoji.value !== 'dead' && emoji.value !== 'win') {
@@ -270,7 +270,7 @@ const clearBoard = () => {
 }
 
 // Function to get the image source for a digit
-const digitSrc = (digit) => `/img/icons/minesweeper/digit${digit}.png`
+const digitSrc = (digit) => `/img/icons/minesweeper/digit${digit}.webp`
 
 const timerDigits = computed(() => numberConverter(timer.value))
 const minesDigits = computed(() => numberConverter(minesLeft.value))

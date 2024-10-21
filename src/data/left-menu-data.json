@@ -9,17 +9,17 @@
             {
               "id": 1,
               "subtitle": "View System Information",
-              "iconUrl": "/img/icons/side-menu/info-system-icon.ico"
+              "iconUrl": "/img/icons/side-menu/info-system-icon.webp"
             },
             {
               "id": 2,
               "subtitle": "Add or Remove Programs",
-              "iconUrl": "/img/icons/side-menu/programs-icon.png"
+              "iconUrl": "/img/icons/side-menu/programs-icon.webp"
             },
             {
               "id": 3,
               "subtitle": "Change a Settings",
-              "iconUrl": "/img/icons/side-menu/settings-icon.png"
+              "iconUrl": "/img/icons/side-menu/settings-icon.webp"
             }
           ]
         },
@@ -30,25 +30,25 @@
             {
               "id": 1,
               "subtitle": "My Network Places",
-              "iconUrl": "/img/icons/side-menu/networking-icon.png",
+              "iconUrl": "/img/icons/side-menu/networking-icon.webp",
               "url": ""
             },
             {
               "id": 2,
               "subtitle": "My Documents",
-              "iconUrl": "/img/icons/side-menu/documents-icon.png",
+              "iconUrl": "/img/icons/side-menu/documents-icon.webp",
               "url": ""
             },
             {
               "id": 3,
               "subtitle": "Shared Documents",
-              "iconUrl": "/img/icons/side-menu/shared-documents-icon.png",
+              "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
               "url": ""
             },
             {
               "id": 4,
               "subtitle": "Control Panel",
-              "iconUrl": "/img/icons/side-menu/settings-icon.png",
+              "iconUrl": "/img/icons/side-menu/settings-icon.webp",
               "url": ""
             }
           ]
@@ -60,7 +60,7 @@
             {
               "id": 1,
               "subtitle": "My Github",
-              "iconUrl": "/img/icons/side-menu/github-icon.png",
+              "iconUrl": "/img/icons/side-menu/github-icon.webp",
               "url": "https://github.com/UnMugViolet"
             }
           ]
@@ -74,17 +74,17 @@
             {
               "id": 1,
               "subtitle": "Informations système",
-              "iconUrl": "/img/icons/side-menu/info-system-icon.ico"
+              "iconUrl": "/img/icons/side-menu/info-system-icon.webp"
             },
             {
               "id": 2,
               "subtitle": "Gestion des programmes",
-              "iconUrl": "/img/icons/side-menu/programs-icon.png"
+              "iconUrl": "/img/icons/side-menu/programs-icon.webp"
             },
             {
               "id": 3,
               "subtitle": "Changer les paramètres",
-              "iconUrl": "/img/icons/side-menu/settings-icon.png"
+              "iconUrl": "/img/icons/side-menu/settings-icon.webp"
             }
           ]
         },
@@ -95,25 +95,25 @@
             {
               "id": 1,
               "subtitle": "Mes emplacements réseau",
-              "iconUrl": "/img/icons/side-menu/networking-icon.png",
+              "iconUrl": "/img/icons/side-menu/networking-icon.webp",
               "url": ""
             },
             {
               "id": 2,
               "subtitle": "Mes documents",
-              "iconUrl": "/img/icons/side-menu/documents-icon.png",
+              "iconUrl": "/img/icons/side-menu/documents-icon.webp",
               "url": ""
             },
             {
               "id": 3,
               "subtitle": "Documents partagés",
-              "iconUrl": "/img/icons/side-menu/shared-documents-icon.png",
+              "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
               "url": ""
             },
             {
               "id": 4,
               "subtitle": "Panneau de configuration",
-              "iconUrl": "/img/icons/side-menu/settings-icon.png",
+              "iconUrl": "/img/icons/side-menu/settings-icon.webp",
               "url": ""
             }
           ]
@@ -125,7 +125,7 @@
             {
               "id": 1,
               "subtitle": "Mon Github",
-              "iconUrl": "/img/icons/side-menu/github-icon.png",
+              "iconUrl": "/img/icons/side-menu/github-icon.webp",
               "url": "https://github.com/UnMugViolet"
             }
           ]
