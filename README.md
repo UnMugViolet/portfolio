@@ -1,7 +1,7 @@
 # <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px"> PorfolioXp
 
-[![Quality Gate Status](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=alert_status&token=sqb_247a1864423bee5f5117a6730e024f2a13232e24)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
-[![Lines of Code](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=ncloc&token=sqb_247a1864423bee5f5117a6730e024f2a13232e24)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
+[![Quality Gate Status](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=alert_status&token=sqb_a9b995b23c8ea92ac09fcbda3ef7bb0ffbcf9495)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
+[![Lines of Code](https://sonarqube.rocketegg.systems/api/project_badges/measure?project=PortfolioXp&metric=ncloc&token=sqb_a9b995b23c8ea92ac09fcbda3ef7bb0ffbcf9495)](https://sonarqube.rocketegg.systems/dashboard?id=PortfolioXp)
 
 ## Project Setup
 
