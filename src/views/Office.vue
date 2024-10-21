@@ -81,7 +81,7 @@ import ContactMe from '@/components/Windows/ContactMe.vue'
 import MyProjects from '@/components/Windows/MyProjects.vue'
 import About from '@/components/Windows/About.vue'
 import Pictures from '@/components/Windows/Pictures.vue'
-import Calendar from '@/components/Windows/Calendar.vue'
+import Calendar from '@/components/Windows/Calendar/Calendar.vue'
 import Notepad from '@/components/Windows/Notepad.vue'
 
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
