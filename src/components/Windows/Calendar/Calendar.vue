@@ -81,7 +81,6 @@ function calculateDaysOfMonth(year, month) {
   currentMonthName.value = new Date(year, month).toLocaleString(localeStore.currentLocale, { month: 'long' });
   currentYear.value = year;
 
-  const firstDayOfMonth = new Date(year, month, 1);
   const lastDayOfMonth = new Date(year, month + 1, 0);
   const daysInMonth = lastDayOfMonth.getDate();
 
