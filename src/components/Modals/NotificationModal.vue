@@ -23,7 +23,7 @@ const closeNotificationModal = () => {
     >
       <button @click="closeNotificationModal" class="modal-close cursor-pointer"></button>
       <div class="flex items-center">
-        <img class="w-3.5 h-3.5" src="/img/icons/info-icon.png" alt="risk" />
+        <img class="w-3.5 h-3.5" src="/img/icons/info-icon.webp" alt="risk" />
         <span class="ml-2">{{ $t('modale.fullscreenTitle') }}</span>
       </div>
       <p>{{ $t('modale.fullscreenFirstText') }}</p>
