@@ -53,7 +53,7 @@ const adjustVolume = () => {
   -webkit-appearance: none;
   background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
   outline: none;
-  padding: 0; 
+  padding: 0;
   height: 9px;
   width: 20px;
 }
