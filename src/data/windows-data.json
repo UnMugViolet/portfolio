@@ -171,7 +171,7 @@
     },
     "imgSrc": "/img/icons/calendar/calendar-icon-lg.png",
     "onDesktop": false,
-    "displayHeaderTools": true,
+    "displayHeaderTools": false,
     "resizable": true,
     "windowsHeaderLogo": true,
     "headerPosition": "right",

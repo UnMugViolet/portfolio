@@ -1,6 +1,6 @@
 <template>
   <div class="relative right-0 h-full flex">
-    <div class="w-full h-content-head-cut bg-silver border-l-3 border-t-3 border-white py-1.5 px-1">
+    <div class="w-full h-content-toolbox-cut bg-silver border-l-3 border-t-3 border-white py-1.5 px-1">
       <!-- Score and time -->
       <div class="flex items-center border-2 border-b-white border-r-white border-l-gray-128 border-t-gray-128 mb-2 justify-between h-16 md:h-10 px-1 p-1">
         <div class="flex h-full border-b border-r border-white">
