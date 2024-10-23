@@ -146,6 +146,7 @@
     "imgSrc": "/img/icons/folder-images-icon-sm.webp",
     "onDesktop": false,
     "displayHeaderTools": true,
+    "resizable": true,
     "windowsHeaderLogo": true,
     "headerPosition": "right",
     "menuHeaderItemsId": "images",

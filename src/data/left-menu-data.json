@@ -54,7 +54,7 @@
             "id": 2,
             "subtitle": {
               "en": "My Documents",
-              "fr": "Mes Documents"
+              "fr": "Mes documents"
             },
             "iconUrl": "/img/icons/side-menu/documents-icon.webp",
             "url": ""
@@ -103,57 +103,120 @@
         "id": 1,
         "title": {
           "en": "Pictures Tasks",
-          "fr": "Tâches pour les images"
+          "fr": "Options photo"
         },
-        "subtasks": []
+        "iconUrl": "/img/icons/side-menu/image.webp",
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "View as a slide show",
+              "fr": "Voir en diaporama"
+            },
+            "iconUrl": "/img/icons/side-menu/screen-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Order prints online",
+              "fr": "Acheter des tirages en ligne"
+            },
+            "iconUrl": "/img/icons/side-menu/picture-online-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Print pictures",
+              "fr": "Imprimer des images"
+            },
+            "iconUrl": "/img/icons/side-menu/print-picture-icon.webp"
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "Shop for pictures online",
+              "fr": "Acheter des images en ligne"
+            },
+            "iconUrl": "/img/icons/side-menu/picture-online-icon.webp"
+          }
+        ]
       },
       {
         "id": 2,
         "title": {
-          "en": "",
-          "fr": ""
+          "en": "File and folder tasks",
+          "fr": "Fichier et dossier"
         },
         "subtasks": [
           {
             "id": 1,
             "subtitle": {
-              "en": "",
-              "fr": ""
+              "en": "Make a new folder",
+              "fr": "Créer un nouveau dossier"
             },
-            "iconUrl": "/img/icons/side-menu/networking-icon.webp",
-            "url": ""
+            "iconUrl": "/img/icons/side-menu/new-folder-icon.webp"
           },
           {
             "id": 2,
             "subtitle": {
-              "en": "",
-              "fr": ""
+              "en": "Publish this folder to the web",
+              "fr": "Publier ce dossier sur le web"
             },
-            "iconUrl": "/img/icons/side-menu/documents-icon.webp",
-            "url": ""
+            "iconUrl": "/img/icons/side-menu/publish-web-icon.webp"
           },
           {
             "id": 3,
             "subtitle": {
-              "en": "",
-              "fr": ""
+              "en": "Share this folder",
+              "fr": "Partager ce dossier"
             },
-            "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
-            "url": ""
-          },
-          {
-            "id": 4,
-            "subtitle": {
-              "en": "",
-              "fr": ""
-            },
-            "iconUrl": "/img/icons/side-menu/settings-icon.webp",
-            "url": ""
+            "iconUrl": "/img/icons/side-menu/share-folder-icon.webp"
           }
         ]
       },
       {
         "id": 3,
+        "title": {
+          "en": "Other places",
+          "fr": "Autres locations"
+        },
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "Shared pictures",
+              "fr": "Photos partagées"
+            },
+            "iconUrl": "/img/icons/side-menu/folder-image-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "My pictures",
+              "fr": "Mes photos"
+            },
+            "iconUrl": "/img/icons/side-menu/folder-image-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "My computer",
+              "fr": "Mon ordinateur"
+            },
+            "iconUrl": "/img/icons/side-menu/computer-icon.webp"
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "My network places",
+              "fr": "Mes emplacements réseau"
+            },
+            "iconUrl": "/img/icons/side-menu/networking-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 4,
         "title": {
           "en": "Details",
           "fr": "Détails"
