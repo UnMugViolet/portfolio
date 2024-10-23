@@ -3,14 +3,14 @@ import { reactive, watchEffect, computed } from 'vue'
 import { useLocaleStore } from '@/stores/localeStore'
 
 import projectData from '@/data/projects-data.json'
-import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
+import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import HomeserverContent from '@/components/Windows/MyProjects/HomeserverContent.vue'
 import ClenchContent from '@/components/Windows/MyProjects/ClenchContent.vue'
 import LogmaContent from '@/components/Windows/MyProjects/LogmaContent.vue'
 import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 
 const props = defineProps({
-  subMenuType: String,
+  leftMenuType: String,
   isGoBackActive: Boolean
 })
 
@@ -107,7 +107,7 @@ const localizedDate = computed(() => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowSideMenu :subMenuType="props.subMenuType" />
+    <WindowLeftMenu :leftMenuType="props.leftMenuType" />
     <!-- Content of project -->
     <div v-if="state.selectedProject && state.selectedProject.isActive" class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5">
       <div class="m-2">
