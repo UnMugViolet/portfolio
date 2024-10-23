@@ -3,5 +3,9 @@
 </template>
 
 <script setup>
-console.log('Hello from Pictures.vue')
+
+const props = defineProps({
+  leftMenuType: String,
+})
+
 </script>
