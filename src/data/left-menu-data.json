@@ -7,7 +7,9 @@
           "en": "System Tasks",
           "fr": "Tâches système"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": [
           {
             "id": 1,
@@ -41,7 +43,9 @@
           "en": "Other",
           "fr": "Autres"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": [
           {
             "id": 1,
@@ -87,7 +91,9 @@
           "en": "Details",
           "fr": "Détails"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": [
           {
             "id": 1,
@@ -108,9 +114,11 @@
           "en": "Pictures Tasks",
           "fr": "Tâches photo"
         },
-        "iconUrl": "/img/icons/side-menu/image.webp",
-        "bg-image": "/img/icons/pictures/bg-picture.webp",
-        "bg-color": "bg-solitude-blue",
+        "iconHeader": "/img/icons/side-menu/image.webp",
+        "bgImage": "/img/icons/pictures/bg-picture-menu.webp",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window-active.webp",
+        "bgColor": "bg-solitude-blue",
+        "headerActive": true,
         "subtasks": [
           {
             "id": 1,
@@ -152,7 +160,9 @@
           "en": "File and folder tasks",
           "fr": "Fichier et dossier"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": [
           {
             "id": 1,
@@ -186,7 +196,9 @@
           "en": "Other places",
           "fr": "Autres localisations"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": [
           {
             "id": 1,
@@ -228,7 +240,9 @@
           "en": "Details",
           "fr": "Détails"
         },
-        "bg-color": "bg-window-menu-card",
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
         "subtasks": []
       }
     ]

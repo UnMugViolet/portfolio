@@ -9,6 +9,8 @@ module.exports = {
     'bg-window-menu-card',
     'bg-window-menu-card-header',
     'bg-solitude-blue',
+    'bg-window-menu-card-header',
+    'bg-window-menu-card-header-active',
   ],
   theme: {
     extend: {
@@ -28,6 +30,7 @@ module.exports = {
         'header-window-deactivated': 'linear-gradient(rgb(118, 151, 231) 0%, rgb(126, 158, 227) 3%, rgb(148, 175, 232) 6%, rgb(151, 180, 233) 8%, rgb(130, 165, 228) 14%, rgb(124, 159, 226) 17%, rgb(121, 150, 222) 25%, rgb(123, 153, 225) 56%, rgb(130, 169, 233) 81%, rgb(128, 165, 231) 89%, rgb(123, 150, 225) 94%, rgb(122, 147, 223) 97%, rgb(171, 186, 227) 100%)',
         'window-menu-card': 'linear-gradient(to right, rgba(180, 200, 251, 0.87) 0%, rgba(164, 185, 251, 0.87) 50%, rgba(180, 200, 251, 0.87) 100%)',
         'window-menu-card-header': 'linear-gradient(to right, rgb(240, 240, 255) 0px, rgb(240, 240, 255) 30%, rgb(168, 188, 255) 100%)',
+        'window-menu-card-header-active': 'linear-gradient(90deg, rgba(0,73,181,1) 0%, rgba(41,93,205,1) 100%);',
         'window-side-menu': 'linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);',
         'button-submit': 'linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4)',
         'button-clicked': 'linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1)',
