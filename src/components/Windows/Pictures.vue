@@ -5,8 +5,17 @@
     <div class="w-full h-full bg-pictures-blue overflow-auto overflow-x-hidden">
       <div class="w-full h-full justify-center item-center">
         <!-- Carroussel -->
-        <div class="flex flex-col justify-center items-center w-full h-9/12  gap-1">
-          <img v-if="currentPicture" :src="currentPicture.url" :alt="currentPicture.title" class="w-3/4 h-5/6 mt-1 border border-black" />
+        <div class="flex flex-col justify-center items-center w-full h-9/12 gap-1">
+          <div 
+            v-if="currentPicture" 
+            class="w-3/4 h-5/6 mt-1 border border-black overflow-hidden">
+            <div class="w-full h-full bg-contain bg-center bg-no-repeat"
+            :style="{ 
+              backgroundImage: `url(${currentPicture.url})`,
+              transform: `rotate(${rotation}deg)`
+            }">
+            </div>
+          </div>
           <p v-else>Loading...</p>
           <div class="flex py-2">
             <div class="flex gap-0.5">
@@ -19,10 +28,10 @@
             </div>
             <hr class="w-px mx-2 h-full bg-moon-mist" />
             <div class="flex">
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button @click="rotateLeft" class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/left.svg" :alt="$t('windows.pictures.rotateLeft')" />
               </button>
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button @click="rotateRight" class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/right.svg" :alt="$t('windows.pictures.rotateRight')" />
               </button>
             </div>
@@ -54,6 +63,7 @@ const props = defineProps({
 let currentPicture = ref(null)
 let currentIndex = ref(0)
 const pictures = picturesData.pictures
+const rotation = ref(0) // Define the rotation ref
 
 onMounted(() => {
   if (pictures && pictures.length > 0) {
@@ -69,6 +79,7 @@ const previousPicture = () => {
   } else {
     currentIndex.value--
   }
+  rotation.value = 0
   currentPicture.value = pictures[currentIndex.value]
 }
 
@@ -78,6 +89,15 @@ const nextPicture = () => {
   } else {
     currentIndex.value++
   }
+  rotation.value = 0
   currentPicture.value = pictures[currentIndex.value]
+}
+
+const rotateLeft = () => {
+  rotation.value -= 90
+}
+
+const rotateRight = () => {
+  rotation.value += 90
 }
 </script>
