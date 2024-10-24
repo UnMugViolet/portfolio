@@ -4,6 +4,12 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  // Avoid purging classes that are used in the HTML templates (in that case dynamically loaded from a JSON file)
+  safelist: [
+    'bg-window-menu-card',
+    'bg-window-menu-card-header',
+    'bg-solitude-blue',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -39,6 +45,7 @@ module.exports = {
         'light-yellow': '#ffffe1',
         'light-blue': '#ced8ef',
         'silver': '#c0c0c0',
+        'solitude-blue': '#eff3ff',
         gray: {
           128: '#808080',
           192: '#C0C0C0',
