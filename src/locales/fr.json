@@ -85,6 +85,12 @@
       "connectToSpotify": "Se connecter à Spotify",
       "spotifyDisclaimer": "Cette playlist et sa lecture est réalisée en utilisant l'API de spotify",
       "albumCover": "Couverture de l'album"
+    },
+    "pictures": {
+      "previous": "Photo précédente",
+      "next": "Photo suivante",
+      "rotateLeft": "Tourner à gauche",
+      "rotateRight": "Tourner à droite"
     }
   },
   "project": {

@@ -1,0 +1,28 @@
+{
+  "pictures": [
+    {
+      "id": 1,
+      "title": "Picture 1",
+      "description": "This is a picture of a cat",
+      "url": "/img/icons/pictures/right.svg"
+    },
+    {
+      "id": 2,
+      "title": "Picture 2",
+      "description": "This is a picture of a dog",
+      "url": "/img/icons/pictures/left.svg"
+    },
+    {
+      "id": 3,
+      "title": "Picture 3",
+      "description": "This is a picture of a rabbit",
+      "url": "/img/icons/pictures/bg-picture-menu.webp"
+    },
+    {
+      "id": 4,
+      "title": "Picture 4",
+      "description": "This is a picture of a rabbit",
+      "url": "/img/icons/pictures/previous-icon.svg"
+    }
+  ]
+}

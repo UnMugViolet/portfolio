@@ -20,22 +20,19 @@ const getLocalizedSubtitle = (subtask) => {
   return subtask.subtitle[currentLocale.value] || subtask.subtitle['fr']
 }
 
-console.log("LeftMenu", leftMenu[0].headerActive)
 </script>
 
 <template>
-  <div class="flex flex-col flex-shrink-0 gap-3 bg-window-side-menu w-32 md:w-12.125 h-full p-2.5 overflow-auto">
+  <div class="flex flex-col flex-shrink-0 gap-3 bg-window-side-menu w-32 md:w-12.125 h-full p-2.5 overflow-auto z-20">
     <div v-for="item in leftMenu" :key="item.id"
       :class="[
         'text-twilight-blue rounded-t-sm',
         item.iconHeader ? 'mt-1 md:mt-2' : '',
         item.bgColor,
-        item.bgImage ? 'bg-no-repeat' : ''
+        item.bgImage ? 'bg-no-repeat bg-16 bg-bottom-right-picture-menu' : ''
       ]"
       :style="item.bgImage ? { 
-        backgroundImage: `url(${item.bgImage})`,
-        backgroundPosition: 'right -1px bottom -4px ',
-        backgroundSize: '4rem 4rem',
+        backgroundImage: `url(${item.bgImage})`
         } : {}">
       <div v-if="item.iconHeader">
         <img :src="item.iconHeader" :alt="getLocalizedTitle(item)"
