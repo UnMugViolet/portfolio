@@ -74,7 +74,7 @@ const getLocalizedTitle = (entity) => {
           class="text-white text-xs font-normal py-px px-1"
           :style="{
             ...entity.textStyle,
-            backgroundColor: entity.isActive ? 'rgb(11, 97, 255)' : 'transparent',
+            backgroundColor: entity.isActive ? '#0B61FF' : 'transparent',
             textShadow: entity.isActive ? 'none' : '0px 1px 1px rgba(1, 1, 1, 1), 0px 0px 4px #000'
           }"
         >
