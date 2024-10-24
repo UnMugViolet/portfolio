@@ -27,7 +27,7 @@ console.log("LeftMenu", leftMenu)
   <div class="flex flex-col flex-shrink-0 gap-3 bg-window-side-menu w-32 md:w-12.125 h-full p-2.5 overflow-auto">
     <div 
       v-for="item in leftMenu" :key="item.id"
-      :class="item.iconUrl ? `text-twilight-blue mt-1 md:mt-2 ${item['bg-color']}` : `text-twilight-blue ${item['bg-color']}`">
+      :class="item.iconUrl ? `text-twilight-blue mt-1 md:mt-2 rounded-t-md ${item['bg-color']}` : `text-twilight-blue rounded-t-md  ${item['bg-color']}`">
     <div v-if="item.iconUrl">
         <img :src="item.iconUrl" :alt="getLocalizedTitle(item)" class="absolute w-5 h-5 md:w-8 md:h-8 top-3 md:top-2.5" />
         <div class="flex flex-row justify-between items-center bg-window-menu-card-header rounded-t-sm px-1 py-px sm:px-2 sm:py-0.5 text-xs-mobile md:text-xs font-bold cursor-pointer hover:text-heroic-blue">
