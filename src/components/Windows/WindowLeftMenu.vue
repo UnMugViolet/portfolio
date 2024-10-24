@@ -42,14 +42,14 @@ console.log("LeftMenu", leftMenu[0].headerActive)
           class="absolute w-4.5 h-4.5 md:w-7 md:h-7 top-3 md:top-2.5" />
         <div
           :class="['flex flex-row justify-between items-center bg-window-menu-card-header rounded-t-sm px-1 py-px sm:px-2 sm:py-0.5 text-xs-mobile md:text-xs font-bold cursor-pointer hover:text-heroic-blue', { 'bg-window-menu-card-header-active text-white hover:text-white': item['headerActive'] }]">
-          <h3 class="ml-4 md:ml-6">{{ getLocalizedTitle(item) }} </h3>
+          <h3 class="ml-4 md:ml-6 text-xxs">{{ getLocalizedTitle(item) }} </h3>
           <img :src="item.iconSrc" alt="plus"
             class="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-lg" />
         </div>
       </div>
       <div v-else
         :class="['flex flew-row justify-between items-center bg-window-menu-card-header rounded-t-sm px-1 py-px sm:px-2 sm:py-0.5 text-xs-mobile md:text-xs font-bold cursor-pointer hover:text-heroic-blue', { 'bg-window-menu-card-header-active text-white hover:text-white': item['headerActive'] }]">
-        <h3>{{ getLocalizedTitle(item) }}</h3>
+        <h3 class="text-xxs">{{ getLocalizedTitle(item) }}</h3>
         <img :src="item.iconSrc" alt="plus"
           class="w-3.5 h-3.5 sm:w-4 sm:h-4 drop-shadow-lg" />
       </div>
