@@ -7,6 +7,7 @@
           "en": "System Tasks",
           "fr": "Tâches système"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": [
           {
             "id": 1,
@@ -40,6 +41,7 @@
           "en": "Other",
           "fr": "Autres"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": [
           {
             "id": 1,
@@ -85,6 +87,7 @@
           "en": "Details",
           "fr": "Détails"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": [
           {
             "id": 1,
@@ -106,6 +109,8 @@
           "fr": "Tâches photo"
         },
         "iconUrl": "/img/icons/side-menu/image.webp",
+        "bg-image": "/img/icons/pictures/bg-picture.webp",
+        "bg-color": "bg-solitude-blue",
         "subtasks": [
           {
             "id": 1,
@@ -147,6 +152,7 @@
           "en": "File and folder tasks",
           "fr": "Fichier et dossier"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": [
           {
             "id": 1,
@@ -180,6 +186,7 @@
           "en": "Other places",
           "fr": "Autres localisations"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": [
           {
             "id": 1,
@@ -221,6 +228,7 @@
           "en": "Details",
           "fr": "Détails"
         },
+        "bg-color": "bg-window-menu-card",
         "subtasks": []
       }
     ]
