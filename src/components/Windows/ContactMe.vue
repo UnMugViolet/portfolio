@@ -3,11 +3,11 @@ import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import emailjs from 'emailjs-com'
-import WindowSideMenu from '@/components/Windows/WindowSideMenu.vue'
+import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import Button from '../Buttons/Button.vue'
 
 const props = defineProps({
-  subMenuType: {
+  leftMenuType: {
     type: String
   }
 })
@@ -94,7 +94,7 @@ watch(isLoading, (newValue) => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowSideMenu :subMenuType="props.subMenuType" />
+    <WindowLeftMenu :leftMenuType="props.leftMenuType" />
 
     <!-- Main content -->
     <form class="flex flex-col w-full h-full bg-white overflow-auto gap-2 font-trebuchet-pixel">

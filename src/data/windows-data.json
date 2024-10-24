@@ -24,7 +24,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "MyProjects",
-    "subMenuType": "default"
+    "leftMenuType": "default"
   },
   {
     "id": "contact",
@@ -51,7 +51,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "ContactMe",
-    "subMenuType": "default"
+    "leftMenuType": "default"
   },
   {
     "id": "myCV",
@@ -78,7 +78,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "MyCV",
-    "subMenuType": ""
+    "leftMenuType": ""
   },
   {
     "id": "music",
@@ -105,7 +105,7 @@
     "minWidth": 290,
     "minHeight": 166,
     "component": "Music",
-    "subMenuType": ""
+    "leftMenuType": ""
   },
   {
     "id": "about",
@@ -131,7 +131,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "About",
-    "subMenuType": ""
+    "leftMenuType": ""
   },
   {
     "id": "pictures",
@@ -146,18 +146,19 @@
     "imgSrc": "/img/icons/folder-images-icon-sm.webp",
     "onDesktop": false,
     "displayHeaderTools": true,
+    "resizable": true,
     "windowsHeaderLogo": true,
     "headerPosition": "right",
-    "menuHeaderItemsId": "default",
+    "menuHeaderItemsId": "images",
     "iconSrc": "/img/icons/folder-images-icon-sm.webp",
     "initPositionX": 50,
-    "initPositionY": 400,
-    "initWidth": 660,
-    "initHeight": 500,
+    "initPositionY": 200,
+    "initWidth": 680,
+    "initHeight": 600,
     "minWidth": 200,
     "minHeight": 160,
     "component": "Pictures",
-    "subMenuType": ""
+    "leftMenuType": "pictures"
   },
   {
     "id": "calendar",
@@ -184,7 +185,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "Calendar",
-    "subMenuType": ""
+    "leftMenuType": ""
   },
   {
     "id": "minesweeper",
@@ -211,7 +212,7 @@
     "minWidth": 205,
     "minHeight": 305,
     "component": "Minesweeper",
-    "subMenuType": ""
+    "leftMenuType": ""
   },
   {
     "id": "notepad",
@@ -238,6 +239,6 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "Notepad",
-    "subMenuType": ""
+    "leftMenuType": ""
   }
 ]

@@ -1,136 +1,250 @@
 {
   "leftMenuItems": {
-    "default": {
-      "en": [
-        {
-          "id": 1,
-          "title": "System Tasks",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "View System Information",
-              "iconUrl": "/img/icons/side-menu/info-system-icon.webp"
-            },
-            {
-              "id": 2,
-              "subtitle": "Add or Remove Programs",
-              "iconUrl": "/img/icons/side-menu/programs-icon.webp"
-            },
-            {
-              "id": 3,
-              "subtitle": "Change a Settings",
-              "iconUrl": "/img/icons/side-menu/settings-icon.webp"
-            }
-          ]
+    "default": [
+      {
+        "id": 1,
+        "title": {
+          "en": "System Tasks",
+          "fr": "Tâches système"
         },
-        {
-          "id": 2,
-          "title": "Other",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "My Network Places",
-              "iconUrl": "/img/icons/side-menu/networking-icon.webp",
-              "url": ""
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "View system information",
+              "fr": "Informations système"
             },
-            {
-              "id": 2,
-              "subtitle": "My Documents",
-              "iconUrl": "/img/icons/side-menu/documents-icon.webp",
-              "url": ""
+            "iconUrl": "/img/icons/side-menu/info-system-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Add or remove programs",
+              "fr": "Gestion des programmes"
             },
-            {
-              "id": 3,
-              "subtitle": "Shared Documents",
-              "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
-              "url": ""
+            "iconUrl": "/img/icons/side-menu/programs-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Change a settings",
+              "fr": "Changer les paramètres"
             },
-            {
-              "id": 4,
-              "subtitle": "Control Panel",
-              "iconUrl": "/img/icons/side-menu/settings-icon.webp",
-              "url": ""
-            }
-          ]
+            "iconUrl": "/img/icons/side-menu/settings-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Other",
+          "fr": "Autres"
         },
-        {
-          "id": 3,
-          "title": "Details",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "My Github",
-              "iconUrl": "/img/icons/side-menu/github-icon.webp",
-              "url": "https://github.com/UnMugViolet"
-            }
-          ]
-        }
-      ],
-      "fr": [
-        {
-          "id": 1,
-          "title": "Tâches système",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "Informations système",
-              "iconUrl": "/img/icons/side-menu/info-system-icon.webp"
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "My network places",
+              "fr": "Mes emplacements réseau"
             },
-            {
-              "id": 2,
-              "subtitle": "Gestion des programmes",
-              "iconUrl": "/img/icons/side-menu/programs-icon.webp"
+            "iconUrl": "/img/icons/side-menu/networking-icon.webp",
+            "url": ""
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "My documents",
+              "fr": "Mes documents"
             },
-            {
-              "id": 3,
-              "subtitle": "Changer les paramètres",
-              "iconUrl": "/img/icons/side-menu/settings-icon.webp"
-            }
-          ]
+            "iconUrl": "/img/icons/side-menu/documents-icon.webp",
+            "url": ""
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Shared documents",
+              "fr": "Documents partagés"
+            },
+            "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
+            "url": ""
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "Control panel",
+              "fr": "Panneau de configuration"
+            },
+            "iconUrl": "/img/icons/side-menu/settings-icon.webp",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "Details",
+          "fr": "Détails"
         },
-        {
-          "id": 2,
-          "title": "Autres",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "Mes emplacements réseau",
-              "iconUrl": "/img/icons/side-menu/networking-icon.webp",
-              "url": ""
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "My Github",
+              "fr": "Mon Github"
             },
-            {
-              "id": 2,
-              "subtitle": "Mes documents",
-              "iconUrl": "/img/icons/side-menu/documents-icon.webp",
-              "url": ""
-            },
-            {
-              "id": 3,
-              "subtitle": "Documents partagés",
-              "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp",
-              "url": ""
-            },
-            {
-              "id": 4,
-              "subtitle": "Panneau de configuration",
-              "iconUrl": "/img/icons/side-menu/settings-icon.webp",
-              "url": ""
-            }
-          ]
+            "iconUrl": "/img/icons/side-menu/github-icon.webp",
+            "url": "https://github.com/UnMugViolet"
+          }
+        ]
+      }
+    ],
+    "pictures": [
+      {
+        "id": 1,
+        "title": {
+          "en": "Pictures Tasks",
+          "fr": "Tâches photo"
         },
-        {
-          "id": 3,
-          "title": "Détails",
-          "subtasks": [
-            {
-              "id": 1,
-              "subtitle": "Mon Github",
-              "iconUrl": "/img/icons/side-menu/github-icon.webp",
-              "url": "https://github.com/UnMugViolet"
-            }
-          ]
-        }
-      ]
-    }
+        "iconHeader": "/img/icons/side-menu/image.webp",
+        "bgImage": "/img/icons/pictures/bg-picture-menu.webp",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window-active.webp",
+        "bgColor": "bg-solitude-blue",
+        "headerActive": true,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "View as a slide show",
+              "fr": "Voir en diaporama"
+            },
+            "iconUrl": "/img/icons/side-menu/screen-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Order prints online",
+              "fr": "Commander des tirages"
+            },
+            "iconUrl": "/img/icons/side-menu/picture-online-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Print pictures",
+              "fr": "Imprimer des images"
+            },
+            "iconUrl": "/img/icons/side-menu/print-picture-icon.webp"
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "Shop for pictures online",
+              "fr": "Acheter des images en ligne"
+            },
+            "iconUrl": "/img/icons/side-menu/picture-online-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "File and folder tasks",
+          "fr": "Fichier et dossier"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "Make a new folder",
+              "fr": "Créer un nouveau dossier"
+            },
+            "iconUrl": "/img/icons/side-menu/new-folder-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Publish this folder to the web",
+              "fr": "Publier ce dossier sur le web"
+            },
+            "iconUrl": "/img/icons/side-menu/publish-web-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Share this folder",
+              "fr": "Partager ce dossier"
+            },
+            "iconUrl": "/img/icons/side-menu/share-folder-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "Other places",
+          "fr": "Autres localisations"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "Shared pictures",
+              "fr": "Photos partagées"
+            },
+            "iconUrl": "/img/icons/side-menu/folder-image-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "My pictures",
+              "fr": "Mes photos"
+            },
+            "iconUrl": "/img/icons/side-menu/folder-image-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "My computer",
+              "fr": "Mon ordinateur"
+            },
+            "iconUrl": "/img/icons/side-menu/computer-icon.webp"
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "My network places",
+              "fr": "Mes emplacements réseau"
+            },
+            "iconUrl": "/img/icons/side-menu/networking-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": {
+          "en": "Details",
+          "fr": "Détails"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": []
+      }
+    ]
   }
 }

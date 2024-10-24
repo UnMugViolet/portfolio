@@ -85,6 +85,12 @@
       "connectToSpotify": "Connect to Spotify",
       "spotifyDisclaimer": "This playlist and its use has been made using the Spotify API",
       "albumCover": "Album cover"
+    },
+    "pictures": {
+      "previous": "Previous picture",
+      "next": "Next picture",
+      "rotateLeft": "Rotate left",
+      "rotateRight": "Rotate right"
     }
   },
   "project": {

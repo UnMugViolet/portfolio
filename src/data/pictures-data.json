@@ -1,0 +1,44 @@
+{
+  "pictures": [
+    {
+      "id": 1,
+      "title": "colette.jpeg",
+      "url": "/img/icons/pictures/carroussel/colette.webp"
+    },
+    {
+      "id": 2,
+      "title": "paris.png",
+      "url": "/img/icons/pictures/carroussel/paris.webp"
+    },
+    {
+      "id": 3,
+      "title": "rennes.jpg",
+      "url": "/img/icons/pictures/carroussel/rennes.webp"
+    },
+    {
+      "id": 4,
+      "title": "lorient.jpg",
+      "url": "/img/icons/pictures/carroussel/lorient.webp"
+    },
+    {
+      "id": 5,
+      "title": "berlin.png",
+      "url": "/img/icons/pictures/carroussel/berlin.webp"
+    },
+    {
+      "id": 6,
+      "title": "gdansk.jpg",
+      "url": "/img/icons/pictures/carroussel/gdansk.webp"
+    },
+    {
+      "id": 7,
+      "title": "poznan.jpeg",
+      "url": "/img/icons/pictures/carroussel/poznan.webp"
+    },
+    {
+      "id": 8,
+      "title": "warszawa.gif",
+      "url": "/img/icons/pictures/carroussel/warszawa.webp"
+    }
+  ]
+}

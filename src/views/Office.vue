@@ -53,11 +53,11 @@
           v-if="window.id === 'myProjects'"
           :is="window.component"
           :isGoBackActive="window.isGoBackActive"
-          :subMenuType="window.subMenuType"
+          :leftMenuType="window.leftMenuType"
           @goback-is-available="handleGoBackIsAvailable(window.id)"
           @project-active-name="handleProjectActiveName(window.id, $event)"
         />
-        <component v-else :is="window.component" v-bind="window.subMenuType ? { subMenuType: window.subMenuType } : {}" />
+        <component v-else :is="window.component" v-bind="window.leftMenuType ? { leftMenuType: window.leftMenuType } : {}" />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
@@ -167,7 +167,7 @@ const openWindow = (windowId) => {
         initHeight: entity.initHeight,
         minWidth: entity.minWidth,
         minHeight: entity.minHeight,
-        subMenuType: entity.subMenuType,
+        leftMenuType: entity.leftMenuType,
         displayHeaderTools: entity.displayHeaderTools,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
