@@ -39,10 +39,20 @@
         </div>
         <!-- Footer preview image -->
         <div class="w-full h-3/12 bottom-0 right-0 bg-white">
-          <div class="flex w-full h-full bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 pt-1 pb-5 gap-4 overflow-auto">
-            <div v-for="picture in pictures" :key="picture.id" class="w-full h-full">
-              <div class="w-full h-full border border-gray-300 bg-no-repeat bg-contain bg-center mb-1" :style="{ backgroundImage: 'url(' + picture.url + ')' }"/>
-              <p class="text-center font-trebuchet-pixel text-xxs">{{ picture.title }}</p>
+          <div class="flex w-full h-full bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 pt-1.5 pb-5 gap-4 overflow-auto">
+            <div v-for="picture in pictures" :key="picture.id" class="w-full h-full flex flex-col items-center">
+              <div
+                @click="currentPicture = picture"
+                :class="'w-full h-full min-w-20 border border-gray-300 bg-no-repeat bg-contain bg-center cursor-pointer' + (currentPicture && currentPicture.id === picture.id ? ' border-3 border-focus-blue' : '')" 
+                :style="{ backgroundImage: 'url(' + picture.url + ')' }"/>
+                <p
+                  @click="currentPicture = picture" 
+                  :class="[
+                    'text-center inline-block font-trebuchet-pixel text-xxs cursor-pointer mt-1',
+                    currentPicture && currentPicture.id === picture.id ? 'bg-focus-blue px-1 py-px text-white' : ''
+                  ]">
+                  {{ picture.title }}
+                </p>
           </div>
           </div>
         </div>
