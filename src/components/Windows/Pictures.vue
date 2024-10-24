@@ -6,32 +6,43 @@
       <div class="w-full h-full justify-center item-center">
         <!-- Carroussel -->
         <div class="flex flex-col justify-center items-center w-full h-9/12 gap-1">
-          <div 
-            v-if="currentPicture" 
-            class="w-3/4 h-5/6 mt-1 border border-black overflow-hidden">
-            <div class="w-full h-full bg-contain bg-center bg-no-repeat"
-            :style="{ 
-              backgroundImage: `url(${currentPicture.url})`,
-              transform: `rotate(${rotation}deg)`
-            }">
-            </div>
+          <div v-if="currentPicture" class="w-3/4 h-5/6 mt-1 border border-black overflow-hidden">
+            <div
+              class="w-full h-full bg-contain bg-center bg-no-repeat"
+              :style="{
+                backgroundImage: `url(${currentPicture.url})`,
+                transform: `rotate(${rotation}deg)`
+              }"
+            ></div>
           </div>
           <p v-else>Loading...</p>
           <div class="flex py-2">
             <div class="flex gap-0.5">
-              <button @click="previousPicture" class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button
+                @click="previousPicture"
+                class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1"
+              >
                 <img src="/img/icons/pictures/previous-icon.svg" :alt="$t('windows.pictures.previous')" />
               </button>
-              <button @click="nextPicture" class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button
+                @click="nextPicture"
+                class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1"
+              >
                 <img src="/img/icons/pictures/next-icon.svg" :alt="$t('windows.pictures.next')" />
               </button>
             </div>
             <hr class="w-px mx-2 h-full bg-moon-mist" />
             <div class="flex">
-              <button @click="rotateLeft" class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button
+                @click="rotateLeft"
+                class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1"
+              >
                 <img src="/img/icons/pictures/left.svg" :alt="$t('windows.pictures.rotateLeft')" />
               </button>
-              <button @click="rotateRight" class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
+              <button
+                @click="rotateRight"
+                class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1"
+              >
                 <img src="/img/icons/pictures/right.svg" :alt="$t('windows.pictures.rotateRight')" />
               </button>
             </div>
@@ -43,17 +54,22 @@
             <div v-for="picture in pictures" :key="picture.id" class="w-full h-full flex flex-col items-center">
               <div
                 @click="currentPicture = picture"
-                :class="'w-full h-full min-w-20 border border-gray-300 bg-no-repeat bg-contain bg-center cursor-pointer' + (currentPicture && currentPicture.id === picture.id ? ' border-3 border-focus-blue' : '')" 
-                :style="{ backgroundImage: 'url(' + picture.url + ')' }"/>
-                <p
-                  @click="currentPicture = picture" 
-                  :class="[
-                    'text-center inline-block font-trebuchet-pixel text-xxs cursor-pointer mt-1',
-                    currentPicture && currentPicture.id === picture.id ? 'bg-focus-blue px-1 py-px text-white' : ''
-                  ]">
-                  {{ picture.title }}
-                </p>
-          </div>
+                :class="
+                  'w-full h-full min-w-20 border border-gray-300 bg-no-repeat bg-contain bg-center cursor-pointer' +
+                  (currentPicture && currentPicture.id === picture.id ? ' border-3 border-focus-blue' : '')
+                "
+                :style="{ backgroundImage: 'url(' + picture.url + ')' }"
+              />
+              <p
+                @click="currentPicture = picture"
+                :class="[
+                  'text-center inline-block font-trebuchet-pixel text-xxs cursor-pointer mt-1',
+                  currentPicture && currentPicture.id === picture.id ? 'bg-focus-blue px-1 py-px text-white' : ''
+                ]"
+              >
+                {{ picture.title }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +83,7 @@ import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import picturesData from '@/data/pictures-data.json'
 
 const props = defineProps({
-  leftMenuType: String,
+  leftMenuType: String
 })
 
 let currentPicture = ref(null)

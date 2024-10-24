@@ -13,8 +13,8 @@
       "fr": ["Fichier", "Édition", "Affichage", "Aide"]
     },
     "images": {
-      "en": ["File", "Edit", "Favourites", "Tools","Help"],
-      "fr": ["Fichier", "Édition", "Favoris", "Outils","Aide"]
+      "en": ["File", "Edit", "Favourites", "Tools", "Help"],
+      "fr": ["Fichier", "Édition", "Favoris", "Outils", "Aide"]
     }
   }
 }
