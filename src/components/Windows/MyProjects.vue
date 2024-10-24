@@ -147,7 +147,7 @@ const localizedDate = computed(() => {
             <p
               class="text-xs font-tahoma font-medium"
               :style="{
-                backgroundColor: project.isFocus ? 'rgb(11, 97, 255)' : 'transparent',
+                backgroundColor: project.isFocus ? '#0B61FF' : 'transparent',
                 color: project.isFocus ? 'white' : 'black'
               }"
             >

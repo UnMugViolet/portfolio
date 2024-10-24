@@ -9,20 +9,20 @@
           <img v-if="currentPicture" :src="currentPicture.url" :alt="currentPicture.title" class="w-3/4 h-5/6 mt-1 border border-black" />
           <p v-else>Loading...</p>
           <div class="flex py-2">
-            <div class="flex gap-1.5">
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1" @click="previousPicture">
+            <div class="flex gap-0.5">
+              <button @click="previousPicture" class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/previous-icon.svg" :alt="$t('windows.pictures.previous')" />
               </button>
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1" @click="previousPicture">
+              <button @click="nextPicture" class="flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/next-icon.svg" :alt="$t('windows.pictures.next')" />
               </button>
             </div>
             <hr class="w-px mx-2 h-full bg-moon-mist" />
             <div class="flex">
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1" @click="previousPicture">
+              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/left.svg" :alt="$t('windows.pictures.rotateLeft')" />
               </button>
-              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1" @click="previousPicture">
+              <button class=" flex items-center w-7 h-7 cursor-pointer rounded-sm hover:border border border-pictures-blue hover:border-gray-300 hover:shadow-header-tools p-1">
                 <img src="/img/icons/pictures/right.svg" :alt="$t('windows.pictures.rotateRight')" />
               </button>
             </div>
@@ -30,9 +30,10 @@
         </div>
         <!-- Footer preview image -->
         <div class="w-full h-3/12 bottom-0 right-0 bg-white">
-          <div class="flex w-full h-full items-center bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 py-5 gap-4">
+          <div class="flex w-full h-full bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 pt-1 pb-5 gap-4 overflow-auto">
             <div v-for="picture in pictures" :key="picture.id" class="w-full h-full">
-              <img :src="picture.url" :alt="picture.title" class="w-full h-full border border-gray-300" />
+              <div class="w-full h-full border border-gray-300 bg-no-repeat bg-contain bg-center mb-1" :style="{ backgroundImage: 'url(' + picture.url + ')' }"/>
+              <p class="text-center font-trebuchet-pixel text-xxs">{{ picture.title }}</p>
           </div>
           </div>
         </div>
@@ -51,10 +52,32 @@ const props = defineProps({
 })
 
 let currentPicture = ref(null)
+let currentIndex = ref(0)
 const pictures = picturesData.pictures
 
 onMounted(() => {
-  currentPicture.value = picturesData.pictures[0]
+  if (pictures && pictures.length > 0) {
+    currentPicture.value = pictures[0]
+  } else {
+    console.error('No pictures available in picturesData')
+  }
 })
 
+const previousPicture = () => {
+  if (currentIndex.value === 0) {
+    currentIndex.value = pictures.length - 1
+  } else {
+    currentIndex.value--
+  }
+  currentPicture.value = pictures[currentIndex.value]
+}
+
+const nextPicture = () => {
+  if (currentIndex.value === pictures.length - 1) {
+    currentIndex.value = 0
+  } else {
+    currentIndex.value++
+  }
+  currentPicture.value = pictures[currentIndex.value]
+}
 </script>
