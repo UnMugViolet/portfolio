@@ -1,4 +1,11 @@
-# <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px"> PorfolioXp
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+
+  # <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px"> PorfolioXp
+
+  <img src="/public/img/windows-xp-badges.png" alt="badge windows xp" style="width: 13%">
+
+</div>
 
 <div style="display: flex; gap: 12px;">
 
