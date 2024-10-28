@@ -1,7 +1,3 @@
-<div align="right">
-  <img src="/public/img/windows-xp-badges.webp" alt="badge windows xp" width="100">
-</div>
-
 # <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px" > PorfolioXp
 
 
@@ -13,7 +9,7 @@
 
 ## 🌐 Website
 
-[https://pauljaguin.com](https://pauljaguin.com)
+###[https://pauljaguin.com](https://pauljaguin.com)
 
 ## 👷 Disclaimers
 
@@ -47,7 +43,7 @@ _(If you want to test it feel free to ask using the contact form providing your 
 Since WindowsXp design was not really meant to be eco friendly _(thanks to the billions of linear gradients)_
 I did my best to make it as lightweight as possible.
 
-<a href="https://www.websitecarbon.com/website/pauljaguin-com-office/">Link to Website Carbon Calculator webite</a>
+[Link to Website Carbon Calculator website](https://www.websitecarbon.com/website/pauljaguin-com-office/)
 
 ## 🎨 Webdesign
 
@@ -56,17 +52,15 @@ The original design was made by the windows xp team, there is nothing I've done 
 The design part was pretty straight forward on Figma, I used it more like a place where I could put ressources.
 You can still use the components created in the Figma Design they are free and no need to quote.
 
-<a href="https://www.figma.com/design/8tPMCpOidM1YSSAZt516iK/Portfolio?node-id=0-1&t=JnfahWXeIxcdy3UJ-1">
-Link to Figma
-</a>
+[Link to Figma](https://www.figma.com/design/8tPMCpOidM1YSSAZt516iK/Portfolio?node-id=0-1&t=JnfahWXeIxcdy3UJ-1)
+
+
 <br/>
 <br/>
 
 I used after that the docker image of windows xp, that helps a lot to see all the small interactions there is :
 
-<a href="https://github.com/dockur/windows">
-Link to Dockurr repo
-</a>
+[Link to Dockurr repo](https://github.com/dockur/windows)
 
 
 ## ⌨️ Deployement
