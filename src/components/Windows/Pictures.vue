@@ -11,7 +11,7 @@
               class="w-full h-full bg-contain bg-center bg-no-repeat"
               :style="{
                 backgroundImage: `url(${currentPicture.url})`,
-                transform: `rotate(${rotation.value}deg)`
+                transform: `rotate(${rotation}deg)`
               }"
             ></div>
           </div>
