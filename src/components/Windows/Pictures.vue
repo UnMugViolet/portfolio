@@ -1,9 +1,8 @@
 <template>
-  <div class="relative right-0 h-content-window flex">
+  <div class="relative right-0 h-content-window flex overflow-hidden">
     <WindowLeftMenu :leftMenuType="props.leftMenuType" />
     <!-- Content of project -->
-    <div class="w-full h-full bg-pictures-blue overflow-auto overflow-x-hidden">
-      <div class="w-full h-full justify-center item-center">
+    <div class="w-full h-full bg-pictures-blue overflow-x-hidden">
         <!-- Carroussel -->
         <div class="flex flex-col justify-center items-center w-full h-9/12 gap-1">
           <div v-if="currentPicture" class="w-3/4 h-5/6 mt-1 border border-black overflow-hidden">
@@ -49,8 +48,8 @@
           </div>
         </div>
         <!-- Footer preview image -->
-        <div class="w-full h-3/12 bottom-0 right-0 bg-white">
-          <div class="flex w-full h-full bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 pt-1.5 pb-5 gap-4 overflow-auto">
+        <div class="w-full h-3/12 bg-white">
+          <div class="flex w-full h-full bg-no-repeat bg-32 bg-bottom-right-picture-menu bg-window-picture px-2 pt-1.5 pb-5 gap-4 overflow-x-auto">
             <div ref="pictureContainer" v-for="(picture, index) in pictures" :key="picture.id" class="w-full h-full flex flex-col items-center">
               <div
                 ref="pictureElements"
@@ -65,14 +64,13 @@
                 @click="setCurrentPicture(picture)"
                 :class="[
                   'text-center inline-block font-trebuchet-pixel text-xxs cursor-pointer mt-1',
-                  currentPicture && currentPicture.id === picture.id ? 'bg-focus-blue px-1 py-px text-white' : ''
+                  currentPicture && currentPicture.id === picture.id ? 'bg-focus-blue px-1 my-px text-white' : ''
                 ]"
               >
                 {{ picture.title }}
               </p>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -96,8 +94,10 @@ const pictureElements = ref([])
 
 onMounted(() => {
   if (pictures && pictures.length > 0) {
-    currentPicture.value = pictures[0]
-    nextTick(() => scrollToCurrentPicture())
+    setTimeout(() => {
+      currentPicture.value = pictures[0]
+      nextTick(() => scrollToCurrentPicture())
+    },100)
   } else {
     console.error('No pictures available in picturesData')
   }
