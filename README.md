@@ -14,6 +14,33 @@
 
 </div>
 
+## 👷 Disclaimers
+
+**This is an ongoing project and it is not done yet**.
+If you encounter any bugs it will be really helpfull if you could provide the origin of that bug, the browser you used and the device.
+
+**This design was not made by me**.
+All the icons, wallpaper and sounds belong to windows corporation, so there's nothing I've created here. All I did was copy and apply the design for the web.
+
+**The music component is broken**.
+It is for now "normal". I am still waiting for my spotify extension request to be approuved. That could allow users that are not on the whitelist to login to the spotify portal and use the player. I'll be working on a way to look at my playlist without the spotify API for those that do not have an account.
+
+_(If you want to test it feel free to ask using the contact form providing your email used on your Spotify account, I will add you to the whitelist and email you back)_
+
+## ✨ Features
+
+- Loading Screen & Login
+- Internationalisation 🇬🇧 En / 🇫🇷 Fr
+- Play Minesweeper
+- Reach me by email
+- See my projects
+- Notepad
+- MyCv
+- My Images
+- My Calendar
+- Listen to my playlist using Spotify API _(still not working yet)_
+- Manage the volume in the website
+
 ## ⚡️ Consumption
 
 Since WindowsXp design was not really meant to be eco friendly _(thanks to the billions of linear gradients)_
@@ -41,15 +68,10 @@ I used after that the docker image of windows xp, that helps a lot to see all th
 Link to Dockurr repo
 </a>
 
-## 👷 Disclaimer 
 
-**This is an ongoing project and it is not done yet**.
-If you encounter any bugs it will be really helpfull if you could provide the origin of that bug, the browser you used and the device.
+## ⌨️ Deployement
 
-**The music component is broken**.
-It is for now "normal". I am still waiting for my spotify extension request to be approuved. That could allow users that are not on the whitelist to login to the spotify portal and use the player. I'll be working on a way to look at my playlist without the spotify API for those that do not have an account.
-
-_(If you want to test it feel free to ask using the contact form providing your email used on your Spotify account, I will add you to the whitelist and email you back)_
+The deployment is made using a Jenkins pipeline with Sonarqube on my personal server _see projects->Homeserver_ on my porfolio for more details. 
 
 ## 🔨 Usage
 
@@ -70,12 +92,11 @@ npm run build
 ```
 
 <style>
-
-   a {
-   display: table;
- }
- a span {
-   display: table-cell;
-   vertical-align: middle;
- }
+  a {
+    display: table;
+  }
+  a span {
+    display: table-cell;
+    vertical-align: middle;
+  }
 </style>
