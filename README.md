@@ -1,6 +1,6 @@
-<p align="right">
+<div align="right">
   <img src="/public/img/windows-xp-badges.webp" alt="badge windows xp" width="100">
-</p>
+</div>
 
 # <img src="https://lh6.googleusercontent.com/proxy/O0jtLgr-_kq0MLNcfc-mNens2PSj9oDn4296O8SgMRO2hv4SrTtKjTZN6iecZPdxD67l6YUk26QL0raQ818tXOioabNh1mYpQxQfHw" width="30px" > PorfolioXp
 
@@ -10,6 +10,10 @@
 ![GitHub package.json ](https://img.shields.io/github/package-json/v/UnMugViolet/portfolio/main)
 ![GitHub repo size](https://img.shields.io/github/repo-size/UnMugViolet/portfolio)
 ![GitHub License](https://img.shields.io/github/license/UnMugViolet/portfolio)
+
+## 🌐 Website
+
+[https://pauljaguin.com](https://pauljaguin.com)
 
 ## 👷 Disclaimers
 
