@@ -55,9 +55,6 @@ You can still use the components created in the Figma Design they are free and n
 [Link to Figma](https://www.figma.com/design/8tPMCpOidM1YSSAZt516iK/Portfolio?node-id=0-1&t=JnfahWXeIxcdy3UJ-1)
 
 
-<br/>
-<br/>
-
 I used after that the docker image of windows xp, that helps a lot to see all the small interactions there is :
 
 [Link to Dockurr repo](https://github.com/dockur/windows)
