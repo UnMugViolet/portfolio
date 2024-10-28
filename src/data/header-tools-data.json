@@ -1,0 +1,112 @@
+{
+  "headerToolsItems": {
+    "default": [
+      {
+        "type": "group",
+        "hasBackAndForward": true,
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/folder-opening-icon.webp",
+            "alt": "common.folder",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1 pr-1 md:px-0.5 mr-0.5 ml-0.5"
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "class": "h-5/6 w-px bg-gray-192 bg-opacity-20 mx-0.5"
+      },
+      {
+        "type": "group",
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/magnifier-icon.webp",
+            "iconClass": "w-5 h-5 flex-shrink-0",
+            "alt": "common.search",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1 md:px-0.5 ml-0.5",
+            "text": "common.search"
+          },
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/folder-open-icon.webp",
+            "alt": "common.files",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5 mr-0.5",
+            "text": "common.files"
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "class": "h-5/6 w-px bg-gray-192 mx-1 md:mx-0.5"
+      },
+      {
+        "type": "group",
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/projects/projects-icon-sm.webp",
+            "alt": "common.projects",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 ml-1 px-0.5",
+            "hasArrow": true
+          }
+        ]
+      }
+    ],
+    "pictures": [
+      {
+        "type": "group",
+        "hasBackAndForward": true,
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/folder-opening-icon.webp",
+            "alt": "common.folder",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1 pr-1 md:px-0.5 mr-0.5 ml-0.5"
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "class": "h-5/6 w-px bg-gray-192 mx-1 md:mx-0.5"
+      },
+      {
+        "type": "group",
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/magnifier-icon.webp",
+            "iconClass": "w-5 h-5 flex-shrink-0",
+            "alt": "common.search",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1 md:px-0.5 ml-0.5",
+            "text": "common.search"
+          },
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/open-folders.webp",
+            "alt": "common.folder",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-0.5 mr-0.5",
+            "text": "common.folder"
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "class": "h-5/6 w-px bg-gray-192 mx-1 md:mx-0.5"
+      },
+      {
+        "type": "group",
+        "items": [
+          {
+            "type": "button",
+            "icon": "/img/icons/windows-header-tools/projects.webp",
+            "alt": "common.projects",
+            "class": "rounded-sm border hover:border-gray-300 hover:shadow-header-tools flex items-center h-8 px-1 ml-0.5",
+            "hasArrow": true
+          }
+        ]
+      }
+    ]
+  }
+}

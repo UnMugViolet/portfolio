@@ -24,8 +24,8 @@
     </div>
     <div class="absolute w-full h-full overflow-hidden p-0.75">
       <WindowHeaderDropdown :dropdownItems="translatedMenuHeaderItems" :windowsHeaderLogo="windowsHeaderLogo" />
-      <div v-if="displayHeaderTools">
-        <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" />
+      <div v-if="headerToolsId">
+        <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" :headerToolsId="headerToolsId" />
         <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" :activeProjectName="activeProjectName" />
       </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
@@ -80,7 +80,7 @@ const {
   minHeight,
   isGoBackAvailable,
   activeProjectName,
-  displayHeaderTools,
+  headerToolsId,
   menuHeaderItemsId,
   resizable,
   windowsHeaderLogo
@@ -96,7 +96,7 @@ const {
   minHeight: Number,
   isGoBackAvailable: Boolean,
   activeProjectName: String,
-  displayHeaderTools: Boolean,
+  headerToolsId: String,
   menuHeaderItemsId: String,
   resizable: Boolean,
   windowsHeaderLogo: Boolean
