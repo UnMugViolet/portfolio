@@ -43,7 +43,7 @@
         :minHeight="window.minHeight"
         :isGoBackAvailable="window.isGoBackAvailable"
         :activeProjectName="window.activeProjectName"
-        :displayHeaderTools="window.displayHeaderTools"
+        :headerToolsId="window.headerToolsId"
         :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
@@ -168,7 +168,7 @@ const openWindow = (windowId) => {
         minWidth: entity.minWidth,
         minHeight: entity.minHeight,
         leftMenuType: entity.leftMenuType,
-        displayHeaderTools: entity.displayHeaderTools,
+        headerToolsId: entity.headerToolsId,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
         windowsHeaderLogo: entity.windowsHeaderLogo,

@@ -60,6 +60,7 @@ module.exports = {
         'pictures-blue': '#eef2fb',
         'moon-mist': '#d1cfbe',
         'focus-blue': '#0B61FF',
+        'eggshell': '#EDEAD5',
         gray: {
           128: '#808080',
           192: '#C0C0C0',
