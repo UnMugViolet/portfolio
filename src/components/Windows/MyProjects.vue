@@ -1,6 +1,7 @@
 <script setup>
-import { reactive, watchEffect, computed } from 'vue'
+import { ref, reactive, watch, computed, onUnmounted } from 'vue'
 import { useLocaleStore } from '@/stores/localeStore'
+import { useGoBackStore } from '@/stores/goBackStore'
 
 import projectData from '@/data/projects-data.json'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
@@ -11,15 +12,17 @@ import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 
 const props = defineProps({
   leftMenuType: String,
-  isGoBackActive: Boolean
 })
 
 // Locale management
 const localeStore = useLocaleStore()
+const goBackStore = useGoBackStore()
 
-const emit = defineEmits(['goback-is-available', 'project-active-name'])
+onUnmounted(() => {
+  goBackStore.currentActiveProject = null
+})
 
-const categories = reactive(
+const categories = ref(
   projectData.categories.map((category) => ({
     ...category,
     projects: category.projects.map((project) => ({ ...project, isFocus: false, isActive: false }))
@@ -37,7 +40,7 @@ const focusProject = (project) => {
 
   project.isFocus = !project.isFocus
 
-  categories.forEach((category) => {
+  categories.value.forEach((category) => {
     category.projects.forEach((p) => {
       if (p.name !== project.name) {
         p.isFocus = false
@@ -55,27 +58,19 @@ const toggleProject = (project) => {
   project.isActive = true
   state.selectedProject = project
 
-  emit('goback-is-available')
-  emit('project-active-name', project.name)
+  goBackStore.currentActiveProject = project
 }
 
 const closeAllProjects = () => {
-  categories.forEach((category) => {
+  categories.value.forEach((category) => {
     category.projects.forEach((project) => {
       project.isActive = false
     })
   })
 }
 
-// Go back to the previous window state (close all projects in fact) if project has been toggled
-watchEffect(() => {
-  if (props.isGoBackActive) {
-    closeAllProjects()
-  }
-})
-
 // Map of component names to component objects
-const components = {
+const componentMap = {
   HomeserverContent,
   ClenchContent,
   LogmaContent,
@@ -84,38 +79,47 @@ const components = {
 
 // Computed property that returns the component object based on the componentName of the selected project
 const selectedComponent = computed(() => {
-  if (state.selectedProject) {
-    return components[state.selectedProject.componentName]
+  if (goBackStore.currentActiveProject) {
+    return componentMap[goBackStore.currentActiveProject.componentName]
   }
   return null
 })
 
 const getLocalizedCategoryName = (category) => {
-  return category.name[localeStore.currentLocale] || category['fr']
+  return category.name[localeStore.currentLocale] || category.name['fr']
 }
 
 // Computed property to get the localized title
 const localizedTitle = computed(() => {
-  return state.selectedProject.title[localeStore.currentLocale] || state.selectedProject.title['fr']
+  return goBackStore.currentActiveProject?.title[localeStore.currentLocale] || goBackStore.currentActiveProject?.title['fr']
 })
 
 // Computed property to get the localized date
 const localizedDate = computed(() => {
-  return state.selectedProject.date[localeStore.currentLocale] || state.selectedProject.date['fr']
+  return goBackStore.currentActiveProject?.date[localeStore.currentLocale] || goBackStore.currentActiveProject?.date['fr']
 })
 
-console.log(projectData)
+// Watch for changes in currentActiveProject
+watch(
+  () => goBackStore.currentActiveProject,
+  (newProject) => {
+    if (!newProject) {
+      closeAllProjects()
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
   <div class="relative right-0 h-content-window flex">
     <WindowLeftMenu :leftMenuType="props.leftMenuType" />
     <!-- Content of project -->
-    <div v-if="state.selectedProject && state.selectedProject.isActive" class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5">
+    <div v-if="goBackStore.currentActiveProject" class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5">
       <div class="m-2">
         <div class="w-full gap-4 mb-3">
           <h2>{{ localizedTitle }}</h2>
-          <div class="flex items-center text-sm gap-0.5 mt-1" v-if="state.selectedProject.date">
+          <div class="flex items-center text-sm gap-0.5 mt-1" v-if="goBackStore.currentActiveProject.date">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
               <path
                 fill="#000000"
@@ -161,9 +165,3 @@ console.log(projectData)
     </div>
   </div>
 </template>
-
-<style scoped>
-.active {
-  filter: drop-shadow(blue 0px 0px);
-}
-</style>
