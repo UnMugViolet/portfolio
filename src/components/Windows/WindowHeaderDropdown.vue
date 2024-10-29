@@ -16,7 +16,6 @@
 <script setup>
 import WindowDropdown from '@/components/Buttons/WindowDropdown.vue'
 
-
 const props = defineProps({
   dropdownItems: {
     type: Array,

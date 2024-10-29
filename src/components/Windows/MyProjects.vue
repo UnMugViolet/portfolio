@@ -104,7 +104,6 @@ const localizedDate = computed(() => {
   return state.selectedProject.date[localeStore.currentLocale] || state.selectedProject.date['fr']
 })
 
-console.log(projectData)
 </script>
 
 <template>
@@ -161,9 +160,3 @@ console.log(projectData)
     </div>
   </div>
 </template>
-
-<style scoped>
-.active {
-  filter: drop-shadow(blue 0px 0px);
-}
-</style>
