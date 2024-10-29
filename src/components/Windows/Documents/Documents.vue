@@ -4,90 +4,109 @@
     <div class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5 relative">
       <div class="m-2">
         <section v-if="!isAboutVisible && !isLegalVisible">
-          <div class="flex gap-2">
-            <div 
+          <div class="flex gap-1.5">
+            <div
               v-for="page in pages"
-              :key="page.title"
+              :key="page.name"
+              @click="focusPage(page)"
+              @dblclick="toggleProject(page)"
               class="flex items-center gap-1"
+              :class="{ active: page.isFocused }"
             >
-              <img src="/img/icons/txt-icon.webp" alt="Office icon" class="w-11 h-11" />
-              <div >
-                <p class="text-xs font-tahoma font-medium leading-tight">{{ $t(page.title) }}</p>
-                <p class="text-xxs text-gray-400">{{ $t(page.type) }}</p>
+              <img :src="'/img/icons/' + page.icon" alt="Office icon" class="w-11 h-11" :style="{ opacity: page.isFocused ? 0.6 : 1 }" />
+              <div
+                class="px-1 text-left"
+                :style="{
+                  backgroundColor: page.isFocused ? '#0B61FF' : 'transparent',
+                  color: page.isFocused ? 'white' : 'black'
+                }"
+              >
+                <p class="text-xs font-tahoma font-medium leading-tight">{{ $t(page.name) }}</p>
+                <p :class="'text-xxs ' + [page.isFocused ? 'text-gray-192' : 'text-gray-400']">{{ $t(page.type) }}</p>
               </div>
             </div>
           </div>
         </section>
-        <section v-else-if="isAboutVisible">          
-          <div class="flex justify-between">
-            <h1 class="font-semibold">{{ $t('windows.about.title') }}</h1>
-            <img src="/img/windows-xp-badges.webp" alt="Windows XP badges" class="w-auto h-6" />
-          </div>
-          <hr class="mt-2 mb-2 border-t-1 border-black" />
-          <div class="flex flex-col gap-1.5 text-xs font-medium my-2">
-            <p>{{ $t('windows.documents.about.contextFirstParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextSecondParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextThirdParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextFourthParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextFifthParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextSixthParagraph') }}</p>
-            <p>{{ $t('windows.documents.about.contextSeventhParagraph') }}</p>
-          </div>
-          <h1 class="font-semibold">{{ $t('windows.documents.about.secondTitle') }}</h1>
-          <hr class="mt-2 mb-2 border-t-1 border-black" />
-          <ul class="flex flex-col gap-1.5 text-xs font-medium my-2 list-disc pl-3">
-            <li>{{ $t('windows.documents.about.helpFirst') }}</li>
-            <li>{{ $t('windows.documents.about.helpSecond') }}</li>
-            <li>{{ $t('windows.documents.about.helpThird') }}</li>
-            <li>{{ $t('windows.documents.about.helpFourth') }}</li>
-            <li>{{ $t('windows.documents.about.helpFifth') }}</li>
-          </ul>
-        </section>
-        <section v-if="isLegalVisible">
-          Legal
-        </section>
+        <About v-else-if="isAboutVisible" />
+        <Legal v-else-if="isLegalVisible" />
       </div>
+      <button @click="closeProject(currentActivePage)" class="absolute top-0 right-0 bg-black text-white">
+        close
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import  { ref } from 'vue'
+import { ref, watch } from 'vue'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
+import About from './About.vue'
+import Legal from './Legal.vue'
 
 const props = defineProps({
-  leftMenuType: String,
+  leftMenuType: String
 })
 
-const pages = [
+const emit = defineEmits(['goback-is-available', 'page-active-name'])
+
+const pages = ref([
   {
-    title: 'windows.documents.about.title',
+    name: 'windows.documents.about.title',
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
-    component: 'About',
+    isFocused: false,
+    isActive: false
   },
   {
-    title: 'windows.documents.legal.title',
+    name: 'windows.documents.legal.title',
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
-    component: 'Legal',
+    isFocused: false,
+    isActive: false
   }
-]
+])
 
-let isAboutVisible = ref(false)
-let isLegalVisible = ref(false)
+const isAboutVisible = ref(false)
+const isLegalVisible = ref(false)
+const currentActivePage = ref([]) 
 
-const toggleAbout = () => {
-  if (isLegalVisible.value) {
-    isLegalVisible.value = false
+const toggleProperty= (page, property) => {
+  if (page[property]) {
+    return
   }
-  isAboutVisible.value = !isAboutVisible.value
+
+  pages.value.forEach((p) => {
+    p[property] = false
+  })
+
+  page[property] = !page[property]
 }
 
-const toggleLegal = () => {
-  if (isAboutVisible.value) {
-    isAboutVisible.value = false
-  }
-  isLegalVisible.value = !isLegalVisible.value
+const toggleProject = (page) => {
+  toggleProperty(page, 'isActive')
+  currentActivePage.value = page
+  emit('goback-is-available')
+  emit('page-active-name', page.name)
 }
+
+const focusPage = (page) => {
+  toggleProperty(page, 'isFocused')
+}
+
+const closeProject = () => {
+  if (currentActivePage.value) {
+    currentActivePage.value.isActive = false
+    currentActivePage.value = null
+  }
+}
+
+watch(
+  () => pages.value.map(p => p.isActive),
+  (newValues) => {
+    isAboutVisible.value = pages.value[0].isActive
+    isLegalVisible.value = pages.value[1].isActive
+  },
+  { immediate: true }
+)
 </script>
+

@@ -17,7 +17,7 @@
       "fr": ["Fichier", "Édition", "Favoris", "Outils", "Aide"]
     },
     "documents": {
-      "en": ["File", "Edit", "View", "Favorites", "Tools" ,"Help"],
+      "en": ["File", "Edit", "View", "Favorites", "Tools", "Help"],
       "fr": ["Fichier", "Édition", "Affichage", "Favoris", "Outils", "Aide"]
     },
     "none": {

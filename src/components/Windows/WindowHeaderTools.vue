@@ -16,7 +16,6 @@ const goBack = () => {
 const headerTools = computed(() => {
   return headerToolsData.headerToolsItems[props.headerToolsId]
 })
-
 </script>
 
 <template>
