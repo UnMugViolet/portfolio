@@ -1,6 +1,7 @@
 <script setup>
-import { reactive, watchEffect, computed } from 'vue'
+import { reactive, computed, onUnmounted } from 'vue'
 import { useLocaleStore } from '@/stores/localeStore'
+import { useGoBackStore } from '@/stores/goBackStore'
 
 import projectData from '@/data/projects-data.json'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
@@ -11,13 +12,15 @@ import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 
 const props = defineProps({
   leftMenuType: String,
-  isGoBackActive: Boolean
 })
 
 // Locale management
 const localeStore = useLocaleStore()
+const goBackStore = useGoBackStore()
 
-const emit = defineEmits(['goback-is-available', 'project-active-name'])
+onUnmounted(() => {
+  goBackStore.currentActiveProject = null
+})
 
 const categories = reactive(
   projectData.categories.map((category) => ({
@@ -55,8 +58,7 @@ const toggleProject = (project) => {
   project.isActive = true
   state.selectedProject = project
 
-  emit('goback-is-available')
-  emit('project-active-name', project.name)
+  goBackStore.currentActiveProject = project
 }
 
 const closeAllProjects = () => {
@@ -66,13 +68,6 @@ const closeAllProjects = () => {
     })
   })
 }
-
-// Go back to the previous window state (close all projects in fact) if project has been toggled
-watchEffect(() => {
-  if (props.isGoBackActive) {
-    closeAllProjects()
-  }
-})
 
 // Map of component names to component objects
 const components = {

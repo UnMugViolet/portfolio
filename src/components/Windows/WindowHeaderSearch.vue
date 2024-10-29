@@ -23,19 +23,36 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useGoBackStore } from '@/stores/goBackStore'
+import { useI18n } from 'vue-i18n'
+
+const goBackStore = useGoBackStore()
+const { t, te } = useI18n()
 
 const props = defineProps({
   id: String,
   title: String,
-  iconSrc: String,
-  activeProjectName: String
+  iconSrc: String
 })
 
-const title = computed(() => {
-  if (props.id === 'myProjects') {
-    let formattedProjectName = props.activeProjectName ? props.activeProjectName.toLowerCase().replace(/ /g, '-') : ''
-    return formattedProjectName ? `${props.title}/${formattedProjectName}` : props.title
+const formatName = (nameKey) => {
+  if (!nameKey) return ''
+  // Check if the translation exists
+  if (te(nameKey)) {
+    const translatedName = t(nameKey)
+    return translatedName.toLowerCase().replace(/ /g, '-')
   }
-  return props.title
+  // If no translation is found, return the original nameKey
+  return nameKey.toLowerCase().replace(/ /g, '-')
+}
+
+const title = computed(() => {
+  let formattedName = ''
+  if (props.id === 'myProjects') {
+    formattedName = formatName(goBackStore.currentActiveProject?.name)
+  } else if (props.id === 'documents') {
+    formattedName = formatName(goBackStore.currentActiveDocument?.name)
+  }
+  return formattedName ? `${props.title}/${formattedName}` : props.title
 })
 </script>

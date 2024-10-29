@@ -1,21 +1,29 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
+import { useGoBackStore  } from '@/stores/goBackStore';
 import headerToolsData from '@/data/header-tools-data.json'
 
 const emit = defineEmits()
+const goBackStore = useGoBackStore()
+
 
 const props = defineProps({
-  isGoBackAvailable: Boolean,
+  id: String,
   headerToolsId: String
 })
 
 const goBack = () => {
-  emit('goback-toggled')
+  if (props.id === 'myProjects') {
+    goBackStore.currentActiveProject = null
+  } else if (props.id === 'documents') {
+    goBackStore.currentActiveDocument = null
+  }
 }
 
 const headerTools = computed(() => {
   return headerToolsData.headerToolsItems[props.headerToolsId]
 })
+
 </script>
 
 <template>
@@ -29,8 +37,8 @@ const headerTools = computed(() => {
             @click="goBack"
             class="flex items-center border rounded-sm pr-1.5 h-8"
             :class="{
-              'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': isGoBackAvailable,
-              'filter grayscale': !isGoBackAvailable
+              'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': goBackStore.currentActiveDocument,
+              'filter grayscale': !goBackStore.currentActiveDocument 
             }"
           >
             <img src="/img/icons/windows-header-tools/right-arrow-green-icon.webp" :alt="$t('common.icon') + ' ' + $t('common.back')" class="w-7 h-7 flex-shrink-0" />
