@@ -111,7 +111,18 @@
         "helpFifth": "Mon chat a en partie aider en marchant sur mon clavier, mais elle a surtout été un soutien moral."
       },
       "legal": {
-        "title": "Mentions légales"
+        "title": "Mentions légales",
+        "firstParagraph": "Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site Portfolio - Paul Jaguin l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.",
+        "edit": "Edition du site",
+        "secondParagraph": "Le présent site, accessible à l’URL https://pauljaguin.com (le « Site »), est édité par :",
+        "thirdParagraph": "Paul Jaguin, résidant 29 Rue Jules Auffret, de nationalité Française (France), né(e) le 23/09/1999,",
+        "hosting": "Hébergement", 
+        "fourthParagraph": "Le Site est hébergé par la société Hostinger International LTD, il est possible de les contacter à l'adresse suivante : https://www.hostinger.fr/contact",
+        "dirPublication": "Directeur de publication",
+        "fifthParagraph": "Le Directeur de publication est : Paul Jaguin.",
+        "contact": "Contact",
+        "sixthParagraph": "Pour toute question, information sur les produits présentés sur le Site, ou concernant le Site lui-même, vous pouvez laisser un message à l'adresse email suivante :",
+        "tracking": "Suivi"
       }
     }
   },

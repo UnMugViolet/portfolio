@@ -4,7 +4,7 @@
     <div class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5 relative">
       <div class="m-2">
         <section v-if="!goBackStore.currentActiveDocument">
-          <div class="flex gap-1.5">
+          <div class="flex md:flex-row md:gap-1.5 flex-col gap-3">
             <div
               v-for="page in pages"
               :key="page.name"
@@ -23,6 +23,7 @@
               >
                 <p class="text-xs font-tahoma font-medium leading-tight">{{ $t(page.name) }}</p>
                 <p :class="'text-xxs ' + [page.isFocused ? 'text-gray-192' : 'text-gray-400']">{{ $t(page.type) }}</p>
+                <p :class="'text-xxs ' + [page.isFocused ? 'text-gray-192' : 'text-gray-400']">{{ $t(page.size) }}</p>
               </div>
             </div>
           </div>
@@ -52,6 +53,7 @@ const pages = ref([
     name: 'windows.documents.about.title',
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
+    size: '5KB',
     isFocused: false,
     isActive: false,
     component: 'About'
@@ -60,6 +62,7 @@ const pages = ref([
     name: 'windows.documents.legal.title',
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
+    size: '11KB',
     isFocused: false,
     isActive: false,
     component: 'Legal'

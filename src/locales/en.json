@@ -111,7 +111,18 @@
         "helpFifth": "My cat partly helped by stepping on my keyboard, but mostly she was a moral support."
       },
       "legal": {
-        "title": "Legal notices"
+        "title": "Legal notices",
+        "firstParagraph": "In accordance with the provisions of Law No. 2004-575 of June 21, 2004, for confidence in the digital economy, users of the Portfolio - Paul Jaguin website are informed of the identity of the various parties involved in its creation and monitoring.",
+        "edit": "Site editing",
+        "secondParagraph": "This site, accessible at the URL https://pauljaguin.com (the « Site »), is edited by:",
+        "thirdParagraph": "Paul Jaguin, residing at 29 Rue Jules Auffret, of French nationality (France), born on 09/23/1999.",
+        "hosting": "Hosting",
+        "fourthParagraph": "The Site is hosted by Hostinger International LTD, which can be contacted at the following address: https://www.hostinger.fr/contact",
+        "dirPublication": "Publication director",
+        "fifthParagraph": "The Publication Director is: Paul Jaguin.",
+        "contact": "Contact",
+        "sixthParagraph": "For any questions, information about the products presented on the Site, or regarding the Site itself, you can leave a message at the following email address:",
+        "tracking": "Tracking"
       }
     }
   },
