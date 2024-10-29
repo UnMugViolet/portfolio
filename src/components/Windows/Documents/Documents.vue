@@ -101,11 +101,5 @@ const focusPage = (page) => {
   toggleProperty(page, 'isFocused')
 }
 
-const closePage = () => {
-  if (goBackStore.currentActiveDocument) {
-    goBackStore.currentActiveDocument.isActive = false
-    goBackStore.currentActiveDocument = null
-  }
-}
 </script>
 

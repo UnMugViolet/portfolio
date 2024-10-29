@@ -1,11 +1,9 @@
 <script setup>
-import { computed, watch } from 'vue'
-import { useGoBackStore  } from '@/stores/goBackStore';
+import { computed } from 'vue'
+import { useGoBackStore } from '@/stores/goBackStore'
 import headerToolsData from '@/data/header-tools-data.json'
 
-const emit = defineEmits()
 const goBackStore = useGoBackStore()
-
 
 const props = defineProps({
   id: String,
@@ -20,10 +18,18 @@ const goBack = () => {
   }
 }
 
+const isGoBackAvailable = computed(() => {
+  if (props.id === 'myProjects') {
+    return !!goBackStore.currentActiveProject
+  } else if (props.id === 'documents') {
+    return !!goBackStore.currentActiveDocument
+  }
+  return false
+})
+
 const headerTools = computed(() => {
   return headerToolsData.headerToolsItems[props.headerToolsId]
 })
-
 </script>
 
 <template>
@@ -37,8 +43,8 @@ const headerTools = computed(() => {
             @click="goBack"
             class="flex items-center border rounded-sm pr-1.5 h-8"
             :class="{
-              'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': goBackStore.currentActiveDocument,
-              'filter grayscale': !goBackStore.currentActiveDocument 
+              'bg-transparent cursor-pointer hover:border-gray-300 hover:shadow-header-tools': isGoBackAvailable,
+              'filter grayscale': !isGoBackAvailable
             }"
           >
             <img src="/img/icons/windows-header-tools/right-arrow-green-icon.webp" :alt="$t('common.icon') + ' ' + $t('common.back')" class="w-7 h-7 flex-shrink-0" />
