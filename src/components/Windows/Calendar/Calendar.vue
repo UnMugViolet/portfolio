@@ -1,5 +1,5 @@
 <template>
-  <div class="relative right-0 h-content-toolbox-cut overflow-hidden">
+  <div class="relative right-0 h-content-headless-toolbox overflow-hidden">
     <div class="w-full h-full bg-white overflow-auto font-trebuchet-pixel">
       <div v-if="days.length">
         <div class="flex w-full justify-between">

@@ -245,6 +245,99 @@
         "headerActive": false,
         "subtasks": []
       }
+    ],
+    "about": [
+      {
+        "id": 1,
+        "title": {
+          "en": "File and folder tasks",
+          "fr": "Fichier et dossier"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "Make a new folder",
+              "fr": "Créer un nouveau dossier"
+            },
+            "iconUrl": "/img/icons/side-menu/new-folder-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Publish this folder to the web",
+              "fr": "Publier ce dossier sur le web"
+            },
+            "iconUrl": "/img/icons/side-menu/publish-web-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "Share this folder",
+              "fr": "Partager ce dossier"
+            },
+            "iconUrl": "/img/icons/side-menu/share-folder-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": {
+          "en": "Other places",
+          "fr": "Autres localisations"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": [
+          {
+            "id": 1,
+            "subtitle": {
+              "en": "Desktop",
+              "fr": "Bureau"
+            },
+            "iconUrl": "/img/icons/side-menu/board-icon.webp"
+          },
+          {
+            "id": 2,
+            "subtitle": {
+              "en": "Shared documents",
+              "fr": "Dossiers partagés"
+            },
+            "iconUrl": "/img/icons/side-menu/shared-documents-icon.webp"
+          },
+          {
+            "id": 3,
+            "subtitle": {
+              "en": "My computer",
+              "fr": "Mon ordinateur"
+            },
+            "iconUrl": "/img/icons/side-menu/computer-icon.webp"
+          },
+          {
+            "id": 4,
+            "subtitle": {
+              "en": "My network places",
+              "fr": "Mes emplacements réseau"
+            },
+            "iconUrl": "/img/icons/side-menu/networking-icon.webp"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": {
+          "en": "Details",
+          "fr": "Détails"
+        },
+        "bgColor": "bg-window-menu-card",
+        "iconSrc": "/img/icons/side-menu/top-icon-card-window.webp",
+        "headerActive": false,
+        "subtasks": []
+      }
     ]
   }
 }

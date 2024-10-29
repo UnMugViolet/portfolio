@@ -103,6 +103,8 @@ const localizedTitle = computed(() => {
 const localizedDate = computed(() => {
   return state.selectedProject.date[localeStore.currentLocale] || state.selectedProject.date['fr']
 })
+
+console.log(projectData)
 </script>
 
 <template>
