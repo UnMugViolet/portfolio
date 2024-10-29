@@ -22,19 +22,6 @@
     <p class="small-p">{{ $t('windows.documents.legal.sixthParagraph') }}</p>
     <p class="small-p mb-3">contact@pauljaguin.com</p>
 
-    <h2>{{ $t('windows.documents.legal.tracking') }}</h2>
-    <hr class="mt-1 mb-2 border-t-1 border-gray-400" />
-    <div id="matomo-opt-out" class="small-p"></div>
   </section>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  const script = document.createElement('script')
-  script.src = 'https://matomo.rocketegg.systems/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=auto&showIntro=1'
-  script.async = true
-  document.getElementById('matomo-opt-out').appendChild(script)
-})
-</script>
