@@ -25,8 +25,8 @@
     <div class="absolute w-full h-full overflow-hidden p-0.75">
       <WindowHeaderDropdown :dropdownItems="translatedMenuHeaderItems" :windowsHeaderLogo="windowsHeaderLogo" />
       <div v-if="headerToolsId">
-        <WindowHeaderTools @goback-toggled="goBack" :isGoBackAvailable="isGoBackAvailable" :headerToolsId="headerToolsId" />
-        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" :activeProjectName="activeProjectName" />
+        <WindowHeaderTools :id="id" :headerToolsId="headerToolsId" />
+        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" />
       </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
@@ -78,8 +78,6 @@ const {
   initHeight,
   minWidth,
   minHeight,
-  isGoBackAvailable,
-  activeProjectName,
   headerToolsId,
   menuHeaderItemsId,
   resizable,
@@ -94,8 +92,6 @@ const {
   initHeight: Number,
   minWidth: Number,
   minHeight: Number,
-  isGoBackAvailable: Boolean,
-  activeProjectName: String,
   headerToolsId: String,
   menuHeaderItemsId: String,
   resizable: Boolean,
@@ -292,10 +288,6 @@ const resizeWindow = (event) => {
     // Update the transform property
     windowTransform.value = `translate(${windowPosition.value.x}px, ${windowPosition.value.y}px)`
   }
-}
-
-const goBack = () => {
-  emit('goback-toggled')
 }
 </script>
 

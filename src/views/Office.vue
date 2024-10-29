@@ -31,7 +31,6 @@
         @toggle-minimize="minimizeWindow(window.id)"
         @close-window="closeWindow(window.id)"
         @mousedown="handleWindowClick(window.id)"
-        @goback-toggled="handleGoBack(window.id)"
         :id="window.id"
         :title="window.title"
         :iconSrc="window.iconSrc"
@@ -41,23 +40,13 @@
         :initHeight="window.initHeight"
         :minWidth="window.minWidth"
         :minHeight="window.minHeight"
-        :isGoBackAvailable="window.isGoBackAvailable"
-        :activeProjectName="window.activeProjectName"
         :headerToolsId="window.headerToolsId"
         :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
-        <component
-          v-if="window.id === 'myProjects'"
-          :is="window.component"
-          :isGoBackActive="window.isGoBackActive"
-          :leftMenuType="window.leftMenuType"
-          @goback-is-available="handleGoBackIsAvailable(window.id)"
-          @project-active-name="handleProjectActiveName(window.id, $event)"
-        />
-        <component v-else :is="window.component" v-bind="window.leftMenuType ? { leftMenuType: window.leftMenuType } : {}" />
+        <component :is="window.component" v-bind="window.leftMenuType ? { leftMenuType: window.leftMenuType } : {}" />
       </Window>
     </div>
     <Footer :entities="windows" @toggle-header="toggleHeader" @toggle-window="handleWindowClick" />
@@ -172,9 +161,6 @@ const openWindow = (windowId) => {
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
         windowsHeaderLogo: entity.windowsHeaderLogo,
-        isGoBackActive: false,
-        isGoBackAvailable: false,
-        activeProjectName: ''
       })
       setActiveWindow(windowId) // Set the window clicked as active
       windowsStore.addWindowStore(windowId) // Save state to localStorage
@@ -249,30 +235,6 @@ const handleOutsideClick = (event) => {
 
   if (clickedOutsideAnyWindow) {
     setActiveWindow(null)
-  }
-}
-
-const handleGoBack = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId)
-  if (window) {
-    window.isGoBackActive = true
-    window.isGoBackAvailable = false
-    window.activeProjectName = ''
-  }
-}
-
-const handleGoBackIsAvailable = (windowId) => {
-  const window = windows.value.find((window) => window.id === windowId)
-  if (window) {
-    window.isGoBackActive = false
-    window.isGoBackAvailable = true
-  }
-}
-
-const handleProjectActiveName = (windowId, projectName) => {
-  const window = windows.value.find((window) => window.id === windowId)
-  if (window) {
-    window.activeProjectName = projectName
   }
 }
 

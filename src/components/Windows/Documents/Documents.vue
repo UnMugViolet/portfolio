@@ -3,7 +3,7 @@
     <WindowLeftMenu :leftMenuType="props.leftMenuType" />
     <div class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5 relative">
       <div class="m-2">
-        <section v-if="!isAboutVisible && !isLegalVisible">
+        <section v-if="!goBackStore.currentActiveDocument">
           <div class="flex gap-1.5">
             <div
               v-for="page in pages"
@@ -27,27 +27,25 @@
             </div>
           </div>
         </section>
-        <About v-else-if="isAboutVisible" />
-        <Legal v-else-if="isLegalVisible" />
+        <component :is="currentComponent" v-if="currentComponent" />
       </div>
-      <button @click="closeProject(currentActivePage)" class="absolute top-0 right-0 bg-black text-white">
-        close
-      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed, onUnmounted } from 'vue'
+import { useGoBackStore } from '@/stores/goBackStore'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import About from './About.vue'
 import Legal from './Legal.vue'
 
+// Stores management
+const goBackStore = useGoBackStore()
+
 const props = defineProps({
   leftMenuType: String
 })
-
-const emit = defineEmits(['goback-is-available', 'page-active-name'])
 
 const pages = ref([
   {
@@ -55,22 +53,34 @@ const pages = ref([
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
     isFocused: false,
-    isActive: false
+    isActive: false,
+    component: 'About'
   },
   {
     name: 'windows.documents.legal.title',
     type: 'common.textDocument',
     icon: 'txt-icon.webp',
     isFocused: false,
-    isActive: false
+    isActive: false,
+    component: 'Legal'
   }
 ])
 
-const isAboutVisible = ref(false)
-const isLegalVisible = ref(false)
-const currentActivePage = ref([]) 
+const componentMap = {
+  About,
+  Legal
+}
 
-const toggleProperty= (page, property) => {
+const currentComponent = computed(() => {
+  const activeDocument = goBackStore.currentActiveDocument
+  return activeDocument ? componentMap[activeDocument.component] : null
+})
+
+onUnmounted(() => {
+  goBackStore.currentActiveDocument = null
+})
+
+const toggleProperty = (page, property) => {
   if (page[property]) {
     return
   }
@@ -84,29 +94,18 @@ const toggleProperty= (page, property) => {
 
 const toggleProject = (page) => {
   toggleProperty(page, 'isActive')
-  currentActivePage.value = page
-  emit('goback-is-available')
-  emit('page-active-name', page.name)
+  goBackStore.currentActiveDocument = page
 }
 
 const focusPage = (page) => {
   toggleProperty(page, 'isFocused')
 }
 
-const closeProject = () => {
-  if (currentActivePage.value) {
-    currentActivePage.value.isActive = false
-    currentActivePage.value = null
+const closePage = () => {
+  if (goBackStore.currentActiveDocument) {
+    goBackStore.currentActiveDocument.isActive = false
+    goBackStore.currentActiveDocument = null
   }
 }
-
-watch(
-  () => pages.value.map(p => p.isActive),
-  (newValues) => {
-    isAboutVisible.value = pages.value[0].isActive
-    isLegalVisible.value = pages.value[1].isActive
-  },
-  { immediate: true }
-)
 </script>
 
