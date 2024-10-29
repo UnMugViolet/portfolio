@@ -47,7 +47,7 @@ const headerTools = computed(() => {
         <!-- Display group items -->
         <div v-for="(item, itemIndex) in tools.items" :key="itemIndex" :class="item.class">
           <img :src="item.icon" :alt="$t('common.icon') + ' ' + $t(item.alt)" :class="[item.iconClass ? item.iconClass : 'w-6 h-6 flex-shrink-0']" />
-          <p v-if="item.text" class="hidden md:block small-p ml-1 mr-1.5">{{ $t(item.text) }}</p>
+          <p v-if="item.text" class="hidden md:block small-p ml-1 mr-0.5">{{ $t(item.text) }}</p>
           <div v-if="item.hasArrow" class="block border-solid down-arrow ml-1"></div>
         </div>
       </div>

@@ -91,6 +91,22 @@
       "next": "Photo suivante",
       "rotateLeft": "Tourner à gauche",
       "rotateRight": "Tourner à droite"
+    },
+    "about": {
+      "title": "À propos",
+      "contextFirstParagraph": "Ce projet est né de la volonté de créer un portfolio à la fois ludique et original.",
+      "contextSecondParagraph": "L'idée était de créer l'interface de Windows XP sur ordinateur, qui permettrait aux visiteurs de naviguer dans les dossiers et les fichiers de la session de mon ordinateur.",
+      "contextThirdParagraph": "Je voulais présenter mes projets sous un angle différent, où les utilisateurs pourraient se promener. Quelque chose de plus qu'une simple carte de visite sur le web. Quelque chose d'intéractif.",
+      "contextFourthParagraph": "Le projet a été conçu pour être aussi proche que possible d'une véritable interface d'ordinateur Windows XP, avec un bureau, des dossiers et des fichiers.",
+      "contextFifthParagraph": "Windows XP est le premier système d'exploitation que j'ai utilisé, et son design est pour moi une madeleine de proust. Je voulais lui rendre hommage.",
+      "contextSixthParagraph": " Il m'a fallu environ un an pour le terminer (par intermittence).",
+      "contextSeventhParagraph": "Ce projet a été fait avec beaucoup de passion et de patience, j'espère que vous apprécierez la visite !",
+      "secondTitle": "Remerciements",
+      "helpFirst": "Ce projet a été réalisé avec l'aide de Dockurr windows xp qui m'a permis de faire fonctionner un environnement Windows XP sur mon ordinateur très facilement.",
+      "helpSecond": "L'API de Spotify m'a permis de récupérer les informations de ma playlist, de les afficher sur mon site et de mettre un player intégré.",
+      "helpThird": "Pour la partie serveur, j'ai utilisé un serveur Node.js pour compiler ce site et pour gérer le formulaire de contact. Le site web est hébergé sur hostinger et le déploiement continu est fait avec mon serveur.",
+      "helpFourth": "Le site web internet archive m'a permis de récupérer les images de Windows XP pour les intégrer dans mon projet. Merci à eux.",
+      "helpFifth": "Mon chat a en partie aider en marchant sur mon clavier, mais elle a surtout été un soutien moral."
     }
   },
   "project": {

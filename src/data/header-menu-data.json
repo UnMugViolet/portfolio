@@ -5,16 +5,24 @@
       "fr": ["Fichier", "Édition", "Affichage", "Outils"]
     },
     "minesweeper": {
-      "en": ["Game", "Options", "Help"],
-      "fr": ["Jeu", "Options", "Aide"]
+      "en": ["Game", "Help"],
+      "fr": ["Jeu", "Aide"]
     },
     "notepad": {
       "en": ["File", "Edit", "View", "Help"],
       "fr": ["Fichier", "Édition", "Affichage", "Aide"]
     },
     "images": {
-      "en": ["File", "Edit", "Favourites", "Tools", "Help"],
+      "en": ["File", "Edit", "Favorites", "Tools", "Help"],
       "fr": ["Fichier", "Édition", "Favoris", "Outils", "Aide"]
+    },
+    "about": {
+      "en": ["File", "Edit", "View", "Favorites", "Tools" ,"Help"],
+      "fr": ["Fichier", "Édition", "Affichage", "Favoris", "Outils", "Aide"]
+    },
+    "none": {
+      "en": [],
+      "fr": []
     }
   }
 }
