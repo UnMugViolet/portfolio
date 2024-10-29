@@ -119,10 +119,11 @@
     },
     "imgSrc": "/img/icons/folder-docs-icon-sm.webp",
     "onDesktop": false,
-    "windowsHeaderLogo": true,
+    "resizable": true,
+    "windowsHeaderLogo": false,
     "headerPosition": "right",
-    "headerToolsId": "default",
-    "menuHeaderItemsId": "default",
+    "headerToolsId": "pictures",
+    "menuHeaderItemsId": "about",
     "iconSrc": "/img/icons/folder-docs-icon-xs.webp",
     "initPositionX": 190,
     "initPositionY": 310,
@@ -131,7 +132,7 @@
     "minWidth": 200,
     "minHeight": 160,
     "component": "About",
-    "leftMenuType": ""
+    "leftMenuType": "about"
   },
   {
     "id": "pictures",
