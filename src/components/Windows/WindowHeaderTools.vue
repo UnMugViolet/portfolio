@@ -1,22 +1,35 @@
 <script setup>
 import { computed } from 'vue'
+import { useGoBackStore } from '@/stores/goBackStore'
 import headerToolsData from '@/data/header-tools-data.json'
 
-const emit = defineEmits()
+const goBackStore = useGoBackStore()
 
 const props = defineProps({
-  isGoBackAvailable: Boolean,
+  id: String,
   headerToolsId: String
 })
 
 const goBack = () => {
-  emit('goback-toggled')
+  if (props.id === 'myProjects') {
+    goBackStore.currentActiveProject = null
+  } else if (props.id === 'documents') {
+    goBackStore.currentActiveDocument = null
+  }
 }
+
+const isGoBackAvailable = computed(() => {
+  if (props.id === 'myProjects') {
+    return !!goBackStore.currentActiveProject
+  } else if (props.id === 'documents') {
+    return !!goBackStore.currentActiveDocument
+  }
+  return false
+})
 
 const headerTools = computed(() => {
   return headerToolsData.headerToolsItems[props.headerToolsId]
 })
-
 </script>
 
 <template>

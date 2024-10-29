@@ -213,6 +213,12 @@ img {
   text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
 }
 
+/* ---------Filters---------*/
+.active {
+  -webkit-filter: drop-shadow(blue 0px 0px); /* Safari */
+  filter: drop-shadow(blue 0px 0px);
+}
+
 .buttons-header-bottom:hover {
   background-color: rgba(60, 80, 210, 0.5);
 }
