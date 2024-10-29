@@ -93,24 +93,26 @@
       "rotateLeft": "Rotate left",
       "rotateRight": "Rotate right"
     },
-    "about": {
-      "title": "About",
-      "contextFirstParagraph": "This project was born out of a desire to create a portfolio that would be both fun and original.",
-      "contextSecondParagraph": "The idea was to create the Windows XP computer interface, which would allow visitors to browse the folders and files in my computer's session.",
-      "contextThirdParagraph": "I wanted to present my projects from a different angle, where users could wander around. Something more than just a business card on the web. Something interactive.",
-      "contextFourthParagraph": "The project was designed to be as close as possible to a real Windows XP computer interface, with a desktop, folders, and files.",
-      "contextFifthParagraph": "Windows XP is the first operating system I used, and it's design is a madeleine de proust for me. I wanted to pay tribute to it.",
-      "contextSixthParagraph": "This project was created with Vue.js, Vuex, Vue Router, and SCSS. It took me about a year to complete (on and off).",
-      "contextSeventhParagraph": "This project has been made with a lot of passion and patience, and I hope you enjoy browsing through my computer!",
-      "secondTitle": "Thanks",
-      "helpFirst": "This project was carried out with the help of Dockurr windows xp, which enabled me to run a Windows XP environment on my computer very easily.",
-      "helpSecond": "Spotify's API enabled me to retrieve my playlist information, display it on my site and add an integrated player.",
-      "helpThird": "For the server side, I used a Node.js server to compile the site and manage the contact form. The website is hosted on hostinger and the CI / CD is made using my homeserver.",
-      "helpFourth": "I was able to recover the Windows XP images and integrate them into my project thanks to the internet archive website. Many thanks to them.",
-      "helpFifth": "My cat partly helped by stepping on my keyboard, but mostly she was a moral support."
-    },
-    "legal": {
-      "title": "Legal notices"
+    "documents": {
+      "about": {
+        "title": "About",
+        "contextFirstParagraph": "This project was born out of a desire to create a portfolio that would be both fun and original.",
+        "contextSecondParagraph": "The idea was to create the Windows XP computer interface, which would allow visitors to browse the folders and files in my computer's session.",
+        "contextThirdParagraph": "I wanted to present my projects from a different angle, where users could wander around. Something more than just a business card on the web. Something interactive.",
+        "contextFourthParagraph": "The project was designed to be as close as possible to a real Windows XP computer interface, with a desktop, folders, and files.",
+        "contextFifthParagraph": "Windows XP is the first operating system I used, and it's design is a madeleine de proust for me. I wanted to pay tribute to it.",
+        "contextSixthParagraph": "This project was created with Vue.js, Vuex, Vue Router, and SCSS. It took me about a year to complete (on and off).",
+        "contextSeventhParagraph": "This project has been made with a lot of passion and patience, and I hope you enjoy browsing through my computer!",
+        "secondTitle": "Thanks",
+        "helpFirst": "This project was carried out with the help of Dockurr windows xp, which enabled me to run a Windows XP environment on my computer very easily.",
+        "helpSecond": "Spotify's API enabled me to retrieve my playlist information, display it on my site and add an integrated player.",
+        "helpThird": "For the server side, I used a Node.js server to compile the site and manage the contact form. The website is hosted on hostinger and the CI / CD is made using my homeserver.",
+        "helpFourth": "I was able to recover the Windows XP images and integrate them into my project thanks to the internet archive website. Many thanks to them.",
+        "helpFifth": "My cat partly helped by stepping on my keyboard, but mostly she was a moral support."
+      },
+      "legal": {
+        "title": "Legal notices"
+      }
     }
   },
   "project": {
