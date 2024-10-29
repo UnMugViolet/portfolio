@@ -86,10 +86,6 @@
       "en": "My Musics",
       "fr": "Mes Musiques"
     },
-    "subtitle": {
-      "en": "Listen to music",
-      "fr": "Écouter de la musique"
-    },
     "imgSrc": "/img/icons/music/playmusic-icon-lg.webp",
     "onDesktop": true,
     "resizable": true,
@@ -108,14 +104,10 @@
     "leftMenuType": ""
   },
   {
-    "id": "about",
+    "id": "documents",
     "title": {
-      "en": "About",
-      "fr": "À propos"
-    },
-    "subtitle": {
-      "en": "Learn about me",
-      "fr": "En savoir plus sur moi"
+      "en": "My Documents",
+      "fr": "Mes documents"
     },
     "imgSrc": "/img/icons/folder-docs-icon-sm.webp",
     "onDesktop": false,
@@ -123,7 +115,7 @@
     "windowsHeaderLogo": false,
     "headerPosition": "right",
     "headerToolsId": "pictures",
-    "menuHeaderItemsId": "about",
+    "menuHeaderItemsId": "documents",
     "iconSrc": "/img/icons/folder-docs-icon-xs.webp",
     "initPositionX": 190,
     "initPositionY": 310,
@@ -131,18 +123,14 @@
     "initHeight": 500,
     "minWidth": 200,
     "minHeight": 160,
-    "component": "About",
-    "leftMenuType": "about"
+    "component": "Documents",
+    "leftMenuType": "documents"
   },
   {
     "id": "pictures",
     "title": {
       "en": "My Pictures",
       "fr": "Mes Images"
-    },
-    "subtitle": {
-      "en": "View my pictures",
-      "fr": "Voir mes images"
     },
     "imgSrc": "/img/icons/folder-images-icon-sm.webp",
     "onDesktop": false,
@@ -167,10 +155,6 @@
       "en": "Calendar",
       "fr": "Calendrier"
     },
-    "subtitle": {
-      "en": "View my calendar",
-      "fr": "Voir mon calendrier"
-    },
     "imgSrc": "/img/icons/calendar/calendar-icon-lg.webp",
     "onDesktop": false,
     "resizable": true,
@@ -194,10 +178,6 @@
       "en": "Minesweeper",
       "fr": "Démineur"
     },
-    "subtitle": {
-      "en": "Play Minesweeper",
-      "fr": "Jouer au démineur"
-    },
     "imgSrc": "/img/icons/minesweeper/minesweeper-icon-lg.webp",
     "onDesktop": true,
     "resizable": false,
@@ -220,10 +200,6 @@
     "title": {
       "en": "Notepad",
       "fr": "Bloc-notes"
-    },
-    "subtitle": {
-      "en": "Write a note",
-      "fr": "Écrire une note"
     },
     "imgSrc": "/img/icons/notepad/notepad-icon-lg.webp",
     "onDesktop": true,

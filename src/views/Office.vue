@@ -8,7 +8,7 @@
       @toggle-myProjects="openWindow('myProjects')"
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
-      @toggle-about="openWindow('about')"
+      @toggle-documents="openWindow('documents')"
       @toggle-pictures="openWindow('pictures')"
       @toggle-music="openWindow('music')"
       @toggle-calendar="openWindow('calendar')"
@@ -79,7 +79,7 @@ import MyCV from '@/components/Windows/MyCV/MyCV.vue'
 import Music from '@/components/Windows/Music/Music.vue'
 import ContactMe from '@/components/Windows/ContactMe.vue'
 import MyProjects from '@/components/Windows/MyProjects.vue'
-import About from '@/components/Windows/About.vue'
+import Documents from '@/components/Windows/Documents/Documents.vue'
 import Pictures from '@/components/Windows/Pictures.vue'
 import Calendar from '@/components/Windows/Calendar/Calendar.vue'
 import Notepad from '@/components/Windows/Notepad.vue'
@@ -126,7 +126,7 @@ const components = {
   MyCV: shallowRef(MyCV),
   Music: shallowRef(Music),
   Minesweeper: shallowRef(Minesweeper),
-  About: shallowRef(About),
+  Documents: shallowRef(Documents),
   Pictures: shallowRef(Pictures),
   Calendar: shallowRef(Calendar),
   Notepad: shallowRef(Notepad)
