@@ -14,6 +14,7 @@
       @toggle-calendar="openWindow('calendar')"
       @toggle-minesweeper="openWindow('minesweeper')"
       @toggle-notepad="openWindow('notepad')"
+      @toggle-doom="openWindow('doom')"
     />
     <DesktopAppsLayout
       :entities="entities"

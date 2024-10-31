@@ -224,6 +224,10 @@
       "en": "Doom",
       "fr": "Doom"
     },
+    "subtitle": {
+      "en": "Play doom thanks to js-dos",
+      "fr": "Jouer à doom grâce à js-dos"
+    },
     "imgSrc": "/img/icons/doom/doom-icon-lg.webp",
     "onDesktop": true,
     "resizable": true,
