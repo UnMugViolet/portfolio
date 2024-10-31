@@ -226,7 +226,7 @@
     },
     "imgSrc": "/img/icons/doom/doom-icon-lg.webp",
     "onDesktop": true,
-    "resizable": false,
+    "resizable": true,
     "windowsHeaderLogo": false,
     "headerPosition": "left",
     "headerToolsId": "",
