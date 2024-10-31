@@ -29,6 +29,7 @@ _(If you want to test it feel free to ask using the contact form providing your 
 - Loading Screen & Login
 - Internationalisation 🇬🇧 En / 🇫🇷 Fr
 - Play Minesweeper
+- Play DOOM
 - Reach me by email
 - See my projects
 - Notepad
