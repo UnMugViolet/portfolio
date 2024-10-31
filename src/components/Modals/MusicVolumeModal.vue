@@ -22,7 +22,7 @@ const adjustVolume = () => {
     <div class="bg-light-yellow h-52 mt-3 pr-1">
       <div class="h-full w-full flex items-center px-2">
         <label class="text-black text-xs font-trebuchet-pixel pr-4" for="volume">Volume</label>
-        <input class="slider" type="range" min="0" max="1" step="0.2" v-model.number="volume" @input="adjustVolume" />
+        <input class="slider cursor-pointer" type="range" min="0" max="1" step="0.2" v-model.number="volume" @input="adjustVolume" />
       </div>
     </div>
   </section>

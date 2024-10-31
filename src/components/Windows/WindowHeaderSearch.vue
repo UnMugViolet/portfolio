@@ -40,10 +40,10 @@ const formatName = (nameKey) => {
   // Check if the translation exists
   if (te(nameKey)) {
     const translatedName = t(nameKey)
-    return translatedName.toLowerCase().replace(/ /g, '-')
+    return translatedName.toLowerCase().replace(/[()]/g, '').replace(/ /g, '-')
   }
   // If no translation is found, return the original nameKey
-  return nameKey.toLowerCase().replace(/ /g, '-')
+  return nameKey.toLowerCase().replace(/[()]/g, '').replace(/ /g, '-')
 }
 
 const title = computed(() => {
