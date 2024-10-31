@@ -140,13 +140,13 @@ watch(
         <div class="absolute left-[-12px] top-5 w-80 h-px bg-gradient-to-r from-blue-300 to-white"></div>
 
         <!-- Content for the projects -->
-        <div class="flex flex-wrap gap-2 pt-2 md:pt-3 pb-5 w-full cursor-pointer">
+        <div class="flex flex-wrap gap-2 pt-2 md:pt-3 pb-4 w-full cursor-pointer">
           <div
             v-for="project in category.projects"
             :key="project.name"
             @click="focusProject(project)"
             @dblclick="toggleProject(project)"
-            class="flex items-center px-4 gap-2.5"
+            class="flex items-center px-4 pb-2 gap-2.5"
             :class="{ active: project.isFocus }"
           >
             <img :src="'/img/icons/' + project.icon" alt="project" class="w-10 h-10" :style="{ opacity: project.isFocus ? 0.5 : 1 }" />
