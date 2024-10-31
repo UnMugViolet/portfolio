@@ -217,5 +217,28 @@
     "minHeight": 160,
     "component": "Notepad",
     "leftMenuType": ""
+  },
+  {
+    "id": "doom",
+    "title": {
+      "en": "Doom",
+      "fr": "Doom"
+    },
+    "imgSrc": "/img/icons/doom/doom-icon-lg.webp",
+    "onDesktop": true,
+    "resizable": false,
+    "windowsHeaderLogo": false,
+    "headerPosition": "left",
+    "headerToolsId": "",
+    "menuHeaderItemsId": "none",
+    "iconSrc": "/img/icons/doom/doom-icon-sm.webp",
+    "initPositionX": 190,
+    "initPositionY": 310,
+    "initWidth": 660,
+    "initHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
+    "component": "Doom",
+    "leftMenuType": ""
   }
 ]
