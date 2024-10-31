@@ -23,6 +23,7 @@
       @toggle-music="openWindow('music')"
       @toggle-minesweeper="openWindow('minesweeper')"
       @toggle-notepad="openWindow('notepad')"
+      @toggle-doom="openWindow('doom')"
     />
     <div v-for="window in windows" :key="window.id">
       <Window
@@ -72,6 +73,7 @@ import Documents from '@/components/Windows/Documents/Documents.vue'
 import Pictures from '@/components/Windows/Pictures.vue'
 import Calendar from '@/components/Windows/Calendar/Calendar.vue'
 import Notepad from '@/components/Windows/Notepad.vue'
+import Doom from '@/components/Windows/Doom.vue'
 
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
@@ -118,7 +120,8 @@ const components = {
   Documents: shallowRef(Documents),
   Pictures: shallowRef(Pictures),
   Calendar: shallowRef(Calendar),
-  Notepad: shallowRef(Notepad)
+  Notepad: shallowRef(Notepad),
+  Doom: shallowRef(Doom)
 }
 
 // Create the entities array from the data.json
