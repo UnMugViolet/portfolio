@@ -38,7 +38,7 @@ img {
     border: 2px solid $main-yellow;
 }
 
-.left-blue-header-1{
+.left-blue-header-1 {
     border-left: 1px solid rgba(58, 58, 255, 0.37);
 }
 
@@ -63,19 +63,19 @@ img {
     background-color: $bg-blue-loader;
 }
 
-.bg-color-blue-header-left{
+.bg-color-blue-header-left {
     background-color: $bg-blue-header;
 }
 
-.bg-color-blue-window{
+.bg-color-blue-window {
     background-color: $bg-blue-window-header;
 }
 
-.bg-container-blue{
+.bg-container-blue {
     background-color: $container-blue;
 }
 
-.bg-color-container{
+.bg-color-container {
     background: linear-gradient(rgb(24, 104, 206) 0%, rgb(14, 96, 203) 12%, rgb(14, 96, 203) 20%, rgb(17, 100, 207) 32%, rgb(22, 103, 207) 33%, rgb(27, 108, 211) 47%, rgb(30, 112, 217) 54%, rgb(36, 118, 220) 60%, rgb(41, 122, 224) 65%, rgb(52, 130, 227) 77%, rgb(55, 134, 229) 79%, rgb(66, 142, 233) 90%, rgb(71, 145, 235) 100%);
 }
 
@@ -87,7 +87,7 @@ img {
     background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%);
 }
 
-.bg-orange-hr{
+.bg-orange-hr {
     border: 0px;
     height: 2px;
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
@@ -108,11 +108,11 @@ img {
     background: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
 }
 
-.header-top-background{
+.header-top-background {
     background: linear-gradient(rgb(24, 104, 206) 0%, rgb(14, 96, 203) 12%, rgb(14, 96, 203) 20%, rgb(17, 100, 207) 32%, rgb(22, 103, 207) 33%, rgb(27, 108, 211) 47%, rgb(30, 112, 217) 54%, rgb(36, 118, 220) 60%, rgb(41, 122, 224) 65%, rgb(52, 130, 227) 77%, rgb(55, 134, 229) 79%, rgb(66, 142, 233) 90%, rgb(71, 145, 235) 100%);
 }
 
-.header-bot-background{
+.header-bot-background {
     background: linear-gradient(rgb(66, 130, 214) 0%, rgb(59, 133, 224) 3%, rgb(65, 138, 227) 5%, rgb(65, 138, 227) 17%, rgb(60, 135, 226) 21%, rgb(55, 134, 228) 26%, rgb(52, 130, 227) 29%, rgb(46, 126, 225) 39%, rgb(35, 116, 223) 49%, rgb(32, 114, 219) 57%, rgb(25, 110, 219) 62%, rgb(23, 107, 216) 72%, rgb(20, 104, 213) 75%, rgb(17, 101, 210) 83%, rgb(15, 97, 203) 88%);
 }
 
@@ -127,7 +127,7 @@ img {
     box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
 }
 
-.header-profile-shadow{
+.header-profile-shadow {
     box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -141,13 +141,30 @@ img {
 
 /* ---------Text Shadow---------*/
 
-.text-shadow-header{
+.text-shadow-header {
     text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
 }
 
 /* ---------Filters---------*/
 .active {
-    -webkit-filter: drop-shadow(blue 0px 0px); /* Safari */
-    filter: drop-shadow(blue 0px 0px); 
-  }
+    -webkit-filter: drop-shadow(blue 0px 0px);
+    /* Safari */
+    filter: drop-shadow(blue 0px 0px);
+}
 
+/* ---------Dosbox---------*/
+.dosbox-container, .dosbox-canvas {  
+    width: 100%;
+    height: 100%;
+}
+
+.dosbox-overlay {
+    background: url(https://js-dos.com/cdn/DOOM.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dosbox-start {
+    color: white !important;
+}
