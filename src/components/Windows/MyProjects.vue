@@ -9,6 +9,7 @@ import HomeserverContent from '@/components/Windows/MyProjects/HomeserverContent
 import ClenchContent from '@/components/Windows/MyProjects/ClenchContent.vue'
 import LogmaContent from '@/components/Windows/MyProjects/LogmaContent.vue'
 import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
+import Emc2Content from './MyProjects/Emc2Content.vue'
 
 const props = defineProps({
   leftMenuType: String,
@@ -74,7 +75,8 @@ const componentMap = {
   HomeserverContent,
   ClenchContent,
   LogmaContent,
-  PangaiaContent
+  PangaiaContent,
+  Emc2Content
 }
 
 // Computed property that returns the component object based on the componentName of the selected project
