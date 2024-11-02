@@ -48,6 +48,15 @@ const localeStore = useLocaleStore()
 const getLocalizedTitle = (entity) => {
   return entity.title[localeStore.currentLocale] || entity.title['fr']
 }
+
+// If click occurs somewhere else, remove the active state
+window.addEventListener('click', (e) => {
+  if (!e.target.closest('.grid')) {
+    localEntities.value.forEach((entity) => {
+      entity.isActive = false
+    })
+  }
+})
 </script>
 
 <template>
