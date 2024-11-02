@@ -68,14 +68,16 @@ pipeline {
         always {
             script {
                 env.BUILD_STATUS = currentBuild.currentResult
-                
+
                 def previousCommit = env.GIT_PREVIOUS_SUCCESSFUL_COMMIT ?: 'HEAD^' // If null, use HEAD^ for the previous commit
                 def currentCommit = env.GIT_COMMIT ?: 'HEAD'
 
                 def commitHashes = sh(script: "git log --pretty=format:'%H' ${previousCommit}..${currentCommit}", returnStdout: true).trim().split("\n")
                 def authorEmails = commitHashes.collect { hash ->
                     return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
-                }.unique()
+                }.unique().findAll { email ->
+                    !email.contains("noreply")
+                }
 
                 // Remove the sysadmin email if present
                 authorEmails.remove(env.SYS_ADMIN_EMAIL)
