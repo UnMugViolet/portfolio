@@ -1,6 +1,6 @@
 <template>
   <div class="relative right-0 h-full flex">
-    <div id="dosbox" class="w-full h-full bg-black pt-6 overflow-hidden"></div>
+    <div id="dosbox" class="w-full h-full bg-black pt-6 overflow-hidden" ></div>
   </div>
 </template>
 

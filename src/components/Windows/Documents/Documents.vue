@@ -13,7 +13,7 @@
               class="flex items-center gap-1 cursor-pointer"
               :class="{ active: page.isFocused }"
             >
-              <img :src="'/img/icons/' + page.icon" alt="Office icon" class="w-11 h-11" :style="{ opacity: page.isFocused ? 0.6 : 1 }" />
+              <img :src="'/img/icons/documents/' + page.icon" alt="Office icon" class="w-11 h-11" :style="{ opacity: page.isFocused ? 0.6 : 1 }" />
               <div
                 class="px-1 text-left"
                 :style="{
