@@ -169,6 +169,18 @@
       "goalFifth": "Working as a team",
       "goalSixth": "Meet the one-week deadline"
     },
+    "emc2": {
+      "contextFirstParagraph": "As part of my work-study program at Screenup, I developed the agenda page and the event page template for the EMC2 performance hall in St Grégoire.",
+      "contextSecondParagraph": "I used the ACF plugin in WordPress to add custom fields, allowing the venue team to easily add content for the creation of events.",
+      "contextThirdParagraph": "The project was based on a mockup created by Screenup’s web designer, aligning with the client’s visual identity and needs.",
+      "contextFourthParagraph": "Production updates were tested in staging and deployed via SSH using Visual Studio Code.",
+      "goalFirst": "Create an intuitive interface to view upcoming events.",
+      "goalSecond": "Enable easy event management through the WordPress back office.",
+      "goalThird": "Apply a design consistent with the EMC2 visual identity.",
+      "goalFourth": "Test in staging to ensure site stability.",
+      "goalFifth": "Deploy updates to production via SSH.",
+      "goalSixth": "Optimize navigation for a better user experience."
+    },
     "homeserver": {
       "contextFirstParagraph": "This project was carried out by Pierre, who owns a video production company, and me, a web developer.",
       "contextSecondParagraph": "A team you wouldn't necessarily count on to set up a server, I agree. But we share a common passion. Digging into subjects we know nothing about and trying to understand how a server works and how to set it up.",

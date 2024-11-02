@@ -25,8 +25,8 @@
           "name": "Pangaia",
           "icon": "projects/folder-pangaia-icon.webp",
           "title": {
-            "fr": "Pangaia - Application web",
-            "en": "Pangaia - Web Application"
+            "en": "Pangaia - Web Application",
+            "fr": "Pangaia - Application web"
           },
           "date": {
             "en": "2023 - Current",
@@ -40,14 +40,29 @@
           "name": "Clench",
           "icon": "projects/folder-clench-icon.webp",
           "title": {
-            "fr": "Clench - Application web",
-            "en": "Clench - Web Application"
+            "en": "Clench - Web Application",
+            "fr": "Clench - Application web"
           },
           "date": {
             "en": "2024",
             "fr": "2024"
           },
           "componentName": "ClenchContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "EMC2 (ScreenUp)",
+          "icon": "projects/folder-emc2-icon.webp",
+          "title": {
+            "en": "L'EMC2 - Wordpress website (ScreenUp)",
+            "fr": "L'EMC2 - Site Wordpress (ScreenUp)"
+          },
+          "date": {
+            "en": "2024 - 1 month",
+            "fr": "2024 - 1 mois"
+          },
+          "componentName": "Emc2Content",
           "isFocus": false,
           "isActive": false
         }
@@ -63,8 +78,8 @@
           "name": "Homeserver",
           "icon": "projects/homeserver-icon.webp",
           "title": {
-            "fr": "Serveur d'application & stockage NAS",
-            "en": "Application server & NAS"
+            "en": "Application server & NAS",
+            "fr": "Serveur d'application & stockage NAS"
           },
           "date": {
             "en": "2023 - Current",

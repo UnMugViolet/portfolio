@@ -116,7 +116,7 @@
         "edit": "Edition du site",
         "secondParagraph": "Le présent site, accessible à l’URL https://pauljaguin.com (le « Site »), est édité par :",
         "thirdParagraph": "Paul Jaguin, résidant 29 Rue Jules Auffret, de nationalité Française (France), né(e) le 23/09/1999,",
-        "hosting": "Hébergement", 
+        "hosting": "Hébergement",
         "fourthParagraph": "Le Site est hébergé par la société Hostinger International LTD, il est possible de les contacter à l'adresse suivante : https://www.hostinger.fr/contact",
         "dirPublication": "Directeur de publication",
         "fifthParagraph": "Le Directeur de publication est : Paul Jaguin.",
@@ -168,6 +168,18 @@
       "goalFourth": "Mettre le site en production",
       "goalFifth": "Travailler en équipe",
       "goalSixth": "Tenir le délai d'une semaine"
+    },
+    "emc2": {
+      "contextFirstParagraph": "Dans le cadre de mon alternance chez Screenup, j’ai réalisé la page agenda et le gabarit des pages événements pour la salle EMC2 à St Grégoire.",
+      "contextSecondParagraph": "J'ai utilisé le plugin ACF de WordPress pour ajouter des champs personnalisés, permettant à l'équipe de la salle de spéctacle de créer du contenu et ajouter des évènements facilement.",
+      "contextThirdParagraph": "Le projet s’est basé sur une maquette du webdesigner de Screenup, en accord avec l’identité visuelle et les besoins du client.",
+      "contextFourthParagraph": "Les mises en production ont été testées en staging et déployées via SSH avec Visual Studio Code.",
+      "goalFirst": "Créer une interface intuitive pour consulter les événements.",
+      "goalSecond": "Permettre une gestion facile des événements via le back-office.",
+      "goalThird": "Appliquer un design en accord avec l’identité EMC2.",
+      "goalFourth": "Tester en staging pour garantir la stabilité du site.",
+      "goalFifth": "Déployer les mises à jour en production via SSH.",
+      "goalSixth": "Optimiser la navigation pour une meilleure expérience utilisateur."
     },
     "homeserver": {
       "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",
