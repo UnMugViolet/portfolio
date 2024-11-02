@@ -48,7 +48,6 @@ pipeline {
                                     sourceFiles: 'dist/**', 
                                     remoteDirectory: '/domains/pauljaguin.com/public_html',
                                     removePrefix: 'dist', 
-                                    excludeFiles: 'dist/node_modules/**',
                                     cleanRemote: true, 
                                     makeEmptyDirs: true, 
                                     flatten: false, 
