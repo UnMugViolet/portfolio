@@ -9,9 +9,12 @@
 
 ## 🌐 Website
 
+![portfolio](https://github.com/user-attachments/assets/77a7b9c0-6276-43b4-8792-a1f6e86306f0)
+
 ### [https://pauljaguin.com](https://pauljaguin.com)
 
 ## 👷 Disclaimers
+
 
 **This is an ongoing project and it is not done yet**.
 If you encounter any bugs it will be really helpfull if you could provide the origin of that bug, the browser you used and the device.
