@@ -68,35 +68,22 @@ import menuHeaderData from '@/data/header-menu-data.json'
 
 const emit = defineEmits()
 
-const {
-  id,
-  title,
-  iconSrc,
-  initPositionX,
-  initPositionY,
-  initWidth,
-  initHeight,
-  minWidth,
-  minHeight,
-  headerToolsId,
-  menuHeaderItemsId,
-  resizable,
-  windowsHeaderLogo
-} = defineProps({
-  id: String,
-  title: Object,
-  iconSrc: String,
-  initPositionX: Number,
-  initPositionY: Number,
-  initWidth: Number,
-  initHeight: Number,
-  minWidth: Number,
-  minHeight: Number,
-  headerToolsId: String,
-  menuHeaderItemsId: String,
-  resizable: Boolean,
-  windowsHeaderLogo: Boolean
-})
+const { id, title, iconSrc, initPositionX, initPositionY, initWidth, initHeight, minWidth, minHeight, headerToolsId, menuHeaderItemsId, resizable, windowsHeaderLogo } =
+  defineProps({
+    id: String,
+    title: Object,
+    iconSrc: String,
+    initPositionX: Number,
+    initPositionY: Number,
+    initWidth: Number,
+    initHeight: Number,
+    minWidth: Number,
+    minHeight: Number,
+    headerToolsId: String,
+    menuHeaderItemsId: String,
+    resizable: Boolean,
+    windowsHeaderLogo: Boolean
+  })
 
 // Locale management
 const localeStore = useLocaleStore()

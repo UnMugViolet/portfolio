@@ -103,6 +103,4 @@ const toggleProject = (page) => {
 const focusPage = (page) => {
   toggleProperty(page, 'isFocused')
 }
-
 </script>
-

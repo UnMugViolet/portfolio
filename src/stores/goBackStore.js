@@ -10,7 +10,5 @@ export const useGoBackStore = defineStore({
       currentActiveProject: currentActiveProject
     }
   },
-  actions: {
-
-  }
+  actions: {}
 })
