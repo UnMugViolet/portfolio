@@ -1,38 +1,38 @@
 <template>
   <div class="relative right-0 h-full flex">
-    <div id="dosbox" class="w-full h-full bg-black pt-6 overflow-hidden" ></div>
+    <div id="dosbox" class="w-full h-full bg-black pt-6 overflow-hidden"></div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
-import { useVolumeStore } from '@/stores/volumeStore';
+import { onMounted, onUnmounted, ref } from 'vue'
+import { useVolumeStore } from '@/stores/volumeStore'
 
-const volumeStore = useVolumeStore();
-let dosbox = null;
-let isRunning = ref(false);
+const volumeStore = useVolumeStore()
+let dosbox = null
+let isRunning = ref(false)
 
 onMounted(() => {
   if (window.Dosbox) {
     dosbox = new Dosbox({
-      id: "dosbox",
+      id: 'dosbox',
       onload: function (dosbox) {
-        dosbox.run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
-        isRunning.value = true;
+        dosbox.run('https://js-dos.com/cdn/upload/DOOM-@evilution.zip', './DOOM/DOOM.EXE')
+        isRunning.value = true
       },
       onrun: function (dosbox, app) {
-        console.log("App '" + app + "' is running");
+        console.log("App '" + app + "' is running")
       }
-    });
+    })
   } else {
-    console.error("Dosbox is not defined");
+    console.error('Dosbox is not defined')
   }
-});
+})
 
 onUnmounted(() => {
   if (isRunning.value) {
     // Could not find a way to stop Dosbox from running
-    window.location.reload();
+    window.location.reload()
   }
-});
+})
 </script>

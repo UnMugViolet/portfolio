@@ -164,7 +164,7 @@ const openWindow = (windowId) => {
         headerToolsId: entity.headerToolsId,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
-        windowsHeaderLogo: entity.windowsHeaderLogo,
+        windowsHeaderLogo: entity.windowsHeaderLogo
       })
       setActiveWindow(windowId) // Set the window clicked as active
       windowsStore.addWindowStore(windowId) // Save state to localStorage
