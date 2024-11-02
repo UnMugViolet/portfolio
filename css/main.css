@@ -227,14 +227,10 @@ img {
 }
 
 .dosbox-overlay {
-  background: url(https://js-dos.com/cdn/DOOM.png) no-repeat center center;
+  background: url(/img/icons/doom/doom-background.webp) no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 100%;
-}
-
-.dosbox-start {
-  color: white !important;
 }
 
 .buttons-header-bottom:hover {

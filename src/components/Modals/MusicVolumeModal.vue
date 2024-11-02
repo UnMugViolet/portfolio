@@ -51,7 +51,7 @@ const adjustVolume = () => {
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
+  background: url('/img/cursors/volume-icon.webp') center/contain no-repeat;
   outline: none;
   padding: 0;
   height: 9px;
@@ -59,7 +59,7 @@ const adjustVolume = () => {
 }
 
 .slider::-moz-range-thumb {
-  background: url('/img/cursors/volume-icon.png') center/contain no-repeat;
+  background: url('/img/cursors/volume-icon.webp') center/contain no-repeat;
   outline: none;
   padding: 0;
   border-radius: 0;

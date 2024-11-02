@@ -49,7 +49,7 @@ const experienceData = computed(() => {
     rel="noopener"
     :href="'pdf/CV_paul_jaguin_' + localeStore.currentLocale + '.pdf'"
     :download="'CV_paul_jaguin_' + localeStore.currentLocale + '.pdf'"
-    class="absolute bottom-2 right-1 md:right-3 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
+    class="absolute bottom-2 right-1 md:right-4 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
   >
     {{ $t('buttons.downloadCV') }}
   </a>
