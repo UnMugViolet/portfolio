@@ -12,7 +12,7 @@ import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 import Emc2Content from './MyProjects/Emc2Content.vue'
 
 const props = defineProps({
-  leftMenuType: String,
+  leftMenuType: String
 })
 
 // Locale management
@@ -115,10 +115,10 @@ watch(
 // Unfocus the project when the user clicks outside the project card
 window.addEventListener('click', (e) => {
   if (!e.target.closest('.project-card') && state.selectedProject) {
-    state.selectedProject.isFocus = false;
-    state.selectedProject = null;
+    state.selectedProject.isFocus = false
+    state.selectedProject = null
   }
-});
+})
 </script>
 
 <template>
