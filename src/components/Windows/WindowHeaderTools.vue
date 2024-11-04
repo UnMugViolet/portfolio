@@ -30,6 +30,7 @@ const isGoBackAvailable = computed(() => {
 const headerTools = computed(() => {
   return headerToolsData.headerToolsItems[props.headerToolsId]
 })
+
 </script>
 
 <template>
@@ -56,7 +57,7 @@ const headerTools = computed(() => {
             <div class="block border-solid down-arrow ml-px"></div>
           </div>
         </div>
-
+        
         <!-- Display group items -->
         <div v-for="(item, itemIndex) in tools.items" :key="itemIndex" :class="item.class">
           <img :src="item.icon" :alt="$t('common.icon') + ' ' + $t(item.alt)" :class="[item.iconClass ? item.iconClass : 'w-6 h-6 flex-shrink-0']" />

@@ -26,7 +26,7 @@
       <WindowHeaderDropdown :dropdownItems="translatedMenuHeaderItems" :windowsHeaderLogo="windowsHeaderLogo" />
       <div v-if="headerToolsId">
         <WindowHeaderTools :id="id" :headerToolsId="headerToolsId" />
-        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" />
+        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" :isSearchVisible="isSearchVisible" />
       </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>
@@ -81,7 +81,8 @@ const {
   headerToolsId,
   menuHeaderItemsId,
   resizable,
-  windowsHeaderLogo
+  windowsHeaderLogo,
+  isSearchVisible
 } = defineProps({
   id: String,
   title: Object,
@@ -95,7 +96,8 @@ const {
   headerToolsId: String,
   menuHeaderItemsId: String,
   resizable: Boolean,
-  windowsHeaderLogo: Boolean
+  windowsHeaderLogo: Boolean,
+  isSearchVisible: Boolean
 })
 
 // Locale management

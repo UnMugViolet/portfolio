@@ -46,6 +46,7 @@
         :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
+        :isSearchVisible="window.isSearchVisible"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
         <component :is="window.component" v-bind="window.leftMenuType ? { leftMenuType: window.leftMenuType } : {}" />
@@ -164,7 +165,8 @@ const openWindow = (windowId) => {
         headerToolsId: entity.headerToolsId,
         menuHeaderItemsId: entity.menuHeaderItemsId,
         resizable: entity.resizable,
-        windowsHeaderLogo: entity.windowsHeaderLogo,
+        isSearchVisible: entity.isSearchVisible,
+        windowsHeaderLogo: entity.windowsHeaderLogo
       })
       setActiveWindow(windowId) // Set the window clicked as active
       windowsStore.addWindowStore(windowId) // Save state to localStorage

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center top-0 w-full h-5 px-0.5 bg-window-white border-top-grey shadow-header-window">
+  <div v-if="isSearchVisible" class="flex items-center top-0 w-full h-5 px-0.5 bg-window-white border-top-grey shadow-header-window">
     <div>
       <p class="small-p text-gray-500 px-1.5 cursor-default">{{ $t('common.address') }}</p>
     </div>
@@ -32,8 +32,11 @@ const { t, te } = useI18n()
 const props = defineProps({
   id: String,
   title: String,
-  iconSrc: String
+  iconSrc: String,
+  isSearchVisible: Boolean
 })
+
+console.log("isSearchVisible: ", props.isSearchVisible, "id", props.id);
 
 const formatName = (nameKey) => {
   if (!nameKey) return ''
