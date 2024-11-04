@@ -6,12 +6,6 @@ import emailjs from 'emailjs-com'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import Button from '../Buttons/Button.vue'
 
-const props = defineProps({
-  leftMenuType: {
-    type: String
-  }
-})
-
 const { t } = useI18n()
 const userName = ref('')
 const userEmail = ref('')
@@ -94,8 +88,6 @@ watch(isLoading, (newValue) => {
 
 <template>
   <div class="relative right-0 h-content-window flex">
-    <WindowLeftMenu :leftMenuType="props.leftMenuType" />
-
     <!-- Main content -->
     <form class="flex flex-col w-full h-full bg-white overflow-auto gap-2 font-trebuchet-pixel">
       <div class="m-2">
