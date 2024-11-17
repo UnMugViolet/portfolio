@@ -36,7 +36,6 @@ const props = defineProps({
   isSearchVisible: Boolean
 })
 
-console.log('isSearchVisible: ', props.isSearchVisible, 'id', props.id)
 
 const formatName = (nameKey) => {
   if (!nameKey) return ''
