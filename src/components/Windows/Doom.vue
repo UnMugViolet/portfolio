@@ -6,9 +6,7 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-import { useVolumeStore } from '@/stores/volumeStore'
 
-const volumeStore = useVolumeStore()
 let dosbox = null
 let isRunning = ref(false)
 
@@ -17,7 +15,7 @@ onMounted(() => {
     dosbox = new Dosbox({
       id: 'dosbox',
       onload: function (dosbox) {
-        dosbox.run('https://js-dos.com/cdn/upload/DOOM-@evilution.zip', './DOOM/DOOM.EXE')
+        dosbox.run('/game/DOOM-@evilution.zip', './DOOM/DOOM.EXE')
         isRunning.value = true
       },
       onrun: function (dosbox, app) {
