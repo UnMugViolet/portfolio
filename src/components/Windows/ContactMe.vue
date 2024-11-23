@@ -87,9 +87,68 @@ watch(isLoading, (newValue) => {
 </script>
 
 <template>
-  <div class="relative right-0 h-content-window flex">
+  <div class="relative right-0 h-full flex flex-col">
+    <div class="bg-window-white border-window-header-bot w-full h-12 flex items-center p-2 text-xxs gap-2">
+      <div class="flex justify-center">
+        <p>Send</p>
+      </div>
+      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
+      <div class="flex justify-center flex-col">
+        <p>Cut</p>
+      </div>
+      <div class="flex justify-center flex-col">
+        <p>Copy</p>
+      </div>
+      <div class="flex justify-center flex-col">
+        <p>Paste</p>
+      </div>
+      <div class="flex justify-center flex-col">
+        <p>Undo</p>
+      </div>
+      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
+      <div class="flex justify-center flex-col">
+        <p>Check</p>
+      </div>
+      <div class="flex justify-center flex-col">
+        <p>Spelling</p>
+      </div>
+      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
+      <div class="flex justify-center flex-col">
+        <p>Attach</p>
+      </div>
+      <div class="flex justify-center items-center">
+        <p>Priority</p>
+        <div class="block border-solid down-arrow ml-3"></div>
+      </div>
+      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
+      <div class="flex justify-center flex-col">
+        <p>Sign</p>
+      </div>
+    </div>
+    <div class="bg-window-white border-window-header-bot w-full h-18 flex items-center flex-col p-2 text-xxs gap-2 ">
+      <div class="w-full flex gap-2 font-trebuchet-pixel">
+        <div class="flex gap-1 w-14 items-center">
+          <img src="/img/icons/contact/mailto.webp" alt="Refresh" class="w-4 h-4" />
+          <p class="font-trebuchet-pixel">To :</p>
+        </div>
+        <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none placeholder:text-black" placeholder="jaguinpaul@gmail.com" readonly="readonly"/>
+      </div>
+      <div class="w-full flex gap-2">
+        <div class="flex gap-1 w-14 items-center">
+          <img src="/img/icons/contact/mailto.webp" alt="Refresh" class="w-4 h-4" />
+          <p class="font-trebuchet-pixel">From :</p>
+        </div>
+        <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel" placeholder="jean_doe@wanadoo.com" />
+      </div>
+      <div class="w-full flex gap-2">
+        <div class="flex gap-1 w-14 items-center justify-center">
+          <p class="font-trebuchet-pixel">Subject :</p>
+        </div>
+        <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
+      </div>
+    </div>
     <!-- Main content -->
-    <form class="flex flex-col w-full h-full bg-white overflow-auto gap-2 font-trebuchet-pixel">
+    <form class="flex flex-col w-full h-content-window  bg-white overflow-auto gap-2 font-trebuchet-pixel">
       <div class="m-2">
         <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
         <p class="text-xs font-medium">
@@ -126,3 +185,11 @@ watch(isLoading, (newValue) => {
     </form>
   </div>
 </template>
+
+<style scoped>
+.down-arrow {
+  content: '';
+  border-width: 3px 3px 0px;
+  border-color: rgb(0, 0, 0) transparent;
+}
+</style>
