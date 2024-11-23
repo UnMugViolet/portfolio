@@ -43,7 +43,7 @@
     "windowsHeaderLogo": true,
     "isSearchVisible": false,
     "headerPosition": "left",
-    "headerToolsId": "contact",
+    "headerToolsId": "",
     "menuHeaderItemsId": "contact",
     "iconSrc": "/img/icons/contact/email-icon-sm.webp",
     "initPositionX": 210,
