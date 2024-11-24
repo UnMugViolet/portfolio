@@ -5,10 +5,11 @@ import { useI18n } from 'vue-i18n'
 import emailjs from 'emailjs-com'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import Button from '../Buttons/Button.vue'
+import { sub } from 'date-fns'
 
 const { t } = useI18n()
-const userName = ref('')
 const userEmail = ref('')
+const emailSubject = ref('')
 const userMessage = ref('')
 const errorMessage = ref('')
 const emailSent = ref(false)
@@ -22,7 +23,7 @@ const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID
 const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID
 
 const sendEmail = async () => {
-  if (!userName.value || !userEmail.value || !userMessage.value) {
+  if (!userEmail.value || !userMessage.value || !emailSubject.value) {
     emailSent.value = false
     errorMessage.value = t('windows.contact.error.empty')
     return
@@ -44,7 +45,7 @@ const sendEmail = async () => {
       templateId,
       {
         to_name: adminName,
-        from_name: userName.value,
+        subject: emailSubject.value,
         message: userMessage.value,
         reply_to: userEmail.value
       },
@@ -53,8 +54,8 @@ const sendEmail = async () => {
 
     // Reset form and error message
     errorMessage.value = ''
-    userName.value = ''
     userEmail.value = ''
+    subject.value = ''
     userMessage.value = ''
     emailSent.value = true
     isLoading.value = false
@@ -68,9 +69,9 @@ const sendEmail = async () => {
 
 // Expose variables to the template
 defineExpose({
-  userName,
   userEmail,
   userMessage,
+  emailSubject,
   errorMessage,
   emailSent,
   sendEmail
@@ -87,103 +88,104 @@ watch(isLoading, (newValue) => {
 </script>
 
 <template>
-  <div class="relative right-0 h-full flex flex-col">
-    <div class="bg-window-white border-window-header-bot w-full h-12 flex items-center p-2 text-xxs gap-2">
-      <div class="flex justify-center">
+  <form class="relative right-0 h-full flex flex-col h-content-headless-toolbox">
+    <!-- Header tools -->
+    <div class="bg-window-white border-window-header-bot w-full h-12 py-1 flex items-center px-1 text-xxs gap-0.5">
+      <button 
+        :disabled="isLoading"
+        @submit="sendEmail"
+        :isLoading="isLoading"
+        class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+        <img src="/img/icons/contact/send-icon.webp" alt="Send" class="w-8"/>
         <p>Send</p>
+      </button>
+      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
+      <div class="flex gap-px">
+        <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+          <img src="/img/icons/contact/cut-icon.webp" alt="Cut" class="w-4"/>
+          <p>Cut</p>
+        </div>
+        <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+          <img src="/img/icons/contact/copy-icon.webp" alt="Copy" class="w-4"/>
+          <p>Copy</p>
+        </div>
+        <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+          <img src="/img/icons/contact/paste-icon.webp" alt="Paste" class="w-4"/>
+          <p>Paste</p>
+        </div>
+        <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+          <img src="/img/icons/contact/undo-icon.webp" alt="Undo" class="w-4"/>
+          <p>Undo</p>
+        </div>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
-      <div class="flex justify-center flex-col">
-        <p>Cut</p>
-      </div>
-      <div class="flex justify-center flex-col">
-        <p>Copy</p>
-      </div>
-      <div class="flex justify-center flex-col">
-        <p>Paste</p>
-      </div>
-      <div class="flex justify-center flex-col">
-        <p>Undo</p>
-      </div>
-      <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
-      <div class="flex justify-center flex-col">
+      <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+        <img src="/img/icons/contact/check-icon.webp" alt="Check" class="w-6"/>
         <p>Check</p>
       </div>
-      <div class="flex justify-center flex-col">
+      <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+        <img src="/img/icons/contact/spelling-icon.webp" alt="Spelling" class="w-5"/>
         <p>Spelling</p>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
-      <div class="flex justify-center flex-col">
+      <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+        <img src="/img/icons/contact/attach-icon.webp" alt="Attach" class="w-5"/>
         <p>Attach</p>
       </div>
-      <div class="flex justify-center items-center">
-        <p>Priority</p>
+      <div class="flex justify-center items-center rounded-sm px-1 py-1 hover:border-gray-300 hover:shadow-header-tools">
+        <div class="flex items-center justify-center cursor-pointer flex-col">
+          <img src="/img/icons/contact/priority-icon.webp" alt="Priority" class="w-5"/>
+          <p>Priority</p>
+        </div>
         <div class="block border-solid down-arrow ml-3"></div>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
-      <div class="flex justify-center flex-col">
+      <div class="flex items-center justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
+        <img src="/img/icons/contact/sign-icon.webp" alt="Sign" class="w-6"/>
         <p>Sign</p>
       </div>
     </div>
+    <!-- Heder content -->
     <div class="bg-window-white border-window-header-bot w-full h-18 flex items-center flex-col p-2 text-xxs gap-2 ">
       <div class="w-full flex gap-2 font-trebuchet-pixel">
-        <div class="flex gap-1 w-14 items-center">
-          <img src="/img/icons/contact/mailto.webp" alt="Refresh" class="w-4 h-4" />
+        <label class="flex gap-1 w-14 items-center cursor-default">
+          <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
           <p class="font-trebuchet-pixel">To :</p>
-        </div>
+        </label>
         <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none placeholder:text-black" placeholder="jaguinpaul@gmail.com" readonly="readonly"/>
       </div>
       <div class="w-full flex gap-2">
-        <div class="flex gap-1 w-14 items-center">
-          <img src="/img/icons/contact/mailto.webp" alt="Refresh" class="w-4 h-4" />
+        <label class="flex gap-1 w-14 items-center cursor-default">
+          <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
           <p class="font-trebuchet-pixel">From :</p>
-        </div>
-        <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel" placeholder="jean_doe@wanadoo.com" />
+        </label>
+        <input v-model="userEmail" type="email" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel" placeholder="jean_doe@wanadoo.com"/>
       </div>
       <div class="w-full flex gap-2">
-        <div class="flex gap-1 w-14 items-center justify-center">
-          <p class="font-trebuchet-pixel">Subject :</p>
-        </div>
+        <label class="flex gap-1 w-14 items-center justify-center font-trebuchet-pixel cursor-default">
+          Subject :
+        </label>
         <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
       </div>
     </div>
     <!-- Main content -->
-    <form class="flex flex-col w-full h-content-window  bg-white overflow-auto gap-2 font-trebuchet-pixel">
+    <div class="flex flex-col w-full h-content-contact bg-white overflow-auto gap-2 font-trebuchet-pixel">
       <div class="m-2">
-        <h1 class="font-semibold">{{ $t('windows.contact.title') }}</h1>
-        <p class="text-xs font-medium">
+        <p class="text-xs font-trebuchet-pixel italic mb-2">
           {{ $t('windows.contact.description') }}
         </p>
         <div class="max-w-prose">
-          <label class="text-xs"
-            >{{ $t('windows.contact.name') }}
-            <input v-model="userName" type="text" class="w-full h-6 border border-input-blue p-2 text-xs outline-none" placeholder="Jean Doe" />
-          </label>
-        </div>
-        <div class="max-w-prose">
-          <label class="text-xs"
-            >{{ $t('windows.contact.email') }}
-            <input v-model="userEmail" type="email" class="w-full h-6 border border-input-blue p-2 text-xs outline-none" placeholder="jean_doe@wanadoo.com" />
-          </label>
-        </div>
-        <div class="max-w-prose">
-          <label class="text-xs"
-            >{{ $t('windows.contact.message') }}
-            <textarea v-model="userMessage" class="w-full h-28 border border-input-blue p-2 text-xs outline-none" :placeholder="$t('windows.contact.message')"></textarea>
-          </label>
+          <textarea v-model="userMessage" class="w-full h-40 border border-input-blue p-2 text-xs outline-none" :placeholder="$t('windows.contact.msgPlaceholder')"></textarea>
         </div>
         <div class="flex gap-2 items-center">
-          <Button :disabled="isLoading" @submit="sendEmail" :isLoading="isLoading">
-            {{ $t('buttons.send') }}
-          </Button>
           <p class="text-xs text-green-500 font-medium" v-show="emailSent">
             {{ $t('windows.contact.success') }}
           </p>
           <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </template>
 
 <style scoped>
