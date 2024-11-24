@@ -57,11 +57,10 @@
   },
   "windows": {
     "contact": {
-      "title": "Me contacter",
       "name": "@:common.name",
       "description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",
       "email": "Email",
-      "message": "Message",
+      "msgPlaceholder": "Entrez votre message ici...",
       "success": "Votre message a été envoyé avec succès",
       "error": {
         "email": " n'est pas une adresse e-mail valide",
