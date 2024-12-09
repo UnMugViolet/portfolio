@@ -57,11 +57,10 @@
   },
   "windows": {
     "contact": {
-      "title": "Contact me",
       "name": "@:common.name",
       "description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
       "email": "Email",
-      "message": "Message",
+      "msgPlaceholder": "Message here...",
       "success": "Message sent successfully",
       "error": {
         "email": " is not a valid e-mail address",

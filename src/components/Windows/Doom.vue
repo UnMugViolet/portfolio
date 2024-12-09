@@ -6,7 +6,6 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-
 let dosbox = null
 let isRunning = ref(false)
 
