@@ -54,23 +54,24 @@
     "downloadCV": "Download the CV",
     "linkWebSite": "Visit the website",
     "linkRepository": "Visit the repository"
-  },
-  "windows": {
-    "contact": {
-      "name": "@:common.name",
-      "description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
-      "email": "Email",
-      "msgPlaceholder": "Message here...",
-      "success": "Message sent successfully",
-      "error": {
-        "email": " is not a valid e-mail address",
-        "empty": "Please fill in all fields before sending your message",
-        "unknown": "The message could not be sent. You can contact me directly at the following email address: "
+},
+"windows": {
+	"contact": {
+		"name": "@:common.name",
+		"description": "If you'd like to talk about a project, or just have a chat, leave me a message and I'll get back to you as soon as possible!",
+		"email": "Email",
+		"msgPlaceholder": "Message here...",
+		"success": "Message sent successfully",
+		"error": {
+			"email": " is not a valid e-mail address",
+			"empty": "Please fill in all fields before sending your message",
+			"unknown": "The message could not be sent. You can contact me directly at the following email address: "
       }
     },
     "cv": {
-      "education": "Education",
-      "proExperience": "Professional experiences"
+		"altPicture": "presentation CV",
+		"education": "Education",
+		"proExperience": "Professional experiences"
     },
     "music": {
       "title": "Title",
