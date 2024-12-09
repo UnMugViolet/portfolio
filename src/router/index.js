@@ -42,7 +42,7 @@ const router = createRouter({
             content: '#000000'
           },
           {
-            name: 'apple-mobile-web-app-capable',
+            name: 'mobile-web-app-capable',
             content: 'yes'
           },
           {
@@ -155,7 +155,7 @@ const router = createRouter({
             content: '#000000'
           },
           {
-            name: 'apple-mobile-web-app-capable',
+            name: 'mobile-web-app-capable',
             content: 'yes'
           },
           {
