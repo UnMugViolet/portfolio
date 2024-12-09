@@ -50,7 +50,6 @@
   },
   "buttons": {
     "start": "démarrer",
-    "send": "Envoyer",
     "downloadCV": "Télécharger le CV",
     "linkWebSite": "Voir le site",
     "linkRepository": "Voir le dépôt"
@@ -66,7 +65,19 @@
 			"email": " n'est pas une adresse e-mail valide",
 			"empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
 			"unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
-		}
+		},
+		"send": "Envoyer",
+		"cut": "Couper",
+		"copy": "Copier",
+		"paste": "Coller",
+		"undo": "Annuler",
+		"check": "Check",
+		"spelling": "Orthographe",
+		"attach": "Joindre",
+		"priority": "Priorité",
+		"sign": "Signer",
+		"to": "Pour :",
+		"from": "A :"
     },
     "cv": {
 		"education": "Formation",
