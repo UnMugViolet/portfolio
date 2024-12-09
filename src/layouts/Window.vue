@@ -26,7 +26,7 @@
       <WindowHeaderDropdown :dropdownItems="translatedMenuHeaderItems" :windowsHeaderLogo="windowsHeaderLogo" />
       <div v-if="headerToolsId">
         <WindowHeaderTools :id="id" :headerToolsId="headerToolsId" />
-        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" />
+        <WindowHeaderSearch :id="id" :title="translatedTitle" :iconSrc="iconSrc" :isSearchVisible="isSearchVisible" />
       </div>
       <!-- Component containing content for the window goes here it is done in Office.vue component -->
       <slot></slot>

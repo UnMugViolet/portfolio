@@ -20,6 +20,10 @@
       "en": ["File", "Edit", "View", "Favorites", "Tools", "Help"],
       "fr": ["Fichier", "Édition", "Affichage", "Favoris", "Outils", "Aide"]
     },
+    "contact": {
+      "en": ["File", "Edit", "View", "Insert", "Format", "Tools", "Message", "Help"],
+      "fr": ["Fichier", "Édition", "Insértion", "Format", "Outils", "Message", "Aide"]
+    },
     "none": {
       "en": [],
       "fr": []

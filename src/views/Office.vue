@@ -46,6 +46,7 @@
         :menuHeaderItemsId="window.menuHeaderItemsId"
         :resizable="window.resizable"
         :windowsHeaderLogo="window.windowsHeaderLogo"
+        :isSearchVisible="window.isSearchVisible"
         :style="{ zIndex: findWindowZIndex(window.id) }"
       >
         <component :is="window.component" v-bind="window.leftMenuType ? { leftMenuType: window.leftMenuType } : {}" />

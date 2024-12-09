@@ -89,7 +89,7 @@
       <a rel="noopener" href="https://github.com/UnMugViolet/Logma" target="_blank" class="cursor-pointer">{{ $t('buttons.linkRepository') }}</a>
     </div>
   </div>
-  <a
+<!--   <a
     rel="noopener"
     href="https://logma-production.com/index.php"
     target="_blank"
@@ -102,5 +102,5 @@
       />
     </svg>
     {{ $t('buttons.linkWebSite') }}
-  </a>
+  </a> -->
 </template>
