@@ -1,32 +1,32 @@
 @use 'variables.scss' as *;
 
 h1{
-    font-family: 'Tahoma';
+    font-family: 'Tahoma', sans-serif;
     font-weight: 400;
 }
 
 h2{
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'Franklin Gothic Medium', sans-serif;
     font-weight: 400;
 }
 
 h3{
-    font-family: 'Verdana';
+    font-family: 'Verdana', sans-serif;
     font-weight: 400;
 }
 
 h4{
-    font-family: 'Trebuchet MS';
+    font-family: 'Trebuchet MS', sans-serif;
     font-weight: 400;
 }
 
 p{
-    font-family: 'Tahoma';
+    font-family: 'Tahoma', sans-serif;
     font-weight: 500;
 }
 
 .small-p{
-    font-family: 'Tahoma';
+    font-family: 'Tahoma', sans-serif;
     font-size: 11px;
     font-weight: 400;
 }
