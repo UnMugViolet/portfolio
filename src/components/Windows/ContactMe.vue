@@ -3,7 +3,6 @@ import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import emailjs from 'emailjs-com'
-import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import Button from '../Buttons/Button.vue'
 
 const { t } = useI18n()
@@ -158,26 +157,26 @@ watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, ne
     </div>
     <!-- Heder content -->
     <div class="bg-window-white border-window-header-bot w-full h-18 flex items-center flex-col p-2 text-xxs gap-2 ">
-      <div class="w-full flex gap-2 font-trebuchet-pixel">
-        <label class="flex gap-1 w-14 items-center cursor-default">
+      <label class="w-full flex gap-2 font-trebuchet-pixel">
+        <div class="flex gap-1 w-14 items-center cursor-default">
           <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
           <p class="font-trebuchet-pixel">To :</p>
-        </label>
+		</div>
         <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none placeholder:text-black" placeholder="jaguinpaul@gmail.com" readonly="readonly"/>
-      </div>
-      <div class="w-full flex gap-2">
-        <label class="flex gap-1 w-14 items-center cursor-default">
+      </label>
+      <label class="w-full flex gap-2">
+        <div class="flex gap-1 w-14 items-center cursor-default">
           <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
           <p class="font-trebuchet-pixel">From :</p>
-        </label>
+        </div>
         <input v-model="userEmail" type="email" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel" placeholder="jean_doe@wanadoo.com"/>
-      </div>
-      <div class="w-full flex gap-2">
-        <label class="flex gap-1 w-14 items-center justify-center font-trebuchet-pixel cursor-default">
+      </label>
+      <label class="w-full flex gap-2">
+        <div class="flex gap-1 w-14 items-center justify-center font-trebuchet-pixel cursor-default">
           Subject :
-        </label>
+        </div>
         <input type="text" v-model="emailSubject" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
-      </div>
+      </label>
     </div>
     <!-- Main content -->
     <div class="flex flex-col w-full h-content-contact bg-white overflow-auto gap-2 font-trebuchet-pixel">
