@@ -66,7 +66,19 @@
 			"email": " is not a valid e-mail address",
 			"empty": "Please fill in all fields before sending your message",
 			"unknown": "The message could not be sent. You can contact me directly at the following email address: "
-      }
+      	},
+		"send": "Send",
+		"cut": "Cut",
+		"copy": "Copy",
+		"paste": "Paste",
+		"undo": "Undo",
+		"check": "Check",
+		"spelling": "Spelling",
+		"attach": "Attach",
+		"priority": "Priority",
+		"sign": "Sign",
+		"to": "To :",
+		"from": "From :"
     },
     "cv": {
 		"altPicture": "presentation CV",

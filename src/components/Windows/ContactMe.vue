@@ -105,69 +105,69 @@ watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, ne
         class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
         <img 
 			src="/img/icons/contact/send-icon.webp" 
-			alt="Send" 
+			:alt="$t('windows.contact.send')"
 			:class="[ isFormComplete ? 'w-8' : 'filter grayscale w-8']"/>
-        <p>Send</p>
+        <p>{{ $t('windows.contact.send') }}</p>
       </button>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
       <div class="flex gap-px">
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/cut-icon.webp" alt="Cut" class="w-4 filter grayscale"/>
-          <p>Cut</p>
+          <img src="/img/icons/contact/cut-icon.webp" :alt="$t('windows.contact.cut')" class="w-4 filter grayscale"/>
+          <p>{{ $t('windows.contact.cut') }}</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/copy-icon.webp" alt="Copy" class="w-4 filter grayscale"/>
-          <p>Copy</p>
+          <img src="/img/icons/contact/copy-icon.webp" :alt="$t('windows.contact.copy')" class="w-4 filter grayscale"/>
+          <p>{{ $t('windows.contact.copy') }}</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/paste-icon.webp" alt="Paste" class="w-4 filter grayscale"/>
-          <p>Paste</p>
+          <img src="/img/icons/contact/paste-icon.webp" :alt="$t('windows.contact.paste')" class="w-4 filter grayscale"/>
+          <p>{{ $t('windows.contact.paste') }}</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/undo-icon.webp" alt="Undo" class="w-4 filter grayscale"/>
-          <p>Undo</p>
+          <img src="/img/icons/contact/undo-icon.webp" :alt="$t('windows.contact.undo')" class="w-4 filter grayscale"/>
+          <p>{{ $t('windows.contact.undo') }}</p>
         </div>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
       <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-        <img src="/img/icons/contact/check-icon.webp" alt="Check" class="w-6"/>
-        <p>Check</p>
+        <img src="/img/icons/contact/check-icon.webp" :alt="$t('windows.contact.check')" class="w-6"/>
+        <p>{{ $t('windows.contact.check') }}</p>
       </div>
       <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-        <img src="/img/icons/contact/spelling-icon.webp" alt="Spelling" class="w-5"/>
-        <p>Spelling</p>
+        <img src="/img/icons/contact/spelling-icon.webp" :alt="$t('windows.contact.spelling')" class="w-5"/>
+        <p>{{ $t('windows.contact.spelling') }}</p>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
       <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-        <img src="/img/icons/contact/attach-icon.webp" alt="Attach" class="w-5"/>
-        <p>Attach</p>
+        <img src="/img/icons/contact/attach-icon.webp" :alt="$t('windows.contact.attach')" class="w-5"/>
+        <p>{{ $t('windows.contact.attach') }}</p>
       </div>
       <div class="flex justify-center items-center rounded-sm px-1 py-1 hover:border-gray-300 hover:shadow-header-tools">
         <div class="flex items-center justify-center cursor-pointer flex-col">
-          <img src="/img/icons/contact/priority-icon.webp" alt="Priority" class="w-5"/>
-          <p>Priority</p>
+          <img src="/img/icons/contact/priority-icon.webp" :alt="$t('windows.contact.priority')" class="w-5"/>
+          <p>{{ $t('windows.contact.priority') }}</p>
         </div>
         <div class="block border-solid down-arrow ml-3"></div>
       </div>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
       <div class="flex items-center justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-        <img src="/img/icons/contact/sign-icon.webp" alt="Sign" class="w-6"/>
-        <p>Sign</p>
+        <img src="/img/icons/contact/sign-icon.webp" :alt="$t('windows.contact.sign')" class="w-6"/>
+        <p>{{ $t('windows.contact.sign') }}</p>
       </div>
     </div>
-    <!-- Heder content -->
+    <!-- Header content -->
     <div class="bg-window-white border-window-header-bot w-full h-18 flex items-center flex-col p-2 text-xxs gap-2 ">
       <label class="w-full flex gap-2 font-trebuchet-pixel">
         <div class="flex gap-1 w-14 items-center cursor-default">
-          <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
-          <p class="font-trebuchet-pixel">To :</p>
+          <img src="/img/icons/contact/mailto-icon.webp" :alt="$t('windows.contact.to')" class="w-4 h-4" />
+          <p class="font-trebuchet-pixel">{{ $t('windows.contact.to') }}</p>
 		</div>
         <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none placeholder:text-black" placeholder="jaguinpaul@gmail.com" readonly="readonly"/>
       </label>
       <label class="w-full flex gap-2">
         <div class="flex gap-1 w-14 items-center cursor-default">
-          <img src="/img/icons/contact/mailto-icon.webp" alt="Refresh" class="w-4 h-4" />
-          <p class="font-trebuchet-pixel">From :</p>
+          <img src="/img/icons/contact/mailto-icon.webp" :alt="$t('windows.contact.from')" class="w-4 h-4" />
+          <p class="font-trebuchet-pixel">{{ $t('windows.contact.from') }}</p>
         </div>
         <input v-model="userEmail" type="email" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel" placeholder="jean_doe@wanadoo.com"/>
       </label>
