@@ -5,7 +5,6 @@ import { useI18n } from 'vue-i18n'
 import emailjs from 'emailjs-com'
 import WindowLeftMenu from '@/components/Windows/WindowLeftMenu.vue'
 import Button from '../Buttons/Button.vue'
-import { sub } from 'date-fns'
 
 const { t } = useI18n()
 const userEmail = ref('')
