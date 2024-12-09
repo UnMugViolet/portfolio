@@ -68,9 +68,7 @@ watch(
 
 async function fetchEvents() {
   const icsFile = '/calendar/calendar-' + localeStore.currentLocale + '.ics'
-
-  console.log('Fetching events from:', icsFile)
-
+  
   try {
     const response = await fetch(icsFile)
     if (!response.ok) {
@@ -79,7 +77,6 @@ async function fetchEvents() {
     const icsData = await response.text()
     events.value = parseICS(icsData)
     calculateDaysOfMonth(currentYearValue.value, currentMonth.value) // Recalculate days after fetching events
-    console.log('Events fetched:', events.value)
   } catch (error) {
     console.error('Error fetching the ICS file:', error)
   }

@@ -14,6 +14,7 @@ const userMessage = ref('')
 const errorMessage = ref('')
 const emailSent = ref(false)
 const isLoading = ref(false)
+const isFormComplete = ref(false)
 
 // Get variables from .env
 const adminName = import.meta.env.VITE_APP_ADMIN_NAME
@@ -55,7 +56,7 @@ const sendEmail = async () => {
     // Reset form and error message
     errorMessage.value = ''
     userEmail.value = ''
-    subject.value = ''
+    emailSubject.value = ''
     userMessage.value = ''
     emailSent.value = true
     isLoading.value = false
@@ -85,6 +86,14 @@ watch(isLoading, (newValue) => {
     document.body.classList.remove('cursor-wait')
   }
 })
+
+watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, newEmailSubject]) => {
+	if (newUserEmail && newUserMessage && newEmailSubject) {
+		isFormComplete.value = true
+	} else {
+		isFormComplete.value = false
+	}
+})
 </script>
 
 <template>
@@ -92,29 +101,32 @@ watch(isLoading, (newValue) => {
     <!-- Header tools -->
     <div class="bg-window-white border-window-header-bot w-full h-12 py-1 flex items-center px-1 text-xxs gap-0.5">
       <button 
-        :disabled="isLoading"
-        @submit="sendEmail"
+        :disabled="isLoading || !isFormComplete"
+        @click="sendEmail"
         :isLoading="isLoading"
         class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-        <img src="/img/icons/contact/send-icon.webp" alt="Send" class="w-8"/>
+        <img 
+			src="/img/icons/contact/send-icon.webp" 
+			alt="Send" 
+			:class="[ isFormComplete ? 'w-8' : 'filter grayscale w-8']"/>
         <p>Send</p>
       </button>
       <div class="h-full w-px bg-gray-192 mx-1 md:mx-0.5"/>
       <div class="flex gap-px">
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/cut-icon.webp" alt="Cut" class="w-4"/>
+          <img src="/img/icons/contact/cut-icon.webp" alt="Cut" class="w-4 filter grayscale"/>
           <p>Cut</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/copy-icon.webp" alt="Copy" class="w-4"/>
+          <img src="/img/icons/contact/copy-icon.webp" alt="Copy" class="w-4 filter grayscale"/>
           <p>Copy</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/paste-icon.webp" alt="Paste" class="w-4"/>
+          <img src="/img/icons/contact/paste-icon.webp" alt="Paste" class="w-4 filter grayscale"/>
           <p>Paste</p>
         </div>
         <div class="flex items-center rounded-sm justify-center px-2 py-1 cursor-pointer flex-col hover:border-gray-300 hover:shadow-header-tools">
-          <img src="/img/icons/contact/undo-icon.webp" alt="Undo" class="w-4"/>
+          <img src="/img/icons/contact/undo-icon.webp" alt="Undo" class="w-4 filter grayscale"/>
           <p>Undo</p>
         </div>
       </div>
@@ -165,24 +177,24 @@ watch(isLoading, (newValue) => {
         <label class="flex gap-1 w-14 items-center justify-center font-trebuchet-pixel cursor-default">
           Subject :
         </label>
-        <input type="text" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
+        <input type="text" v-model="emailSubject" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
       </div>
     </div>
     <!-- Main content -->
     <div class="flex flex-col w-full h-content-contact bg-white overflow-auto gap-2 font-trebuchet-pixel">
       <div class="m-2">
-        <p class="text-xs font-trebuchet-pixel italic mb-2">
-          {{ $t('windows.contact.description') }}
-        </p>
-        <div class="max-w-prose">
-          <textarea v-model="userMessage" class="w-full h-40 border border-input-blue p-2 text-xs outline-none" :placeholder="$t('windows.contact.msgPlaceholder')"></textarea>
-        </div>
-        <div class="flex gap-2 items-center">
-          <p class="text-xs text-green-500 font-medium" v-show="emailSent">
-            {{ $t('windows.contact.success') }}
-          </p>
-          <p class="text-xs text-red-500 font-medium" v-show="errorMessage">{{ errorMessage }}</p>
-        </div>
+		  <div class="max-w-prose">
+			  <textarea v-model="userMessage" class="w-full h-40 border border-input-blue p-2 text-xs outline-none" :placeholder="$t('windows.contact.msgPlaceholder')"></textarea>
+			</div>
+			<p class="text-xs font-trebuchet-pixel italic mb-2">
+				{{ $t('windows.contact.description') }}
+			</p>
+			<div class="flex gap-2 items-center">
+				<p class="text-xs text-green-600 font-medium" v-show="emailSent">
+					{{ $t('windows.contact.success') }}
+				</p>
+				<p class="text-xs text-red font-medium" v-show="errorMessage">{{ errorMessage }}</p>
+			</div>
       </div>
     </div>
   </form>
