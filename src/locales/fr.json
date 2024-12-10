@@ -76,8 +76,9 @@
 		"attach": "Joindre",
 		"priority": "Priorité",
 		"sign": "Signer",
-		"to": "Pour :",
-		"from": "A :"
+		"to": "A :",
+		"from": "De :",
+    "subject": "Objet :"
     },
     "cv": {
 		"education": "Formation",

@@ -78,7 +78,8 @@
 		"priority": "Priority",
 		"sign": "Sign",
 		"to": "To :",
-		"from": "From :"
+		"from": "From :",
+    "subject": "Subject :"
     },
     "cv": {
 		"altPicture": "presentation CV",

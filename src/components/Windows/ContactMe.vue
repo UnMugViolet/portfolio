@@ -173,7 +173,7 @@ watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, ne
       </label>
       <label class="w-full flex gap-2">
         <div class="flex gap-1 w-14 items-center justify-center font-trebuchet-pixel cursor-default">
-          Subject :
+          {{ $t('windows.contact.subject') }}
         </div>
         <input type="text" v-model="emailSubject" class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"/>
       </label>
