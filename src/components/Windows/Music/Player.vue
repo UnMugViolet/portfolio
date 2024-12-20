@@ -18,15 +18,15 @@
         </div>
       </div>
       <div class="w-1/3 flex items-center justify-center">
-        <button @click="previousTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200">
+        <button @click="previousTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200 cursor-pointer">
           <img src="/img/icons/music/previous-icon.webp" alt="Musique précédente" class="w-full h-full" />
         </button>
         <button
           @click="togglePlay"
-          class="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:bg-gray-200 relative overflow-hidden play-button"
+          class="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:bg-gray-200 relative overflow-hidden play-button cursor-pointer"
           :class="{ 'is-playing': isPlaying }"
         ></button>
-        <button @click="nextTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200">
+        <button @click="nextTrack" class="w-6 h-6 flex items-center justify-center rounded-full bg-white hover:bg-gray-200 cursor-pointer">
           <img src="/img/icons/music/next-icon.webp" alt="Musique suivante" class="w-full h-full" />
         </button>
       </div>
@@ -45,7 +45,8 @@ const props = defineProps({
   playlist: {
     type: Array,
     required: true
-  }
+  },
+  trackToggled: String
 })
 
 const currentTrackIndex = ref(0)
@@ -68,6 +69,15 @@ watch(
   (newVolume) => {
     if (player.value) {
       player.value.setVolume(newVolume)
+    }
+  }
+)
+
+watch(
+  () => props.trackToggled,
+  (newTrackUri) => {
+    if (player.value && deviceId.value && newTrackUri) {
+      loadTrack(deviceId.value, newTrackUri)
     }
   }
 )
