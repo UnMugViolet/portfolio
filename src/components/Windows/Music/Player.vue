@@ -7,7 +7,7 @@
             v-if="currentTrack.album && currentTrack.album.images && currentTrack.album.images.length > 0"
             :src="currentTrack.album.images[2].url"
             alt="cover album musique"
-            class="w-10 h-10"
+            class="w-10 h-10 rounded-sm"
           />
           <div>
             <p class="text-xs font-trebuchet-pixel">{{ currentTrack.name }}</p>
