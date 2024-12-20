@@ -54,7 +54,7 @@
                   <div class="pl-2 w-8">
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
-                  <div @click="playTrack(track.track.uri)" class="flex items-center gap-2 cursor-pointer hover:underline">
+                  <div @click="playTrack(track.track.uri, track)" class="flex items-center gap-2 cursor-pointer hover:underline">
                     <img
                       v-if="track.track.album.images && track.track.album.images.length > 0"
                       :src="track.track.album.images[2].url"
@@ -99,7 +99,7 @@
               <div v-if="index < playlist.tracks.items.length - 1" class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"></div>
             </div>
           </div>
-          <Player v-if="playlist.tracks.items.length > 0" :playlist="playlist.tracks.items" @play-track="playTrack" />
+          <Player v-if="playlist.tracks.items.length > 0" :playlist="playlist.tracks.items" :trackToggled="currentTrackUri"/>
         </div>
         <div v-else class="w-full h-full font-trebuchet-pixel">
           <div class="w-full h-full flex items-center justify-center flex-col">
@@ -139,6 +139,8 @@ const playlistId = '1hMzZICeyywzM40RKVahoU'
 const token = ref(localStorage.getItem('access_token') || '')
 const refreshToken = localStorage.getItem('refresh_token') || ''
 const localeStore = useLocaleStore()
+
+const currentTrackUri = ref('')
 
 // Map the localeStore.currentLocale to the correct locale object
 const localeMap = {
@@ -276,8 +278,7 @@ const formatDuration = (durationMs) => {
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 };
 
-// Function to emit an event to play a specific track
-function playTrack(trackUri) {
-  
+function playTrack(trackUri, track) {
+  currentTrackUri.value = trackUri
 }
 </script>
