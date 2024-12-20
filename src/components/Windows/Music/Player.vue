@@ -57,6 +57,8 @@ const deviceId = ref(null)
 const volumeStore = useVolumeStore()
 const currentTime = ref(0)
 let intervalId = null
+const trackEnded = ref(false)
+
 
 watch(currentTrackIndex, (newIndex) => {
   if (player.value && deviceId.value) {
@@ -77,7 +79,11 @@ watch(
   () => props.trackToggled,
   (newTrackUri) => {
     if (player.value && deviceId.value && newTrackUri) {
-      loadTrack(deviceId.value, newTrackUri)
+      const newIndex = props.playlist.findIndex(track => track.track.uri === newTrackUri)
+      if (newIndex !== -1) {
+        currentTrackIndex.value = newIndex
+        loadTrack(deviceId.value, newTrackUri)
+      }
     }
   }
 )
@@ -116,8 +122,13 @@ onMounted(() => {
       currentTime.value = state.position
 
       // Check if the track has ended
-      if (state.position === 0 && !state.paused && state.track_window.previous_tracks.length > 0) {
-        nextTrack()
+      if (state.position === 0 && state.paused && state.track_window.previous_tracks.length > 0) {
+        if (!trackEnded.value) {
+          trackEnded.value = true
+          nextTrack()
+        }
+      } else {
+        trackEnded.value = false
       }
     })
 
@@ -194,7 +205,7 @@ async function loadTrack(device_id, trackUri) {
   try {
     const response = await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
       method: 'PUT',
-      body: JSON.stringify({ uris: [trackUri], play: false }),
+      body: JSON.stringify({ uris: [trackUri] }),
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${accessToken}`
@@ -206,6 +217,9 @@ async function loadTrack(device_id, trackUri) {
       console.error('Failed to load track:', errorData)
       throw new Error('Failed to load track')
     }
+
+    // Pause the player after loading the track
+    await player.value.pause()
   } catch (error) {
     console.error('Error loading track:', error)
   }
