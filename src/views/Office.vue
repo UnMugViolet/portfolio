@@ -15,6 +15,7 @@
       @toggle-minesweeper="openWindow('minesweeper')"
       @toggle-notepad="openWindow('notepad')"
       @toggle-doom="openWindow('doom')"
+      @toggle-terminal="openWindow('terminal')"
     />
     <DesktopAppsLayout
       :entities="entities"
@@ -76,6 +77,7 @@ import Pictures from '@/components/Windows/Pictures.vue'
 import Calendar from '@/components/Windows/Calendar/Calendar.vue'
 import Notepad from '@/components/Windows/Notepad.vue'
 import Doom from '@/components/Windows/Doom.vue'
+import Terminal from '@/components/Windows/Terminal.vue'
 
 import DesktopAppsLayout from '@/layouts/DesktopAppsLayout.vue'
 import Window from '@/layouts/Window.vue'
@@ -123,7 +125,8 @@ const components = {
   Pictures: shallowRef(Pictures),
   Calendar: shallowRef(Calendar),
   Notepad: shallowRef(Notepad),
-  Doom: shallowRef(Doom)
+  Doom: shallowRef(Doom),
+  Terminal: shallowRef(Terminal)
 }
 
 // Create the entities array from the data.json
