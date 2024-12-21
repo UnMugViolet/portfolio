@@ -83,7 +83,7 @@ const { id, title, iconSrc, initPositionX, initPositionY, initWidth, initHeight,
     menuHeaderItemsId: String,
     resizable: Boolean,
     windowsHeaderLogo: Boolean,
-	isSearchVisible: Boolean
+	  isSearchVisible: Boolean
   })
 
 // Locale management
@@ -160,6 +160,7 @@ const toggleMaximize = () => {
 }
 
 const closeWindow = () => {
+  console.log('close-window')
   emit('close-window')
 }
 
