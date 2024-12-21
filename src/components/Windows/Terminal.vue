@@ -80,9 +80,6 @@ const executeCommand = async () => {
       currentCommand.value = '';
       break;
     case 'sudo':
-      output = terminalData.hint.result;
-      currentCommand.value = '';
-      break;
     case 'rm':
       output = terminalData.hint.result;
       currentCommand.value = '';
