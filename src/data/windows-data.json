@@ -254,5 +254,33 @@
     "minHeight": 160,
     "component": "Doom",
     "leftMenuType": ""
+  },
+  {
+    "id": "terminal",
+    "title": {
+      "en": "Terminal",
+      "fr": "Terminal"
+    },
+    "subtitle": {
+      "en": "Run commands using the terminal",
+      "fr": "Lancer des commandes avec le terminal"
+    },
+    "imgSrc": "/img/icons/cmd-icon-lg.webp",
+    "onDesktop": false,
+    "resizable": true,
+    "windowsHeaderLogo": false,
+    "isSearchVisible": true,
+    "headerPosition": "left",
+    "headerToolsId": "",
+    "menuHeaderItemsId": "none",
+    "iconSrc": "/img/icons/cmd-icon-sm.webp",
+    "initPositionX": 190,
+    "initPositionY": 310,
+    "initWidth": 500,
+    "initHeight": 350,
+    "minWidth": 200,
+    "minHeight": 160,
+    "component": "Terminal",
+    "leftMenuType": ""
   }
 ]
