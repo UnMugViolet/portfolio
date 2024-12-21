@@ -91,6 +91,10 @@ img {
   height: calc(100% - 3rem);
 }
 
+.h-content-headless {
+  height: calc(100% - 1.3rem);
+}
+
 .h-content-contact {
   height: calc(100% - 11.85rem);
 }
