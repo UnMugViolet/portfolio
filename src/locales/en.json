@@ -31,7 +31,8 @@
     "PDM": "PDM",
     "years": "years old",
     "webdev": "Web developper",
-    "textDocument": "Text Document"
+    "textDocument": "Text Document",
+    "loading": "Loading..."
   },
   "message": {
     "welcome": "Welcome to my computer.",
@@ -95,7 +96,6 @@
       "artist": "Artist",
       "description": "A playlist created especially for my portfolio, it contains my favorite tracks.",
       "visitOnSpotify": "Listen on Spotify",
-      "viewTrack": "View track",
       "accessFirstSentence": "To access this feature,",
       "accessSecondSentence": "it is mandatory to connect to Spotify",
       "connectToSpotify": "Connect to Spotify",
