@@ -19,7 +19,7 @@ const handleClick = (event) => {
 
 const classes = computed(() => {
   if (props.layout === 'small') {
-    return 'inline-flex items-center text-xs border border-twilight-blue bg-button-submit rounded-sm leading-none px-2 py-0.5 min-h-6 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked font-trebuchet-pixel text-black text-xxs'
+    return 'inline-flex items-center text-xs border border-twilight-blue bg-button-submit rounded-sm leading-none px-1.5 py-0.5 min-h-6 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked font-trebuchet-pixel text-black text-xxs'
   } else {
     return 'inline-flex items-center text-xs border border-twilight-blue bg-button-submit rounded-sm leading-none px-5 py-0.5 min-h-6 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked font-trebuchet-pixel text-black'
   }
