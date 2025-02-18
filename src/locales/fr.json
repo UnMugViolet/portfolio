@@ -31,7 +31,8 @@
     "PDM": "MPD",
     "years": "ans",
     "webdev": "Développeur web",
-    "textDocument": "Document texte"
+    "textDocument": "Document texte",
+    "loading": "Chargement..."
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
@@ -53,37 +54,37 @@
     "downloadCV": "Télécharger le CV",
     "linkWebSite": "Voir le site",
     "linkRepository": "Voir le dépôt"
-},
-"windows": {
-	"contact": {
-		"name": "@:common.name",
-		"description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",
-		"email": "Email",
-		"msgPlaceholder": "Entrez votre message ici...",
-		"success": "Votre message a été envoyé avec succès",
-		"error": {
-			"email": " n'est pas une adresse e-mail valide",
-			"empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
-			"unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
-		},
-		"send": "Envoyer",
-		"cut": "Couper",
-		"copy": "Copier",
-		"paste": "Coller",
-		"undo": "Annuler",
-		"check": "Check",
-		"spelling": "Orthographe",
-		"attach": "Joindre",
-		"priority": "Priorité",
-		"sign": "Signer",
-		"to": "A :",
-		"from": "De :",
-    "subject": "Objet :"
+  },
+  "windows": {
+    "contact": {
+      "name": "@:common.name",
+      "description": "Envie de parler d'un projet, ou de simplement papoter, laissez moi un message, je reviendrai vers vous dans les plus brefs délais!",
+      "email": "Email",
+      "msgPlaceholder": "Entrez votre message ici...",
+      "success": "Votre message a été envoyé avec succès",
+      "error": {
+        "email": " n'est pas une adresse e-mail valide",
+        "empty": "Veuillez remplir tous les champs avant d'envoyer votre message",
+        "unknown": "Le message n'a pas pu être envoyé. Vous pouvez me contacter directement à l'adresse email suivante: "
+      },
+      "send": "Envoyer",
+      "cut": "Couper",
+      "copy": "Copier",
+      "paste": "Coller",
+      "undo": "Annuler",
+      "check": "Check",
+      "spelling": "Orthographe",
+      "attach": "Joindre",
+      "priority": "Priorité",
+      "sign": "Signer",
+      "to": "A :",
+      "from": "De :",
+      "subject": "Objet :"
     },
     "cv": {
-		"education": "Formation",
-		"altPicture": "présentation CV",
-		"proExperience": "Expérience professionnelle"
+      "education": "Formation",
+      "altPicture": "présentation CV",
+      "proExperience": "Expérience professionnelle"
     },
     "music": {
       "title": "Titre",
@@ -93,13 +94,9 @@
       "link": "Liens",
       "artist": "Artiste",
       "description": "Une playlist créée spécialement pour mon portfolio, elle contient mes morceaux préférés.",
-      "visitOnSpotify": "Écouter sur Spotify",
-      "viewTrack": "Voir le morceau",
-      "accessFirstSentence": "Pour accéder à cette fonctionnalité,",
-      "accessSecondSentence": "il est nécessaire de se connecter à Spotify..",
-      "connectToSpotify": "Se connecter à Spotify",
-      "spotifyDisclaimer": "Cette playlist et sa lecture est réalisée en utilisant l'API de spotify",
-      "albumCover": "Couverture de l'album"
+      "visitOnSpotify": "Voir sur Spotify",
+      "albumCover": "Couverture de l'album",
+      "playlistCoverAlt": "Couverture de la playlist"
     },
     "pictures": {
       "previous": "Photo précédente",
