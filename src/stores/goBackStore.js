@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useGoBackStore = defineStore({
-  id: 'goBack',
+export const useGoBackStore = defineStore('goBack', {
   state: () => {
     let currentActiveDocument = null
     let currentActiveProject = null

@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useConnectionStore = defineStore({
-  id: 'connection',
+export const useConnectionStore = defineStore('connection', {
   state: () => ({
     status: 'restart' // Possible values: 'disconnected', 'restart', 'loggedIn'
   }),

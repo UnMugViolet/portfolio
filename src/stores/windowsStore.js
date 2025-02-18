@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useWindowsStore = defineStore({
-  id: 'windows',
+export const useWindowsStore = defineStore('windows', {
   state: () => ({
     openWindowIds: JSON.parse(localStorage.getItem('windows')) || []
   }),
