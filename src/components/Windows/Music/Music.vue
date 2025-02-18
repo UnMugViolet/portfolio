@@ -10,7 +10,7 @@
               :alt="$t('windows.music.playlistCoverAlt')" class="w-24" />
             <div>
               <h2 class="text-xl font-bold">{{ playlist.name }}</h2>
-              <p class="text-xs">{{ $t('windows.music.description') }}</p>
+              <p class="text-xs mb-1">{{ $t('windows.music.description') }}</p>
               <Button :href="playlist.external_urls.spotify" :blank="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 24 24">
                   <path fill="#000000"
@@ -52,7 +52,7 @@
                   <div class="pl-2 w-8">
                     <p class="text-xs font-trebuchet-pixel">{{ index + 1 }}</p>
                   </div>
-                  <div @click="playTrack(track.uri, track)"
+                  <div @click="playTrack(track.id)"
                     class="flex items-center gap-2 cursor-pointer hover:underline">
                     <img :src="track.album.images[0].url"
                       :alt="$t('windows.music.albumCover') + ' ' + track.name" class="w-12 rounded-sm" />
@@ -68,7 +68,7 @@
                   </p>
                 </div>
                 <div class="col-span-1 px-1">
-                  <p v-if="currentDate" class="text-xs font-trebuchet-pixel truncate">
+                  <p class="text-xs font-trebuchet-pixel truncate">
                     {{
                       isMoreThanOneMonth(track.added_at)
                         ? formatDate(new Date(track.added_at))
@@ -100,8 +100,8 @@
                 class="w-11/12 h-px bg-gradient-to-r from-blue-300 to-white my-2"></div>
             </div>
           </div>
-          <Player v-if="playlist.tracks.items.length > 0" :playlist="playlist.tracks.items"
-            :trackToggled="currentTrackUri" />
+          <div v-if="loading"/>
+          <Player v-else :playlist="playlist.tracks.items" :trackToggled="selectedTrack" />
         </div>
       </div>
     </div>
@@ -114,16 +114,13 @@ import { formatDistanceToNow, format } from 'date-fns'
 import { enUS, fr } from 'date-fns/locale'
 import { useLocaleStore } from '@/stores/localeStore'
 import Button from '@/components/Buttons/Button.vue'
-// import Player from '@/components/Windows/Music/Player.vue'
+import Player from '@/components/Windows/Music/Player.vue'
 import playlistData from '@/data/playlist-data.json'
 
 const localeStore = useLocaleStore()
 
-const currentTrackUri = ref('')
+const selectedTrack = ref('')
 const loading = ref(true)
-const currentDate = new Date()
-
-
 const playlist = ref({})
 
 onMounted(async () => {
@@ -140,7 +137,6 @@ const localeMap = {
 async function InitPlaylist() {
   await new Promise(resolve => setTimeout(resolve, 1000))
   playlist.value = playlistData
-  console.log("Playlist: ", playlist)
 }
 
 const isMoreThanOneMonth = (dateString) => {
@@ -156,8 +152,8 @@ const formatDuration = (durationMs) => {
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 };
 
-function playTrack(trackUri, track) {
-  currentTrackUri.value = trackUri
+function playTrack(id) {
+  selectedTrack.value = id;
 }
 
 function formatDate(date) {

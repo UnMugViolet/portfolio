@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useVolumeStore = defineStore({
-  id: 'volume',
+export const useVolumeStore = defineStore('volume',{
   state: () => {
     let volume = parseFloat(localStorage.getItem('volume'))
     if (isNaN(volume)) {
