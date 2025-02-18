@@ -4,15 +4,15 @@
       <div class="w-1/3">
         <div class="flex items-center gap-2">
           <img
-            v-if="currentTrack.album && currentTrack.album.images && currentTrack.album.images.length > 0"
-            :src="currentTrack.album.images[2].url"
+            v-if="currentTrack.album && currentTrack.album.images"
+            :src="currentTrack.album.images[0].url"
             alt="cover album musique"
             class="w-10 h-10 rounded-sm"
           />
-          <div>
-            <p class="text-xs font-trebuchet-pixel">{{ currentTrack.name }}</p>
-            <p class="text-xs font-trebuchet-pixel">
-              {{ currentTrack.artists && currentTrack.artists.length > 0 ? currentTrack.artists[0].name : '' }}
+          <div class="flex flex-col mr-5 w-full">
+            <p class="text-xs font-trebuchet-pixel truncate">{{ currentTrack.name }}</p>
+            <p class="text-xs font-trebuchet-pixel truncate">
+              {{ currentTrack.artists ? currentTrack.artists[0].name : '' }}
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, defineProps } from 'vue'
 import { useVolumeStore } from '@/stores/volumeStore'
 
 const props = defineProps({
@@ -49,179 +49,36 @@ const props = defineProps({
   trackToggled: String
 })
 
-const currentTrackIndex = ref(0)
-const currentTrack = ref({})
-const isPlaying = ref(false)
-const player = ref(null)
-const deviceId = ref(null)
 const volumeStore = useVolumeStore()
-const currentTime = ref(0)
-let intervalId = null
-const trackEnded = ref(false)
+const currentTrack = ref(props.playlist[0])
+const isPlaying = ref(false)
+const currentTime = ref(null)
 
-
-watch(currentTrackIndex, (newIndex) => {
-  if (player.value && deviceId.value) {
-    loadTrack(deviceId.value, props.playlist[newIndex].track.uri)
-  }
-})
-
-watch(
-  () => volumeStore.volume,
-  (newVolume) => {
-    if (player.value) {
-      player.value.setVolume(newVolume)
-    }
-  }
-)
-
-watch(
-  () => props.trackToggled,
-  (newTrackUri) => {
-    if (player.value && deviceId.value && newTrackUri) {
-      const newIndex = props.playlist.findIndex(track => track.track.uri === newTrackUri)
-      if (newIndex !== -1) {
-        currentTrackIndex.value = newIndex
-        loadTrack(deviceId.value, newTrackUri)
-      }
-    }
-  }
-)
-
-onMounted(() => {
-  window.onSpotifyWebPlaybackSDKReady = () => {
-    player.value = new Spotify.Player({
-      name: 'Web Playback SDK Quick Start Player',
-      getOAuthToken: (cb) => {
-        cb(localStorage.getItem('access_token'))
-      },
-      volume: volumeStore.volume
-    })
-
-    // Error handling
-    player.value.addListener('initialization_error', ({ message }) => {
-      console.error(message)
-    })
-    player.value.addListener('authentication_error', ({ message }) => {
-      console.error(message)
-    })
-    player.value.addListener('account_error', ({ message }) => {
-      console.error(message)
-    })
-    player.value.addListener('playback_error', ({ message }) => {
-      console.error(message)
-    })
-
-    // Playback status updates
-    player.value.addListener('player_state_changed', (state) => {
-      if (!state) {
-        return
-      }
-      currentTrack.value = state.track_window.current_track
-      isPlaying.value = !state.paused
-      currentTime.value = state.position
-
-      // Check if the track has ended
-      if (state.position === 0 && state.paused && state.track_window.previous_tracks.length > 0) {
-        if (!trackEnded.value) {
-          trackEnded.value = true
-          nextTrack()
-        }
-      } else {
-        trackEnded.value = false
-      }
-    })
-
-    // Ready
-    player.value.addListener('ready', ({ device_id }) => {
-      deviceId.value = device_id // Store the device ID
-      // Load the initial track when the player is ready
-      loadTrack(device_id, props.playlist[currentTrackIndex.value].track.uri)
-    })
-
-    // Not Ready
-    player.value.addListener('not_ready', ({ device_id }) => {
-      console.log('Device ID has gone offline', device_id)
-    })
-
-    // Connect to the player!
-    player.value.connect()
-  }
-
-  // Load the Spotify Web Playback SDK
-  const script = document.createElement('script')
-  script.src = 'https://sdk.scdn.co/spotify-player.js'
-  script.async = true
-  document.body.appendChild(script)
-
-  // Update the current time every second
-  intervalId = setInterval(() => {
-    if (isPlaying.value && player.value) {
-      player.value.getCurrentState().then((state) => {
-        if (state) {
-          currentTime.value = state.position
-        }
-      })
-    }
-  }, 1000)
-})
-
-onUnmounted(() => {
-  if (intervalId) {
-    clearInterval(intervalId)
-  }
-  if (player.value) {
-    player.value.pause()
-    player.value.disconnect()
-    player.value = null
-  }
-})
-
-function togglePlay() {
+const togglePlay = () => {
+  isPlaying.value = !isPlaying.value
+  const audioFile = '/musics/' + currentTrack.value.id + '.mp3'
   if (isPlaying.value) {
-    player.value.pause()
+    volumeStore.playAudio(audioFile)
   } else {
-    player.value.resume()
+    volumeStore.pauseAudio(audioFile)
   }
 }
 
-function previousTrack() {
-  if (currentTrackIndex.value > 0) {
-    currentTrackIndex.value--
-  }
-}
-
-function nextTrack() {
-  if (currentTrackIndex.value < props.playlist.length - 1) {
-    currentTrackIndex.value++
+const previousTrack = () => {
+  const currentIndex = props.playlist.findIndex(track => track.id === currentTrack.value.id)
+  if (currentIndex === 0) {
+    currentTrack.value = props.playlist[props.playlist.length - 1]
   } else {
-    currentTrackIndex.value = 0 // Loop back to the first track if at the end of the playlist
+    currentTrack.value = props.playlist[currentIndex - 1]
   }
 }
 
-async function loadTrack(device_id, trackUri) {
-  const accessToken = localStorage.getItem('access_token')
-
-  try {
-    const response = await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ uris: [trackUri] }),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      }
-    })
-
-    if (!response.ok) {
-      const errorData = await response.json()
-      console.error('Failed to load track:', errorData)
-      throw new Error('Failed to load track')
-    }
-
-    // Pause the player after loading the track
-    await player.value.pause()
-  } catch (error) {
-    console.error('Error loading track:', error)
+const nextTrack = () => {
+  const currentIndex = props.playlist.findIndex(track => track.id === currentTrack.value.id)
+  if (currentIndex === props.playlist.length - 1) {
+    currentTrack.value = props.playlist[0]
+  } else {
+    currentTrack.value = props.playlist[currentIndex + 1]
   }
 }
 
