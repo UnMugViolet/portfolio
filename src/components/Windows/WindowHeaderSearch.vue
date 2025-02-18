@@ -36,7 +36,6 @@ const props = defineProps({
   isSearchVisible: Boolean
 })
 
-
 const formatName = (nameKey) => {
   if (!nameKey) return ''
   // Check if the translation exists

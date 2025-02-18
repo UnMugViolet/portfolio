@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, onUnmounted, watch } from 'vue'
 import { useVolumeStore } from '@/stores/volumeStore'
 
 const props = defineProps({
@@ -52,33 +52,81 @@ const props = defineProps({
 const volumeStore = useVolumeStore()
 const currentTrack = ref(props.playlist[0])
 const isPlaying = ref(false)
-const currentTime = ref(null)
+const currentTime = ref(0)
+const trackTime = ref(0)
+let audioElement = null
+
+const updateCurrentTime = () => {
+  if (audioElement) {
+    currentTime.value = audioElement.currentTime * 1000 // Convert to milliseconds
+  }
+  if (currentTime.value >= currentTrack.value.duration_ms) {
+    nextTrack()
+  }
+}
 
 const togglePlay = () => {
   isPlaying.value = !isPlaying.value
   const audioFile = '/musics/' + currentTrack.value.id + '.mp3'
   if (isPlaying.value) {
     volumeStore.playAudio(audioFile)
+    audioElement = volumeStore.audioElements[audioFile]
+    audioElement.addEventListener('timeupdate', updateCurrentTime)
   } else {
     volumeStore.pauseAudio(audioFile)
+    if (audioElement) {
+      audioElement.removeEventListener('timeupdate', updateCurrentTime)
+    }
   }
 }
 
 const previousTrack = () => {
   const currentIndex = props.playlist.findIndex(track => track.id === currentTrack.value.id)
+  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+  volumeStore.pauseAudio(currentAudioFile)
+  volumeStore.resetAudio(currentAudioFile)
+  currentTime.value = 0
+
+  if (audioElement) {
+    audioElement.removeEventListener('timeupdate', updateCurrentTime)
+  }
+
   if (currentIndex === 0) {
     currentTrack.value = props.playlist[props.playlist.length - 1]
   } else {
     currentTrack.value = props.playlist[currentIndex - 1]
   }
+
+  const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+  if (isPlaying.value) {
+    volumeStore.playAudio(newAudioFile)
+    audioElement = volumeStore.audioElements[newAudioFile]
+    audioElement.addEventListener('timeupdate', updateCurrentTime)
+  }
 }
 
 const nextTrack = () => {
   const currentIndex = props.playlist.findIndex(track => track.id === currentTrack.value.id)
+  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+  volumeStore.pauseAudio(currentAudioFile)
+  volumeStore.resetAudio(currentAudioFile)
+  currentTime.value = 0
+
+  if (audioElement) {
+    audioElement.removeEventListener('timeupdate', updateCurrentTime)
+  }
+
   if (currentIndex === props.playlist.length - 1) {
     currentTrack.value = props.playlist[0]
   } else {
     currentTrack.value = props.playlist[currentIndex + 1]
+  }
+
+  const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+  if (isPlaying.value) {
+    volumeStore.playAudio(newAudioFile)
+    audioElement = volumeStore.audioElements[newAudioFile]
+    audioElement.addEventListener('timeupdate', updateCurrentTime)
   }
 }
 
@@ -87,9 +135,37 @@ function formatTime(ms) {
     return '0:00'
   }
   const minutes = Math.floor(ms / 60000)
-  const seconds = ((ms % 60000) / 1000).toFixed(0)
+  const seconds = Math.floor((ms % 60000) / 1000)
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 }
+
+// watch the  trackToggled prop to play the track if it's different from the current track
+watch(() => props.trackToggled, (newTrack) => {
+  if (newTrack !== currentTrack.value.id) {
+    const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+    volumeStore.pauseAudio(currentAudioFile)
+    volumeStore.resetAudio(currentAudioFile)
+    currentTime.value = 0
+
+    if (audioElement) {
+      audioElement.removeEventListener('timeupdate', updateCurrentTime)
+    }
+
+    currentTrack.value = props.playlist.find(track => track.id === newTrack)
+    const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+    if (isPlaying.value) {
+      volumeStore.playAudio(newAudioFile)
+      audioElement = volumeStore.audioElements[newAudioFile]
+      audioElement.addEventListener('timeupdate', updateCurrentTime)
+    }
+  }
+})
+
+onUnmounted(() => {
+  if (audioElement) {
+    audioElement.removeEventListener('timeupdate', updateCurrentTime)
+  }
+})
 </script>
 
 <style scoped>
