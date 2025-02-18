@@ -22,10 +22,8 @@ If you encounter any bugs it will be really helpfull if you could provide the or
 **This design was not made by me**.
 All the icons, wallpaper and sounds belong to windows corporation, so there's nothing I've created here. All I did was copy and apply the design for the web.
 
-**The music component is broken**.
-It is for now "normal". I am still waiting for my spotify extension request to be approuved. That could allow users that are not on the whitelist to login to the spotify portal and use the player. I'll be working on a way to look at my playlist without the spotify API for those that do not have an account.
-
-_(If you want to test it feel free to ask using the contact form providing your email used on your Spotify account, I will add you to the whitelist and email you back)_
+**The music component is ~~broken~~ working**.
+I've been waiting for the Spotify team to review my application for extension request, first review was mentionning the usage of old logo of spotify, they were right there is some guidelines about the graphics and I complied, second review said basically that there will not be enough user for that use case. I put all the code to the trash and start all over with songs played locally. 
 
 ## ✨ Features
 
@@ -39,7 +37,7 @@ _(If you want to test it feel free to ask using the contact form providing your 
 - MyCv
 - My Images
 - My Calendar
-- Listen to my playlist using Spotify API _(still not working yet)_
+- Listen to my playlist
 - Manage the volume in the website
 
 ## ⚡️ Consumption
