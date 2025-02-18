@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 const emit = defineEmits(['submit'])
 
@@ -24,7 +24,6 @@ const classes = computed(() => {
     return 'inline-flex items-center text-xs border border-twilight-blue bg-button-submit rounded-sm leading-none px-5 py-0.5 min-h-6 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked font-trebuchet-pixel text-black'
   }
 })
-
 </script>
 
 <template>
@@ -35,10 +34,7 @@ const classes = computed(() => {
     @click="handleClick"
     :type="href ? null : 'button'"
     :rel="blank ? 'noopener noreferrer' : null"
-    :class="[
-      classes,
-      isLoading ? 'cursor-wait' : 'cursor-default'
-    ]"
+    :class="[classes, isLoading ? 'cursor-wait' : 'cursor-default']"
   >
     <slot />
   </component>

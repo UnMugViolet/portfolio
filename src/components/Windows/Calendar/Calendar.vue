@@ -68,7 +68,7 @@ watch(
 
 async function fetchEvents() {
   const icsFile = '/calendar/calendar-' + localeStore.currentLocale + '.ics'
-  
+
   try {
     const response = await fetch(icsFile)
     if (!response.ok) {
