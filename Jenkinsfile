@@ -75,7 +75,7 @@ pipeline {
                 def authorEmails = commitHashes.collect { hash ->
                     return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
                 }.unique().findAll { email ->
-                    !email.contains("noreply")
+                    !email.matches(".*noreply.*")
                 }
 
                 // Remove the sysadmin email if present
