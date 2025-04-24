@@ -160,7 +160,6 @@ const toggleMaximize = () => {
 }
 
 const closeWindow = () => {
-  console.log('close-window')
   emit('close-window')
 }
 

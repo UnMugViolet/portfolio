@@ -32,7 +32,10 @@
     "years": "ans",
     "webdev": "Développeur web",
     "textDocument": "Document texte",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "language": "Langue",
+    "french": "Français",
+    "english": "Anglais"
   },
   "message": {
     "welcome": "Bienvenue sur mon ordinateur.",
