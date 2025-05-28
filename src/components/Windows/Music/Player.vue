@@ -49,6 +49,7 @@ const props = defineProps({
   trackToggled: String
 })
 
+
 const volumeStore = useVolumeStore()
 const currentTrack = ref(props.playlist[0])
 const isPlaying = ref(false)
@@ -165,6 +166,11 @@ onUnmounted(() => {
   if (audioElement) {
     audioElement.removeEventListener('timeupdate', updateCurrentTime)
   }
+  // Reset component state if window is closed 
+  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
+  volumeStore.pauseAudio(currentAudioFile)
+  volumeStore.resetAudio(currentAudioFile)
+  currentTime.value = 0
 })
 </script>
 
