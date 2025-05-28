@@ -32,7 +32,10 @@
     "years": "years old",
     "webdev": "Web developper",
     "textDocument": "Text Document",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "language": "Language",
+      "french": "French",
+    "english": "English"
   },
   "message": {
     "welcome": "Welcome to my computer.",

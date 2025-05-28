@@ -19,7 +19,7 @@ const closeNotificationModal = () => {
   <Transition>
     <div
       v-if="showNotificationModal"
-      class="bubble absolute right-16 md:right-20 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-9 pb-2.5 pl-2.5 text-black"
+      class="bubble absolute right-12 md:right-16 bottom-11 border border-black bg-light-yellow rounded-lg text-xs whitespace-nowrap py-1.5 pr-9 pb-2.5 pl-2.5 text-black"
     >
       <button @click="closeNotificationModal" class="modal-close cursor-pointer"></button>
       <div class="flex items-center">
