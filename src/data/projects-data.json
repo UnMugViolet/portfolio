@@ -65,6 +65,21 @@
           "componentName": "Emc2Content",
           "isFocus": false,
           "isActive": false
+        },
+        {
+          "name": "Aidella",
+          "icon": "projects/folder-emc2-icon.webp",
+          "title": {
+            "en": "Les Terres d'Aidella - Blog website",
+            "fr": "Les Terres d'Aidella - Site web / Blog"
+          },
+          "date": {
+            "en": "2025 - 3 weeks",
+            "fr": "2025 - 3 semaines"
+          },
+          "componentName": "AidellaContent",
+          "isFocus": false,
+          "isActive": false
         }
       ]
     },
