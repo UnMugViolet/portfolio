@@ -10,6 +10,7 @@ import ClenchContent from '@/components/Windows/MyProjects/ClenchContent.vue'
 import LogmaContent from '@/components/Windows/MyProjects/LogmaContent.vue'
 import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 import Emc2Content from './MyProjects/Emc2Content.vue'
+import AidellaContent from './MyProjects/AidellaContent.vue'
 
 const props = defineProps({
   leftMenuType: String
@@ -76,7 +77,8 @@ const componentMap = {
   ClenchContent,
   LogmaContent,
   PangaiaContent,
-  Emc2Content
+  Emc2Content,
+  AidellaContent
 }
 
 // Computed property that returns the component object based on the componentName of the selected project
