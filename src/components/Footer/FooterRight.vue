@@ -60,7 +60,7 @@ const handleClickOutside = (event) => {
     isVolumeSettingsDisplayed.value = false
   }
   if (languageModalRef.value && !languageModalRef.value.$el.contains(target)) {
-    isLanguageSettingsDisplayed.value = false;
+    isLanguageSettingsDisplayed.value = false
   }
 }
 
@@ -92,13 +92,13 @@ const flagSrc = computed(() => {
 <template>
   <div class="absolute right-0 text-white h-full flex items-center px-1.5 sm:px-3 gap-0.5 bg-footer-right-component footer-left-shadow select-none">
     <div class="flex flex-row items-center justify-center gap-px">
-      <img 
-        class="w-4 h-3 cursor-pointer " 
+      <img
+        class="w-4 h-3 cursor-pointer"
         :src="flagSrc"
-        :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]" 
+        :alt="$t('alt.currLang') + ' ' + localeNames[currentLocale]"
         :title="$t('alt.currLang') + ' ' + localeNames[currentLocale]"
         @click="toggleLanguageModal"
-        />
+      />
     </div>
     <img class="w-4 h-4 cursor-pointer" src="/img/icons/full-screen-icon-sm.webp" alt="Mode plein écran" :title="originalTitle" @click="enterFullScreen" />
     <img class="w-4 h-4 mt-px cursor-pointer" :src="volumeIconSrc" alt="Gestion du volume" title="Gestion du volume" @click.stop="toggleMusicModal" />
@@ -108,4 +108,3 @@ const flagSrc = computed(() => {
     <CurrentTime />
   </div>
 </template>
-

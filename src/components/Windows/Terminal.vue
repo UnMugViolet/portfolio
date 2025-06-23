@@ -1,9 +1,10 @@
 <template>
   <div class="relative right-0 h-full flex">
     <div
-      @click="focusInput" 
+      @click="focusInput"
       ref="terminalContainer"
-      class="w-full h-full pt-6 mt-0.5 bg-black overflow-y-scroll outline-none resize-none px-1 font-trebuchet-pixel text-sm hover:cursor-text">
+      class="w-full h-full pt-6 mt-0.5 bg-black overflow-y-scroll outline-none resize-none px-1 font-trebuchet-pixel text-sm hover:cursor-text"
+    >
       <div v-for="(entry, index) in history" :key="index">
         <div class="flex items-center">
           <span class="text-white font-bold mr-1 text-sm">C:\></span>
@@ -28,123 +29,122 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import { useConnectionStore } from '@/stores/connectionStore'
-import terminalData from '@/data/terminal-data.json';
+import terminalData from '@/data/terminal-data.json'
 
-const history = ref([]);
-const commandHistory = ref([]);
-const currentCommand = ref('');
-const commandInput = ref(null);
-const terminalContainer = ref(null);
-const availableCommands = ['help', 'clear', 'dir', 'ipconfig', 'systeminfo', 'Get-Disk', 'sudo', 'rm'];
-const historyIndex = ref(-1);
-const router = useRouter();
+const history = ref([])
+const commandHistory = ref([])
+const currentCommand = ref('')
+const commandInput = ref(null)
+const terminalContainer = ref(null)
+const availableCommands = ['help', 'clear', 'dir', 'ipconfig', 'systeminfo', 'Get-Disk', 'sudo', 'rm']
+const historyIndex = ref(-1)
+const router = useRouter()
 const connectionStore = useConnectionStore()
 
-
 const executeCommand = async () => {
-  if (currentCommand.value.trim() === '') return;
+  if (currentCommand.value.trim() === '') return
 
-  const command = currentCommand.value.trim();
-  commandHistory.value.push(command);
-  historyIndex.value = commandHistory.value.length;
-  let output = '';
+  const command = currentCommand.value.trim()
+  commandHistory.value.push(command)
+  historyIndex.value = commandHistory.value.length
+  let output = ''
 
   // Handle the command execution logic here
   switch (command) {
     case 'help':
-      output = 'Available commands:\n' + availableCommands.join('\t');
-      break;
+      output = 'Available commands:\n' + availableCommands.join('\t')
+      break
     case 'clear':
-      history.value = [];
-      currentCommand.value = '';
-      await nextTick();
-      scrollToBottom();
-      return;
+      history.value = []
+      currentCommand.value = ''
+      await nextTick()
+      scrollToBottom()
+      return
     case 'systeminfo':
-      output = terminalData.systeminfo.result;
-      currentCommand.value = '';
-      break;
+      output = terminalData.systeminfo.result
+      currentCommand.value = ''
+      break
     case 'Get-Disk':
-      output = terminalData.diskinfo.result;
-      currentCommand.value = '';
-      break;
+      output = terminalData.diskinfo.result
+      currentCommand.value = ''
+      break
     case 'dir':
-      output = terminalData.dir.result;
-      currentCommand.value = '';
-      break;
+      output = terminalData.dir.result
+      currentCommand.value = ''
+      break
     case 'ipconfig':
-      output = terminalData.ipconfig.result;
-      currentCommand.value = '';
-      break;
+      output = terminalData.ipconfig.result
+      currentCommand.value = ''
+      break
     case 'sudo':
     case 'rm':
-      output = terminalData.hint.result;
-      currentCommand.value = '';
-      break;
+      output = terminalData.hint.result
+      currentCommand.value = ''
+      break
     case 'sudo rm -rf /':
-      output = terminalData.meme.result;
-      currentCommand.value = '';
-      connectionStore.status = 'restart';
+      output = terminalData.meme.result
+      currentCommand.value = ''
+      connectionStore.status = 'restart'
       setTimeout(() => {
-        router.push('/');
-      }, 2000);
-      break;
+        router.push('/')
+      }, 2000)
+      break
     default:
-      output = `${command}` + terminalData.error  ;
+      output = `${command}` + terminalData.error
   }
 
-  history.value.push({ command, output });
-  currentCommand.value = '';
-  await nextTick();
-  scrollToBottom();
-};
+  history.value.push({ command, output })
+  currentCommand.value = ''
+  await nextTick()
+  scrollToBottom()
+}
 
 const focusInput = () => {
-  commandInput.value.focus();
-};
+  commandInput.value.focus()
+}
 
 const autoComplete = () => {
-  const input = currentCommand.value.trim();
-  if (input === '') return;
+  const input = currentCommand.value.trim()
+  if (input === '') return
 
-  const matches = availableCommands.filter(cmd => cmd.startsWith(input));
+  const matches = availableCommands.filter((cmd) => cmd.startsWith(input))
 
   if (matches.length === 1) {
-    currentCommand.value = matches[0];
+    currentCommand.value = matches[0]
   } else if (matches.length > 1) {
-    const possibilities = matches.join(', ');
-    history.value.push({ command: input, output: `${possibilities}` });
+    const possibilities = matches.join(', ')
+    history.value.push({ command: input, output: `${possibilities}` })
   }
-};
+}
 
 const formatOutput = (output) => {
-  let formattedOutput = output.replace(/\n/g, '<br>');
-  formattedOutput = formattedOutput.replace(/\t/g, '&emsp;');
-  formattedOutput = formattedOutput.replace(/\f/g, '&ensp;');
-  return formattedOutput;
-};
+  let formattedOutput = output.replace(/\n/g, '<br>')
+  formattedOutput = formattedOutput.replace(/\t/g, '&emsp;')
+  formattedOutput = formattedOutput.replace(/\f/g, '&ensp;')
+  return formattedOutput
+}
 
 const getPreviousCommand = () => {
   if (historyIndex.value > 0) {
-    historyIndex.value--;
-    currentCommand.value = commandHistory.value[historyIndex.value];
+    historyIndex.value--
+    currentCommand.value = commandHistory.value[historyIndex.value]
   }
-};
+}
 
 const getNextCommand = () => {
   if (historyIndex.value < commandHistory.value.length - 1) {
-    historyIndex.value++;
-    currentCommand.value = commandHistory.value[historyIndex.value];
+    historyIndex.value++
+    currentCommand.value = commandHistory.value[historyIndex.value]
   } else {
-    historyIndex.value = commandHistory.value.length;
-    currentCommand.value = '';
+    historyIndex.value = commandHistory.value.length
+    currentCommand.value = ''
   }
-};
+}
 
 const scrollToBottom = () => {
-  terminalContainer.value.scrollTop = terminalContainer.value.scrollHeight;
-};
+  terminalContainer.value.scrollTop = terminalContainer.value.scrollHeight
+}
 </script>
