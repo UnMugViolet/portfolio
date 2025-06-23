@@ -1,7 +1,7 @@
 {
   "diskinfo": {
     "result": "NAME\t\t\tMAJ:MIN\fRM\tSIZE\tRO\fTYPE\fMOUNTPOINTS\nnvme0n1\t\t\t 259:0\t0\t953,9G\t0\tdisk\n├─nvme0n1p1\t 259:1\t0\f\f\f\f260M\t0\tpart\t/boot/efi\n├─nvme0n1p2\t259:2\t0\f\f\f\f\f16M\t0\tpart \n├─nvme0n1p3\t259:3\t0\t935,4G\t0\t part \n├─nvme0n1p4\t259:4\t0\t\t\t1G\t0\t part \n└─nvme0n1p5\t259:5\t0\f\f\f17,2G\f\f0\t part \nnvme1n1\f\t\t\t259:6\t0\t953,9G\t0\t disk \n├─nvme1n1p1\t\f259:7\t0\t817,1G\t0\t part"
-    },
+  },
   "systeminfo": {
     "result": "OS: Windows XP\nHost: XPS 15 9500\nUptime: 15  45 hours, 47 min\nCPU: Intel i7-10875H\nGPU: Nvidia 3070Ti\nMemory: 3943MiB / 15752MiB"
   },

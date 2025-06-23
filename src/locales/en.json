@@ -34,7 +34,7 @@
     "textDocument": "Text Document",
     "loading": "Loading...",
     "language": "Language",
-      "french": "French",
+    "french": "French",
     "english": "English"
   },
   "message": {
