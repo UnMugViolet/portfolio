@@ -27,7 +27,7 @@
       </div>
       <div class="flex flex-col items-center flex-wrap">
         <img src="/img/icons/projects/tools/jenkins.svg" :alt="$t('common.icon') + ' jenkins'" class="w-9 h-9" />
-        <p class="font-bold mt-px">Jenkins</p>
+        <p class="font-bold mt-px">CI / CD</p>
       </div>
         <div class="flex flex-col items-center flex-wrap">
         <img src="/img/icons/projects/tools/sonarqube.svg" :alt="$t('common.icon') + ' sonarqube'" class="w-7 h-7" />
