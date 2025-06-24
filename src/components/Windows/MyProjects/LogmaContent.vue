@@ -18,7 +18,7 @@
         <p class="font-bold mt-px">MYSQL</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <img src="/img/icons/projects/tools/filezilla.svg" :alt="$t('common.icon') + ' filezilla'" class="w-9 h-9" />
+        <img src="/img/icons/projects/tools/filezilla.svg" :alt="$t('common.icon') + ' filezilla'" class="w-8 h-9" />
         <p class="font-bold mt-0.5">Filezilla</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
