@@ -1,40 +1,16 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const iframeSrc = ref('')
-
-onMounted(() => {
-  iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
-    &embed_origin=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
-    &url=https://www.figma.com/file/JtNcrLNPgleQ1bsaPgb9nb/Clench`
-})
-</script>
-
 <template>
   <div class="text-xs">
     <div class="flex w-full items-center justify-center md:justify-start ml-px flex-wrap gap-4 md:min-w-80 md:ml-1">
       <div class="flex flex-col items-center flex-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-          <path fill="#000000" d="M2 3h3.5L12 15l6.5-12H22L12 21zm4.5 0h3L12 7.58L14.5 3h3L12 13.08z" />
-        </svg>
+        <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vuejs'" class="w-9 h-9" />
         <p class="font-bold mt-px">Vue.js</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-          <path
-            fill="#000000"
-            d="M12 6c-2.67 0-4.33 1.33-5 4c1-1.33 2.17-1.83 3.5-1.5c.76.19 1.31.74 1.91 1.35c.98 1 2.09 2.15 4.59 2.15c2.67 0 4.33-1.33 5-4c-1 1.33-2.17 1.83-3.5 1.5c-.76-.19-1.3-.74-1.91-1.35C15.61 7.15 14.5 6 12 6m-5 6c-2.67 0-4.33 1.33-5 4c1-1.33 2.17-1.83 3.5-1.5c.76.19 1.3.74 1.91 1.35C8.39 16.85 9.5 18 12 18c2.67 0 4.33-1.33 5-4c-1 1.33-2.17 1.83-3.5 1.5c-.76-.19-1.3-.74-1.91-1.35C10.61 13.15 9.5 12 7 12"
-          />
-        </svg>
+        <img src="/img/icons/projects/tools/tailwind.svg" :alt="$t('common.icon') + ' tailwind'" class="w-9 h-9" />
         <p class="font-bold mt-px">Tailwind</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 24 24">
-          <path
-            fill="#000000"
-            d="M22.219 11.784L11.784 22.219a1.045 1.045 0 0 0 1.476 1.476L23.695 13.26a1.045 1.045 0 0 0-1.476-1.476M20.132.305L.305 20.132a1.045 1.045 0 0 0 1.476 1.476L21.608 1.781A1.045 1.045 0 0 0 20.132.305"
-          />
-        </svg>
+        <img src="/img/icons/projects/tools/shadcn.svg" :alt="$t('common.icon') + ' shadcn'" class="w-6 h-9" />
         <p class="font-bold mt-px">shadcn/ui</p>
       </div>
     </div>
@@ -71,16 +47,24 @@ onMounted(() => {
   </div>
   <a
     rel="noopener"
-    href="https://clench-fakeapp.vercel.app/"
+    href="https://homepage.rocketegg.systems"
     target="_blank"
     class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked flex items-center justify-center"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-0.5" viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"
-      />
-    </svg>
+    <img src="/img/icons/projects/tools/web.svg" :alt="$t('buttons.linkWebSite') + ' ' +  ProjectName" class="w-3 h-3 mr-0.5"/>
     {{ $t('buttons.linkWebSite') }}
   </a>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const iframeSrc = ref('')
+let ProjectName = 'Clench'
+
+onMounted(() => {
+  iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
+    &embed_origin=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}
+    &url=https://www.figma.com/file/JtNcrLNPgleQ1bsaPgb9nb/Clench`
+})
+</script>

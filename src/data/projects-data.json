@@ -44,8 +44,8 @@
             "fr": "Clench - Application web"
           },
           "date": {
-            "en": "2024",
-            "fr": "2024"
+            "en": "2024 - 2 weeks",
+            "fr": "2024 - 2 semaines"
           },
           "componentName": "ClenchContent",
           "isFocus": false,
@@ -68,7 +68,7 @@
         },
         {
           "name": "Aidella",
-          "icon": "projects/folder-emc2-icon.webp",
+          "icon": "projects/folder-aidella-icon.webp",
           "title": {
             "en": "Les Terres d'Aidella - Blog website",
             "fr": "Les Terres d'Aidella - Site web / Blog"
