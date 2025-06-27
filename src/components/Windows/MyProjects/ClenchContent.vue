@@ -1,8 +1,8 @@
 <template>
-  <div class="text-xs">
-    <div class="flex w-full items-center justify-center md:justify-start ml-px flex-wrap gap-4 md:min-w-80 md:ml-1">
+  <div class="text-xs md:text-header-window">
+    <div class="flex text-xxs md:text-xs w-full items-center justify-center md:justify-start ml-px flex-wrap gap-4 md:min-w-80 md:ml-1">
       <div class="flex flex-col items-center flex-wrap">
-        <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vuejs'" class="w-9 h-9 p-px" />
+        <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vuejs'" class="w-9 h-9" />
         <p class="font-bold mt-px">Vue.js</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
@@ -47,7 +47,7 @@
   </div>
   <a
     rel="noopener"
-    href="https://clench-fakeapp.vercel.app"
+    href="https://homepage.rocketegg.systems"
     target="_blank"
     class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked flex items-center justify-center"
   >

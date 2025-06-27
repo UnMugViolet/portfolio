@@ -1,31 +1,29 @@
 <template>
-  <div class="text-xs">
-    <div class="w-full">
-      <div class="flex w-42 md:w-96 md:gap-0 gap-3 items-center md:justify-between justify-center flex-wrap">
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/truenas.svg" :alt="$t('common.icon') + ' truenas'" class="w-9 h-9" />
-          <p class="font-bold">TrueNas Scale</p>
-        </div>
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/kubernetes.svg" :alt="$t('common.icon') + ' kubernetes'" class="w-9 h-9" />
-          <p class="font-bold">Kubernetes</p>
-        </div>
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/docker.svg" :alt="$t('common.icon') + ' docker'" class="w-9 h-9" />
-          <p class="font-bold mb-px">Docker</p>
-        </div>
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/bash.svg" :alt="$t('common.icon') + ' bash'" class="w-9 h-9 p-0.5" />
-          <p class="font-bold">Bash</p>
-        </div>
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/cpu.svg" :alt="$t('common.icon') + ' cpu'" class="w-9 h-9" />
-          <p class="font-bold">Hardware</p>
-        </div>
-        <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/jenkins.svg" :alt="$t('common.icon') + ' jenkins'" class="w-9 h-9" />
-          <p class="font-bold mt-px">CI / CD</p>
-        </div>
+  <section class="text-xs md:text-header-window">
+    <div class="flex w-full text-xxs md:text-xs items-center justify-center md:justify-start ml-px flex-wrap gap-4 md:min-w-80 md:ml-1">
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/truenas.svg" :alt="$t('common.icon') + ' truenas'" class="w-9 h-9" />
+        <p class="font-bold">TrueNas Scale</p>
+      </div>
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/kubernetes.svg" :alt="$t('common.icon') + ' kubernetes'" class="w-9 h-9" />
+        <p class="font-bold">Kubernetes</p>
+      </div>
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/docker.svg" :alt="$t('common.icon') + ' docker'" class="w-10 h-10" />
+        <p class="font-bold mb-px">Docker</p>
+      </div>
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/bash.svg" :alt="$t('common.icon') + ' bash'" class="w-9 h-9" />
+        <p class="font-bold">Bash</p>
+      </div>
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/cpu.svg" :alt="$t('common.icon') + ' cpu'" class="w-9 h-9" />
+        <p class="font-bold">Hardware</p>
+      </div>
+      <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/jenkins.svg" :alt="$t('common.icon') + ' jenkins'" class="w-9 h-9" />
+        <p class="font-bold mt-px">CI / CD</p>
       </div>
     </div>
     <video controls autoplay muted loop width="400" class="mt-5">
@@ -49,7 +47,7 @@
     </ul>
     <h3 class="mt-5 mb-1">{{ $t('common.techInfo') }}</h3>
     <p class="mb-5 text-xs underline">{{ $t('common.componentsDot') }}</p>
-    <div class="grid grid-cols-3 border border-black">
+    <div class="grid grid-cols-3 text-xs border border-black">
       <div class="bg-gray-200 border border-black p-2">{{ $t('common.components') }}</div>
       <div class="bg-gray-200 border border-black p-2">{{ $t('common.models') }}</div>
       <div class="bg-gray-200 border border-black p-2">{{ $t('common.links') }}</div>
@@ -120,7 +118,7 @@
         <a target="_blank" rel="noopener" class="text-purple-600" href="https://a.aliexpress.com/_mr1DWz0">{{ $t('common.viewModel') }}</a>
       </div>
     </div>
-  </div>
+  </section>
   <p class="mb-2 mt-5 text-xs underline">HDD :</p>
   <div class="grid grid-cols-4 border border-black mt-5 text-xs">
     <div class="bg-gray-200 border border-black p-2">{{ $t('common.disks') }}</div>

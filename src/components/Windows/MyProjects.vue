@@ -130,7 +130,7 @@ window.addEventListener('click', (e) => {
     <div v-if="goBackStore.currentActiveProject" class="w-full h-full bg-white overflow-auto overflow-x-hidden pb-8 md:pb-5">
       <div class="m-2">
         <div class="w-full gap-4 mb-3">
-          <h2>{{ localizedTitle }}</h2>
+          <h2 class="text-lg md:text-xl">{{ localizedTitle }}</h2>
           <div class="flex items-center text-sm gap-0.5 mt-1" v-if="goBackStore.currentActiveProject.date">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
               <path
@@ -138,7 +138,7 @@ window.addEventListener('click', (e) => {
                 d="M9 10v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2zm2-7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h1V1h2v2h8V1h2v2zm0 16V8H5v11zM9 14v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2z"
               />
             </svg>
-            <h2>{{ localizedDate }}</h2>
+            <h2 class="text-sm md:text-base">{{ localizedDate }}</h2>
           </div>
         </div>
         <!-- Component for the content is loaded there -->

@@ -32,6 +32,8 @@
     "years": "ans",
     "webdev": "Développeur web",
     "textDocument": "Document texte",
+    "list": "Liste",
+    "modifications": "Modifications",
     "loading": "Chargement...",
     "language": "Langue",
     "french": "Français",
@@ -143,10 +145,10 @@
     "logma": {
       "contextFirstParagraph": "Logma production est une société de production audiovisuelle basée à Rennes. Fondée par Baptiste Fablet. Au début de ce projet, il existait déjà un site logma production fait par le gérant avec un site sous Wordpress.",
       "contextSecondParagraph": "La décision a été prise de refaire ce site de 0, avec une stack technique simple et éprouvée, tenter de faire un site web sans Framework et sans assistance quelquonce afin de le rendre rapide et efficace.",
-      "contextThirdParagraph": "Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un backoffice depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos",
+      "contextThirdParagraph": "Dans le but de rendre le gérant autonome sur la gestion de ce site il a fallu développer un back-office depuis lequel il pourrait publier de nouvelles photos, ajouter des projets et les liens vers ses vidéos",
       "goalFirst": "Refonte du site web avec l'identité graphique déjà en place",
       "goalSecond": "Créer un site web responsive",
-      "goalThird": "Développer un backoffice pour la gestion du site",
+      "goalThird": "Développer un back-office pour la gestion du site",
       "goalFourth": "Optimiser le SEO",
       "goalFifth": "Améliorer la vitesse de chargement et les performances au global",
       "goalSixth": "Le mettre en production"
@@ -196,9 +198,26 @@
       "goalSixth": "Optimiser la navigation pour une meilleure expérience utilisateur."
     },
     "aidella": {
-      "contextFirstParagraph": "Les Terres d'Aidella est une élevage canin situé dans les Vosges, ",
-      "contextSecondParagraph": "Aidella",
-      "contextThirdParagraph": "Le projet s’est basé sur une maquette du webdesigner de Screenup, en accord avec l’identité visuelle et les besoins du client."
+      "contextFirstParagraph": "Les Terres d'Aidella est un élevage canin situé dans les Vosges. Des passionnés d'animaux qui ont pour but de partager leur passion et leur savoir-faire avec le plus grand nombre.",
+      "contextSecondParagraph": "Le hic, c'est que leur présence sur le web était très limitée, et qu'ils n'avaient aucun support pour présenter leur activité en ligne, hormis leur page Facebook.",
+      "contextThirdParagraph": "Nous avons donc remédié à cela avec Nathan Fournil en charge de la création de contenu et de la rédaction, et moi-même en charge du design, du développement du site web ainsi que de sa mise en ligne.",
+      "goalFirst": "Avoir une présence sur le web",
+      "goalSecond": "Amener de la visibilité en travaillant le SEO",
+      "goalThird": "Développer un back-office pour la gestion du contenu",
+      "goalFourth": "Avoir une interface intuitive et esthétique pour les visiteurs",
+      "goalFifth": "Permettre aux visiteurs de découvrir les races de chiens",
+      "goalSixth": "Présenter l'élevage et ses activités",
+      "tasksDoneFirst": "Conception et modélisation de la base de données relationnelle",
+      "tasksDoneFirstDetails": "Il a fallu prendre en compte les besoins du client et proposer une modélisation robuste et évolutive.",
+      "tasksDoneSecond": "Développement backend avec Laravel",
+      "tasksDoneSecondDetails": "Le choix de Laravel, utilisant le pattern MVC et une base de données MySQL, constitue une stack robuste permettant de réaliser le projet et de l'améliorer dans le futur. En complément, l'utilisation d'Orchid pour le back-office a simplifié la gestion du contenu.",
+      "tasksDoneThird": "La partie front-end a été développée avec Vue.js",
+      "tasksDoneThirdDetails": "Chaque page est une page Blade, dépendante d’un modèle de page contenant toutes les balises de métadonnées, ce qui évite de passer par Vue pour la gestion du SEO.",
+      "tasksDoneFourth": "Développement du back-office",
+      "tasksDoneFourthDetails": "Orchid permet de gérer facilement les contenus : il est possible de créer des pages, des articles, des catégories, des images, des utilisateurs, etc., le tout via une interface intuitive et simple à utiliser.",
+      "tasksDoneFifth": "Mise en place d’un pipeline de déploiement sur un serveur web tiers",
+      "tasksDoneFifthDetails": "Grâce au projet Homeserver, le projet peut être précompilé avec Jenkins et l’artefact envoyé sur le serveur de production. Une simple modification sur la branche `main` du dépôt Git suffit à mettre le site à jour automatiquement. La base de données est également mise à jour via les migrations grâce à la commande `make deploy` du Makefile.",
+      "tasksDoneFifthDetailsSecond": "Cette méthode permet un réel gain de temps, sans nécessiter npm ni aucun gestionnaire de paquets JS sur le serveur de production."
     },
     "homeserver": {
       "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",
