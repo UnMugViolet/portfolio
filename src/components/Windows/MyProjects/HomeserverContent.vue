@@ -15,7 +15,7 @@
           <p class="font-bold mb-px">Docker</p>
         </div>
         <div class="flex flex-col items-center flex-wrap">
-          <img src="/img/icons/projects/tools/bash.svg" :alt="$t('common.icon') + ' bash'" class="w-9 h-9" />
+          <img src="/img/icons/projects/tools/bash.svg" :alt="$t('common.icon') + ' bash'" class="w-9 h-9 p-0.5" />
           <p class="font-bold">Bash</p>
         </div>
         <div class="flex flex-col items-center flex-wrap">
