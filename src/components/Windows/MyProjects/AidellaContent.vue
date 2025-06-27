@@ -6,8 +6,12 @@
         <p class="font-bold mt-px">Laravel</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vue.js'" class="w-9 h-9" />
+        <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vue.js'" class="w-9 h-9 p-px" />
         <p class="font-bold mt-px">Vue.js</p>
+      </div>
+        <div class="flex flex-col items-center flex-wrap">
+        <img src="/img/icons/projects/tools/orchid.svg" :alt="$t('common.icon') + ' vue.js'" class="w-9 h-9 p-0.75" />
+        <p class="font-bold mt-px">Orchid</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
         <img src="/img/icons/projects/tools/tailwind.svg" :alt="$t('common.icon') + ' tailwind'" class="w-9 h-9" />
@@ -26,7 +30,7 @@
         <p class="font-bold mt-px">VsCode</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <img src="/img/icons/projects/tools/jenkins.svg" :alt="$t('common.icon') + ' jenkins'" class="w-9 h-9" />
+        <img src="/img/icons/projects/tools/jenkins.svg" :alt="$t('common.icon') + ' jenkins'" class="w-9 h-auto p-px" />
         <p class="font-bold mt-px">CI / CD</p>
       </div>
         <div class="flex flex-col items-center flex-wrap">
@@ -35,10 +39,10 @@
       </div>
     </div>
     <h3 class="mt-5 mb-2 text-lg">{{ $t('common.context') }}</h3>
-    <p class="mb-2">{{ $t('project.emc2.contextFirstParagraph') }}</p>
-    <p class="mb-2">{{ $t('project.emc2.contextSecondParagraph') }}</p>
-    <p class="mb-2">{{ $t('project.emc2.contextThirdParagraph') }}</p>
-    <p class="mb-2">{{ $t('project.emc2.contextFourthParagraph') }}</p>
+    <p class="mb-2">{{ $t('project.aidella.contextFirstParagraph') }}</p>
+    <p class="mb-2">{{ $t('project.aidella.contextSecondParagraph') }}</p>
+    <p class="mb-2">{{ $t('project.aidella.contextThirdParagraph') }}</p>
+    <p class="mb-2">{{ $t('project.aidella.contextFourthParagraph') }}</p>
     <h3 class="mt-5 mb-2">{{ $t('common.objectives') }}</h3>
     <ul class="list-disc ml-3">
       <li>{{ $t('project.emc2.goalFirst') }}</li>

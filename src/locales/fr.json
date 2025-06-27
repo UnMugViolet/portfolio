@@ -195,6 +195,11 @@
       "goalFifth": "Déployer les mises à jour en production via SSH.",
       "goalSixth": "Optimiser la navigation pour une meilleure expérience utilisateur."
     },
+    "aidella": {
+      "contextFirstParagraph": "Les Terres d'Aidella est une élevage canin situé dans les Vosges, ",
+      "contextSecondParagraph": "Aidella",
+      "contextThirdParagraph": "Le projet s’est basé sur une maquette du webdesigner de Screenup, en accord avec l’identité visuelle et les besoins du client."
+    },
     "homeserver": {
       "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",
       "contextSecondParagraph": "Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.",

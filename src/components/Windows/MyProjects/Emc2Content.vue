@@ -14,7 +14,7 @@
         <p class="font-bold mt-px">VsCode</p>
       </div>
       <div class="flex flex-col items-center flex-wrap">
-        <img src="/img/icons/projects/tools/ssh.svg" :alt="$t('common.icon') + ' Visual Studio Code'" class="w-9 h-9" />
+        <img src="/img/icons/projects/tools/ssh.svg" :alt="$t('common.icon') + ' Visual Studio Code'" class="w-9 h-9 p-0.5" />
         <p class="font-bold mt-px">SSH</p>
       </div>
     </div>

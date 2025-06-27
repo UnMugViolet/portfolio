@@ -59,9 +59,6 @@ const handleClickOutside = (event) => {
   if (musicModalRef.value && !musicModalRef.value.$el.contains(target)) {
     isVolumeSettingsDisplayed.value = false
   }
-  if (languageModalRef.value && !languageModalRef.value.$el.contains(target)) {
-    isLanguageSettingsDisplayed.value = false
-  }
 }
 
 onMounted(() => {
