@@ -1,6 +1,6 @@
 <template>
-  <div class="text-xs">
-    <div class="flex w-full items-center justify-center md:justify-start flex-wrap gap-4 md:min-w-80 md:ml-1">
+  <div class="text-xs md:text-header-window">
+    <div class="flex text-xxs md:text-xs w-full items-center justify-center md:justify-start flex-wrap gap-4 md:min-w-80 md:ml-1">
       <div class="flex flex-col items-center flex-wrap">
         <img src="/img/icons/projects/tools/vuejs.svg" :alt="$t('common.icon') + ' vuejs'" class="w-9 h-9 p-px" />
         <p class="font-bold mt-px">Vue.js</p>
@@ -100,24 +100,24 @@
     </div>
     <div class="mb-2">
       <h3 class="mt-5">{{ $t('common.CDM') }}</h3>
-      <p class="italic text-gray-500 text-xxs mb-px">
+      <p class="italic text-gray-500 text-xxs md:text-xs mb-px">
         {{ $t('project.pangaia.CDMText') }}
       </p>
-      <img src="/img/projects/pangaia/pangaia-database-MCD.webp " alt="Modèle conceptuel de données - Pangaia" class="w-full max-w-[750px]" />
+      <img src="/img/projects/pangaia/pangaia-database-MCD.webp " :alt="$t('common.CDM') + ' - Pangaia'" class="w-full max-w-[750px]" />
     </div>
     <div>
       <h3 class="mt-5">{{ $t('common.PDM') }}</h3>
-      <p class="italic text-gray-500 text-xxs">
+      <p class="italic text-gray-500 text-xxs md:text-xs">
         {{ $t('project.pangaia.PDMText') }}
       </p>
-      <img src="/img/projects/pangaia/MPD-Pangaia.svg" alt="Modèle conceptuel de données - Pangaia" class="w-full" />
+      <img src="/img/projects/pangaia/MPD-Pangaia.svg" :alt="$t('common.PDM') + ' - Pangaia'" class="w-full" />
     </div>
   </div>
   <a
     rel="noopener"
     href="https://pangaia.app"
     target="_blank"
-    class="absolute flex items-center justify-center bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
+    class="absolute flex items-center justify-center bottom-2 right-1 md:right-6 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
   >
     <img src="/img/icons/projects/tools/web.svg" :alt="$t('buttons.linkWebSite') + ' ' +  ProjectName" class="w-3 h-3 mr-0.5"/>
     {{ $t('buttons.linkWebSite') }}
