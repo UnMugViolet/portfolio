@@ -17,7 +17,7 @@ const isFormComplete = ref(false)
 // Get variables from .env
 const adminName = import.meta.env.VITE_APP_ADMIN_NAME
 const adminEmailAddress = import.meta.env.VITE_APP_ADMIN_EMAIL_ADDRESS
-const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY
+const publicKey = import.meta.env.VITE_APP_PUBLIC_API_EMAILJS_KEY
 const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID
 const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID
 

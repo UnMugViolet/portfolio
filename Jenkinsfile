@@ -99,29 +99,12 @@ pipeline {
             }
         }
     }
+    
     post {
         always {
-            script {
-                env.BUILD_STATUS = currentBuild.currentResult
-
-                def previousCommit = env.GIT_PREVIOUS_SUCCESSFUL_COMMIT ?: 'HEAD^' // If null, use HEAD^ for the previous commit
-                def currentCommit = env.GIT_COMMIT ?: 'HEAD'
-
-                def commitHashes = sh(script: "git log --pretty=format:'%H' ${previousCommit}..${currentCommit}", returnStdout: true).trim().split("\n")
-                def authorEmails = commitHashes.collect { hash ->
-                    return sh(script: "git show -s --format='%ae' ${hash}", returnStdout: true).trim()
-                }.unique().findAll { email ->
-                    !email.matches(".*noreply.*")
-                }
-
-                // Remove the sysadmin email if present
-                authorEmails.remove(env.SYS_ADMIN_EMAIL)
-                env.AUTHOR_EMAILS = authorEmails.join(",")
-                echo "Author Emails: ${env.AUTHOR_EMAILS}"
-            }
             emailext (
                 mimeType: 'text/html',
-                subject: "[${env.JOB_NAME}] Build #${env.BUILD_NUMBER} - ${env.BUILD_STATUS}",
+                subject: "[${env.JOB_NAME}] Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body: """<div style="background-color: black; padding: 5px 20px; display: inline-block;">
                             <table style="color: white; border-collapse: collapse;">
                                 <tr>
@@ -129,15 +112,14 @@ pipeline {
                                         <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins logo" style="width: 29px; height: 40px;"/>
                                     </td>
                                     <td style="padding-left: 0.5rem;">
-                                        <h2 style="margin: 0;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}</h2>
+                                        <h2 style="margin: 0;">${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult}</h2>
                                     </td>
                                 </tr>
                             </table>
                         </div>
-                        <p>The build was ${env.BUILD_STATUS}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
+                        <p>The build was ${currentBuild.currentResult}. Check the <a href="${env.BUILD_URL}console">Console output</a> for details.</p>
                         <p>Check <a href="${env.BUILD_URL}">Jenkins build</a> to view the results.</p>""",
-                recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']],
-                to: "${env.AUTHOR_EMAILS}, ${env.SYS_ADMIN_EMAIL}"
+                to: "jaguinpaul@gmail.com"
             )
         }
     }
