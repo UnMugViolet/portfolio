@@ -48,7 +48,7 @@ pipeline {
                         sh 'ls -la ./Dockerfile || echo "Backend Dockerfile not found"'
 
                         def imageName = "${DOCKER_REGISTRY}/portfolio-xp:latest"
-                        sh "docker compose build --no-cache"
+                        sh "docker compose build"
                         env.IMAGE_NAME = imageName
 
                         echo "Docker image built successfully: ${env.IMAGE_NAME}"
