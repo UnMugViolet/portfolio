@@ -48,7 +48,17 @@ pipeline {
                         sh 'ls -la ./Dockerfile || echo "Backend Dockerfile not found"'
 
                         def imageName = "${DOCKER_REGISTRY}/portfolio-xp:latest"
-                        sh "docker compose build"
+                        sh """
+                            docker build -t ${imageName} \
+                            --build-arg VITE_APP_PORTFOLIO_DOMAIN_NAME='${env.VITE_APP_PORTFOLIO_DOMAIN_NAME}' \
+                            --build-arg VITE_APP_ADMIN_NAME='${env.VITE_APP_ADMIN_NAME}' \
+                            --build-arg VITE_APP_ADMIN_EMAIL_ADDRESS='${env.VITE_APP_ADMIN_EMAIL_ADDRESS}' \
+                            --build-arg VITE_APP_PUBLIC_KEY='${env.VITE_APP_PUBLIC_KEY}' \
+                            --build-arg VITE_APP_EMAILJS_SERVICE_ID='${env.VITE_APP_EMAILJS_SERVICE_ID}' \
+                            --build-arg VITE_APP_EMAILJS_TEMPLATE_ID='${env.VITE_APP_EMAILJS_TEMPLATE_ID}' \
+                            .
+                        """
+
                         env.IMAGE_NAME = imageName
 
                         echo "Docker image built successfully: ${env.IMAGE_NAME}"
