@@ -45,8 +45,7 @@ pipeline {
                 script {
                     try {
                         // Check if Dockerfiles exist
-                        sh 'ls -la backend/Dockerfile || echo "Backend Dockerfile not found"'
-                        sh 'ls -la frontend/Dockerfile || echo "Frontend Dockerfile not found"'
+                        sh 'ls -la ./Dockerfile || echo "Backend Dockerfile not found"'
 
                         def imageName = "${DOCKER_REGISTRY}/portfolio-xp:latest"
                         sh "docker compose build --no-cache"
