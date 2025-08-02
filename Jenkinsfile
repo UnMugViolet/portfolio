@@ -3,6 +3,8 @@ pipeline {
     
     environment {
         NODE_ENV = 'production'
+        DOCKER_REGISTRY = 'unmugviolet'
+        DOCKER_BUILDKIT = '0'
     }
     tools {
         nodejs 'Main NodeJS'
@@ -13,6 +15,7 @@ pipeline {
                 git url: 'https://github.com/UnMugViolet/portfolio.git', branch: 'main'
             }
         }
+
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('Sonar-Server') {
@@ -20,6 +23,7 @@ pipeline {
                 }
             }
         }
+
         // Wait for the SonarQube analysis to be completed by getting the webhook response
         stage('Quality Gate') {
             steps {
@@ -28,35 +32,67 @@ pipeline {
                 }
             }
         }
-        stage('Build') { 
+
+        stage('Check Docker') {
             steps {
-                sh 'npm install --include=dev'
-                sh 'npm run build'
+                sh 'docker --version'
+                sh 'docker info'
             }
         }
-        stage('Publish') {
+
+        stage('Build Image') { 
             steps {
-                // Publish the build artifacts to the server using SSH
+                script {
+                    try {
+                        // Check if Dockerfiles exist
+                        sh 'ls -la backend/Dockerfile || echo "Backend Dockerfile not found"'
+                        sh 'ls -la frontend/Dockerfile || echo "Frontend Dockerfile not found"'
+
+                        def imageName = "${DOCKER_REGISTRY}/portfolio-xp:latest"
+                        sh "docker compose build --no-cache"
+                        env.IMAGE_NAME = imageName
+
+                        echo "Docker image built successfully: ${env.IMAGE_NAME}"
+
+                    } catch (Exception e) {
+                        error "Failed to build Docker images: ${e.getMessage()}"
+                    }
+                }
+            }
+        }
+        stage('Push Image') {
+            steps {
+                script {
+                    // Login to Docker Hub and push images
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                        def imageName = docker.image("${env.IMAGE_NAME}")
+                        imageName.push()
+                        echo "Successfully pushed ${imageName} to Docker Hub"
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
                 sshPublisher(
-                    continueOnError: false, 
-                    failOnError: true, 
                     publishers: [
                         sshPublisherDesc(
-                            configName: 'Hostinger',
+                            configName: 'Infomaniak',
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: 'dist/**', 
-                                    remoteDirectory: '/domains/pauljaguin.com/public_html',
-                                    removePrefix: 'dist', 
-                                    cleanRemote: true, 
-                                    makeEmptyDirs: true, 
-                                    flatten: false, 
-                                    noDefaultExcludes: false, 
-                                    patternSeparator: '[, ]+' 
+                                    execCommand: '''
+                                        ~/websites/portfolioXP &&
+                                        docker compose down &&
+                                        docker compose pull &&
+                                        docker compose up -d --build &&
+                                        docker system prune -f &&
+                                        docker image prune -f &&
+                                        docker volume prune -f &&
+                                        docker network prune -f
+                                    '''
                                 )
-                            ],
-                            usePromotionTimestamp: false,
-                            verbose: true 
+                            ]
                         )
                     ]
                 )
