@@ -15,7 +15,6 @@
 
 ## 👷 Disclaimers
 
-
 **This is an ongoing project and it is not done yet**.
 If you encounter any bugs it will be really helpfull if you could provide the origin of that bug, the browser you used and the device.
 
@@ -83,3 +82,36 @@ npm run dev:all
 ```sh
 npm run build
 ```
+
+## Docker
+
+### Now you can run the project using docker
+
+See the Docker compose file bellow for deployement.
+
+```yml
+services:
+  portfolio-xp:
+    image: unmugviolet/portfolio-xp:latest
+    container_name: portfolio_xp
+    ports:
+      - "35000:35000"
+    volumes:
+      - .:/app/data
+    networks:
+      - portfolio_network
+    restart: unless-stopped
+
+networks:
+  portfolio_network:
+    driver: bridge
+```
+
+### Run the Docker container
+
+```sh
+docker compose up -d
+```
+
+Now you can access the website at [http://localhost:35000](http://localhost:35000)
+
