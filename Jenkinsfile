@@ -93,7 +93,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     execCommand: '''
-                                        ~/websites/portfolioXP &&
+                                        cd ~/websites/portfolioXP &&
                                         docker compose down &&
                                         docker compose pull &&
                                         docker compose up -d --build &&
