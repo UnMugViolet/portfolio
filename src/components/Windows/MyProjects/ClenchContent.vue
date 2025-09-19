@@ -47,7 +47,7 @@
   </div>
   <a
     rel="noopener"
-    href="https://homepage.rocketegg.systems"
+    href="https://clench-fakeapp.vercel.app"
     target="_blank"
     class="absolute bottom-2 right-1 md:right-6 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked flex items-center justify-center"
   >
