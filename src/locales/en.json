@@ -223,6 +223,17 @@
       "tasksDoneFifthDetails": "Thanks to the Homeserver project, the project can be precompiled with Jenkins and the artifact sent to the production server. A change to the `main` branch of the Git repository is enough for the site to be automatically updated. The database is also updated with migrations using the `make deploy` command from the Makefile.",
       "tasksDoneFifthDetailsSecond": "This method saves significant time and avoids needing npm or any JS package manager on the production server."
     },
+    "fanny-portfolio": {
+      "contextFirstParagraph": "Fanny Séraudie is a freelance illustrator based in Limoges. She wanted an online portfolio to showcase her work through a minimalist and aesthetic interface.",
+      "contextSecondParagraph": "The site was designed with Laravel Orchid for the back office and Vue.js for the front end, allowing Fanny to easily manage her projects and illustrations.",
+      "contextThirdParagraph": "The solution offers autonomous content management, SEO optimization, and a modern user experience that reflects Fanny's visual identity.",
+      "goalFirst": "Create an adaptive image display system for different formats",
+      "goalSecond": "Develop a responsive mosaic with varying image sizes",
+      "goalThird": "Optimize display in portrait and landscape modes",
+      "goalFourth": "Implement a zoom feature on illustrations for better visualization",
+      "goalFifth": "Ensure smooth navigation between different projects",
+      "goalSixth": "Maintain visual quality across all devices and resolutions"
+    },
     "homeserver": {
       "contextFirstParagraph": "This project was carried out by Pierre, who owns a video production company, and me, a web developer.",
       "contextSecondParagraph": "A team you wouldn't necessarily count on to set up a server, I agree. But we share a common passion. Digging into subjects we know nothing about and trying to understand how a server works and how to set it up.",

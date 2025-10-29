@@ -9,6 +9,7 @@ import HomeserverContent from '@/components/Windows/MyProjects/HomeserverContent
 import ClenchContent from '@/components/Windows/MyProjects/ClenchContent.vue'
 import LogmaContent from '@/components/Windows/MyProjects/LogmaContent.vue'
 import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
+import FannyContent from './MyProjects/FannyContent.vue'
 import Emc2Content from './MyProjects/Emc2Content.vue'
 import AidellaContent from './MyProjects/AidellaContent.vue'
 
@@ -78,6 +79,7 @@ const componentMap = {
   LogmaContent,
   PangaiaContent,
   Emc2Content,
+  FannyContent,
   AidellaContent
 }
 

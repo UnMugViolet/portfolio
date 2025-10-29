@@ -219,6 +219,17 @@
       "tasksDoneFifthDetails": "Grâce au projet Homeserver, le projet peut être précompilé avec Jenkins et l’artefact envoyé sur le serveur de production. Une simple modification sur la branche `main` du dépôt Git suffit à mettre le site à jour automatiquement. La base de données est également mise à jour via les migrations grâce à la commande `make deploy` du Makefile.",
       "tasksDoneFifthDetailsSecond": "Cette méthode permet un réel gain de temps, sans nécessiter npm ni aucun gestionnaire de paquets JS sur le serveur de production."
     },
+    "fanny-portfolio": {
+      "contextFirstParagraph": "Fanny Séraudie est une illustratrice et graphiste freelance basée à Limoges. Elle souhaitait un portfolio en ligne pour présenter ses oeuvres via une interface minimaliste et esthétique.",
+      "contextSecondParagraph": "Le site a été conçu avec Laravel Orchid pour le back-office et Vue.js pour le front-end, permettant à Fanny de gérer facilement ses projets et ses illustrations.",
+      "contextThirdParagraph": "L’objectif était de créer une vitrine professionnelle, élégante et intuitive, mettant en valeur son univers graphique tout en assurant une navigation fluide pour les visiteurs. La solution retenue offre une gestion autonome du contenu, une optimisation SEO et une expérience utilisateur moderne, fidèle à l’identité visuelle de Fanny.",
+      "goalFirst": "Créer un système d'affichage d'images adaptatif pour différents formats",
+      "goalSecond": "Développer une mosaïque responsive avec des tailles d'images variées",
+      "goalThird": "Optimiser l'affichage en mode portrait et paysage",
+      "goalFourth": "Implémenter une fonctionnalité de zoom pour une meilleure visualisation",
+      "goalFifth": "Assurer une navigation fluide entre les différents projets",
+      "goalSixth": "Maintenir la qualité visuelle sur tous les supports et résolutions"
+    },
     "homeserver": {
       "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",
       "contextSecondParagraph": "Une équipe sur laquelle on ne miserait pas forcément pour monter un serveur, j'en conviens. Mais une passion commune nous anime. Creuser des sujets qu'on ne connaît pas et essayer de comprendre comment un serveur fonctionne et comment le mettre en place.",

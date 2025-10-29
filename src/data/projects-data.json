@@ -80,6 +80,21 @@
           "componentName": "AidellaContent",
           "isFocus": false,
           "isActive": false
+        },
+        {
+          "name": "Portfolio Fanny",
+          "icon": "projects/folder-fanny-icon.webp",
+          "title": {
+            "en": "Fanny Séraudie - Portfolio website",
+            "fr": "Fanny Séraudie - Portfolio"
+          },
+          "date": {
+            "en": "2025 - 2 weeks",
+            "fr": "2025 - 2 semaines"
+          },
+          "componentName": "FannyContent",
+          "isFocus": false,
+          "isActive": false
         }
       ]
     },
