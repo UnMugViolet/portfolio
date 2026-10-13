@@ -11,7 +11,7 @@ module.exports = {
     'bg-solitude-blue',
     'bg-window-menu-card-header',
     'bg-window-menu-card-header-active',
-  ],
+  ],  
   theme: {
     extend: {
       fontFamily: {

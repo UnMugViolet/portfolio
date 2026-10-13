@@ -16,6 +16,6 @@
 
 .close-button::after {
   content: '';
-  transform: rotate(-45deg);
+  transform: rotate(-90deg);
 }
 </style>
