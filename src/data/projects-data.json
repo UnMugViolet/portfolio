@@ -7,21 +7,6 @@
       },
       "projects": [
         {
-          "name": "Logma Production",
-          "icon": "projects/folder-logma-icon.webp",
-          "title": {
-            "en": "Logma Production - Showcase website",
-            "fr": "Logma Production - Site vitrine"
-          },
-          "date": {
-            "en": "2023 - 2 months",
-            "fr": "2023 - 2 mois"
-          },
-          "componentName": "LogmaContent",
-          "isFocus": false,
-          "isActive": false
-        },
-        {
           "name": "Pangaia",
           "icon": "projects/folder-pangaia-icon.webp",
           "title": {
@@ -93,6 +78,21 @@
             "fr": "2025 - 2 semaines"
           },
           "componentName": "FannyContent",
+          "isFocus": false,
+          "isActive": false
+        },
+        {
+          "name": "Gemmyo",
+          "icon": "projects/folder-gemmyo-icon.webp",
+          "title": {
+            "en": "Gemmyo - E-commerce website / ERP",
+            "fr": "Gemmyo - Site e-commerce / ERP"
+          },
+          "date": {
+            "en": "2026 - 6 months",
+            "fr": "2026 - 6 mois"
+          },
+          "componentName": "c",
           "isFocus": false,
           "isActive": false
         }

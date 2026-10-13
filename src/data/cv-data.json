@@ -24,6 +24,16 @@
     ],
     "workExperience": [
       {
+        "jobTitle": "DÉVELOPPEUR WEB FULLSTACK",
+        "company": "Gemmyo, Paris (75)",
+        "year": "2026",
+        "responsibilities": [
+          "Actions commerciales pour financer le projet",
+          "Organisation d'un séjour au ski pour 130 participants",
+          "Négociation du contrat pour l'année suivante"
+        ]
+      },
+      {
         "jobTitle": "MISSION DÉVELOPPEUR WEB",
         "company": "Indépendant, Paris (75)",
         "year": "Avril 2025",
@@ -52,16 +62,6 @@
         "company": "ACLP, Le Havre (76)",
         "year": "Avril - Juin 2020",
         "responsibilities": ["Développement commercial", "Campagne de mailing", "Création d'un site web sur Prestashop"]
-      },
-      {
-        "jobTitle": "PROJET TUTEURÉ - SKI",
-        "company": "Iut site Caucriauville, Le Havre (76)",
-        "year": "2019 - 2020",
-        "responsibilities": [
-          "Actions commerciales pour financer le projet",
-          "Organisation d'un séjour au ski pour 130 participants",
-          "Négociation du contrat pour l'année suivante"
-        ]
       }
     ]
   },
