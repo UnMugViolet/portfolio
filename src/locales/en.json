@@ -16,6 +16,7 @@
     "address": "Address",
     "design": "Design",
     "tasksDone": "Tasks done on the project",
+    "videoNotSupported": "Your browser does not support videos.",
     "techInfo": "Technical informations",
     "componentsDot": "Components :",
     "components": "Components",
@@ -207,7 +208,7 @@
       "goalThird": "Apply a design consistent with the EMC2 visual identity.",
       "goalFourth": "Test in staging to ensure site stability.",
       "goalFifth": "Deploy updates to production via SSH.",
-      "goalSixth": "Optimize navigation for a better user experience."
+      "goalSixth": "Optimize navigatio  n for a better user experience."
     },
     "aidella": {
       "contextFirstParagraph": "Les Terres d'Aidella is a dog breeding kennel located in the Vosges region. Passionate animal lovers with the goal of sharing their passion and expertise with as many people as possible.",
@@ -241,6 +242,16 @@
       "goalFourth": "Implement a zoom feature on illustrations for better visualization",
       "goalFifth": "Ensure smooth navigation between different projects",
       "goalSixth": "Maintain visual quality across all devices and resolutions"
+    },
+    "gemmyo": {
+      "contextFirstParagraph": "Gemmyo is a French jewelry brand that sells nearly half of its jewelry online.",
+      "contextSecondParagraph": "It wants to improve the user experience of its e-commerce website and redesign its email sending system for all stages of the order process in the 4 languages used.",
+      "tasksDoneFirst": "Refactor the static pages of the e-commerce website, like the gemstone presentation page",
+      "tasksDoneSecond": "Add a dynamic product option feature with metals and stones on the product page and in the cart",
+      "tasksDoneThird": "Redesign all transactional emails of the e-commerce website",
+      "tasksDoneFourth": "Develop commands for mass data processing",
+      "tasksDoneFifth": "Optimize the website's SEO and loading speed, especially with product and shop structured data",
+      "tasksDoneSixth": "Implement and design end-to-end tests on the order process"
     },
     "homeserver": {
       "contextFirstParagraph": "This project was carried out by Pierre, who owns a video production company, and me, a web developer.",

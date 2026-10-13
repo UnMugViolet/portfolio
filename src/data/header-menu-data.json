@@ -22,7 +22,7 @@
     },
     "contact": {
       "en": ["File", "Edit", "View", "Insert", "Format", "Tools", "Message", "Help"],
-      "fr": ["Fichier", "Édition", "Insértion", "Format", "Outils", "Message", "Aide"]
+      "fr": ["Fichier", "Édition", "Insertion", "Format", "Outils", "Message", "Aide"]
     },
     "none": {
       "en": [],

@@ -16,6 +16,7 @@
     "address": "Adresse",
     "design": "Maquette",
     "tasksDone": "Tâches réalisées sur le projet",
+    "videoNotSupported": "Votre navigateur ne supporte pas la vidéo.",
     "techInfo": "Informations techniques",
     "componentsDot": "Composants :",
     "components": "Composants",
@@ -237,6 +238,16 @@
       "goalFourth": "Implémenter une fonctionnalité de zoom pour une meilleure visualisation",
       "goalFifth": "Assurer une navigation fluide entre les différents projets",
       "goalSixth": "Maintenir la qualité visuelle sur tous les supports et résolutions"
+    },
+    "gemmyo": {
+      "contextFirstParagraph": "Gemmyo est une marque de joaillerie française qui vend près de la moitié de ses bijoux en ligne.",
+      "contextSecondParagraph": "Elle souhaite améliorer l'expérience utilisateur de son site e-commerce et faire la refonte de son système d'envoi d'emails pour toutes les étapes de commande dans les 4 langues utilisées.",
+      "tasksDoneFirst": "Refonte de pages statutaires du site e-commerce notamment la page de présentation des pierres précieuses",
+      "tasksDoneSecond": "Ajout d'une fonctionnalité d'option sur un produit dynamique avec les métaux et pierres précieuses sur la page d'un produit et dans le panier",
+      "tasksDoneThird": "Refonte de tous les emails transactionnels du site e-commerce",
+      "tasksDoneFourth": "Développement de commandes pour du traitement de données en masse",
+      "tasksDoneFifth": "Optimisation du SEO et de la vitesse de chargement du site notamment sur de la donnée structurée de produit et de boutiques",
+      "tasksDoneSixth": "Mise en place et conception de tests end-to-end sur le parcours de commande"
     },
     "homeserver": {
       "contextFirstParagraph": "Ce projet a été réalisé en binôme, Pierre qui a une société de production vidéo, et moi développeur web.",

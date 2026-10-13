@@ -113,7 +113,7 @@
       <img src="/img/projects/pangaia/MPD-Pangaia.svg" :alt="$t('common.PDM') + ' - Pangaia'" class="w-full" />
     </div>
   </div>
-  <a
+  <!-- <a
     rel="noopener"
     href="https://pangaia.app"
     target="_blank"
@@ -121,7 +121,7 @@
   >
     <img src="/img/icons/projects/tools/web.svg" :alt="$t('buttons.linkWebSite') + ' ' +  ProjectName" class="w-3 h-3 mr-0.5"/>
     {{ $t('buttons.linkWebSite') }}
-  </a>
+  </a> -->
 </template>
 
 <script setup>
@@ -129,7 +129,6 @@ import { ref, onMounted } from 'vue'
 
 const iframeSrc = ref('')
 let ProjectName = 'Pangaia';
-
 
 onMounted(() => {
   iframeSrc.value = `https://www.figma.com/embed?embed_host=${import.meta.env.VITE_APP_PORTFOLIO_DOMAIN_NAME}

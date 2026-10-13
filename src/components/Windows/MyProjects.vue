@@ -12,6 +12,7 @@ import PangaiaContent from '@/components/Windows/MyProjects/PangaiaContent.vue'
 import FannyContent from './MyProjects/FannyContent.vue'
 import Emc2Content from './MyProjects/Emc2Content.vue'
 import AidellaContent from './MyProjects/AidellaContent.vue'
+import GemmyoContent from './MyProjects/GemmyoContent.vue'
 
 const props = defineProps({
   leftMenuType: String
@@ -80,7 +81,8 @@ const componentMap = {
   PangaiaContent,
   Emc2Content,
   FannyContent,
-  AidellaContent
+  AidellaContent,
+  GemmyoContent
 }
 
 // Computed property that returns the component object based on the componentName of the selected project
