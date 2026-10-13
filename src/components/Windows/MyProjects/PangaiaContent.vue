@@ -113,15 +113,6 @@
       <img src="/img/projects/pangaia/MPD-Pangaia.svg" :alt="$t('common.PDM') + ' - Pangaia'" class="w-full" />
     </div>
   </div>
-  <!-- <a
-    rel="noopener"
-    href="https://pangaia.app"
-    target="_blank"
-    class="absolute flex items-center justify-center bottom-2 right-1 md:right-6 h-6 text-xs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
-  >
-    <img src="/img/icons/projects/tools/web.svg" :alt="$t('buttons.linkWebSite') + ' ' +  ProjectName" class="w-3 h-3 mr-0.5"/>
-    {{ $t('buttons.linkWebSite') }}
-  </a> -->
 </template>
 
 <script setup>

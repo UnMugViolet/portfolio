@@ -40,13 +40,13 @@
         <h3 class="mt-5 mb-2">{{ $t('common.tasksDone') }}</h3>
         <ul class="list-disc ml-3">
             <li>{{ $t('project.gemmyo.tasksDoneFirst') }}</li>
-                <video class="mt-5 w-full max-w-5xl pb-5" autoplay controls loop>
+                <video class="mt-5 w-full max-w-5xl pb-5" autoplay controls loop muted>
                     <source src="/img/projects/gemmyo/gemmyo-stones-video.webm" type="video/webm" />
                     <source src="/img/projects/gemmyo/gemmyo-stones-video.mp4" type="video/mp4" />
                     {{ $t('common.videoNotSupported') }}    
                 </video>
             <li>{{ $t('project.gemmyo.tasksDoneSecond') }}</li>
-            <video class="mt-5 w-full max-w-5xl pb-5" autoplay controls loop>
+            <video class="mt-5 w-full max-w-5xl pb-5" autoplay controls loop muted>
                 <source src="/img/projects/gemmyo/gemmyo-chains-video.webm" type="video/webm" />
                 <source src="/img/projects/gemmyo/gemmyo-chains-video.mp4" type="video/mp4" />
                 {{ $t('common.videoNotSupported') }}
